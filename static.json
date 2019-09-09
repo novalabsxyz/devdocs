@@ -2,5 +2,6 @@
   "root": ".docz/dist/",
   "routes": {
     "/**": "index.html"
-  }
+  },
+  "https_only": true
 }
