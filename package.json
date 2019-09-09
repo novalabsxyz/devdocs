@@ -1,0 +1,17 @@
+{
+  "name": "devdocs",
+  "version": "1.0.0",
+  "description": "Helium developer documentation",
+  "repository": "https://github.com/helium/devdocs",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
+  },
+  "devDependencies": {
+    "docz": "^2.0.0-rc.38",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
