@@ -6,8 +6,8 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "dev": "docz dev",
+    "build": "docz build"
   },
   "devDependencies": {
     "docz": "^2.0.0-rc.38",
