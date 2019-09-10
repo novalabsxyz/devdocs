@@ -1,3 +1,4 @@
 export default {
-  files: '**/*.{mdx}'
+  files: '**/*.{mdx}',
+  theme: 'theme/index'
 }
