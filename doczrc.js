@@ -1,15 +1,7 @@
-// export default {
-//   files: '**/*.{mdx}',
-//   theme: 'theme/index'
-// }
-
+// doczrc.js
 export default {
-  title: 'Helium Developers',
-  theme: 'theme/index',
+  ignore: ['README.md'],
   menu: [
-    {
-      name: 'Home',
-    },
     {
       name: 'Device',
       menu: [
@@ -25,6 +17,4 @@ export default {
       ],
     },
   ],
-  ignore: ['README.md'],
 }
-
