@@ -4,7 +4,8 @@ export default {
   themeConfig: {
     fonts: {
       body: 'Notable, sans-serif',
-      heading: "Notable, sans-serif", 
+      // heading: "Raleway",
+      heading: "Antaro", 
     },
     styles: {
       Container: {
