@@ -51,8 +51,8 @@ export default {
     },
   },
   fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'inherit',
+    body: 'soleil, sans-serif',
+    heading: 'soleil',
     monospace: 'Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
