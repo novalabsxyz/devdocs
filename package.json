@@ -1,45 +1,17 @@
 {
-  "name": "devdocs",
   "private": true,
-  "description": "Helium Developer Portal",
-  "version": "0.0.1",
-  "author": "Helium",
-  "dependencies": {
-    "gatsby": "^2.15.16",
-    "gatsby-image": "^2.2.19",
-    "gatsby-plugin-manifest": "^2.2.16",
-    "gatsby-plugin-offline": "^3.0.7",
-    "gatsby-plugin-react-helmet": "^3.1.7",
-    "gatsby-plugin-sharp": "^2.2.22",
-    "gatsby-source-filesystem": "^2.1.22",
-    "gatsby-theme-docz": "^2.0.0-rc.41",
-    "gatsby-transformer-sharp": "^2.2.14",
-    "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1",
-    "scheduler": "^0.15.0"
-  },
-  "devDependencies": {
-    "prettier": "^1.18.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "name": "gatsby-starter-documentation",
+  "version": "0.0.27",
   "scripts": {
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "now-build": "yarn build"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/helium/devdocs"
-  },
-  "bugs": {
-    "url": "https://github.com/helium/devdocs/issues"
+  "license": "MIT",
+  "dependencies": {
+    "gatsby": "^2.15.24",
+    "gatsby-theme-documentation": "^0.0.27",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }
