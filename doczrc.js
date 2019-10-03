@@ -3,9 +3,10 @@ export default {
   ignore: ['README.md'],
   themeConfig: {
     fonts: {
-      body: 'Notable, sans-serif',
+      // body: 'Notable, sans-serif',
       // heading: "Raleway",
-      heading: "Antaro", 
+      body: "soleil, sans-serif",
+      heading: "soleil", 
     },
     styles: {
       Container: {
