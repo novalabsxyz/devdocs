@@ -11,13 +11,13 @@ module.exports = {
         google: {
           families: ['Notable']
         },
-	typekit: {
-	  id: 'qfu3tzp'
-	},
-	custom: {
-	  families: ['Antaro'],
-	  url: ['src/fonts.css']
-	}
+        typekit: {
+          id: 'qfu3tzp'
+        },
+        custom: {
+          families: ['Antaro'],
+          url: ['src/fonts.css']
+        }
       }
     }
   ],
