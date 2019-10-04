@@ -6,6 +6,7 @@ import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Content from '../header.mdx'
 import Button from './button'
+import Logo from './logo'
 
 const modes = ['light', 'dark', 'deep', 'swiss']
 
@@ -51,6 +52,10 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
                 if (navLink) navLink.focus()
               }}
             />
+            <Logo 
+              sx={{
+                maxWidth: '30%',
+              }}/>
             <MDXProvider components={components}>
               <Content />
             </MDXProvider>
