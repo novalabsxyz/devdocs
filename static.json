@@ -1,5 +1,0 @@
-{
-  "root": "public/",
-  "https_only": true,
-  "error_page": "404.html"
-}
