@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Documentation Starter',
-    description: 'This is a starter for gatsby-theme-documentation'
+    title: 'Helium Developers',
+    description: 'This is the portal for Helium developers'
   },
   plugins: [
     'gatsby-theme-documentation',
