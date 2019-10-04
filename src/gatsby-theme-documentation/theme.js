@@ -9,35 +9,36 @@ const heading = {
 }
 
 export default {
-  initialColorMode: 'light',
+  initialColorMode: 'deep',
   colors: {
-    text: '#000',
+    text: '#171717',
     background: '#fff',
-    primary: '#33e',
-    secondary: '#119',
+    primary: '#228CEA',
+    secondary: '#0D62AD',
     muted: '#f6f6f6',
     highlight: '#ffffcc',
     gray: '#777',
-    purple: '#609',
+    purple: '#8634CE',
     modes: {
       dark: {
-        text: '#fff',
-        background: '#060606',
-        primary: '#3cf',
-        secondary: '#e0f',
-        muted: '#191919',
+        text: '#ECECEC',
+        background: '#1C1C1C',
+        primary: '#38A2FF',
+        secondary: '#29D391',
+        muted: '#222222',
         highlight: '#ffffcc',
         gray: '#999',
-        purple: '#c0f',
+        purple: '#BE73FF',
       },
       deep: {
         text: 'hsl(210, 50%, 96%)',
-        background: 'hsl(230, 25%, 18%)',
-        primary: 'hsl(260, 100%, 80%)',
-        secondary: 'hsl(290, 100%, 80%)',
-        purple: 'hsl(290, 100%, 80%)',
-        muted: 'hsla(230, 20%, 0%, 20%)',
+        background: '#222639',
+        primary: '#29D391',
+        secondary: '#19B87A',
+        purple: '#BE73FF',
+        muted: '#3A405D',
         gray: 'hsl(210, 50%, 60%)',
+        
       },
       swiss: {
         text: 'hsl(10, 20%, 20%)',
@@ -52,13 +53,13 @@ export default {
   },
   fonts: {
     body: 'soleil, sans-serif',
-    heading: 'soleil',
-    monospace: 'Menlo, monospace',
+    heading: 'soleil, sans-serif',
+    monospace: '"input-mono", Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
-    body: '400',
-    heading: '700',
+    body: '300',
+    heading: '600',
   },
   lineHeights: {
     body: 1.5,
@@ -68,7 +69,7 @@ export default {
     heading,
     display: {
       variant: 'textStyles.heading',
-      fontSize: [5, 6, 7],
+      fontSize: [4, 5, 6],
       mt: 3,
     },
   },
@@ -84,14 +85,23 @@ export default {
     },
     h1: {
       variant: 'textStyles.display',
+      letterSpacing: '-2px',
+      fontSize: 6,
     },
     h2: {
       variant: 'textStyles.heading',
       fontSize: 5,
+      fontWeight: '300',
+      marginTop: 50,
+      letterSpacing: '-0.5px',
     },
     h3: {
       variant: 'textStyles.heading',
-      fontSize: 4,
+      fontSize: 2,
+      textTransform: 'uppercase',
+      letterSpacing: '3px',
+      color: 'primary',
+
     },
     h4: {
       variant: 'textStyles.heading',
@@ -115,6 +125,7 @@ export default {
       variant: 'prism',
       fontFamily: 'monospace',
       fontSize: 1,
+      borderRadius: '10px',
       p: 3,
       color: 'text',
       bg: 'muted',
@@ -159,6 +170,8 @@ export default {
       border: 0,
       borderBottom: '1px solid',
       borderColor: 'muted',
+      marginTop: 50,
+      marginBottom: 50,
     },
     img: {
       maxWidth: '100%'
