@@ -37,7 +37,7 @@ export default {
         secondary: '#19B87A',
         purple: '#BE73FF',
         muted: '#171B2E',
-        gray: 'hsl(210, 50%, 60%)',
+        gray: '#6a86b2',
         
       },
       swiss: {
@@ -136,6 +136,15 @@ export default {
         color: 'inherit',
       },
     },
+    blockquote: {
+      color: 'gray',
+      marginTop: 40,
+      borderColor: 'gray',
+      borderLeftStyle: 'solid',
+      borderLeftWidth: '1px',
+      marginLeft: '0',
+      paddingLeft: 20,
+    },
     code: {
       fontFamily: 'monospace',
       color: 'secondary',
@@ -143,8 +152,10 @@ export default {
     },
     inlineCode: {
       fontFamily: 'monospace',
-      color: 'secondary',
+      color: 'primary',
       bg: 'muted',
+      p: '2px 6px',
+      borderRadius: '2px'
     },
     table: {
       width: '100%',
