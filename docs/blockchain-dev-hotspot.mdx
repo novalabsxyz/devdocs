@@ -18,15 +18,21 @@ There are two distinct applications required in order for the Hotspot to send an
 
 The default Raspian image has a small swapfile of 100MB, which on a Pi with 1GB or less of RAM is insufficient for building some of the dependencies, such as [RocksDB](http://rocksdb.org/). To increase the swap size, first stop the swap:
 
-```sudo dphys-swapfile swapoff```
+```
+sudo dphys-swapfile swapoff
+```
 
 Edit the swapfile configuration as root `sudo nano /etc/dphys-swapfile` and change the `CONF_SWAPSIZE`:
 
-```CONF_SWAPSIZE=1024```
+```
+CONF_SWAPSIZE=1024
+```
 
 Save the file, then reboot:
 
-```sudo reboot```
+```
+sudo reboot
+```
 
 Next, enable SPI and I2C by running `sudo raspi-config` and selecting `Interfacing Options`, and enabling I2C and SPI from within the menu system.
 
@@ -34,11 +40,15 @@ Next, enable SPI and I2C by running `sudo raspi-config` and selecting `Interfaci
 
 First, you'll need [git](https://git-scm.com/). If you don't have it installed:
 
-```sudo apt-get install git```
+```
+sudo apt-get install git
+```
 
 Clone the git repository:
 
-```git clone https://github.com/helium/miner.git```
+```
+git clone https://github.com/helium/miner.git
+```
 
 You will need to install the dependencies listed below in order to use the Miner.
 
@@ -49,14 +59,16 @@ Miner has been tested against [Erlang OTP 21.3](https://www.erlang.org/downloads
 To install OTP 21.3 in Raspian, we'll first acquire the Erlang package from [Erlang Solutions](https://www.erlang-solutions.com/resources/download.html) and then install the dependencies:
 
 ```
-wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
-sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
-sudo apt-get install -f
+wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb  
+sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb  
+sudo apt-get install -f  
 ```
 
 Install various other dependencies:
 
-```sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev```
+```
+sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev
+```
 
 ### Compile the Miner
 
@@ -92,11 +104,15 @@ You can run the Miner in the background, or via an interactive console.
 
 To run in the background:
 
-```_build/prod/rel/miner/bin/miner start```
+```
+_build/prod/rel/miner/bin/miner start
+```
 
 To run via the interactive console:
 
-```_build/prod/rel/miner/bin/miner console```
+```
+_build/prod/rel/miner/bin/miner console
+```
 
 If you run in console mode, you'll need to open another terminal to execute any other commands.
 
@@ -106,7 +122,9 @@ The Helium blockchain uses an Erlang implementation of [libp2p](https://libp2p.i
 
 The first order of business once the Miner is running is to see if you're connected to any peers, whether your NAT type has been correctly identified, and that you have some listen addresses:
 
-```_build/prod/rel/miner/bin/miner peer book -s```
+```
+_build/prod/rel/miner/bin/miner peer book -s
+```
 
 You will see an output roughly like the following:
 
@@ -151,11 +169,15 @@ First, you need a genesis block from either the main network, or the Pescadero t
 
 Once you've downloaded it, you'll need to use the CLI to load the genesis block in to your local miner:
 
-```_build/prod/rel/miner/bin/miner genesis load <path_to_genesis>```
+```
+_build/prod/rel/miner/bin/miner genesis load <path_to_genesis>
+```
 
 After the genesis block has been loaded, you should be able to check your block height and see at least the genesis block:
 
-```_build/prod/rel/miner/bin/miner info height```
+```
+_build/prod/rel/miner/bin/miner info height
+```
 
 The first number is the election epoch, and the second number is the block height of your miner.
 
@@ -165,7 +187,9 @@ Once you have miner running, you'll need concentrate to receive packets via SPI 
 
 Clone the git repository:
 
-```git clone https://github.com/helium/concentrate.git```
+```
+git clone https://github.com/helium/concentrate.git
+```
 
 You will need to install the dependencies listed below in order to use the Miner.
 
@@ -173,7 +197,9 @@ You will need to install the dependencies listed below in order to use the Miner
 
 First, [rustup](https://rustup.rs) must be installed, which can be done as follows:
 
-```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
 
 ### Compile Concentrate
 
@@ -190,11 +216,15 @@ Once complete, you're ready to run concentrate.
 
 Start up concentrate by running:
 
-```./target/debug/concentrate serve```
+```
+./target/debug/concentrate serve
+```
 
 If you want to be able to see pretty printed packets in the console you can use:
 
-```./target/debug/concentrate serve -p```
+```
+./target/debug/concentrate serve -p
+```
 
 You'll see output that looks something like this any time a packet is received:
 
