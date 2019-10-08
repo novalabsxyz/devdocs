@@ -5,26 +5,52 @@ This guide will show you step by step how to transmit LongFi packets using a lon
 To follow along, you'll need the following:
 * Ubuntu 18.04 LTS (Any distro of linux should work, but we've only tested on this)
 * [STMicroelectronics B-L072Z-LRWAN1 Discovery kit](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html)
-* [GNU Arm Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
-* [OpenOCD](https://github.com/ntfreak/openocd)
-* [Visual Studio Code](https://code.visualstudio.com)
+* [GNU Arm Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) (Make sure this is added to your PATH, [instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/))
+* [OpenOCD](https://github.com/ntfreak/openocd) (Make sure this is added to your PATH, [instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/))
+    * Run `./configure --enable-stlink` to install st-link support.
+* [Visual Studio Code](https://code.visualstudio.com) 
 * [Cortex Debug Extension](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
+
+## Compiling  
 
 Let's start by cloning the `longfi-st-hal` repository.
 ```
 git clone git@github.com:helium/longfi-st-hal.git
 ```
-Next we'll navigate to the TransmitPacket example directory and launch vs code from there.
+Next we'll navigate to the TransmitPacket example directory and compile the firmware.
 ```
 cd longfi-st-hal/Boards/B-L072Z-LRWAN1/Examples/TransmitPacket
+make
+```
+You should see something similar to the output below if all went well.
+```
+arm-none-eabi-size build/B-L072Z-LRWAN1.elf
+   text    data     bss     dec     hex filename
+  28220      60    3052   31332    7a64 build/B-L072Z-LRWAN1.elf
+arm-none-eabi-objcopy -O ihex build/B-L072Z-LRWAN1.elf build/B-L072Z-LRWAN1.hex
+arm-none-eabi-objcopy -O binary -S build/B-L072Z-LRWAN1.elf build/B-L072Z-LRWAN1.bin
+```
+## Debugging
+
+Next, we'll use the Cortex Debug extension in VS code to debug our firmware example.  
+If you are not familiar with VS code's debug view, checkout [this](https://code.visualstudio.com/docs/editor/debugging) guide.  
+If you installed Visual Studio Code via a package manager, then the following should open your current working directory.  
+If not, then just launch VS code and use File->Open Folder.  
+```
 code .
 ```
 
-Next, we'll use the Cortex Debug extension in VS code to debug our firmware example.
-First lets enter debug view by clicking the bug icon on the far left.
-Next, we'll click the drop down next to the Debug play symbol in the top left, and select `Add Configuration...`.
+First lets enter debug view by clicking the bug icon on the far left.  
+Next, we'll click the gear icon to the right of the configuration dropdown to create a new config.
 
-### Cortex Debug Launch Config 
+![debug-view](https://i.gyazo.com/860b49ca7ef1d81be112b03a2e66d6f8.png)  
+
+Then, select `Cortex Debug` from the dropdown.
+
+![select-cortex-debug](https://i.gyazo.com/8e0849ac056477fb7eea303fa1295adc.png)
+
+Replace the template with the following:
+
 ```
 {
     "version": "0.2.0",
@@ -45,3 +71,8 @@ Next, we'll click the drop down next to the Debug play symbol in the top left, a
     ]
 }
 ```
+Now that we have configured our debug setup, lets start a debug session!  
+Make sure that you have already compiled the firmware, steps above if you haven't.  
+To start a debug session, make sure you have your `Cortex Debug` config selected and click the play icon.  
+After a few seconds, your firmware should be loaded on the board and paused in the reset handler.
+You are now debugging!
