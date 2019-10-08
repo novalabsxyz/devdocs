@@ -17,7 +17,7 @@ export default props => (
       width: 256,
       flex: 'none',
       px: 3,
-      pt: 0,
+      pt: 20,
       pb: 4,
       pr: 4,
       mt: [20, 0],
