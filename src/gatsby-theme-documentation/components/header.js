@@ -1,14 +1,11 @@
 /** @jsx jsx */
-import { jsx, Header, Container, Flex, useColorMode } from 'theme-ui'
+import { jsx, Header, Container, Flex } from 'theme-ui'
 import { MDXProvider } from '@mdx-js/react'
 
 import MenuButton from './menu-button'
 import NavLink from './nav-link'
 import Content from '../header.mdx'
-import Button from './button'
 import Logo from './logo'
-
-const modes = ['deep']
 
 const components = {
   a: NavLink
