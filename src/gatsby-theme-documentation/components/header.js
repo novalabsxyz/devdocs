@@ -8,7 +8,7 @@ import Content from '../header.mdx'
 import Button from './button'
 import Logo from './logo'
 
-const modes = ['light', 'dark', 'deep', 'swiss']
+const modes = ['deep']
 
 const components = {
   a: NavLink
@@ -31,13 +31,13 @@ const styles = {
 }
 
 export default ({ menuOpen, setMenuOpen, nav }) => {
-  const [mode, setMode] = useColorMode()
+//   const [mode, setMode] = useColorMode()
 
-  const cycleMode = e => {
-    const i = modes.indexOf(mode)
-    const next = modes[(i + 1) % modes.length]
-    setMode(next)
-  }
+//   const cycleMode = e => {
+//     const i = modes.indexOf(mode)
+//     const next = modes[(i + 1) % modes.length]
+//     setMode(next)
+//   }
 
   return (
     <Header>
@@ -54,18 +54,12 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
             />
             <Logo 
               sx={{
-                maxWidth: '30%',
+                maxWidth: '100px',
               }}/>
             <MDXProvider components={components}>
               <Content />
             </MDXProvider>
-            <Button
-              sx={{
-                ml: 2,
-              }}
-              onClick={cycleMode}>
-              {mode}
-            </Button>
+          
           </Flex>
         </Flex>
       </Container>

@@ -12,6 +12,7 @@ export default {
   initialColorMode: 'deep',
   colors: {
     text: '#171717',
+    bodyblue: '#A0A9D1',
     background: '#fff',
     primary: '#228CEA',
     secondary: '#0D62AD',
@@ -31,13 +32,14 @@ export default {
         purple: '#BE73FF',
       },
       deep: {
-        text: 'hsl(210, 50%, 96%)',
+        text: '#A0A9D1',
         background: '#222639',
         primary: '#29D391',
         secondary: '#19B87A',
         purple: '#BE73FF',
         muted: '#171B2E',
         gray: '#6a86b2',
+        white: '#fff',
         
       },
       swiss: {
@@ -69,7 +71,7 @@ export default {
     heading,
     display: {
       variant: 'textStyles.heading',
-      fontSize: [4, 5, 6],
+      fontSize: [3, 4, 5, 6],
       mt: 3,
     },
   },
@@ -86,18 +88,21 @@ export default {
     h1: {
       variant: 'textStyles.display',
       letterSpacing: '-2px',
-      fontSize: 6,
+      fontSize: 4,
+      color: 'white',
     },
     h2: {
       variant: 'textStyles.heading',
-      fontSize: 5,
+      fontSize: 4,
       fontWeight: '300',
       marginTop: 50,
       letterSpacing: '-0.5px',
+            color: 'white',
+
     },
     h3: {
       variant: 'textStyles.heading',
-      fontSize: 2,
+      fontSize: 1,
       textTransform: 'uppercase',
       letterSpacing: '3px',
       color: 'primary',

@@ -17,9 +17,10 @@ export default props => (
       width: 256,
       flex: 'none',
       px: 3,
-      pt: 3,
+      pt: 0,
       pb: 4,
-      mt: [64, 0],
+      pr: 4,
+      mt: [20, 0],
     }}
   />
 )

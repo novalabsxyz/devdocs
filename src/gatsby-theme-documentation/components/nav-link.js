@@ -10,10 +10,13 @@ const styles = {
   color: 'inherit',
   textDecoration: 'none',
   fontSize: 1,
-  fontWeight: 'bold',
+  fontWeight: '400',
   '&.active': {
     color: 'primary',
   },
+  '&:hover': {
+    color: 'secondary',
+  }
 }
 
 export default ({ href, children, ...props }) => {
