@@ -10,7 +10,7 @@ const styles = {
   color: 'inherit',
   textDecoration: 'none',
   fontSize: 1,
-  fontWeight: '400',
+  fontWeight: '300',
   '&.active': {
     color: 'primary',
   },

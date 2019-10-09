@@ -18,9 +18,15 @@ const styles = {
     ml: 'auto',
     display: 'flex',
     listStyleType: 'none',
+    mr: '20px'
   },
   li: {
-    ml: 3
+    ml: 3,
+    fontSize: 1,
+  },
+  p: {
+    fontSize: 1,
+    paddingTop: '0px'
   }
 }
 
@@ -35,6 +41,7 @@ function Footer() {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
+        background: '#171c2d',
         p: 2,
         variant: 'styles.footer',
       }}>
