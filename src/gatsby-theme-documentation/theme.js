@@ -1,3 +1,5 @@
+import fonts from '../fonts/fonts.css'
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
