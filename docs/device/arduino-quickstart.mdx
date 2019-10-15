@@ -1,2 +1,91 @@
-# LongFi Arduino Quickstart 
+# LongFi Arduino Quickstart Guide
 
+This guide will show you step by step how to transmit LongFi packets using a longfi-arduino example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit. 
+
+For this example, you’ll need the following:
+
+* <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a>
+* <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino software (IDE)</a> 
+
+## Getting the Arduino IDE
+
+Download and install <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino software (IDE) </a> for your preferred OS. 
+
+* <a href="https://www.arduino.cc/en/Guide/Windows" target="_blank">Windows </a>
+* <a href="https://www.arduino.cc/en/Guide/linux" target="_blank">Linux </a>
+* <a href="https://www.arduino.cc/en/Guide/MacOSX" target="_blank">Mac OSX</a>
+
+## Add STM32 board support to Arduino
+
+<a href="https://github.com/stm32duino/wiki/wiki/Getting-Started" target="_blank">Instructions to add STM32 board support to Arduino</a> 
+
+## Getting access to the LongFi TransmitPackets Sketch
+
+Let's clone the longfi-arduino repository
+
+```
+git clone git@github.com:helium/longfi-arduino.git
+```
+
+## Install the Arduino Library
+
+This Arduino library needs to be manually installed as it has not been added to the Arduino Library registry yet. 
+
+Clone the longfi-arduino repository to the following directory:
+
+```
+linux: /home/{user}/Arduino/libraries
+windows: Documents/Arduino/libraries
+mac os: Documents/Arduino/libraries
+```
+
+Then restart your Arduino IDE to load the library. 
+
+## LongFi TransmitPackets Example Sketch
+
+Arduino IDE:
+
+* File -> Examples -> LongFi -> Transmit Packet
+
+![Example Sketch](https://i.imgur.com/UgrWLX3.png)
+
+## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
+
+Instructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> 
+
+Arduino IDE:
+
+* Select Tools -> Board -> Discovery
+
+![Board-Discovery](https://i.imgur.com/qFHEfYz.png)
+
+* Select Tools -> Board part number -> Discovery L072Z-LRWAN1
+
+![Board-Part-Discovery](https://i.imgur.com/tA8lQY8.png)
+
+## Programming (Upload Method)
+
+We will use the onboard ST-Link (Flasher/Debugger) to upload this sketch. 
+
+Download and install the required utility from ST <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">here</a> 
+
+Arduino IDE:
+
+* Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
+
+![Programmer](https://i.imgur.com/Jutlgei.png)
+
+## Programming your Arduino Sketch
+
+Arduino IDE:
+* Select Sketch -> Verify/Compile (Ctrl + R)
+* Select Sketch -> Upload (Ctrl + U)
+
+![/Compile/Upload](https://i.imgur.com/wCc2SIU.png)
+
+If there are no errors with your sketch, you should see `Done Compiling`
+
+
+Congratulations! You have just created your first Helium LongFi application! However, we are not done just yet. Now we have to check that these packets were broadcast and received by a nearby hotspot. 
+
+* Helium Console
