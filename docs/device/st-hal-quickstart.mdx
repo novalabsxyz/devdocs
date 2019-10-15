@@ -4,12 +4,12 @@ This guide will show you step by step how to transmit LongFi packets using a lon
 
 To follow along, you'll need the following:
 * Ubuntu 18.04 LTS (Any distro of linux should work, but we've only tested on this)
-* [STMicroelectronics B-L072Z-LRWAN1 Discovery kit](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html)
-* [GNU Arm Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) (Make sure this is added to your PATH, [instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/))
-* [OpenOCD](https://github.com/ntfreak/openocd) (Make sure this is added to your PATH, [instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/))
-    * Run `./configure --enable-stlink` to install st-link support.
-* [Visual Studio Code](https://code.visualstudio.com) 
-* [Cortex Debug Extension](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
+* <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a>
+* <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads" target="_blank">GNU Arm Embedded Toolchain</a>  
+* .<a href="https://github.com/ntfreak/openocd" target="_blank">OpenOCD</a> (Make sure this is added to your PATH, <a href="https://linuxize.com/post/how-to-add-directory-to-path-in-linux/" target="_blank">instructions</a>)
+  * Run `./configure --enable-stlink` to install st-link support.
+* <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>  
+* <a href="https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug" target="_blank">Cortex Debug Extension</a>
 
 ## Compiling  
 
@@ -33,7 +33,7 @@ arm-none-eabi-objcopy -O binary -S build/B-L072Z-LRWAN1.elf build/B-L072Z-LRWAN1
 ## Debugging
 
 Next, we'll use the Cortex Debug extension in VS code to debug our firmware example.  
-If you are not familiar with VS code's debug view, checkout [this](https://code.visualstudio.com/docs/editor/debugging) guide.  
+If you are not familiar with VS code's debug view, checkout <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank">this</a> guide.  
 If you installed Visual Studio Code via a package manager, then the following should open your current working directory.  
 If not, then just launch VS code and use File->Open Folder.  
 ```
