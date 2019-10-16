@@ -1,3 +1,9 @@
+import Arduino_Board_Discovery from '../images/Arduino_Board_Discovery.png' 
+import Arduino_Board_PartNumber from '../images/Arduino_Board_PartNumber.png' 
+import Arduino_Compile from '../images/Arduino_Compile.png' 
+import LongFi_Example from '../images/LongFi_Example.png' 
+import upload_sketch from '../images/upload_sketch.png' 
+
 # LongFi Arduino Quickstart Guide
 
 This guide will show you step by step how to transmit LongFi packets using a longfi-arduino example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit. 
@@ -19,14 +25,6 @@ Download and install <a href="https://www.arduino.cc/en/Main/Software" target="_
 
 <a href="https://github.com/stm32duino/wiki/wiki/Getting-Started" target="_blank">Instructions to add STM32 board support to Arduino</a> 
 
-## Getting access to the LongFi TransmitPackets Sketch
-
-Let's clone the longfi-arduino repository
-
-```
-git clone git@github.com:helium/longfi-arduino.git
-```
-
 ## Install the Arduino Library
 
 This Arduino library needs to be manually installed as it has not been added to the Arduino Library registry yet. 
@@ -41,13 +39,21 @@ mac os: Documents/Arduino/libraries
 
 Then restart your Arduino IDE to load the library. 
 
-## LongFi TransmitPackets Example Sketch
+## Getting access to the LongFi TransmitPacket Sketch
+
+To clone the longfi-arduino repository, use the following command: 
+
+```
+git clone git@github.com:helium/longfi-arduino.git
+```
+
+## LongFi TransmitPacket Example Sketch
 
 Arduino IDE:
 
-* File -> Examples -> LongFi -> Transmit Packet
+* File -> Examples -> LongFi -> TransmitPacket
 
-![Example Sketch](https://i.imgur.com/UgrWLX3.png)
+<img src={LongFi_Example} /> 
 
 ## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
 
@@ -57,11 +63,11 @@ Arduino IDE:
 
 * Select Tools -> Board -> Discovery
 
-![Board-Discovery](https://i.imgur.com/qFHEfYz.png)
+<img src={Arduino_Board_Discovery} /> 
 
 * Select Tools -> Board part number -> Discovery L072Z-LRWAN1
 
-![Board-Part-Discovery](https://i.imgur.com/tA8lQY8.png)
+<img src={Arduino_Board_PartNumber} /> 
 
 ## Programming (Upload Method)
 
@@ -73,7 +79,7 @@ Arduino IDE:
 
 * Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
 
-![Programmer](https://i.imgur.com/Jutlgei.png)
+<img src={upload_sketch} /> 
 
 ## Programming your Arduino Sketch
 
@@ -81,7 +87,7 @@ Arduino IDE:
 * Select Sketch -> Verify/Compile (Ctrl + R)
 * Select Sketch -> Upload (Ctrl + U)
 
-![/Compile/Upload](https://i.imgur.com/wCc2SIU.png)
+<img src={Arduino_Compile} /> 
 
 If there are no errors with your sketch, you should see `Done Compiling`
 
