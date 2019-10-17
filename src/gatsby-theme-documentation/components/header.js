@@ -53,13 +53,32 @@ export default ({ menuOpen, setMenuOpen, nav }) => {
               sx={{
                 maxWidth: '100px',
               }}/>
-            <MDXProvider components={components}>
+              <div className="hidewhensmall">
+            <MDXProvider components={components} >
               <Content />
             </MDXProvider>
-          
+            </div>
           </Flex>
         </Flex>
       </Container>
+
+      <style jsx>{`
+
+        .hidewhensmall {
+          display: block;
+          margin-left: auto;
+        }
+   
+          @media only screen and (max-width: 470px) {
+            .hidewhensmall {
+              display: none;
+            }
+
+           
+          }
+
+
+        `}</style>
     </Header>
   )
 }

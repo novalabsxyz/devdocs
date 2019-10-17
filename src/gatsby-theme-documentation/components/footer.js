@@ -3,7 +3,6 @@ import { jsx, Container, Flex } from 'theme-ui'
 //import { Link } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 
-import NavLink from './nav-link'
 import Content from '../footer.mdx'
 
 //import FooterMDX from '../footer.mdx'
@@ -27,12 +26,14 @@ const styles = {
   p: {
     fontSize: 1,
     paddingTop: '0px'
+  },
+  a: {
+    mr: 10,
+    textDecoration: 'none',
   }
 }
 
-const components = {
-  a: NavLink
-}
+
 
 function Footer() {
   return (
@@ -42,18 +43,17 @@ function Footer() {
         flexWrap: 'wrap',
         alignItems: 'center',
         background: '#171c2d',
-        p: 2,
+        p: 1,
         marginTop: 100,
+        width: '100%',
         variant: 'styles.footer',
+        justifyContent: 'center',
+        textAlign: 'left'
       }}>
-      <Container>
-        <Flex sx={{ justifyContent: 'space-between' }}>
-          <Flex sx={styles}>
-            <MDXProvider components={components}>
+      <Container sx={styles}>
               <Content />
-            </MDXProvider>
-          </Flex>
-        </Flex>
+              <p>Copyright Helium 2019</p>
+         
       </Container>
 
     </footer>
