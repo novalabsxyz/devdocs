@@ -34,8 +34,8 @@ export default {
         purple: '#BE73FF',
       },
       deep: {
-        text: '#A0A9D1',
-        background: '#222639',
+        text: '#9395bd',
+        background: '#27284B',
         primary: '#29D391',
         secondary: '#19B87A',
         purple: '#BE73FF',
@@ -89,7 +89,7 @@ export default {
     },
     h1: {
       variant: 'textStyles.display',
-      letterSpacing: '-2px',
+      letterSpacing: '-0.05rem',
       fontSize: 4,
       color: 'white',
     },
@@ -98,7 +98,7 @@ export default {
       fontSize: 4,
       fontWeight: '300',
       marginTop: 50,
-      letterSpacing: '-0.5px',
+      letterSpacing: '-0.5',
             color: 'white',
 
     },
