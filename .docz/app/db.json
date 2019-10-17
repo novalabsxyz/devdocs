@@ -1,0 +1,98 @@
+{
+  "config": {
+    "title": "Devdocs",
+    "description": "Helium Developer Portal",
+    "menu": [
+      {
+        "name": "Device",
+        "menu": [
+          "LongFi Protocol",
+          "LongFi SDK",
+          "HeliOS"
+        ]
+      },
+      {
+        "name": "Blockchain",
+        "menu": [
+          "API"
+        ]
+      }
+    ],
+    "version": "0.0.1",
+    "repository": "https://github.com/helium/devdocs",
+    "native": false,
+    "themeConfig": {},
+    "separator": "-",
+    "ignore": [
+      "README.md"
+    ]
+  },
+  "entries": [
+    {
+      "key": "docs/blockchain/index.mdx",
+      "value": {
+        "name": "Blockchain",
+        "route": "/blockchain",
+        "id": "646305adfe2c8bc1ebeb7cbca7b435f7",
+        "filepath": "docs/blockchain/index.mdx",
+        "fullpath": "/Users/cocotang/devdocs/docs/blockchain/index.mdx",
+        "link": "https://github.com/helium/devdocs/edit/master/docs/blockchain/index.mdx",
+        "slug": "docs-blockchain-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "blockchain",
+            "depth": 1,
+            "value": "Blockchain"
+          }
+        ]
+      }
+    },
+    {
+      "key": "docs/button/index.mdx",
+      "value": {
+        "name": "Button",
+        "route": "/buttons",
+        "id": "b2de538c8dc22549b7ace73af0589c8c",
+        "filepath": "docs/button/index.mdx",
+        "fullpath": "/Users/cocotang/devdocs/docs/button/index.mdx",
+        "link": "https://github.com/helium/devdocs/edit/master/docs/button/index.mdx",
+        "slug": "docs-button-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "button",
+            "depth": 1,
+            "value": "Button"
+          },
+          {
+            "slug": "properties",
+            "depth": 2,
+            "value": "Properties"
+          }
+        ]
+      }
+    },
+    {
+      "key": "docs/device/index.mdx",
+      "value": {
+        "name": "Device",
+        "route": "/device",
+        "id": "8f1b3dd2a063326b037b524aa9719fb8",
+        "filepath": "docs/device/index.mdx",
+        "fullpath": "/Users/cocotang/devdocs/docs/device/index.mdx",
+        "link": "https://github.com/helium/devdocs/edit/master/docs/device/index.mdx",
+        "slug": "docs-device-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "device",
+            "depth": 1,
+            "value": "Device"
+          }
+        ]
+      }
+    }
+  ],
+  "props": []
+}
