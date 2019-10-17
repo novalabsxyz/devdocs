@@ -43,6 +43,7 @@ function Footer() {
         alignItems: 'center',
         background: '#171c2d',
         p: 2,
+        marginTop: 100,
         variant: 'styles.footer',
       }}>
       <Container>

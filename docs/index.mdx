@@ -1,37 +1,57 @@
+import longfi from './images/longfi.svg'
+import hotspot from './images/hotspot.svg'
+import device from './images/device.svg'
+import blockchain from './images/blockchain.svg'
+import coverage from './images/coverage.png'
+
+
+
 # Helium Developers 
 
-Welcome, here you will find examples, tutorials, specifications, and API references for participating on the Helium network.
+Welcome. Here you will find examples, tutorials, specifications, and API references for participating on the Helium network.
 
 
 ## Getting Started
 The Helium Network enables long range, low power, communication for IoT devices.
 
-<div style={{display: 'flex', justifyContent: 'space-between', marginTop: 30, flexWrap: 'wrap'}}>
-<div style={{padding: '20px 30px', backgroundColor: '#3b4560', borderRadius: 10, display: 'inline-block', width: '100%', flexBasis: '40%', marginBottom: 30 }}>
+<div style={{display: 'grid', gridGap: 30, gridTemplateColumns:'repeat(auto-fit, minmax(228px, 1fr))', margin: '50px 0'}}>
+<div style={{padding: '40px', backgroundColor: '#393A67', borderRadius: 10, textAlign: 'center' }}>
+
+<img style={{height: 60}} src={longfi} />
   <h2 style={{marginTop: 10}}>LongFi</h2>
   <p>Learn more about LongFi, the radio communication protocol that connects the network.</p>
-  <a style={{marginBottom: 20, display: 'block'}} href="/longfi/overview"> Read about LongFi</a>
+  <a style={{display: 'block'}} href="/longfi/overview"> Read about LongFi</a>
 </div>
 
-<div style={{ padding: '20px 30px', backgroundColor: '#3b4560', borderRadius: 10, display: 'inline-block', width: '100%', flexBasis: '40%', marginBottom: 30}}>
-  <h2 style={{marginTop: 10}}>Device</h2>
-  <p>Learn how to make your devices communicate on the network.</p>
-    <a style={{marginBottom: 20, display: 'block'}} href="/device/overview"> Read about LongFi</a>
+<div style={{ padding: '40px', backgroundColor: '#393A67', borderRadius: 10, textAlign: 'center'}}>
+<img style={{height: 60}} src={blockchain} />
 
-</div>
-
-<div style={{ padding: '20px 30px', backgroundColor: '#3b4560', borderRadius: 10, display: 'inline-block', width: '100%', flexBasis: '40%', marginBottom: 30}}>
-  <h2 style={{marginTop: 10}}>Hotspot</h2>
-  <p>Learn more about the hotspot that provide the network.</p>
-      <a style={{marginBottom: 20, display: 'block'}} href="/hotspot/overview"> Read about LongFi</a>
-
-</div>
-
-<div style={{ padding: '20px 30px', backgroundColor: '#3b4560', borderRadius: 10, display: 'inline-block', width: '100%', flexBasis: '40%', marginBottom: 30}}>
   <h2 style={{marginTop: 10}}>Blockchain</h2>
   <p>Learn more about the blockchain that powers the network.</p>
-      <a style={{marginBottom: 20, display: 'block'}} href="/blockchain/overview"> Read about LongFi</a>
+      <a style={{display: 'block'}} href="/blockchain/overview"> Read about LongFi</a>
 
 </div>
 
+<div style={{ padding: '40px', backgroundColor: '#393A67', borderRadius: 10, textAlign: 'center'}}>
+<img style={{height: 60}} src={device} />
+  <h2 style={{marginTop: 10}}>Device</h2>
+  <p>Learn how to make your devices communicate on the network.</p>
+    <a style={{display: 'block'}} href="/device/overview"> Read about LongFi</a>
+
 </div>
+
+<div style={{ padding: '40px', backgroundColor: '#393A67', borderRadius: 10, textAlign: 'center'}}>
+<img style={{height: 60}} src={hotspot} />
+  <h2 style={{marginTop: 10}}>Hotspot</h2>
+  <p>Learn more about the hotspot that provide the network.</p>
+      <a style={{display: 'block'}} href="/hotspot/overview"> Read about LongFi</a>
+
+</div>
+
+
+
+</div>
+
+
+<a href="https://network.helium.com/coverage"><img style={{width: '100%'}} src={coverage} /></a>
+
