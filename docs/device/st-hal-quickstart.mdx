@@ -36,14 +36,18 @@ arm-none-eabi-objcopy -O binary -S build/B-L072Z-LRWAN1.elf build/B-L072Z-LRWAN1
 ## Debugging
 
 Next, we'll use the Cortex Debug extension in VS code to debug our firmware example.  
+
 If you are not familiar with VS code's debug view, checkout <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank">this</a> guide.  
+
 If you installed Visual Studio Code via a package manager, then the following should open your current working directory.  
+
 If not, then just launch VS code and use File->Open Folder.  
 ```
 code .
 ```
 
 First lets enter debug view by clicking the bug icon on the far left.  
+
 Next, we'll click the gear icon to the right of the configuration dropdown to create a new config.
 
 <img src={vs_code_debug_view} /> 
@@ -75,7 +79,9 @@ Replace the template with the following:
 }
 ```
 Now that we have configured our debug setup, lets start a debug session!  
+
 Make sure that you have already compiled the firmware, steps above if you haven't.  
-To start a debug session, make sure you have your `Cortex Debug` config selected and click the play icon.  
-After a few seconds, your firmware should be loaded on the board and paused in the reset handler.
+
+To start a debug session, make sure you have your `Cortex Debug` config selected and click the play icon. After a few seconds, your firmware should be loaded on the board and paused in the reset handler.
+
 You are now debugging!
