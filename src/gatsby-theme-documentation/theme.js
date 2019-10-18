@@ -75,6 +75,7 @@ export default {
       variant: 'textStyles.heading',
       fontSize: [3, 4, 5, 6],
       mt: 3,
+      
     },
   },
   styles: {
@@ -194,7 +195,10 @@ export default {
       marginBottom: 50,
     },
     img: {
-      maxWidth: '100%'
+      maxWidth: '100%',
+      borderRadius: '6px',
+      mt: '20px',
+      mb: '20px',
     }
   },
   prism: {
