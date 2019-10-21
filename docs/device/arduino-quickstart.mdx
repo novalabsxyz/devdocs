@@ -3,6 +3,7 @@ import Arduino_Board_PartNumber from '../images/device/Arduino_Board_PartNumber.
 import Arduino_Compile from '../images/device/Arduino_Compile.png' 
 import LongFi_Example from '../images/device/LongFi_Example.png' 
 import upload_sketch from '../images/device/upload_sketch.png' 
+import upload_success from '../images/device/Arduino_Upload_Successful.png'
 
 # LongFi Arduino Quickstart Guide
 
@@ -38,15 +39,17 @@ windows: Documents/Arduino/libraries
 mac os: Documents/Arduino/libraries
 ```
 
-Then restart your Arduino IDE to load the library. 
-
-## Getting access to the LongFi TransmitPacket Sketch
-
 To clone the longfi-arduino repository, use the following command: 
 
 ```
 git clone git@github.com:helium/longfi-arduino.git
 ```
+
+Then restart your Arduino IDE to load the library. 
+
+## Getting access to the LongFi TransmitPacket Sketch
+
+
 
 ## LongFi TransmitPacket Example Sketch
 
@@ -86,13 +89,17 @@ Arduino IDE:
 
 Arduino IDE:
 * Select Sketch -> Verify/Compile (Ctrl + R)
-* Select Sketch -> Upload (Ctrl + U)
 
 <img src={Arduino_Compile} /> 
 
 If there are no errors with your sketch, you should see `Done Compiling`
 
 Then, you can upload the sketch and program the development board. 
+
+Arduino IDE:
+* Select Sketch -> Upload (Ctrl + U)
+
+<img src={upload_success} />
 
 Congratulations! You have just created your first Helium LongFi application! However, we are not done just yet. Now we have to check that these packets were broadcast and received by a nearby hotspot. Helium has created a dashboard called <a href="https://developer.helium.com/console/overview" target="_blank">Console</a>, which will help you onboard devices, like the one you've just built. 
 
