@@ -1,6 +1,10 @@
 import Change_Device_Name from '../images/console/Change_Device_Name.png' 
 import request_bin from '../images/console/request_bin.png' 
 import pasted_endpoint from '../images/console/pasted_endpoint.png' 
+import register from '../images/console/register.png' 
+import create_device from '../images/console/create_device.png' 
+import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
+
 
 # Console
 
@@ -22,6 +26,8 @@ If you are not within range, you can [build your own Hotspot](/hotspot/developer
 To register for an account, visit console.helium.com and click **Register**.
 
 During Registration, you'll be asked to provide an Organization name and a Team name.
+
+<img src={register} />
 
 Organizations are the top level owner of the account and can be anything you like. Teams belong to organizations, and devices belong to a team. Think of teams as your first way to organize devices. Example Organization/Team naming conventions can be:
 - Manufacturing Company/Floor 1, Floor 2, Floor 3
@@ -45,6 +51,8 @@ To find out which devices are compatible with the Helium Network, head to [Devic
 
 To add a device, go to **Devices** and click the **+** icon on the bottom right of the window.
 
+<img src={create_device} />
+
 When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
 
 ### Rename a Device
@@ -66,6 +74,19 @@ Click **Add** to connect the channel with the device.
 Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
 
 To send to another channel, click **Connect Channel**, select a channel, and click **Add**.
+
+### Real Time Packets
+Watch in real time as data packets flow through the Helium Network. 
+
+When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on. The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot. 
+
+##### Real Time Packets are available only in an active Console session
+View packets as they come in real time. If you close the window or the window is no longer active, data will not appear. 
+
+### Event Log
+Event Logs display real time packets in table form. See which Hotspot received the packet, its RSSI, and the size of the packet.
+
+Event logs are behave the same as real time packets. Data is not stored in console so the console window must be open in order to view live packets.
 
 
 ## Team Management
@@ -109,6 +130,9 @@ Your new channel is now ready for use.
 [setchannel]: #setchannel
 
 To set a channel as the default for all newly created devices, go to **Channels** on the left menu and click **Set Default** for the desired channel. 
+
+<img src={set_channel_as_default} />
+
 
 ### Device details
 View the details of your channel by clicking on the Channel name. 
