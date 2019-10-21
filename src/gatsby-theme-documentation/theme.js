@@ -11,49 +11,15 @@ const heading = {
 }
 
 export default {
-  initialColorMode: 'deep',
   colors: {
-    text: '#171717',
-    bodyblue: '#A0A9D1',
-    background: '#fff',
-    primary: '#228CEA',
-    secondary: '#0D62AD',
-    muted: '#f6f6f6',
-    highlight: '#ffffcc',
-    gray: '#777',
-    purple: '#8634CE',
-    modes: {
-      dark: {
-        text: '#ECECEC',
-        background: '#1C1C1C',
-        primary: '#38A2FF',
-        secondary: '#29D391',
-        muted: '#222222',
-        highlight: '#ffffcc',
-        gray: '#999',
-        purple: '#BE73FF',
-      },
-      deep: {
-        text: '#9395bd',
-        background: '#27284B',
-        primary: '#29D391',
-        secondary: '#19B87A',
-        purple: '#BE73FF',
-        muted: '#171B2E',
-        gray: '#6a86b2',
-        white: '#fff',
-        
-      },
-      swiss: {
-        text: 'hsl(10, 20%, 20%)',
-        background: 'hsl(10, 10%, 98%)',
-        primary: 'hsl(10, 80%, 50%)',
-        secondary: 'hsl(10, 60%, 50%)',
-        purple: 'hsl(250, 60%, 30%)',
-        muted: 'hsl(10, 20%, 94%)',
-        gray: 'hsl(10, 20%, 50%)',
-      },
-    },
+    text: '#9395bd',
+    background: '#27284B',
+    primary: '#29D391',
+    secondary: '#19B87A',
+    purple: '#BE73FF',
+    muted: '#171B2E',
+    gray: '#6a86b2',
+    white: '#fff',
   },
   fonts: {
     body: 'soleil, sans-serif',
@@ -87,6 +53,7 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
+      overflowX: 'hidden',
     },
     h1: {
       variant: 'textStyles.display',
@@ -108,6 +75,7 @@ export default {
       fontSize: 1,
       textTransform: 'uppercase',
       letterSpacing: '3px',
+      marginTop: 50,
       color: 'primary',
 
     },
