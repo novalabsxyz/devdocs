@@ -5,5 +5,11 @@ module.exports = {
   },
   plugins: [
     'gatsby-theme-documentation',
+      {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/static/logo.svg",
+      }
+    }
   ],
 }
