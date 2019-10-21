@@ -75,6 +75,7 @@ export default {
       fontSize: 1,
       textTransform: 'uppercase',
       letterSpacing: '3px',
+      marginTop: 50,
       color: 'primary',
 
     },
