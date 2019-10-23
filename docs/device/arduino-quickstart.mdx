@@ -4,6 +4,7 @@ import Arduino_Compile from '../images/device/Arduino_Compile.png'
 import LongFi_Example from '../images/device/LongFi_Example.png' 
 import upload_sketch from '../images/device/upload_sketch.png' 
 import upload_success from '../images/device/Arduino_Upload_Successful.png'
+import LongFi_Library from '../images/device/LongFi_library.png' 
 
 # LongFi Arduino Quickstart Guide
 
@@ -38,6 +39,7 @@ linux: /home/{user}/Arduino/libraries
 windows: Documents/Arduino/libraries
 mac os: Documents/Arduino/libraries
 ```
+## Getting access to the LongFi TransmitPacket Sketch
 
 To clone the longfi-arduino repository, use the following command: 
 
@@ -47,9 +49,17 @@ git clone git@github.com:helium/longfi-arduino.git
 
 Then restart your Arduino IDE to load the library. 
 
-## Getting access to the LongFi TransmitPacket Sketch
+## Connecting your B-L072Z-LRWAN1 - ST STM32L0 Discovery Board  
 
+We'll be using the ST-Link debugger on the Discovery board, so you'll want to connect the micro-USB B connector to the micro-USB port labeled `CN7 USB STLINK`.
 
+## Using the LongFi Device library
+
+Arduino IDE: 
+
+* Sketch -> Include Library -> LongFi
+
+<img src={LongFi_library} />
 
 ## LongFi TransmitPacket Example Sketch
 
@@ -58,6 +68,13 @@ Arduino IDE:
 * File -> Examples -> LongFi -> TransmitPacket
 
 <img src={LongFi_Example} /> 
+
+For the SDK Beta, we only support one OUI - Organizationally Unique Identifier for routing device packets. In the TransmitPacket sketch, make sure the OUI is set properly. 
+
+```
+// set OUI and device_id to work with LongFi routing
+const uint32_t oui = 1;
+```
 
 ## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
 
