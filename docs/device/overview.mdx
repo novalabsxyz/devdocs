@@ -1,21 +1,29 @@
 # Device 
 
-## LongFi Device
-The LongFi device library is a system agnostic, C implementation, of the LongFi protocol.
+The devices are what the Helium network exist for. Here you will learn about the pieces that make up a 
+Helium device and how you can quickly get started! 
 
-[Overview](/device/overview)
+Any device can communicate on the Helium network if it adheres to the [LoRa](https://www.semtech.com/lora/what-is-lora) 
+modulation specification for its locale and follows the [LongFi protocol](https://developer.helium.com/longfi/overview). 
+Helium has developed several foundational pieces to faciliate developers at all stages of development. Starting with
+a portable protocol implementation, [longfi-core](https://github.com/helium/longfi-core) is a C implementation of the
+LongFi protocol primatives. Next, building on top of the longfi-core protocol implementation, the device layer, 
+[longfi-device](https://github.com/helium/longfi-device), add support for the most common LoRa radio devices available, 
+the Semtech SX12xx line of chips in C. Lastly, sample applications are provided, targeting two development boards in C and Rust, 
+with the popular [CMWX1ZZABZ](https://wireless.murata.com/type-abz.html) module from Murata containing a Semtech SX1276 and STM32L0.
 
-<a href="https://github.com/helium" target="_blank">GitHub - longfi-device</a>
+![longfi-device-stack](https://i.gyazo.com/e3106620a88ae5b502ff473b4855533e.png)
 
----
-
+## Development boards 
+[B-L072Z-LRWAN1 - STMicroelectronics](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html)  
+[Catena 4610 - MCCI](https://store.mcci.com/collections/iot-building-blocks/products/mcci-catena-4610-integrated-node-for-lorawan-technology)  
 
 ## LongFi Arduino
 The LongFi Arduino library builds on longfi-device to add LongFi support to Arduino capable devices.
 
 [Quickstart](/device/arduino-quickstart)
 
-<a href="https://github.com/helium" target="_blank">GitHub - longfi-arduino</a>
+<a href="https://github.com/helium/longfi-arduino" target="_blank">GitHub - longfi-arduino</a>
 
 
 ---
@@ -26,4 +34,27 @@ The LongFi ST HAL library builds on longfi-device to add LongFi support to STMic
 
 [Quickstart](/device/st-hal-quickstart)
 
-<a href="https://github.com/helium" target="_blank">GitHub - longfi-st-hal</a>
+<a href="https://github.com/helium/longfi-st-hal" target="_blank">GitHub - longfi-st-hal</a>
+
+---
+
+## LongFi Device Rust
+The LongFi Device Rust library builds on the longfi-device by adding bindings to Rust.
+
+[Quickstart](/device/rust-quickstart)
+
+<a href="https://github.com/helium/longfi-device-rs" target="_blank">GitHub - longfi-device-rs</a>
+
+---
+
+## LongFi Device
+C library of device-side LongFi Protocol
+
+<a href="https://github.com/helium/longfi-device" target="_blank">GitHub - longfi-device</a>
+
+---
+
+## LongFi Core
+Platform agnostic implementation of core LongFi primitives.
+
+<a href="https://github.com/helium/longfi-core" target="_blank">GitHub - longfi-core</a>
