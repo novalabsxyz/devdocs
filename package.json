@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "gatsby-starter-documentation",
+  "name": "Helium Developer",
   "version": "0.0.27",
   "scripts": {
     "start": "rm -rf .cache && gatsby develop",
