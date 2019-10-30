@@ -1,0 +1,54 @@
+import vs_code_debug_view from '../images/device/vs_code_debug_view.png'
+import vs_code_config_select from '../images/device/vs_code_config_select.png'
+
+# Rust Quickstart Guide 
+
+This guide will show you step by step how to transmit LongFi packets in a Rust-based environment.
+
+To follow along, you'll need the following:
+* Ubuntu 18.04 LTS (Any distro of linux should work, but we've only tested on this)
+* <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a>
+* <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads" target="_blank">GNU Arm Embedded Toolchain</a>  
+* .<a href="https://github.com/ntfreak/openocd" target="_blank">OpenOCD</a> (Make sure this is added to your PATH, <a href="https://linuxize.com/post/how-to-add-directory-to-path-in-linux/" target="_blank">instructions</a>)
+  * Run `./configure --enable-stlink` to install st-link support.
+* <a href="https://www.rust-lang.org/tools/install" target="_blank">Rust</a> (Make sure this is also added to your PATH)
+* <a href="https://cmake.org/install/" target="_blank">CMake 3.11 or higher</a>
+
+## Compiling  
+
+Let's start by cloning the Board Support Crate (BSC) for the STMicroelectronics B-L072Z-LRWAN1 Discovery kit
+```
+git clone git@github.com:helium/stm32-lora-disco-rs.git
+```
+
+First let's add armv6 support to Rust: `rustup target add thumbv6m-none-eabi`. After this, let's test your 
+To test your build setup, run `cargo build --example longfi`. You may get an error message about CMake not being recent enough! Please check your CMake version.
+
+If the build was successful, the binary should be in `target/thumbv6m-none-eabi/debug/examples`:
+
+```
+arm-none-eabi-size target/thumbv6m-none-eabi/debug/examples/longfi
+   text    data     bss     dec     hex filename
+  39446     148    1932   41526    a236 target/thumbv6m-none-eabi/debug/examples
+
+```
+
+You'll notice that this example is less than half the size of the Arduino or ST HAL examples. If you build with `cargo build --release` you'll see that the it's even smaller:
+
+```
+arm-none-eabi-size target/thumbv6m-none-eabi/release/examples/longfi
+   text    data     bss     dec     hex filename
+  24210     148    1476   25834 
+```
+
+
+## Upload & Debugging
+
+To upload and debug the program, start an OpenOCD server by running the following command in the `b-l072z-lrwan1-rs` directory:
+`openocd -f ./openocd.cfg` (you may have to use sudo for permissions).
+
+Once the server finishes starting up and listens to the port, `cargo run --example longfi` will upload the code and start the debug session.
+
+If `cargo run` has trouble connecting, double check that the correct runner is selected in `.cargo/config`. In particular, `runner = "arm-none-eabi-gdb -q -x jlink.gdb"` should be uncommented.
+
+Note that there are instructions on [the BSC Github](https://github.com/lthiery/b-l072z-lrwan1-rs) about how to use JLinkServer instead of OpenOCD.
