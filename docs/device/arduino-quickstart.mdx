@@ -1,13 +1,11 @@
 import Arduino_Board_Discovery from '../images/device/Arduino_Board_Discovery.png' 
 import Arduino_Board_PartNumber from '../images/device/Arduino_Board_PartNumber.png' 
 import Arduino_Compile from '../images/device/Arduino_Compile.png' 
-
 import LongFi_Example from '../images/device/LongFi_Example.png' 
 import LongFi_Library from '../images/device/LongFi_library.png' 
-
 import upload_sketch from '../images/device/upload_sketch.png' 
 import upload_success from '../images/device/Arduino_Upload_Successful.png'
- 
+
 # LongFi Arduino Quickstart Guide
 
 ## Introduction
@@ -39,14 +37,14 @@ For this example, you’ll need the following:
 * <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">STM32 Board Support</a> 
 * <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">STLink Debugging Utility</a> 
 * <a href="https://console.helium.com/" target="_blank">Helium Console</a> 
- 
+
 ## Checking your area for Helium Network coverage
  
 To check your area for coverage, we have provided a network visualizer tool that displays the current distribution of Helium hotspots. 
  
 <a href="https://network.helium.com/coverage" target="_blank">Helium Network Visualizer</a>
- 
-If you do not see any hotspots in your area, you would need to purchase one from the <a ref="https://helium.com/store" target="_blank">Helium Store</a>. There is special pricing available for Developers, so please reach out to developer@helium.com before making a purchase. 
+
+If you do not see any hotspots in your area, you would need to purchase one from the <a href="https://helium.com/store" target="_blank">Helium Store</a>. There is special pricing available for Developers, so please reach out to developer@helium.com before making a purchase. 
  
 Alternatively, you can build your own development hotspot using [this guide](https://developer.helium.com/hotspot/developer-setup).
 
@@ -65,16 +63,11 @@ Download and install the latest version of <a href="https://www.arduino.cc/en/Ma
 * <a href="https://www.arduino.cc/en/Guide/Windows" target="_blank">Windows </a>
 * <a href="https://www.arduino.cc/en/Guide/linux" target="_blank">Linux </a>
 * <a href="https://www.arduino.cc/en/Guide/MacOSX" target="_blank">Mac OSX</a>
- 
+
 ## Add STM32 board support to Arduino
  
 <a href="https://github.com/stm32duino/wiki/wiki/Getting-Started" target="_blank">Instructions to add STM32 board support to Arduino</a> 
- 
- 
-# IMPORTANT TEMPORARY STEP
- 
-<a href="https://github.com/helium/longfi-arduino/blob/master/B-L072Z-LRWAN1-board-support-fix.md" target="_blank">Link to fix</a> 
- 
+
 ## Install the Arduino Library
  
 This Arduino library needs to be manually installed as it has not been added to the Arduino Library registry yet. 
@@ -96,6 +89,10 @@ git clone git@github.com:helium/longfi-arduino.git
  
 Then restart your Arduino IDE to load the library. 
  
+# IMPORTANT TEMPORARY STEP
+ 
+<a href="https://github.com/helium/longfi-arduino/blob/master/B-L072Z-LRWAN1-board-support-fix.md" target="_blank">Link to fix</a> 
+
 ## Using the LongFi Device library
  
 Arduino IDE: 
@@ -105,26 +102,28 @@ Sketch -> Include Library -> LongFi
 ```
  
 <img src={LongFi_Library} />
- 
-## LongFi TransmitPacket Example Sketch
- 
+
+## LongFi TransmitPacket Example Sketch 
+
 Arduino IDE:
- 
+
 ```
 File -> Examples -> LongFi -> TransmitPacket
 ```
  
-<img src={LongFi_Example} /> 
+ <img src={LongFi_Example} /> 
  
-For the initial Beta, we only support one OUI - Organizationally Unique Identifier for routing device packets. In the TransmitPacket sketch, make sure the OUI is set properly. The device_id should correspond with the device you onboard on Console.
- 
+For the initial Beta, we only support one OUI - Organizationally Unique Identifier for routing device packets. 
+In the TransmitPacket sketch, make sure the OUI is set properly. 
+The device_id should correspond with the device you onboard on Console.
+
 ```
 // set OUI and device_id to work with LongFi routing
 const uint32_t oui = 1;
 const uint16_t device_id = 24;
 ```
  
-## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
+ ## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
  
 Instructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> 
  
@@ -136,37 +135,39 @@ Select Tools -> Board -> Discovery
  
 <img src={Arduino_Board_Discovery} /> 
  
+
 ```
 Select Tools -> Board part number -> Discovery L072Z-LRWAN1
 ```
- 
+
 <img src={Arduino_Board_PartNumber} /> 
- 
+
 ## Programming (Upload Method)
- 
+
 We will use the onboard ST-Link (Flasher/Debugger) to upload this sketch. 
  
 Download and install the required utility from ST <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">here</a> 
  
 Arduino IDE:
- 
+
 ```
 Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
 ```
- 
+
 <img src={upload_sketch} /> 
- 
+
 ## Programming your Arduino Sketch
- 
+
 Arduino IDE:
+
 ```
 Select Sketch -> Verify/Compile (Ctrl + R)
 ```
  
-<img src={Arduino_Compile} /> 
+ <img src={Arduino_Compile} /> 
  
 If there are no errors with your sketch, you should see `Done Compiling`
- 
+
 Then, you can upload the sketch and program the development board. 
  
 Arduino IDE:
@@ -175,15 +176,9 @@ Arduino IDE:
 <img src={upload_success} />
  
 Congratulations! You have just created your first Helium LongFi application! However, we are not done just yet. Now we have to check that these packets were broadcast and received by a nearby hotspot. Helium has created a dashboard called [Console](https://developer.helium.com/console/overview), which will help you onboard devices, like the one you've just built. 
- 
-## What else?
+
+## What else
 
 If you have questions or suggestions on how to improve upon this example, feel free to submit feedback to developer@helium.com
  
-To see what other developers are working on, join the Helium Community <a href="https://community.helium.com/
-" target="_blank">here</a>. 
- 
-
-
-
-
+To see what other developers are working on, join the Helium Community <a href="https://community.helium.com/" target="_blank">here</a>. 
