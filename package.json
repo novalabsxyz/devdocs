@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "Helium Developer",
+  "name": "helium-developer",
   "version": "0.0.27",
   "scripts": {
     "start": "rm -rf .cache && gatsby develop",
