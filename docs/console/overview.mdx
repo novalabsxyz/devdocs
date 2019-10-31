@@ -70,7 +70,7 @@ Determine where your data should go on a per-device basis. Click the **Connect C
 
 Click **Add** to connect the channel with the device.
 
-#### Set Multiple Channels
+### Set Multiple Channels
 Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
 
 To send to another channel, click **Connect Channel**, select a channel, and click **Add**.
@@ -80,7 +80,7 @@ Watch in real time as data packets flow through the Helium Network.
 
 When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on. The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot. 
 
-##### Real Time Packets are available only in an active Console session
+**Real Time Packets are available only in an active Console session**
 View packets as they come in real time. If you close the window or the window is no longer active, data will not appear. 
 
 ### Event Log
@@ -91,7 +91,7 @@ Event logs are behave the same as real time packets. Data is not stored in conso
 
 ## Team Management
 
-## Channels
+### Channels
 
 Create channels to route your device data to its final destination. Channels, when set up correctly, make it easy to forward data to popular cloud services such as Google Cloud IoT, Microsoft Azure, Amazon, and more. 
 
@@ -109,12 +109,12 @@ The next step is to paste the HTTP endpoint.
 
 If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. <a href="https://www.requestbin.com">Requestbin </a> and <a href="https://www.beeceptor.com">Beeceptor </a>provide tools to make an HTTP endpoint quickly and easily.
 
-#### Requestbin Example
+### Requestbin Example
 Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint..
 
 <img src={request_bin} />
 
-.. and paste it in Console.
+... and paste it in Console.
 
 <img src={pasted_endpoint} />
 
@@ -126,7 +126,7 @@ Click **Create Channel**.
 
 Your new channel is now ready for use.
 
-#### Set Default Channel 
+### Set Default Channel 
 [setchannel]: #setchannel
 
 To set a channel as the default for all newly created devices, go to **Channels** on the left menu and click **Set Default** for the desired channel. 
