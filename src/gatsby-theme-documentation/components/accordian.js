@@ -134,7 +134,7 @@ export const AccordionButton = props => {
         borderRadius: 0,
         color: 'inherit',
         bg: 'transparent',
-        ':hover,:focus': {
+        ':hover': {
           color: 'primary',
         },
       }}>
@@ -171,6 +171,18 @@ export const AccordionNav = React.forwardRef(
       })
     }
 
+    if (window.location.pathname === '/longfi/spec') expanded[1] = true
+    if (window.location.pathname === '/longfi/overview') expanded[1] = true
+    if (window.location.pathname === '/device/overview') expanded[2] = true
+    if (window.location.pathname === '/device/arduino-quickstart') expanded[2] = true
+    if (window.location.pathname === '/device/st-hal-quickstart') expanded[2] = true
+    if (window.location.pathname === '/device/rust-quickstart') expanded[2] = true
+    if (window.location.pathname === '/console/overview') expanded[3] = true
+    if (window.location.pathname === '/hotspot/overview') expanded[4] = true
+    if (window.location.pathname === '/hotspot/developer-setup') expanded[4] = true
+    if (window.location.pathname === '/blockchain/overview') expanded[5] = true
+    if (window.location.pathname === '/blockchain/api') expanded[5] = true
+
     return (
       <div>
         {open && <Overlay {...props} />}
@@ -195,7 +207,7 @@ export const AccordionNav = React.forwardRef(
             bg: ['muted', 'transparent'],
 
           }}>
-          <Logo 
+          <Logo
               className="logo"
               sx={{
                 maxWidth: '100px',
@@ -217,6 +229,11 @@ export const AccordionNav = React.forwardRef(
                     href={link.props.href}
                     children={link.props.children}
                     className={link.props.className}
+                    sx={{
+                      '&.active': {
+                        color: '#9395bd',
+                      },
+                    }}
                   />
                   {link.props.links && (
                     <AccordionButton
@@ -258,8 +275,8 @@ export const AccordionNav = React.forwardRef(
               display: none;
             }
 
-      
-   
+
+
           @media only screen and (max-width: 640px) {
             .logo {
               display: block;
@@ -268,8 +285,8 @@ export const AccordionNav = React.forwardRef(
               margin-bottom: 30px;
             }
 
-            
-           
+
+
           }
 
 
