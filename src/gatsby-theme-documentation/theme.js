@@ -97,6 +97,15 @@ export default {
         color: 'secondary',
       },
     },
+
+    ul: {
+      mt: 30,
+      mb: 30,
+    },
+
+    li: {
+      mb:10,
+    },
     pre: {
       variant: 'prism',
       fontFamily: 'monospace',
