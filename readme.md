@@ -18,6 +18,13 @@ gatsby develop
 
 ## Adding Content Guidelines
 
+### Menu Nav
+1. Add menu item to src/gatsby-theme-documentation/sidebar.mdx
+2. (Temp Hack) Add the following to src/gatsby-theme-documentation/components/accordian.js, at line ~185  
+`js
+if (window.location.pathname === '/longfi/spec') expanded[1] = true
+`
+
 ### Headers
 Restrict header usage to h1-h3
 
