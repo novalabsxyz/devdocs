@@ -20,13 +20,17 @@ gatsby develop
 
 ### Menu Nav
 1. Add menu item to src/gatsby-theme-documentation/sidebar.mdx
-2. (Temp Hack) Add the following to src/gatsby-theme-documentation/components/accordian.js, at line ~185  
+2. (Temp Hack) Add the following to src/gatsby-theme-documentation/components/accordian.js, at line ~175  
 `js
-if (window.location.pathname === '/longfi/spec') expanded[1] = true
+if (globalHistory.location.pathname === '/longfi/spec') expanded[1] = true
 `
 
 ### Headers
 Restrict header usage to h1-h3
+
+#### h2
+The h2 header automatically adds a divider above it:  
+![divider](/readme-images/divider.png)
 
 #### Intro Text - h4
 Usage:
