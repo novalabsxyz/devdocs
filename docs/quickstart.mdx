@@ -1,1 +1,93 @@
+import Change_Device_Name from '../images/console/Change_Device_Name.png' 
+import request_bin from '../images/console/request_bin.png' 
+import pasted_endpoint from '../images/console/pasted_endpoint.png' 
+import register from '../images/console/register.png' 
+import create_device from '../images/console/create_device.png' 
+import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
+
 # Quickstart
+
+This section will cover the initial steps needed to create a test device for the Helium Network. 
+
+* Check your area for network coverage
+* Register an account on Helium Console 
+* Add a device to Helium Console and record device identifier
+
+## Network Coverage
+
+First, you’ll need access to the Helium Network. To check your area for coverage, we have provided a network visualizer tool that displays the current distribution of Helium hotspots. 
+
+<a href="https://network.helium.com/coverage" target="_blank">Helium Network Visualizer</a>
+
+If you do not see any hotspots in your area, you would need to purchase one from the <a href="https://www.helium.com/store" target="_blank">Helium Store</a> There is limited special pricing available for developers during this SDK beta, so please reach out to `developer@helium.com` before making a purchase. 
+
+Alternatively, you can build your own development hotspot using [this guide] (https://developer.helium.com/hotspot/developer-setup).
+
+## Create an account
+
+To register for an account, visit <a href="https://console.helium.com" target="_blank">Helium Console</a> and click **Register**.
+
+During Registration, you'll be asked to provide an Organization name and a Team name.
+
+<img src={register} />
+
+Organizations are the top level owner of the account and can be anything you like. Teams belong to organizations, and devices belong to a team. Think of teams as your first way to organize devices. Example Organization/Team naming conventions can be:
+- Manufacturing Company/Floor 1, Floor 2, Floor 3
+- Tech Company/Dog Tracker, Tracking Keychains, Bike Tracker
+- Apartment Building Name/Water Sensors, Motion, Current
+
+### Confirm your account
+A confirmation email will be sent to the email address used to create an account. You must confirm the account in order to continue using Console. If you did not receive an email, please check your spam folders.
+
+## Device Management
+
+Helium Console allows developers to add devices and grab the device identifiers to load onto their device firmware that authenticates and identifies the device for the Helium Network.
+
+### Add a Device
+
+To add a device, go to **Devices** and click the **+** icon on the bottom right of the window.
+
+<img src={create_device} />
+
+When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
+
+Make sure you copy the device details (OUI - Organization Unique Identifier, device ID, and the preshared key), which will be needed when you program your device. During the duration of this beta, we will be using `OUI = 1` and a pre-shared key. 
+
+
+```
+const uint32_t oui = 1;
+const uint16_t device_id = 2;
+const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x44, 0x95, 0x71, 0x52, 0x4E, 0xE1, 0xCA, 0x13, 0xCE};
+```
+
+## Hardware Setup
+
+The build for this project is easy! We’ll be using the <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a> for reference. 
+
+Since we're using the ST-Link debugger on the Discovery board, so you’ll want to connect the micro USB B connector to the micro-USB port labeled `CN7 USB STLINK`. 
+
+That’s it for the hardware setup! 
+
+##
+
+Next we've curated 3 quickstart guides for you to follow. 
+
+### LongFi Arduino
+Beginner friendly LongFi Arduino library 
+
+[LongFi Arduino - Quickstart](/device/arduino-quickstart)
+
+### LongFi ST HAL
+ST HAL library 
+
+[LongFi ST HAL - Quickstart](/device/st-hal-quickstart)
+
+### LongFi Device Rust
+Rust bindings to LongFi 
+
+[LongFi Device Rust - Quickstart](/device/rust-quickstart)
+
+
+
+
+

@@ -6,12 +6,15 @@ import LongFi_Library from '../images/device/LongFi_library.png'
 import upload_sketch from '../images/device/upload_sketch.png' 
 import upload_success from '../images/device/Arduino_Upload_Successful.png'
 
-# LongFi Arduino Quickstart Guide
-
+# LongFi Arduino Guide
+ 
 #### One of our main organizational objectives is to maximize adoption and usage of the Helium Network. Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications. To help facilitate this hardware product development cycle, we have provided an Arduino wrapper for our LongFi protocol. 
  
 > ##### Important 
 >This guide will show you step by step how to transmit LongFi packets using a longfi-arduino example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit. The open-source Arduino platform provides easy to use hardware and software and decreases the technical overhead for beginners. 
+
+## 
+Before we begin, please make sure you've followed the steps from the [quickstart](/quickstart).
 
 ## Objective 
 
@@ -19,7 +22,6 @@ In this guide, you will learn:
 
 * How to setup your environment (Add STM32 board support to Arduino and STLink debugging utility)
 * How to build and program a basic application that will send packets on the Helium Network
-* How to register and onboard the device on Helium Console
 * How to route the packets from your device to an HTTP endpoint using the Helium Console.
  
 For this example, you’ll need the following:
@@ -28,24 +30,13 @@ For this example, you’ll need the following:
  
 * <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a>
 * Micro USB Type B Cable - <a href="https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B0719H12WD/ref=sr_1_2_sspa?" target="_blank">Example </a>
-* Access to Helium Network
 
 ### Software
 
 * <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino software (IDE)</a> 
 * <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">STM32 Board Support</a> 
-* <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">STLink Debugging Utility</a> 
+* <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">STLink Debugging Utility</a> - (Java JDK needed for MacOS install)
 * <a href="https://console.helium.com/" target="_blank">Helium Console</a> 
-
-## Checking your area for Helium Network coverage
- 
-To check your area for coverage, we have provided a network visualizer tool that displays the current distribution of Helium hotspots. 
- 
-<a href="https://network.helium.com/coverage" target="_blank">Helium Network Visualizer</a>
-
-If you do not see any hotspots in your area, you would need to purchase one from the <a href="https://helium.com/store" target="_blank">Helium Store</a>. There is special pricing available for Developers, so please reach out to developer@helium.com before making a purchase. 
- 
-Alternatively, you can build your own development hotspot using [this guide](https://developer.helium.com/hotspot/developer-setup).
 
 ## Hardware setup
 
@@ -67,29 +58,32 @@ Download and install the latest version of <a href="https://www.arduino.cc/en/Ma
  
 <a href="https://github.com/stm32duino/wiki/wiki/Getting-Started" target="_blank">Instructions to add STM32 board support to Arduino</a> 
 
-## Install the Arduino Library
+## Getting access to the LongFi TransmitPacket Sketch
  
 This Arduino library needs to be manually installed as it has not been added to the Arduino Library registry yet. 
  
-Clone the longfi-arduino repository to the following directory:
+Clone the longfi-arduino repository by using the following command ... 
+
+```
+git clone git@github.com:helium/longfi-arduino.git
+```
+
+... to the following directory:
  
 ```
 linux: /home/{user}/Arduino/libraries
 windows: Documents/Arduino/libraries
 mac os: Documents/Arduino/libraries
 ```
-## Getting access to the LongFi TransmitPacket Sketch
- 
-To clone the longfi-arduino repository, use the following command: 
- 
-```
-git clone git@github.com:helium/longfi-arduino.git
-```
- 
+
 Then restart your Arduino IDE to load the library. 
+
+##
  
 # IMPORTANT TEMPORARY STEP
- 
+
+This step is currently necessary until the fix gets pushed to the board support packages. 
+
 <a href="https://github.com/helium/longfi-arduino/blob/master/B-L072Z-LRWAN1-board-support-fix.md" target="_blank">Link to fix</a> 
 
 ## Using the LongFi Device library
@@ -113,19 +107,21 @@ File -> Examples -> LongFi -> TransmitPacket
  <img src={LongFi_Example} /> 
  
 For the initial Beta, we only support one OUI - Organizationally Unique Identifier for routing device packets. 
-In the TransmitPacket sketch, make sure the OUI is set properly. 
+Make sure the OUI is set properly in the sketch. 
 The device_id should correspond with the device you onboard on Console.
 
 ```
 // set OUI and device_id to work with LongFi routing
 const uint32_t oui = 1;
-const uint16_t device_id = 24;
+const uint16_t device_id = 2;
+const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x44, 0x95, 0x71, 0x52, 0x4E, 0xE1, 0xCA, 0x13, 0xCE};
 ```
  
  ## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
  
 Instructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> 
- 
+
+
 Arduino IDE:
  
 ```
@@ -147,6 +143,12 @@ We will use the onboard ST-Link (Flasher/Debugger) to upload this sketch.
  
 Download and install the required utility from ST <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">here</a> 
  
+### MacOS Instructions
+
+<a href="https://gist.github.com/csukuangfj/bfe2be78eda3a24a5164005b1092c94b#1-install-jdk-8" target="_blank">Link to MacOS install</a> 
+
+## 
+
 Arduino IDE:
 
 ```
@@ -170,14 +172,14 @@ If there are no errors with your sketch, you should see `Done Compiling`
 Then, you can upload the sketch and program the development board. 
  
 Arduino IDE:
-* Select Sketch -> Upload (Ctrl + U)
+
+```
+Select Sketch -> Upload (Ctrl + U)
+```
  
 <img src={upload_success} />
  
-Congratulations! You have just created your first Helium LongFi application! However, we are not done just yet. Now we have to check that these packets were broadcast and received by a nearby hotspot. Helium has created a dashboard called [Console](https://developer.helium.com/console/overview), which will help you onboard devices, like the one you've just built. 
+Congratulations! You have just created your first Helium LongFi application! 
 
-## What else
+However, we are not done just yet. Now we have to hop back into Console to setup our channels and packet routing.  
 
-If you have questions or suggestions on how to improve upon this example, feel free to submit feedback to developer@helium.com
- 
-To see what other developers are working on, join the Helium Community <a href="https://community.helium.com/" target="_blank">here</a>. 
