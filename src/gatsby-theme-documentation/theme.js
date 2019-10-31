@@ -64,10 +64,10 @@ export default {
     h2: {
       variant: 'textStyles.heading',
       fontSize: 4,
-      fontWeight: '300',
+      fontWeight: '400',
       marginTop: 50,
       paddingTop: 50,
-      borderTop: '1px solid #9395bd',
+      borderTop: '1px solid #4B4B71',
       letterSpacing: '-0.5',
             color: 'white',
 
@@ -103,9 +103,9 @@ export default {
       fontSize: 1,
     },
     a: {
-      color: 'primary',
+      color: 'purple',
       '&:hover': {
-        color: 'secondary',
+        color: '#8D41D0',
       },
     },
 
@@ -161,7 +161,8 @@ export default {
       color: 'primary',
       bg: 'muted',
       p: '2px 6px',
-      borderRadius: '2px'
+      borderRadius: '2px',
+      fontSize: 1,
     },
     table: {
       width: '100%',
