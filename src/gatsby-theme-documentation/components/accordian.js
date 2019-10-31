@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { Global } from '@emotion/core'
 import merge from 'deepmerge'
 import Logo from './logo'
+import { globalHistory } from "@reach/router"
 
 
 const Overlay = ({ onClick }) => (
@@ -171,17 +172,17 @@ export const AccordionNav = React.forwardRef(
       })
     }
 
-    if (window.location.pathname === '/longfi/spec') expanded[1] = true
-    if (window.location.pathname === '/longfi/overview') expanded[1] = true
-    if (window.location.pathname === '/device/overview') expanded[2] = true
-    if (window.location.pathname === '/device/arduino-quickstart') expanded[2] = true
-    if (window.location.pathname === '/device/st-hal-quickstart') expanded[2] = true
-    if (window.location.pathname === '/device/rust-quickstart') expanded[2] = true
-    if (window.location.pathname === '/console/overview') expanded[3] = true
-    if (window.location.pathname === '/hotspot/overview') expanded[4] = true
-    if (window.location.pathname === '/hotspot/developer-setup') expanded[4] = true
-    if (window.location.pathname === '/blockchain/overview') expanded[5] = true
-    if (window.location.pathname === '/blockchain/api') expanded[5] = true
+    if (globalHistory.location.pathname === '/longfi/spec') expanded[1] = true
+    if (globalHistory.location.pathname === '/longfi/overview') expanded[1] = true
+    if (globalHistory.location.pathname === '/device/overview') expanded[2] = true
+    if (globalHistory.location.pathname === '/device/arduino-quickstart') expanded[2] = true
+    if (globalHistory.location.pathname === '/device/st-hal-quickstart') expanded[2] = true
+    if (globalHistory.location.pathname === '/device/rust-quickstart') expanded[2] = true
+    if (globalHistory.location.pathname === '/console/overview') expanded[3] = true
+    if (globalHistory.location.pathname === '/hotspot/overview') expanded[4] = true
+    if (globalHistory.location.pathname === '/hotspot/developer-setup') expanded[4] = true
+    if (globalHistory.location.pathname === '/blockchain/overview') expanded[5] = true
+    if (globalHistory.location.pathname === '/blockchain/api') expanded[5] = true
 
     return (
       <div>
