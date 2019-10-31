@@ -64,10 +64,13 @@ export default {
     h2: {
       variant: 'textStyles.heading',
       fontSize: 4,
-      fontWeight: '300',
+      fontWeight: '400',
       marginTop: 50,
+      paddingTop: 50,
+      borderTop: '1px solid #4B4B71',
       letterSpacing: '-0.5',
             color: 'white',
+
 
     },
     h3: {
@@ -80,22 +83,44 @@ export default {
 
     },
     h4: {
-      variant: 'textStyles.heading',
-      fontSize: 3,
+      
+      fontSize: 2,
+      marginTop: 20,
+      color: 'white',
+      fontWeight: 400,
     },
     h5: {
       variant: 'textStyles.heading',
-      fontSize: 2,
+      fontSize: 1,
+      textTransform: 'uppercase',
+      letterSpacing: '3px',
+      color: 'white',
+      mb: '10px',
+      mt: '20px',
     },
     h6: {
       variant: 'textStyles.heading',
       fontSize: 1,
     },
     a: {
-      color: 'primary',
+      color: 'purple',
       '&:hover': {
-        color: 'secondary',
+        color: '#8D41D0',
       },
+    },
+
+    ul: {
+      mt: 30,
+      mb: 30,
+    },
+
+    li: {
+      mb:10,
+    },
+
+    strong: {
+      color: 'white',
+      fontWeight: 500,
     },
     pre: {
       variant: 'prism',
@@ -113,13 +138,18 @@ export default {
       },
     },
     blockquote: {
-      color: 'gray',
+      color: 'background',
       marginTop: 40,
-      borderColor: 'gray',
-      borderLeftStyle: 'solid',
-      borderLeftWidth: '1px',
+      backgroundColor: 'purple',
       marginLeft: '0',
-      paddingLeft: 20,
+      p: '20px',
+      pt: '5px',
+      pb: '5px',
+      borderRadius: 10,
+      fontWeight: 400,
+      borderLeft: '10px solid #9446D7',
+      pl: '30px',
+      pr: '30px',
     },
     code: {
       fontFamily: 'monospace',
@@ -131,7 +161,8 @@ export default {
       color: 'primary',
       bg: 'muted',
       p: '2px 6px',
-      borderRadius: '2px'
+      borderRadius: '2px',
+      fontSize: 1,
     },
     table: {
       width: '100%',

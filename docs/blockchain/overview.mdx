@@ -1,56 +1,58 @@
-# Helium blockchain
+# Helium Blockchain
 
-The Helium blockchain is a new, public, distributed ledger, designed from the ground up to provide an efficient way to run application logic core to the Helium Network. Specifically it furnishes the immutable, append-only transaction system that is verified using the Helium Consensus Protocol.
+#### The Helium blockchain is a new, public, distributed ledger, designed from the ground up to provide an efficient way to run application logic core to the Helium Network. Specifically it furnishes the immutable, append-only transaction system that is verified using the Helium Consensus Protocol.
 
-In addition to a new consensus protocol, the Helium blockchain uses a new, novel work algorithm known as Proof of Coverage to secure the network and cryptographically verify the location of Hotspots that are providing wireless coverage to Helium LongFi-enabled IoT devices. These Hotspots are also responsible for submitting coverage proofs that provide details about their true location in and value to the Helium Network. Hotspots that submit the best proofs are more likely to be selected to a consensus group, and are thus responsible for verifying transactions and mining blocks.
+In addition to a new consensus protocol, the Helium blockchain uses a new, novel work algorithm known as Proof of Coverage to secure the network and cryptographically verify the location of Hotspots that are providing wireless coverage to Helium LongFi-enabled IoT devices. 
 
-## Helium blockchain Primitives
+These Hotspots are also responsible for submitting coverage proofs that provide details about their true location in and value to the Helium Network. Hotspots that submit the best proofs are more likely to be selected to a consensus group, and are thus responsible for verifying transactions and mining blocks.
+
+## Helium Blockchain Primitives
 
 ### Blocks
 
 Blocks are used to record the most recent set of transactions in the Helium blockchain. Blocks are mined based on time, as defined in the “block_time” chain variable. The current target block time is 60000 milliseconds (or 60 seconds). During any given epoch, the most recent block consists of:
 
-Block Version
-Block Height 
-Previous Block Hash
-Transactions (stored as a Merkle hash)
-Threshold signature from the current consensus group
+* Block Version
+* Block Height 
+* Previous Block Hash
+* Transactions (stored as a Merkle hash)
+* Threshold signature from the current consensus group
 
 The easiest way to see the blocks being mined is with the <a href="https://network.helium.com/blocks" target="_blank">Block Explorer</a>. The Helium Mobile App also shows block details. Developers can also use the Helium blockchain API to access all block transaction and metadata.
 
-## Epochs
+### Epochs
 An epoch is the target time period for which a given group of Hotspots is elected to serve as the consensus group. The target time for an epoch is currently 30 blocks, as defined in the election_interval chain variable. Approximately every 30 blocks mined marks the passing of an epoch, after which a new group of Hotspots is elected to form the next consensus group. 
 
 Mining rewards are distributed per epoch (as opposed to per block in most blockchain-based systems). At the conclusion of each epoch, the consensus group will distribute all the Helium tokens produced in that block via the `rewards` transaction. 
 
-## Transactions
+### Transactions
 
 The Helium blockchain currently has 20 native transaction types. Some appear in nearly every block mined while others were created to be used only once and will never heard from again. (You can see various transaction types in action using the Helium Block Explorer.) 
 
 All transactions occur on-chain, and all transactions require Data Credits to be submitted and confirmed. Here’s the current list of supported transaction (in no particular order):
 
-* add gateway - Add a new gateway to the Helium Network. For the purposes of transactions, a “gateway” is the term for a Helium-compliant Hotspot that is mining and providing coverage. 
-* assert location - Assert a gateway’s location on the Helium Network. This happens after a gateway has been added via the add gateway transaction. Once asserted, this location is then used as part of Proof of Coverage challenges. A Hotspot’s location can be asserted more than once but each subsequent assertion will a) cost a fee and b) reset that Hotspot’s score to neutral (.25)  
-* coinbase - Similar to the bitcoin blockchain’s coinbase transaction but used only during testnet phases of the Helium blockchain. The rewards transaction has taken its place.
-* consensus group - Marks the election of a new consensus group, responsible for mining during the next epoch.
-* create hashed timelock - Creates a transaction that can only be redeemed by providing the correct pre-image to the hashlock within the specified timelock. 
-* redeem hashed timelock - Redeem the transaction created using the create hashed timelock transaction. 
-* coinbase data credits - Created the initial 10,000 Data Credits required to bring the first group of Hotspots online. 
-* genesis gateway - Used to define the initial group of Hotspots that bootstrapped the blockchain. 
-* OUI - Create a OUI for a new router on the Helium network. In the Helium blockchain, Hotspots forward packets to routers that own them based on their OUI as stored in the blockchain.  
-* reward - A token payout for a specific event on the network such as submitting a valid proof of coverage request, participating in a consensus group, etc. 
-* rewards -  Bundles multiple reward transactions at the end of each epoch and distributes all HNT produced in that block to wallets that have earned them. 
-* payment - Used to send HNT between wallets. 
-create proof of coverage request - Submitted by a Hotspot wishing to initiate a challenge. 
-* proof of coverage receipts - The result of a POC submitted to the network upon completion. 
-* routing - Update the routing information associated with an OUI.
-* security coinbase - Distribution of security tokens in the genesis block. 
-* security exchange - The transfer of security tokens from one address to another. 
-* token burn exchange rate - Change the exchange rate for burning HNT to DCs. 
-* data credits - Burn HNT for DCs at the current exchange rate and deliver them to the target wallet address.
-* chain vars - Change a chain variable. 
+* **add gateway** - Add a new gateway to the Helium Network. For the purposes of transactions, a “gateway” is the term for a Helium-compliant Hotspot that is mining and providing coverage. 
+* **assert location** - Assert a gateway’s location on the Helium Network. This happens after a gateway has been added via the add gateway transaction. Once asserted, this location is then used as part of Proof of Coverage challenges. A Hotspot’s location can be asserted more than once but each subsequent assertion will a) cost a fee and b) reset that Hotspot’s score to neutral (.25)  
+* **coinbase** - Similar to the bitcoin blockchain’s coinbase transaction but used only during testnet phases of the Helium blockchain. The rewards transaction has taken its place.
+* **consensus group** - Marks the election of a new consensus group, responsible for mining during the next epoch.
+* **create hashed timelock** - Creates a transaction that can only be redeemed by providing the correct pre-image to the hashlock within the specified timelock. 
+* **redeem hashed timelock** - Redeem the transaction created using the create hashed timelock transaction. 
+* **coinbase data credits** - Created the initial 10,000 Data Credits required to bring the first group of Hotspots online. 
+* **genesis gateway** - Used to define the initial group of Hotspots that bootstrapped the blockchain. 
+* **OUI** - Create a OUI for a new router on the Helium network. In the Helium blockchain, Hotspots forward packets to routers that own them based on their OUI as stored in the blockchain.  
+* **reward** - A token payout for a specific event on the network such as submitting a valid proof of coverage request, participating in a consensus group, etc. 
+* **rewards** -  Bundles multiple reward transactions at the end of each epoch and distributes all HNT produced in that block to wallets that have earned them. 
+* **payment** - Used to send HNT between wallets. 
+* **create proof of coverage request** - Submitted by a Hotspot wishing to initiate a challenge. 
+* **proof of coverage receipts** - The result of a POC submitted to the network upon completion. 
+* **routing** - Update the routing information associated with an OUI.
+* **security coinbase** - Distribution of security tokens in the genesis block. 
+* **security exchange** - The transfer of security tokens from one address to another. 
+* **token burn exchange rate** - Change the exchange rate for burning HNT to DCs. 
+* **data credits** - Burn HNT for DCs at the current exchange rate and deliver them to the target wallet address.
+* **chain vars** - Change a chain variable. 
 
-## Chain Variables
+### Chain Variables
 
 Chain Variables, often referred to as “chain vars”, are a series of configuration settings for the Helium blockchain. Chain Variables can be used to change things like target block time, target epoch time, the minimum number of targets in a POC Challenge, and much more. 
 
