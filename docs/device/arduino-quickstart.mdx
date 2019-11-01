@@ -13,13 +13,13 @@ import device_packets from '../images/console/test_packets.png'
 # LongFi Arduino Quickstart Guide
  
 > ##### Important!  
-
-#### Before we begin, please make sure you've followed the steps from this [quickstart](/quickstart), which goes over some initial setup steps. 
+>Before we begin, please make sure you've followed the steps from this [guide](/quickstart), which goes over some initial setup steps. 
 
 ## Introduction
-One of our main organizational objectives is to maximize adoption and usage of the Helium Network. Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications. To help facilitate this hardware product development cycle, we have provided an Arduino wrapper for our LongFi protocol.
 
-This guide will show you step by step how to transmit LongFi packets using a longfi-arduino example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit. The open-source Arduino platform provides easy to use hardware and software and decreases the technical overhead for beginners. 
+#### Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications.
+
+#### This guide will show you step by step how to transmit LongFi packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
 
 ## Objective 
 
@@ -84,21 +84,12 @@ mac os: Documents/Arduino/libraries
 
 Then restart your Arduino IDE to load the library. 
  
-## IMPORTANT TEMPORARY STEP
+>##### IMPORTANT TEMPORARY STEP
 
 This step is currently necessary until the fix gets pushed to the board support packages. 
 
 <a href="https://github.com/helium/longfi-arduino/blob/master/B-L072Z-LRWAN1-board-support-fix.md" target="_blank">Link to fix</a> 
 
-## Using the LongFi Device library
- 
-Arduino IDE: 
- 
-```
-Sketch -> Include Library -> LongFi
-```
- 
-<img src={LongFi_Library} />
 
 ## LongFi TransmitPacket Example Sketch 
 
@@ -110,9 +101,7 @@ File -> Examples -> LongFi -> TransmitPacket
  
  <img src={LongFi_Example} /> 
  
-For the initial Beta, we only support one OUI - Organizationally Unique Identifier for routing device packets. 
-Make sure the OUI is set properly in the sketch. 
-The device_id should correspond with the device you onboard on Console.
+Make sure the OUI and device identifier correspond to the device details from Console. 
 
 ```
 // set OUI and device_id to work with LongFi routing
@@ -161,12 +150,14 @@ Supported operating systems and architectures:
 * Linux 64-bit 
 * Windows 7/8/10 32-bit and 64-bit 
 * MacOS (minimum version OS X Yosemite)
-* Java SE Run Time Environment 1.8 or newer must be installed (from Oracle)
-* If OpenJDK is used, you must download and install the OpenJFx library. 
+
+**Software Requirements**
+* <a href="https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="_blank">Java SE Run Time Environment 1.8</a> or newer must be installed (from Oracle)
+
 
 ### Windows Instructions
 
-The download comes with a `SetupSTM32CubeProgrmamer-[version].exe`, which guides you through the installation process. 
+The download comes with a `SetupSTM32CubeProgrammer-[version].exe`, which guides you through the installation process. 
 
 ### Linux Instructions
 
@@ -178,9 +169,7 @@ Run the following command:
 
 `java -jar SetupSTM32CubeProgrammer-[version].exe`
 
-Alternatively, you can run the `SetupSTM32CubeProgrammer-[version].app` which guides you through the installation process. 
-
-**You should only use the default installation path.** 
+**You should use the default installation path.** 
 ## 
 
 Arduino IDE:
@@ -215,65 +204,10 @@ Select Sketch -> Upload (Ctrl + U)
  
 Congratulations! You have just programmed your first Helium LongFi application! 
 
-However, we are not done just yet. Now we have to switch back into Console to setup our channels and packet routing.  
+However, we are not done just yet. Now let's head back to Console and look at our device. 
 
-## Channels
-
-Create channels to route your device data to its final destination. Channels, when set up correctly, make it easy to forward data to popular cloud services such as Google Cloud IoT, Microsoft Azure, Amazon, and more. 
-
-Once you set up a channel, it can be selected and used with any device.
-
-**During the SDK Beta, only HTTP channels are available.**
-
-### Add an HTTP Channel
-
-To add a channel, go to **Channels** on the left menu. Select the channel to add - in this case, the **HTTP** channel.
-
-The next step is to paste the HTTP endpoint.
-
-If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. <a href="https://www.requestbin.com">Requestbin </a> and <a href="https://www.beeceptor.com">Beeceptor </a>provide tools to make an HTTP endpoint quickly and easily.
-
-### Requestbin Example
-Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint..
-
-<img src={request_bin} />
-
-... and paste it in Console.
-
-<img src={pasted_endpoint} />
-
-**HTTP Header** and **Value** are not required and those can be left blank. 
-
-Lastly, provide a name for the channel. Names do not have to be unique.
-
-Click **Create Channel**.
-
-Your new channel is now ready for use.
-
-### Set Default Channel 
-[setchannel]: #setchannel
-
-To set a channel as the default for all newly created devices, go to **Channels** on the left menu and click **Set Default** for the desired channel. 
-
-<img src={set_channel_as_default} />
-
-### Set Multiple Channels
-Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
-
-To send to another channel, click **Connect Channel**, select a channel, and click **Add**.
-
-### Real Time Packets
-
-Let's go back to **Devices** and select the device that you have created. 
-
-Now we can watch in real time as data packets flow through the Helium Network. 
+You should be able to see some packets appear as Live Data. 
 
 <img src={device_packets} />
 
-When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on. The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot. 
-
-**Real Time Packets are available only in an active Console session**
-View packets as they come in real time. If you close the window or the window is no longer active, data will not appear. 
-
-#### Now we are finished with this example! Congratulations! We have successfully built a device that can communicate via LongFi on the Helium Network! 
-
+To learn about routing these packets to an endpoint, check out this guide. 
