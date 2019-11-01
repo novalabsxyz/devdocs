@@ -150,6 +150,17 @@ export default {
       borderLeft: '10px solid #9446D7',
       pl: '30px',
       pr: '30px',
+
+      a: {
+        color: '#27284B',
+        ":hover": {
+          color: 'white',
+          textDecoration: 'underline',
+        },
+        
+      },
+      
+
     },
     code: {
       fontFamily: 'monospace',
