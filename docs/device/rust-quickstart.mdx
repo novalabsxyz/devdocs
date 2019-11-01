@@ -1,5 +1,6 @@
 import vs_code_debug_view from '../images/device/vs_code_debug_view.png'
 import vs_code_config_select from '../images/device/vs_code_config_select.png'
+import device_packets from '../images/console/test_packets.png'
 
 # Rust Quickstart Guide 
 
@@ -67,3 +68,11 @@ Once the server finishes starting up and listens to the port, `cargo run --examp
 If `cargo run` has trouble connecting, double check that the correct runner is selected in `.cargo/config`. In particular, `runner = "arm-none-eabi-gdb -q -x jlink.gdb"` should be uncommented.
 
 Note that there are instructions on [the BSC Github](https://github.com/lthiery/b-l072z-lrwan1-rs) about how to use JLinkServer instead of OpenOCD.
+
+Let's head back to Console and look at our device. 
+
+You should be able to see some packets appear as Live Data. 
+
+<img src={device_packets} />
+
+To learn about routing these packets to an endpoint, check out this [guide] (/console/routing-data). 
