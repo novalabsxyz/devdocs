@@ -147,7 +147,13 @@ We will use the onboard ST-Link (Flasher/Debugger) to upload this sketch.
  
 Download and install the required utility from ST <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">here</a> 
 
-The download comes in the form of a `stm32cubeprog.zip` file, which you'll need to unpack. 
+The download comes in the form of a `stm32cubeprog.zip` file, which you'll need to unpack. After you unzip, you should see the following files:
+
+```
+SetupSTM32CubeProgrammer-[version].exe
+SetupSTM32CubeProgrammer-[version].linux
+SetupSTM32CubeProgrammer-[version].app
+```
 
 ### Installation Requirements
 
@@ -172,11 +178,9 @@ Run the following command:
 
 `java -jar SetupSTM32CubeProgrammer-[version].exe`
 
-Use only the default installation path: `/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer`
-
 Alternatively, you can run the `SetupSTM32CubeProgrammer-[version].app` which guides you through the installation process. 
 
-
+**You should only use the default installation path.** 
 ## 
 
 Arduino IDE:
