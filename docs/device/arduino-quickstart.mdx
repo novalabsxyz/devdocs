@@ -5,6 +5,9 @@ import LongFi_Example from '../images/device/LongFi_Example.png'
 import LongFi_Library from '../images/device/LongFi_library.png' 
 import upload_sketch from '../images/device/upload_sketch.png' 
 import upload_success from '../images/device/Arduino_Upload_Successful.png'
+import request_bin from '../images/console/request_bin.png' 
+import pasted_endpoint from '../images/console/pasted_endpoint.png' 
+import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
 
 # LongFi Arduino Quickstart Guide
  
@@ -24,6 +27,7 @@ In this guide, you will learn:
 * How to setup your environment (Add STM32 board support to Arduino and STLink debugging utility)
 * How to build and program a basic application that will send packets on the Helium Network
 * How to route the packets from your device to an HTTP endpoint using the Helium Console.
+* Verify real time packets sent to a Helium Hotspot and routed to an HTTP endpoint. 
  
 For this example, you’ll need the following:
 
@@ -78,10 +82,8 @@ mac os: Documents/Arduino/libraries
 ```
 
 Then restart your Arduino IDE to load the library. 
-
-##
  
-# IMPORTANT TEMPORARY STEP
+## IMPORTANT TEMPORARY STEP
 
 This step is currently necessary until the fix gets pushed to the board support packages. 
 
@@ -206,7 +208,65 @@ Select Sketch -> Upload (Ctrl + U)
  
 <img src={upload_success} />
  
-Congratulations! You have just created your first Helium LongFi application! 
+Congratulations! You have just programmed your first Helium LongFi application! 
 
-However, we are not done just yet. Now we have to hop back into Console to setup our channels and packet routing.  
+However, we are not done just yet. Now we have to switch back into Console to setup our channels and packet routing.  
+
+## Channels
+
+Create channels to route your device data to its final destination. Channels, when set up correctly, make it easy to forward data to popular cloud services such as Google Cloud IoT, Microsoft Azure, Amazon, and more. 
+
+Once you set up a channel, it can be selected and used with any device.
+
+**During the SDK Beta, only HTTP channels are available.**
+
+### Add an HTTP Channel
+
+To add a channel, go to **Channels** on the left menu. Select the channel to add - in this case, the **HTTP** channel.
+
+The next step is to paste the HTTP endpoint.
+
+If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. <a href="https://www.requestbin.com">Requestbin </a> and <a href="https://www.beeceptor.com">Beeceptor </a>provide tools to make an HTTP endpoint quickly and easily.
+
+### Requestbin Example
+Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint..
+
+<img src={request_bin} />
+
+... and paste it in Console.
+
+<img src={pasted_endpoint} />
+
+**HTTP Header** and **Value** are not required and those can be left blank. 
+
+Lastly, provide a name for the channel. Names do not have to be unique.
+
+Click **Create Channel**.
+
+Your new channel is now ready for use.
+
+### Set Default Channel 
+[setchannel]: #setchannel
+
+To set a channel as the default for all newly created devices, go to **Channels** on the left menu and click **Set Default** for the desired channel. 
+
+<img src={set_channel_as_default} />
+
+### Set Multiple Channels
+Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
+
+To send to another channel, click **Connect Channel**, select a channel, and click **Add**.
+
+### Real Time Packets
+
+Let's go back to **Devices** and select the device that you have created. 
+
+Now we can watch in real time as data packets flow through the Helium Network. 
+
+When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on. The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot. 
+
+**Real Time Packets are available only in an active Console session**
+View packets as they come in real time. If you close the window or the window is no longer active, data will not appear. 
+
+#### Now we are finished with this example! Congratulations! We have successfully built a device that can communicate via LongFi on the Helium Network! 
 
