@@ -18,87 +18,12 @@ Device Management includes:
 
 Note: In order for device packet data to route to the internet, you'll need to be within range of the Helium Network. To check if there is coverage in your area, view our <a href="https://network.helium.com">coverage map</a>. 
 
-If you are not within range, you can [build your own Hotspot](/hotspot/developer-setup) or purchase one from the <a href="https://helium.com/store">Helium Store</a>.
+If you do not see any hotspots in your area, we have a few options available. You can purchase a Hotspot by sending a request to developer@helium.com. 
 
-## Account Creation
+Alternatively, if you'd like to get your hands dirty, we have [instructions](/hotspot/developer-setup) on how to build your own Hotspot for LongFi packet forwarding using off the shelf components. Note that this Hotspot is designed to only forward packets, and not mine Helium tokens. 
 
-During Registration, you'll be asked to provide an Organization name and a Team name.
+## Learn about device setup
+[Device Setup](/console/device-setup)
 
-Define an Organization name for the top level owner of the account (ie: company name). Think of Teams as a way to organize groups of devices.
-
-## Device Management
-
-[Helium Console](https://console.helium.com) enables developers to add devices and grab the device identifiers to load onto their device firmware that authenticates and identifies the device for the Helium Network.
-Devices are LongFi-compatible hardware that have an on-board LoRa radio module and a SoC (system on a chip). 
-
-To find out which devices are compatible with the Helium Network, head to [Device](/device/overview).
-
-Device management allows users to:
-
-* Add a Device
-* Rename Device
-* Remove a Device 
-
-### Channels
-
-[Helium Console](https://console.helium.com) allows developers to route device packets to a variety of different channels. 
-
-### Real Time Packets
-Watch in real time as data packets flow through the Helium Network. 
-
-When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on. The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot. 
-
-**Real Time Packets are available only in an active Console session**
-View packets as they come in real time. If you close the window or the window is no longer active, data will not appear. 
-
-### Event Log
-Event Logs display real time packets in table form. See which Hotspot received the packet, its RSSI, and the size of the packet.
-
-Event logs are behave the same as real time packets. Data is not stored in console so the console window must be open in order to view live packets.
-
-
-## Team Management
-
-### Channels
-
-Create channels to route your device data to its final destination. Channels, when set up correctly, make it easy to forward data to popular cloud services such as Google Cloud IoT, Microsoft Azure, Amazon, and more. 
-
-Once you set up a channel, it can be selected and used with any device.
-
-**During the SDK Beta, only HTTP channels are available.**
-
-More channels coming soon!
-
-### Channel Details 
-View the details of your channel by clicking on the Channel name. 
-
-**Channel Details** shows the channel ID that is unique to each channel, the name, the type of channel, and whether it is active or ont.
-
-**HTTP Details** shows the specific endpoint. Editing endpoints is not available in the SDK Beta and will be coming soon. If you no longer want to use a channel, simply create a new one and redirect existing devices using the old channel to use the new one.
-
-**Devices Piped** lists all the devices that are currently sending their data to the selected channel.
-
-### Delete a Channel
-
-You can delete a channel by clicking **Delete**
-
-### Edit a Channel
-
-You can modify a channel by clicking **Update** 
-
-## Data Credits
-
-Data Credits are used to pay for data packets on the Helium Network. To acquire data credits, one would need to burn Helium Network Tokens (HNT) to get data credits.
-
-Alternatively, Console provides the ability to purchase data credits without HNT.
-
-**During the SDK Beta, all data packet transmission is free**
-
-## Access Controls
-
-### Levels of Access
-
-Editing Organization name (Coming soon)
-
-Editing Team name (Coming soon)
-
+## Learn how to route device data 
+[Routing Data] (/console/routing-data)
