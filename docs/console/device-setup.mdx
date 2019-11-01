@@ -1,0 +1,79 @@
+import Change_Device_Name from '../images/console/Change_Device_Name.png' 
+import request_bin from '../images/console/request_bin.png' 
+import pasted_endpoint from '../images/console/pasted_endpoint.png' 
+import register from '../images/console/register.png' 
+import create_device from '../images/console/create_device.png' 
+import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
+
+# Console - Device Setup
+
+## Objective
+
+This device setup guide will cover how to: 
+
+* Register an account on Helium Console 
+* Add a device to Helium Console and record device details 
+
+## Create an account
+
+To register for an account, visit <a href="https://console.helium.com" target="_blank">Helium Console</a> and click **Register**.
+
+During Registration, you'll be asked to provide an Organization name and a Team name.
+
+Define an Organization name for the top level owner of the account (ie: company name). Think of Teams as a way to organize groups of devices.
+
+<img src={register} />
+
+### Confirm your account
+A confirmation email will be sent to the email address used to create an account. You must confirm the account in order to continue using Console. If you did not receive an email, please check your spam folders.
+
+## Device Management
+
+Helium Console allows developers to add devices and grab the device identifiers to load onto their device firmware that authenticates and identifies the device for the Helium Network.
+
+### Add a Device
+
+To add a device, go to **Devices** and click the **+** icon on the bottom right of the window.
+
+<img src={create_device} />
+
+When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
+
+> ##### Important!  
+
+Make sure you record the `OUI` and `device id`, which will be needed when you program your device. 
+
+For example: 
+
+```
+const uint32_t oui = 1;
+const uint16_t device_id = 2;
+const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x44, 0x95, 0x71, 0x52, 0x4E, 0xE1, 0xCA, 0x13, 0xCE};
+```
+
+##
+
+Now that we've added a device on Console, let's build our device! 
+
+We've curated 3 quickstart guides for you to follow, which you can access directly below.  
+
+### LongFi Arduino
+Beginner friendly LongFi Arduino library.  
+
+[LongFi Arduino - Quickstart](/device/arduino-quickstart)
+
+### LongFi ST HAL
+ST HAL library 
+
+[LongFi ST HAL - Quickstart](/device/st-hal-quickstart)
+
+### LongFi Device Rust
+Rust bindings to LongFi 
+
+[LongFi Device Rust - Quickstart](/device/rust-quickstart)
+
+
+
+
+
+

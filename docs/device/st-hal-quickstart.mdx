@@ -1,9 +1,16 @@
 import vs_code_debug_view from '../images/device/vs_code_debug_view.png'
 import vs_code_config_select from '../images/device/vs_code_config_select.png'
+import device_packets from '../images/console/no_channel_packets.png'
+import disco_board from '../images/device/disco_board.png'
 
 # LongFi ST HAL Quickstart 
 
-Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications.
+> ##### Important!  
+> Before we begin, please make sure you've followed the steps from this [guide](/quickstart), which goes over some initial setup steps. 
+
+## Introduction
+
+#### Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications.
 
 #### This guide will show you step by step how to transmit LongFi packets using a longfi-st-hal example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
 
@@ -15,6 +22,16 @@ To follow along, you'll need the following:
   * Run `./configure --enable-stlink` to install st-link support.
 * <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>  
 * <a href="https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug" target="_blank">Cortex Debug Extension</a>
+
+## Hardware setup
+
+The build for this project is easy! You’ll just need to install the included antenna.  
+ 
+We'll be using the ST-Link debugger on the Discovery board, so you'll want to connect the micro-USB B connector to the micro-USB port labeled `CN7 USB STLINK`.
+
+<img src={disco_board} /> 
+
+That’s it for the hardware setup! 
 
 ## Compiling  
 
@@ -87,3 +104,11 @@ Make sure that you have already compiled the firmware, steps above if you haven'
 To start a debug session, make sure you have your `Cortex Debug` config selected and click the play icon. After a few seconds, your firmware should be loaded on the board and paused in the reset handler.
 
 You are now debugging!
+
+Let's head back to [Helium Console](https://console.helium.com) and look at our device. 
+
+You should be able to see some packets appear as Live Data. 
+
+<img src={device_packets} />
+
+To learn about routing these packets to an endpoint, check out this [guide] (/console/routing-data). 

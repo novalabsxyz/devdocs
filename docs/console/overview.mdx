@@ -6,7 +6,7 @@ import create_device from '../images/console/create_device.png'
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
 
 
-# Console
+# Console - Overview
 
 Helium Console is a device management tool hosted by Helium and allows developers to register, authenticate, and manage their devices to use on the Helium Network. In addition to device management, Console provides services to route device data to HTTP endpoints. In the future, we will support MQTT topics, and other popular cloud solutions like Google Cloud IoT, Microsoft Azure, and more.
 
@@ -18,146 +18,12 @@ Device Management includes:
 
 Note: In order for device packet data to route to the internet, you'll need to be within range of the Helium Network. To check if there is coverage in your area, view our <a href="https://network.helium.com">coverage map</a>. 
 
-If you are not within range, you can [build your own Hotspot](/hotspot/developer-setup) or purchase one from the <a href="https://helium.com/store">Helium Store</a>. There is special pricing for Developers, so please reach out to developer@helium.com before making a purchase.
+If you do not see any hotspots in your area, we have a few options available. You can purchase a Hotspot by sending a request to developer@helium.com. 
 
-## Create an account
+Alternatively, if you'd like to get your hands dirty, we have [instructions](/hotspot/developer-setup) on how to build your own Hotspot for LongFi packet forwarding using off the shelf components. Note that this Hotspot is designed to only forward packets, and not mine Helium tokens. 
 
-To register for an account, visit <a href="https://console.helium.com">console.helium.com</a> and click **Register**.
+## Learn about device setup
+[Device Setup](/console/device-setup)
 
-During Registration, you'll be asked to provide an Organization name and a Team name.
-
-<img src={register} />
-
-Organizations are the top level owner of the account and can be anything you like. Teams belong to organizations, and devices belong to a team. Think of teams as your first way to organize devices. Example Organization/Team naming conventions can be:
-- Manufacturing Company/Floor 1, Floor 2, Floor 3
-- Tech Company/Dog Tracker, Tracking Keychains, Bike Tracker
-- Apartment Building Name/Water Sensors, Motion, Current
-
-### Confirm your account
-A confirmation email will be sent to the email address used to create an account. You must confirm the account in order to continue using Console. If you did not receive an email, please check your spam folders.
-
-## Device Management
-
-[Helium Console](https://console.helium.com) enables developers to add devices and grab the device identifiers to load onto their device firmware that authenticates and identifies the device for the Helium Network.
-Devices are LongFi-compatible hardware that have an on-board LoRa radio module and a SoC (system on a chip). 
-
-To find out which devices are compatible with the Helium Network, head to [Device](/device/overview).
-
-### Add a Device
-
-To add a device, go to **Devices** and click the **+** icon on the bottom right of the window.
-
-<img src={create_device} />
-
-When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
-
-### Rename a Device
-
-To rename a device, go to the device's details and enter a new name. Click **Update**.
-
-<img src={Change_Device_Name} />
-
-### Remove a Device
-
-Coming soon.
-
-### Set Channels
-Determine where your data should go on a per-device basis. Click the **Connect Channel** dropdown and select a channel. Note that by default, the default channel will always be selected unless another channel is selected. To set a channel as default, go to [Set Channel as Default](#setchannel)
-
-Click **Add** to connect the channel with the device.
-
-### Set Multiple Channels
-Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
-
-To send to another channel, click **Connect Channel**, select a channel, and click **Add**.
-
-### Real Time Packets
-Watch in real time as data packets flow through the Helium Network. 
-
-When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on. The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot. 
-
-**Real Time Packets are available only in an active Console session**
-View packets as they come in real time. If you close the window or the window is no longer active, data will not appear. 
-
-### Event Log
-Event Logs display real time packets in table form. See which Hotspot received the packet, its RSSI, and the size of the packet.
-
-Event logs are behave the same as real time packets. Data is not stored in console so the console window must be open in order to view live packets.
-
-
-## Team Management
-
-### Channels
-
-Create channels to route your device data to its final destination. Channels, when set up correctly, make it easy to forward data to popular cloud services such as Google Cloud IoT, Microsoft Azure, Amazon, and more. 
-
-Once you set up a channel, it can be selected and used with any device.
-
-**During the SDK Beta, only HTTP channels are available.**
-
-More channels coming soon!
-
-### Add an HTTP Channel
-
-To add a channel, go to **Channels** on the left menu. Select the channel to add - in this case, the **HTTP** channel.
-
-The next step is to paste the HTTP endpoint.
-
-If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. <a href="https://www.requestbin.com">Requestbin </a> and <a href="https://www.beeceptor.com">Beeceptor </a>provide tools to make an HTTP endpoint quickly and easily.
-
-### Requestbin Example
-Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint..
-
-<img src={request_bin} />
-
-... and paste it in Console.
-
-<img src={pasted_endpoint} />
-
-**HTTP Header** and **Value** are not required and those can be left blank. 
-
-Lastly, provide a name for the channel. Names do not have to be unique.
-
-Click **Create Channel**.
-
-Your new channel is now ready for use.
-
-### Set Default Channel 
-[setchannel]: #setchannel
-
-To set a channel as the default for all newly created devices, go to **Channels** on the left menu and click **Set Default** for the desired channel. 
-
-<img src={set_channel_as_default} />
-
-### Device details
-View the details of your channel by clicking on the Channel name. 
-
-**Channel Details** shows the channel ID that is unique to each channel, the name, the type of channel, and whether it is active or ont.
-
-**HTTP Details** shows the specific endpoint. Editing endpoints is not available in the SDK Beta and will be coming soon. If you no longer want to use a channel, simply create a new one and redirect existing devices using the old channel to use the new one.
-
-**Devices Piped** lists all the devices that are currently sending their data to the selected channel.
-
-### Delete a Channel
-
-Feature coming soon.
-
-### Edit a Channel
-
-Feature coming soon.
-
-## Data Credits
-
-Data Credits are used to pay for data packets on the Helium Network. To acquire data credits, one would need to burn Helium Network Tokens (HNT) to get data credits.
-
-Alternatively, Console provides the ability to purchase data credits without HNT.
-
-**During the SDK Beta, all data packet transmission is free**
-
-## Access Controls
-
-### Levels of Access
-
-Editing Organization name (Coming soon)
-
-Editing Team name (Coming soon)
+## Learn how to route device data 
+[Routing Data] (/console/routing-data)
