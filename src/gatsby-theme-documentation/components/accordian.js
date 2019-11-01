@@ -172,8 +172,6 @@ export const AccordionNav = React.forwardRef(
       })
     }
 
-    if (globalHistory.location.pathname === '/longfi/spec') expanded[1] = true
-    if (globalHistory.location.pathname === '/longfi/overview') expanded[1] = true
     if (globalHistory.location.pathname === '/device/overview') expanded[2] = true
     if (globalHistory.location.pathname === '/device/arduino-quickstart') expanded[2] = true
     if (globalHistory.location.pathname === '/device/st-hal-quickstart') expanded[2] = true
@@ -183,7 +181,9 @@ export const AccordionNav = React.forwardRef(
     if (globalHistory.location.pathname === '/console/routing-data') expanded[3] = true
     if (globalHistory.location.pathname === '/hotspot/overview') expanded[4] = true
     if (globalHistory.location.pathname === '/hotspot/developer-setup') expanded[4] = true
-    if (globalHistory.location.pathname === '/blockchain/overview') expanded[5] = true
+    if (globalHistory.location.pathname === '/longfi/overview') expanded[5] = true
+    if (globalHistory.location.pathname === '/longfi/spec') expanded[5] = true
+    if (globalHistory.location.pathname === '/blockchain/overview') expanded[6] = true
 
     return (
       <div>
@@ -272,13 +272,9 @@ export const AccordionNav = React.forwardRef(
           </ul>
         </div>
         <style jsx>{`
-
 .logo {
               display: none;
             }
-
-
-
           @media only screen and (max-width: 640px) {
             .logo {
               display: block;
@@ -286,12 +282,7 @@ export const AccordionNav = React.forwardRef(
               margin-top: 30px;
               margin-bottom: 30px;
             }
-
-
-
           }
-
-
         `}</style>
       </div>
     )
