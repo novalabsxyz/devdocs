@@ -179,10 +179,11 @@ export const AccordionNav = React.forwardRef(
     if (globalHistory.location.pathname === '/device/st-hal-quickstart') expanded[2] = true
     if (globalHistory.location.pathname === '/device/rust-quickstart') expanded[2] = true
     if (globalHistory.location.pathname === '/console/overview') expanded[3] = true
+    if (globalHistory.location.pathname === '/console/device-setup') expanded[3] = true
+    if (globalHistory.location.pathname === '/console/routing-data') expanded[3] = true
     if (globalHistory.location.pathname === '/hotspot/overview') expanded[4] = true
     if (globalHistory.location.pathname === '/hotspot/developer-setup') expanded[4] = true
     if (globalHistory.location.pathname === '/blockchain/overview') expanded[5] = true
-    if (globalHistory.location.pathname === '/blockchain/api') expanded[5] = true
 
     return (
       <div>
