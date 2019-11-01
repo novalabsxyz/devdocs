@@ -27,8 +27,7 @@ In this guide, you will learn:
 
 * How to setup your environment (Add STM32 board support to Arduino and STLink debugging utility)
 * How to build and program a basic application that will send packets on the Helium Network
-* How to route the packets from your device to an HTTP endpoint using the Helium Console.
-* Verify real time packets sent to a Helium Hotspot and routed to an HTTP endpoint. 
+* Verify real time packets sent to a Helium Hotspot on Console. 
  
 For this example, you’ll need the following:
 
@@ -84,7 +83,7 @@ mac os: Documents/Arduino/libraries
 
 Then restart your Arduino IDE to load the library. 
  
->##### IMPORTANT TEMPORARY STEP
+>##### IMPORTANT TEMPORARY STEP!
 
 This step is currently necessary until the fix gets pushed to the board support packages. 
 
@@ -100,8 +99,9 @@ File -> Examples -> LongFi -> TransmitPacket
 ```
  
  <img src={LongFi_Example} /> 
- 
-Make sure the OUI and device identifier correspond to the device details from Console. 
+
+> #### Important! 
+> Make sure the OUI and device identifier correspond to the device details from Console. 
 
 ```
 // set OUI and device_id to work with LongFi routing
@@ -146,7 +146,7 @@ SetupSTM32CubeProgrammer-[version].app
 
 ### Installation Requirements
 
-Supported operating systems and architectures:
+**Supported operating systems and architectures**
 * Linux 64-bit 
 * Windows 7/8/10 32-bit and 64-bit 
 * MacOS (minimum version OS X Yosemite)
