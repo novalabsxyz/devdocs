@@ -6,14 +6,15 @@ import LongFi_Library from '../images/device/LongFi_library.png'
 import upload_sketch from '../images/device/upload_sketch.png' 
 import upload_success from '../images/device/Arduino_Upload_Successful.png'
 
-# LongFi Arduino Guide
+# LongFi Arduino Quickstart Guide
  
-> ##### Important 
-> Before we begin, please make sure you've followed the steps from the [quickstart](/quickstart).
+> ##### Important!  
 
-#### One of our main organizational objectives is to maximize adoption and usage of the Helium Network. Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications. To help facilitate this hardware product development cycle, we have provided an Arduino wrapper for our LongFi protocol.
+#### Before we begin, please make sure you've followed the steps from this [quickstart](/quickstart), which goes over some initial setup steps. 
 
 ## Introduction
+One of our main organizational objectives is to maximize adoption and usage of the Helium Network. Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications. To help facilitate this hardware product development cycle, we have provided an Arduino wrapper for our LongFi protocol.
+
 This guide will show you step by step how to transmit LongFi packets using a longfi-arduino example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit. The open-source Arduino platform provides easy to use hardware and software and decreases the technical overhead for beginners. 
 
 ## Objective 
@@ -35,7 +36,7 @@ For this example, you’ll need the following:
 
 * <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino software (IDE)</a> 
 * <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">STM32 Board Support</a> 
-* <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">STLink Debugging Utility</a> - (Java JDK needed for MacOS install)
+* <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">STLink Debugging Utility</a> 
 * <a href="https://console.helium.com/" target="_blank">Helium Console</a> 
 
 ## Hardware setup
@@ -142,10 +143,36 @@ Select Tools -> Board part number -> Discovery L072Z-LRWAN1
 We will use the onboard ST-Link (Flasher/Debugger) to upload this sketch. 
  
 Download and install the required utility from ST <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">here</a> 
- 
+
+The download comes in the form of a `stm32cubeprog.zip` file, which you'll need to unpack. 
+
+### Installation Requirements
+
+Supported operating systems and architectures:
+* Linux 64-bit 
+* Windows 7/8/10 32-bit and 64-bit 
+* MacOS (minimum version OS X Yosemite)
+* Java SE Run Time Environment 1.8 or newer must be installed (from Oracle)
+* If OpenJDK is used, you must download and install the OpenJFx library. 
+
+### Windows Instructions
+
+The download comes with a `SetupSTM32CubeProgrmamer-[version].exe`, which guides you through the installation process. 
+
+### Linux Instructions
+
+The download comes with a `SetupSTM32CubeProgrammer-[version].linux`, which guides you through the installation process. 
+
 ### MacOS Instructions
 
-<a href="https://gist.github.com/csukuangfj/bfe2be78eda3a24a5164005b1092c94b#1-install-jdk-8" target="_blank">Link to MacOS install</a> 
+Run the following command: 
+
+`java -jar SetupSTM32CubeProgrammer-[version].exe`
+
+Use only the default installation path: `/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer`
+
+Alternatively, you can run the `SetupSTM32CubeProgrammer-[version].app` which guides you through the installation process. 
+
 
 ## 
 

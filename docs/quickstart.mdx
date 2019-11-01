@@ -51,8 +51,9 @@ To add a device, go to **Devices** and click the **+** icon on the bottom right 
 
 When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
 
-Make sure you copy the device details (OUI - Organization Unique Identifier, device ID, and the preshared key), which will be needed when you program your device. During the duration of this beta, we will be using `OUI = 1` and a pre-shared key. 
+Make sure you copy the `device id`, which will be needed when you program your device. During the duration of this beta, we will be using `OUI = 1` and a pre-shared key. 
 
+For example: 
 
 ```
 const uint32_t oui = 1;
@@ -62,7 +63,7 @@ const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x4
 
 ## Hardware Setup
 
-The build for this project is easy! We’ll be using the <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a> for reference. 
+The build for this project is easy! We’ll be using the stock <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a> for reference. 
 
 Since we're using the ST-Link debugger on the Discovery board, so you’ll want to connect the micro USB B connector to the micro-USB port labeled `CN7 USB STLINK`. 
 
@@ -70,7 +71,9 @@ That’s it for the hardware setup!
 
 ##
 
-Next we've curated 3 quickstart guides for you to follow. 
+To learn more about our devices, visit our [Device Overview] (/Overview). 
+
+We've curated 3 quickstart guides for you to follow, which you can access directly below.  
 
 ### LongFi Arduino
 Beginner friendly LongFi Arduino library 
