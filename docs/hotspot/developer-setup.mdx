@@ -63,7 +63,7 @@ sudo apt-get install -f
 Install various other dependencies:
 
 ```
-sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev
+sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev libclang-dev doxygen
 ```
 
 ### Compile the Miner
@@ -203,6 +203,7 @@ Once you have concentrate and rustup installed, we can use Rust's package manage
 
 ```
 cd concentrate
+git submodule update --init
 cargo build
 ```
 
@@ -210,13 +211,14 @@ Once complete, you're ready to run concentrate.
 
 ### Using concentrate
 
-Start up concentrate by running:
+Start up concentrate and the longfi protocol wrapper by running:
 
 ```
-./target/debug/concentrate serve
+./target/debug/concentrate serve &
+./target/debug/concentrate longfi &
 ```
 
-If you want to be able to see pretty printed packets in the console you can use:
+If you want to be able to see pretty printed packets in the console you can instead use:
 
 ```
 ./target/debug/concentrate serve -p
