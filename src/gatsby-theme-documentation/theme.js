@@ -154,9 +154,11 @@ export default {
 
       a: {
         color: '#27284B',
+        pb: 10,
         ":hover": {
           color: 'white',
           textDecoration: 'underline',
+
         },
 
         p: {
