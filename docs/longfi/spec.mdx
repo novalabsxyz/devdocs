@@ -1,12 +1,18 @@
+
+import protocol from '../images/longfi/protocol.png' 
+
+
 # Helium LongFi Protocol
 
-Table of Contents
-=================
+## Table of Contents
 
-* [Summary](#summary)
-* [Versioning](#versioning)
-* [LoRa Physical Layer](#lora)
-* [Protocol](#protocol)
+[Summary](#summary)
+
+[Versioning](#versioning)
+
+[LoRa Physical Layer](#lora)
+
+[Protocol](#protocol)
   * [Datagrams](#datagrams)
   * [Joining](#joining)
   * [Uplink](#uplink)
@@ -14,7 +20,8 @@ Table of Contents
   * [Fingerprints](#fingerprints)
   * [Fragmentation](#fragmentation)
   * [Channels](#channels)
-* [Regulatory](#regulatory)
+
+[Regulatory](#regulatory)
 
 ## Summary
 [summary]: #summary
@@ -52,25 +59,9 @@ It is expected that _Organizations_ deploying one or more _Devices_ will operate
 
 In this sense LongFi combined with the Helium blockchain provides VPN-like functionality for an Organization; any Device whose Datagrams are heard by any Hotspot anywhere in the world will always be delivered to the correct Router.
 
-```
-     ┌──────────┐
-     │  Router  │
-     └──────────┘
-           ▲
-     ┌─────┴─────┐
-     ▼           ▼
-┌─────────┐ ┌─────────┐
-│ Hotspot │ │ Hotspot │
-└─────────┘ └─────────┘
-     ▲           ▲
-     └─────┬─────┘
-           ▼
-    ┌────────────┐
-    │   Device   │
-    └────────────┘
-```
+<img src={protocol} />
 
-### Datagrams
+## Datagrams
 [datagrams]: #datagrams
 
 Due to variations on packet transmission size and time imposed by various regulatory domains it is impossible to send payloads of arbitrary size over unlicensed spectrum. As a consequence LongFi aims to provide a generic mechanism to spread the arbitrary payload over a number of smaller Datagrams that are guaranteed to comply with any regulatory domain's restrictions. Additionally, smaller transmissions can significantly improve the packet error rate (PER) as they are less susceptible to noise and interference due to the shorter transmission duration. A Datagram's focus should be on imposing as little overhead as possible while retaining enough information for routing and verification. As LongFi is a versioned specification, a Datagram Tag (Tag) field is used to provide for future extensions.
@@ -107,7 +98,7 @@ This provides for 32 different datagram types, each with 6 bits of type specific
 
 The Datagram Tags are as follows:
 
-#### Monolithic Datagram
+### Monolithic Datagram
 [monolithic-datagram]: #monolithic-datagram
 
 A Monolithic Datagram is expected to be the most common way to transmit data that can fit within a single Datagram. When sending or receiving small amounts of data, a Monolithic Datagram should be used.
@@ -135,7 +126,7 @@ Note that Should ACK is distinct from receiving unsolicited downlink data. If Sh
 
 Fingerprints should be over the fields `DecodedTag | OUI | DID | Seq# | Hash(Payload)`.
 
-#### Start of Frame Datagram
+### Start of Frame Datagram
 [start-of-frame-datagram]: #start-of-frame-datagram
 
 A Start of Frame Datagram is used to describe a series of following Datagrams that contain a payload larger than a Monolithic Datagram can hold. In some cases, if there's room, some of the payload may appear at the end of this Datagram.
@@ -152,7 +143,7 @@ The Should ACK and CTS/RTS flags should take effect after all the subsequent Fra
 
 Fingerprints should be over the fields `DecodedTag | OUI | DID | Seq# | Datagram Count | Hash(Payload)`.
 
-#### Frame Data Datagram
+### Frame Data Datagram
 [frame-data-datagram]: #frame-data-datagram
 
 The Frame Data Datagram contains chunks of payload data that correspond to a previous Start of Frame Datagram. The Sequence ID should be included in the fingerprint generation to avoid crosstalk between frames, but it is not needed to transmit it. The fragment number is used to determine the ordering of the payload fragments.
@@ -167,7 +158,7 @@ Because any hotspot can receive the datagram, the LDPC flag needs to be present 
 
 Fingerprints should be over the fields `DecodedTag | OUI | DID | Seq# | Fragment# | Hash(Payload)`.
 
-#### Ack Datagram
+### Ack Datagram
 [ack-datagram]: #ack-datagram
 
 The Ack datagram is used to indicate success/failure of a prior transmission, in response to the prior transmission having the `Should ACK` flag set. The Ack datagram can indicate success or failure and request retransmits.

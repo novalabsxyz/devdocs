@@ -190,13 +190,14 @@ export default {
         py: '4px',
         pr: '4px',
         pl: 0,
-        borderColor: 'muted',
+        borderColor: 'text',
         borderBottomStyle: 'solid',
       },
     },
     th: {
       verticalAlign: 'bottom',
       borderBottomWidth: '2px',
+      color: 'white',
     },
     td: {
       verticalAlign: 'top',
