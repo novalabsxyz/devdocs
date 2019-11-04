@@ -1,12 +1,14 @@
 # Proof of Coverage and PoC Challenges
 
-Helium uses a novel work algorithm called “Proof of Coverage” (PoC) to verify that Hotspots are located where they claim (as established in the assert_location transaction when they are first deployed). Put  another way, Proof of Coverage verifies on an ongoing basis that Hotspots are honestly representing the wireless network coverage they are creating. 
+#### Helium uses a novel work algorithm called “Proof of Coverage” (PoC) to verify that Hotspots are located where they claim (as established in the assert_location transaction when they are first deployed). Put  another way, Proof of Coverage verifies on an ongoing basis that Hotspots are honestly representing the wireless network coverage they are creating. 
 
 This section will cover the relationship PoC and Challenges, how these contribute to a Hotspot’s “score” over time, and how this relates to their ability to earn Helium Tokens. 
 
 ## Why Proof of Coverage?
 
-The Helium Network is a physical wireless network that succeeds based on the amount of reliable coverage it can create for users. As such, we needed a proof of work algorithm that was built for this use case. Proof of Coverage takes advantage of the unique, undeniable properties of radio frequency (RF) to produce proofs that are meaningful to Network and it participants. Specifically, PoC makes use of the following characteristics:
+The Helium Network is a physical wireless network that succeeds based on the amount of reliable coverage it can create for users. As such, we needed a proof of work algorithm that was built for this use case. Proof of Coverage takes advantage of the unique, undeniable properties of radio frequency (RF) to produce proofs that are meaningful to Network and it participants. 
+
+Specifically, PoC makes use of the following characteristics:
 
 * RF has limited physical propagation and, therefore, distance; 
 * The strength of a received RF signal is inversely proportional to the square of the distance from the transmitter; and
@@ -22,9 +24,9 @@ This is a Proof of Coverage Challenge, as seen in the Helium Network Visualizer:
 
 Each Challenge has the following set of participants:
 
-* Challenger - The Hotspot that creates a proof and submits it to the blockchain. Hotspots are rewarded for submitting valid Challenges and, as such, submit as many proofs as the Network will allow. Currently each Hotspot can submit one challenge per 30 blocks (or roughly one per epoch). 
-* Target -  Any Hotspot chosen to complete the Challenge (also referred to as a “challengee”). The minimum number of targets per challenge is three; and the maximum number is seven. All targets in any given Challenge are located in the same geography such that they are able to communicate over RF with at least one target. 
-* Witness - A Hotspot that can verify the existence of the Challenge packet over RF at any stage in the Challenge path. A Witness can also be a Target in any given Challenge.
+* **Challenger** - The Hotspot that creates a proof and submits it to the blockchain. Hotspots are rewarded for submitting valid Challenges and, as such, submit as many proofs as the Network will allow. Currently each Hotspot can submit one challenge per 30 blocks (or roughly one per epoch). 
+* **Target** -  Any Hotspot chosen to complete the Challenge (also referred to as a “challengee”). The minimum number of targets per challenge is three; and the maximum number is seven. All targets in any given Challenge are located in the same geography such that they are able to communicate over RF with at least one target. 
+* **Witness** - A Hotspot that can verify the existence of the Challenge packet over RF at any stage in the Challenge path. A Witness can also be a Target in any given Challenge.
 
 With this in mind, let’s walk through how a PoC Challenge actually happens on the Helium Network. 
 
@@ -70,17 +72,17 @@ Once the Challenger has the complete set of receipts from the proof targets, or 
 
 A Hotspot’s score is a measure of the Network’s confidence in the asserted location of that Hotspot. The Helium Network is continually questioning the true position of Hotspots using PoC Challenges. Most importantly, activities that produce higher scores correlate with more token rewards for a given Hotspot.
  
-Hotspots are scored from .0 to 1.0 (displayed as 0 to 100 in various places like the Dashboard), with .0 being the lowest and 1.0 being the highest possible score. Each new hotspot starts with a neutral score of 0.25 when it is added to the blockchain. 
+Hotspots are scored from 0.0 to 1.0 (displayed as 0 to 100 in various places like the Dashboard), with 0.0 being the lowest and 1.0 being the highest possible score. Each new hotspot starts with a neutral score of 0.25 when it is added to the blockchain. 
 
 Once deployed, Hotspots are eligible for being challenged based on their score. How they perform in these challenges will affect their score dramatically. 
 
 * Successfully verifying location via passing a challenge causes a score to increase. 
 * Conversely, failing to verify location results in a lower score.
 
-Additionally, to keep scores fair, there is a constant "gravity" effect which continuously pulls the Hotspots towards the neutral score of .25. Doing so, we avoid Hotspots forever remaining on the top or on the bottom of the 0 - 1.0 score scale. 
+Additionally, to keep scores fair, there is a constant "gravity" effect which continuously pulls the Hotspots towards the neutral score of 0.25. Doing so, we avoid Hotspots forever remaining on the top or on the bottom of the 0 - 1.0 score scale. 
 
-* If a Hotspot has a stable internet connection but is never challenged - which is possible if it has no geographic peers - its score will remain at the neutral .25 level 
-* Hotspots with a score of below .15 will not be eligible for being challenged. If they drop below this level, the gravity effect will pull them back towards .15. Once their score returns to this level, they will be eligible to be challenged again.  
+* If a Hotspot has a stable internet connection but is never challenged - which is possible if it has no geographic peers - its score will remain at the neutral 0.25 level 
+* **Hotspots with a score of below 0.15 will not be eligible for being challenged.** If they drop below this level, the gravity effect will pull them back towards 0.15. Once their score returns to this level, they will be eligible to be challenged again.  
 
 Hotspots with higher scores are more likely to be chosen for a Consensus Group, thus making them eligible to earn mining rewards for that epoch. Members of the Consensus Group split 6% of all the tokens created each epoch for tasks such as validating transactions and publishing new blocks to the blockchain. So it pays to be at the top, but the network does what it can to make it, well, challenging. 
 
@@ -88,8 +90,8 @@ Hotspots with higher scores are more likely to be chosen for a Consensus Group, 
 
 Challenges fail frequently. Take a few minutes to scroll through the list of ongoing challenges in the Helium Network Visualizer and you’ll see a few examples of this. Here is a list of common PoC Challenge Failure Modes, their typical causes, and how this affects a participating Hotspot’s score. In any given challenge that does not complete, it’s likely you’ll see more than one of these failure modes appear. 
 
-* Initial Target Not Challenged - In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target. However, the initial target never received the challenge packet via its internet connection (often referred to P2P). So the initial target was never formally challenged. In this failure mode, no Hotspots are penalized.
+* **Initial Target Not Challenged** - In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target. However, the initial target never received the challenge packet via its internet connection (often referred to P2P). So the initial target was never formally challenged. In this failure mode, no Hotspots are penalized.
  
-* Failed Challenge - Here, a Hotspot is believed to have received the multilayer challenge packet over RF from the previous Hotspot in the challenge path, but has failed to complete the packet decryption and response. In this failure mode, only the Hotspot that fails the challenge will see their score decrease. 
+* **Failed Challenge** - Here, a Hotspot is believed to have received the multilayer challenge packet over RF from the previous Hotspot in the challenge path, but has failed to complete the packet decryption and response. In this failure mode, only the Hotspot that fails the challenge will see their score decrease. 
  
-* Not Challenged - When this happens, a Hotspot that’s a predetermined participant in a PoC challenge was never given the opportunity to complete it because either a) the Initial Target was never challenged or b) a Hotspot earlier in the path formally failed its portion of the challenge. In this scenario, any Hotspot that was “Not Challenged” will not see their score decreased.
+* **Not Challenged** - When this happens, a Hotspot that’s a predetermined participant in a PoC challenge was never given the opportunity to complete it because either a) the Initial Target was never challenged or b) a Hotspot earlier in the path formally failed its portion of the challenge. In this scenario, any Hotspot that was “Not Challenged” will not see their score decreased.

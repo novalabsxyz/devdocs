@@ -95,7 +95,7 @@ export default {
       textTransform: 'uppercase',
       letterSpacing: '3px',
       color: 'white',
-      mb: '10px',
+      mb: '16px',
       mt: '20px',
     },
     h6: {
@@ -140,11 +140,12 @@ export default {
     blockquote: {
       color: 'background',
       marginTop: 40,
+      marginBottom: 40,
       backgroundColor: 'purple',
       marginLeft: '0',
       p: '20px',
       pt: '5px',
-      pb: '5px',
+      pb: '8px',
       borderRadius: 10,
       fontWeight: 400,
       borderLeft: '10px solid #9446D7',
@@ -157,6 +158,10 @@ export default {
           color: 'white',
           textDecoration: 'underline',
         },
+
+        p: {
+          mb: 10,
+        }
         
       },
       
