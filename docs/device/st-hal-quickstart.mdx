@@ -39,9 +39,23 @@ Let's start by cloning the `longfi-st-hal` repository.
 ```
 git clone git@github.com:helium/longfi-st-hal.git
 ```
-Next we'll navigate to the TransmitPacket example directory and compile the firmware.
+Next we'll navigate to the TransmitPacket example directory.
 ```
 cd longfi-st-hal/Boards/B-L072Z-LRWAN1/Examples/TransmitPacket
+```
+### LongFi Config
+In each example there is a `src/lf_radio.c` file, which contains the LongFi config needed to route packets to Helium Console, replace these default values with the values created for you in Console.
+```c
+uint8_t preshared_key[16] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+
+LongFiConfig_t lf_config = {
+    .oui = 1234,
+    .device_id = 99,
+    .auth_mode = PresharedKey128, 
+};
+```
+Next we'll compile the firmware.
+```
 make
 ```
 You should see something similar to the output below if all went well.
