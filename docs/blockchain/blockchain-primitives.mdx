@@ -1,7 +1,21 @@
 # Blockchain Primitives 
 
+
+[Blocks](#blocks)
+
+[Epochs](#epochs)
+
+[Transactions](#transactions)
+
+[Chain Variables](#chain-variables)
+
+[Acoounts, Wallets, and Keys](#accounts-wallets-and-keys)
+
+
 ## Blocks
-Blocks are used to record the most recent set of transactions in the Helium blockchain. Blocks are mined based on time, as defined in the “block_time” chain variable. The current target block time is 60000 milliseconds (or 60 seconds). During any given epoch, the most recent block consists of:
+[blocks]: #blocks
+
+Blocks are used to record the most recent set of transactions in the Helium blockchain. Blocks are mined based on time, as defined in the `block_time` chain variable. The current target block time is 60000 milliseconds (or 60 seconds). During any given epoch, the most recent block consists of:
 
 * Block Version
 * Block Height 
@@ -9,17 +23,20 @@ Blocks are used to record the most recent set of transactions in the Helium bloc
 * Transactions (stored as a Merkle hash)
 * Threshold signature from the current consensus group
 
-The easiest way to see the blocks being mined is with the Block Explorer. The Helium Mobile App also shows block details. Developers can also use the Helium blockchain API to access all block transaction and metadata.
+The easiest way to see the blocks being mined is with the [Block Explorer](https://network.helium.com/blocks). The Helium Mobile App also shows block details. Developers can also use the Helium blockchain API to access all block transaction and metadata.
 
 ## Epochs
+[epochs]: (#epochs)
 
-An epoch is the target time period for which a given group of Hotspots is elected to serve as the consensus group. The target time for an epoch is currently 30 blocks, as defined in the election_interval chain variable. Approximately every 30 blocks mined marks the passing of an epoch, after which a new group of Hotspots is elected to form the next consensus group. 
+An epoch is the target time period for which a given group of Hotspots is elected to serve as the consensus group. The target time for an epoch is currently 30 blocks, as defined in the `election_interval` chain variable. Approximately every 30 blocks mined marks the passing of an epoch, after which a new group of Hotspots is elected to form the next consensus group. 
 
 Mining rewards are distributed per epoch (as opposed to per block in most blockchain-based systems). At the conclusion of each epoch, the consensus group will distribute all the Helium tokens produced in that block via the `rewards` transaction. 
 
 ## Transactions
+[transactions]: #transactions
 
-The Helium blockchain currently has 20 native transaction types. Some appear in nearly every block mined while others were created to be used only once and will never heard from again. (You can see various transaction types in action using the Helium Block Explorer.) 
+
+The Helium blockchain currently has 20 native transaction types. Some appear in nearly every block mined while others were created to be used only once and will never heard from again. (You can see various transaction types in action using the Block Explorer](https://network.helium.com/blocks). 
 
 All transactions occur on-chain, and all transactions require Data Credits to be submitted and confirmed. Here’s the current list of supported transaction (in no particular order):
 
@@ -45,12 +62,14 @@ All transactions occur on-chain, and all transactions require Data Credits to be
 * **chain vars** - Change a chain variable. 
 
 ## Chain Variables
+[chain-variables]: #chain-variables
 
 Chain Variables, often referred to as “chain vars”, are a series of configuration settings for the Helium blockchain. Chain Variables can be used to change things like target block time, target epoch time, the minimum number of targets in a POC Challenge, and much more. 
 
 Chain Variables can be altered by submitting a transaction containing the chain variable to be changed, its new value, and a signature of the chain variable master key. Currently this key is controlled by Helium Inc, but it is intended to be superseded by a voting-based governance mechanism in the very near future.
 
 ## Accounts, Wallets, and Keys
+[accounts-wallets-keys]: #accounts-wallets-and-keys
 
 The Helium blockchain uses an account-based system for wallets and balances (similar to Ethereum and others) as opposed to a UTXO-based ledger like Bitcoin blockchain.
 

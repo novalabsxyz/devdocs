@@ -1,16 +1,21 @@
 
 import protocol from '../images/longfi/protocol.png' 
 
-
 # Helium LongFi Protocol
 
-## Table of Contents
+This specification introduces the high-level semantics of LongFi, the Helium network's wireless protocol.
 
-[Summary](#summary)
+Existing wide-area wireless protocols suffer from a variety of drawbacks which create challenging circumstances for a ubiquitous wireless network. Our desired implementation would be open source, lightweight, secure, and provide a universal routing and payment mechanism that allows the network to be used anywhere in the world as long as Hotspots are paid for routing traffic.
+
+Providing wide-area wireless connectivity in a manner that is implementable by both Helium and third-parties requires a free and open protocol that Devices, Hotspots, and Routers understand.
+
+This proposal is not an all-encompassing specification but lays the foundation for further HIPs and a reference implementation which will serve as the specification.
+
+## Table of Contents 
 
 [Versioning](#versioning)
 
-[LoRa Physical Layer](#lora)
+[LoRa Physical Layer](#lora-physical-layer)
 
 [Protocol](#protocol)
   * [Datagrams](#datagrams)
@@ -23,24 +28,13 @@ import protocol from '../images/longfi/protocol.png'
 
 [Regulatory](#regulatory)
 
-## Summary
-[summary]: #summary
-
-This specification introduces the high-level semantics of LongFi, the Helium network's wireless protocol.
-
-Existing wide-area wireless protocols suffer from a variety of drawbacks which create challenging circumstances for a ubiquitous wireless network. Our desired implementation would be open source, lightweight, secure, and provide a universal routing and payment mechanism that allows the network to be used anywhere in the world as long as Hotspots are paid for routing traffic.
-
-Providing wide-area wireless connectivity in a manner that is implementable by both Helium and third-parties requires a free and open protocol that Devices, Hotspots, and Routers understand.
-
-This proposal is not an all-encompassing specification but lays the foundation for further HIPs and a reference implementation which will serve as the specification.
-
 ## Versioning
 [versioning]: #versioning
 
 LongFi is versioned so that it can be improved in future revisions without breaking backward compatibility.
 
 ## LoRa Physical Layer
-[lora]: #lora
+[lora]: #lora-physical-layer
 
 LongFi is built on top of the LoRa modulation format and physical layer. Any LoRa compatible transceiver is supported, although the SX126x is recommended due to the overall improved power consumption and performance.
 

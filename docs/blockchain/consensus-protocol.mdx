@@ -2,6 +2,18 @@
 
 #### The Helium blockchain uses a new consensus protocol, called simply the Helium Consensus Protocol. 
 
+[Consensus Protocol Design Goals](#consensus-protocol-design-goals)
+
+[HoneyBadger BFT](#honeybadger-bft)
+
+[The Mining Process](#the-mining-process)
+
+[Rewarding Hotspots](#rewarding-hotspots)
+
+
+## Consensus Protocol Design Goals 
+[consensus-protocol-design-goals]: #consensus-protocol-design-goals
+
 In designing the protocol, we wanted to emphasize the following characteristics:
 * **Permissionless** - Any hotspot operating in accordance with the consensus rules and network specifications should be able to participate freely in the Helium Network. 
 * **Truly decentralized by design** - No incentive should be available for taking advantage of factors like inexpensive energy cost or deploying more hardware in the same location. 
@@ -11,6 +23,7 @@ In designing the protocol, we wanted to emphasize the following characteristics:
 * **Censorship-resistant transactions** - Miners should not be able to censor or otherwise select / deselect transactions to be included in a block. 
 
 ## HoneyBadger BFT
+[honeybadger-bft]: #honeybadger-bft
 
 The Helium Consensus Protocol is based on a variant of the HoneyBadgerBFT (HBFT) protocol. (HBFT is based on a body of research originally kicked off by Andrew Miller and the team at the University of Illinois, Urbana-Champaign.) 
 
@@ -29,6 +42,8 @@ All Hotspots active on the Helium Network are eligible to be elected to a consen
 At the conclusion of each epoch, a distribution of all active Hotspots is created. Using the above criteria, 16 are selected from this distribution and a new consensus group is formed. 
 
 ## The Mining Process 
+[the-mining-process]: #the-mining-process
+
 
 Following the election of a new Consensus Group, a distributed key generation phase occurs to bootstrap the threshold encryption key (TPKE). This TPKE is a cryptographic primitive that allows any Hotspot in the network to encrypt transactions to a master public key (PK) such that the Consensus group must work together to decrypt it.
 
@@ -36,6 +51,7 @@ Hotspots are constantly submitting new transactions to the current consensus gro
  
  
 ## Rewarding Hotspots 
+[rewarding-hotspots](#rewarding-hotspots)
 
 At the end of each epoch, mining rewards are distributed by the consensus group to the wallet addresses that have earned them. Currently 65% of all mining rewards go to the hotspot infrastructure (with the remaining 35% being distributed to Helium, Inc and other network investors). A graphical overview of token reward system can be viewed here.
  
