@@ -5,21 +5,21 @@ import disco_board from '../images/device/disco_board.png'
 
 # LongFi ST HAL Quickstart 
 
-> ##### Important!  
-> Before we begin, please make sure you've followed the steps from this [guide](/quickstart), which goes over some initial setup steps. 
-
 ## Introduction
 
 #### Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications.
 
-#### This guide will show you step by step how to transmit LongFi packets using a longfi-st-hal example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
+This guide will show you step by step how to transmit LongFi packets using a longfi-st-hal example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
+
+> ##### Important!  
+> Before we begin, please make sure you've followed the steps from this [guide](/quickstart), which goes over some initial setup steps. 
 
 To follow along, you'll need the following:
 * Ubuntu 18.04 LTS (Any distro of linux should work, but we've only tested on this)
 * <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a>
 * <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads" target="_blank">GNU Arm Embedded Toolchain</a>  
-* .<a href="https://github.com/ntfreak/openocd" target="_blank">OpenOCD</a> (Make sure this is added to your PATH, <a href="https://linuxize.com/post/how-to-add-directory-to-path-in-linux/" target="_blank">instructions</a>)
-  * Run `./configure --enable-stlink` to install st-link support.
+* <a href="https://github.com/ntfreak/openocd" target="_blank">OpenOCD</a> (Make sure this is added to your PATH, <a href="https://linuxize.com/post/how-to-add-directory-to-path-in-linux/" target="_blank">instructions</a>)
+* Run `./configure --enable-stlink` to install st-link support.
 * <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>  
 * <a href="https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug" target="_blank">Cortex Debug Extension</a>
 

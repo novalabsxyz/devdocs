@@ -177,8 +177,9 @@ export default {
     inlineCode: {
       fontFamily: 'monospace',
       color: 'primary',
-      bg: 'muted',
+      bg: 'rgba(0,0,0,0.5)',
       p: '2px 6px',
+      mr: '2px',
       borderRadius: '2px',
       fontSize: 1,
     },
