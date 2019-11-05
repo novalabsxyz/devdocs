@@ -60,6 +60,10 @@ All transactions occur on-chain, and all transactions require Data Credits to be
 * **data credits** - Burn HNT for DCs at the current exchange rate and deliver them to the target wallet address.
 * **chain vars** - Change a chain variable. 
 
+### Extended Reading
+
+* [Helium Blockchain Core on GitHub](https://github.com/helium/blockchain-core)
+
 ## Chain Variables
 [chain-variables]: #chain-variables
 
@@ -75,6 +79,10 @@ The Helium blockchain uses an account-based system for wallets and balances (sim
 Users have several options for creating Helium wallets and managing their private keys:
 
 * If you’re using the Helium Mobile Wallet, your private key is encrypted locally (and can be recreated on another mobile device using the 12 word passphrase generated when your wallet was first created);
-* Using the Helium CLI Wallet, users are responsible for creating, storing, and securing a wallet’s private key and associated passphrase;
+* Using the [Helium CLI Wallet](https://github.com/helium/helium-wallet-rs), users are responsible for creating, storing, and securing a wallet’s private key and associated passphrase;
 
 Both the Helium Mobile Wallet and the CLI Wallet create and use keys based on the ed25519 public key signature system. The CLI can also support NIST p-256 keys. And the Helium blockchain supports both key types.
+
+### Extended Reading
+
+* [edd25519 public-key Signature System](https://ed25519.cr.yp.to/)
