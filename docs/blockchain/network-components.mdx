@@ -20,6 +20,8 @@ import phone from '../images/blockchain/phone.png'
 
 [Console](#console)
 
+[Blockchain API](#blockchain-api)
+
 [Helium Mobile Wallet](#helium-mobile-wallet)
 
 [Helium CLI Wallet](#helium-cli-wallet)
@@ -41,7 +43,11 @@ In addition to a new consensus protocol, the Helium blockchain uses a new, novel
 
 The Helium Hotspot is a combination LongFi wireless router and Helium blockchain miner built and distributed by Helium, Inc. It creates a long-range wireless network for routing packets to and from Helium LongFi-enabled devices and performs ongoing mining duties to secure the Helium Network.  
 
-It’s expected that developers and manufacturers will build other “Hotspot” variants that conform to published network specifications. “Helium Hotspot” is the name of the Hotspot designed, manufactured, and distributed by Helium, Inc. You can see an interactive map of all the deployed Hotspots [here](https://network.helium.com/coverage).
+It’s expected that developers and manufacturers will build other “Hotspot” variants that conform to published network specifications. “Helium Hotspot” is the name of the Hotspot designed, manufactured, and distributed by Helium, Inc.
+
+### Extende Reading
+* [Interactive map of all deployed Hotspots](https://network.helium.com/coverage)
+* [Buy a Hotspot and join the Network](https://helium.com/store)
 
 ## <img src={longfi} style={{width: 30, position: 'relative', top: 27, marginRight: 10}} />LongFi
 [longfi]: #longfi
@@ -58,25 +64,33 @@ Three of the biggest improvements over LoRaWAN are:
 * **Fully bi-directional** - LongFi allows for over-the-air (OTA) firmware updates and sending of things like control packets.
 * **Roaming** - Because all LongFi devices are trusted by all Hotspots on the network, and all Hotspots have the same set of capabilities, developers can take advantage of one, unified Helium Network anywhere coverage exists. 
 
+### Extended Reading 
+
+* [LongFi Spec](/longfi/spec)
+
 ## Routers
 [routers]: #routers
 
 Routers are cloud-based participants in the Helium Network and are the termination point for device data. Routers are identifiable by their OUI (Organizationally Unique Identifier) and are operated by developers and enterprises deploying sensor applications on the Helium Network. Helium also operates a high-availability router that’s open to Helium Network users.
 
-Devices on the Helium Network are able to send data to one or more routers. When a device sends a packet, the Hotspot that receives it via LongFi queries the blockchain for the router OUI (or OUIs)  associated with that device. The Hotspot forwards it on, and the target router is then responsible for handling the payload.
+Devices on the Helium Network are able to send data to one or more routers. When a device sends a packet, the Hotspot that receives it via LongFi queries the blockchain for the router OUI (or OUIs)  associated with that device. The Hotspot forwards it on, and the target router is then responsible for handling the payload and remitting payment to the Hotspot using Data Credits.
 
 Routers are also the basis for a mechanism called “Channels”. Channels are pre-built integrations with popular cloud services like AWS, Google Cloud, and Azure; and protocols like HTTP(s) and MQTT(s). Any organization deploying a router can implement custom channels using the reference implementation published by Helium. 
  
 ## <img src={console} style={{width: 30, position: 'relative', top: 27, marginRight: 10}} />Console
 [console]: #console
 
-Console is a web application built and maintained by Helium. It’s used by developers and enterprises on the Helium network to deploy and manage devices, configure Channels, buy data credits, and more.
+[Console](https://console.helium.com) is a web application built and maintained by Helium. It’s used by developers and enterprises on the Helium network to deploy and manage devices, configure Channels, buy data credits, and more.
 
 Organizations and developers not wanting to use Console can build similar functionality using various APIs exposed by the Helium blockchain and router. 
-Blockchain API
+
+## Blockchain API
+[blockchain-api]: (#blockchain-api)
+
 The Helium blockchain API enables programmatic access to all data stored in the Helium blockchain. The Helium Mobile Wallet, the Network Visualizer, and the public network Dashboard all make use of this API. 
 
-Full usage and design documentation for the Helium blockchain API is available here.
+* Full usage and design documentation for the Helium blockchain API is available [here](https://documenter.getpostman.com/view/8776393/SVmsTzP6?version=latest).
+* The Blockchain API [source code is on GitHub](https://github.com/helium/blockchain-api/)
 
 ## Helium Mobile Wallet
 [helium-mobile-wallet]: #helium-mobile-wallet
@@ -87,10 +101,10 @@ The Helium Mobile Wallet is the officially supported iOS and Android app used to
 
 The Helium Mobile Wallet is the primary mechanism for deploying Helium Hotspots. A given Hotspot is  tied permanently to the Mobile Wallet (and associated private key) used to deploy it. 
  
-* Helium Wallet for iOS
-* Helium Wallet for Android
+* [Helium Wallet for iOS](https://apps.apple.com/app/id1450463605)
+* [Helium Wallet for Android](https://play.google.com/store/apps/details?id=com.helium.wallet&hl=en_US)
 
 ## Helium CLI Wallet
 [helium-cli-wallet]: #helium-cli-wallet
 
-Helium maintains and develops a Command Line Interface (CLI) for creating and managing Helium wallets. Code and documentation can be found here. 
+Helium maintains and develops a Command Line Interface (CLI) for creating and managing Helium wallets. Code and documentation can be found [here](https://github.com/helium/helium-wallet-rs/). 
