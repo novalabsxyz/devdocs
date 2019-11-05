@@ -53,7 +53,7 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      overflowX: 'hidden',
+      overflowX: 'visible',
     },
     h1: {
       variant: 'textStyles.display',

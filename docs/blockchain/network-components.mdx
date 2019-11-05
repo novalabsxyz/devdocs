@@ -1,3 +1,10 @@
+import hotspot from '../images/index/hotspot.svg'
+import console from '../images/index/console.svg'
+import blockchain from '../images/index/blockchain.svg'
+import longfi from '../images/index/longfi.svg'
+import phone from '../images/blockchain/phone.png'
+
+
 # Helium Network Components
 
 #### The following is a list of the primary components - hardware, software, protocols, etc. - that make up the end-to-end Helium Network. Complete documentation, code, and other resources for these are linked at the bottom of each section when available.  
@@ -20,26 +27,30 @@
 
 
 
-## Helium blockchain
+## <img src={blockchain} style={{width: 30, position: 'relative', top: 27, marginRight: 10}} />Helium blockchain
 [blockchain]: #helium-lockchain
 
 The Helium blockchain is a new, public, distributed ledger, designed from the ground up to provide an efficient way to run application logic core to the Helium Network. Specifically it furnishes the immutable, append-only transaction system that is verified using the Helium Consensus Protocol (described in detail below). 
 
 In addition to a new consensus protocol, the Helium blockchain uses a new, novel work algorithm known as [Proof of Coverage](/blockchain/proof-of-coverage) to secure the network and cryptographically verify the location of Hotspots that are providing wireless coverage to Helium [LongFi-enabled](/longfi/overview) IoT devices. These [Hotspots](/hotspot/overview) are also responsible for submitting coverage proofs that provide details about their true location in and value to the Helium Network. Hotspots that submit the best proofs are more likely to be selected to a consensus group, and are thus responsible for verifying transactions and mining blocks. 	
 
-## Helium Hotspot
+
+
+## <img src={hotspot} style={{width: 30, position: 'relative', top: 27, marginRight: 10}} />Helium Hotspot
 [hotspot]: #helium-hotspot
 
 The Helium Hotspot is a combination LongFi wireless router and Helium blockchain miner built and distributed by Helium, Inc. It creates a long-range wireless network for routing packets to and from Helium LongFi-enabled devices and performs ongoing mining duties to secure the Helium Network.  
 
 It’s expected that developers and manufacturers will build other “Hotspot” variants that conform to published network specifications. “Helium Hotspot” is the name of the Hotspot designed, manufactured, and distributed by Helium, Inc. You can see an interactive map of all the deployed Hotspots [here](https://network.helium.com/coverage).
 
-## LongFi
+## <img src={longfi} style={{width: 30, position: 'relative', top: 27, marginRight: 10}} />LongFi
 [longfi]: #longfi
 
 LongFi is Helium’s open source, sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network. Any device running the Helium LongFi protocol can send and receive packets over the Helium Network via any Hotspot in range. LongFi provides miles of range and optimized battery life for low-bandwidth IoT sensor applications. The protocol is designed to reduce technical friction and facilitate a fast, simple hardware product development cycle.
 
->LongFi uses the LoRA PHY and is compatible with most certified LoRa modules such as the SX127x or SX126x from Semtech. It is a superior alternative to LoRaWAN. 
+>LongFi uses the LoRA PHY and is compatible with most certified LoRa modules such as the SX127x or SX126x from Semtech. 
+>
+>It is a superior alternative to LoRaWAN. 
 
 Three of the biggest improvements over LoRaWAN are: 
 
@@ -56,7 +67,7 @@ Devices on the Helium Network are able to send data to one or more routers. When
 
 Routers are also the basis for a mechanism called “Channels”. Channels are pre-built integrations with popular cloud services like AWS, Google Cloud, and Azure; and protocols like HTTP(s) and MQTT(s). Any organization deploying a router can implement custom channels using the reference implementation published by Helium. 
  
-## Console
+## <img src={console} style={{width: 30, position: 'relative', top: 27, marginRight: 10}} />Console
 [console]: #console
 
 Console is a web application built and maintained by Helium. It’s used by developers and enterprises on the Helium network to deploy and manage devices, configure Channels, buy data credits, and more.
@@ -69,6 +80,8 @@ Full usage and design documentation for the Helium blockchain API is available h
 
 ## Helium Mobile Wallet
 [helium-mobile-wallet]: #helium-mobile-wallet
+
+<img src={phone} style={{width: 300, position: 'relative', marginLeft: '-63px'}} />
 
 The Helium Mobile Wallet is the officially supported iOS and Android app used to manage Helium tokens, deploy and administer Hotspots, and view network statistics and visualizations.
 
