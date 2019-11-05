@@ -1,3 +1,9 @@
+import poc from '../images/blockchain/poc.jpg'
+import poc1 from '../images/blockchain/poc1.svg'
+import poc2 from '../images/blockchain/poc2.svg'
+import poc3 from '../images/blockchain/poc3.svg'
+
+
 # Proof of Coverage and PoC Challenges
 
 #### Helium uses a novel work algorithm called “Proof of Coverage” (PoC) to verify that Hotspots are located where they claim (as established in the assert_location transaction when they are first deployed). Put  another way, Proof of Coverage verifies on an ongoing basis that Hotspots are honestly representing the wireless network coverage they are creating. 
@@ -42,6 +48,8 @@ The ultimate power of Proof of Coverage lies in the fact that the data generated
 
 
 This is a Proof of Coverage Challenge, as seen in the Helium Network Visualizer:
+
+<img src={poc} />
 
 Each Challenge has the following set of participants:
 
@@ -120,8 +128,15 @@ Hotspots with higher scores are more likely to be chosen for a Consensus Group, 
 
 Challenges fail frequently. Take a few minutes to scroll through the list of ongoing challenges in the Helium Network Visualizer and you’ll see a few examples of this. Here is a list of common PoC Challenge Failure Modes, their typical causes, and how this affects a participating Hotspot’s score. In any given challenge that does not complete, it’s likely you’ll see more than one of these failure modes appear. 
 
-* **Initial Target Not Challenged** - In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target. However, the initial target never received the challenge packet via its internet connection (often referred to P2P). So the initial target was never formally challenged. In this failure mode, no Hotspots are penalized.
- 
-* **Failed Challenge** - Here, a Hotspot is believed to have received the multilayer challenge packet over RF from the previous Hotspot in the challenge path, but has failed to complete the packet decryption and response. In this failure mode, only the Hotspot that fails the challenge will see their score decrease. 
- 
-* **Not Challenged** - When this happens, a Hotspot that’s a predetermined participant in a PoC challenge was never given the opportunity to complete it because either a) the Initial Target was never challenged or b) a Hotspot earlier in the path formally failed its portion of the challenge. In this scenario, any Hotspot that was “Not Challenged” will not see their score decreased.
+
+<img src={poc1} />
+
+**Initial Target Not Challenged** - In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target. However, the initial target never received the challenge packet via its internet connection (often referred to P2P). So the initial target was never formally challenged. In this failure mode, no Hotspots are penalized.
+
+<img src={poc2} /> 
+
+**Failed Challenge** - Here, a Hotspot is believed to have received the multilayer challenge packet over RF from the previous Hotspot in the challenge path, but has failed to complete the packet decryption and response. In this failure mode, only the Hotspot that fails the challenge will see their score decrease.
+
+<img src={poc3} /> 
+
+**Not Challenged** - When this happens, a Hotspot that’s a predetermined participant in a PoC challenge was never given the opportunity to complete it because either a) the Initial Target was never challenged or b) a Hotspot earlier in the path formally failed its portion of the challenge. In this scenario, any Hotspot that was “Not Challenged” will not see their score decreased.
