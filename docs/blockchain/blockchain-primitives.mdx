@@ -15,7 +15,7 @@
 ## Blocks
 [blocks]: #blocks
 
-Blocks are used to record the most recent set of transactions in the Helium blockchain. Blocks are mined based on time, as defined in the `block_time` chain variable. The current target block time is 60000 milliseconds (or 60 seconds). During any given epoch, the most recent block consists of:
+Blocks are used to record the most recent set of transactions in the Helium blockchain. Blocks are mined based on time, as defined in the “block_time” chain variable. The current target block time is 60000 milliseconds (or 60 seconds). During any given epoch, the most recent block consists of:
 
 * Block Version
 * Block Height 
@@ -23,20 +23,19 @@ Blocks are used to record the most recent set of transactions in the Helium bloc
 * Transactions (stored as a Merkle hash)
 * Threshold signature from the current consensus group
 
-The easiest way to see the blocks being mined is with the [Block Explorer](https://network.helium.com/blocks). The Helium Mobile App also shows block details. Developers can also use the Helium blockchain API to access all block transaction and metadata.
+The easiest way to see the blocks being mined is with the Block Explorer. The Helium Mobile App also shows block details. Developers can also use the Helium blockchain API to access all block transaction and metadata.
 
 ## Epochs
 [epochs]: (#epochs)
 
-An epoch is the target time period for which a given group of Hotspots is elected to serve as the consensus group. The target time for an epoch is currently 30 blocks, as defined in the `election_interval` chain variable. Approximately every 30 blocks mined marks the passing of an epoch, after which a new group of Hotspots is elected to form the next consensus group. 
+An epoch is the target time period for which a given group of Hotspots is elected to serve as the consensus group. The target time for an epoch is currently 30 blocks, as defined in the election_interval chain variable. Approximately every 30 blocks mined marks the passing of an epoch, after which a new group of Hotspots is elected to form the next consensus group. 
 
 Mining rewards are distributed per epoch (as opposed to per block in most blockchain-based systems). At the conclusion of each epoch, the consensus group will distribute all the Helium tokens produced in that block via the `rewards` transaction. 
 
 ## Transactions
 [transactions]: #transactions
 
-
-The Helium blockchain currently has 20 native transaction types. Some appear in nearly every block mined while others were created to be used only once and will never heard from again. (You can see various transaction types in action using the Block Explorer](https://network.helium.com/blocks). 
+The Helium blockchain currently has 20 native transaction types. Some appear in nearly every block mined while others were created to be used only once and will never heard from again. (You can see various transaction types in action using the Helium Block Explorer.) 
 
 All transactions occur on-chain, and all transactions require Data Credits to be submitted and confirmed. Here’s the current list of supported transaction (in no particular order):
 
