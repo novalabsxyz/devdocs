@@ -188,7 +188,8 @@ export const AccordionNav = React.forwardRef(
 	if (globalHistory.location.pathname === '/blockchain/consensus-protocol') expanded[6] = true
 	if (globalHistory.location.pathname === '/blockchain/proof-of-coverage') expanded[6] = true
 	if (globalHistory.location.pathname === '/blockchain/tokens') expanded[6] = true
-	if (globalHistory.location.pathname === '/blockchain/network-components') expanded[6] = true					
+	if (globalHistory.location.pathname === '/blockchain/network-components') expanded[6] = true
+	if (globalHistory.location.pathname === '/blockchain/mining-tokens-rewards') expanded[6] = true						
 
     return (
       <div>
