@@ -13,14 +13,16 @@ import disco_board from '../images/device/disco_board.png'
 
 # LongFi Arduino Quickstart Guide
  
-> ##### Important!  
->Before we begin, please make sure you've followed the steps from this [guide](/quickstart), which goes over some initial setup steps. 
+
 
 ## Introduction
 
 #### Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications.
 
-#### This guide will show you step by step how to transmit LongFi packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
+This guide will show you step by step how to transmit LongFi packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
+
+> ##### Important!  
+>Before we begin, please make sure you've followed the steps from this [guide](/quickstart), which goes over some initial setup steps. 
 
 ## Objective 
 
@@ -87,8 +89,7 @@ mac os: Documents/Arduino/libraries
 Then restart your Arduino IDE to load the library. 
  
 >##### IMPORTANT TEMPORARY STEP!
-
-This step is currently necessary until the fix gets pushed to the board support packages. 
+>This step is currently necessary until the fix gets pushed to the board support packages. 
 
 <a href="https://github.com/helium/longfi-arduino/blob/master/B-L072Z-LRWAN1-board-support-fix.md" target="_blank">Link to fix</a> 
 
@@ -103,7 +104,7 @@ File -> Examples -> LongFi -> TransmitPacket
  
  <img src={LongFi_Example} /> 
 
-> #### Important! 
+> ##### Important! 
 > Make sure the OUI and device identifier correspond to the device details from Console. 
 
 ```

@@ -53,7 +53,7 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      overflowX: 'hidden',
+      overflowX: 'visible',
     },
     h1: {
       variant: 'textStyles.display',
@@ -95,7 +95,7 @@ export default {
       textTransform: 'uppercase',
       letterSpacing: '3px',
       color: 'white',
-      mb: '10px',
+      mb: '16px',
       mt: '20px',
     },
     h6: {
@@ -140,11 +140,12 @@ export default {
     blockquote: {
       color: 'background',
       marginTop: 40,
+      marginBottom: 40,
       backgroundColor: 'purple',
       marginLeft: '0',
       p: '20px',
       pt: '5px',
-      pb: '5px',
+      pb: '8px',
       borderRadius: 10,
       fontWeight: 400,
       borderLeft: '10px solid #9446D7',
@@ -153,10 +154,16 @@ export default {
 
       a: {
         color: '#27284B',
+        pb: 10,
         ":hover": {
           color: 'white',
           textDecoration: 'underline',
+
         },
+
+        p: {
+          mb: 10,
+        }
         
       },
       
@@ -170,8 +177,9 @@ export default {
     inlineCode: {
       fontFamily: 'monospace',
       color: 'primary',
-      bg: 'muted',
+      bg: 'rgba(0,0,0,0.5)',
       p: '2px 6px',
+      mr: '2px',
       borderRadius: '2px',
       fontSize: 1,
     },
@@ -185,13 +193,14 @@ export default {
         py: '4px',
         pr: '4px',
         pl: 0,
-        borderColor: 'muted',
+        borderColor: 'text',
         borderBottomStyle: 'solid',
       },
     },
     th: {
       verticalAlign: 'bottom',
       borderBottomWidth: '2px',
+      color: 'white',
     },
     td: {
       verticalAlign: 'top',
