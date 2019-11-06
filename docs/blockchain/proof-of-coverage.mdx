@@ -8,7 +8,7 @@ import poc3 from '../images/blockchain/poc3.svg'
 
 #### Helium uses a novel work algorithm called “Proof of Coverage” (PoC) to verify that Hotspots are located where they claim (as established in the `assert_location` transaction when they are first deployed). Put another way, Proof of Coverage verifies on an ongoing basis that Hotspots are honestly representing their location and wireless network coverage they are creating from that location. 
 
-This section will cover the relationship PoC and Challenges have, how these contribute to a Hotspot’s “score” over time, and how this relates to their ability to earn Helium Tokens. 
+This section will cover the relationship between PoC and Challenges, how these contribute to a Hotspot’s “score” over time, and how this relates to their ability to earn Helium Tokens. 
 
 [Why Proof of Coverage](#why-proof-of-coverage)
 
@@ -106,7 +106,7 @@ Though witnesses are not required for a successful proof, they are likely to be 
 Once the Challenger has the complete set of receipts from the proof targets, or the elapsed time since the challenge was issued has passed the upper time bound, the Proof of Coverage is considered complete. At this point, the challenger then submits the proof receipt as a transaction to the blockchain to be verified by the current consensus group members.  Because the steps taken by the challenger to construct and complete the proof are deterministic and easily recreatable, members of the consensus group can verify the legitimacy of the proof. 
 
 > ##### Challenge Rewards Require Receipts
->In order for a Challenger to be rewarded for their proof, their receipt of that proof must be successully received by the blockchain. 
+>In order for a Challenger to be rewarded for their proof, the receipt of that proof must be successully received by the blockchain. 
 
 
 ## Hotspot Scoring
