@@ -48,7 +48,8 @@ function Footer() {
         width: '100%',
         variant: 'styles.footer',
         justifyContent: 'center',
-        textAlign: 'left'
+        textAlign: 'left',
+        boxSizing: 'border-box'
       }}>
       <Container sx={styles}>
               <Content />
