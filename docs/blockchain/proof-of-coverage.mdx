@@ -145,7 +145,11 @@ Challenges fail frequently. Take a few minutes to scroll through the [list of on
 
 <img src={poc1} />
 
-In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target. However, the initial target never received the challenge packet via its internet connection (often referred to "P2P"). So the initial target was never formally challenged. **In this failure mode, no Hotspots are penalized**.
+In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target and subsequently received by this targt via its Internet connection (often referred to "P2P"). From there, the target is responsible for decrypting the challenge packet, sending a receipt back to the Challenger, and broadcasting the remainder of the challenge packet over the Helium Network to other Hotspots in range via LongFi (its RF link).
+
+Proof of Coverage is all about proving the location of Hotspot using its LongFi wireless capabilities. And since the initial target receives the challenge packet via its Internet connection, simply decrypting it and responding over this link doesn't provide any meaningful data about the LongFi coverage that Hotspot might be providing. So, in order for the initial challenge target to successfully pass a challenge, the blockchain must have verifiable proof that it was successful in broadcasting the challenge packet over LongFi. This proof comes in the form of witnesses and/or the next Hotspot in the challenge path successfully responding with a receipt. 
+	
+However, when the Helium blockchain does not have definitive proof the challenge packet was transmitted, we categorize it as "Initial Target Not Challenged." **In this failure mode, no Hotspots are penalized**.
 
 
 ### Failed Challenge
