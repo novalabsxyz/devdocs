@@ -1,19 +1,28 @@
 # Mining and Token Rewards
 
-Hotspot Hosts and other Helium Network participants have many questions about expected mining rewards. This is understandable. Earning HNT is one of the most excitin piecse of the Helium Network. 
+Hotspot Hosts and other Helium Network participants have many questions about expected mining rewards. This is understandable. Earning `HNT` is one of the most exciting pieces of the Helium Network. 
 
 While at this point we can't give a precise formula for calculating how much HNT you'll earn over a given period, there are some higher level concepts, design elements, and rules to keep in mind that will help better explain what you might earn and why. This section covers these.
 
-## Target HNT per Epoch
 
-The target production rate for new HNT minted per month is `5,000,000`. Take note of "target". This means that, if the blockchain performs as designed, it will produce `5,000,000` HNT per month. But that target rate is attainable only if the two following things are true for any given continuous month:
+[Target HNT Production Per Epoch](#target-hnt-production-per-epoch)
+
+[HNT Distributions Per Epoch](#hnt-distributions-per-epoch)
+
+[HNT Earnings Per Hotspot](#hnt-earnings-per-hotspot)
+
+
+## Target HNT Production Per Epoch
+[target-hnt-production-per-epoch]: (#target-hnt-production-per-epoch)
+
+The target production rate for new `HNT` minted per month is `5,000,000`. Take note of **target**. This means that, if the blockchain performs as designed, it will produce `5,000,000` HNT per month. But that target rate is attainable only if the two following things are true for any given continuous month:
 
 * The average **block time** is `30` seconds;
 * Average **epoch size** is `30` blocks;
 
 Recall that, in the Helium blockchain, [blocks]() contain some number of individual transactions and [epochs]() are comprosed of all the blocks mined by a the current Consensus Group since the last epoch. 
 
-So, if we acheive our target block time of `30` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. 
+So, if we acheive our target block time of `30` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows:	
 
 * `43800` minutes in the average month;
 * `30` minutes per epoch 
@@ -23,12 +32,40 @@ So, if we acheive our target block time of `30` seconds, and target epoch of `30
 That said, this target number is hard to attain, and the Helium team is working on getting as close to it as possible. The Helium Network is still very new and growing quite quickly, so there are many bugs to be squashed and optimizations to be made. 
 
 >#### What Are The Current Block and Epoch Times?
->At any point you can go to the [Helium blockchain Dashboard](http://dashboard.helium.com/) to view recent block and epoch >statistics,past HNT production numbers, and much more. Your Helium Mobile Wallet will also give you the average block and epoch >times for the trailing 24 hour period.
+>At any point you can go to the [Helium blockchain Dashboard](http://dashboard.helium.com/) to view recent block and epoch >statistics, past HNT production numbers, and much more. Your Helium Mobile Wallet will also give you the average block and 
+>epoch times for the trailing 24 hour period.
 
 
-## HNT per Epoch 
+## HNT Distributions Per Epoch 
+[#hnt-distributions-per-epoch]: (#hnt-distributions-per-epoch)
 
-As calculated above, the target HNT per epoch is approximately `3424.66`. The next logical question is "Where does all this HNT go?" Let's take a look.	
+As calculated above, the target `HNT` per epoch is approximately `3424.66`. The next logical question is "Where does all this HNT go?" Let's take a look.	
+
+Here are the mining rewards per epoch. That is to say, for every complete epoch (marked by the election of a new Consensus Group), all the `HNT` produced get distributed over the following categories **assuming we achieve our 5,000,000 HNT target per epoch**:
+
+
+| Category       | Percentage | HNT Earned (on Target)
+| -----------   | ----------- | ----------- |
+| PoC Challenger      | 15%       | 513.69       |
+| PoC Challengees   | 35%        | 1198.63       |
+| Witnesses   | 5%        | 171.24       |
+| Consensus Group   | 10%        | 342.47        |
+| Helium, Inc and Investors   | 35%        | 1198.63        |
+| Network Data Transfer   | 0%   | 0   |
+| **Total**   | **100%**  | **3424.66**  |
+	
+
+
+>#### Why is 0% Allocated for Network Data Transfer
+>With the Network being very new, the reward distrubution is currently designed to incentivize the building of coverage. 
+>When the Data Credit infrastructure goes live, roughly Q1-2010, `30%` of HTN per epoch will be allocated to Network Data
+>Transfer to ensure that Hotspots routing sensor data are compensated accordingly. 
+
+## HNT Earnings Per Hotspot
+[HNT Earnings Per Hotspot]: (#hnt-earnings-per-hotspot)
+
+The last thing to examine is the amout of `HTN` per earned Hotspot in a given epoch, taking into acount the total number of Hotspots live on the Network.
+
 
 
 
