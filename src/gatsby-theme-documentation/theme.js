@@ -130,11 +130,11 @@ export default {
       p: 20,
       marginTop: 40,
       marginBottom: 40,
-      color: 'text',
+      color: 'primary',
       bg: 'muted',
       overflow: 'auto',
       code: {
-        color: 'inherit',
+        color: 'primary',
       },
     },
     blockquote: {
@@ -173,7 +173,7 @@ export default {
     },
     code: {
       fontFamily: 'monospace',
-      color: 'secondary',
+      color: 'primary',
       fontSize: 1,
     },
     inlineCode: {
