@@ -151,6 +151,8 @@ export default {
       borderLeft: '10px solid #9446D7',
       pl: '30px',
       pr: '30px',
+      width: '100%',
+      boxSizing: 'border-box',
 
       a: {
         color: '#27284B',
