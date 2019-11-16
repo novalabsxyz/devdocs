@@ -9,7 +9,7 @@ While at this point we can't give a precise formula for calculating how much HNT
 
 [HNT Distributions Per Epoch](#hnt-distributions-per-epoch)
 
-[HNT Earnings Per Hotspot](#hnt-earnings-per-hotspot)
+[HNT Earnings Per Hotspot By Reward Type](#hnt-earnings-per-hotspot-by-reward-type)
 
 
 ## Target HNT Production Per Epoch
@@ -25,9 +25,9 @@ Recall that, in the Helium blockchain, [blocks]() contain some number of individ
 So, if we acheive our target block time of `30` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows:	
 
 * `43800` minutes in the average month;
-* `30` minutes per epoch 
-* `1460` epochs per month
-* This results in `3424.66` HNT per epoch (`3424.65753424658` HNT to be precises)
+* `30` minutes per epoch; 
+* `1460` epochs per month;
+* This results in `3424.66` HNT per epoch (`3424.65753424658` HNT to be precise);
 
 That said, this target number is hard to attain, and the Helium team is working on getting as close to it as possible. The Helium Network is still very new and growing quite quickly, so there are many bugs to be squashed and optimizations to be made. 
 
@@ -41,10 +41,10 @@ That said, this target number is hard to attain, and the Helium team is working 
 
 As calculated above, the target `HNT` per epoch is approximately `3424.66`. The next logical question is "Where does all this HNT go?" Let's take a look.	
 
-Here are the mining rewards per epoch. That is to say, for every complete epoch (marked by the election of a new Consensus Group), all the `HNT` produced get distributed over the following categories **assuming we achieve our 5,000,000 HNT target per epoch**:
+Below are the mining rewards per epoch. That is to say, for every complete epoch (marked by the election of a new Consensus Group), all the `HNT` produced get distributed over the following reward types:
 
 
-| Category       | Percentage | HNT Earned (on Target)
+| Reward Type       | Percentage | HNT Earned by Reward Type|
 | -----------   | ----------- | ----------- |
 | PoC Challenger      | 15%       | 513.69       |
 | PoC Challengees   | 35%        | 1198.63       |
@@ -56,15 +56,37 @@ Here are the mining rewards per epoch. That is to say, for every complete epoch 
 	
 
 
->#### Why is 0% Allocated for Network Data Transfer
+>#### Why is 0% Allocated for Network Data Transfer?
 >With the Network being very new, the reward distrubution is currently designed to incentivize the building of coverage. 
 >When the Data Credit infrastructure goes live, roughly Q1-2010, `30%` of HTN per epoch will be allocated to Network Data
 >Transfer to ensure that Hotspots routing sensor data are compensated accordingly. 
 
-## HNT Earnings Per Hotspot
-[HNT Earnings Per Hotspot]: (#hnt-earnings-per-hotspot)
+## HNT Earnings Per Hotspot By Reward Type
+[HNT Earnings Per Hotspot By Reward Type]: (#hnt-earnings-per-hotspot-by-reward-type)
 
-The last thing to examine is the amout of `HTN` per earned Hotspot in a given epoch, taking into acount the total number of Hotspots live on the Network.
+The last thing to examine is the amout of `HNT` earned per Hotspot in a given epoch, taking into acount the total number of Hotspots live on the Network eligible for each category of `HNT` reward. 
+
+** A Few Notes on Reward Types:**
+
+* All the Hotspots that have earned a specific reward type will split it equally. 
+* Hotposts can earn one or more reward types during any given epoch. 
+* `PoC Challenger`, `PoC Challengee`, and `Witness` reward types get distributed in the epoch that includes the corresponding PoC receipt. 
+
+--- TODO --- Find a block with 
+
+
+| Reward Type                 | Hotspots Earning Reward    			| HNT Earned Per Hotspot |
+| -----------   	          | ----------- | -----------           |
+| PoC Challenger              |             | 513.69                |
+| PoC Challengees             |             | 1198.63               |
+| Witnesses                   |             | 171.24       			|
+| Consensus Group   		  | 16          | 22.9       			|
+| Helium, Inc and Investors   | N/A         | 1198.63      			|
+| Network Data Transfer       | 0%          | 0            			|
+| **Total**                   | **100%**    | **3424.66**  			|
+
+
+
 
 
 
