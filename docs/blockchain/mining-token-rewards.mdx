@@ -1,16 +1,38 @@
 # Mining and Token Rewards
 
-Hotspot Hosts and other Helium Network participants have many questions about expected mining rewards. This is understandable. Earning `HNT` is one of the most exciting pieces of the Helium Network. 
+Hotspot Hosts and other Helium Network participants have many questions about expected mining rewards. This is for good reason. Earning `HNT` is one of the most exciting pieces of the Helium Network. 
 
-While at this point we can't give a precise formula for calculating how much HNT you'll earn over a given period, there are some higher level concepts, design elements, and rules to keep in mind that will help better explain what you might earn and why. This section covers these.
+While at this point we can't give a precise formula for calculating how much `HNT` you'll earn over a given period, there are some higher level concepts, design elements, and rules to keep in mind that will help better explain what you might earn and why. This section covers these, as well as some mining and token reward basics.
 
+
+[How Do Hotspots Earn Helium Tokens?](#how-do-hotspots-earn-helium-tokens)
 
 [Target HNT Production Per Epoch](#target-hnt-production-per-epoch)
 
 [HNT Distributions Per Epoch](#hnt-distributions-per-epoch)
-
+					
 [HNT Earnings Per Hotspot By Reward Type](#hnt-earnings-per-hotspot-by-reward-type)
 
+## How Do Hotspots Earn Helium Tokens?
+[how-do-hotspots-earn-helium-tokens]: (#how-do-hotspots-earn-helium-tokens)
+
+The Helium blockchain rewards Hotspots for providing wireless coverage and verifying the Helium Network. Hotspots are rewarded in Helium Token (`HNT`). 
+
+Every [epoch](#), the current consensus group mines a fixed amount of `HNT` which then gets distributed to all Hotspots that have earned it. Hotspots and other network participants are rewarded across the following reward types:
+
+| Reward Type 		          | Description  |
+| -----------       		  | ----------- | 
+| PoC Challenger              | Paid to any Hotspot that creates a valid PoC challenge and submits the corresponding receipt to the blockchain.|
+| PoC Challengees   	      | Awarded toa any Hotspot that completes a stage of a PoC challenge. | 
+| Witnesses        	      	  | Distributed to all Hotspots that witnesses a packet as part of a PoC Challenge.  | 
+| Consensus Group             | Rewarded to the 16 Hotspots that are part of the current Concesus Group, responsible for mining blocks.| 
+| Security				      | Awarded to Helium, Inc and other Network investors who hold Security Tokens. | 
+| Network Data Transfer       | Distributed each epoch to Hotspots that route LongFi sensor data for sensors on the Network during that epoch.| 
+
+
+>#### Do I Have To Actively Participate to Earn Rewards Once My Hotspot is Deployed?
+>No. Once your Hotspot is completely deployed and fully synced with the Helium blockchain, you as the owner are not requird to do anything else 
+>in order to earn HNT. Your Hotspot will perform all of the above activities on its own while it runs. 
 
 ## Target HNT Production Per Epoch
 [target-hnt-production-per-epoch]: (#target-hnt-production-per-epoch)
@@ -29,10 +51,11 @@ So, if we acheive our target block time of `30` seconds, and target epoch of `30
 * `1460` epochs per month;
 * This results in `3424.66` HNT per epoch (`3424.65753424658` HNT to be precise);
 
-That said, this target number is hard to attain, and the Helium team is working on getting as close to it as possible. The Helium Network is still very new and growing quite quickly, so there are many bugs to be squashed and optimizations to be made. 
+That said, this target `5,000,000` HNT per month number is hard to attain, and the Helium team is working on getting as close to it as possible. The Helium Network is still very new and growing quite quickly, so there are many bugs to be squashed and optimizations to be made. 
 
 >#### What Are The Current Block and Epoch Times?
->At any point you can go to the [Helium blockchain Dashboard](http://dashboard.helium.com/) to view recent block and epoch >statistics, past HNT production numbers, and much more. Your Helium Mobile Wallet will also give you the average block and 
+>At any point you can go to the [Helium blockchain Dashboard](http://dashboard.helium.com/) to view recent block and epoch 
+>statistics, past HNT production numbers, and much more. Your Helium Mobile Wallet will also give you the average block and 
 >epoch times for the trailing 24 hour period.
 
 
@@ -41,18 +64,18 @@ That said, this target number is hard to attain, and the Helium team is working 
 
 As calculated above, the target `HNT` per epoch is approximately `3424.66`. The next logical question is "Where does all this HNT go?" Let's take a look.	
 
-Below are the mining rewards per epoch. That is to say, for every complete epoch (marked by the election of a new Consensus Group), all the `HNT` produced get distributed over the following reward types:
+Below are the current mining rewards per epoch. For every complete epoch (marked by the election of a new Consensus Group), all the `HNT` produced get distributed over the following reward types:
 
 
-| Reward Type       | Percentage | HNT Earned by Reward Type|
-| -----------   | ----------- | ----------- |
-| PoC Challenger      | 15%       | 513.69       |
-| PoC Challengees   | 35%        | 1198.63       |
-| Witnesses   | 5%        | 171.24       |
-| Consensus Group   | 10%        | 342.47        |
-| Helium, Inc and Investors   | 35%        | 1198.63        |
-| Network Data Transfer   | 0%   | 0   |
-| **Total**   | **100%**  | **3424.66**  |
+| Reward Type                 | Percentage  | HNT Earned by Reward Type|
+| -----------       		  | ----------- | -----------              |
+| PoC Challenger              | 15%         | 513.69       			   |
+| PoC Challengees   	      | 35%         | 1198.63                  |
+| Witnesses         	      | 5%          | 171.24                   |
+| Consensus Group             | 10%         | 342.47                   |
+| Security					  | 35%         | 1198.63                  |
+| Network Data Transfer       | 0%          | 0                        |
+| **Total**         	      | **100%**    | **3424.66**              |
 	
 
 
@@ -64,27 +87,28 @@ Below are the mining rewards per epoch. That is to say, for every complete epoch
 ## HNT Earnings Per Hotspot By Reward Type
 [HNT Earnings Per Hotspot By Reward Type]: (#hnt-earnings-per-hotspot-by-reward-type)
 
-The last thing to examine is the amout of `HNT` earned per Hotspot in a given epoch, taking into acount the total number of Hotspots live on the Network eligible for each category of `HNT` reward. 
+The last thing to examine is the amout of `HNT` earned per Hotspot in a given epoch, taking into acount the total number of Hotspots live on the Network eligible for each category of `HNT` reward. The following table shows the precise `HNT` payouts for a recently concluded epoch. These specific rewards were paid out in block `113718` and precise amount of `HNT` mined in this epoch was `3472.22222152`.  
 
-** A Few Notes on Reward Types:**
 
-* All the Hotspots that have earned a specific reward type will split it equally. 
+| Reward Type                 | Hotspots Earning Reward | HNT Earned Per Hotspot| Total Earned by Reward Type|
+| -----------   	          | ----------- 			| -----------           | -------------------
+| PoC Challenger              | 160            			| 3.25520833            | 520.833333228
+| PoC Challengee              | 128 (unique instances)  | 9.49435764            | 1215.277777532
+| Witnesses                   | 409 (unique instances)  | 0.42447704       	    | 173.611111076
+| Consensus Group   		  | 16          			| 21.70138889           | 347.222222152
+| Security					  | N/A        	 			| N/A      			    | 1215.277777532
+| Network Data Transfer       | 0%          			| 0            			| 0
+| **Total**                   | N/A 		     	    | N/A	                | **3472.22222152**
+
+	
+
+**Notes on Reward Types and Payouts:**
+
+* All Hotspots that have earned a specific reward type will split it equally. 
 * Hotposts can earn one or more reward types during any given epoch. 
+* Hotspots are only eligible to submit one Proof of Coverage Challenge - which results in them earning the `POC Challenger` reward type - once per epoch.
 * `PoC Challenger`, `PoC Challengee`, and `Witness` reward types get distributed in the epoch that includes the corresponding PoC receipt. 
-
---- TODO --- Find a block with 
-
-
-| Reward Type                 | Hotspots Earning Reward    			| HNT Earned Per Hotspot |
-| -----------   	          | ----------- | -----------           |
-| PoC Challenger              |             | 513.69                |
-| PoC Challengees             |             | 1198.63               |
-| Witnesses                   |             | 171.24       			|
-| Consensus Group   		  | 16          | 22.9       			|
-| Helium, Inc and Investors   | N/A         | 1198.63      			|
-| Network Data Transfer       | 0%          | 0            			|
-| **Total**                   | **100%**    | **3424.66**  			|
-
+* A Hotspot can earn more than one `PoC Challengee` and `Witness` rewards per epoch. 
 
 
 
