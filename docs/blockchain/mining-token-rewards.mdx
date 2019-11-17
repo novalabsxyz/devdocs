@@ -18,7 +18,7 @@ While at this point we can't give a precise formula for calculating how much `HN
 
 The Helium blockchain rewards Hotspots for providing wireless coverage and verifying the Helium Network. Hotspots are rewarded in Helium Token (`HNT`). 
 
-Every [epoch](#), the current consensus group mines a fixed amount of `HNT` which then gets divided among all Hotspots that have earned it. Hotspots and other network participants are rewarded across the following reward types:
+Every [epoch](#), the current consensus group mines some amount of `HNT` which then gets divided among all Hotspots that have earned it. Hotspots and other network participants are rewarded across the following reward types:
 
 | Reward Type 		          | Description  |
 | -----------       		  | ----------- | 
@@ -27,31 +27,36 @@ Every [epoch](#), the current consensus group mines a fixed amount of `HNT` whic
 | Witnesses        	      	  | Distributed to all Hotspots that witness a packet as part of a PoC Challenge.  | 
 | Consensus Group             | Rewarded to the 16 Hotspots that are part of the current Concesus Group, responsible for mining blocks.| 
 | Security				      | Awarded to Helium, Inc and other Network investors who hold Security Tokens. | 
-| Network Data Transfer       | Distributed each epoch to Hotspots that route LongFi sensor data for sensors on the Network during that epoch.| 
+| Network Data Transfer       | Distributed each epoch to Hotspots that route LongFi sensor data for sensors on the Network during that epoch. _*Not yet activated*._| 
 
 
 >#### Do I Have To Actively Participate to Earn Rewards Once My Hotspot is Deployed?
 >No. Once your Hotspot is completely deployed and fully synced with the Helium blockchain, you as the owner are not requird to do anything else 
->in order to earn HNT. Your Hotspot will perform all of the above activities on its own while it runs. 
+>in order to earn HNT. Your Hotspot will perform all of the above activities on its own while it runs. That said, there are some optimizations you can 
+>make to ensure your Hotspot is operating at full capacity.
 
 ## Target HNT Production Per Epoch
 [target-hnt-production-per-epoch]: (#target-hnt-production-per-epoch)
 
-The target production rate for new `HNT` minted per month is `5,000,000`. Take note of **target**. This means that, if the blockchain performs as designed, it will produce `5,000,000` HNT per month. But that target rate is attainable only if the two following things are true for any given continuous month:
+The target production rate for new `HNT` minted per month is `5,000,000`. This means that, if the blockchain performs as designed, it will produce `5,000,000` HNT per month. This target rate is based on the following two targets, as defined in their specific chain variables:
 
-* The average **block time** is `60` seconds;
-* Average **epoch size** is `30` blocks;
+* Target **block time** is `60` seconds;
+* Target **epoch size** is `30` blocks;
 
-Recall that, in the Helium blockchain, [blocks]() contain some number of individual transactions and [epochs]() are comprosed of all the blocks mined by a the current Consensus Group since the last epoch. 
+Recall that, in the Helium blockchain, [blocks](#) contain some number of individual transactions and [epochs](#) are comprised of all the blocks mined by a the current Consensus Group since the last epoch. 
 
-So, if we acheive our target block time of `30` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows:	
+So, if we acheive our target block time of `60` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows:	
 
 * `43800` minutes in the average month;
 * `30` minutes per epoch; 
 * `1460` epochs per month;
 * This results in `3424.66` HNT per epoch (`3424.65753424658` HNT to be precise);
 
-That said, this target `5,000,000` HNT per month number is hard to attain, and the Helium team is working on getting as close to it as possible. The Helium Network is still very new and growing quite quickly, so there are many bugs to be squashed and optimizations to be made. 
+### HNT Proration
+
+That said, this target block and epoch times can be difficult to attain consistently. The Helium Network is still very new and growing quite quickly, so there are many bugs to be squashed and optimizations to be made. To account for this, the Helium blockchain uses something called `proration` to ensure that the target of `5,000,000` is achieved even if block and epoch times aren't on target. 
+
+Proration enables the number of HNT mined to adjust dynamically such that, if epochs and block times are lagging, the amount of `HNT` produced will increase as needed to ensure the `5,000,000` target is achieved month on month. In the event that proration results in an epoch with more or less HNT than the target `3424.66`, all of the reward types will be increased or redudced proportionally except for the Consensus Group reward type. This is because long epochs are the result of delayed Consensus Group elections.  
 
 >#### What Are The Current Block and Epoch Times?
 >At any point you can go to the [Helium blockchain Dashboard](http://dashboard.helium.com/) to view recent block and epoch 
@@ -111,7 +116,9 @@ The last thing to examine is the amout of `HNT` earned per Hotspot in a given ep
 * A Hotspot can earn more than one `PoC Challengee` and `Witness` rewards per epoch. 
 
 
+## Optimizing Your HNT Earnings
 
+Earning HNT consistently can be aided by ensuring a few things are ....	
 
 
 
