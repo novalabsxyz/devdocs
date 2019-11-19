@@ -1,0 +1,163 @@
+Delivered-To: peter@helium.com
+Received: by 2002:a67:c411:0:0:0:0:0 with SMTP id c17csp11342866vsk;
+        Thu, 14 Nov 2019 11:01:57 -0800 (PST)
+X-Received: by 2002:a9d:1b3:: with SMTP id e48mr8923983ote.341.1573758117321;
+        Thu, 14 Nov 2019 11:01:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1573758117; cv=none;
+        d=google.com; s=arc-20160816;
+        b=WdaEGwZT55bNKFR0VX6c0w4JeYWakFhVbN9lXaHj7gPPiukBOqBwluO38TU+U3/rei
+         zEiCk2yv87/FQgsv08kKjpizHl1X1JYnqos5FxDUhcNRZ78shUsWmMVi1s0JqpvEW38X
+         iEcHmzwgoEnfeOcrMm5SvbFQTRvfvV5m/bo8NemRd2zVavswVZBM1HfUGEbAGPWM6wXU
+         jdTINzeC0ae34EABglU9sSfSiEVkgrZGlzWgZUIIGRuVSOJxsn976NnpwkQyrHwlmIq8
+         OqfnkoTil4SuuN+vztiOZQXPBDvQBwugv3oDGs0Ftt22Ds2tnZqRgT7oiJciKRaz9ZYg
+         e8fQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=njQKfFcdCO+uaT+OqK9FZ/LAEbG2hU9jQAPF7qG0Auw=;
+        b=v7obHckxND9uZZ03LF/rFv8iC9UMNLbum3Do+2qPxOnCqmBJSxBrRgOy1oSzc8ZMD4
+         dhIj9JnKd/5vpjEZ1uuYOHGSPz9B+8ynY08L3ELBIJ+cYGItGuf4OZT5YeWgnXAywD4j
+         aTCcguLH35W6clbqtjxcEjWQe4gjAN19cAEnPQWoYHaLFnEyYaTRDjpkZ5QBhdRZoG1c
+         XZ/qvNURPukOIXiA7glEU5riZiEG4d1+qwv2NYsupoiM2WHelWOzZKTjbychgkLCvuoF
+         ZFmCmvQ4Lf+JY5EEd35kVU2QX/3wP4hl53JxmEbE54tNvfDk7z4gn4SdzclVosGs5VzC
+         xr5Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@helium.com header.s=google header.b=jQzRS2t7;
+       spf=pass (google.com: domain of eri@helium.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=eri@helium.com
+Return-Path: <eri@helium.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id l72sor3825233oih.19.2019.11.14.11.01.57
+        for <peter@helium.com>
+        (Google Transport Security);
+        Thu, 14 Nov 2019 11:01:57 -0800 (PST)
+Received-SPF: pass (google.com: domain of eri@helium.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@helium.com header.s=google header.b=jQzRS2t7;
+       spf=pass (google.com: domain of eri@helium.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=eri@helium.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=helium.com; s=google;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=njQKfFcdCO+uaT+OqK9FZ/LAEbG2hU9jQAPF7qG0Auw=;
+        b=jQzRS2t7pqVWFKKt4GbXffjdIGSUiRlkRGHr2vU29EOC6xKdu2a2qlqV//DT0qYGtT
+         gKkHtolRVaSSRFz9Q3Tmm3q8gOW80TVNZajyykURS2LrCJ8bdWw+r4NmkB11PaRT7xyh
+         Tak/5sq8LDf9wdUTwXdbGL/A1Mvptb6MFxtKc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=njQKfFcdCO+uaT+OqK9FZ/LAEbG2hU9jQAPF7qG0Auw=;
+        b=nzPk9lLrzylZiS+XXgmdmg+3FgxfIX1Xg3ggfCb8rg/h4C0cDl+WYuKRofotcaIWP6
+         YVG2Il+Y0Be2Mekr17SMV+iVpfz0ffO4kWAprsMWZwHuk+R1N7AvEEHq/LoUZfSgw++T
+         DibhsJsjTWUBuLhGmRcWTyquivB0QBOpI/0p+E/s4y5dML6dKfi2l7CuHeZzflX3aGlY
+         K85D1QQOw7roAXEphnE2pTUY5+am9fYw6OvmCgueszDtIq1/Uo2+hzb6lKUV13Z/mg/N
+         MU3yHpunfiraYM6ZPWoPpFs30xwpybXk68T7W08YKN467AoPeqjQL0f5A1OteW8AE6Tu
+         ejyg==
+X-Gm-Message-State: APjAAAV5EIVFnsj/OWU4e8IIlx96ejJiXk1e/u/dhQZagDPeO3/H/c1Y
+	t53YGGnHungYSXiMIod2G367DNwajmjpkDnNod4VneQD
+X-Google-Smtp-Source: APXvYqwn0s8KnQtzYrcaZ5l0346JSls2200R1ygzNJNvZG39kuKUarB5Ip3NdTl0xB1i9PUT6ECkvJsLCroyus/LB2A=
+X-Received: by 2002:a54:4105:: with SMTP id l5mr4767637oic.135.1573758116671;
+ Thu, 14 Nov 2019 11:01:56 -0800 (PST)
+MIME-Version: 1.0
+References: <CAD0KPshuRq5UiCpGRmJO2Wtymzhc8aox4RJnNPMMF6j+vLhoHQ@mail.gmail.com>
+In-Reply-To: <CAD0KPshuRq5UiCpGRmJO2Wtymzhc8aox4RJnNPMMF6j+vLhoHQ@mail.gmail.com>
+From: Eri Noguchi <eri@helium.com>
+Date: Thu, 14 Nov 2019 11:01:45 -0800
+Message-ID: <CAD0KPsjLMjNiOqEKBdSEB3iecDsuu+f3=NPL97zLSOp_it_8rg@mail.gmail.com>
+Subject: Fwd: Business cards and address label sticker request
+To: Peter Main <peter@helium.com>
+Content-Type: multipart/alternative; boundary="00000000000081c6240597531d59"
+
+--00000000000081c6240597531d59
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Peter,
+
+Sorry I know you're super busy!!
+Was wondering if you can please order these when you can. I sent another
+email to you regarding which address labels we would like.
+
+I also need to order Christmas cards.
+If helium logo isn't needed on the cards, I will just order a stock one.
+Please advise if that's a good idea.
+
+Thanks,
+Eri
+
+---------- Forwarded message ---------
+From: Eri Noguchi <eri@helium.com>
+Date: Tue, Oct 8, 2019 at 11:20 AM
+Subject: Business cards and address label sticker request
+To: Peter Main <peter@helium.com>
+
+
+
+Hello Pete,
+
+Hope you are doing great.
+
+I'd like to request the following:
+
+1. Ned's business cards:
+Ned Taylor
+Vice President Business Development
+(650)533-3612
+
+2. Emily Murray
+Marketing
+(917)842-0291
+
+3. Address label stickers please:
+Helium
+51 Federal St., #100
+San Francisco, CA 94107
+
+Thank you!!
+
+-- 
+Best regards,
+Eri Noguchi
+Helium Systems, Inc.
+(415)601-2230
+
+
+-- 
+Best regards,
+Eri Noguchi
+Helium Systems, Inc.
+(415)601-2230
+
+--00000000000081c6240597531d59
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hi Peter,=C2=A0<div><br></div><div>Sorry I know you&#39;re=
+ super busy!!=C2=A0</div><div>Was wondering if you can please order these w=
+hen you can. I sent another email to you regarding which address labels we =
+would like.=C2=A0</div><div><br></div><div>I also need to order Christmas c=
+ards.=C2=A0</div><div>If helium logo isn&#39;t needed on the cards, I will =
+just order a stock one.=C2=A0</div><div>Please advise if that&#39;s a good =
+idea.=C2=A0</div><div><br></div><div>Thanks,=C2=A0</div><div>Eri=C2=A0</div=
+><div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">=
+---------- Forwarded message ---------<br>From: <strong class=3D"gmail_send=
+ername" dir=3D"auto">Eri Noguchi</strong> <span dir=3D"auto">&lt;<a href=3D=
+"mailto:eri@helium.com">eri@helium.com</a>&gt;</span><br>Date: Tue, Oct 8, =
+2019 at 11:20 AM<br>Subject: Business cards and address label sticker reque=
+st<br>To: Peter Main &lt;<a href=3D"mailto:peter@helium.com">peter@helium.c=
+om</a>&gt;<br></div><br><br><div dir=3D"ltr"><br clear=3D"all"><div>Hello P=
+ete,=C2=A0</div><div><br></div><div>Hope you are doing great.=C2=A0</div><d=
+iv><br></div><div>I&#39;d like to request the following:=C2=A0</div><div><b=
+r></div><div>1. Ned&#39;s business cards:=C2=A0</div><div>Ned Taylor=C2=A0<=
+/div><div>Vice President Business Development</div><div>(650)533-3612</div>=
+<div><br></div><div>2. Emily Murray=C2=A0</div><div>Marketing</div><div>(91=
+7)842-0291</div><div><br></div><div>3. Address label stickers please:=C2=A0=
+</div><div>Helium</div><div>51 Federal St., #100</div><div>San Francisco, C=
+A 94107</div><div><br></div><div>Thank you!!=C2=A0</div><div><br></div>-- <=
+br><div dir=3D"ltr" data-smartmail=3D"gmail_signature"><div dir=3D"ltr">Bes=
+t regards,=C2=A0<div>Eri Noguchi=C2=A0</div><div>Helium Systems, Inc.=C2=A0=
+</div><div>(415)601-2230</div></div></div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr">Best rega=
+rds,=C2=A0<div>Eri Noguchi=C2=A0</div><div>Helium Systems, Inc.=C2=A0</div>=
+<div>(415)601-2230</div></div></div></div></div>
+
+--00000000000081c6240597531d59--
