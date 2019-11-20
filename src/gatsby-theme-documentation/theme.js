@@ -165,7 +165,7 @@ export default {
 
         p: {
           mb: 10,
-        }
+        },
         
       },
       
@@ -179,10 +179,10 @@ export default {
     inlineCode: {
       fontFamily: 'monospace',
       color: 'primary',
-      bg: 'rgba(0,0,0,0.5)',
-      p: '2px 6px',
+      bg: 'rgba(0,0,0,0.35)',
+      p: '2px 4px 1px',
       mr: '2px',
-      borderRadius: '2px',
+      borderRadius: '3px',
       fontSize: 1,
     },
     table: {
