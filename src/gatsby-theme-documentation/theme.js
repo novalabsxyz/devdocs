@@ -190,23 +190,56 @@ export default {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
+      pt: 40,
+      mt: 40,
+      borderTop: '1px solid #4B4B71',
       [['th', 'td']]: {
         textAlign: 'left',
-        py: '4px',
-        pr: '4px',
-        pl: 0,
+        p: '10px',
+        pr: '30px',
         borderColor: 'text',
-        borderBottomStyle: 'solid',
+        borderBottomStyle: 'none',
+        fontSize: '14px',
       },
+
+      [['th']]: {
+        fontSize: '12px',
+        letterSpacing: '1px',
+        color: 'primary',
+      },
+
+
+      [['tr:nth-child(even)']]: {
+        background: '#33345c',
+          },
+
+[['td:first-of-type']]: {
+        borderRadius: '6px 0 0 6px',
+        width: '1px',
+        whiteSpace: 'nowrap',
+        color: 'white',
+      },
+
+      [['td:last-of-type']]: {
+        borderRadius: '0 6px 6px 0',
+      },
+
     },
     th: {
       verticalAlign: 'bottom',
       borderBottomWidth: '2px',
       color: 'white',
+      lineHeight: 1,
+      fontWeight: 400,
+      textTransform: 'uppercase',
+
     },
     td: {
       verticalAlign: 'top',
       borderBottomWidth: '1px',
+              lineHeight: 1.3,
+
+
     },
     hr: {
       border: 0,
