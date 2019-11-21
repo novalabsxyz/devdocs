@@ -10,6 +10,8 @@ import pasted_endpoint from '../images/console/pasted_endpoint.png'
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
 import device_packets from '../images/console/no_channel_packets.png'
 import disco_board from '../images/device/disco_board.png'
+import Arduino_LongFi from '../images/device/LongFiLibrary.png'
+import Device_Details from '../images/device/Device_Details_Console.png'
 
 # LongFi Arduino Quickstart Guide
  
@@ -68,25 +70,23 @@ Download and install the latest version of <a href="https://www.arduino.cc/en/Ma
  
 <a href="https://github.com/stm32duino/wiki/wiki/Getting-Started" target="_blank">Instructions to add STM32 board support to Arduino</a> 
 
-## Getting access to the LongFi TransmitPacket Sketch
+## Install LongFi Library
  
-This Arduino library needs to be manually installed as it has not been added to the Arduino Library registry yet. 
- 
-Clone the longfi-arduino repository by using the following command ... 
+The LongFi library may be installed from the Arduino IDE 
+
+(If you prefer to clone it via git, [go here](https://github.com/helium/longfi-arduino#install-library-with-git).)
+
+Arduino IDE:
 
 ```
-git clone git@github.com:helium/longfi-arduino.git
+Sketch -> Include Libraries -> Manage Libraries 
 ```
 
-... to the following directory:
- 
-```
-linux: /home/{user}/Arduino/libraries
-windows: Documents/Arduino/libraries
-mac os: Documents/Arduino/libraries
-```
+Search for `LongFi` and install the latest version 
 
-Then restart your Arduino IDE to load the library. 
+<img src={Arduino_LongFi} /> 
+
+##
  
 >##### IMPORTANT TEMPORARY STEP!
 >This step is currently necessary until the fix gets pushed to the board support packages. 
@@ -105,7 +105,7 @@ File -> Examples -> LongFi -> TransmitPacket
  <img src={LongFi_Example} /> 
 
 > ##### Important! 
-> Make sure the OUI and device identifier correspond to the device details from Console. 
+> Make sure the OUI, device identifier, and pre-shared key correspond to the device details from Console. 
 
 ```
 // set OUI and device_id to work with LongFi routing
@@ -113,7 +113,9 @@ const uint32_t oui = 1;
 const uint16_t device_id = 2;
 const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x44, 0x95, 0x71, 0x52, 0x4E, 0xE1, 0xCA, 0x13, 0xCE};
 ```
- 
+
+ <img src={Device_Details} />  
+
  ## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
  
 Instructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> 

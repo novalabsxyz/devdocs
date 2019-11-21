@@ -130,11 +130,11 @@ export default {
       p: 20,
       marginTop: 40,
       marginBottom: 40,
-      color: 'text',
+      color: 'primary',
       bg: 'muted',
       overflow: 'auto',
       code: {
-        color: 'inherit',
+        color: 'primary',
       },
     },
     blockquote: {
@@ -151,6 +151,8 @@ export default {
       borderLeft: '10px solid #9446D7',
       pl: '30px',
       pr: '30px',
+      width: '100%',
+      boxSizing: 'border-box',
 
       a: {
         color: '#27284B',
@@ -163,7 +165,7 @@ export default {
 
         p: {
           mb: 10,
-        }
+        },
         
       },
       
@@ -171,16 +173,16 @@ export default {
     },
     code: {
       fontFamily: 'monospace',
-      color: 'secondary',
+      color: 'primary',
       fontSize: 1,
     },
     inlineCode: {
       fontFamily: 'monospace',
       color: 'primary',
-      bg: 'rgba(0,0,0,0.5)',
-      p: '2px 6px',
+      bg: 'rgba(0,0,0,0.35)',
+      p: '2px 4px 1px',
       mr: '2px',
-      borderRadius: '2px',
+      borderRadius: '3px',
       fontSize: 1,
     },
     table: {
