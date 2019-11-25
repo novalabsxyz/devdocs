@@ -1,4 +1,5 @@
-import Change_Device_Name from '../images/console/Change_Device_Name.png' 
+import pubnub-register from '../images/pubnub/pubnub-register.png'
+
 import request_bin from '../images/console/request_bin.png' 
 import pasted_endpoint from '../images/console/pasted_endpoint.png' 
 import register from '../images/console/register.png' 
@@ -6,11 +7,60 @@ import create_device from '../images/console/create_device.png'
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
 
 
-# Console - Routing Data
+# Triggering IFTTT services with device data
+
+This guide will show you how to route your device data from console to a serverless function service that will allow you to decode the base64 encoding that the packet payload is encoded with and then trigger a simple service on IFTTT with the payload.
 
 > #### IMPORTANT:  
-> The cost per packet is $0.00001 USD (24 byte packets) which is equivalent to 1 Data Credit (DC).
-> During the Beta there is no cost to send packets.
+If you haven’t completed the Console and device quickstart instructions, please perform those before following this [guide](https://developer.helium.com/quickstart).
+
+This guide will show you how to perform the following:
+
+* Create and configure a PubNub Function to decode a base64 payload from your device.
+* Add the PubNub Function endpoint as an HTTP channel in Console.
+* Create and configure an IFTTT Applet to send an email with the payload.
+* Update the PubNub Function with the IFTTT Webhook endpoint address.
+
+# Creating PubNub Function
+
+First you will need to [register](https://dashboard.pubnub.com/signup) for a free PubNub account. No credit card required!
+
+
+<!-- <img src={pubnub-register} /> -->
+
+Next [login](https://dashboard.pubnub.com/login) to the PubNub dashboard.
+
+Choose Other Messaging Use Cases and click START USING PUBNUB.
+
+Navigate to the Apps page on the left menu.
+
+Click CREATE NEW APP, name it “DecodeAndForward, and finally select ‘Other messaging Use Cases’.
+
+<!-- <img src={pubnub-createnewapp} /> -->
+
+Your app should appear:
+
+<!-- <img src={pubnub-decode-email} /> -->
+
+Next on the left-hand menu click Functions, make sure the DecodeAndForward app is selected.
+
+Click ‘Create New Module’ to create a new module and enter the following name “decode_and_forward”.
+
+<!-- <img src={pubnub-create-module-email} /> -->
+
+Next let’s create a function by clicking the decode_and_forward module.
+
+Click CREATE FUNCTION and fill in the fields with the following:
+
+Function name: decode64_and_forward
+Event type: On Request
+URI path: decode
+
+Click CREATE.
+
+
+
+
 
 When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on.
 
