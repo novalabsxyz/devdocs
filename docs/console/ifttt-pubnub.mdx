@@ -6,12 +6,29 @@ import pubnub_create_new_function_email from '../images/pubnub/pubnub_create_new
 import pubnub_create_new_function_add_code_email from '../images/pubnub/pubnub_create_new_function_add_code_email.png'
 import pubnub_module_running_email_2 from '../images/pubnub/pubnub_module_running_email_2.png'
 
-# Triggering IFTTT services with device data
+import pubnub_console from '../images/pubnub/pubnub_console.png'
+import pubnub_module_restart_module from '../images/pubnub/pubnub_module_restart_module.png'
+import ifttt_getting_started from '../images/pubnub/ifttt_getting_started.png'
+import ifttt_getting_started_2 from '../images/pubnub/ifttt_getting_started_2.png'
+import ifttt_choose_service from '../images/pubnub/ifttt_choose_service.png'
+import ifttt_choose_trigger from '../images/pubnub/ifttt_choose_trigger.png'
+import ifttt_complete_trigger from '../images/pubnub/ifttt_complete_trigger.png'
+import ifttt_action_start from '../images/pubnub/ifttt_action_start.png'
+import ifttt_action_choose from '../images/pubnub/ifttt_action_choose.png'
+import ifttt_action_choose_2 from '../images/pubnub/ifttt_action_choose_2.png'
+import ifttt_action_complete from '../images/pubnub/ifttt_action_complete.png'
+import ifttt_action_review from '../images/pubnub/ifttt_action_review.png'
+import ifttt_webhooks from '../images/pubnub/ifttt_webhooks.png'
+import ifttt_webhooks_key from '../images/pubnub/ifttt_webhooks_key.png'
+import pubnub_webhooks_url_email from '../images/pubnub/pubnub_webhooks_url_email.png'
 
-This guide will show you how to route your device data from console to a serverless function service that will allow you to decode the base64 encoding that the packet payload is encoded with and then trigger a simple service on IFTTT with the payload.
+
+# Triggering services with device data
+
+This guide will show you how to route your device data from Console to a serverless function service that will allow you to decode the base64 encoding that the packet payload is encoded with and then trigger a simple service on IFTTT with the payload.
 
 > #### IMPORTANT:  
-If you haven’t completed the Console and device quickstart instructions, please perform those before following this [guide](https://developer.helium.com/quickstart).
+If you haven’t completed the Console and device quickstart instructions, please perform those [here](https://developer.helium.com/quickstart) before continuing with this guide.
 
 This guide will show you how to perform the following:
 
@@ -28,11 +45,11 @@ First you will need to [register](https://dashboard.pubnub.com/signup) for a fre
 
 Next [login](https://dashboard.pubnub.com/login) to the PubNub dashboard.
 
-Choose Other Messaging Use Cases and click START USING PUBNUB.
+Choose **Other Messaging Use Cases** and click **START USING PUBNUB**.
 
 Navigate to the Apps page on the left menu.
 
-Click CREATE NEW APP, name it “DecodeAndForward, and finally select ‘Other messaging Use Cases’.
+Click **CREATE NEW APP**, name it `DecodeAndForward`, and finally select **Other Messaging Use Cases**.
 
 <img src={pubnub_createnewapp} />
 
@@ -40,21 +57,21 @@ Your app should appear:
 
 <img src={pubnub_decode_email} />
 
-Next on the left-hand menu click Functions, make sure the DecodeAndForward app is selected.
+Next on the left-hand menu click **Functions**, and make sure the `DecodeAndForward` app is selected.
 
-Click ‘Create New Module’ to create a new module and enter the following name “decode_and_forward”.
+Click **CREATE NEW MODULE** to create a new module and enter the following name `decode_and_forward`.
 
 <img src={pubnub_create_module_email} />
 
-Next let’s create a function by clicking the decode_and_forward module.
+Next create a function by clicking the **decode_and_forward** module.
 
-Click CREATE FUNCTION and fill in the fields with the following:
+Click **CREATE FUNCTION** and fill in the fields with the following:
 
-Function name: decode64_and_forward
-Event type: On Request
-URI path: decode
+* Function name: `decode64_and_forward`
+* Event type: `On Request`
+* URI path: `decode`
 
-Click CREATE.
+Click **CREATE**.
 
 <img src={pubnub_create_new_function_email} />
 
@@ -108,17 +125,104 @@ Replace the entire function with the provided code below:
 
 <img src={pubnub_module_running_email_2} />
 
-This simple function will allow us to take the payload field of the packet coming from Console, perform a base64 decode operation, and then forward that to any http endpoint we’d like.
+This simple function allows us to take the payload field of the packet coming from Console, perform a base64 decode operation, and then forward it to any desired HTTP endpoint.
 
-After you have replaced the code, click SAVE and then Click Start Module. 
+After replacing the code, click **SAVE**, and then Click **Start Module**. 
 
-[If you receive “ERROR: Missing required fields: code”, completely remove the code and re-paste it. Then click SAVE].
+[If you receive “ERROR: Missing required fields: code”, completely remove the code and re-paste it. Then click **SAVE**].
 
-Now before we leave this dashboard temporarily, copy the Function’s endpoint URL by clicking COPY URL on the left panel in the Path entry box. 
+Before leaving this dashboard, copy the Function’s endpoint URL by clicking **COPY URL** on the left panel in the Path entry box. 
 
-Save that URL in a text editor, we’ll need it in a few minutes.
+Save that URL in a text editor, you'll need it later.
 
 ## Creating Console HTTP Channel with PubNub Function Endpoint
+
+Next in another tab open the Helium [Console](https://console.helium.com), and navigate to the Channels section. 
+
+Click the HTTP icon to create an HTTP channel. Then copy the PubNub Function endpoint URL into the Endpoint field, and select POST from the drop down. 
+
+Name your channel `pubnub_decode_forward`.
+
+<img src={pubnub_console} />
+
+Return to the previous PubNub Function editor window. 
+
+If you haven’t plugged in your transmitting device from the device quickstart do so now. 
+
+You should see error messages in the PubNub console window located at the bottom of the editor view. 
+
+If you are not seeing anything, restart the Function by clicking **Restart module** at the top right of the window.
+
+<img src={pubnub_module_restart_module} />
+
+Let’s unplug the transmitting device to avoid exhausting the maximum transactions allowed with the free plan, although it's 1,000,000.
+
+## Creating IFTTT Applet to email packet payload
+
+First [create](https://ifttt.com/join) a free IFTTT account if you don’t already have one and sign in. 
+
+<img src={ifttt_getting_started} />
+
+Next visit https://ifttt.com/create to create an applet.
+
+<img src={ifttt_getting_started_2} />
+
+Click the large plus button after If to select a triggering service. Search for `Webhooks` and select the service by clicking the box seen below.
+
+<img src={ifttt_choose_service} />
+
+Next select the only trigger action this service provides, seen below. Click the **Receive a web request** box.
+
+<img src={ifttt_choose_trigger} />
+
+Let’s name this `forward_packet_email`, and click **Create trigger**.
+
+<img src={ifttt_complete_trigger} />
+
+Great, you’ve added the service that will receive the payload packet from our PubNub Function, we’ll configure that soon, but first let's pick the action, or what happens when the trigger is activated.
+
+<img src={ifttt_action_start} />
+
+At this point you could pick any one of thousands of actions like sending a tweet, text, or even turning on a smart light bulb, but for simplicity use the email service to send a simple email with the payload each time a packet is forwarded.
+
+<img src={ifttt_action_choose} />
+
+Enter your email address and the pin sent to that address.
+
+Select the single action offered from this service:
+
+<img src={ifttt_action_choose_2} />
+
+Next use the default field configuration and click **Create action**.
+
+<img src={ifttt_action_complete} />
+
+Finally click **Finish**.
+
+<img src={ifttt_action_review} />
+
+Navigate to the Webhooks service page and click **Documentation** at the top right:
+
+<img src={ifttt_webhooks} />
+
+On this page type in the name chosen for the webhook event name, `forward_packet_email`. Go ahead and type that into the box with ‘{event}’. 
+
+Next copy the webhook endpoint URL at the bottom, this is what our PubNub Function will be making an HTTP Post request to.
+
+<img src={ifttt_webhooks_key} />
+
+## Update PubNub Function POST URL
+
+Ok, almost done! Return to our PubNub Function editor window now.
+As our last step, replace the `PLACEHOLDER` string with our IFTTT Webhook URL at line 21 in the function.
+
+<img src={pubnub_webhooks_url_email} />
+
+Next, click **Save** and then the **Restart module**. 
+
+Congratulations! You've configured the entire pipeline, click **CLEAR** in the bottom console and then plug our device back in to begin transmitting again. 
+
+You should no longer see errors in the Console and should receive emails from IFTTT. Congrats!
 
 
 
