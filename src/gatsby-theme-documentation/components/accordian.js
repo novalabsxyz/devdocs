@@ -179,6 +179,7 @@ export const AccordionNav = React.forwardRef(
     if (globalHistory.location.pathname === '/console/overview') expanded[3] = true
     if (globalHistory.location.pathname === '/console/device-setup') expanded[3] = true
     if (globalHistory.location.pathname === '/console/routing-data') expanded[3] = true
+    if (globalHistory.location.pathname === '/console/trigger-ifttt') expanded[3] = true
     if (globalHistory.location.pathname === '/hotspot/overview') expanded[4] = true
     if (globalHistory.location.pathname === '/hotspot/developer-setup') expanded[4] = true
     if (globalHistory.location.pathname === '/longfi/overview') expanded[5] = true
