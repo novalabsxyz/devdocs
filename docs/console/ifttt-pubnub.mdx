@@ -1,11 +1,10 @@
-import pubnub-register from '../images/pubnub/pubnub-register.png'
-
-import request_bin from '../images/console/request_bin.png' 
-import pasted_endpoint from '../images/console/pasted_endpoint.png' 
-import register from '../images/console/register.png' 
-import create_device from '../images/console/create_device.png' 
-import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
-
+import pubnub_register from '../images/pubnub/pubnub_register.png'
+import pubnub_createnewapp from '../images/pubnub/pubnub_createnewapp.png'
+import pubnub_decode_email from '../images/pubnub/pubnub_decode_email.png'
+import pubnub_create_module_email from '../images/pubnub/pubnub_create_module_email.png'
+import pubnub_create_new_function_email from '../images/pubnub/pubnub_create_new_function_email.png'
+import pubnub_create_new_function_add_code_email from '../images/pubnub/pubnub_create_new_function_add_code_email.png'
+import pubnub_module_running_email_2 from '../images/pubnub/pubnub_module_running_email_2.png'
 
 # Triggering IFTTT services with device data
 
@@ -21,12 +20,11 @@ This guide will show you how to perform the following:
 * Create and configure an IFTTT Applet to send an email with the payload.
 * Update the PubNub Function with the IFTTT Webhook endpoint address.
 
-# Creating PubNub Function
+## Creating PubNub Function
 
 First you will need to [register](https://dashboard.pubnub.com/signup) for a free PubNub account. No credit card required!
 
-
-<!-- <img src={pubnub-register} /> -->
+<img src={pubnub_register} />
 
 Next [login](https://dashboard.pubnub.com/login) to the PubNub dashboard.
 
@@ -36,17 +34,17 @@ Navigate to the Apps page on the left menu.
 
 Click CREATE NEW APP, name it “DecodeAndForward, and finally select ‘Other messaging Use Cases’.
 
-<!-- <img src={pubnub-createnewapp} /> -->
+<img src={pubnub_createnewapp} />
 
 Your app should appear:
 
-<!-- <img src={pubnub-decode-email} /> -->
+<img src={pubnub_decode_email} />
 
 Next on the left-hand menu click Functions, make sure the DecodeAndForward app is selected.
 
 Click ‘Create New Module’ to create a new module and enter the following name “decode_and_forward”.
 
-<!-- <img src={pubnub-create-module-email} /> -->
+<img src={pubnub_create_module_email} />
 
 Next let’s create a function by clicking the decode_and_forward module.
 
@@ -58,86 +56,69 @@ URI path: decode
 
 Click CREATE.
 
+<img src={pubnub_create_new_function_email} />
+
+You will be dropped into the Function editor with a default Javascript request function:
+
+<img src={pubnub_create_new_function_add_code_email} />
+
+Replace the entire function with the provided code below:
+
+	export default (request, response) => {
+		const pubnub = require('pubnub');
+		const xhr = require('xhr');
+    	const base64Codec = require('codec/base64');
+
+    	let headersObject = request.headers;
+    	let paramsObject = request.params;
+    	let methodString = request.method;
+    	let bodyString = request.body;
+    
+    	// parse request body json
+    	let bodyJson = JSON.parse(request.body);
+    	console.log(bodyJson);
+    
+    	// decode longfi payload and parse string into json
+    	let parsedJsonPayload = JSON.parse(base64Codec.atob(bodyJson.payload));
+    	// log parsed json payload
+    	// console.log(parsedJsonPayload);
+    
+    	// POST parsed json payload to IFTTT webhook service
+    	xhr.fetch('PLACEHOLDER', {
+    	    'method': 'POST',
+     	   'body' : parsedJsonPayload
+     	   }).then(() => {
+    	    console.log("Packet sent with payload: " + JSON.stringify(parsedJsonPayload));
+    	}).catch((err) => {
+    	    console.log(err);
+    	});
+
+    	// Set the status code - by default it would return 200
+    	response.status = 200;
+    	// Set the headers the way you like
+    	response.headers['X-Custom-Header'] = 'CustomHeaderValue';
+
+    	return request.json().then((body) => {
+    	    return response.send("OK");
+    	}).catch((err) => {
+     	   console.log(err)
+     	   return response.send("Malformed JSN body.");
+    	});
+	};
+
+<img src={pubnub_module_running_email_2} />
+
+This simple function will allow us to take the payload field of the packet coming from Console, perform a base64 decode operation, and then forward that to any http endpoint we’d like.
+
+After you have replaced the code, click SAVE and then Click Start Module. 
+
+[If you receive “ERROR: Missing required fields: code”, completely remove the code and re-paste it. Then click SAVE].
+
+Now before we leave this dashboard temporarily, copy the Function’s endpoint URL by clicking COPY URL on the left panel in the Path entry box. 
+
+Save that URL in a text editor, we’ll need it in a few minutes.
+
+## Creating Console HTTP Channel with PubNub Function Endpoint
 
 
-
-
-When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on.
-
-Blue dots represent packets that have been successfully sent to endpoints, while orange dots have failed to reach an endpoint, and red dots do not have a defined endpoint.
-
-The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot.
-
-> #### IMPORTANT: 
-> Data is not stored in the Console so the Console window must be open in order to view live packets.
-
-### Event Log
-Event Logs display real-time packets in table form. See which Hotspot received the packet, its RSSI, and the size of the packet.
-
-Follow these instructions to use the Console to set up a Channel to route data. A Helium Channel is a pre-built, secure connection from Helium-enabled devices straight through to a configured endpoint. When data arrives from a device, the Helium routing infrastructure ensures delivery of your encrypted data.
-
-
-## Add an HTTP Channel
-
-To add a channel, go to **Channels** on the left menu. Select the channel to add - in this case, the **HTTP** channel.
-
-The next step is to paste the HTTP endpoint.
-
-If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. <a href="https://www.requestbin.com">Requestbin </a> and <a href="https://www.beeceptor.com">Beeceptor </a>provide tools to make an HTTP endpoint quickly and easily.
-
-### Requestbin Example
-Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint.
-
-<img src={request_bin} />
-
-... and paste it in Console.
-
-<img src={pasted_endpoint} />
-
-**HTTP Header** and **Value** are not required and those can be left blank. 
-
-Lastly, provide a name for the channel. Names do not have to be unique.
-
-Click **Create Channel**.
-
-Your new channel is now ready for use.
-
-### Set Multiple Channels
-Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
-
-To send to another channel, click **Connect Channel**, select a channel, and click **Add**.
-
-### Set Default Channel 
-[setchannel]: #setchannel
-
-To set a channel as the default for all newly created devices, go to **Channels** on the left menu and click **Set Default** for the desired channel. 
-
-<img src={set_channel_as_default} />
-
-### Channel Details 
-View the details of your channel by clicking on the Channel name. 
-
-**Channel Details** shows the channel ID that is unique to each channel, the name, the type of channel, and whether it is active or ont.
-
-**HTTP Details** shows the specific endpoint. Editing endpoints is not available in the SDK Beta and will be coming soon. If you no longer want to use a channel, simply create a new one and redirect existing devices using the old channel to use the new one.
-
-**Devices Piped** lists all the devices that are currently sending their data to the selected channel.
-
-**Update Channel** allows you to update your HTTP connection details for the currently viewed channel. 
-
-## Data Credits
-
-Data Credits are used to pay for data packets on the Helium Network. To acquire data credits, one would need to burn Helium Network Tokens (HNT) to get data credits.
-
-Alternatively, Console provides the ability to purchase data credits without HNT.
-
-**During the SDK Beta, all data packet transmission is free**
-
-## Access Controls
-
-### Levels of Access
-
-Editing Organization name (Coming soon)
-
-Editing Team name (Coming soon)
 
