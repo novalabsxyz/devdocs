@@ -145,8 +145,11 @@ Name your channel `pubnub_decode_forward`.
 
 <img src={pubnub_console} />
 
+Make sure your device is configured to use this `pubnub_decode_forward` channel. If you need to change the Channel from a previous one, this process may take up to 5 minutes or longer. 
+
 Return to the previous PubNub Function editor window. 
 
+> #### IMPORTANT:  
 If you haven’t plugged in your transmitting device from the device quickstart do so now. 
 
 You should see error messages in the PubNub console window located at the bottom of the editor view. 
@@ -167,7 +170,7 @@ Next visit <a href="https://ifttt.com/create" target="_blank">https://ifttt.com/
 
 <img src={ifttt_getting_started_2} />
 
-Click the large plus button after If to select a triggering service. Search for `Webhooks` and select the service by clicking the box seen below.
+Click the large plus button after **If** to select a triggering service. Search for `Webhooks` and select the service by clicking the box seen below.
 
 <img src={ifttt_choose_service} />
 
@@ -179,11 +182,13 @@ Let’s name this `forward_packet_email`, and click **Create trigger**.
 
 <img src={ifttt_complete_trigger} />
 
-Great, you’ve added the service that will receive the payload packet from our PubNub Function, we’ll configure that soon, but first let's pick the action, or what happens when the trigger is activated.
+Great, you’ve added the service that will receive the payload packet from the PubNub Function, we’ll configure that soon, but first let's pick the action, or what happens when the trigger is activated.
 
 <img src={ifttt_action_start} />
 
-At this point you could pick any one of thousands of actions like sending a tweet, text, or even turning on a smart light bulb, but for simplicity we will use the email service to send a simple email with the payload each time a packet is forwarded.
+At this point you could pick any one of thousands of actions like sending a tweet, text, or even turning on a smart light bulb, but for simplicity we will use the email service to send a simple email with the payload each time a packet is forwarded. 
+
+Click the + sign after Then, search for `Email`, and select **Email**. 
 
 <img src={ifttt_action_choose} />
 
@@ -205,22 +210,23 @@ Navigate to the Webhooks service page and click **Documentation** at the top rig
 
 <img src={ifttt_webhooks} />
 
-On this page type in the name chosen for the webhook event name, `forward_packet_email`. Go ahead and type that into the box with ‘{event}’. 
+On this page enter the name chosen for the webhook event name, `forward_packet_email`. Go ahead and type that into the box with ‘{event}’. 
 
-Next copy the webhook endpoint URL at the bottom, this is what our PubNub Function will be making an HTTP Post request to.
+Next copy the webhook endpoint URL at the bottom, this is what the PubNub Function will be making an HTTP Post request to.
 
 <img src={ifttt_webhooks_key} />
 
 ## Update PubNub Function POST URL
 
-Ok, almost done! Return to our PubNub Function editor window now.
-As our last step, replace the `PLACEHOLDER` string with our IFTTT Webhook URL at line 21 in the function.
+Ok, almost done! Return to the PubNub Function editor window.
+
+At the line with `xhr.fetch` replace the `PLACEHOLDER` string with the IFTTT Webhook URL in the function.
 
 <img src={pubnub_webhooks_url_email} />
 
-Next, click **Save** and then the **Restart module**. 
+Next click **Save**, and then the **Restart module**. 
 
-Congratulations! You've configured the entire pipeline, click **CLEAR** in the bottom console and then plug our device back in to begin transmitting again. 
+Congratulations! You've configured the entire pipeline, click **CLEAR** in the bottom console and then plug the device back in to begin transmitting again. 
 
 You should no longer see errors in the Console and should receive emails from IFTTT. Congrats!
 
