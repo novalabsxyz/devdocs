@@ -4,6 +4,7 @@ import pasted_endpoint from '../images/console/pasted_endpoint.png'
 import register from '../images/console/register.png' 
 import create_device from '../images/console/create_device.png' 
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
+import example_payload from '../images/console/requestbin_example.png'
 
 
 # Console - Routing Data
@@ -54,6 +55,39 @@ Click **Create Channel**.
 
 Your new channel is now ready for use.
 
+## LongFi Packet Payload 
+
+The example applications we have provided will send a JSON package similar to the example below: 
+
+```
+{
+    "device_id": 37,
+    "fingerprint": 3316710589,
+    "gateway": "glorious turquoise tuna",
+    "oui": 1,
+    "payload": "WgIDBAUGBwg=",
+    "rssi": -98,
+    "sequence": 89,
+    "snr": 11.5,
+    "spreading": "SF10",
+    "timestamp": 1575312819
+}
+```
+
+<img src={example_payload} />
+
+* **device_id** : Device ID associated with client device. 
+* **fingerprint** : Mechanism for device and Routers to determine validity of datagram received. It resembles a HMAC, but the message cannot be supplied in the clear. Instead, a hash of the message is used. 
+* **gateway** : name of the Hotspot that received LongFi packet. 
+* **oui** : Organizational Unique Identifier that is used to determine which Router to deliver the datagram. 
+* **payload** : base64 encoded version of the byte array 
+* **rssi** : Received Signal Strength Indicator, an estimate mesaure of power level that the client device is receiving from a Helium Hotspot. 
+* **sequence** : Mapping of ordering of byte stream. 
+* **snr** : Difference between received wireless signal and the noise floor, or erroneous background transmissions that are emitted from either other devices that are too far away for the signal to be intelligible, or by devices that are inadvertently creating interference on the same frequency. 
+* **spreading** : Duration of the chirp. LoRa operates with spread factors from 7 to 12, where SF7 is the shortest time on air and SF12 is the longest. Each step up in the spreading factor will double the time on air to transmit the same amount of data. 
+* **timestamp** : Timestamp in Unix epoch time. 
+
+##
 ### Set Multiple Channels
 Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
 
