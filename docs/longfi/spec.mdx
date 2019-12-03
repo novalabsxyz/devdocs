@@ -1,5 +1,6 @@
 
 import protocol from '../images/longfi/protocol.png' 
+import example_payload from '../images/console/requestbin_example.png'
 
 # Helium LongFi Protocol
 
@@ -25,6 +26,8 @@ This proposal is not an all-encompassing specification but lays the foundation f
   * [Fingerprints](#fingerprints)
   * [Fragmentation](#fragmentation)
   * [Channels](#channels)
+
+[Payload](#payload)
 
 [Regulatory](#regulatory)
 
@@ -215,6 +218,40 @@ In the United States the unlicensed frequency ranges from 902-928MHz.
 
 Coming soon.
 
+## Payload 
+[payload]: #payload 
+
+The example applications we have provided will send a JSON package similar to the example below: 
+
+```
+{
+    "device_id": 37,
+    "fingerprint": 3316710589,
+    "gateway": "glorious turquoise tuna",
+    "oui": 1,
+    "payload": "WgIDBAUGBwg=",
+    "rssi": -98,
+    "sequence": 89,
+    "snr": 11.5,
+    "spreading": "SF10",
+    "timestamp": 1575312819
+}
+```
+
+The payload, as it appears as a HTTP POST on RequestBin. 
+
+<img src={example_payload} />
+
+* **device_id** : Device ID associated with client device. 
+* **fingerprint** : Mechanism for device and Routers to determine validity of datagram received. It resembles a HMAC, but the message cannot be supplied in the clear. Instead, a hash of the message is used. 
+* **gateway** : name of the Hotspot that received the transmitted LongFi packet. 
+* **oui** : Organizational Unique Identifier that is used to determine which Router to deliver the datagram. 
+* **payload** : base64 encoded version of the byte array 
+* **rssi** : Received Signal Strength Indicator, an estimate measure of power level that the client device is receiving from a Helium Hotspot. 
+* **sequence** : Ordering of byte stream. 
+* **snr** : Difference between received wireless signal and the noise floor, or erroneous background transmissions that are emitted from either other devices that are too far away for the signal to be intelligible, or by devices that are inadvertently creating interference on the same frequency. 
+* **spreading** : Duration of the chirp. LoRa operates with spread factors from 7 to 12, where SF7 is the shortest time on air and SF12 is the longest. Each step up in the spreading factor will double the time on air to transmit the same amount of data. 
+* **timestamp** : Timestamp in Unix epoch time. 
 
 ## Regulatory
 [regulatory]: #regulatory
