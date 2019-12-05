@@ -225,22 +225,28 @@ The example applications we have provided will send a JSON package similar to th
 
 ```
 {
-    "device_id": 37,
-    "fingerprint": 3316710589,
-    "gateway": "glorious turquoise tuna",
-    "oui": 1,
-    "payload": "WgIDBAUGBwg=",
-    "rssi": -98,
-    "sequence": 89,
-    "snr": 11.5,
-    "spreading": "SF10",
-    "timestamp": 1575312819
+    "device_id": 36
+    "fingerprint": 3714365718
+    "gateway": "faithful raisin wolverine"
+    "oui": 1
+    "payload": "eyJ2YWx1ZTEiOiJ0ZXN0MSIsInZhbHVlMiI6InRlc3QyIiwidmFsdWUzIjoidGVzdDMifQ=="
+    "rssi": -68
+    "sequence": 2
+    "snr": 11.75
+    "spreading": "SF10"
+    "timestamp": 1575574722
 }
 ```
 
-The payload, as it appears as a HTTP POST on RequestBin. 
+The payload, as it appears as a HTTP POST on <a href="https://www.requestbin.com">Requestbin </a>. 
 
 <img src={example_payload} />
+
+The decoded user **payload** for this example is:
+
+```
+{"value1":"test1","value2":"test2","value3":"test3"}
+```
 
 * **device_id** : Device ID associated with client device. 
 * **fingerprint** : Mechanism for device and Routers to determine validity of datagram received. It resembles a HMAC, but the message cannot be supplied in the clear. Instead, a hash of the message is used. 
