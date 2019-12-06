@@ -150,7 +150,7 @@ Replace the entire function with the provided code below:
     // parse request body json
     let bodyJson = JSON.parse(request.body);
 
-    // convert decoded payload into byte array
+    // decode payload into byte array
     var DecodedByteArray = base64DecToArr(bodyJson.payload, 2); 
     //console.log("DecodedByteArray: " + DecodedByteArray);
     
