@@ -82,54 +82,136 @@ You will be dropped into the Function editor with a default Javascript request f
 Replace the entire function with the provided code below:
 
 	export default (request, response) => {
-		const pubnub = require('pubnub');
-		const xhr = require('xhr');
-    	const base64Codec = require('codec/base64');
-
-    	let headersObject = request.headers;
-    	let paramsObject = request.params;
-    	let methodString = request.method;
-    	let bodyString = request.body;
+    const pubnub = require('pubnub');
+    const xhr = require('xhr');
+    const base64Codec = require('codec/base64');
+    let headersObject = request.headers;
+    let paramsObject = request.params;
+    let methodString = request.method;
+    let bodyString = request.body;
     
-    	// parse request body json
-    	let bodyJson = JSON.parse(request.body);
-    	console.log(bodyJson);
+    // ref: https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding
+    var b64ToUint6 = function(nChr) {
+      return nChr > 64 && nChr < 91 ?
+          nChr - 65
+        : nChr > 96 && nChr < 123 ?
+          nChr - 71
+        : nChr > 47 && nChr < 58 ?
+          nChr + 4
+        : nChr === 43 ?
+          62
+        : nChr === 47 ?
+          63
+        :
+          0;
+    }
     
-    	// decode longfi payload and parse string into json
-    	let parsedJsonPayload = JSON.parse(base64Codec.atob(bodyJson.payload));
-    	// log parsed json payload
-    	// console.log(parsedJsonPayload);
+    // ref: https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding
+    var base64DecToArr = function(sBase64, nBlockSize) {
+      var
+        sB64Enc = sBase64.replace(/[^A-Za-z0-9\+\/]/g, ""), nInLen = sB64Enc.length,
+        nOutLen = nBlockSize ? Math.ceil((nInLen * 3 + 1 >>> 2) / nBlockSize) * nBlockSize : nInLen * 3 + 1 >>> 2, aBytes = new Uint8Array(nOutLen);
+      for (var nMod3, nMod4, nUint24 = 0, nOutIdx = 0, nInIdx = 0; nInIdx < nInLen; nInIdx++) {
+        nMod4 = nInIdx & 3;
+        nUint24 |= b64ToUint6(sB64Enc.charCodeAt(nInIdx)) << 18 - 6 * nMod4;
+        if (nMod4 === 3 || nInLen - nInIdx === 1) {
+          for (nMod3 = 0; nMod3 < 3 && nOutIdx < nOutLen; nMod3++, nOutIdx++) {
+            aBytes[nOutIdx] = nUint24 >>> (16 >>> nMod3 & 24) & 255;
+          }
+          nUint24 = 0;
+        }
+      }
+      return aBytes;
+    }
     
-    	// POST parsed json payload to IFTTT webhook service
-    	xhr.fetch('PLACEHOLDER', {
-    	    'method': 'POST',
-     	   'body' : parsedJsonPayload
-     	   }).then(() => {
-    	    console.log("Packet sent with payload: " + JSON.stringify(parsedJsonPayload));
-    	}).catch((err) => {
-    	    console.log(err);
-    	});
+    // ref: https://stackoverflow.com/a/34310051
+    var byteArrayToHexString = function(byteArray) {
+      return Array.from(byteArray, function(byte) {
+        return ('0' + (byte & 0xFF).toString(16)).slice(-2);
+      }).join('')
+    }
+    
+    // ref: https://stackoverflow.com/a/14090278
+    var parseFloatHex = function(str) {
+        var float = 0, sign, order, mantiss,exp,
+        int = 0, multi = 1;
+        var i;
+        int = parseInt(str,16);
+        sign = (int>>>31)?-1:1;
+        exp = (int >>> 23 & 0xff) - 127;
+        mantiss = ((int & 0x7fffff) + 0x800000).toString(2);
+        for (i=0; i<mantiss.length; i+=1){
+            float += parseInt(mantiss[i])? Math.pow(2,exp):0;
+            exp--;
+        }
+        return float*sign;
+    }
 
-    	// Set the status code - by default it would return 200
-    	response.status = 200;
-    	// Set the headers the way you like
-    	response.headers['X-Custom-Header'] = 'CustomHeaderValue';
+    // parse request body json
+    let bodyJson = JSON.parse(request.body);
 
-    	return request.json().then((body) => {
-    	    return response.send("OK");
-    	}).catch((err) => {
-     	   console.log(err)
-     	   return response.send("Malformed JSN body.");
-    	});
-	};
+    // convert decoded payload into byte array
+    var DecodedByteArray = base64DecToArr(bodyJson.payload, 2); 
+    //console.log("DecodedByteArray: " + DecodedByteArray);
+    
+    // convert byte array to hex string
+    var hexString = byteArrayToHexString(DecodedByteArray);
+    //console.log("hexString: " + hexString);
+    
+    // parse bytes 0-3 and reverse order for value1
+    var value1HexString = byteArrayToHexString(DecodedByteArray.slice(0,4).reverse());
+    var value1 = parseInt(value1HexString, 16);
+    console.log("value1(uint32_t): " + value1);
+    
+    // parse bytes 4-7 and reverse order for value2
+    var value2HexString = byteArrayToHexString(DecodedByteArray.slice(4,8).reverse());
+    var value2 = parseInt(value2HexString, 16);
+    // check sign, ref: https://stackoverflow.com/a/13468626
+    if ((value2 & 0x8000) > 0) {
+       value2 = value2 - 0x10000;
+    }
+    console.log("value2(int16_t): " + value2);
+    
+    // parse bytes 8-11 and reverse order for value3
+    var value3HexString = byteArrayToHexString(DecodedByteArray.slice(8,12).reverse());
+    var value3 = parseFloatHex(value3HexString).toFixed(5);
+    console.log("value3(float): " + value3);
+    
+    // create new JSON payload with values
+    var iftttJson = {
+        value1: value1,
+        value2: value2,
+        value3: value3
+    }
 
-<img src={pubnub_module_running_email_2} />
+    //POST parsed JSON payload to IFTTT webhook service
+    xhr.fetch('PLACEHOLDER', {
+        'method': 'POST',
+       'body' : iftttJson
+      }).then(() => {
+        console.log("Packet sent with payload: " + JSON.stringify(iftttJson));
+    }).catch((err) => {
+        console.log(err);
+    });
+    // Set the status code - by default it would return 200
+    response.status = 200;
+    // Set the headers the way you like
+    response.headers['X-Custom-Header'] = 'CustomHeaderValue';
+    return request.json().then((body) => {
+        return response.send("OK");
+    }).catch((err) => {
+       console.log(err)
+       return response.send("Malformed JSN body.");
+    });
+};
+
+<img src={pubnub_create_new_function_email} />
 
 This simple function allows us to take the payload field of the packet coming from Console, perform a base64 decode operation, and then forward it to any desired HTTP endpoint.
 
 After replacing the code, click **SAVE**, and then Click **Start Module**. 
 
-[If you receive “ERROR: Missing required fields: code”, completely remove the code and re-paste it. Then click **SAVE**].
+`If you receive “ERROR: Missing required fields: code”, completely remove the code and re-paste it. Then click **SAVE**.`
 
 Before leaving this dashboard, copy the Function’s endpoint URL by clicking **COPY URL** on the left panel in the Path entry box. 
 
