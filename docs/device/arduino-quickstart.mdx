@@ -84,6 +84,9 @@ Sketch -> Include Libraries -> Manage Libraries
 
 Search for `LongFi` and install the latest version 
 
+> ##### Important! 
+> If you have already installed the LongFi library, please make sure to check for updates
+
 <img src={Arduino_LongFi} /> 
 
 ##
@@ -96,7 +99,7 @@ Search for `LongFi` and install the latest version
 
 ## LongFi Example Sketches 
 
-There are two example sketches included with the LongFi library. 
+There are two example sketches included with the LongFi library. TransmitPacket will send a stream of packets while ButtonTransmit will transmit packets on-demand upon button press. 
 
 To learn more about the LongFi packet payload, check out this [section] (/longfi/spec#payload).
 
@@ -223,7 +226,7 @@ You should be able to see some packets appear as Live Data.
 
 To learn about routing these packets to an endpoint, check out this [guide] (/console/routing-data). 
 
-To learn about decoding these packets and triggering a service on IFTTT, check out this [guide] (/console/trigger-ifttt).
+If you've loaded the ButtonTransmit sketch, you can learn about decoding these packets and triggering a service on IFTTT by checking out this [guide] (/console/trigger-ifttt).
 
 
 
