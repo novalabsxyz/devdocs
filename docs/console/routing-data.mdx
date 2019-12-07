@@ -5,12 +5,11 @@ import register from '../images/console/register.png'
 import create_device from '../images/console/create_device.png' 
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
 
-
 # Console - Routing Data
 
 > #### IMPORTANT:  
-> The cost per fragment is $0.00001 USD (24 byte fragments) which is equivalent to 1 Data Credit (DC)
-> During the Beta, the cost to send packets is 0 DC.
+> The cost per packet is $0.00001 USD (24 byte packets) which is equivalent to 1 Data Credit (DC).
+> During the Beta there is no cost to send packets.
 
 When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on.
 
@@ -35,8 +34,10 @@ The next step is to paste the HTTP endpoint.
 
 If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. <a href="https://www.requestbin.com">Requestbin </a> and <a href="https://www.beeceptor.com">Beeceptor </a>provide tools to make an HTTP endpoint quickly and easily.
 
+To transfer data to request bin continue with the example below. However, if you want to trigger services with device data go [here](/console/ifttt-pubnub).
+
 ### Requestbin Example
-Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint..
+Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint.
 
 <img src={request_bin} />
 
@@ -51,6 +52,8 @@ Lastly, provide a name for the channel. Names do not have to be unique.
 Click **Create Channel**.
 
 Your new channel is now ready for use.
+
+To learn more about the LongFi packet payload, check out this [section] (/longfi/spec#payload).
 
 ### Set Multiple Channels
 Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
