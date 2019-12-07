@@ -85,6 +85,7 @@ You will be dropped into the Function editor with a default Javascript request f
 
 Replace the entire function with the provided code below:
 
+```
 	export default (request, response) => {
     const pubnub = require('pubnub');
     const xhr = require('xhr');
@@ -208,6 +209,9 @@ Replace the entire function with the provided code below:
        return response.send("Malformed JSN body.");
     });
 };
+```
+
+... like so
 
 <img src={pubnub_create_new_function_email} />
 
