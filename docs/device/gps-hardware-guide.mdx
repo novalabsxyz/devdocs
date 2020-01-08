@@ -1,0 +1,184 @@
+import adafruit_gps_parts from '../images/device/adafruit_gps_parts.jpg' 
+import adafruit_assembled_board from '../images/device/adafruit_assembled_board.jpg' 
+
+# GPS Hardware Guide for B-L072Z-LRWAN1 Discovery Board
+
+## Overview
+One of the benefits of the Helium LongFi network is applicable to location tracking. It also provides a great tool for network coverage testing. This guide will show you how to build a simple GPS tracking application using the <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">B-L072Z-LRWAN1 - Discovery</a> board and <a href="https://www.adafruit.com/product/1272" target="_blank">Adafruit GPS Shield</a>. 
+
+> ##### Important!  
+>This guide will require some basic through-hole soldering.
+>
+>If you haven't completed the Console and device quickstart instructions, please perform those [here](https://developer.helium.com/quickstart) before continuing with this guide.
+
+## Objective 
+
+In this guide, you will learn:
+
+* How to add GPS capability to the Discovery board using the Adafruit GPS Shield 
+
+### Hardware
+
+* <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">B-L072Z-LRWAN1 - Discovery</a>
+* <a href="https://www.adafruit.com/product/1272" target="_blank">Adafruit GPS Shield</a>
+* Micro USB Type B Cable 
+* 3xAAA batteries OR external battery pack
+* Jumper wire 
+* 1x6 single row female pin headers (optional)
+
+<img src={adafruit_gps_parts} />
+
+### Software
+
+* <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino software (IDE)</a> 
+* <a href="https://console.helium.com/" target="_blank">Helium Console</a> 
+* GPS Location Visualization tool
+
+## Hardware setup
+
+We’ll be extending the capabilities of our Discovery board by utilizing the Arduino pins for this build and stacking the GPS Shield on top of the Discovery board.  
+
+The Adafruit GPS shield comes with a 36-pin stick of male pin headers. 
+
+We recommend stacking the GPS shield on top of the Discovery board so that it doesn’t cover the onboard GPS patch antenna. Otherwise, you may need to get an external GPS antenna. If you connect an external active GPS antenna via a uFL/SMA cable to the shield, the shield will automatically switch over to use the external antenna. 
+
+If you choose to mount the Shield to the bottom of the Discovery board, you will need to use <a href="https://www.adafruit.com/product/85" target="_blank">stacking headers</a>. 
+
+Now let’s populate the pins on the GPS shield. We will need to use:
+
+* 3v3
+* 5V
+* GND
+* Vin
+* TX
+
+These will give us access to the digital input and power pins necessary for this project. For the purposes of this guide, we would recommend cutting the included stick of pin headers into two 8-pin segments for ease of alignment and installation. 
+
+You can either directly solder a jumper wire onto the the GPS shield or use a female pin header. We will be using the `TX` pin on the GPS shield.
+
+The next thing we’ll need for hardware is connecting the jumper wire from the `TX` pin to the `PA10` pin on the Discovery board. 
+
+Next, we'll need to toggle the dip switch from `Direct` to `Soft-Serial`.
+
+Finally, we can stack the GPS shield onto our Discovery board, like so. 
+
+<img src={adafruit_assembled_board} />
+
+Finally, we’ll have to decide how to power the board. If you have a rechargeable battery pack handy, you can connect it to the board using the `CN7` USB connector located on the short side of the Discovery board. 
+
+Alternatively, you can use the 3xAAA battery slots on the Discovery board with a small board modification. If you remove the `SB37` jumper located on the back of the Discovery board, you can power the board with 3xAAA batteries.
+
+> ##### Important! 
+> Making this board modification will release the RESET pin managed by ST-LINK, which will no longer receive power via the CN7 USB port. 
+
+That’s it for hardware! Whew! Let’s move on towards programming our GPS device. 
+
+## Software
+
+We've provided a reference Arduino sketch utilizes the Adafruit GPS library for this device. You will need to update your device details (device_id, OUI, PSK) from Console. 
+
+
+```
+#include <Arduino.h>
+#include <SPI.h>
+#include "LongFi.h"
+#include <Adafruit_GPS.h>
+
+// set OUI and device_id to work with LongFi routing
+const uint32_t oui = CHANGE_THESE_WITH_VALUES_FROM_CONSOLE;
+const uint16_t device_id = CHANGE_THESE_WITH_VALUES_FROM_CONSOLE;
+const uint8_t preshared_key[16] = CHANGE_THESE_WITH_VALUES_FROM_CONSOLE;
+uint32_t timer = millis();
+
+// Discovery L072CZ-LRWAN1
+const uint8_t RADIO_RESET_PIN = RADIO_RESET_PORT;
+const uint8_t RADIO_DIO_0_PIN = RADIO_DIO_0_PORT;
+const uint8_t RADIO_MOSI_PIN  = RADIO_MOSI_PORT;
+const uint8_t RADIO_MISO_PIN  = RADIO_MISO_PORT;
+const uint8_t RADIO_SCLK_PIN  = RADIO_SCLK_PORT;
+const uint8_t RADIO_SS_PIN    = RADIO_NSS_PORT;
+const uint8_t LED             = LED_BLUE; 
+LongFi LongFi(LongFi::RadioType::SX1276, RADIO_RESET_PIN, RADIO_SS_PIN, RADIO_DIO_0_PIN);
+
+HardwareSerial Serial1(PA_10, PA_9);
+#define GPSSerial Serial1
+Adafruit_GPS GPS(&GPSSerial);
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Setup Start");
+  pinMode(LED, OUTPUT);
+
+  SPI.setMOSI(RADIO_MOSI_PIN);
+  SPI.setMISO(RADIO_MISO_PIN);
+  SPI.setSCLK(RADIO_SCLK_PIN);
+  SPI.setSSEL(RADIO_SS_PIN);
+  SPI.begin();
+
+  LongFi.init(oui, device_id, preshared_key);
+
+  //Setup Adafruit GPS
+  GPS.begin(9600);
+  GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
+  GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCONLY);
+  GPS.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ); // 1 Hz update rate
+  GPS.sendCommand(PGCMD_ANTENNA);
+  
+  Serial.println("Setup Complete");
+}
+
+void transmitCallback(void) {
+  static uint8_t payload[32];
+  uint8_t idx = 0;
+  uint32_t data;
+  if (GPS.fix) {
+    Serial.println("Got a fix!");
+    data = (uint32_t)(GPS.latitudeDegrees * 1E7);
+    payload[idx++] = data >> 24;
+    payload[idx++] = data >> 16;
+    payload[idx++] = data >> 8;
+    payload[idx++] = data;
+    data = (uint32_t)(GPS.longitudeDegrees * 1E7);
+    payload[idx++] = data >> 24;    
+    payload[idx++] = data >> 16;
+    payload[idx++] = data >> 8;
+    payload[idx++] = data;
+    data = (int)(GPS.altitude);
+    payload[idx++] = data >> 8;
+    payload[idx++] = data;    
+    data = (int)(GPS.speed);
+    payload[idx++] = data >> 8;
+    payload[idx++] = data;    
+  } else {
+    payload[idx++] = 0;
+  }
+  digitalWrite(LED, HIGH);
+  LongFi.send(payload, idx);
+  Serial.println("Sending packet");    
+  digitalWrite(LED, LOW);
+}
+
+void loop() {
+  GPS.read();
+  if (GPS.newNMEAreceived()) {
+    GPS.parse(GPS.lastNMEA());
+  }
+  if (timer > millis()) timer = millis();
+  if (millis() - timer > 5000) {
+    timer = millis();
+    transmitCallback();
+  }
+}
+
+```
+
+This concludes the device-side setup. 
+
+This device will send GPS location data when it has a GPS fix, otherwise it will send a payload of `0`. The Red `FIX` LED will be flashing while the device does not have a GPS fix. 
+
+It is recommended to bring this device outdoors with a clear sky view to get a fix. Tall buildings, location, satellite configuration or other structures may affect how quickly the device will find a fix. 
+
+To learn about routing these packets to an endpoint, check out this [guide] (/console/routing-data). 
+
+## COMING SOON - ROUTING GPS PACKETS 
+
