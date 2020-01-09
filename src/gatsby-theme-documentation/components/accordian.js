@@ -176,6 +176,7 @@ export const AccordionNav = React.forwardRef(
     if (globalHistory.location.pathname === '/device/arduino-quickstart') expanded[2] = true
     if (globalHistory.location.pathname === '/device/st-hal-quickstart') expanded[2] = true
     if (globalHistory.location.pathname === '/device/rust-quickstart') expanded[2] = true
+    if (globalHistory.location.pathname === '/device/gps-hardware-guide') expanded[2] = true
     if (globalHistory.location.pathname === '/console/overview') expanded[3] = true
     if (globalHistory.location.pathname === '/console/device-setup') expanded[3] = true
     if (globalHistory.location.pathname === '/console/routing-data') expanded[3] = true
