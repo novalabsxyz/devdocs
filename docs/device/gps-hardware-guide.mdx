@@ -1,5 +1,8 @@
 import adafruit_gps_parts from '../images/device/adafruit_gps_parts.jpg' 
 import adafruit_assembled_board from '../images/device/adafruit_assembled_board.jpg' 
+import adafruit_power_modification from '../images/device/adafruit_power_modification.jpg'
+import adafruit_completed from '../images/device/adafruit_completed.jpg'
+
 
 # GPS Hardware Guide for B-L072Z-LRWAN1 Discovery Board
 
@@ -60,9 +63,11 @@ The next thing we’ll need for hardware is connecting the jumper wire from the 
 
 Next, we'll need to toggle the dip switch from `Direct` to `Soft-Serial`.
 
-Finally, we can stack the GPS shield onto our Discovery board, like so. 
-
 <img src={adafruit_assembled_board} />
+
+Finally, we can stack the GPS shield onto our Discovery board, like so: 
+
+<img src={adafruit_completed} />
 
 Finally, we’ll have to decide how to power the board. If you have a rechargeable battery pack handy, you can connect it to the board using the `CN7` USB connector located on the short side of the Discovery board. 
 
@@ -71,7 +76,9 @@ Alternatively, you can use the 3xAAA battery slots on the Discovery board with a
 > ##### Important! 
 > Making this board modification will release the RESET pin managed by ST-LINK, which will no longer receive power via the CN7 USB port. 
 
-That’s it for hardware! Whew! Let’s move on towards programming our GPS device. 
+<img src={adafruit_power_modification} />
+
+That’s it for hardware! Let’s move on towards programming our GPS device. 
 
 ## Software
 
@@ -180,5 +187,5 @@ It is recommended to bring this device outdoors with a clear sky view to get a f
 
 To learn about routing these packets to an endpoint, check out this [guide] (/console/routing-data). 
 
-## COMING SOON - ROUTING GPS PACKETS 
+ 
 
