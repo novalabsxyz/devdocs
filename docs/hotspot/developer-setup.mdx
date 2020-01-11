@@ -94,6 +94,14 @@ Change the following settings:
 
 You should also edit `log_root`, `base_dir` and `update_dir` to be appropriate for whatever you prefer on your system.
 
+You will need to make the following change to `rebar.lock` on `line 5`
+
+```
+git@ -> https
+repo -> https://github.com/amirhaleem/erlang-rocksdb
+hash -> 9f29d6e20d7f4f93a6157730a11fa9211e670e87
+```
+
 ### Starting Up
 
 You can run the Miner in the background, or via an interactive console. 
@@ -204,10 +212,10 @@ Once you have concentrate and rustup installed, we can use Rust's package manage
 ```
 cd concentrate
 git submodule update --init
-cargo build
+cargo build --features="sx1301"
 ```
 
-Once complete, you're ready to run concentrate.
+Once complete, you're ready to run concentrate. Please note that the `features=` depends on which concentrator chip you are using. 
 
 ### Using concentrate
 
