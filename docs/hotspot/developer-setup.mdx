@@ -12,6 +12,18 @@ There are two distinct applications required in order for the Hotspot to send an
 
 ### Raspberry Pi specific setup
 
+The current tested release is: 
+
+```
+Raspbian Buster Lite
+====================
+Minimal image based on Debian Buster
+Version:September 2019
+Release date:2019-09-26
+Kernel version:4.19
+Size:435 MB
+```
+
 The default Raspian image has a small swapfile of 100MB, which on a Pi with 1GB or less of RAM is insufficient for building some of the dependencies, such as <a href="http://rocksdb.org/" target="_blank">RocksDB</a>. To increase the swap size, first stop the swap:
 
 ```
@@ -54,6 +66,8 @@ Miner has been tested against <a href="https://www.erlang.org/downloads/21.3" ta
 
 To install OTP 21.3 in Raspian, we'll first acquire the Erlang package from <a href="https://www.erlang-solutions.com/resources/download.html" target="_blank">Erlang Solutions</a> and then install the dependencies:
 
+#### **You may get errors after the second command, hence the usage of -f** 
+
 ```
 wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb  
 sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb  
@@ -62,11 +76,48 @@ sudo apt-get install -f
 
 Install various other dependencies:
 
+#### **If you get errors here, try it again. Sometimes installing from mirrors is unreliable** 
+
 ```
 sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev libclang-dev doxygen
+sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
+sudo apt-get install -f
+```
+
+### Install Screen (optional)
+
+This is an optional step, but will help simplify things later on if you'd like to use an interactive console.
+
+```
+sudo apt-get install screen
 ```
 
 ### Compile the Miner
+
+Before we can do so, we must make some modifications:
+
+Go into rebar.config and change the blockchain-core over from git to http like so:
+
+```
+{deps, [
+    {blockchain, {git, "<https://github.com/helium/blockchain-core.git>",
+                  {branch, "master"}}},
+    {hbbft, {git, "<https://github.com/helium/erlang-hbbft.git>", {branch, "master"}}},
+    {dkg, {git, "<https://github.com/helium/erlang-dkg.git>", {branch, "master"}}},
+    {ecc508, {git, "<https://github.com/helium/ecc508.git>", {branch, "master"}}},
+    {ebus, {git, "<https://github.com/helium/ebus.git>", {branch, "master"}}},
+    {helium_proto, ".*", {git, "<https://github.com/helium/proto.git>", {branch, "master"}}},
+    recon
+    ]}.
+```
+
+Next we will need to change the repo we are using for rocksdb in rebar.lock like so:
+
+```
+{<<"rocksdb">>,
+ {git,"https://github.com/amirhaleem/erlang-rocksdb",
+      {ref,"9f29d6e20d7f4f93a6157730a11fa9211e670e87"}},3},
+```
 
 Once the Miner has been cloned and Erlang installed, we can create a release using <a href="https://www.rebar3.org/" target="_blank">rebar3</a>. Rebar will handle all the Erlang dependencies and build the application. This will take a while:
 
@@ -89,14 +140,34 @@ The `sys.config` will need to be edited to match your configuration. Assuming yo
 
 Change the following settings:
 
+
+```
+{key, {ecc, [{key_slot, 0}, {onboarding_key_slot, 15}]}}, %% don't make this the last line in the stanza because sed and keep it on one line
+```
+
+should be changed to: 
+
+```
 `{key, undefined}`
-`{use_ebus, false}`
+```
+
+and: 
+
+```
+{use_ebus, true},
+```
+
+should be changed to: 
+
+```
+{use_ebus, false}
+```
 
 You should also edit `log_root`, `base_dir` and `update_dir` to be appropriate for whatever you prefer on your system.
 
 ### Starting Up
 
-You can run the Miner in the background, or via an interactive console. 
+You can run the Miner in the background, or via an interactive console (like screen if you installed it earlier). 
 
 To run in the background:
 
@@ -163,7 +234,10 @@ As long as you have an address listed in `listen_addrs` and some peers in the ta
 
 First, you need a genesis block from either the main network, or the Pescadero testnet. Get them here: <a href="https://github.com/helium/blockchain-api/blob/master/priv/prod/genesis" target="_blank">mainnet</a> or <a href="https://github.com/helium/blockchain-api/blob/master/priv/pescadero/genesis" target="_blank">pescadero</a>.
 
-Once you've downloaded it, you'll need to use the CLI to load the genesis block in to your local miner:
+> ##### Important! 
+> These are not links to the actual files. You will need to download the files separately and transfer them onto the Raspberry Pi. 
+
+Once you've downloaded it, you'll need to use the CLI to load the genesis block in to your local miner: 
 
 ```
 _build/prod/rel/miner/bin/miner genesis load <path_to_genesis>
@@ -195,6 +269,14 @@ First, <a href="https://rustup.rs" target="_blank">rustup</a> must be installed,
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+```
+
+Next, we'll need to install the following depedencies before we can compile concentrate:
+
+```
+sudo apt-get install llvm
+sudo apt-get install clang
 ```
 
 ### Compile Concentrate
@@ -204,7 +286,7 @@ Once you have concentrate and rustup installed, we can use Rust's package manage
 ```
 cd concentrate
 git submodule update --init
-cargo build
+cargo build --features="sx1301"
 ```
 
 Once complete, you're ready to run concentrate.
