@@ -13,6 +13,8 @@ While at this point we can't give a precise formula for calculating how much `HN
 					
 [HNT Earnings Per Hotspot By Reward Type](#hnt-earnings-per-hotspot-by-reward-type)
 
+[HNT Proration and Slow Block Times](#hnt-proration-and-slow-block-times)
+
 [Optimizing Your HNT Earnings](#optimizing-your-hnt-earnings)
 
 ## How Do Hotspots Earn Helium Tokens?
@@ -52,18 +54,12 @@ So, if we acheive our target block time of `60` seconds, and target epoch of `30
 * `1460` epochs per month;
 * This results in `3424.66` HNT per epoch (`3424.65753424658` HNT to be precise);
 
-### HNT Proration
-
-That said, this target block and epoch times can be difficult to attain consistently. The Helium Network is still very new and growing quite quickly, so there are many bugs to be squashed and optimizations to be made. To account for this, the Helium blockchain uses something called `proration` to ensure that the target of `5,000,000` is achieved even if block and epoch times aren't on target. 
-
-Proration enables the number of HNT mined to adjust dynamically such that, if epochs and block times are lagging, the amount of `HNT` produced will increase as needed to ensure the `5,000,000` target is achieved month on month. In the event that proration results in an epoch with more or less HNT than the target `3424.66`, all of the reward types will be increased or redudced proportionally except for the Consensus Group reward type. This is because long epochs are the result of delayed Consensus Group elections.  
-
 >##### What Are The Current Block and Epoch Times?
 >At any point you can go to the [Helium blockchain Dashboard](http://dashboard.helium.com/) to view recent block and epoch statistics, past HNT production numbers, and much more. Your Helium Mobile Wallet will also give you the average block and epoch times for the trailing 24 hour period.
 
 
 ## HNT Distributions Per Epoch 
-[#hnt-distributions-per-epoch]: (#hnt-distributions-per-epoch)
+[hnt-distributions-per-epoch]: (#hnt-distributions-per-epoch)
 
 As calculated above, the target `HNT` per epoch is approximately `3424.66`. The next logical question is "Where does all this HNT go?" Let's take a look.	
 
@@ -111,6 +107,29 @@ The last thing to examine is the amout of `HNT` earned per Hotspot in a given ep
 * Hotspots are only eligible to submit one Proof of Coverage Challenge - which results in them earning the `POC Challenger` reward type - once per epoch.
 * `PoC Challenger`, `PoC Challengee`, and `Witness` reward types get distributed in the epoch that includes the corresponding PoC receipt. 
 * A Hotspot can earn more than one `PoC Challengee` and `Witness` rewards per epoch. 
+
+
+## HNT Proration and Slow Block Times
+[hnt-proration-and-slow-block-times]: (#hnt-proration-and-slow-block-times)
+
+Target block and epoch times can be difficult to attain consistently. The Helium Network is still very new and growing quite quickly, so there are many bugs to be squashed and optimizations to be made. To account for this, the Helium blockchain uses something called `proration` to ensure that the target of `5,000,000` is achieved even if block and epoch times aren't on target. 
+
+>##### Target HNT Depends on Blocks, Not Clocks
+>It's easiest to think of target HNT production over the span of one month. Meaning, if the blockchain performs on target - resulting in roughly 1460 epochs per month - then 5MM new HNT will be produced. "One month" is a period of time measured by a clock. However, under the hood, we use block time, and the resulting epochs, to mark HNT production against our target. So when blocks are slow, HNT production is reduced proportionally.  
+
+### What Happens to HNT When Block Times are Slow?
+
+As the network scales up and we fix bugs, there have been some less-than-optimal block times. This results in slower epochs. When this happens the Network will produce **less** HNT over the same period of time. This may seem counterintituve. _Shouldn't the blockchain produce more HNT when block times are slower to ensure the 5MM per month target is hit?_ No. Again, think blocks, not clocks.  Here's a step-by-step example to hopefully make it more transparent:
+
+* Let's assume for a given `60` minute period, the average block time was `120 seconds` (instead of the target `60s`). 
+* This would mark `30` blocks over the `60` minute period, conclude an epoch, and result in an HNT distribution. 
+* As with any epoch, we would distribute the target of (approximately) `3424.66` HNT. 
+* However, since this epoch took twice as long as normal (`60` versus `30` minutes) the blockchain essentially distributes HNT at half the normal rate.
+
+### When Block Times Slow Down, Everyone Earns Less
+
+The most important take away here is that, when block times slow and HNT production is reduced, everyone on the Network - Witnesses, Challengers, Helium, Investors, etc. -  **is impacted equally**. So, although annoying that the effective rate of HNT may have dropped over a given period of time, know that you're not the only one earning less. And this is by design. 
+
 
 
 ## Optimizing Your HNT Earnings
