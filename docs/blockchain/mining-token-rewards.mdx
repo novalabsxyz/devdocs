@@ -121,10 +121,10 @@ Target block and epoch times can be difficult to attain consistently. The Helium
 
 As the network scales up and we fix bugs, there have been some less-than-optimal block times. This results in slower epochs. When this happens the Network will produce **less** HNT over the same period of time. This may seem counterintituve. _Shouldn't the blockchain produce more HNT when block times are slower to ensure the 5MM per month target is hit?_ No. Again, think blocks, not clocks.  Here's a step-by-step example to hopefully make it more transparent:
 
-* Let's assume for a given `60` minute period, the average block time was `120 seconds` (instead of the target `60 seconds`). 
+* Let's assume for a given `60` minute period, the average block time was `120` seconds (instead of the target `60` seconds). 
 * This would mark `30` blocks over the `60` minute period, conclude an epoch, and result in an HNT distribution. 
 * As with any epoch, we would distribute the target of (approximately) `3424.66` HNT. 
-* However, since this epoch took twice as long as normal (`60 minutes` versus `30 minutes`) the blockchain essentially distributes HNT at **half the normal rate**.
+* However, since this epoch took twice as long as normal (`60` minutes versus `30` minutes) the blockchain essentially distributes HNT at **half the normal rate**.
 
 ### When Block Times Slow Down, Everyone Earns Less 
 
