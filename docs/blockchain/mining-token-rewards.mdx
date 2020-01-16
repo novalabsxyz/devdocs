@@ -126,10 +126,15 @@ As the network scales up and we fix bugs, there have been some less-than-optimal
 * As with any epoch, we would distribute the target of (approximately) `3424.66` HNT. 
 * However, since this epoch took twice as long as normal (`60` versus `30` minutes) the blockchain essentially distributes HNT at half the normal rate.
 
-### When Block Times Slow Down, Everyone Earns Less
+### When Block Times Slow Down, Everyone Earns Less 
 
-The most important take away here is that, when block times slow and HNT production is reduced, everyone on the Network - Witnesses, Challengers, Helium, Investors, etc. -  **is impacted equally**. So, although annoying that the effective rate of HNT may have dropped over a given period of time, know that you're not the only one earning less. And this is by design. 
+The most important take away here is that, when block times slow and HNT production is reduced, everyone participating on the on the Network - Witnesses, Challengers, Helium, Investors, etc. -  **is impacted equally** (with the exception of Consensus Group members; more on this below). So, although it's annoying that the effective rate of HNT may have dropped over a given period of time, know that you're not the only one earning less. And this is by design. 
 
+### Consensus Groups and Slow Block Times
+
+The only group that doesn't see its HNT reduced per epoch when blocks are slow is the Consensus Group. Currently there are 16 members of each Consensus Group, sharing 10% of the HNT produced per epoch - or approximately `21.70` HNT. 
+
+This amount stays fixed while every other category of HNT payout is prorated so that members of the Consensus Group are incentived to keep elections fast. Otherwise, a malicious Consensus Group member might be inclined to prolong elections. This could be done, for example, to prevent a subsequent election, thus ensuring current membership in the Consensus Group stays intact. By distributing a fixed amount of HNT per 30 block epoch (as opposed to prorating payouts), we remove the incentive to disrupt elections. 
 
 
 ## Optimizing Your HNT Earnings
