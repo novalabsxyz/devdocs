@@ -21,7 +21,7 @@ First, you’ll need to be within range of the Helium Network. To check your are
 
 If you do not see any hotspots in your area, we have a few options available. You can purchase a Hotspot by sending a request to developer@helium.com. 
 
-Alternatively, if you'd like to get your hands dirty, we have [instructions](/hotspot/developer-setup) on how to build your own Hotspot for LongFi packet forwarding using off the shelf components. Note that this Hotspot is designed to only forward packets, and not mine Helium tokens. 
+Alternatively, if you'd like to get your hands dirty, we have [instructions](/hotspot/developer-setup) on how to build your own Hotspot for packet forwarding using off the shelf components. Note that this Hotspot is designed to only forward packets, and not mine Helium tokens. 
 
 ## Create an account
 
@@ -48,36 +48,9 @@ To add a device, go to **Devices** and click the **+** icon on the bottom right 
 
 When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
 
-> ##### Important!  
-> Make sure you record the `OUI`, `device id`, and `preshared key`, which will be needed when you program your device.   
-For example: 
-
-```
-const uint32_t oui = 1;
-const uint16_t device_id = 2;
-const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x44, 0x95, 0x71, 0x52, 0x4E, 0xE1, 0xCA, 0x13, 0xCE};
-```
-
-##
-
 Now that we've added a device on Console, let's build our device! 
 
-We've curated 3 quickstart guides for you to follow, which you can access directly below.  
 
-### LongFi Arduino
-Beginner friendly LongFi Arduino library.  
-
-[LongFi Arduino - Quickstart](/device/arduino-quickstart)
-
-### LongFi ST HAL
-ST HAL library 
-
-[LongFi ST HAL - Quickstart](/device/st-hal-quickstart)
-
-### LongFi Device Rust
-Rust bindings to LongFi 
-
-[LongFi Device Rust - Quickstart](/device/rust-quickstart)
 
 
 
