@@ -172,10 +172,7 @@ export const AccordionNav = React.forwardRef(
       })
     }
 
-    if (globalHistory.location.pathname === '/device/overview') expanded[2] = true
     if (globalHistory.location.pathname === '/device/arduino-quickstart') expanded[2] = true
-    if (globalHistory.location.pathname === '/device/st-hal-quickstart') expanded[2] = true
-    if (globalHistory.location.pathname === '/device/rust-quickstart') expanded[2] = true
     if (globalHistory.location.pathname === '/device/gps-hardware-guide') expanded[2] = true
     if (globalHistory.location.pathname === '/console/overview') expanded[3] = true
     if (globalHistory.location.pathname === '/console/device-setup') expanded[3] = true
@@ -184,7 +181,6 @@ export const AccordionNav = React.forwardRef(
     if (globalHistory.location.pathname === '/hotspot/overview') expanded[4] = true
     if (globalHistory.location.pathname === '/hotspot/developer-setup') expanded[4] = true
     if (globalHistory.location.pathname === '/longfi/overview') expanded[5] = true
-    if (globalHistory.location.pathname === '/longfi/spec') expanded[5] = true
     if (globalHistory.location.pathname === '/blockchain/overview') expanded[6] = true
 	if (globalHistory.location.pathname === '/blockchain/blockchain-primitives') expanded[6] = true
 	if (globalHistory.location.pathname === '/blockchain/consensus-protocol') expanded[6] = true
