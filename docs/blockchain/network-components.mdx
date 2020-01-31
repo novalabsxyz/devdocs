@@ -33,14 +33,14 @@ import phone from '../images/blockchain/phone.png'
 
 The Helium blockchain is a new, public, distributed ledger, designed from the ground up to provide an efficient way to run application logic core to the Helium Network. Specifically it furnishes the immutable, append-only transaction system that is verified using the Helium Consensus Protocol (described in detail below). 
 
-In addition to a new consensus protocol, the Helium blockchain uses a new, novel work algorithm known as [Proof of Coverage](/blockchain/proof-of-coverage) to secure the network and cryptographically verify the location of Hotspots that are providing wireless coverage to Helium [LongFi-enabled](/longfi/overview) IoT devices. These [Hotspots](/hotspot/overview) are also responsible for submitting coverage proofs that provide details about their true location in and value to the Helium Network. Hotspots that submit the best proofs are more likely to be selected to a consensus group, and are thus responsible for verifying transactions and mining blocks. 	
+In addition to a new consensus protocol, the Helium blockchain uses a new, novel work algorithm known as [Proof of Coverage](/blockchain/proof-of-coverage) to secure the network and cryptographically verify the location of Hotspots that are providing wireless coverage to Helium IoT devices. These [Hotspots](/hotspot/overview) are also responsible for submitting coverage proofs that provide details about their true location in and value to the Helium Network. Hotspots that submit the best proofs are more likely to be selected to a consensus group, and are thus responsible for verifying transactions and mining blocks. 	
 
 
 
 ## Helium Hotspot
 [hotspot]: #helium-hotspot
 
-The Helium Hotspot is a combination LongFi wireless router and Helium blockchain miner built and distributed by Helium, Inc. It creates a long-range wireless network for routing packets to and from Helium LongFi-enabled devices and performs ongoing mining duties to secure the Helium Network.  
+The Helium Hotspot is a combination LoRaWAN wireless router and Helium blockchain miner built and distributed by Helium, Inc. It creates a long-range wireless network for routing packets to and from Helium-enabled devices and performs ongoing mining duties to secure the Helium Network.  
 
 It’s expected that developers and manufacturers will build other “Hotspot” variants that conform to published network specifications. “Helium Hotspot” is the name of the Hotspot designed, manufactured, and distributed by Helium, Inc.
 
@@ -59,7 +59,7 @@ LongFi is the top-level architecture that combines the Helium blockchain with th
 
 Routers are cloud-based participants in the Helium Network and are the termination point for device data. Routers are identifiable by their OUI (Organizationally Unique Identifier) and are operated by developers and enterprises deploying sensor applications on the Helium Network. Helium also operates a high-availability router that’s open to Helium Network users.
 
-Devices on the Helium Network are able to send data to one or more routers. When a device sends a packet, the Hotspot that receives it via LongFi queries the blockchain for the router OUI (or OUIs)  associated with that device. The Hotspot forwards it on, and the target router is then responsible for handling the payload and remitting payment to the Hotspot using Data Credits.
+Devices on the Helium Network are able to send data to one or more routers. When a device sends a packet, the Hotspot that receives it via LoRaWAN queries the blockchain for the router OUI (or OUIs)  associated with that device. The Hotspot forwards it on, and the target router is then responsible for handling the payload and remitting payment to the Hotspot using Data Credits.
 
 Routers are also the basis for a mechanism called “Channels”. Channels are pre-built integrations with popular cloud services like AWS, Google Cloud, and Azure; and protocols like HTTP(s) and MQTT(s). Any organization deploying a router can implement custom channels using the reference implementation published by Helium. 
  
