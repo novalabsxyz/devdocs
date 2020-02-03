@@ -95,11 +95,11 @@ Search for `MCCI LMIC` and install the latest version of `MCCI LoRaWAN LMIC Libr
 
 There are [an example sketch](https://github.com/helium/longfi-arduino/blob/lthiery/lorawan/longfi-us915/longfi-us915.ino) included in the LongFi repository.
 
-Create a new sketch and copy the source code over. All you need to do is update the AppEui, DevEui, and AppKey. AppEui and AppKey are provided from Helium Console after you've created your device:
+Create a new sketch and copy the source code over. All you need to do is update the AppEui, DevEui, and AppKey. AppEui (LSB) and AppKey (MSB) are provided from Helium Console after you've created your device:
 
  <img src={Device_Details} />  
 
-Copy the information into the sketch:
+Be sure to select the appropriate format (LSB/Little-Endian for AppEui and MSB/Big-Endian for AppKey) and copy the information into the sketch:
 
 ```
 static const u1_t PROGMEM APPEUI[8]= { 0x28, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00 };
