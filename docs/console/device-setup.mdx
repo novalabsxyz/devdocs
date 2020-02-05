@@ -4,6 +4,7 @@ import pasted_endpoint from '../images/console/pasted_endpoint.png'
 import register from '../images/console/register.png' 
 import create_device from '../images/console/create_device.png' 
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
+import Device_Details from '../images/device/Device_Details_Console.png'
 
 # Console - Device Setup
 
@@ -40,36 +41,41 @@ To add a device, go to **Devices** and click the **+** icon on the bottom right 
 When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
 
 > ##### Important!  
-> Make sure you record the `OUI` and `device id`, which will be needed when you program your device. 
+> Make sure you record the `AppEui` and `AppKey`, which will be needed when you program your device. 
 
-For example: 
+All you need to do is update the AppEui, DevEui, and AppKey. AppEui and AppKey are provided from Helium Console after you've created your device:
+
+ <img src={Device_Details} />  
+
+Copy the information into the sketch:
 
 ```
-const uint32_t oui = 1;
-const uint16_t device_id = 2;
-const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x44, 0x95, 0x71, 0x52, 0x4E, 0xE1, 0xCA, 0x13, 0xCE};
+static const u1_t PROGMEM APPEUI[8]= { 0x28, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00 };
+void os_getArtEui (u1_t* buf) { memcpy_P(buf, APPEUI, 8);}
+
+static const u1_t PROGMEM APPKEY[16] = { 0xCC, 0x7C, 0xD6, 0x15, 0xA3, 0xCB, 0x9B, 0x5A, 0x3B, 0x55, 0x9B, 0x49, 0x3F, 0x92, 0x43, 0x79 };
+void os_getDevKey (u1_t* buf) {  memcpy_P(buf, APPKEY, 16);}
+```
+
+Note that you can must put some arbitrary data into DevEui; you can use this later in your applications to identify certain settings:
+
+```
+static const u1_t PROGMEM DEVEUI[8]= {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED, 0xFF, 0xFF };
+void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
 ```
 
 ##
 
 Now that we've added a device on Console, let's build our device! 
 
-We've curated 3 quickstart guides for you to follow, which you can access directly below.  
+We've curated an Arduino quickstart guide for you to follow, which you can access directly below.  
 
 ### LongFi Arduino
 Beginner friendly LongFi Arduino library.  
 
 [LongFi Arduino - Quickstart](/device/arduino-quickstart)
 
-### LongFi ST HAL
-ST HAL library 
 
-[LongFi ST HAL - Quickstart](/device/st-hal-quickstart)
-
-### LongFi Device Rust
-Rust bindings to LongFi 
-
-[LongFi Device Rust - Quickstart](/device/rust-quickstart)
 
 
 

@@ -4,6 +4,7 @@ import pasted_endpoint from './images/console/pasted_endpoint.png'
 import register from './images/console/register.png' 
 import create_device from './images/console/create_device.png' 
 import set_channel_as_default from './images/console/set_channel_as_default.gif' 
+import Device_Details from './images/device/Device_Details_Console.png'
 
 # Quickstart  
 
@@ -49,35 +50,24 @@ To add a device, go to **Devices** and click the **+** icon on the bottom right 
 When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
 
 > ##### Important!  
-> Make sure you record the `OUI`, `device id`, and `preshared key`, which will be needed when you program your device.   
-For example: 
+> Make sure you record the `AppEui` and `AppKey`, which will be needed when you program your device. 
 
-```
-const uint32_t oui = 1;
-const uint16_t device_id = 2;
-const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x44, 0x95, 0x71, 0x52, 0x4E, 0xE1, 0xCA, 0x13, 0xCE};
-```
+All you need to do is update the AppEui, DevEui, and AppKey. AppEui and AppKey are provided from Helium Console after you've created your device:
+
+ <img src={Device_Details} />  
+
+
 
 ##
 
 Now that we've added a device on Console, let's build our device! 
 
-We've curated 3 quickstart guides for you to follow, which you can access directly below.  
+We've curated an Arduino quickstart guides for you to follow, which you can access directly below.  
 
 ### LongFi Arduino
 Beginner friendly LongFi Arduino library.  
 
 [LongFi Arduino - Quickstart](/device/arduino-quickstart)
-
-### LongFi ST HAL
-ST HAL library 
-
-[LongFi ST HAL - Quickstart](/device/st-hal-quickstart)
-
-### LongFi Device Rust
-Rust bindings to LongFi 
-
-[LongFi Device Rust - Quickstart](/device/rust-quickstart)
 
 
 

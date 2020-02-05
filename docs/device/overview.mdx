@@ -4,15 +4,7 @@ import longfi_stack from '../images/device/longfistack.svg'
 
 #### The devices are what the Helium network exist for. Here you will learn about the pieces that make up a Helium device and how you can quickly get started! 
 
-Any device can communicate on the Helium network if it adheres to the [LoRa](https://www.semtech.com/lora/what-is-lora) 
-modulation specification for its locale and follows the [LongFi Protocol](https://developer.helium.com/longfi/overview). 
-Helium has developed several foundational pieces to facilitate developers at all stages of development. Starting with [LongFi Core](https://github.com/helium/longfi-core)
-, a library which provides LongFi protocol primitives to both device and host implementations. Next, building on top of LongFi Core, 
-[LongFi Device](https://github.com/helium/longfi-device) is a portable device-side implementation in C for 
-the Semtech SX12xx line. Lastly, sample applications are provided, targeting two development boards in C and Rust, 
-with the popular [CMWX1ZZABZ](https://wireless.murata.com/type-abz.html) module from Murata containing a Semtech SX1276 and STM32L0.
-
-<img style={{width: '100%'}} src={longfi_stack} />
+Any [LoRaWAN](https://lora-alliance.org/about-lorawan) device can communicate on the Helium network if provisioned appropriately. The AppEui and AppKey must be configured appropriately so that Helium Miners may route the data to the appropriate Helium Router.
 
 ## Currently Supported Development Boards
 - <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">B-L072Z-LRWAN1 - STMicroelectronics</a>
@@ -20,39 +12,8 @@ with the popular [CMWX1ZZABZ](https://wireless.murata.com/type-abz.html) module 
 - <a href="https://www.adafruit.com/product/3178" target="_blank">Feather M0 with RFM95 - Adafruit (Arduino Only)</a>
 
 ## LongFi Arduino
-The LongFi Arduino library builds on longfi-device to add LongFi support to Arduino capable devices.
+The LongFi Arduino repository provides example Sketches that help LoRaWAN capable Arduino devices connect to the Helium Network.
 
 [Quickstart](/device/arduino-quickstart)
 
-[GPS Device Guide](/device/gps-hardware-guide)
-
 <a href="https://github.com/helium/longfi-arduino" target="_blank">GitHub - longfi-arduino</a>
-
-
-## LongFi ST HAL
-The LongFi ST HAL library builds on longfi-device to add LongFi support to STMicroelectronics compatible devices.
-
-[Quickstart](/device/st-hal-quickstart)
-
-<a href="https://github.com/helium/longfi-st-hal" target="_blank">GitHub - longfi-st-hal</a>
-
-
-## LongFi Device Rust
-The LongFi Device Rust library builds on the longfi-device by adding bindings to Rust.
-
-[Quickstart](/device/rust-quickstart)
-
-<a href="https://github.com/helium/longfi-device-rs" target="_blank">GitHub - longfi-device-rs</a>
-
-
-## LongFi Device
-A portable device-side implementation in C for the Semtech SX12xx line.
-
-<a href="https://github.com/helium/longfi-device" target="_blank">GitHub - longfi-device</a>
-
-
-## LongFi Core
-Platform agnostic implementation of core LongFi primitives.
-
-<a href="https://github.com/helium/longfi-core" target="_blank">GitHub - longfi-core</a>
-
