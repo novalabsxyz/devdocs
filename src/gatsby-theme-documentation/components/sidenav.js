@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { AccordionNav } from './accordian'
+import { jsx, AccordionNav } from 'theme-ui'
+// import { AccordionNav } from './accordian'
 import NavLink from './nav-link'
 import Sidebar from '../sidebar.mdx'
 
