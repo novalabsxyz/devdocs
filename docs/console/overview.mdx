@@ -6,13 +6,9 @@ import create_device from '../images/console/create_device.png'
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
 
 
-# Console - Overview
+# The Helium Console
 
-> #### IMPORTANT:  
-> The cost per fragment is $0.00001 USD (24 byte fragments) which is equivalent to 1 Data Credit (DC).
-> During the Beta, the cost to send packets is 0 DC.
-
-Helium Console is a device management tool hosted by Helium and allows developers to register, authenticate, and manage their devices to use on the Helium Network. In addition to device management, Console provides services to route device data to HTTP endpoints. In the future, we will support MQTT topics, and other popular cloud solutions like Google Cloud IoT, Microsoft Azure, and more.
+THe [Helium Console](http://console.helium.com/) is a web-based device management tool hosted by Helium that allows developers to register, authenticate, and manage their devices on the Helium Network. In addition to device management, Console provides prebuilt connections called Channels to route device data via HTTPs or MQTT; or directly to cloud services like AWS IoT, GCP IoT, and Azure IoT.
 
 Device Management includes:
 - Organization structure with projects and subproject, and user-level permissions
@@ -20,11 +16,8 @@ Device Management includes:
 - Data Credits (purchasing and payments) to Hotspots for utilizing the Helium Network
 
 
-Note: In order for device packet data to route to the internet, you'll need to be within range of the Helium Network. To check if there is coverage in your area, view our <a href="https://network.helium.com">coverage map</a>. 
+**Note: In order for device packet data to route to the internet, you'll need to be within range of the Helium Network. To check if there is coverage in your area, view our [coverage map](https://network.helium.com).**
 
-If you do not see any hotspots in your area, we have a few options available. You can purchase a Hotspot by sending a request to developer@helium.com. 
-
-Alternatively, if you'd like to get your hands dirty, we have [instructions](/hotspot/developer-setup) on how to build your own Hotspot for LongFi packet forwarding using off the shelf components. Note that this Hotspot is designed to only forward packets, and not mine Helium tokens. 
 
 ## Learn about device setup
 [Device Setup](/console/device-setup)

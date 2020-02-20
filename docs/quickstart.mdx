@@ -22,15 +22,13 @@ First, you’ll need to be within range of the Helium Network. To check your are
 
 If you do not see any hotspots in your area, we have a few options available. You can purchase a Hotspot by sending a request to developer@helium.com. 
 
-Alternatively, if you'd like to get your hands dirty, we have [instructions](/hotspot/developer-setup) on how to build your own Hotspot for LongFi packet forwarding using off the shelf components. Note that this Hotspot is designed to only forward packets, and not mine Helium tokens. 
+Alternatively, if you'd like to get your hands dirty, we have [instructions](/hotspot/developer-setup) on how to build your own Hotspot for packet forwarding using off the shelf components. Note that this Hotspot is designed to only forward packets, and not mine Helium tokens. 
 
 ## Create an account
 
 To register for an account, visit <a href="https://console.helium.com" target="_blank">Helium Console</a> and click **Register**.
 
-During Registration, you'll be asked to provide an Organization name and a Team name.
-
-Define an Organization name for the top level owner of the account (ie: company name). Think of Teams as a way to organize groups of devices.
+During Registration, you'll be asked to provide an Organization name. Define an Organization name for the top level owner of the account (ie: `company name`).
 
 <img src={register} />
 
@@ -49,6 +47,8 @@ To add a device, go to **Devices** and click the **+** icon on the bottom right 
 
 When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
 
+Now that we've added a device on Console, let's build our device! 
+
 > ##### Important!  
 > Make sure you record the `AppEui` and `AppKey`, which will be needed when you program your device. 
 
@@ -57,17 +57,12 @@ All you need to do is update the AppEui, DevEui, and AppKey. AppEui and AppKey a
  <img src={Device_Details} />  
 
 
+## Arduino Quickstart
 
-##
+Now that we've added a device on Console, let's build our device! We've curated an [LongFi Arduino Quickstart](/device/arduino-quickstart)for you to follow.
 
-Now that we've added a device on Console, let's build our device! 
 
-We've curated an Arduino quickstart guides for you to follow, which you can access directly below.  
 
-### LongFi Arduino
-Beginner friendly LongFi Arduino library.  
-
-[LongFi Arduino - Quickstart](/device/arduino-quickstart)
 
 
 
