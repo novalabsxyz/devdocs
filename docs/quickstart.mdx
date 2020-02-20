@@ -4,6 +4,7 @@ import pasted_endpoint from './images/console/pasted_endpoint.png'
 import register from './images/console/register.png' 
 import create_device from './images/console/create_device.png' 
 import set_channel_as_default from './images/console/set_channel_as_default.gif' 
+import Device_Details from './images/device/Device_Details_Console.png'
 
 # Quickstart  
 
@@ -47,6 +48,19 @@ To add a device, go to **Devices** and click the **+** icon on the bottom right 
 When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
 
 Now that we've added a device on Console, let's build our device! 
+
+> ##### Important!  
+> Make sure you record the `AppEui` and `AppKey`, which will be needed when you program your device. 
+
+All you need to do is update the AppEui, DevEui, and AppKey. AppEui and AppKey are provided from Helium Console after you've created your device:
+
+ <img src={Device_Details} />  
+
+
+## Arduino Quickstart
+
+Now that we've added a device on Console, let's build our device! We've curated an [LongFi Arduino Quickstart](/device/arduino-quickstart)for you to follow.
+
 
 
 

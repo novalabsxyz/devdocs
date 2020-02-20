@@ -10,8 +10,9 @@ import pasted_endpoint from '../images/console/pasted_endpoint.png'
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
 import device_packets from '../images/console/no_channel_packets.png'
 import disco_board from '../images/device/disco_board.png'
-import Arduino_LongFi from '../images/device/LongFiLibrary.png'
 import Device_Details from '../images/device/Device_Details_Console.png'
+import MCCI_Library from '../images/device/library_manager.png'
+
 
 # LongFi Arduino Quickstart Guide
  
@@ -19,9 +20,9 @@ import Device_Details from '../images/device/Device_Details_Console.png'
 
 ## Introduction
 
-#### Helium’s LongFi protocol is a sub-GHz wireless protocol purpose-built for a wireless peer-to-peer network for low-bandwidth IoT applications.
+#### Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to create a wireless peer-to-peer network for low-bandwidth IoT applications.
 
-This guide will show you step by step how to transmit LongFi packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
+This guide will show you step by step how to transmit LoRaWAN packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
 
 > ##### Important!  
 >Before we begin, please make sure you've followed the steps from this [guide](/quickstart), which goes over some initial setup steps. 
@@ -71,11 +72,9 @@ Download and install the latest version of <a href="https://www.arduino.cc/en/Ma
  
 <a href="https://github.com/stm32duino/wiki/wiki/Getting-Started" target="_blank">Instructions to add STM32 board support to Arduino</a> 
 
-## Install LongFi Library
+## Install MCCI LoRaWAN LMIC Library
  
-The LongFi library may be installed from the Arduino IDE 
-
-(If you prefer to clone it via git, [go here](https://github.com/helium/longfi-arduino#install-library-with-git).)
+The MCCI LoRaWAN LMIC Library library may be installed from the Arduino IDE 
 
 Arduino IDE:
 
@@ -83,40 +82,39 @@ Arduino IDE:
 Sketch -> Include Libraries -> Manage Libraries 
 ```
 
-Search for `LongFi` and install the latest version 
+Search for `MCCI LMIC` and install the latest version of `MCCI LoRaWAN LMIC Library` 
+
+<img src={MCCI_Library} /> 
 
 > ##### Important! 
-> If you have already installed the LongFi library, please make sure to check for updates
+> If you have already installed the MCCI LMIC library, please make sure to check for updates
 
-<img src={Arduino_LongFi} /> 
 
 
 ## LongFi Example Sketches 
 
-There are two example sketches included with the LongFi library. TransmitPacket will send a stream of packets while ButtonTransmit will transmit packets on-demand upon button press. 
+There is [an example sketch](https://github.com/helium/longfi-arduino/blob/master/longfi-us915/longfi-us915.ino) included in the LongFi repository.
 
-To learn more about the LongFi packet payload, check out this [section] (/longfi/spec#payload).
-
-Arduino IDE:
-
-```
-File -> Examples -> LongFi -> TransmitPacket
-File -> Examples -> LongFi -> ButtonTransmit
-```
- 
- <img src={LongFi_Example} /> 
-
-> ##### Important! 
-> Make sure the OUI, device identifier, and pre-shared key correspond to the device details from Console. 
-
-```
-// set OUI and device_id to work with LongFi routing
-const uint32_t oui = 1;
-const uint16_t device_id = 2;
-const uint8_t preshared_key[16] = {0xF4, 0xF2, 0xAB, 0x28, 0xA9, 0x9B, 0xAB, 0x44, 0x95, 0x71, 0x52, 0x4E, 0xE1, 0xCA, 0x13, 0xCE};
-```
+Create a new sketch and copy the source code over. All you need to do is update the AppEui, DevEui, and AppKey. AppEui (LSB) and AppKey (MSB) are provided from Helium Console after you've created your device:
 
  <img src={Device_Details} />  
+
+Be sure to select the appropriate format (LSB/Little-Endian for AppEui and MSB/Big-Endian for AppKey) and copy the information into the sketch:
+
+```
+static const u1_t PROGMEM APPEUI[8]= { 0x28, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00 };
+void os_getArtEui (u1_t* buf) { memcpy_P(buf, APPEUI, 8);}
+
+static const u1_t PROGMEM APPKEY[16] = { 0xCC, 0x7C, 0xD6, 0x15, 0xA3, 0xCB, 0x9B, 0x5A, 0x3B, 0x55, 0x9B, 0x49, 0x3F, 0x92, 0x43, 0x79 };
+void os_getDevKey (u1_t* buf) {  memcpy_P(buf, APPKEY, 16);}
+```
+
+Note that you can must put some arbitrary data into DevEui; you can use this later in your applications to identify certain settings:
+
+```
+static const u1_t PROGMEM DEVEUI[8]= {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED, 0xFF, 0xFF };
+void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
+```
 
  ## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
  
