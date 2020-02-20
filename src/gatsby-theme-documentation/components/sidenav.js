@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, AccordionNav } from 'theme-ui'
-// import { AccordionNav } from './accordian'
+import { jsx } from 'theme-ui'
+import { AccordionNav } from '@theme-ui/sidenav'
 import NavLink from './nav-link'
 import Sidebar from '../sidebar.mdx'
 
@@ -20,7 +20,6 @@ export default props => (
       pt: 20,
       pb: 4,
       pr: 4,
-      
     }}
   />
 )
