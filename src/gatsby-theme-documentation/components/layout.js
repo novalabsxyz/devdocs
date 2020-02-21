@@ -7,9 +7,7 @@ import Sidebar from '../sidebar.mdx'
 import NavLink from './nav-link'
 import { globalHistory } from '@reach/router'
 import Header from './header'
-import Sidenav from './sidenav'
 import Footer from './footer'
-
 
 const sidenav = {
   wrapper: AccordionNav,
