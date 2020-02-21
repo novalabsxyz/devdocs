@@ -1,13 +1,20 @@
 /** @jsx jsx */
 import { useState, useRef } from 'react'
 import { Global } from '@emotion/core'
+import { AccordionNav } from '@theme-ui/sidenav'
 import { Styled, Layout, Main, Container, jsx, useThemeUI } from 'theme-ui'
-
+import Sidebar from '../sidebar.mdx'
+import NavLink from './nav-link'
+import { globalHistory } from '@reach/router'
 import Header from './header'
-import Sidenav from './sidenav'
 import Footer from './footer'
 
-export default ({ children }) => {
+const sidenav = {
+  wrapper: AccordionNav,
+  a: NavLink,
+}
+
+export default props => {
   const { theme: { colors = {} } } = useThemeUI()
   const [menuOpen, setMenuOpen] = useState(false)
   const nav = useRef(null)
@@ -34,9 +41,19 @@ export default ({ children }) => {
                 mx: -3,
               }}
             >
-              <Sidenav
+              <Sidebar
                 open={menuOpen}
-                sx={{ display: [null, 'block'] }}
+                components={sidenav}
+                pathname={globalHistory.location.pathname}
+                sx={{
+                  width: 230,
+                  flex: 'none',
+                  px: 3,
+                  pt: 20,
+                  pb: 4,
+                  pr: 4,
+                }}
+                // sx={{ display: [null, 'block'] }}
                 onFocus={() => setMenuOpen(true)}
                 onBlur={() => setMenuOpen(false)}
                 onClick={() => setMenuOpen(false)}
@@ -47,7 +64,7 @@ export default ({ children }) => {
                   px: 3,
                 }}
               >
-                {children}
+                {props.children}
               </div>
             </div>
           </Container>
