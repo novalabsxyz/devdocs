@@ -1,8 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Flex } from 'theme-ui'
-//import { Link } from 'gatsby'
-import { MDXProvider } from '@mdx-js/react'
-
+import { jsx, Container } from 'theme-ui'
 import Content from '../footer.mdx'
 
 //import FooterMDX from '../footer.mdx'
