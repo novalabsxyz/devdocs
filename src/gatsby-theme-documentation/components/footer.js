@@ -50,7 +50,7 @@ function Footer() {
       }}>
       <Container sx={styles}>
               <Content />
-              <p>Copyright Helium 2019</p>
+              <p>Copyright Helium 2020</p>
          
       </Container>
 
