@@ -16,7 +16,7 @@ gatsby develop
 ```
 
 ## Contributing
-See read the contributing guidlines[here](https://github.com/helium/blockchain-core/blob/master/CONTRIBUTING.md), then follow the content guidelines below.
+See read the contributing guidlines [here](https://github.com/helium/devdocs/blob/master/CONTRIBUTING.md), then follow the content guidelines below.
 
 ## Adding Content Guidelines
 
