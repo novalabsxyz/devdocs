@@ -1,0 +1,29 @@
+# Routing
+
+LongFi leverages LoRaWAN concepts but uses the blockchain to determine routing behavior. As such, the network is decentralized and permissionless.  
+
+There is a fundamental difference between how Join and Data frames are routed with the Helium network. A LoRaWAN Join packet has the following unencrypted data:
+
+```
+___________________________________________________________
+|   Size (octets)  |      8     |      8     |      8     |
+|   Join Request   |   AppEUI   |   DevEUI   |  DevNonce  |
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+```
+
+If the (AppEUI, DevEUI) is registered with the Helium Blockchain, there are one or more corresponding OUI entries which the miner can look up. Thus the Join packet is delivered to all registered LoRaWAN Network Server.
+
+The LoRaWAN Network Server then responds with a DevAddr (and lots of other normal LoRaWAN information, such as session keys). This DevAddr is important because it is now part of the FHDR of Data packets:
+
+```
+________________________________________________________________________
+|   Size (octets)  |     4      |      1     |      2     |    0..15   |
+|   FHDR           |  DevAddr   |    FCtrl   |     FCnt   |    FOpts   |
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+```
+
+The Miner is now able to use DevAddr to determine the OUI of Data frames.
+
+
+
+
