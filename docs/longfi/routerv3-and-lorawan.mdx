@@ -26,3 +26,15 @@ In the future, we plan to be 1.1 compatible and to thus implement CFList in the 
 # Adaptive Data Rate
 
 Other than for configuring channel mask, Adaptive Data Rate (ADR) algorithms are not implemented on RouterV3. This means that the configuration of your device is responsible for configuring it’s own Spreading Factor (SF), which has implications on data costs.
+
+# Receive Windows
+
+RouterV3 implements the typical receive windows.
+
+On Join request:
+* Receive Window 1 = 5 seconds
+* Receive Window 2 = 6 seconds
+
+On Data Confirmed/Unconfirmed:
+* Receive Window 1 = 1 second
+* Receive Window 2 = 2 seconds
