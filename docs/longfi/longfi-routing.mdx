@@ -11,10 +11,7 @@ ___________________________________________________________
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ```
 
-The Miner reads *(AppEUI, DevEUI)* and queries the Join routing table for each
-OUI; each OUI manages its own routing table which is written to the blockchain. If
-the credentials are in the OUI's table, the Miner will offer the packet to the libp2p
-address registered by the OUI where the [LongFi Network Server](/longfi/longfi-network-server) operates. Thus the Join packet is delivered to all registered LoRaWAN Network Server.
+The Miner reads *(AppEUI, DevEUI)* and queries Join routing table for each OUI; each OUI manages its own routing table which is written to the blockchain. If the credentials are in the OUI's table, the Miner will offer the packet to the libp2p address registered by the OUI where the [LongFi Network Server](/longfi/longfi-network-server) operates. Thus the Join packet is delivered to all registered LoRaWAN Network Server.
 
 In typical LoRaWAN fashion, the [LongFi Network Server](/longfi/longfi-network-server) then responds with a DevAddr (and lots of other normal LoRaWAN information, such as session keys). This DevAddr is important because it is now part of the FHDR of Data packets:
 
