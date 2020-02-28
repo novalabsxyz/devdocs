@@ -15,7 +15,7 @@ Helium operates on sub-band 7 (Channels 48-55, 911.9-913.3 MHz). RouterV3 will s
 
 Generally, this will work well with stacks that implement the full LoRaWAN specification. That is to say, devices should send Join requests on all 64 channels. 
 
-They may, however, be biased towards a certain sub-band (preferably 7), such that their first attempt is on one of the 8 channels of that preferred subband.
+They may, however, be biased towards a certain sub-band (preferably 7), such that their first Join attempt is on one of the 8 channels of that preferred sub-band.
 
 After a successful Join, the devices should also be transmitting Data frames on all 64 channels; similarly, biasing towards subband 7 is preferable. This will allow them to eventually transmit and then receive the MAC ADR command on a Helium subband and thus receive the channel mask update.
 
