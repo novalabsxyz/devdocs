@@ -1,1 +1,55 @@
-# Cargo
+# Cargo Integration
+
+> #### IMPORTANT: #
+> Helium Cargo is an evaluation tool and the data collected is available to all developers. Please do not share any sensitive information. Use at your own discretion.
+
+## Add a Cargo Integration
+
+To add an integration, go to **Integrations** on the left menu. Select the integration to add - in this case, the **Cargo** integration.  
+
+The next step is name this Cargo integration.  
+
+Last, apply any optional Labels. For more information on Labels please visit the [Labels guide](/console/labels).  
+
+## Cargo Endpoint
+
+**
+HTTP Details  
+Method: post  
+Endpoint: https://cargo.helium.com/api/payloads  
+Headers: {"Content-Type":"application/json"} 
+**
+
+## Cargo Payload
+
+The Cargo payload defines the content and structure of the data payload that must be sent to the cargo endpoint.
+
+**Total Payload: 12 Bytes**  
+
+**Packed in the following order:** 
+* int32_t Latitude in Degrees
+* int32_t longitude in Degrees
+* int16_t Altitude in Meters
+* uint16_t Speed in km/h
+
+#### Example in C:
+```
+if (GPS.hasFix) {
+    data = (uint32_t)(GPS.latitudeDegrees * 1E7);
+    payload[idx++] = data >> 24;
+    payload[idx++] = data >> 16;
+    payload[idx++] = data >> 8;
+    payload[idx++] = data;
+    data = (uint32_t)(GPS.longitudeDegrees * 1E7);
+    payload[idx++] = data >> 24;    
+    payload[idx++] = data >> 16;
+    payload[idx++] = data >> 8;
+    payload[idx++] = data;
+    data = (int)(GPS.altitude);
+    payload[idx++] = data >> 8;
+    payload[idx++] = data;    
+    data = (int)(GPS.speed);
+    payload[idx++] = data >> 8;
+    payload[idx++] = data;
+}    
+```
