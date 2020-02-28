@@ -1,31 +1,16 @@
-# Helium LongFi Architecture
-
-LongFi is the top-level architecture that combines the Helium blockchain with the LoRaWAN wireless protocol under the Helium Network umbrella.
-
-[Helium Network](#helium-network)
-
-[Helium blockchain](#helium-blockchain)
-
-[LoRaWAN](#lorawan)
+import Lorawan_Arch from '../images/longfi/lorawan_arch.svg' 
+import LongFi_Arch from '../images/longfi/longfi_arch.svg' 
 
 
-## Helium Network 
+# LongFi
 
-The Helium Network is the largest, public LPWAN in the United States. It exists to route data for LoRaWAN-enabled devices. You can view a [live coverage map and network statistics here](https://network.helium.com). 
-
-## Helium blockchain 
-
-The [Helium blockchain](/blockchain) ties together all Hotspots on the Helium Network. What this enables is several very powerful capabilities that set the Helium Network apart from other network providers with LoRaWAN support. 
-
-* **Device Roaming** - Any device on the Helium Network can connect to any Hotspot and expect the utilize the same feature set and capabilities. 
-* **Microtransactions** - Using [Data Credits](/blockchain/tokens#data-credits), Network users can pay for device traffic at the packet level. 
-* **Seamless Onboarding** - Easily onboard LoRaWAN-enabled devices without additional configurations or third-party assistance.
+LongFi is where Helium’s Blockchain and the LoRaWAN radio protocol meet. The uniqueness of LongFi versus a traditional LoRaWAN architecture is that we use a decentralized ledger to enable routing to many Network Servers.
+<p style="text-align: center;"><b> Traditional LoRaWAN Architecture </b></p> 
+<img src={Lorawan_Arch} align="middle" />
 
 
-## LoRaWAN
+<p style="text-align: center;"><b> Helium's LongFi Architecture </b></p> 
+<img src={LongFi_Arch} align="middle" />
 
-LoRaWAN is a MAC-layer specification for sending data wirelessly from devices over long ranges while using very little battery. Any LoRaWAN-compatible device can send data through the Helium Network and take advantage of the LongFi architecture. 
 
-**Read More about LoRaWAN Here**
-
-* <a href="https://lora-alliance.org/about-lorawan" target="_blank">LoRaWAN Specification</a>
+This section covers details of how Helium's Blockchain builds on top of LoRaWAN.
