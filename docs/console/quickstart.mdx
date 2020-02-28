@@ -70,6 +70,20 @@ void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
 ```
 
 ##
+When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on.
+
+Blue dots represent packets that have been successfully sent to endpoints, while orange dots have failed to reach an endpoint, and red dots do not have a defined endpoint.
+
+The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot.
+
+> #### IMPORTANT: 
+> Data is not stored in the Console so the Console window must be open in order to view live packets.
+
+### Event Log
+Event Logs display real-time packets in table form. See which Hotspot received the packet, its RSSI, and the size of the packet.
+
+Follow these instructions to use the Console to set up a Channel to route data. A Helium Channel is a pre-built, secure connection from Helium-enabled devices straight through to a configured endpoint. When data arrives from a device, the Helium routing infrastructure ensures delivery of your encrypted data.
+##
 
 Now that we've added a device on Console, let's build our device! 
 
