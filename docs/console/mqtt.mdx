@@ -2,7 +2,31 @@
 
 ## Add an MQTT Integration
 
-To add a integration, go to **Integrations** on the left menu. Select the integration to add - in this case, the **MQTT** integration.
+To add an integration, go to **Integrations** on the left menu. Select the integration to add - in this case, the **MQTT** integration.
 
-The next step is to paste your MQTT broker endpoint, and optional .
+The next step is to paste your MQTT broker endpoint, and optional topic prefix.
 
+### MQTT Topic composition:
+
+**Device Uplink (Receive Data from Device)**  
+Subscribe to:  
+{optional_prefix}/helium/{AppEui MSB HEX Short Form}/rx  
+
+Example with prefix: `mqtt/helium/0000000100000009/rx`  
+Example without prefix: `helium/0000000100000009/rx` 
+
+**Device Downlink (Send Data to Device)**  
+Publish to:  
+{optional_prefix}/helium/{AppEui MSB HEX Short Form}/tx  
+
+Example with prefix: `mqtt/helium/0000000100000009/tx`  
+Example without prefix: `helium/0000000100000009/tx` 
+
+**Sending Data to Device:**  
+Use payload_raw field and send a base64 encoded array of bytes.  
+JSON Example:
+```
+{
+   "payload_raw": "encoded_string"
+}
+```
