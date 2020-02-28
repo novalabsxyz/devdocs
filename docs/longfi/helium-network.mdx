@@ -1,10 +1,10 @@
 # Helium Network 
 
-The Helium Network is the largest, public LPWAN in the United States. It exists to route data for LoRaWAN-enabled devices. You can view a live coverage map and network statistics here.
+The Helium Network is the largest, public LPWAN in the United States. It exists to route data for LoRaWAN-enabled devices. You can view [a live coverage map and network statistics here](https://network.helium.com/coverage).
 
-Hotspots run a traditional LoRaWAN packet forwarder, similar to the one from Semtech.
+Hotspots run a traditional LoRaWAN packet forwarder, similar to [the one from Semtech](https://github.com/Lora-net/packet_forwarder).
 
-Rather than forward to a centralized Network Server, however, the packet is forwarded to the Helium Miner [url], which will query the blockchain records to determine the Organization Unique Identifier (OUI) of the device (see Routing on LongFi).
+Rather than forward to a centralized Network Server, however, the packet is forwarded to the [Helium Miner](https://github.com/helium/miner), which will query the blockchain records to determine the Organization Unique Identifier (OUI) of the device (see [Routing on LongFi](/longfi/longfi-routing)).
 
 The OUI record provides the address of where the device’s Network Server exists. The Miner will broker the packet micro-transaction with the Network Server. Assuming the transaction is made, the LoRaWAN packet is delivered to the Network Server.
 
