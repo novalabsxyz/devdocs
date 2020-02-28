@@ -30,3 +30,19 @@ JSON Example:
    "payload_raw": "encoded_string"
 }
 ```
+
+## Send and Receive Device Data
+
+The following examples are done with the [MQTT CLI](https://hivemq.github.io/mqtt-cli) utility.
+
+Example MQTT 
+
+**Subscribe to Uplink Packets:**
+```
+mqtt sub -V 3 -t helium/0000000100000009/rx -h {mqtt_broker_host} -p {mqtt_broker_host_port} -u "user" -pw "password"
+```
+
+**Publish Downlink Packet:**
+```
+mqtt pub -V 3 -t helium/0000000100000009/tx -h {mqtt_broker_host} -p {mqtt_broker_host_port} -u "user" -pw "password" -m "{\"payload_raw\":\"encoded_string\"}"
+```
