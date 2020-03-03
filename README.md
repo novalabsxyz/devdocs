@@ -1,20 +1,33 @@
-# devdocs 
+# Helium Developer Documentation 
 
-## Requirements
+Documentation portal for developing applications on the [Helium network](https://www.helium.com/technology#overview), located at [developer.helium.com](https://developer.helium.com/).
+
+## Requirements for Running Locally
+
 - [node](https://nodejs.org/en/)
 - [gatsby-cli](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli)
 
-## Installation
 
-```sh
-npm install
 ```
-
-## Usage
-
-```sh
+git clone https://github.com/helium/devdocs
+cd devdocs
+npm install
 gatsby develop
 ```
+
+## Contributing
+----------
+See read the contributing guidlines [here](https://github.com/helium/devdocs/blob/master/CONTRIBUTING.md), then follow the content guidelines below.
+
+## Deploying
+
+When your PR is submitted, a Helium team member will review and merge into `staging`.
+
+`staging` is automatically deployed to [staging.developer.helium.com](https://staging.developer.helium.com/)
+
+When your changes are successfully tested, a Helium team member will PR from `staging` into `master`.
+
+`master` is automatically deployed to [developer.helium.com](https://developer.helium.com/)
 
 ## Adding Content Guidelines
 
