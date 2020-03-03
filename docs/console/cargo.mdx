@@ -29,12 +29,14 @@ The Cargo payload defines the content and structure of the data payload that mus
 **Packed in the following order:** 
 * int32_t Latitude in Degrees
 * int32_t longitude in Degrees
-* int16_t Altitude in Meters
-* uint16_t Speed in km/h
+* int16_t Elevation in Meters
+* int16_t Speed in mph
+* uint16_t Battery Voltage (Optional)
 
-#### Example in C:
+#### Example:
 ```
-if (GPS.hasFix) {
+if (GPS.hasFix) { 
+    idx = 0;
     data = (uint32_t)(GPS.latitudeDegrees * 1E7);
     payload[idx++] = data >> 24;
     payload[idx++] = data >> 16;
