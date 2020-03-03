@@ -24,7 +24,9 @@ Headers: {"Content-Type":"application/json"}
 
 The Cargo payload defines the content and structure of the data payload that must be sent to the cargo endpoint.
 
-**Total Payload: 12 Bytes**  
+**Total Payload:** 
+  * 12 Bytes without Battery Voltage
+  * 14 Bytes with Battery Voltage
 
 **Packed in the following order:** 
 * int32_t Latitude in Degrees
