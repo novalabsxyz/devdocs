@@ -1,21 +1,19 @@
 import Change_Device_Name from '../images/console/Change_Device_Name.png' 
 import request_bin from '../images/console/request_bin.png' 
-import pasted_endpoint from '../images/console/pasted_endpoint.png' 
+import console_create_http from '../images/console/console_create_http.png' 
 import register from '../images/console/register.png' 
 import create_device from '../images/console/create_device.png' 
 import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
 
 # HTTP Integration
 
-## Add an HTTP Channel
+## Add an HTTP Integration
 
-To add a channel, go to **Integrations** on the left menu. Select the channel to add - in this case, the **HTTP** channel.
+To add a Integration, go to **Integrations** on the left menu. Select the integration to add - in this case, the **HTTP** integration.
 
 The next step is to paste the HTTP endpoint.
 
 If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. <a href="https://www.requestbin.com">Requestbin </a> and <a href="https://www.beeceptor.com">Beeceptor </a>provide tools to make an HTTP endpoint quickly and easily.
-
-To transfer data to request bin continue with the example below. However, if you want to trigger services with device data go [here](/console/trigger-ifttt).
 
 ### Requestbin Example
 Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint.
@@ -24,37 +22,31 @@ Create an endpoint by going to requestbin.com and click **Create a Request Bin**
 
 ... and paste it in Console.
 
-<img src={pasted_endpoint} />
+<img src={console_create_http} />
 
 **HTTP Header** and **Value** are not required and those can be left blank. 
 
 Lastly, provide a name for the channel. Names do not have to be unique.
 
-Click **Create Channel**.
+Click **Create Integration**.
 
-Your new channel is now ready for use.
+Your new integration is now ready for use.
 
 To learn more about the LongFi packet payload, check out this [section] (/longfi).
 
-### Set Multiple Channels
-Devices can send the same data packet to multiple channels at once. This is a cost-effective way to send the same information to many places at once without re-sending the data from the IoT device.
+### Integration Details 
+View the details of your integration by clicking on the Integration name. 
 
-To send to another channel, click **Connect Channel**, select a channel, and click **Add**.
+**Integration Details** shows the integration ID that is unique to each integration, the name, the type of integration, and whether it is active or ont.
 
-### Set Default Channel 
-[setchannel]: #setchannel
+**HTTP Details** shows the specific endpoint. Editing endpoints is not available in the SDK Beta and will be coming soon. If you no longer want to use a integration, simply create a new one and redirect existing devices using the old integration to use the new one.
 
-To set a channel as the default for all newly created devices, go to **Channels** on the left menu and click **Set Default** for the desired channel. 
+**Devices Piped** lists all the devices that are currently sending their data to the selected integration.
 
-<img src={set_channel_as_default} />
+**Update your Connection Details** allows you to update your HTTP connection details for the currently viewed integration. 
 
-### Channel Details 
-View the details of your channel by clicking on the Channel name. 
+## Connecting Integrations to Devices
 
-**Channel Details** shows the channel ID that is unique to each channel, the name, the type of channel, and whether it is active or ont.
-
-**HTTP Details** shows the specific endpoint. Editing endpoints is not available in the SDK Beta and will be coming soon. If you no longer want to use a channel, simply create a new one and redirect existing devices using the old channel to use the new one.
-
-**Devices Piped** lists all the devices that are currently sending their data to the selected channel.
-
-**Update Channel** allows you to update your HTTP connection details for the currently viewed channel. 
+Devices are connected to integrations through the use of Labels. Labels are named identifiers, that can be used to associate an integration
+with a device. To connect one or more devices to one or more integrations, simply attach the same label to both the device and integration.
+Labels need to be created before attaching them to devices and integrations, instructions [here](/console/labels).
