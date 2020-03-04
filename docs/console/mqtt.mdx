@@ -6,32 +6,34 @@ To add an integration, go to **Integrations** on the left menu. Select the integ
 
 The next step is to paste your MQTT broker endpoint, and optional topic prefix.
 
-### MQTT Topic composition:
+## MQTT Topic composition:
 
-**Device Uplink (Receive Data from Device)**  
-Subscribe to:  
-{optional_prefix}/helium/{Device ID}/rx  
+### Device Uplink (Receive Data from Device)
+**Subscribe to:**
+`{optional_prefix}/helium/{Device ID}/rx`  
 
 Example with prefix: `mqtt/helium/3c822699-37fd-4df6-a84d-93037a450843/rx`  
 Example without prefix: `helium/3c822699-37fd-4df6-a84d-93037a450843/rx` 
 
-**Device Downlink (Send Data to Device)**  
-Publish to:  
-{optional_prefix}/helium/{Device ID}/tx  
+### Device Downlink (Send Data to Device) 
+**Publish to:** 
+`{optional_prefix}/helium/{Device ID}/tx`
 
 Example with prefix: `mqtt/helium/3c822699-37fd-4df6-a84d-93037a450843/tx`  
 Example without prefix: `helium/3c822699-37fd-4df6-a84d-93037a450843/tx` 
 
-**Sending Data to Device:**  
-Use the `payload_raw` field with a base64 encoded array of bytes.  
-JSON Example:
+## MQTT Messages
+
+To send data to a device, use JSON with a `payload_raw` field with a base64 encoded string.  
+**Sending Data to Device (Downlink):** 
 ```
 {
    "payload_raw": "encoded_string"
 }
 ```
 
-**Example Uplink from Device:**
+When receiving data from a device, the messages will be in JSON and look like the following.  
+**Receiving data from Device (Uplink):**
 ```
 {
    "app_eui": "415D0A10B5DD763A",
