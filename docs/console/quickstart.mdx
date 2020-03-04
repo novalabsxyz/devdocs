@@ -46,28 +46,11 @@ To add a device, go to **Devices** and click the **+ Add Device** icon on the to
 When prompted, enter a name for your device. Names do not have to be unique as every device has a unique device identifier.
 
 > ##### Important!  
-> Make sure you record the `AppEui` and `AppKey`, which will be needed when you program your device. 
+> Make sure you record the `DevEUI`, `AppEui`, and `AppKey`, which will be needed when you program your device. 
 
-All you need to do is update the AppEui, DevEui, and AppKey. AppEui and AppKey are provided from Helium Console after you've created your device:
+DevEUI, AppEUI, and AppKey are provided from Helium Console after you've created your device:
 
  <img src={console_device_details} />  
-
-Copy the information into the sketch:
-
-```
-static const u1_t PROGMEM APPEUI[8]= { 0x0B, 0x10, 0xDF, 0x45, 0xFC, 0xAD, 0xEC, 0x0F };
-void os_getArtEui (u1_t* buf) { memcpy_P(buf, APPEUI, 8);}
-
-static const u1_t PROGMEM APPKEY[16] = { 0x29, 0xFE, 0xF6, 0x75, 0x97, 0x18, 0xE3, 0x25, 0x72, 0x64, 0xBA, 0x25, 0x82, 0x8C, 0x94, 0xFA };
-void os_getDevKey (u1_t* buf) {  memcpy_P(buf, APPKEY, 16);}
-```
-
-Note that you can put arbitrary data into DevEui; you can use this later in your applications to identify certain settings:
-
-```
-static const u1_t PROGMEM DEVEUI[8]= { 0x6B, 0x8B, 0xEF, 0xC7, 0x43, 0x89, 0xFB, 0x38 };
-void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
-```
 
 ##
 When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on.
@@ -82,7 +65,6 @@ The size of the dot is related to the size of the packet. Larger sized packets w
 ### Event Log
 Event Logs display real-time packets in table form. See which Hotspot received the packet, its RSSI, and the size of the packet.
 
-Follow these instructions to use the Console to set up a Channel to route data. A Helium Channel is a pre-built, secure connection from Helium-enabled devices straight through to a configured endpoint. When data arrives from a device, the Helium routing infrastructure ensures delivery of your encrypted data.
 ##
 
 Now that we've added a device on Console, let's build our device! 
