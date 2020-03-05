@@ -32,7 +32,26 @@ Click **Create Integration**.
 
 Your new integration is now ready for use.
 
-To learn more about the LongFi packet payload, check out this [section] (/longfi).
+Below is an example of what an HTTP request would look like when received by the endpoint. The payload field
+is the actual data received from the device, encoded in a base64 string.
+
+### Example HTTP POST (Uplink):
+```
+{
+    "root":
+    "app_eui": "415D0A10B5DD763A"
+    "dev_eui": "7778223FAE245EA5"
+    "gateway": "fancy-rusty-toad"
+    "id": "3c822699-37fd-4df6-a84d-93037a450843"
+    "name": "Home Disco"
+    "payload": "SGVsbG8sIHdvcmxkIQ=="
+    "rssi": -53
+    "sequence": 2947
+    "snr": 12.5
+    "spreading": "SF9BW125"
+    "timestamp": 1583339317
+}
+```
 
 ### Integration Details 
 View the details of your integration by clicking on the Integration name. 
