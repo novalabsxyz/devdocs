@@ -131,7 +131,9 @@ Download and install the latest version of <a href="https://www.arduino.cc/en/Ma
 <img src={Prefs001}/>
 
 And add the following line under "Additional Boards Manager URLs":
-        `https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json`
+```
+https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
+```
 
 <img src={Prefs003}/>
 
@@ -182,6 +184,7 @@ Be sure to select the appropriate format and copy the information into the sketc
 static const u1_t PROGMEM DEVEUI[8]= {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED, 0xFF, 0xFF };
 void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
 
+static const u1_t PROGMEM APPEUI[8]= { 0x81, 0x6A, 0xE9, 0xDD, 0x50, 0xD8, 0x16, 0x8B };
 void os_getArtEui (u1_t* buf) { memcpy_P(buf, APPEUI, 8);}
 
 static const u1_t PROGMEM APPKEY[16] = { 0x29, 0xFE, 0xF6, 0x75, 0x97, 0x18, 0xE3, 0x25, 0x72, 0x64, 0xBA, 0x25, 0x82, 0x8C, 0x94, 0xFA };
