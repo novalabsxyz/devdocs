@@ -13,33 +13,86 @@ import disco_board from '../images/device/disco_board.png'
 import console_device_details from '../images/console/console_device_details.png'
 import MCCI_Library from '../images/device/library_manager.png'
 
+import Compile_Upload from '../images/device/t-arduino-compileupload.jpeg'
+import Libraries from '../images/device/t-arduino-libraries.jpeg'
+import LMIC from '../images/device/t-arduino-lmic.jpeg'
+import Menu001 from '../images/device/t-arduino-menu001.jpeg'
+import Menu002 from '../images/device/t-arduino-menu002.jpeg'
+import Menu003 from '../images/device/t-arduino-menu003.jpeg'
+import Menu004 from '../images/device/t-arduino-menu004.jpeg'
+import Menu005 from '../images/device/t-arduino-menu005.jpeg'
+import Menu006 from '../images/device/t-arduino-menu006.jpeg'
+import Menu007 from '../images/device/t-arduino-menu007.jpeg'
+import Menu008 from '../images/device/t-arduino-menu008.jpeg'
+import Menu009 from '../images/device/t-arduino-menu009.jpeg'
+import Port001 from '../images/device/t-arduino-port001.jpeg'
+import Port002 from '../images/device/t-arduino-port002.jpeg'
+import Prefs001 from '../images/device/t-arduino-preferences001.jpeg'
+import Prefs002 from '../images/device/t-arduino-preferences002.jpeg'
+import Prefs003 from '../images/device/t-arduino-preferences003.jpeg'
+import Prefs004 from '../images/device/t-arduino-preferences004.jpeg'
+import SerialMon001 from '../images/device/t-arduino-serialmon001.jpeg'
+import SerialMon002 from '../images/device/t-arduino-serialmon002.jpeg'
+import BoardsManager from '../images/device/t-boardsmanager.jpeg'
+import TestDevice from '../images/device/t-Console_testdevice.png'
+import Manager001 from '../images/device/t-device-manager001.jpeg'
+import Manager002 from '../images/device/t-device-manager002.jpeg'
+import Chart001 from '../images/device/t-helium-console-chart002.jpeg'
+import Chart002 from '../images/device/t-helium-console-chart004.jpeg'
+import Graph001 from '../images/device/t-helium-console-graph.jpeg'
+import Console001 from '../images/device/t-helium-console001.jpeg'
+import Console002 from '../images/device/t-helium-console002.jpeg'
+import Console003 from '../images/device/t-helium-console003.jpeg'
+import Console004 from '../images/device/t-helium-console004.jpeg'
+import Console005 from '../images/device/t-helium-console005.jpeg'
+import Console006 from '../images/device/t-helium-console006.jpeg'
+import DeviceLog001 from '../images/device/t-helium-device-log001.jpeg'
+import Key001 from '../images/device/t-helium-key001.jpeg'
+import Key002 from '../images/device/t-helium-key002.jpeg'
+import Key003 from '../images/device/t-helium-key003.jpeg'
+import Key004 from '../images/device/t-helium-key004.jpeg'
+import Key005 from '../images/device/t-helium-key005.jpeg'
+import Key006 from '../images/device/t-helium-key006.jpeg'
+import NewDevice001 from '../images/device/t-helium-newdevice.jpeg'
+import RequestBin001 from '../images/device/t-requestbin.jpeg'
+import Stm32Board001 from '../images/device/t-stm32-001.jpg'
+import Stm32Board002 from '../images/device/t-stm32-002.jpg'
+import Stm32Mount from '../images/device/t-stm32-mount.jpeg'
 
-# LongFi Arduino Quickstart Guide
- 
+# LongFi Arduino Quickstart
+
+<img src={Stm32Board001} /> 
+
 
 
 ## Introduction
 
-#### Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to create a wireless peer-to-peer network for low-bandwidth IoT applications.
+Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to create a wireless peer-to-peer network for low-bandwidth IoT applications. This guide will show you step by step how to transmit LoRaWAN packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
 
-This guide will show you step by step how to transmit LoRaWAN packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
-
-> ##### Important!  
->Before we begin, please make sure you've followed the steps from this [guide](/console/quickstart), which goes over some initial device creation steps. 
+>##### Important!
+>Before we begin, please make sure you've followed the steps from this [guide](/console/quickstart), which goes over some initial setup steps.
 
 
-## Objective 
+[Objective](#objective)
+
+[Hardware Setup](#hardware-setup)
+
+[LongFi Example Sketch and Sending Data](#longfi-example-sketch-and-sending-data)
+
+
+## Objective and Requirements 
+[objective]: #objective
 
 In this guide, you will learn:
 
-* How to setup your environment (Add STM32 board support to Arduino and STLink debugging utility)
-* How to build and program a basic application that will send packets on the Helium Network
-* Verify real time packets sent to a Helium Hotspot on Console. 
+* How to setup your environment (Add STM32 board support to Arduino IDE and STLink debugging utility)
+* How to build and program a basic application that will send packets over the Helium Network
+* Verify real-time packets sent to the Helium Console via Hotspot that's in range
  
-For this example, you’ll need the following:
+For this example, you will need the following:
 
 ### Hardware
- 
+
 * <a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html" target="_blank">STMicroelectronics B-L072Z-LRWAN1 Discovery kit</a>
 * Micro USB Type B Cable - <a href="https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B0719H12WD/ref=sr_1_2_sspa?" target="_blank">Example </a>
 
@@ -50,7 +103,8 @@ For this example, you’ll need the following:
 * <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">STLink Debugging Utility</a> 
 * <a href="https://console.helium.com/" target="_blank">Helium Console</a> 
 
-## Hardware setup
+## Hardware Setup
+[hardware-setup]: #hardware-setup
 
 The build for this project is easy! You’ll just need to install the included antenna.  
  
@@ -58,25 +112,43 @@ We'll be using the ST-Link debugger on the Discovery board, so you'll want to co
  
 <img src={disco_board} /> 
 
-That’s it for the hardware setup! Next we will setup your environment. We will be using the Arduino IDE. 
+If you will be running the device using the AAA battery supply, you will need to remove a resistor on the underside of the board. We can just move it over to one of the pads and leave it attached for later. **You don't have to worry about this right now, as we will be powering the board off the MicroUSB connection.**
+<img src={Stm32Board002} /> 
 
-## Getting the Arduino IDE
- 
+That’s it for the hardware setup! Next we will setup your environment. We are going to use the Arduino IDE here. (Intsructions on how do use <a href="https://platformio.org/" target="_blank">PlatformIO</a> for this will be added soon.)
+
+### Getting the Arduino IDE
+
+
 Download and install the latest version of <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE </a> for your preferred OS. 
  
 * <a href="https://www.arduino.cc/en/Guide/Windows" target="_blank">Windows </a>
 * <a href="https://www.arduino.cc/en/Guide/linux" target="_blank">Linux </a>
 * <a href="https://www.arduino.cc/en/Guide/MacOSX" target="_blank">Mac OSX</a>
 
-## Add STM32 board support to Arduino
+### Add STM32 board support to Arduino
  
-<a href="https://github.com/stm32duino/wiki/wiki/Getting-Started" target="_blank">Instructions to add STM32 board support to Arduino</a> 
+<img src={Prefs001}/>
 
-## Install MCCI LoRaWAN LMIC Library
+And add the following line under "Additional Boards Manager URLs":
+        `https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json`
+
+<img src={Prefs003}/>
+
+Now go to your `Boards Manager`, Select the "STM32 Cores" and click on Install:
+
+<img src={Menu001}/>
+<img src={BoardsManager}/>
+
+
+### Install MCCI LoRaWAN LMIC Library
  
-The MCCI LoRaWAN LMIC Library library may be installed from the Arduino IDE 
+The MCCI LoRaWAN LMIC Library then needs to be installed from the Arduino IDE if you don't already have it.  
 
-Arduino IDE:
+> ##### Important! 
+> If you have already installed the MCCI LMIC library, please make sure to check for updates.
+
+From inside the Arduino IDE:
 
 ```
 Sketch -> Include Libraries -> Manage Libraries 
@@ -86,59 +158,65 @@ Search for `MCCI LMIC` and install the latest version of `MCCI LoRaWAN LMIC Libr
 
 <img src={MCCI_Library} /> 
 
-> ##### Important! 
-> If you have already installed the MCCI LMIC library, please make sure to check for updates
 
 
+## LongFi Example Sketch and Sending Data
+[longfi-example-sketch-and-sending-data]: #longfi-example-sketch-and-sending-data
 
-## LongFi Example Sketches 
+This <a href="https://github.com/helium/longfi-arduino/blob/master/longfi-us915/longfi-us915.ino" target="_blank">an example sketch</a> is included in the LongFi repository and we'll be using it for this demo.
 
-There is <a href="https://github.com/helium/longfi-arduino/blob/master/longfi-us915/longfi-us915.ino" target="_blank">an example sketch</a> included in the LongFi repository.
+To deploy it, create a new sketch and copy the source code over. All you need to do is update it with the the `DevEUI`, `AppEUI`, and `AppKey` generated for you when you [create a device](/console/quickstart) in [Helium Console](https://console.helium.com).
 
-Create a new sketch and copy the source code over. All you need to do is update the AppEui, DevEui, and AppKey. AppEui (LSB) and AppKey (MSB) are provided from Helium Console after you've created your device:
+Note that the byte ordering of the `DevEUI`, `AppEUI`, and `AppKey` are important. 
 
- <img src={console_device_details} />  
+* `DevEUI` and `AppEUI` need to be copied over in the `LSB` format. 
+* `AppKey` needs to be input using `MSB`
 
-Be sure to select the appropriate format (LSB/Little-Endian for AppEui and MSB/Big-Endian for AppKey) and copy the information into the sketch:
+ <img src={Key003}/>
+ 
+ <img src={Key004}/>
+
+Be sure to select the appropriate format and copy the information into the sketch:
 
 ```
-static const u1_t PROGMEM APPEUI[8]= { 0x0B, 0x10, 0xDF, 0x45, 0xFC, 0xAD, 0xEC, 0x0F };
+static const u1_t PROGMEM DEVEUI[8]= {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED, 0xFF, 0xFF };
+void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
+
 void os_getArtEui (u1_t* buf) { memcpy_P(buf, APPEUI, 8);}
 
 static const u1_t PROGMEM APPKEY[16] = { 0x29, 0xFE, 0xF6, 0x75, 0x97, 0x18, 0xE3, 0x25, 0x72, 0x64, 0xBA, 0x25, 0x82, 0x8C, 0x94, 0xFA };
 void os_getDevKey (u1_t* buf) {  memcpy_P(buf, APPKEY, 16);}
 ```
 
-Note that you can put arbitrary data into DevEui; you can use this later in your applications to identify certain settings:
+### Adding B-L072Z-LRWAN1 Board Support 
 
-```
-static const u1_t PROGMEM DEVEUI[8]= { 0x6B, 0x8B, 0xEF, 0xC7, 0x43, 0x89, 0xFB, 0x38 };
-void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
-```
-
- ## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
- 
-Instructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> 
+You then need to configuring the Arduino IDE for the `B-L072Z-LRWAN1 - ST STM32L0 Discovery kit`. (Full istructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> but we'll walk you through it below.)
 
 
-Arduino IDE:
- 
+In the Arduino IDE:
+
+
 ```
 Select Tools -> Board -> Discovery
 ```
  
-<img src={Arduino_Board_Discovery} /> 
+<img src={Menu002} /> 
  
 
 ```
 Select Tools -> Board part number -> Discovery L072Z-LRWAN1
 ```
 
-<img src={Arduino_Board_PartNumber} /> 
+<img src={Menu003} />
+<img src={Menu004} />
+<img src={Menu005} /> 
+<img src={Menu006} />
+<img src={Menu007} />
+<img src={Menu008} />
 
-## Programming (Upload Method)
+### Programming (Upload Method)
 
-We will use the onboard ST-Link (Flasher/Debugger) to upload this sketch. 
+Now we're ready to upload our Sketch. For this, we will use the onboard ST-Link (Flasher/Debugger).
  
 Download and install the required utility from ST <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">here</a> 
 
@@ -146,6 +224,7 @@ The download comes in the form of a `stm32cubeprog.zip` file, which you'll need 
 
 ```
 SetupSTM32CubeProgrammer-[version].exe
+
 SetupSTM32CubeProgrammer-[version].linux
 SetupSTM32CubeProgrammer-[version].app
 ```
@@ -176,25 +255,23 @@ Run the following command:
 `java -jar SetupSTM32CubeProgrammer-[version].exe`
 
 **You should use the default installation path.** 
-## 
 
-Arduino IDE:
+In the Arduino IDE:
 
 ```
 Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
 ```
 
-<img src={upload_sketch} /> 
+<img src={Menu009} />
 
-## Programming your Arduino Sketch
+### Programming your Arduino Sketch and Sending Data
 
-Arduino IDE:
+From the Arduino IDE:
 
 ```
 Select Sketch -> Verify/Compile (Ctrl + R)
 ```
- 
- <img src={Arduino_Compile} /> 
+
  
 If there are no errors with your sketch, you should see `Done Compiling`.
 
@@ -205,8 +282,7 @@ Arduino IDE:
 ```
 Select Sketch -> Upload (Ctrl + U)
 ```
- 
-<img src={upload_success} />
+
  
 Congratulations! You have just programmed your first Helium LongFi application! 
 
@@ -216,9 +292,6 @@ You should be able to see some packets appear as Live Data.
 
 <img src={device_packets} />
 
-To learn about routing these packets to an endpoint, check out this [guide] (/console/routing-data). 
-
-If you've loaded the ButtonTransmit sketch, you can learn about decoding these packets and triggering a service on IFTTT by checking out this [guide] (/console/trigger-ifttt).
 
 
 
