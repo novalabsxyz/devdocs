@@ -59,8 +59,8 @@ import Stm32Board001 from '../images/device/t-stm32-001.jpg'
 import Stm32Board002 from '../images/device/t-stm32-002.jpg'
 import Stm32Mount from '../images/device/t-stm32-mount.jpeg'
 
-# LongFi Arduino Quickstart Guide
----
+# LongFi Arduino Quickstart
+
 <img src={Stm32Board001} /> 
 
 
@@ -70,11 +70,18 @@ import Stm32Mount from '../images/device/t-stm32-mount.jpeg'
 Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to create a wireless peer-to-peer network for low-bandwidth IoT applications. This guide will show you step by step how to transmit LoRaWAN packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
 
 >##### Important!
->Before we begin, please make sure you've followed the steps from this [guide](/console/setup-device), which goes over some initial setup steps.
+>Before we begin, please make sure you've followed the steps from this [guide](/console/quickstart), which goes over some initial setup steps.
 
 
+[Objective](#objective)
 
-## Objective 
+[Hardware Setup](#hardware-setup)
+
+[LongFi Example Sketch and Sending Data](#longfi-example-sketch-and-sending-data)
+
+
+## Objective and Requirements 
+[objective]: #objective
 
 In this guide, you will learn:
 
@@ -83,8 +90,6 @@ In this guide, you will learn:
 * Verify real-time packets sent to the Helium Console via Hotspot that's in range
  
 For this example, you will need the following:
-
-## Requirements 
 
 ### Hardware
 
@@ -98,7 +103,8 @@ For this example, you will need the following:
 * <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">STLink Debugging Utility</a> 
 * <a href="https://console.helium.com/" target="_blank">Helium Console</a> 
 
-## Hardware setup
+## Hardware Setup
+[hardware-setup]: #hardware-setup
 
 The build for this project is easy! You’ll just need to install the included antenna.  
  
@@ -111,7 +117,7 @@ If you will be running the device using the AAA battery supply, you will need to
 
 That’s it for the hardware setup! Next we will setup your environment. We are going to use the Arduino IDE here. (Intsructions on how do use <a href="https://platformio.org/" target="_blank">PlatformIO</a> for this will be added soon.)
 
-## Getting the Arduino IDE
+### Getting the Arduino IDE
 
 
 Download and install the latest version of <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE </a> for your preferred OS. 
@@ -120,7 +126,7 @@ Download and install the latest version of <a href="https://www.arduino.cc/en/Ma
 * <a href="https://www.arduino.cc/en/Guide/linux" target="_blank">Linux </a>
 * <a href="https://www.arduino.cc/en/Guide/MacOSX" target="_blank">Mac OSX</a>
 
-## Add STM32 board support to Arduino
+### Add STM32 board support to Arduino
  
 <img src={Prefs001}/>
 
@@ -135,7 +141,7 @@ Now go to your `Boards Manager`, Select the "STM32 Cores" and click on Install:
 <img src={BoardsManager}/>
 
 
-## Install MCCI LoRaWAN LMIC Library
+### Install MCCI LoRaWAN LMIC Library
  
 The MCCI LoRaWAN LMIC Library then needs to be installed from the Arduino IDE if you don't already have it.  
 
@@ -154,7 +160,8 @@ Search for `MCCI LMIC` and install the latest version of `MCCI LoRaWAN LMIC Libr
 
 
 
-## LongFi Example Sketch
+## LongFi Example Sketch and Sending Data
+[longfi-example-sketch-and-sending-data]: #longfi-example-sketch-and-sending-data
 
 This <a href="https://github.com/helium/longfi-arduino/blob/master/longfi-us915/longfi-us915.ino" target="_blank">an example sketch</a> is included in the LongFi repository and we'll be using it for this demo.
 
@@ -181,7 +188,7 @@ static const u1_t PROGMEM APPKEY[16] = { 0x29, 0xFE, 0xF6, 0x75, 0x97, 0x18, 0xE
 void os_getDevKey (u1_t* buf) {  memcpy_P(buf, APPKEY, 16);}
 ```
 
-## Adding B-L072Z-LRWAN1 Board Support 
+### Adding B-L072Z-LRWAN1 Board Support 
 
 You then need to configuring the Arduino IDE for the `B-L072Z-LRWAN1 - ST STM32L0 Discovery kit`. (Full istructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> but we'll walk you through it below.)
 
@@ -207,7 +214,7 @@ Select Tools -> Board part number -> Discovery L072Z-LRWAN1
 <img src={Menu007} />
 <img src={Menu008} />
 
-## Programming (Upload Method)
+### Programming (Upload Method)
 
 Now we're ready to upload our Sketch. For this, we will use the onboard ST-Link (Flasher/Debugger).
  
@@ -248,9 +255,8 @@ Run the following command:
 `java -jar SetupSTM32CubeProgrammer-[version].exe`
 
 **You should use the default installation path.** 
-## 
 
-Arduino IDE:
+In the Arduino IDE:
 
 ```
 Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
@@ -258,9 +264,9 @@ Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
 
 <img src={Menu009} />
 
-## Programming your Arduino Sketch
+### Programming your Arduino Sketch and Sending Data
 
-Arduino IDE:
+From the Arduino IDE:
 
 ```
 Select Sketch -> Verify/Compile (Ctrl + R)
