@@ -1,0 +1,52 @@
+import Change_Device_Name from '../images/console/Change_Device_Name.png' 
+import request_bin from '../images/console/request_bin.png' 
+import console_create_http from '../images/console/console_create_http.png' 
+import register from '../images/console/register.png' 
+import create_device from '../images/console/create_device.png' 
+import set_channel_as_default from '../images/console/set_channel_as_default.gif' 
+
+# HTTP Integration
+
+## Add an HTTP Integration
+
+To add a Integration, go to **Integrations** on the left menu. Select the integration to add - in this case, the **HTTP** integration.
+
+The next step is to paste the HTTP endpoint.
+
+If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. <a href="https://www.requestbin.com">Requestbin </a> and <a href="https://www.beeceptor.com">Beeceptor </a>provide tools to make an HTTP endpoint quickly and easily.
+
+### Requestbin Example
+Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint.
+
+<img src={request_bin} />
+
+... and paste it in Console.
+
+<img src={console_create_http} />
+
+**HTTP Header** and **Value** are not required and those can be left blank. 
+
+Lastly, provide a name for the integration. Names do not have to be unique.
+
+Click **Create Integration**.
+
+Your new integration is now ready for use.
+
+To learn more about the LongFi packet payload, check out this [section] (/longfi).
+
+### Integration Details 
+View the details of your integration by clicking on the Integration name. 
+
+**Integration Details** shows the integration ID that is unique to each integration, the name, the type of integration, and whether it is active or not.
+
+**HTTP Details** shows the specific endpoint. Editing endpoints is not available in the SDK Beta and will be coming soon. If you no longer want to use a integration, simply create a new one and redirect existing devices using the old integration to use the new one.
+
+**Devices Piped** lists all the devices that are currently sending their data to the selected integration.
+
+**Update your Connection Details** allows you to update your HTTP connection details for the currently viewed integration. 
+
+## Connecting Integrations to Devices
+
+Devices are connected to integrations through the use of Labels. Labels are named identifiers, that can be used to associate an integration
+with a device. To connect one or more devices to one or more integrations, simply attach the same label to both the device and integration.
+Labels need to be created before attaching them to devices and integrations. You can read more about how to do that [here](/console/labels).
