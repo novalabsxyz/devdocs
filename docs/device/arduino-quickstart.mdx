@@ -67,25 +67,24 @@ import Stm32Mount from '../images/device/t-stm32-mount.jpeg'
 
 ## Introduction
 
-#### Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to create a wireless peer-to-peer network for low-bandwidth IoT applications.
+Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to create a wireless peer-to-peer network for low-bandwidth IoT applications. This guide will show you step by step how to transmit LoRaWAN packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
 
-This guide will show you step by step how to transmit LoRaWAN packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
+>##### Important!
+>Before we begin, please make sure you've followed the steps from this [guide](/console/setup-device), which goes over some initial setup steps.
 
-##### Important!
-Before we begin, please make sure you've followed the steps from this [guide](/console/setup-device), which goes over some initial setup steps. 
-=======
 
 
 ## Objective 
----
 
 In this guide, you will learn:
 
 * How to setup your environment (Add STM32 board support to Arduino IDE and STLink debugging utility)
 * How to build and program a basic application that will send packets over the Helium Network
-* Verify real-time packets sent to a Helium Hotspot on Console. 
+* Verify real-time packets sent to the Helium Console via Hotspot that's in range
  
 For this example, you will need the following:
+
+## Requirements 
 
 ### Hardware
 
@@ -100,20 +99,21 @@ For this example, you will need the following:
 * <a href="https://console.helium.com/" target="_blank">Helium Console</a> 
 
 ## Hardware setup
----
+
 The build for this project is easy! You’ll just need to install the included antenna.  
  
 We'll be using the ST-Link debugger on the Discovery board, so you'll want to connect the micro-USB B connector to the micro-USB port labeled `CN7 USB STLINK`.
  
 <img src={disco_board} /> 
 
-If you will be running the device using the AAA battery supply, you will need to remove a resistor on the underside of the board. We can just move it over to one of the pads and leave it attached for later (you don't have to worry about this right now, as we will be powering the board off the MicroUSB connection):
+If you will be running the device using the AAA battery supply, you will need to remove a resistor on the underside of the board. We can just move it over to one of the pads and leave it attached for later. **You don't have to worry about this right now, as we will be powering the board off the MicroUSB connection.**
 <img src={Stm32Board002} /> 
 
-That’s it for the hardware setup! Next we will setup your environment. We are going to use the Arduino IDE here. Don't have to. We're going to. Will update with instructions for <a href="https://platformio.org/" target="_blank">PlatformIO</a> later on, which is what you really should be using anyways...
+That’s it for the hardware setup! Next we will setup your environment. We are going to use the Arduino IDE here. (Intsructions on how do use <a href="https://platformio.org/" target="_blank">PlatformIO</a> for this will be added soon.)
 
 ## Getting the Arduino IDE
----
+
+
 Download and install the latest version of <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE </a> for your preferred OS. 
  
 * <a href="https://www.arduino.cc/en/Guide/Windows" target="_blank">Windows </a>
@@ -125,11 +125,11 @@ Download and install the latest version of <a href="https://www.arduino.cc/en/Ma
 <img src={Prefs001}/>
 
 And add the following line under "Additional Boards Manager URLs":
-        https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
+        `https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json`
 
 <img src={Prefs003}/>
 
-Now go to your Boards Manager, Select the "STM32 Cores" and click on install:
+Now go to your `Boards Manager`, Select the "STM32 Cores" and click on Install:
 
 <img src={Menu001}/>
 <img src={BoardsManager}/>
@@ -137,9 +137,12 @@ Now go to your Boards Manager, Select the "STM32 Cores" and click on install:
 
 ## Install MCCI LoRaWAN LMIC Library
  
-The MCCI LoRaWAN LMIC Library hmay be installed from the Arduino IDE 
+The MCCI LoRaWAN LMIC Library then needs to be installed from the Arduino IDE if you don't already have it.  
 
-Arduino IDE:
+> ##### Important! 
+> If you have already installed the MCCI LMIC library, please make sure to check for updates.
+
+From inside the Arduino IDE:
 
 ```
 Sketch -> Include Libraries -> Manage Libraries 
@@ -149,22 +152,24 @@ Search for `MCCI LMIC` and install the latest version of `MCCI LoRaWAN LMIC Libr
 
 <img src={MCCI_Library} /> 
 
-> ##### Important! 
-> If you have already installed the MCCI LMIC library, please make sure to check for updates
 
 
+## LongFi Example Sketch
 
-## LongFi Example Sketches 
+This <a href="https://github.com/helium/longfi-arduino/blob/master/longfi-us915/longfi-us915.ino" target="_blank">an example sketch</a> is included in the LongFi repository and we'll be using it for this demo.
 
-There is <a href="https://github.com/helium/longfi-arduino/blob/master/longfi-us915/longfi-us915.ino" target="_blank">an example sketch</a> included in the LongFi repository.
+To deploy it, create a new sketch and copy the source code over. All you need to do is update it with the the `DevEUI`, `AppEUI`, and `AppKey` generated for you when you [create a device](/console/quickstart) in [Helium Console](https://console.helium.com).
 
-Create a new sketch and copy the source code over. All you need to do is update the DevEUI, AppEUI, and AppKey. DevEUI (LSB), AppEUI (LSB), and AppKey (MSB) are provided from Helium Console when you created your device:
+Not that the byte ordering of the `DevEUI`, `AppEUI`, and `AppKey` are important. 
+
+* `DevEUI` and `AppEUI`(MSB) need to be copied over in the `LSB` format. 
+* `AppKey` needs to be input using `MSB`
 
  <img src={Key003}/>
  
  <img src={Key004}/>
 
-Be sure to select the appropriate format (LSB/Little-Endian for DevEUI/AppEUI and MSB/Big-Endian for AppKey) and copy the information into the sketch:
+Be sure to select the appropriate format and copy the information into the sketch:
 
 ```
 static const u1_t PROGMEM DEVEUI[8]= {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED, 0xFF, 0xFF };
@@ -176,13 +181,14 @@ static const u1_t PROGMEM APPKEY[16] = { 0x29, 0xFE, 0xF6, 0x75, 0x97, 0x18, 0xE
 void os_getDevKey (u1_t* buf) {  memcpy_P(buf, APPKEY, 16);}
 ```
 
- ## Configuring the Arduino IDE for the B-L072Z-LRWAN1 - ST STM32L0 Discovery kit
- 
-Instructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> 
+## Adding B-L072Z-LRWAN1 Board Support 
+
+You then need to configuring the Arduino IDE for the `B-L072Z-LRWAN1 - ST STM32L0 Discovery kit`. (Full istructions to install the board support package can be found <a href="https://github.com/stm32duino/Arduino_Core_STM32#getting-started" target="_blank">here</a> but we'll walk you through it below.)
 
 
-## Arduino IDE:
- ---
+In the Arduino IDE:
+
+
 ```
 Select Tools -> Board -> Discovery
 ```
@@ -203,7 +209,7 @@ Select Tools -> Board part number -> Discovery L072Z-LRWAN1
 
 ## Programming (Upload Method)
 
-We will use the onboard ST-Link (Flasher/Debugger) to upload this sketch. 
+Now we're ready to upload our Sketch. For this, we will use the onboard ST-Link (Flasher/Debugger).
  
 Download and install the required utility from ST <a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank">here</a> 
 
@@ -211,6 +217,7 @@ The download comes in the form of a `stm32cubeprog.zip` file, which you'll need 
 
 ```
 SetupSTM32CubeProgrammer-[version].exe
+
 SetupSTM32CubeProgrammer-[version].linux
 SetupSTM32CubeProgrammer-[version].app
 ```
@@ -258,8 +265,7 @@ Arduino IDE:
 ```
 Select Sketch -> Verify/Compile (Ctrl + R)
 ```
- 
- <img src={Arduino_Compile} /> 
+
  
 If there are no errors with your sketch, you should see `Done Compiling`.
 
@@ -270,8 +276,7 @@ Arduino IDE:
 ```
 Select Sketch -> Upload (Ctrl + U)
 ```
- 
-<img src={upload_success} />
+
  
 Congratulations! You have just programmed your first Helium LongFi application! 
 
