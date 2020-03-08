@@ -128,13 +128,23 @@ In the Arduino IDE:
 Select Tools -> Board -> Discovery
 ```
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu002%7D)
+![](../.gitbook/assets/t-arduino-menu002.jpeg)
 
 ```text
-Select Tools -> Board part number -> Discovery L072Z-LRWAN1
+Select Tools -> Board part number -> Discovery L072Z-LRWAN1  
 ```
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu003%7D) ![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu004%7D) ![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu005%7D) ![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu006%7D) ![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu007%7D) ![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu008%7D)
+![](../.gitbook/assets/t-arduino-menu003.jpeg)
+
+![](../.gitbook/assets/t-arduino-menu004.jpeg)
+
+![](../.gitbook/assets/t-arduino-menu005.jpeg)
+
+![](../.gitbook/assets/t-arduino-menu006.jpeg)
+
+![](../.gitbook/assets/t-arduino-menu007.jpeg)
+
+![](../.gitbook/assets/t-arduino-menu008.jpeg)
 
 #### Programming \(Upload Method\)
 
@@ -185,7 +195,7 @@ In the Arduino IDE:
 Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
 ```
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu009%7D)
+![](../.gitbook/assets/t-arduino-menu009.jpeg)
 
 #### Programming your Arduino Sketch and Sending Data
 
@@ -211,5 +221,5 @@ However, we are not done just yet. Now let's head back to [Helium Console](https
 
 You should be able to see some packets appear as Live Data.
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7Bdevice_packets%7D)
+![](../.gitbook/assets/no_channel_packets.png)
 
