@@ -101,9 +101,9 @@ Note that the byte ordering of the `DevEUI`, `AppEUI`, and `AppKey` are importan
 * `DevEUI` and `AppEUI` need to be copied over in the `LSB` format. 
 * `AppKey` needs to be input using `MSB`
 
-  ![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BKey003%7D)
+![](../.gitbook/assets/t-helium-key003.jpeg)
 
-  ![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BKey004%7D)
+![](../.gitbook/assets/t-helium-key004.jpeg)
 
 Be sure to select the appropriate format and copy the information into the sketch:
 
