@@ -1,4 +1,4 @@
-# API
+# Blockchain API
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
 {% api-method-summary %}
@@ -581,7 +581,7 @@ Retrieve a specific block by a given height.
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="height" type="number" required=true %}
-The block height to rertrieve..
+The block height to rertrieve
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -660,6 +660,10 @@ Retrieve a list of all accounts \(addresses\), balances, and nonces.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
+{% api-method-parameter name="before" type="string" required=false %}
+Return accounts before the given address
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="limit" type="number" required=false %}
 Limit the number of accounts returned.
 {% endapi-method-parameter %}
@@ -1545,6 +1549,16 @@ Retrieve a list of Hotspots owned by a specific account.
 A base58 formatted address.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="limit" type="number" required=false %}
+Number of hotspots to fetch
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="before" type="string" required=false %}
+Fetch hotspots prior to the given address
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1801,4 +1815,6 @@ Successfully submitted transaction.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 
