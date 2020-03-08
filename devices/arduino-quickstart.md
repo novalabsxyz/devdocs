@@ -64,9 +64,13 @@ And add the following line under "Additional Boards Manager URLs":
 https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
 ```
 
+![](../.gitbook/assets/t-arduino-preferences004.jpeg)
+
 Now go to your `Boards Manager`, Select the "STM32 Cores" and click on Install:
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMenu001%7D) ![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BBoardsManager%7D)
+![](../.gitbook/assets/t-arduino-menu001.jpeg)
+
+![](../.gitbook/assets/t-boardsmanager.jpeg)
 
 #### Install MCCI LoRaWAN LMIC Library
 
@@ -84,7 +88,7 @@ Sketch -> Include Libraries -> Manage Libraries
 
 Search for `MCCI LMIC` and install the latest version of `MCCI LoRaWAN LMIC Library`
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/device/%7BMCCI_Library%7D)
+![](../.gitbook/assets/library_manager.png)
 
 ### LongFi Example Sketch and Sending Data
 
