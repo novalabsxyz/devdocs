@@ -72,9 +72,9 @@ Now go to your `Boards Manager`, Select the "STM32 Cores" and click on Install:
 
 The MCCI LoRaWAN LMIC Library then needs to be installed from the Arduino IDE if you don't already have it.
 
-> **Important!**
->
-> If you have already installed the MCCI LMIC library, please make sure to check for updates.
+{% hint style="danger" %}
+If you have already installed the MCCI LMIC library, please make sure to check for updates.
+{% endhint %}
 
 From inside the Arduino IDE:
 
