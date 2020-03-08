@@ -1,5 +1,7 @@
 # Blockchain API
 
+## Blocks
+
 {% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
 {% api-method-summary %}
 Get Blocks
@@ -647,6 +649,8 @@ Block successfully retrieved.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+## Accounts
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/accounts" %}
 {% api-method-summary %}
@@ -1766,6 +1770,8 @@ Successfully retrieved Hotspots for account.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+## Pending Transactions
 
 {% api-method method="post" host="https://api.helium.io" path="/v1/pending\_transactions" %}
 {% api-method-summary %}
