@@ -6,9 +6,9 @@
 
 Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to create a wireless peer-to-peer network for low-bandwidth IoT applications. This guide will show you step by step how to transmit LoRaWAN packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
 
-> **Important!**
->
-> Before we begin, please make sure you've followed the steps from this [guide](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/console/quickstart/README.md), which goes over some initial setup steps.
+{% hint style="warning" %}
+Before we begin, please make sure you've followed the steps from this [guide](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/console/quickstart/README.md), which goes over some initial setup steps.
+{% endhint %}
 
 ### Objective and Requirements
 
@@ -60,7 +60,7 @@ Download and install the latest version of [Arduino IDE](https://www.arduino.cc/
 
 And add the following line under "Additional Boards Manager URLs":
 
-```text
+```markup
 https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
 ```
 
@@ -103,7 +103,7 @@ Note that the byte ordering of the `DevEUI`, `AppEUI`, and `AppKey` are importan
 
 Be sure to select the appropriate format and copy the information into the sketch:
 
-```text
+```c
 static const u1_t PROGMEM DEVEUI[8]= {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED, 0xFF, 0xFF };
 void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
 
@@ -140,7 +140,7 @@ Download and install the required utility from ST [here](https://www.st.com/en/d
 
 The download comes in the form of a `stm32cubeprog.zip` file, which you'll need to unpack. After you unzip, you should see the following files:
 
-```text
+```c
 SetupSTM32CubeProgrammer-[version].exe
 
 SetupSTM32CubeProgrammer-[version].linux

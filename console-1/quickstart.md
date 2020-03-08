@@ -7,9 +7,7 @@ This Console quickstart guide will cover how to:
 * Register an account on Helium Console 
 * Add a device to Helium Console and record device details 
 
-{% hint style="info" %}
-**IMPORTANT**:
-
+{% hint style="warning" %}
 The cost per packet is $0.00001 USD \(24 byte packets\) which is equivalent to 1 Data Credit \(DC\). During the beta there is no cost to send packets. For more information please go here.
 {% endhint %}
 
