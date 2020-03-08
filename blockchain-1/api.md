@@ -1776,7 +1776,10 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="transaction" type="object" required=true %}
-The Javascript transaction object to be submitted. 
+The Javascript transaction object to be submitted, for example:   
+  
+`{   
+"txn": "QowBCiEBAwjvdnALeIh5hTxRhejfMMqQ=" }`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
