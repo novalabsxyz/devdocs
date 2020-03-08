@@ -35,7 +35,8 @@ All transactions occur on-chain, and all transactions require Data Credits to be
 * **OUI** - Create a OUI for a new router on the Helium network. In the Helium blockchain, Hotspots forward packets to routers that own them based on their OUI as stored in the blockchain.  
 * **reward** - A token payout for a specific event on the network such as submitting a valid proof of coverage request, participating in a consensus group, etc. 
 * **rewards** -  Bundles multiple reward transactions at the end of each epoch and distributes all HNT produced in that block to wallets that have earned them. 
-* **payment** - Used to send HNT between wallets. 
+* **payment** - Used to send HNT from one wallet to another.
+* **multi-payment** - Used to sent HNT from one wallet to multiple wallets. 
 * **create proof of coverage request** - Submitted by a Hotspot wishing to initiate a challenge. 
 * **proof of coverage receipts** - The result of a POC submitted to the network upon completion. 
 * **routing** - Update the routing information associated with an OUI.
@@ -45,9 +46,24 @@ All transactions occur on-chain, and all transactions require Data Credits to be
 * **data credits** - Burn HNT for DCs at the current exchange rate and deliver them to the target wallet address.
 * **chain vars** - Change a chain variable. 
 
+### Transaction Encoding
+
+Transactions are encoded in a portable binary format using [Protocol Buffers](https://developers.google.com/protocol-buffers). Language bindings exist for most programming languages. 
+
+The following steps are required to construct a transaction that can be submitted to the blockchain:
+
+* Construct the transaction with an empty binary signature field. 
+  * If a transaction has multiple signature fields they should all be empty binaries.
+* Encode the transaction into binary form and sign the resulting binary. 
+  * Some transactions may require more than one signature from multiple parties.
+* Insert the signature\(s\) in the original transaction.
+* Wrap the transaction in a `blockchain_txn` envelope.
+* Encode the envelope into binary form.
+
 ### Extended Reading
 
 * [Helium Blockchain Core on GitHub](https://github.com/helium/blockchain-core)
+* [Transaction protobuf definitions on GitHub](https://github.com/helium/proto)
 
 ## Chain Variables
 
