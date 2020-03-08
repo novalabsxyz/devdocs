@@ -34,7 +34,7 @@ Below is an example of what an HTTP request would look like when received by the
 
 #### Example HTTP POST \(Uplink\):
 
-```text
+```javascript
 {
     "root":
     "app_eui": "415D0A10B5DD763A"
