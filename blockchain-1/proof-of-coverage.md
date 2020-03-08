@@ -24,7 +24,7 @@ The ultimate power of Proof-of-Coverage lies in the fact that the data generated
 
 This is a Proof-of-Coverage Challenge, as seen in the [Helium Network Visualizer](https://network.helium.com/challenges):
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/blockchain/%7Bpoc%7D)
+![](../.gitbook/assets/poc.jpg)
 
 Each Challenge has the following set of participants:
 
@@ -109,7 +109,7 @@ Challenges fail frequently. Take a few minutes to scroll through the [list of on
 
 #### Initial Target Not Challenged
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/blockchain/%7Bpoc1%7D)
+![](../.gitbook/assets/poc1.svg)
 
 In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target and subsequently received by this targt via its Internet connection \(often referred to "P2P"\). From there, the target is responsible for decrypting the challenge packet, sending a receipt back to the Challenger, and broadcasting the challenge packet with one less layer of encryption to other Hotspots in range via its RF link.
 
@@ -119,13 +119,13 @@ However, when the Helium blockchain does not have definitive proof the challenge
 
 #### Failed Challenge
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/blockchain/%7Bpoc2%7D)
+![](../.gitbook/assets/poc2.svg)
 
 Here, a Hotspot is believed to have received the multilayer challenge packet over RF from the previous Hotspot in the challenge path, but has failed to complete the packet decryption and response. **In this failure mode, only the Hotspot that fails the challenge will see their score decrease**.
 
 #### Not Challenged
 
-![](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/blockchain/%7Bpoc3%7D)
+![](../.gitbook/assets/poc3.svg)
 
 When this happens, a Hotspot that’s a predetermined participant in a PoC challenge was never given the opportunity to complete it because either a\) the Initial Target was never challenged or b\) a Hotspot earlier in the path formally failed its portion of the challenge. **In this scenario, any Hotspot that was “Not Challenged” will not see their score decreased.**
 
