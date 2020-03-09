@@ -1506,7 +1506,7 @@ Any transactions affecting the given balance type should use an adjusted specula
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="aadress" type="string" required=true %}
+{% api-method-parameter name="address" type="string" required=true %}
 A base58 formatted address.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -2069,7 +2069,81 @@ Successfully returned Hotspot.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+## Transactions
+
+{% api-method method="get" host="https://api.helium.io" path="/v1/transactions/:hash" %}
+{% api-method-summary %}
+Get Transaction by Hash
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Return a completed transaction by its hash.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="hash" type="string" required=true %}
+The base64url encoded hash of the transaction.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 ## Pending Transactions
+
+{% api-method method="get" host="https://api.helium.io" path="/v1/pending\_transactions/:hash" %}
+{% api-method-summary %}
+Get Pending Transaction Status
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Return the status of a pending transaction by its hash.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="hash" type="string" required=true %}
+The base64url encoded hash of the pending transaction.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Successfully returned pending transaction.
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "data": {
+    "created_at": "2020-02-19T23:52:09.561144Z",
+    "failed_reason": null,
+    "hash": "A61hDe1rvd8hH8qCojEJ4lRafcFfzThw9jTF2pOR4bk=",
+    "status": "received",
+    "updated_at": "2020-02-19T23:52:09.561144Z"
+  }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 {% api-method method="post" host="https://api.helium.io" path="/v1/pending\_transactions" %}
 {% api-method-summary %}
