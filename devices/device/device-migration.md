@@ -2,7 +2,7 @@
 description: Migrating a device from TheThingsNetwork to Helium
 ---
 
-# Device Migration
+# Device Migration from The Things Network
 
 ## Migrating a device from TheThingsNetwork to Helium
 
