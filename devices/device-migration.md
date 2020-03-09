@@ -6,17 +6,17 @@ description: Migrating a device from TheThingsNetwork to Helium
 
 In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in [Helium console](https://console.helium.com/devices)… Simple as that!
 
-![](../../.gitbook/assets/ttn-keys001.png)
+![](../.gitbook/assets/ttn-keys001.png)
 
-![](../../.gitbook/assets/migratory_helium_console.png)
+![](../.gitbook/assets/migratory_helium_console.png)
 
 The only other change we may need to make is to set the device to use LoRaWAN US channels 48-55 \(sub-band 7\). This process can vary by device. Some come bundled with configuration utilities, others you will have to recompile and flash the firmware yourself. It is also possible that the network negotiates the sub-channel band itself.
 
-If you have followed the [Arduino Quickstart guide](../arduino-quickstart.md), you will want to copy the values over in the following format:
+If you have followed the [Arduino Quickstart guide](arduino-quickstart.md), you will want to copy the values over in the following format:
 
 Paste these values into your code as follows \(replacing with your own keys\):
 
-```text
+```c
 static const u1_t PROGMEM APPEUI[8]= { 0xC4, 0xA6, 0x19, 0xC9, 0xD8, 0x00, 0x00, 0x00 };
 static const u1_t PROGMEM DEVEUI[8]= { 0xF0, 0x9C, 0x3F, 0x5D, 0xC3, 0x00, 0x00, 0x00 };
 static const u1_t PROGMEM APPKEY[16] = { 0x73, 0x26, 0x00, 0x8B, 0xC2, 0x6F, 0x23, 0xB8, 0x33, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
@@ -26,7 +26,7 @@ Recompile, flash, and you should be good to go!
 
 The frequency table for the US915 band is below. By default, the end node will use all channels \(8~15\) for the OTAA join process. After OTAA JOINED, the end node will use these channels \(8~15\) to send uplink packets.
 
-#### CHE  US915 Uplink Channels \(125KHz,4/5,Unit:MHz,CHS=0\)
+#### LoRaWAN US915 Uplink Channels \(125KHz,4/5,Unit:MHz,CHS=0\)
 
 | Sub-band |  |  |  |  |  |  |  |  | Channels |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
