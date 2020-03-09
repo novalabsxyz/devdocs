@@ -4,7 +4,7 @@ description: Migrating a device from TheThingsNetwork to Helium
 
 # Device Migration from The Things Network
 
-In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in [Helium console](https://console.helium.com/devices)… Simple as that!
+In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in [Helium Console](https://console.helium.com/devices)… Simple as that!
 
 ![](../.gitbook/assets/ttn-keys001.png)
 
