@@ -6,9 +6,7 @@ The Helium Hotspot is a combination [LongFi](../longfi-1/longfi.md) wireless rou
 
 ## Developer Hotspot
 
-The [Helium Developer Hotspot](https://github.com/helium/devdocs/tree/316a0ffe46a00cd9398f98332e75206bc437c93c/hotspot/developer-setup/README.md) is a Hotspot that can be built using off-the-shelf components that is capable of sending and receiving packets over the LongFi wireless network. 
+The [Helium Developer Hotspot](https://github.com/helium/devdocs/tree/316a0ffe46a00cd9398f98332e75206bc437c93c/hotspot/developer-setup/README.md) is a Hotspot that can be built using off-the-shelf components that is capable of sending and receiving packets over the LongFi wireless network.
 
 Currently these Developer Hotspots cannot perform any blockchain mining functions, but this functionality is intended to be available by Q3 2020.
-
-
 

@@ -27,7 +27,7 @@
 * [Network Components](blockchain-1/network-components.md)
 * [Helium Tokens and Data Credits](blockchain-1/tokens.md)
 * [Proof-of-Coverage](blockchain-1/proof-of-coverage.md)
-* [The Helium Consensus Protocol](blockchain-1/consensus-protocol.md)
+* [The Helium Consensus Protocol](blockchain-1/the-helium-consensus-protocol.md)
 * [Blockchain Primitives](blockchain-1/blockchain-primitives.md)
 * [Blockchain API](blockchain-1/api.md)
 
@@ -38,10 +38,10 @@
 
 ## LongFi <a id="longfi-1"></a>
 
-* [Introduction](longfi/longfi.md)
+* [Introduction](longfi-1/longfi.md)
 * [LongFi Network Server](longfi-1/longfi-network-server.md)
 * [Helium Network](longfi-1/helium-network.md)
-* [LoRaWAN Versions](longfi-1/routerv3-and-lorawan.md)
+* [LoRaWAN Versions](longfi-1/lorawan-versions.md)
 * [Data Credits](longfi-1/data-credits.md)
-* [Routing](longfi-1/longfi-routing.md)
+* [Routing](longfi-1/routing.md)
 

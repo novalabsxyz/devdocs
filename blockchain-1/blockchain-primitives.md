@@ -48,7 +48,7 @@ All transactions occur on-chain, and all transactions require Data Credits to be
 
 ### Transaction Encoding
 
-Transactions are encoded in a portable binary format using [Protocol Buffers](https://developers.google.com/protocol-buffers). Language bindings exist for most programming languages. 
+Transactions are encoded in a portable binary format using [Protocol Buffers](https://developers.google.com/protocol-buffers). Language bindings exist for most programming languages.
 
 The following steps are required to construct a transaction that can be submitted to the blockchain:
 
@@ -95,9 +95,7 @@ The key type indicates the kind of key that follows. The following key types are
 | NIST p-256 | 0 |
 | ed25519 | 1 |
 
-Since this is a public key the base58check encoded version is `0` 
-
-
+Since this is a public key the base58check encoded version is `0`
 
 ### Extended Reading
 

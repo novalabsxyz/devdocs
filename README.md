@@ -2,7 +2,7 @@
 
 ### Welcome to the Helium network
 
-The Helium network enables long range, low power, bi-directional communication for LoRaWAN compatible devices. 
+The Helium network enables long range, low power, bi-directional communication for LoRaWAN compatible devices.
 
 The Helium network is open, permissionless, and requires no up-front payments, contracts or commitments to use. Devices pay Hotspot owners on a per-packet basis using Data Credits for packets that are delivered to the appropriate network server.
 
