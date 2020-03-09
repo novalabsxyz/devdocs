@@ -8,7 +8,7 @@ This short guide will walk you through porting your devices to the Helium Networ
 
 At a high level, there are two steps to accomplish this migration:
 
-1. Copying your keys from the TTN Console to the Helium Console. \(Right now this is manual process but we'll soon have a CLI that automates this.
+1. Copying your keys from the TTN Console to the Helium Console. \(Right now this is a manual process, but we'll soon have a CLI that automates this\).
 2. Porting your `application`logic from TTN Console to use the far superior `labels` construct in the Helium Console.
 
 ### Copying Keys and Ensuring you're using Sub Band 7
