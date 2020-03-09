@@ -38,7 +38,7 @@
 
 ## LongFi <a id="longfi-1"></a>
 
-* [Introduction](longfi-1/longfi.md)
+* [Introduction](longfi/longfi.md)
 * [LongFi Network Server](longfi-1/longfi-network-server.md)
 * [Helium Network](longfi-1/helium-network.md)
 * [LoRaWAN Versions](longfi-1/routerv3-and-lorawan.md)
