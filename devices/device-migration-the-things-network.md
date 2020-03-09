@@ -54,7 +54,7 @@ The frequency table for the US915 band is below. By default, the end node will u
 
 After you've added your device to the Helium Console, you'll likely need to reconstruct the [Application](https://www.thethingsnetwork.org/docs/applications/) you've built for your devices in TTN's Console. 
 
-Instead of an `application`, Helium uses [labels](../console-1/labels.md) And, instead of creating your TTN application first, then adding devices to it, Helium lets you add any number of devices to Console, then group them by labels after the fact. Devices can also have more than one label. 
+Instead of an `application`, Helium uses [labels](../console-1/labels.md), and instead of creating your TTN application first, then adding devices to it, Helium lets you add any number of devices to Console, then group them by labels after the fact. Devices can also have more than one label. 
 
 To read more about Labels and how you should use them to replace and extend `applications`, head [here](../console-1/labels.md).
 
