@@ -30,7 +30,7 @@ The frequency table for the US915 band is below. By default, the end node will u
 
 #### CHE  US915 Uplink Channels \(125KHz,4/5,Unit:MHz,CHS=0\)
 
-| Sub-band |  |  |  |  |  |  |  |  |  |
+| Sub-band |  |  |  |  |  |  |  |  | Channels |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | 902.3 | 902.5 | 902.7 | 902.9 | 903.1 | 903.3 | 903.5 | 903.7 | 0-7 |
 | 2 | 903.9 | 904.1 | 904.3 | 904.5 | 904.7 | 904.9 | 905.1 | 905.3 | 8-15 |
