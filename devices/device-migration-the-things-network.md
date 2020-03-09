@@ -38,31 +38,17 @@ The frequency table for the US915 band is below. By default, the end node will u
 
 #### When using the TTN network, the US915 frequency bands are:
 
-| **Freq** | **SFBW** |
-| :--- | :--- |
-| 903.9 | SF7BW125 to SF10BW125 |
-| 904.1 | SF7BW125 to SF10BW125 |
-| 904.3 | SF7BW125 to SF10BW125 |
-| 904.5 | SF7BW125 to SF10BW125 |
-| 904.7 | SF7BW125 to SF10BW125 |
-| 904.9 | SF7BW125 to SF10BW125 |
-| 905.1 | SF7BW125 to SF10BW125 |
-| 905.3 | SF7BW125 to SF10BW125 |
-| 904.6 | SF8BW500 |
-
-#### When using the Helium network, the US915 frequency bands are:
-
-| **Freq** | **SFBW** |
-| :--- | :--- |
-| 911.9 | SF7BW125 to SF10BW125 |
-| 912.1 | SF7BW125 to SF10BW125 |
-| 912.3 | SF7BW125 to SF10BW125 |
-| 912.5 | SF7BW125 to SF10BW125 |
-| 912.7 | SF7BW125 to SF10BW125 |
-| 912.9 | SF7BW125 to SF10BW125 |
-| 913.1 | SF7BW125 to SF10BW125 |
-| 913.3 | SF7BW125 to SF10BW125 |
-| 912.6 | SF8BW500 |
+| **TTN Frequency** | Helium Frequency | **SFBW** |
+| :--- | :--- | :--- |
+| 903.9 | 911.9 | SF7BW125 to SF10BW125 |
+| 904.1 | 912.1 | SF7BW125 to SF10BW125 |
+| 904.3 | 912.3 | SF7BW125 to SF10BW125 |
+| 904.5 | 912.5 | SF7BW125 to SF10BW125 |
+| 904.7 | 912.7 | SF7BW125 to SF10BW125 |
+| 904.9 | 912.9 | SF7BW125 to SF10BW125 |
+| 905.1 | 913.1 | SF7BW125 to SF10BW125 |
+| 905.3 | 913.3 | SF7BW125 to SF10BW125 |
+| 904.6 | 912.6 | SF8BW500 |
 
 ### Porting Your Application Logic to use Helium's Labels Construct
 
