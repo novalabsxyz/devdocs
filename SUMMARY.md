@@ -2,17 +2,17 @@
 
 * [Home](README.md)
 
-## Console <a id="console-1"></a>
+## Console <a id="console"></a>
 
-* [Introduction](console-1/console.md)
-* [Quickstart](console-1/quickstart.md)
-* [Users](console-1/users.md)
-* [Integrations](console-1/integrations/README.md)
-  * [MQTT Integration](console-1/integrations/mqtt.md)
-  * [HTTP Integration](console-1/integrations/http.md)
-  * [Cargo Integration](console-1/integrations/cargo.md)
-* [Labels](console-1/labels.md)
-* [Adding Devices](console-1/adding-devices.md)
+* [Introduction](console/console.md)
+* [Quickstart](console/quickstart.md)
+* [Users](console/users.md)
+* [Integrations](console/integrations/README.md)
+  * [MQTT Integration](console/integrations/mqtt.md)
+  * [HTTP Integration](console/integrations/http.md)
+  * [Cargo Integration](console/integrations/cargo.md)
+* [Labels](console/labels.md)
+* [Adding Devices](console/adding-devices.md)
 
 ## Devices
 
@@ -20,28 +20,28 @@
 * [Device Migration from The Things Network](devices/device-migration-the-things-network.md)
 * [LongFi Arduino Quickstart](devices/arduino-quickstart.md)
 
-## Blockchain <a id="blockchain-1"></a>
+## Blockchain <a id="blockchain"></a>
 
-* [Introduction](blockchain-1/blockchain.md)
-* [Mining and Token Rewards](blockchain-1/mining-token-rewards.md)
-* [Network Components](blockchain-1/network-components.md)
-* [Helium Tokens and Data Credits](blockchain-1/tokens.md)
-* [Proof-of-Coverage](blockchain-1/proof-of-coverage.md)
-* [The Helium Consensus Protocol](blockchain-1/the-helium-consensus-protocol.md)
-* [Blockchain Primitives](blockchain-1/blockchain-primitives.md)
-* [Blockchain API](blockchain-1/api.md)
+* [Introduction](blockchain/blockchain.md)
+* [Mining and Token Rewards](blockchain/mining-token-rewards.md)
+* [Network Components](blockchain/network-components.md)
+* [Helium Tokens and Data Credits](blockchain/tokens.md)
+* [Proof-of-Coverage](blockchain/proof-of-coverage.md)
+* [The Helium Consensus Protocol](blockchain/the-helium-consensus-protocol.md)
+* [Blockchain Primitives](blockchain/blockchain-primitives.md)
+* [Blockchain API](blockchain/api.md)
 
-## Hotspot <a id="hotspot-1"></a>
+## Hotspot <a id="hotspot"></a>
 
-* [Introduction](hotspot-1/hotspot.md)
-* [Building a Developer Hotspot](hotspot-1/developer-setup.md)
+* [Introduction](hotspot/hotspot.md)
+* [Building a Developer Hotspot](hotspot/developer-setup.md)
 
-## LongFi <a id="longfi-1"></a>
+## LongFi <a id="longfi"></a>
 
-* [Introduction](longfi-1/longfi.md)
-* [LongFi Network Server](longfi-1/longfi-network-server.md)
-* [Helium Network](longfi-1/helium-network.md)
-* [LoRaWAN Versions](longfi-1/lorawan-versions.md)
-* [Data Credits](longfi-1/data-credits.md)
-* [Routing](longfi-1/routing.md)
+* [Introduction](longfi/longfi.md)
+* [LongFi Network Server](longfi/longfi-network-server.md)
+* [Helium Network](longfi/helium-network.md)
+* [LoRaWAN Versions](longfi/lorawan-versions.md)
+* [Data Credits](longfi/data-credits.md)
+* [Routing](longfi/routing.md)
 
