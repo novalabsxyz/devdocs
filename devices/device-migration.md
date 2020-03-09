@@ -1,16 +1,25 @@
 ---
-description: Migrating a device from TheThingsNetwork to Helium
+description: Migrating a device from TheThings Network to Helium
 ---
 
 # Device Migration from The Things Network
 
-In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in [Helium Console](https://console.helium.com/devices)… Simple as that!
+This short guide will walk you through porting your devices to the Helium Network \(and Helium Console\) from TTN and the TTN Console. 
+
+At a high level, there are two steps to accomplish this migration:
+
+1. Copying your keys from the TTN Console to the Helium Console. \(Right now this is manual process but we'll soon have a CLI that automates this.
+2. Porting your `application`logic from TTN Console to use the far superior `labels` construct in the Helium Console.
+
+### Copying Keys and Ensuring you're using Sub Band 7
+
+In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in [Helium Console](https://console.helium.com). 
 
 ![](../.gitbook/assets/ttn-keys001.png)
 
 ![](../.gitbook/assets/migratory_helium_console.png)
 
-The only other change we may need to make is to set the device to use LoRaWAN US channels 48-55 \(sub-band 7\). This process can vary by device. Some come bundled with configuration utilities, others you will have to recompile and flash the firmware yourself. It is also possible that the network negotiates the sub-channel band itself.
+Next, you need to ensure the device can use LoRaWAN US channels `48-55` \(also known as `Sub-band 7`\). This process can vary by device. Some come bundled with configuration utilities, others you will have to recompile and flash the firmware yourself. It is also possible that the network negotiates the sub-channel band itself.
 
 If you have followed the [Arduino Quickstart guide](arduino-quickstart.md), you will want to copy the values over in the following format:
 
@@ -67,5 +76,5 @@ The frequency table for the US915 band is below. By default, the end node will u
 | 913.3 | SF7BW125 to SF10BW125 |
 | 912.6 | SF8BW500 |
 
-
+### Porting Your Application Logic to use Helium's Labels Construct
 
