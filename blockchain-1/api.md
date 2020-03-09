@@ -2092,11 +2092,25 @@ The base64url encoded hash of the transaction.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Successfully returned transaction.
 {% endapi-method-response-example-description %}
 
-```
-
+```javascript
+{
+	"data": {
+		"challenger": "112t9bHVnGEkmvegyVMqRidJZCvc7TzcJBeWEXMSvmjBfjvV1ULz",
+		"fee": 0,
+		"hash": "fxgywWl7Jrk7KIzckBV7a7Xh65nD-bEtudmpNMDHn6M",
+		"height": 240095,
+		"lat": 4.36088243165191045136e+01,
+		"lng": -7.08250638245599475340e+01,
+		"location": "14kCAfBHLM7bczXo7H26DWggkSERG37A9hx9nBa7sC6NuhHmV7B",
+		"onion": "TSN8mSI5TTgj_DT7HDmpMtjPTbSL6-ZBt7v9rgfpU4A",
+		"owner": "14kCAfBHLM7bczXo7H26DWggkSERG37A9hx9nBa7sC6NuhHmV7B",
+		"signature": "MEYCIQDKYnWFpoOiWwATGITsg6-nse7iP9pQTlbMVbcU6vI0PAIhAOdw8sSWkqDq9iz8V1sgi4DM33XG3Ckfi9UGkWk8Tycz",
+		"type": "poc_request_v1"
+	}
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
