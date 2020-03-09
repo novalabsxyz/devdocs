@@ -36,7 +36,7 @@ The frequency table for the US915 band is below. By default, the end node will u
 | **7 \(Helium\)** | **911.9** | **912.1** | **912.3** | **912.5** | **912.7** | **912.9** | **913.1** | **913.3** | **48-55** |
 | 8 | 913.5 | 913.7 | 913.9 | 914.1 | 914.3 | 914.5 | 914.7 | 914.9 | 56-63 |
 
-#### When using the TTN network, the US915 frequency bands are:
+#### The US915 frequency bands are:
 
 | **TTN Frequency** | Helium Frequency | **SFBW** |
 | :--- | :--- | :--- |
