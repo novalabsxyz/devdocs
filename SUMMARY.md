@@ -28,7 +28,8 @@
 * [Proof-of-Coverage](blockchain-1/proof-of-coverage.md)
 * [The Helium Consensus Protocol](blockchain-1/consensus-protocol.md)
 * [Blockchain Primitives](blockchain-1/blockchain-primitives.md)
-* [Blockchain API](blockchain-1/api.md)
+* [Blockchain API](blockchain-1/api/README.md)
+  * [Blocks](blockchain-1/api/blocks.md)
 
 ## Hotspot <a id="hotspot-1"></a>
 
