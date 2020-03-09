@@ -24,7 +24,7 @@ If you already have LoRaWAN devices deployed on another network, you can easily 
 
 The following is a list of network-specific migration guides. Join us!
 
-* [Migrating from the Thing Network to Helium](device-migration-the-things-network.md)
+* [Migrating from the Things Network to Helium](device-migration-the-things-network.md)
 * Migrating from Senet to Helium \(**Coming Soon**\)
 * Migrating from MachineQ to Helium \(**Coming Soon**\)
 
