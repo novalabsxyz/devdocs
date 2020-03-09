@@ -1,10 +1,12 @@
-# Building a Development Hotspot
+# Building a Developer Hotspot
 
 This guide walks through the steps required to build a Development Hotspot that can send and receive packets over the wireless network, but not perform any blockchain mining functions.
 
 ## System Requirements
 
 To build a low-cost Development Hotspot, we recommend using a [Raspberry Pi 3B+ or 4B](https://www.raspberrypi.org) running the latest [Raspian Buster](https://www.raspberrypi.org/downloads/raspbian/) image with a [RAK2245 Pi Hat](https://store.rakwireless.com/products/rak2245-pi-hat) installed, and a recommended 64GB sdcard. In theory any Linux host and any Semtech SX1301-based concentrator board that interfaces to the host via SPI can be used, but are untested as of this writing.
+
+It is also possible to use any LoRa gateway that can run Semtech's [packet forwarder](https://github.com/Lora-net/packet_forwarder) application and run the `miner` application on a separate host.
 
 This README will assume a Raspberry Pi 3B+/4 with 1GB RAM + RAK2245 combination described above. This combination is available as a packaged product directly from RAK called the [Pilot Gateway](https://store.rakwireless.com/products/rak7243c-pilot-gateway?variant=26682434879588).
 
