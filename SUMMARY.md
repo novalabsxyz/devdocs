@@ -17,7 +17,7 @@
 ## Devices
 
 * [Introduction](devices/device.md)
-* [Device Migration from The Things Network](devices/device-migration.md)
+* [Device Migration from The Things Network](devices/device-migration-the-things-network.md)
 * [LongFi Arduino Quickstart](devices/arduino-quickstart.md)
 
 ## Blockchain <a id="blockchain-1"></a>

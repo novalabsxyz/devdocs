@@ -1,3 +1,7 @@
+---
+description: All about Labels
+---
+
 # Labels
 
 Labels are a powerful mechanism used in Console for organization, integrations, and for versioning, and can provide both scalability and flexibility to your projects.
