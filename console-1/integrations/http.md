@@ -1,7 +1,5 @@
 # HTTP Integration
 
-import Change\_Device\_Name from '../images/console/Change\_Device\_Name.png' import request\_bin from '../images/console/request\_bin.png' import console\_create\_http from '../images/console/console\_create\_http.png' import register from '../images/console/register.png' import create\_device from '../images/console/create\_device.png' import set\_channel\_as\_default from '../images/console/set\_channel\_as\_default.gif'
-
 ## HTTP Integration
 
 ### Add an HTTP Integration
