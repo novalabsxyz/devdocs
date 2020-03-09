@@ -8,13 +8,13 @@ description: Migrating a device from TheThingsNetwork to Helium
 
 ### Assume we have a device that has been provisioned and running on TheThingsNetwork:
 
-In the TTN Console, we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in Helium console… Simple as that!
+In the TTN Console, we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in [Helium console](https://console.helium.com/devices)… Simple as that!
 
 ![](../../.gitbook/assets/ttn-keys001.png)
 
 The only other change we may need to make is to set the device to use LoRaWAN US channels 48-55 \(sub-band 7\). This process can vary by device. Some come bundled with configuration utilities, others you will have to recompile and flash the firmware yourself. It is also possible that the network negotiates the sub-channel band itself.
 
-If you have followed the [Arduino Quickstart guide](../arduino-quickstart.md), you will want to copy the values over in the following format:
+If you have followed the [Arduino Quickstlart guide](../arduino-quickstart.md), you will want to copy the values over in the following format:
 
 Paste these values into your code as follows \(replacing with your own keys\):
 
