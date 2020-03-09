@@ -1556,11 +1556,11 @@ A base58 formatted address.
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="limit" type="number" required=false %}
-Number of hotspots to fetch
+Number of Hotspots to return.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="before" type="string" required=false %}
-Fetch hotspots prior to the given address
+Return hotspots prior to the given address.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -1764,6 +1764,304 @@ Successfully retrieved Hotspots for account.
 		"score": 2.50000000000000000000e-01,
 		"score_update_height": 166947
 	}]
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+## Hotspots
+
+{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots" %}
+{% api-method-summary %}
+Get Hotspots
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Retrieve a list of all Hotspots and associated metadata.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="before" type="string" required=false %}
+Return Hotspots prior to the given address.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="limit" type="number" required=false %}
+Number of Hotspots to return.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="owner" type="string" required=false %}
+Only return Hotspots owned by this base58 encoded address.
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Successfully returned all Hotspots.
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "data": [
+    {
+      "address": "1126TWLgat7mzzJkosi6VzZUVZLPuB1bqM7ynaVzGHWotPjj57rE",
+      "geocode": {
+        "long_city": "San Francisco",
+        "long_country": "United States",
+        "long_state": "California",
+        "long_street": "Nido Avenue",
+        "short_city": "SF",
+        "short_country": "US",
+        "short_state": "CA",
+        "short_street": "Nido Ave"
+      },
+      "lat": 37.779884546675696,
+      "lng": -122.44602673616339,
+      "location": "8c28308291755ff",
+      "name": "faithful-wooden-chicken",
+      "owner": "135J3Qa3XuQuJPqzEZL3FeQtnq21kAhN9EJZwP1ZtmzFK2SvdCA",
+      "score": 0.16595458984375,
+      "score_update_height": 228972
+    },
+    {
+      "address": "1128ZakzMbi1M7iGS83g8frdbZaRJF9jAWzTnkqKFudkD1ZjaQFD",
+      "geocode": {
+        "long_city": "Chicago",
+        "long_country": "United States",
+        "long_state": "Illinois",
+        "long_street": "North Kedvale Avenue",
+        "short_city": "Chicago",
+        "short_country": "US",
+        "short_state": "IL",
+        "short_street": "N Kedvale Ave"
+      },
+      "lat": 41.99255849740483,
+      "lng": -87.73203577282106,
+      "location": "8c2664d9d7a27ff",
+      "name": "scruffy-vanilla-boar",
+      "owner": "145Ynf7Z864WhomNQYGJEDNeP9GULTCs746x6cWpJbmdWSajCZ5",
+      "score": 0.25,
+      "score_update_height": 228972
+    },
+    {
+      "address": "1128zVhAVJKHLQdADP6b49QfPvmgBKsKf94M8ycntAsgJidyi4EP",
+      "geocode": {
+        "long_city": "Hull",
+        "long_country": "United States",
+        "long_state": "Massachusetts",
+        "long_street": "Touraine Avenue",
+        "short_city": "Hull",
+        "short_country": "US",
+        "short_state": "MA",
+        "short_street": "Touraine Ave"
+      },
+      "lat": 42.284852214384,
+      "lng": -70.87973561981863,
+      "location": "8c2a3028c21d7ff",
+      "name": "hollow-jade-hare",
+      "owner": "13WwwtoFSaw8bDcx6xWZwbsFPG4aDCaADWPoG8yY2PDg5vgN4uG",
+      "score": 0.25,
+      "score_update_height": 228972
+    },
+    {
+      "address": "1129M4ZENRrp1r6p8nRR3yzdCVBmuEb9A1bpmuX3xzDmx93yoKwN",
+      "geocode": {
+        "long_city": "New York",
+        "long_country": "United States",
+        "long_state": "New York",
+        "long_street": "East 62nd Street",
+        "short_city": "New York",
+        "short_country": "US",
+        "short_state": "NY",
+        "short_street": "E 62nd St"
+      },
+      "lat": 40.76169280330261,
+      "lng": -73.96146149291673,
+      "location": "8c2a100d6b15dff",
+      "name": "acrobatic-orchid-puma",
+      "owner": "13aVqJDHnMtkVop4ggaQgo8BAzr2jaUicTjz6yvZNNV6HwXTowJ",
+      "score": 0.0227813720703125,
+      "score_update_height": 228972
+    },
+    {
+      "address": "112AA84yHoo25BkagFAEqtupm2rYop5VgtZWJWSfSfC1DLChjCaR",
+      "geocode": {
+        "long_city": "Santa Clara",
+        "long_country": "United States",
+        "long_state": "California",
+        "long_street": "Kellogg Way",
+        "short_city": "Santa Clara",
+        "short_country": "US",
+        "short_state": "CA",
+        "short_street": "Kellogg Way"
+      },
+      "lat": 37.326434125058924,
+      "lng": -121.98412193034378,
+      "location": "8c28347043765ff",
+      "name": "salty-bubblegum-chipmunk",
+      "owner": "14NHk7ajkBnsBsSfZSmmHRD5SHb1UvWyLdwz5z9MCEDyjezFWXD",
+      "score": 0.9694976806640625,
+      "score_update_height": 228972
+    },
+    {
+      "address": "112cmB9nFVScUmwsc7brW2mS7mfdCrVefy4pX6AuokssjXroW3LA",
+      "geocode": {
+        "long_city": "Dania Beach",
+        "long_country": "United States",
+        "long_state": "Florida",
+        "long_street": "Southeast 1st Avenue",
+        "short_city": "Dania Beach",
+        "short_country": "US",
+        "short_state": "FL",
+        "short_street": "SE 1st Ave"
+      },
+      "lat": 26.05067170915643,
+      "lng": -80.13538254099859,
+      "location": "8c44a10ed0d19ff",
+      "name": "upbeat-rusty-shrimp",
+      "owner": "13dT56DwL4hDxPZS498nfYZmK4nygPPcVvMz2gSEVQnQNAAU7T4",
+      "score": 0.25,
+      "score_update_height": 228972
+    },
+    {
+      "address": "112dFZxdQZeWXyk6BUa5ZDghZpWecHdPfYHvLiNcNiuzqhNrxWQa",
+      "geocode": {
+        "long_city": "McKeesport",
+        "long_country": "United States",
+        "long_state": "Pennsylvania",
+        "long_street": "Trimble Avenue",
+        "short_city": "McKeesport",
+        "short_country": "US",
+        "short_state": "PA",
+        "short_street": "Trimble Ave"
+      },
+      "lat": 40.3347216593527,
+      "lng": -79.86356853904596,
+      "location": "8c2a84772603dff",
+      "name": "tart-ceramic-cuckoo",
+      "owner": "14FUSqWYcWfQd7KQjrDSPXehsxvtJqxFf2q2QdxakbH4597KCz9",
+      "score": 0.02410888671875,
+      "score_update_height": 228972
+    },
+    {
+      "address": "112dN5qSVxw6KjZRuG3W8vhHxvjY7DxjibfKxNtYh7qF47hk7sn5",
+      "geocode": {
+        "long_city": "Seattle",
+        "long_country": "United States",
+        "long_state": "Washington",
+        "long_street": "Pine Street",
+        "short_city": "Seattle",
+        "short_country": "US",
+        "short_state": "WA",
+        "short_street": "Pine St"
+      },
+      "lat": 47.61330135921255,
+      "lng": -122.33171493173714,
+      "location": "8c28d542c026dff",
+      "name": "wonderful-honey-wren",
+      "owner": "14PXLYYBC68NQt2RBXErap7Xos6jAmrKMNtnWpkS1C3SuJw7wFB",
+      "score": 0.2311553955078125,
+      "score_update_height": 228972
+    },
+    {
+      "address": "112ezmRsg3FsV4hhcLCRaF3eUuMkZvUSPEeuz37UYFhSK75GhQvT",
+      "geocode": {
+        "long_city": "San Jose",
+        "long_country": "United States",
+        "long_state": "California",
+        "long_street": "Randleswood Court",
+        "short_city": "San Jose",
+        "short_country": "US",
+        "short_state": "CA",
+        "short_street": "Randleswood Ct"
+      },
+      "lat": 37.30640624036822,
+      "lng": -122.00570443045251,
+      "location": "8c2834723b847ff",
+      "name": "boxy-amethyst-albatross",
+      "owner": "14NHk7ajkBnsBsSfZSmmHRD5SHb1UvWyLdwz5z9MCEDyjezFWXD",
+      "score": 0.99627685546875,
+      "score_update_height": 228972
+    },
+    {
+      "address": "112hgcYUdbAqbdwHgLBT8SmU3xc81HbaHvKCH6X1rtwpgmwDzzRP",
+      "geocode": {
+        "long_city": "Tracy",
+        "long_country": "United States",
+        "long_state": "California",
+        "long_street": "Foxwood Drive",
+        "short_city": "Tracy",
+        "short_country": "US",
+        "short_state": "CA",
+        "short_street": "Foxwood Dr"
+      },
+      "lat": 37.736176909945904,
+      "lng": -121.45036641094117,
+      "location": "8c2836af1c741ff",
+      "name": "lively-stone-mammoth",
+      "owner": "13dLs3rfP3FTFooXeCpmd38QrfQv6gi8tBkyvztMCiLvsfen4V7",
+      "score": 0.25,
+      "score_update_height": 228972
+    }
+  ]
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/:address" %}
+{% api-method-summary %}
+Get Hotspot with Address
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Return a specific Hotspot by its address.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="address" type="string" required=true %}
+The base58 encoded address of the Hotspot.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Successfully returned Hotspot.
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "data": {
+    "address": "11QgEnNnBK1jiWLEe3N6RBEPQaztt4vaW3P9J31Jt82FkSSVzME",
+    "geocode": {
+      "long_city": "Brooklyn",
+      "long_country": "United States",
+      "long_state": "New York",
+      "long_street": "Humboldt Street",
+      "short_city": "Brooklyn",
+      "short_country": "US",
+      "short_state": "NY",
+      "short_street": "Humboldt St"
+    },
+    "lat": 40.7150356102252,
+    "lng": -73.94307342213261,
+    "location": "8c2a100d12893ff",
+    "name": "wide-rose-otter",
+    "owner": "14sD2zx93PAVsdfpRcBHPKLy1zct3249tsNbiSwDedS2kz16wgg",
+    "score": 0.9825286865234375,
+    "score_update_height": 228976
+  }
 }
 ```
 {% endapi-method-response-example %}
