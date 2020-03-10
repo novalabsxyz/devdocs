@@ -6,34 +6,35 @@ The Helium [blockchain API](https://github.com/helium/blockchain-http) serves up
 
 While anyone can run a node and a corresponding API, the Helium hosted version offers up the API throuh two endpoints.
 
-| Endpoint | Purpose |
-| :--- | :--- |
-
-
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">https://api.helium.io</th>
-      <th style="text-align:left">
-        <p>Stable, scalable service.</p>
-        <p>Connected to mainnet.</p>
-      </th>
+      <th style="text-align:left">Endpoint</th>
+      <th style="text-align:left">Purpose</th>
     </tr>
   </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
+  <tbody>
     <tr>
-      <th style="text-align:left">https://api.helium.wtf</th>
-      <th style="text-align:left">
+      <td style="text-align:left"><code>https://api.helium.io</code>
+      </td>
+      <td style="text-align:left">
+        <p>Stable, scalable production service.</p>
+        <p>Connected to mainnet.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>https://api.helium.wtf</code>
+      </td>
+      <td style="text-align:left">
         <p>Beta, scalable endpoint for new features and tests</p>
         <p>Currently connected to mainnet</p>
         <p>Submitted transactions may get dropped</p>
-      </th>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table>{% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
+  </tbody>
+</table>Use the production endpoint for most use cases. The beta endpoint can be very unstable and may lose submitted transactions. 
+
+{% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
 {% api-method-summary %}
 Get Blocks
 {% endapi-method-summary %}
