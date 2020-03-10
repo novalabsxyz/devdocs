@@ -6,6 +6,10 @@ description: All about Labels
 
 Labels are a powerful mechanism used in Console for organization, integrations, and for versioning, and can provide both scalability and flexibility to your projects.
 
+## Organizing and Connecting with Labels
+
+Devices can be both organized and connected to Integrations with the use of Labels. Labels are simply user defined identifiers, that can be attached to one or more devices, and one or more Integrations. Labels need to be created before attaching them to devices and integrations, read more below on how to do both. 
+
 ## Add Labels
 
 When creating devices and integrations on Console, you will have the option to attach a custom Label to it. Before adding Labels to devices and integrations, you must create a new Label. To add a new Label, navigate to the **Labels** page using the left side navigation, and then click **Create New Label** in the upper right. You will be presented with the screen below.
