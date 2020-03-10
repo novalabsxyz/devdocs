@@ -30,6 +30,7 @@
 * [The Helium Consensus Protocol](blockchain/consensus-protocol.md)
 * [Blockchain Primitives](blockchain/blockchain-primitives.md)
 * [Blockchain API](blockchain/api.md)
+* [Blockchain CLI](blockchain/blockchain-cli.md)
 
 ## Hotspot
 
