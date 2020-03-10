@@ -1,2 +1,0 @@
-# The Helium Consensus Protocol
-
