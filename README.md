@@ -8,13 +8,17 @@ The Helium network is open, permissionless, and requires no up-front payments, c
 
 In this developer documentation you will find examples, tutorials, specifications, and API references for building devices to run on the Helium network.
 
-## Device
-
-Learn how to make your devices communicate on the network. [Read about Devices](devices/introduction.md)
-
 ## Console
 
 Learn how to communicate with your devices on the network. [Read about Console](console/introduction.md)
+
+## Devices
+
+Learn how to make your devices communicate on the network. [Read about Devices](devices/introduction.md)
+
+## Blockchain
+
+Learn more about the blockchain that powers the network. [Read about the Blockchain](blockchain/introduction.md)
 
 ## Hotspot
 
@@ -23,8 +27,4 @@ Learn more about the hotspot that provides the network. [Read about the Hotspot]
 ## LongFi
 
 The LongFi architecture combines the Helium blockchain with the LoRaWAN wireless protocol. [Read more about LongFi](longfi/introduction.md)
-
-## Blockchain
-
-Learn more about the blockchain that powers the network. [Read about the Blockchain](blockchain/introduction.md)
 
