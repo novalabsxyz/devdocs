@@ -23,7 +23,7 @@ $ curl https://sh.rustup.rs -sSf | sh
 Once Rust is installed, we'll need to check out the Wallet git repo and build it. You'll of course need Git installed first.
 
 ```bash
-$ git clone git@github.com:helium/helium-wallet-rs.git
+$ git clone https://github.com/helium/helium-wallet-rs.git
 $ cd helium-wallet-rs
 $ cargo build --release
 ```
@@ -105,7 +105,7 @@ $ ./target/release/helium-wallet pay <address> --hnt <amount>
 
 You will be prompted for the password you used to create the wallet.
 
-The value of `--hnt` can be down to 8 decimal places of precision. `0.00000001` is the smallest denomination that could be sent \(also know as a `bone`\).
+The value of `--hnt` can be down to 8 decimal places of precision. `0.00000001` is the smallest denomination that could be sent \(also known as a `bone`\).
 
 If the `--hash` flag is passed to the command, the CLI will output the transaction hash which can then be checked against the [Blockchain API](https://developer.helium.com/blockchain/api#get-pending-transaction-status) pending transaction route to see the status of the transaction: 
 
