@@ -1,58 +1,30 @@
-# devdocs 
+# Home
 
-## Requirements
-- [node](https://nodejs.org/en/)
-- [gatsby-cli](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli)
+### Welcome to the Helium network
 
-## Installation
+The Helium network enables long range, low power, bi-directional communication for LoRaWAN compatible devices.  
 
-```sh
-npm install
-```
+The Helium network is open, permissionless, and requires no up-front payments, contracts or commitments to use. Devices pay Hotspot owners on a per-packet basis using Data Credits for packets that are delivered to the appropriate network server.
 
-## Usage
+In this developer documentation you will find examples, tutorials, specifications, and API references for building devices to run on the Helium network.
 
-```sh
-gatsby develop
-```
+## Device
 
-## Adding Content Guidelines
+Learn how to make your devices communicate on the network. [Read about Devices](devices/introduction.md)
 
-### Menu Nav
-Add menu item to src/gatsby-theme-documentation/sidebar.mdx
+## Console
 
-### Headers
-Restrict header usage to h1-h3
+Learn how to communicate with your devices on the network. [Read about Console](console/introduction.md)
 
-#### h2
-The h2 header automatically adds a divider above it:  
-![divider](/readme-images/divider.png)
+## Hotspot
 
-#### Intro Text - h4
-Usage:
-```
-#### The devices are what the Helium network exist for. Here you will learn about the pieces that make up a Helium device and how you can quickly get started!
-```
-![intro-text](/readme-images/intro-text.png)
+Learn more about the hotspot that provides the network. [Read about the Hotspot](hotspot/introduction.md)
 
-#### Alert Blockquotes - h5
-Usage:
-```
-> ##### Note Header 
->This guide will show you step by step how to transmit LongFi packets using a longfi-arduino example on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit. The open-source Arduino platform provides easy to use hardware and software and decreases the technical overhead for beginners. 
-```
-Does:  
-![blockquote](/readme-images/blockquote-example.png)
+## LongFi
 
-### Links
-If you are adding a link in your markdown please follow these two rules.
-1. If you are adding a link to another markdown page on developer.helium.com, then use the following markdown syntax:  
-`
-[link-text](/device/overview)
-`
-2. If you are adding a link in your markdown to an external site, then use the following link syntax:  
-`
-<a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>
-`
+The LongFi architecture combines the Helium blockchain with the LoRaWAN wireless protocol. [Read more about LongFi](longfi/introduction.md)
 
+## Blockchain
+
+Learn more about the blockchain that powers the network. [Read about the Blockchain](blockchain/introduction.md)
 
