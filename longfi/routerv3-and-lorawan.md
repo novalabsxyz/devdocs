@@ -1,6 +1,6 @@
 # LoRaWAN Versions
 
-Currently, [RouterV3](https://github.com/helium/routerv3) is LoRaWAN 1.0.2 compatible. We plan to make it 1.0.3, 1.0.4, and 1.1 compatible in the future. 
+Currently, [RouterV3](https://github.com/helium/routerv3) is LoRaWAN 1.0.2 compatible. We plan to make it 1.0.3, 1.0.4, and 1.1 compatible in the future.
 
 ## Routing & Authentication
 
@@ -18,7 +18,7 @@ Despite multiple Network Servers working on the LongFi Network \(as opposed to a
 Currently Helium is only available in the United States. Additional regions will be available in Q2 2020.
 {% endhint %}
 
-#### United States \(US915\)
+### United States \(US915\)
 
 Helium operates on sub-band 7 \(Channels 48-55, 911.9-913.3 MHz\). RouterV3 will send a MAC ADR command with the appropriate submask until confirmation from the device. These are sent during the receive windows after Data uplinks.
 
@@ -46,17 +46,15 @@ On Data Confirmed/Unconfirmed:
 
 In the future, RXDelay may be changed from 1 second in the Join-Accept, so make sure your devices LoRaWAN stack obeys the specification and parses this value from the Join-Accept.
 
-#### Europe \(EU868\)
+### Europe \(EU868\)
 
 Coming soon.
 
-#### Asia \(AS923\)
+### Asia \(AS923\)
 
 Coming soon.
 
 ## Adaptive Data Rate
 
 Other than for configuring channel mask, Adaptive Data Rate \(ADR\) algorithms are not yet implemented on RouterV3. This means that the configuration of your device is responsible for configuring it’s own Spreading Factor \(SF\) and power output.
-
-
 

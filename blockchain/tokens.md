@@ -1,6 +1,6 @@
 # Helium Tokens and Data Credits
 
-The Helium blockchain makes use of two tokens in parallel as part of a design known as a “burn and mint equilibrium”: 
+The Helium blockchain makes use of two tokens in parallel as part of a design known as a “burn and mint equilibrium”:
 
 * [**The Helium Token**](tokens.md#the-helium-token) – used to reward Hotspot Operators and Helium Network Investors 
 * [**Data Credits**](tokens.md#data-credits) – derived from HNT in an on-chain burn transaction and used to pay transaction fees on the Helium Network

@@ -1,6 +1,6 @@
 # Helium Network
 
-The Helium Network is the largest, public LPWAN in the United States. It exists to route data for LoRaWAN-enabled devices. You can view [a live coverage map and network statistics here](https://network.helium.com/coverage). 
+The Helium Network is the largest, public LPWAN in the United States. It exists to route data for LoRaWAN-enabled devices. You can view [a live coverage map and network statistics here](https://network.helium.com/coverage).
 
 Hotspots run a traditional LoRaWAN packet forwarder, similar to [the one from Semtech](https://github.com/Lora-net/packet_forwarder).
 

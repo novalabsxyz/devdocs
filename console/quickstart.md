@@ -1,8 +1,8 @@
 # Quickstart
 
-### Objective
+## Objective
 
-This Console quickstart guide will cover how to: 
+This Console quickstart guide will cover how to:
 
 * Register an account on Helium Console 
 * Add a device to Helium Console and record device details 
@@ -11,7 +11,7 @@ This Console quickstart guide will cover how to:
 The cost per packet is $0.00001 USD \(24 byte packets\) which is equivalent to 1 Data Credit \(DC\). During the beta there is no cost to send packets. For more information please go here.
 {% endhint %}
 
-### Create an account
+## Create an account
 
 To register for an account, visit [Helium Console](https://console.helium.com) and click **Register**.
 
@@ -21,15 +21,15 @@ Define an Organization name for the top level owner of the account \(ie: company
 
 ![](../.gitbook/assets/console_register.png)
 
-#### Confirm your account
+### Confirm your account
 
 A confirmation email will be sent to the email address used to create an account. You must confirm the account in order to continue using Console. If you did not receive an email, please check your spam folders.
 
-### Device Management
+## Device Management
 
 Helium Console allows developers to add devices and grab the device identifiers to load onto their device firmware that authenticates and identifies the device for the Helium Network.
 
-#### Add a Device
+### Add a Device
 
 To add a device, go to **Devices** and click the **+ Add Device** icon on the top right of the window.
 
@@ -41,7 +41,7 @@ Once added, you'll see a consolidated view of all your device details, as well a
 
 ![](../.gitbook/assets/console_device_details.png)
 
-### Live Data and Event Logs
+## Live Data and Event Logs
 
 When a valid data packet is received from that device, a dot will appear from the left side of the chart and flow towards the right as time goes on.
 
@@ -49,11 +49,11 @@ Blue dots represent packets that have been successfully sent to endpoints, while
 
 The size of the dot is related to the size of the packet. Larger sized packets will be a larger dot, and small data packets will be a smaller dot.
 
-#### Event Log
+### Event Log
 
 Event Logs display real-time packets in table form. Here you can see which Hotspot received the packet, its RSSI, and the size of the packet in bytes.
 
-### Next Steps
+## Next Steps
 
 Now that we've added a device on Console, let's build our device!
 

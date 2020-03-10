@@ -1,6 +1,6 @@
 # Building a Developer Hotspot
 
-This guide walks through the steps required to build a Development Hotspot that can send and receive packets over the wireless network, but not perform any blockchain mining functions. 
+This guide walks through the steps required to build a Development Hotspot that can send and receive packets over the wireless network, but not perform any blockchain mining functions.
 
 ## System Requirements
 

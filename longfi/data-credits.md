@@ -1,6 +1,6 @@
 # Data Credits
 
-Data Credits \(DCs\) are central to the Helium Blockchain and LongFi. Read about how they fit into [our Tokenomics here](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/blockchain/tokens/README.md). 
+Data Credits \(DCs\) are central to the Helium Blockchain and LongFi. Read about how they fit into [our Tokenomics here](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/docs/blockchain/tokens/README.md).
 
 Not only are DCs critical for asserting new Hotspots and their location on the blockchain, registering OUIs and devices, but they are also used to pay for every single LongFi packet that is sent on the Helium network.
 

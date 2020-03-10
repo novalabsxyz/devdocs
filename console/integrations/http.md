@@ -4,7 +4,7 @@
 
 ### Add an HTTP Integration
 
-To add a Integration, go to **Integrations** on the left menu. Select the integration to add - in this case, the **HTTP** integration. 
+To add a Integration, go to **Integrations** on the left menu. Select the integration to add - in this case, the **HTTP** integration.
 
 The next step is to paste the HTTP endpoint.
 
