@@ -1,6 +1,6 @@
 # MQTT Integration
 
-![](../../.gitbook/assets/mqtt.jpg)
+![](../../.gitbook/assets/artboard.jpg)
 
 ## Add an MQTT Integration
 

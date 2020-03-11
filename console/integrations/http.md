@@ -1,6 +1,6 @@
 # HTTP Integration
 
-![](../../.gitbook/assets/http.jpg)
+![](../../.gitbook/assets/artboard-copy-7.jpg)
 
 ## HTTP Integration
 

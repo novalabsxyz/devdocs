@@ -1,6 +1,6 @@
 # Cargo Integration
 
-![](../../.gitbook/assets/cargo.jpg)
+![](../../.gitbook/assets/artboard-copy-8.jpg)
 
 {% hint style="danger" %}
 [Helium Cargo](http://cargo.helium.com/) is an evaluation tool and the data collected is available to all developers. Please do not share any sensitive information. Use at your own discretion.
