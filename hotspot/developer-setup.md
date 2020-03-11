@@ -80,10 +80,6 @@ $ wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_21.3.
 
 Install various other dependencies:
 
-#### **You may get errors after the second command, hence the usage of -f**
-
-#### **If you get errors here, try it again. Sometimes installing from mirrors is unreliable**
-
 ```text
 $ sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev libclang-dev doxygen
 $ sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
@@ -231,8 +227,6 @@ As long as you have an address listed in `listen_addrs` and some peers in the ta
 First, you need a genesis block from either the main network, or the Pescadero testnet. Get them here: [mainnet](https://github.com/helium/blockchain-api/blob/master/priv/prod/genesis) or [pescadero](https://github.com/helium/blockchain-api/blob/master/priv/pescadero/genesis).
 
 {% hint style="warning" %}
-**Important!**
-
 These are not links to the actual files. You will need to download the files separately and transfer them onto the Raspberry Pi.
 {% endhint %}
 
