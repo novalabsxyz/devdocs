@@ -133,25 +133,25 @@ $ nano _build/prod/rel/miner/releases/0.1.0/sys.config
 
 Change the following settings:
 
-```text
+```erlang
 {key, {ecc, [{key_slot, 0}, {onboarding_key_slot, 15}]}}, %% don't make this the last line in the stanza because sed and keep it on one line
 ```
 
 should be changed to:
 
-```text
+```erlang
 {key, undefined},
 ```
 
 and:
 
-```text
+```erlang
 {use_ebus, true},
 ```
 
 should be changed to:
 
-```text
+```erlang
 {use_ebus, false},
 ```
 
@@ -187,7 +187,7 @@ $ _build/prod/rel/miner/bin/miner peer book -s
 
 You will see an output roughly like the following:
 
-```text
+```bash
 +--------------------------------------------------------+------------------------------+------------+-----------+---------+------------+
 |                        address                         |             name             |listen_addrs|connections|   nat   |last_updated|
 +--------------------------------------------------------+------------------------------+------------+-----------+---------+------------+
