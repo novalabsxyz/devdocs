@@ -69,8 +69,6 @@ When you plug in your cable, your PC will assign it a COM port, which you can re
 
 To access the device manager, press the Windows key on your keyboard and search for "Device Manager". 
 
-
-
 ![Windows Device Manager](https://lh3.googleusercontent.com/GIWTBHyG9aEzXrJvUIlELvQ6cXakE9nHGE5NcwOhaUwVkzopT08WkQNuus8Zq18CYbyuSF5KlS8wKIq9Q9zhUbalK_7RPqLlZFqIRy7-R1vgFAipdmLr5TAMCQVZZ5xnUVKfBM7y)
 
 Select the corresponding port from the drop-down list in the top right of the utility and click _**Start**_.
@@ -108,7 +106,13 @@ A sample device payload is as follows:
 }
 ```
 
-### 
+To learn more about routing this payload to our demo visualization tool, visit [Cargo](../../console/integrations/cargo.md). 
+
+### Battery Life Estimate:
+
+{% file src="../../.gitbook/assets/oyster-lorawan-battery-life-estimates.xlsx" caption="Oyster LoRaWan Battery Life Estimates" %}
+
+This spreadsheet will help estimate approximate battery life of the Digital Matter Oyster. Simply modify the fields to represent the desired number of transmissions within a day. 
 
   
 
