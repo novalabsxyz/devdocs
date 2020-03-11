@@ -257,7 +257,7 @@ $ git clone https://github.com/Lora-net/lora_gateway
 
 And download the configuration file located at:
 
-[global\_conf.json](https://github.com/helium/devdocs/blob/master/docs/hotspot/global_conf.json)
+{% file src="../.gitbook/assets/global\_conf.json" caption="global\_conf.json" %}
 
 ## One Quick Change
 
