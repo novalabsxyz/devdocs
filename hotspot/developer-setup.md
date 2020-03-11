@@ -103,7 +103,8 @@ $ sudo apt-get install screen
 Before we can do so, we must make some modifications. We need to edit the rebar.lock file:
 
 ```text
-$ vim rebar.lock
+$ cd miner
+$ nano rebar.lock
 ```
 
 And change the `rocksdb` dependency as follows:
@@ -132,7 +133,7 @@ Congrats! You've installed the Miner 🚀 Now it's time to make some things happ
 The `sys.config` will need to be edited to match your configuration. Assuming you aren't using Helium Hotspot hardware you'll need to change the following lines of the configuration file:
 
 ```text
-$ vim _build/prod/rel/miner/releases/0.1.0/sys.config
+$ nano _build/prod/rel/miner/releases/0.1.0/sys.config
 ```
 
 Change the following settings:
