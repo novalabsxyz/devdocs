@@ -255,7 +255,7 @@ $ git clone https://github.com/Lora-net/packet_forwarder
 $ git clone https://github.com/Lora-net/lora_gateway
 ```
 
-And download the configuration file located at:
+And download the configuration file:
 
 {% file src="../.gitbook/assets/global\_conf.json" caption="global\_conf.json" %}
 
