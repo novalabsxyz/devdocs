@@ -1,5 +1,7 @@
 # Adding Devices
 
+![](../.gitbook/assets/devices.jpg)
+
 To add a device, go to **Devices** and click the **+ Add Device** icon on the top right of the window.
 
 ![](../.gitbook/assets/screenshot-2020-03-11-at-09.29.44.png)

@@ -1,5 +1,7 @@
 # MQTT Integration
 
+![](../../.gitbook/assets/mqtt.jpg)
+
 ## Add an MQTT Integration
 
 To add an integration, go to **Integrations** on the left menu. Select the integration to add - in this case, the **MQTT** integration.

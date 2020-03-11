@@ -4,6 +4,8 @@ description: All about Labels
 
 # Labels
 
+![](../.gitbook/assets/labels%20%281%29.jpg)
+
 Labels are a powerful mechanism used in Helium Console to organize devices, assign integrations, and provide scalability and flexibility to managing your projects.
 
 ## Organizing and Connecting with Labels

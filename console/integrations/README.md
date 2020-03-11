@@ -1,5 +1,7 @@
 # Integrations
 
+![](../../.gitbook/assets/integrations%20%281%29.jpg)
+
 Integrations enable devices to connect to pre-configured, cloud-based applications or send data directly over HTTP or MQTT.
 
 ## Add Integration

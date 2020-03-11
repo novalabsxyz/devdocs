@@ -1,5 +1,7 @@
 # Users
 
+![](../.gitbook/assets/users.jpg)
+
 ## User Roles
 
 The first user to register a new organization is given the highest role of administrator. To add a new user, navigate to the **Users** page using the left side navigation, and then click **+ Add User** in the upper right. You will be presented with the screen below. You will find more details about the access that each role has further below.

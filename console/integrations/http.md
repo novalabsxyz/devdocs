@@ -1,5 +1,7 @@
 # HTTP Integration
 
+![](../../.gitbook/assets/http.jpg)
+
 ## HTTP Integration
 
 ### Add an HTTP Integration
