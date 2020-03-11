@@ -118,7 +118,6 @@ And change the `rocksdb` dependency as follows:
 Once the Miner has been cloned and Erlang installed, we can create a release using [rebar3](https://www.rebar3.org/). Rebar will handle all the Erlang dependencies and build the application. This will take a while:
 
 ```text
-$ cd miner
 $ ./rebar3 as prod release
 ```
 
