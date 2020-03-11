@@ -36,7 +36,7 @@ The target production rate for new `HNT` minted per month is `5,000,000`. This m
 
 Recall that, in the Helium blockchain, [blocks](mining-token-rewards.md) contain some number of individual transactions and [epochs](mining-token-rewards.md) are comprised of all the blocks mined by a the current Consensus Group since the last epoch.
 
-So, if we acheive our target block time of `60` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows :
+So, if we acheive our target block time of `60` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows:
 
 * `43800` minutes in the average month;
 * `30` minutes per epoch; 
@@ -68,7 +68,7 @@ Below are the current mining rewards per epoch. For every complete epoch \(marke
 {% hint style="info" %}
 #### Why is 0% Allocated for Network Data Transfer?
 
-With the Network being very new, the reward distrubution is currently designed to incentivize the building of coverage. When the Data Credit infrastructure goes live, roughly Q1-2020, `30%` of HTN per epoch will be allocated to Network Data Transfer to ensure that Hotspots routing sensor data are compensated accordingly.
+With the Network being very new, the reward distrubution is currently designed to incentivize the building of coverage. When the Data Credit infrastructure goes live, roughly Q2-2020, `30%` of HNT per epoch will be allocated to Network Data Transfer to ensure that Hotspots routing sensor data are compensated accordingly.
 {% endhint %}
 
 ## HNT Earnings Per Hotspot By Reward Type
