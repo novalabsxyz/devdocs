@@ -24,7 +24,7 @@ The ultimate power of Proof-of-Coverage lies in the fact that the data generated
 
 This is a Proof-of-Coverage Challenge, as seen in the [Helium Network Visualizer](https://network.helium.com/challenges):
 
-![](../.gitbook/assets/poc.jpg)
+![](../.gitbook/assets/screen-shot-2020-03-11-at-2.40.47-pm.png)
 
 Each Challenge has the following set of participants:
 
