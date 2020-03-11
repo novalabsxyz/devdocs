@@ -109,7 +109,7 @@ Challenges fail frequently. Take a few minutes to scroll through the [list of on
 
 #### Initial Target Not Challenged
 
-![](../.gitbook/assets/poc1.svg)
+![](../.gitbook/assets/1.png)
 
 In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target and subsequently received by this targt via its Internet connection \(often referred to "P2P"\). From there, the target is responsible for decrypting the challenge packet, sending a receipt back to the Challenger, and broadcasting the challenge packet with one less layer of encryption to other Hotspots in range via its RF link.
 
@@ -119,13 +119,13 @@ However, when the Helium blockchain does not have definitive proof the challenge
 
 #### Failed Challenge
 
-![](../.gitbook/assets/poc2.svg)
+![](../.gitbook/assets/2.png)
 
 Here, a Hotspot is believed to have received the multilayer challenge packet over RF from the previous Hotspot in the challenge path, but has failed to complete the packet decryption and response. **In this failure mode, only the Hotspot that fails the challenge will see their score decrease**.
 
 #### Not Challenged
 
-![](../.gitbook/assets/poc3.svg)
+![](../.gitbook/assets/3.png)
 
 When this happens, a Hotspot that’s a predetermined participant in a PoC challenge was never given the opportunity to complete it because either a\) the Initial Target was never challenged or b\) a Hotspot earlier in the path formally failed its portion of the challenge. **In this scenario, any Hotspot that was “Not Challenged” will not see their score decreased.**
 

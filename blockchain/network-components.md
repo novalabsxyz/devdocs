@@ -46,7 +46,7 @@ The Helium blockchain API enables programmatic access to all data stored in the 
 
 ## Helium Mobile Wallet
 
-![](../.gitbook/assets/phone.png)
+![](../.gitbook/assets/artboard.png)
 
 The Helium Mobile Wallet is the officially supported iOS and Android app used to manage Helium tokens, deploy and administer Hotspots, and view network statistics and visualizations.
 

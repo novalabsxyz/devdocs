@@ -18,7 +18,7 @@ Create an endpoint by going to requestbin.com and click **Create a Request Bin**
 
 ... and paste it in Console.
 
-![](../../.gitbook/assets/console_create_http.png)
+![](../../.gitbook/assets/screenshot-2020-03-11-at-09.36.19.png)
 
 **HTTP Header** and **Value** are not required and those can be left blank.
 

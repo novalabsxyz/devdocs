@@ -6,9 +6,9 @@ Illustrated in the graphic below, LongFi improves on the standard LoRaWAN deploy
 
 **Helium's LongFi Architecture**
 
-![](../.gitbook/assets/longfi_arch.svg)
+![](../.gitbook/assets/arch1.jpg)
 
 **Traditional LoRaWAN Architecture**
 
-![](../.gitbook/assets/lorawan_arch.svg)
+![](../.gitbook/assets/arch2.jpg)
 

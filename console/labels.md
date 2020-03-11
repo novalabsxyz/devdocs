@@ -18,7 +18,7 @@ Labels need to be created before attaching them to devices and integrations, rea
 
 When creating devices and integrations on Console, you will have the option to attach a custom Label to it. Before adding Labels to devices and integrations, you must create a new Label. To add a new Label, navigate to the **Labels** page using the left side navigation, and then click **Create New Label** in the upper right. You will be presented with the screen below.
 
-![](../.gitbook/assets/console_create_label.png)
+![](../.gitbook/assets/screenshot-2020-03-11-at-09.37.01.png)
 
 ## Attaching Labels
 
