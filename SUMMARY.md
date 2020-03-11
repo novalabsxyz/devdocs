@@ -19,6 +19,8 @@
 * [Introduction](devices/introduction.md)
 * [Device Migration from The Things Network](devices/device-migration-the-things-network.md)
 * [LongFi Arduino Quickstart](devices/arduino-quickstart.md)
+* [LoRaWAN Devices](devices/lorawan-devices/README.md)
+  * [Digital Matter LoRaWAN](devices/lorawan-devices/digital-matter-lorawan.md)
 
 ## Blockchain
 
