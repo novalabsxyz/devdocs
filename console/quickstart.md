@@ -1,5 +1,7 @@
 # Quickstart
 
+![](../.gitbook/assets/gergre.jpg)
+
 ## Objective
 
 This Console quickstart guide will cover how to:
