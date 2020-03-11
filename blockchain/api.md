@@ -4,7 +4,7 @@
 
 The Helium [blockchain API](https://github.com/helium/blockchain-http) serves up the blockchain from a database that is filled by a [blockchain node](https://github.com/helium/blockchain-etl) that populates the database as blocks come in.
 
-While anyone can run a node and a corresponding API, the Helium hosted version offers up the API throuh two endpoints.
+While anyone can run a node and a corresponding API, the Helium hosted version offers up the API through two endpoints.
 
 <table>
   <thead>
