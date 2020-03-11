@@ -43,7 +43,6 @@
 
 * [Introduction](longfi/introduction.md)
 * [LongFi Network Server](longfi/longfi-network-server.md)
-* [Helium Network](longfi/helium-network.md)
 * [LoRaWAN Versions](longfi/routerv3-and-lorawan.md)
 * [Data Credits](longfi/data-credits.md)
 * [Routing](longfi/longfi-routing.md)
