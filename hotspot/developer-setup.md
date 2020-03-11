@@ -100,9 +100,7 @@ $ sudo apt-get install screen
 
 ### Compile the Miner
 
-Before we can do so, we must make some modifications:
-
-We need to edit the rebar.lock file:
+Before we can do so, we must make some modifications. We need to edit the rebar.lock file:
 
 ```text
 $ vim rebar.lock
