@@ -1,5 +1,7 @@
 # Mining and Token Rewards
 
+![](../.gitbook/assets/efee.jpg)
+
 Hotspot Hosts and other Helium Network participants have many questions about expected mining rewards. This is for good reason. Earning `HNT` is one of the most exciting pieces of the Helium Network.
 
 While at this point we can't give a precise formula for calculating how much `HNT` you'll earn over a given period, there are some higher level concepts, design elements, and rules to keep in mind that will help better explain what you might earn and why. This section covers these, as well as some mining and token reward basics.

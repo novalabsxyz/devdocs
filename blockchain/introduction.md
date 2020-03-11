@@ -1,6 +1,10 @@
 # Introduction
 
+![](../.gitbook/assets/fergrg.jpg)
+
 The Helium network is the world’s first peer-to-peer wireless network made for connecting long range, low power devices. It’s built to address the massive connectivity gap needed to enable what’s estimated to be a more-than $1.4 trillion IoT market.
+
+![](../.gitbook/assets/regergerge.jpg)
 
 Powering the network is a purpose-built blockchain that handles network security, microtransactions, and packet routing.
 
