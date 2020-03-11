@@ -107,7 +107,7 @@ $ cd miner
 $ nano rebar.lock
 ```
 
-And change the `rocksdb` dependency as follows:
+And change the `rocksdb` dependency so that it appears as follows:
 
 ```text
 {<<"rocksdb">>,
