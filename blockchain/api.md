@@ -1,5 +1,7 @@
 # Blockchain API
 
+![](../.gitbook/assets/artboard-copy-19.jpg)
+
 ## Endpoints
 
 The Helium [blockchain API](https://github.com/helium/blockchain-http) serves up the blockchain from a database that is filled by a [blockchain node](https://github.com/helium/blockchain-etl) that populates the database as blocks come in.

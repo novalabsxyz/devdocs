@@ -1,5 +1,7 @@
 # Blockchain CLI
 
+![](../.gitbook/assets/artboard-copy-20.jpg)
+
 The Helium blockchain CLI is an open-source Rust application that allows the user to create secure address key pairs and interact with the blockchain via the command line.
 
 The source code is available via GitHub: [https://github.com/helium/helium-wallet-rs](https://github.com/helium/helium-wallet-rs)

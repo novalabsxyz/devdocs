@@ -1,5 +1,7 @@
 # The Helium Consensus Protocol
 
+![](../.gitbook/assets/artboard-copy-17.jpg)
+
 The Helium blockchain uses a new consensus protocol, called simply the Helium Consensus Protocol.
 
 ## Consensus Protocol Design Goals

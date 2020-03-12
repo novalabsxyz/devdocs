@@ -1,5 +1,7 @@
 # Proof-of-Coverage
 
+![](../.gitbook/assets/artboard-copy-16.jpg)
+
 ## Proof-of-Coverage and PoC Challenges
 
 Helium uses a novel work algorithm called “Proof-of-Coverage” \(PoC\) to verify that Hotspots are located where they claim \(as established in the assert\_location transaction when they are first deployed\). Put another way, Proof-of-Coverage verifies on an ongoing basis that Hotspots are honestly representing their location and wireless network coverage they are creating from that location.

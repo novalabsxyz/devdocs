@@ -1,5 +1,7 @@
 # Blockchain Primitives
 
+![](../.gitbook/assets/artboard-copy-18.jpg)
+
 ## Blocks
 
 Blocks are used to record the most recent set of transactions in the Helium blockchain. Blocks are mined based on time, as defined in the “block\_time” chain variable. The current target block time is 60000 milliseconds \(or 60 seconds\). During any given epoch, the most recent block consists of:

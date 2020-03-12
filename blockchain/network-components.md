@@ -1,5 +1,7 @@
 # Network Components
 
+![](../.gitbook/assets/artboard-copy-14.jpg)
+
 The following is a list of the primary components - hardware, software, protocols, etc. - that make up the end-to-end Helium Network. Complete documentation, code, and other resources for these are linked at the bottom of each section when available.
 
 ## Helium blockchain
