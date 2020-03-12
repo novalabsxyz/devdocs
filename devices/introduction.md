@@ -20,5 +20,10 @@ The LongFi Arduino repository provides example Sketches that help LoRaWAN capabl
 
 [Quickstart](https://github.com/helium/devdocs/tree/316a0ffe46a00cd9398f98332e75206bc437c93c/device/arduino-quickstart/README.md)
 
-[GitHub - longfi-arduino](https://github.com/helium/longfi-arduino)
+[GitHub - longfi-arduino](https://github.com/helium/longfi-arduino)  
+
+
+### Migrating Devices to the Helium Network
+
+Do you have devices deployed on another network like TTN, Senet, or MachineQ? Great. We have you covered. Head over to our [Device Migration Guides.](migrating-devices-to-helium/)
 
