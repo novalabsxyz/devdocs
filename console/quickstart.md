@@ -1,6 +1,6 @@
 # Quickstart
 
-![](../.gitbook/assets/gergre.jpg)
+![](../.gitbook/assets/dbdbg.jpg)
 
 ## Objective
 
