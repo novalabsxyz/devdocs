@@ -1,5 +1,7 @@
 # LongFi Arduino Quickstart
 
+![](../.gitbook/assets/artboard-copy-27.jpg)
+
 ![](../.gitbook/assets/t-stm32-001.jpg)
 
 ## Introduction
