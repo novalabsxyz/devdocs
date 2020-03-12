@@ -4,6 +4,8 @@
 
 The Digital Matter Oyster/Yabby are rugged IP67 rated battery powered GPS tracking devices. This guide will show you the hardware and software setup steps required to provision and onboard these devices on the Helium Network.
 
+Functionally, the Oyster and Yabby both function as GPS tracking devices. Their main differences lie in form factor and battery life.  
+
 ![Digital Matter LoRaWAN Oyster](https://lh6.googleusercontent.com/9Ohb0iT7Zh8DCkCPemB4nku25qFr-NZHefoxV9SozW0NOZdM6Uw8MJEq0TCJA_ykOfoh_sNXaN_rbHsFnYHgx22hGFrKB7m-Er257EX_G5JTGdryLWTSyUM-sd6na6KqxIrlklnf)
 
 ### **Hardware:** 
@@ -88,23 +90,35 @@ Once the device has been configured, it will attempt to join the Helium Network 
 
 These devices use an accelerometer to detect movement, allowing it to decide when an asset is in-trip and when it is stationary. This allows it schedule battery-hungry GPS fixes when appropriate, to optimize battery life. Each time a status update is scheduled, the device will attempt a GPS fix, then transmit results \(regardless of whether a fix succeeded or not\).
 
+### OTA Configuration: 
+
+Coming Soon...
+
 ### Device Payload: 
 
 A sample device payload is as follows: 
 
 ```text
+DCCF3816BF5046B70000D3
+```
+
+When decoded becomes: 
+
+```text
 {
   "type": "position",
-  "latitudeDeg": -32,
-  "longitudeDeg": 116,
+  "latitudeDeg": 37.282198,
+  "longitudeDeg": -122.0128577,
   "inTrip": false,
   "fixFailed": false,
   "headingDeg": 0,
   "speedKmph": 0,
-  "batV": 5.55,
+  "batV": 5.275,
   "manDown": null
 }
 ```
+
+To learn more about decoding this payload, you may use this [utility](https://www.oemserver.com/tools/OysterLoRaWAN/UplinkDecoder.html). To view the Javascript sample code, you can view source. 
 
 To learn more about routing this payload to our demo visualization tool, visit [Cargo](../../console/integrations/cargo.md). 
 
