@@ -1,6 +1,6 @@
 # Home
 
-![](.gitbook/assets/kjbojnnikn.jpg)
+![](.gitbook/assets/vdvr.jpg)
 
 ### Welcome to the Helium network
 
