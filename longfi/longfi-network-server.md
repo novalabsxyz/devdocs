@@ -1,5 +1,7 @@
 # LongFi Network Server
 
+![](../.gitbook/assets/artboard-copy-22.jpg)
+
 A LongFi Network Server is maintained and operated by anyone who has registered an OUI with the Helium blockchain.
 
 The main difference between the LongFi Network Server and a traditional LoRaWAN Network Server is that a LongFi Network Server must know how to enter into micro-transactions with Miners who offer packets.

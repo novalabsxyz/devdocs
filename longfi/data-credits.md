@@ -1,6 +1,6 @@
 # Data Credits
 
-![](../.gitbook/assets/dc.jpg)
+![](../.gitbook/assets/artboard-copy-24.jpg)
 
 Data Credits \(DCs\) are central to the Helium Blockchain and LongFi. Read about how they fit into [our Tokenomics here](../blockchain/tokens.md).
 

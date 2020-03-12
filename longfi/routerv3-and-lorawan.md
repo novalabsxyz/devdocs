@@ -1,5 +1,7 @@
 # LoRaWAN Versions
 
+![](../.gitbook/assets/artboard-copy-23.jpg)
+
 Currently, [RouterV3](https://github.com/helium/routerv3) is LoRaWAN 1.0.2 compatible. We plan to make it 1.0.3, 1.0.4, and 1.1 compatible in the future.
 
 ## Routing & Authentication

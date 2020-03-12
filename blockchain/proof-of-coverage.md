@@ -75,7 +75,7 @@ Though witnesses are not required for a successful proof, they are likely to be 
 
 Once the Challenger has the complete set of receipts from the proof targets, or the elapsed time since the challenge was issued has passed the upper time bound, the Proof-of-Coverage is considered complete. At this point, the challenger then submits the proof receipt as a transaction to the blockchain to be verified by the current consensus group. Because the steps taken by the Challenger to construct and complete the proof are deterministic and easily reproduced, members of the consensus group can verify the legitimacy of the proof. Specifically the Challenger reveals the secret ephemeral key it used for both obtaining the original PoC request and for encrypting each layer of the challenge packet. This crucial information, which has been hidden until the receipt is published, allows the re-creation of the deterministic entropy.
 
-{% hint style="warning" %}
+{% hint style="info" %}
 **Challenge Rewards Require Receipts**
 
 In order for a Challenger to be rewarded for their proof, the receipt of that proof must be successully received by the blockchain.

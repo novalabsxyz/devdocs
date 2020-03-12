@@ -1,5 +1,7 @@
 # Routing
 
+![](../.gitbook/assets/artboard-copy-25.jpg)
+
 LongFi leverages LoRaWAN concepts but uses the blockchain to determine routing behavior. As such, the network is decentralized and permissionless.
 
 There is a fundamental difference between how **Join** and **Data** frames are routed with the Helium network. A LoRaWAN **Join** packet has the following unencrypted data:
