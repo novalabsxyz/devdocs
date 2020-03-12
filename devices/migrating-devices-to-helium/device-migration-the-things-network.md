@@ -2,7 +2,7 @@
 description: Migrating a device from TheThings Network to Helium
 ---
 
-# Device Migration from The Things Network
+# The Things Network
 
 This short guide will walk you through porting your devices to the Helium Network \(and Helium Console\) from TTN and the TTN Console.
 
@@ -15,9 +15,9 @@ At a high level, there are two steps to accomplish this migration:
 
 In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in [Helium Console](https://console.helium.com).
 
-![](../.gitbook/assets/ttn-keys001.png)
+![](../../.gitbook/assets/ttn-keys001.png)
 
-![](../.gitbook/assets/migratory_helium_console.png)
+![](../../.gitbook/assets/migratory_helium_console.png)
 
 Next, you need to ensure the device can use LoRaWAN US channels `48-55` \(also known as `Sub-band 7`\). This process can vary by device. Some come bundled with configuration utilities, others you will have to recompile and flash the firmware yourself. It is also possible that the network negotiates the sub-channel band itself.
 
