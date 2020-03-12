@@ -4,7 +4,7 @@
 
 The Digital Matter Oyster/Yabby are rugged IP67 rated battery powered GPS tracking devices. This guide will show you the hardware and software setup steps required to provision and onboard these devices on the Helium Network.
 
-Functionally, the Oyster and Yabby both function as GPS tracking devices. Their main differences lie in form factor and battery life.  
+Functionally, the Oyster and Yabby are both battery powered GPS tracking devices. Their main differences lie in form factor and battery life.  
 
 ![Digital Matter LoRaWAN Oyster](https://lh6.googleusercontent.com/9Ohb0iT7Zh8DCkCPemB4nku25qFr-NZHefoxV9SozW0NOZdM6Uw8MJEq0TCJA_ykOfoh_sNXaN_rbHsFnYHgx22hGFrKB7m-Er257EX_G5JTGdryLWTSyUM-sd6na6KqxIrlklnf)
 
