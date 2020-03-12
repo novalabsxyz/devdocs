@@ -16,7 +16,7 @@
 
 ## Devices
 
-* [Introduction](devices/introduction.md)
+* [Introduction to Helium Devices](devices/introduction.md)
 * [LongFi Arduino Quickstart](devices/arduino-quickstart.md)
 * [Migrating Devices to Helium](devices/migrating-devices-to-helium/README.md)
   * [The Things Network](devices/migrating-devices-to-helium/device-migration-the-things-network.md)

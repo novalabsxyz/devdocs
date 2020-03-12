@@ -2,7 +2,7 @@
 description: Details on how to add devices to the Helium Network
 ---
 
-# Introduction
+# Introduction to Helium Devices
 
 The Helium Network was built to transfer device data. Here you will learn about the pieces that make up a Helium device and how you can quickly get started! Any device can communicate on the Helium network if it uses the [LoRaWAN wireless protocol](https://lora-alliance.org/about-lorawan).
 

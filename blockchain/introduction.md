@@ -12,5 +12,5 @@ Powering the network is a purpose-built blockchain that handles network security
 The Helium network officially went live on July 29, 2019 and is growing quickly across the United States \(and soon the world\).
 {% endhint %}
 
-This documentation is intended to be a mostly-technical overview of the Helium blockchain. That said, it’s not an exhaustive review and those that are looking for full details on things like algorithms will need to refer to the open source code that powers the blockchain at [https://github.com/helium/blockchain-core](https://github.com/helium/blockchain-core).
+This documentation is intended to be a mostly-technical overview of the Helium blockchain. That said, it’s not an exhaustive review and those that are looking for full details on things like algorithms will need to refer to the [open source code that powers the blockchain](%20https://github.com/helium).
 
