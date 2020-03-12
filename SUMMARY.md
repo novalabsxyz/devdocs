@@ -17,9 +17,9 @@
 ## Devices
 
 * [Introduction](devices/introduction.md)
+* [LongFi Arduino Quickstart](devices/arduino-quickstart.md)
 * [Migrating Devices to Helium](devices/migrating-devices-to-helium/README.md)
   * [The Things Network](devices/migrating-devices-to-helium/device-migration-the-things-network.md)
-* [LongFi Arduino Quickstart](devices/arduino-quickstart.md)
 * [LoRaWAN Devices](devices/lorawan-devices/README.md)
   * [Digital Matter LoRaWAN](devices/lorawan-devices/digital-matter-lorawan.md)
 
