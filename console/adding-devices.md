@@ -20,17 +20,17 @@ Once added, you'll see a consolidated view of all your device details, as well a
 
 ![](../.gitbook/assets/screenshot-2020-03-11-at-09.31.21.png)
 
-### Important Information When Adding Devices
+## Important Information When Adding Devices
 
-## Is The Helium Network a Public or Private LoRaWAN?
+### Is The Helium Network a Public or Private LoRaWAN?
 
 The Helium Network is a Public LoRaWAN Network. You can read more about the unique, blockchain-driven architecture [here](../longfi/introduction.md).
 
-## Delay After Adding Device
+### Delay After Adding Device
 
 LoRaWAN devices may behave differently from one manufacturer to another. After adding a new device, it may take some time to join the network and begin receiving data. This can range from less than a minute to as long as several minutes. If your device does not try all 8 sub-bands, then you will need to ensure it is trying to communicate on the correct sub-band, which is sub-band 7.
 
-## MSB vs LSB; and using the Correct Endianness
+### MSB vs LSB; and using the Correct Endianness
 
 When copying EUIs and Keys into your device software, or into Console, make sure you are using the correct byte ordering, known as "endianness". This is often labeled as `MSB` \(Most Significant Bit\) and `LSB` \(Least Significant Bit\). Reversing byte order is a very common mistake when adding a new device to the network. On the device details page in Console, you can easily switch the byte order of the EUIs and Key by cliking the `lsb` or `msb` label next to them.
 
