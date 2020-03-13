@@ -1,3 +1,7 @@
+---
+description: Here's how to add devices to the Helium Network using Console.
+---
+
 # Adding Devices
 
 ![](../.gitbook/assets/devices.jpg)
