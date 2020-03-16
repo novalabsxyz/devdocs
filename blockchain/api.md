@@ -34,7 +34,7 @@ While anyone can run a node and a corresponding API, the Helium hosted version o
       </td>
     </tr>
   </tbody>
-</table>Use the production endpoint for most use cases. The beta endpoint can be very unstable and may lose submitted transactions. 
+</table>Use the production endpoint for most use cases. The beta endpoint can be very unstable and may lose submitted transactions.
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
 {% api-method-summary %}
@@ -575,10 +575,43 @@ Blocks successfully retrieved.
 {% endapi-method %}
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/blocks/height" %}
+{% api-method-summary %}
+Get blockchain height
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets the height of the stored blockchain
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="height" type="number" required=true %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Block successfully retrieved.
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "data": {
+    "height": 249687
+  }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/blocks/:height" %}
 {% api-method-summary %}
-
+Get block at height
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -2180,7 +2213,7 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="transaction" type="object" required=true %}
-The Javascript transaction object to be submitted, for example:`{    
+The Javascript transaction object to be submitted, for example:`{
 "txn": "QowBCiEBAwjvdnALeIh5hTxRhejfMMqQ=" }`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -2203,4 +2236,3 @@ Successfully submitted transaction.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
