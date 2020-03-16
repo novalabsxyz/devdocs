@@ -8,35 +8,36 @@ The Helium [blockchain API](https://github.com/helium/blockchain-http) serves up
 
 While anyone can run a node and a corresponding API, the Helium hosted version offers up the API through two endpoints.
 
+| Endpoint | Purpose |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Endpoint</th>
-      <th style="text-align:left">Purpose</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>https://api.helium.io</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>https://api.helium.io</code>
+      </th>
+      <th style="text-align:left">
         <p>Stable, scalable production service.</p>
         <p>Connected to mainnet.</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>https://api.helium.wtf</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>https://api.helium.wtf</code>
+      </th>
+      <th style="text-align:left">
         <p>Beta, scalable endpoint for new features and tests</p>
         <p>Currently connected to mainnet</p>
         <p>Submitted transactions may get dropped</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>Use the production endpoint for most use cases. The beta endpoint can be very unstable and may lose submitted transactions.
-
-{% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
+  </thead>
+  <tbody></tbody>
+</table>{% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
 {% api-method-summary %}
 Get Blocks
 {% endapi-method-summary %}
@@ -576,7 +577,7 @@ Blocks successfully retrieved.
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/blocks/height" %}
 {% api-method-summary %}
-Get blockchain height
+Get blockchain Height
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -585,11 +586,6 @@ Gets the height of the stored blockchain
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="height" type="number" required=true %}
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
@@ -2213,8 +2209,7 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="transaction" type="object" required=true %}
-The Javascript transaction object to be submitted, for example:`{
-"txn": "QowBCiEBAwjvdnALeIh5hTxRhejfMMqQ=" }`
+The Javascript transaction object to be submitted, for example:`{ "txn": "QowBCiEBAwjvdnALeIh5hTxRhejfMMqQ=" }`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -2236,3 +2231,4 @@ Successfully submitted transaction.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
