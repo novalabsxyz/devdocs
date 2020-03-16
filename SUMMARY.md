@@ -34,6 +34,7 @@
 * [Blockchain Primitives](blockchain/blockchain-primitives.md)
 * [Blockchain API](blockchain/api.md)
 * [Blockchain CLI](blockchain/blockchain-cli.md)
+* [Ledger Hardware Wallet](blockchain/ledger-hardware-wallet.md)
 
 ## Hotspot
 
