@@ -20,7 +20,7 @@ The Helium App has been signed by Ledger and is trusted. It is now installed on 
 
 Start the Helium app by selecting it on the Ledger screen. The "Waiting for commands..." prompt should be on the screen. execute commands.
 
-To interact with the app on Ledger, you will need to use the CLI. Head to Releases in this Github repo and download the file for your operating system.
+To interact with the app on Ledger, you will need to use the CLI. Head to [Releases in the Github repo](https://github.com/helium/helium-ledger-app/releases) and download the most recent release for your operating system.
 
 We'll use macOS for the remainder of this example -
 
@@ -30,7 +30,7 @@ We'll use macOS for the remainder of this example -
 
 ![](../.gitbook/assets/cli_macos.png)
 
-* type `./helium-ledger-app balance` to see your new Ledger address and balance
+* type `./helium-ledger-app balance` to see your new Ledger address and balance. Note: you may use add `--qr` option to the command to display your address in the form of QR code.
 
 ![](../.gitbook/assets/cli_macos_balance.png)
 
