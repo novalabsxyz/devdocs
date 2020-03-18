@@ -54,24 +54,24 @@ We'll use macOS for the remainder of this example -
 
 ## Common Issues
 
-#### Can't download the zip file because it is untrusted.
+### Can't download the zip file because it is untrusted.
 
 1. In the downloads bar of your browser, click the caret and select `Keep`. 
 
 ![](../.gitbook/assets/macos_zip_warning2.png)
 
-#### Running commands in terminal does not work. MacOS users may need to update their security permissions.
+### Running commands in terminal does not work. MacOS users may need to update their security permissions.
 
 1. Go to System Preferences &gt; Security & Privacy
 2. Allow App downloaded from App Store and Identified Developers
 3. You may need to click the lock icon and give the CLI permissions
 4. Run the command in CLI again
 
-#### Failed opening hid device
+### Failed opening hid device
 
 If you see this error `error: hid error: Failed opening hid device`, close Ledger Live software and run a command again in the CLI.
 
-#### Unable to access memory outside buffer bounds
+### Unable to access memory outside buffer bounds
 
 If on Ledger Live you see this error, unplug the ledger from your computer and plug it in again.
 
@@ -83,11 +83,11 @@ The attack surface for using the Helium wallet app on a Ledger Nano S comprises 
 
 The main attack vector that we are concerned with, then, is a computer running malicious sofware. This software may imitate programs like `helium-ledger-app` in such a way that the user cannot tell the difference, but secretly act maliciously. Specifically, the computer can do the following:
 
-1. Lie to the user about which actions it is performing. 
+1. Lie to the user about which actions it is performing.
 
    Example: the user runs `./helium-ledger-app balance` to display their public key to so that they may receive payment; yet a hard-coded address is displayed
 
-2. Lie to the user about who the recipient is. 
+2. Lie to the user about who the recipient is.
 
    Example: the user runs `./helium-ledger-app pay IntendedAddress amount`, yeet the program again uses a hard-coded address
 
