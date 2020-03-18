@@ -6,7 +6,7 @@
 
 The Helium Network is the largest, public LPWAN in the United States, and enables long range, low power, bi-directional communication for any LoRaWAN compatible device. 
 
-The Helium Network is open and permissionless, and requires no up-front payments, contracts or commitments to use. Devices pay Helium Hotspot owners and other Helium Network Operators on a per-packet  for delivering their sensors packets to the application end point. 
+The Helium Network is open and permissionless, and requires no up-front payments, contracts or commitments to use. Devices pay Helium Hotspot owners and other Helium Network Operators on a per-packet basis for delivering their sensors packets to the application end point. 
 
 In this developer documentation you will find examples, tutorials, specifications, and API references for building devices to run on the Helium network.
 
