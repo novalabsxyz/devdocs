@@ -56,7 +56,7 @@ Next, enable SPI and I2C using the raspi-config tool:
 $ sudo raspi-config
 ```
 
-Select `Interfacing Options`, and enabe `I2C` and `SPI` from within the menu system.
+Select `Interfacing Options`, and enable `I2C` and `SPI` from within the menu system.
 
 Now let's go ahead and update our install with:
 
@@ -76,12 +76,6 @@ Clone the git repository:
 
 ```text
 git clone https://github.com/helium/miner.git
-```
-
-You will need to install the dependencies listed below in order to use the Miner.
-
-```text
-sudo apt-get install screen
 ```
 
 ### Install Erlang
