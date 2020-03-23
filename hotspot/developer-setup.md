@@ -32,19 +32,31 @@ The default Raspian image has a small swapfile of 100MB, which on a Pi with 1GB 
 sudo dphys-swapfile swapoff
 ```
 
-Edit the swapfile configuration as root `sudo nano /etc/dphys-swapfile` and change the `CONF_SWAPSIZE`:
+Edit the swapfile configuration and change the size of the swapfile:
+
+```text
+$ sudo nano /etc/dphys-swapfile
+```
+
+Edit the `CONF_SWAPSIZE` line so that it reads as follows:
 
 ```text
 CONF_SWAPSIZE=1024
 ```
 
-Save the file, then reboot:
+Save the file and exit by pressing `ctrl-x`, then reboot:
 
 ```text
 sudo reboot
 ```
 
-Next, enable SPI and I2C by running `sudo raspi-config` and selecting `Interfacing Options`, and enabling I2C and SPI from within the menu system.
+Next, enable SPI and I2C using the raspi-config tool:
+
+```text
+$ sudo raspi-config
+```
+
+Select `Interfacing Options`, and enabe `I2C` and `SPI` from within the menu system.
 
 Now let's go ahead and update our install with:
 
@@ -68,17 +80,21 @@ git clone https://github.com/helium/miner.git
 
 You will need to install the dependencies listed below in order to use the Miner.
 
+```text
+sudo apt-get install screen
+```
+
 ### Install Erlang
 
-Miner has been tested against [Erlang OTP 21.3](https://www.erlang.org/downloads/21.3).
+Miner has been tested against Erlang OTP 22.1.
 
-To install OTP 21.3 in Raspian, we'll first acquire the Erlang package from [Erlang Solutions](https://www.erlang-solutions.com/resources/download.html) and then install the dependencies:
+To install OTP 22.1 in Raspian, we'll first acquire the Erlang package from [Erlang Solutions](https://www.erlang-solutions.com/resources/download.html):
 
 ```text
 wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
 ```
 
-Install various other dependencies:
+Now we'll innstall various other dependencies and then install Erlang itself. You'll see some errors after running `dpkg`, you can ignore them:
 
 ```text
 sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev libclang-dev doxygen
@@ -86,38 +102,14 @@ sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
 sudo apt-get install -f
 ```
 
-### Install Screen \(optional\)
-
-This is an optional step, but will help simplify things later on if you'd like to use an interactive console.
-
-```text
-sudo apt-get install screen
-```
-
 ### Compile the Miner
 
-Before we can do so, we must make some modifications. We need to edit the rebar.lock file:
+Now it's time to build the miner. This will  take a while:
 
 ```text
-cd miner
-nano rebar.lock
+$ cd miner
+$ make release
 ```
-
-And change the `rocksdb` dependency so that it appears as follows:
-
-```text
-{<<"rocksdb">>,
- {git,"https://github.com/amirhaleem/erlang-rocksdb",
-      {ref,"9f29d6e20d7f4f93a6157730a11fa9211e670e87"}},3},
-```
-
-Once the Miner has been cloned and Erlang installed, we can create a release using [rebar3](https://www.rebar3.org/). Rebar will handle all the Erlang dependencies and build the application. This will take a while:
-
-```text
-./rebar3 as prod release
-```
-
-Once this completes, you're ready to run the Miner.
 
 ## Using the Miner
 
@@ -131,49 +123,57 @@ The `sys.config` will need to be edited to match your configuration. Assuming yo
 nano _build/prod/rel/miner/releases/0.1.0/sys.config
 ```
 
-Change the following settings:
+Find the following line:
 
 ```erlang
-{key, {ecc, [{key_slot, 0}, {onboarding_key_slot, 15}]}}, %% don't make this the last line in the stanza because sed and keep it on one line
+{key, {ecc, [{key_slot, 0}, {onboarding_key_slot, 15}]}},
 ```
 
-should be changed to:
+And change it to:
 
 ```erlang
 {key, undefined},
 ```
 
-and:
+And this line:
 
 ```erlang
 {use_ebus, true},
 ```
 
-should be changed to:
+Should be changed to:
 
 ```erlang
 {use_ebus, false},
 ```
 
-You should also edit `log_root`, `base_dir` and `update_dir` to be appropriate for whatever you prefer on your system.
+You can also edit `log_root`, `base_dir` and `update_dir` to be appropriate for whatever you prefer on your system. For the rest of the guide we'll assume you didn't change these values.
+
+Again press `ctrl-x` to save and exit.
 
 ### Starting Up
 
-You can run the Miner in the background, or via an interactive console \(like screen if you installed it earlier\).
+You can run the Miner in the background, or via an interactive console. 
 
-To run in the background:
+{% hint style="info" %}
+**Note**: because we assume you did not change `log_root`, `base_dir` or `update_dir` in the previous step you'll have to run these commands as root using `sudo` otherwise the default `pi` user won't have sufficient permission to access these directories. If you changed these values in the previous step, you won't have to run as root here.
+{% endhint %}
 
-```text
-_build/prod/rel/miner/bin/miner start
-```
-
-To run via the interactive console:
+To run in the background \(recommended\):
 
 ```text
-_build/prod/rel/miner/bin/miner console
+$ sudo _build/prod/rel/miner/bin/miner start
 ```
 
-If you run in console mode, you'll need to open another terminal to execute any other commands.
+After a few moments you should be back at the shell prompt. Don't worry, that's a good thing.
+
+If you're an advanced user, you might instead want to run miner via the interactive console:
+
+```text
+$ sudo _build/prod/rel/miner/bin/miner console
+```
+
+If you run in console mode, you'll need to open another SSH session to the Pi to execute any other commands, or use a tool like `tmux` if you're an advanced user. We'd recommend running in the background for now.
 
 ### Checking the peer-to-peer network
 
@@ -182,7 +182,7 @@ The Helium blockchain uses an Erlang implementation of [libp2p](https://libp2p.i
 The first order of business once the Miner is running is to see if you're connected to any peers, whether your NAT type has been correctly identified, and that you have some listen addresses:
 
 ```text
-_build/prod/rel/miner/bin/miner peer book -s
+$ sudo _build/prod/rel/miner/bin/miner peer book -s
 ```
 
 You will see an output roughly like the following:
@@ -224,44 +224,54 @@ As long as you have an address listed in `listen_addrs` and some peers in the ta
 
 ### Loading the Genesis block
 
-First, you need a genesis block from either the main network, or the Pescadero testnet. Get them here: [mainnet](https://github.com/helium/blockchain-api/blob/master/priv/prod/genesis) or [pescadero](https://github.com/helium/blockchain-api/blob/master/priv/pescadero/genesis).
-
-{% hint style="warning" %}
-These are not links to the actual files. You will need to download the files separately and transfer them onto the Raspberry Pi.
-{% endhint %}
-
-Once you've downloaded it, you'll need to use the CLI to load the genesis block in to your local miner:
+First, you need a genesis block for the main network. 
 
 ```text
-_build/prod/rel/miner/bin/miner genesis load <path_to_genesis>
+$ wget https://github.com/helium/blockchain-api/raw/master/priv/prod/genesis
 ```
 
-After the genesis block has been loaded, you should be able to check your block height and see at least the genesis block:
+Now you'll need to load the genesis block in to your miner:
 
 ```text
-_build/prod/rel/miner/bin/miner info height
+$ sudo _build/prod/rel/miner/bin/miner genesis load ~/miner/genesis
 ```
 
-The first number is the election epoch, and the second number is the block height of your miner.
+You should now be able to check your block height and see a height of 1, which is the genesis \(first\) block:
 
-## Installing packet\_forwarder and lora\_gateway from Source
+```text
+$ sudo _build/prod/rel/miner/bin/miner info height
+```
 
-Once you have miner running, you'll need packet\_forwarder and lora\_gateway to receive packets via SPI and the RAK2245 board and deliver them to the miner via UDP.
+The first number is the election epoch, and the second number is the block height of your miner. As blocks get gossiped around from peers in your peerbook and added to your local chain you should see both of these numbers go up. It will take several hours or more to catch up to the tip of the blockchain.
+
+## Installing the Semtech packet forwarder
+
+Once you have miner running, you'll need the Semtech packet forwarder to receive packets via SPI and the RAK2245 board and deliver them to the miner via UDP.
 
 Clone the git repository:
 
 ```text
-git clone https://github.com/Lora-net/packet_forwarder
-git clone https://github.com/Lora-net/lora_gateway
+$ cd ..
+$ git clone https://github.com/Lora-net/packet_forwarder
+$ git clone https://github.com/Lora-net/lora_gateway
 ```
 
-And download the configuration file:
+We'll then download the Helium-specific packet forwarder configuration file and move it in to the right folder:
 
-{% file src="../.gitbook/assets/global\_conf.json" caption="global\_conf.json" %}
+```text
+$ wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
+mv global_conf.json packet_forwarder/lora_pkt_fwd/
+```
 
 ## One Quick Change
 
-Go into the file we pulled from [https://github.com/Lora-net/lora\_gateway/blob/master/libloragw/src/loragw\_spi.native.c](https://github.com/Lora-net/lora_gateway/blob/master/libloragw/src/loragw_spi.native.c) and modify line 56 to read:
+We need to modify the SPI speed for this particular RAK concentrator. You may not have to do this with different concentrators. To do that:
+
+```text
+$ nano lora_gateway/libloragw/src/loragw_spi.native.c
+```
+
+And modify line 56 to read:
 
 ```c
 #define SPI_SPEED       2000000
@@ -269,18 +279,25 @@ Go into the file we pulled from [https://github.com/Lora-net/lora\_gateway/blob/
 
 Now we are ready to build.
 
-## Compile the packet\_forwarder and lora\_gateway
+## Compiling the Packet Forwarder
 
-Go into the packet\_forwarder directory and run:
+Compile the packet forwarder:
 
 ```text
-./compile.sh
+$ cd packet_forwarder
+$ ./compile.sh
 ```
 
-Once that wraps up, we can just run:
+Before we can start the packet forwarder you will often have to issue a reset command to the RAK concentrator. In most cases you have to issue this command every time before starting the packet forwarder. This resets the concentrator using GPIO pin 17 of the Raspberry Pi, which is connected to the reset pin on the concentrator:
 
 ```text
-./lora_pkt_fwd
+$ ../lora_gateway/reset_lgw.sh start 17
+```
+
+We can now start the packet forwarder:
+
+```text
+$ ./lora_pkt_fwd/lora_pkt_fwd
 ```
 
 ## Conclusion
