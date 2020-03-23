@@ -47,7 +47,7 @@ CONF_SWAPSIZE=1024
 Save the file and exit by pressing `ctrl-x`, then reboot:
 
 ```text
-sudo reboot
+$ sudo reboot
 ```
 
 Next, enable SPI and I2C using the raspi-config tool:
@@ -61,7 +61,7 @@ Select `Interfacing Options`, and enable `I2C` and `SPI` from within the menu sy
 Now let's go ahead and update our install with:
 
 ```text
-sudo apt-get update
+$ sudo apt-get update
 ```
 
 ## Installing miner from Source
@@ -69,7 +69,7 @@ sudo apt-get update
 First, you'll need [git](https://git-scm.com/). If you don't have it installed:
 
 ```bash
-sudo apt-get install git
+$ sudo apt-get install git
 ```
 
 Clone the git repository:
@@ -85,15 +85,15 @@ Miner has been tested against Erlang OTP 22.1.
 To install OTP 22.1 in Raspian, we'll first acquire the Erlang package from [Erlang Solutions](https://www.erlang-solutions.com/resources/download.html):
 
 ```text
-wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
+$ wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
 ```
 
 Now we'll innstall various other dependencies and then install Erlang itself. You'll see some errors after running `dpkg`, you can ignore them:
 
 ```text
-sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev libclang-dev doxygen
-sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
-sudo apt-get install -f
+$ sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev libclang-dev doxygen
+$ sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
+$ sudo apt-get install -f
 ```
 
 ### Compile the Miner
@@ -114,7 +114,7 @@ Congrats! You've installed the Miner 🚀 Now it's time to make some things happ
 The `sys.config` will need to be edited to match your configuration. Assuming you aren't using Helium Hotspot hardware you'll need to change the following lines of the configuration file:
 
 ```text
-nano _build/prod/rel/miner/releases/0.1.0/sys.config
+$ nano _build/prod/rel/miner/releases/0.1.0/sys.config
 ```
 
 Find the following line:
@@ -254,7 +254,7 @@ We'll then download the Helium-specific packet forwarder configuration file and 
 
 ```text
 $ wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
-mv global_conf.json packet_forwarder/lora_pkt_fwd/
+$ mv global_conf.json packet_forwarder/lora_pkt_fwd/
 ```
 
 ## One Quick Change
