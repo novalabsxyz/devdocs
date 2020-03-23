@@ -149,7 +149,7 @@ You can also edit `log_root`, `base_dir` and `update_dir` to be appropriate for 
 
 Again press `ctrl-x` to save and exit.
 
-You will also want to increase the open file limit. Note that make the change this way _w_ill only be effective until you reboot:
+You will also want to increase the open file limit. Note that make the change this will only be effective until you reboot:
 
 ```text
 $ ulimit -n 64000
@@ -267,7 +267,7 @@ $ wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
 $ mv global_conf.json packet_forwarder/lora_pkt_fwd/
 ```
 
-## One Quick Change
+### One Quick Change
 
 We need to modify the SPI speed for this particular RAK concentrator. You may not have to do this with different concentrators. To do that:
 
@@ -283,7 +283,7 @@ And modify line 56 to read:
 
 Now we are ready to build.
 
-## Compiling the Packet Forwarder
+### Compiling the Packet Forwarder
 
 Compile the packet forwarder:
 
