@@ -145,6 +145,12 @@ You can also edit `log_root`, `base_dir` and `update_dir` to be appropriate for 
 
 Again press `ctrl-x` to save and exit.
 
+You will also want to increase the open file limit. Note that make the change this way _w_ill only be effective until you reboot:
+
+```text
+$ ulimit -n 64000
+```
+
 ### Starting Up
 
 You can run the Miner in the background, or via an interactive console. 
