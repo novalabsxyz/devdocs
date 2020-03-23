@@ -75,7 +75,7 @@ $ sudo apt-get install git
 Clone the git repository:
 
 ```text
-git clone https://github.com/helium/miner.git
+$ git clone https://github.com/helium/miner.git
 ```
 
 ### Install Erlang
