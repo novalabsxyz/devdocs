@@ -29,7 +29,7 @@ Size:435 MB
 The default Raspian image has a small swapfile of 100MB, which on a Pi with 1GB or less of RAM is insufficient for building some of the dependencies, such as [RocksDB](http://rocksdb.org/). To increase the swap size, first stop the swap:
 
 ```text
-sudo dphys-swapfile swapoff
+$ sudo dphys-swapfile swapoff
 ```
 
 Edit the swapfile configuration and change the size of the swapfile:
