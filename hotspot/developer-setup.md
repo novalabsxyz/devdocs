@@ -306,5 +306,5 @@ $ ./lora_pkt_fwd/lora_pkt_fwd
 
 ## Conclusion
 
-That's it! Once you have miner, packet\_forwarder, and lora\_gateway running, you've built a Development Hotspot that can send and receive LoRaWAN packets and interact with the blockchain to deliver packets to their correct destination.
+That's it! Once you have the miner and packet forwarder running you've built a Development Hotspot that can send and receive LoRaWAN packets, and interact with the blockchain to deliver packets to their correct destination.
 
