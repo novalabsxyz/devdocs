@@ -6,6 +6,7 @@
 
 * [Introduction](console/introduction.md)
 * [Quickstart](console/quickstart.md)
+* [CLI](console/cli.md)
 * [Users](console/users.md)
 * [Integrations](console/integrations/README.md)
   * [MQTT Integration](console/integrations/mqtt.md)
