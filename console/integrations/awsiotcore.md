@@ -1,8 +1,12 @@
+---
+description: How to connect your Helium Devices directly to AWS IoT Core.
+---
+
 # AWS IoT Core Integration
 
 ![](../../.gitbook/assets/image%20%2815%29.png)
 
-## AWS IoT Core Integration
+[AWS IoT Core](https://aws.amazon.com/iot-core/) is a powerful offering that lets developers build device-based applications and services on the AWS Cloud. And this Integration via Helium Console automates the complexity of securely connecting your devices to AWS IoT Core. 
 
 ### Add an AWS IoT Core Integration
 
