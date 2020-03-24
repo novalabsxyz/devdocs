@@ -11,6 +11,7 @@
   * [MQTT Integration](console/integrations/mqtt.md)
   * [HTTP Integration](console/integrations/http.md)
   * [Cargo Integration](console/integrations/cargo.md)
+  * [AWS IoT Core Integration](console/integrations/awsiotcore.md)
 * [Labels](console/labels.md)
 * [Adding Devices](console/adding-devices.md)
 
