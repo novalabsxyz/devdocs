@@ -1,20 +1,13 @@
 # Command Line Interface
 
-A web-based dashboard is ideal for getting started. On Helium’s console, you can create credentials for an IoT device and integrate it with an MQTT, HTTP, or AWS IoT backend with just a few clicks. 
+A web-based dashboard is ideal for getting started. When it comes time to do more than just a couple devices though, doing “just a few clicks” a dozen times is enough to drive any IoT developer insane. And when it comes to shipping a few thousand, it’s just not an option.
 
-When it comes time to do more than just a couple devices though, doing “just a few clicks” a dozen times is enough to drive any IoT developer insane. And when it comes to shipping a few thousand, it’s just not an option.
-
-This is why we’ve developed a Command-Line Interface (CLI) for Helium’s Console.
-
-
-Download a compiled
- release [here](https://github.com/helium/helium-console-cli/releases).
-
+This is why we’ve developed a Command-Line Interface (CLI) for Helium’s Console. Download a compiled release [here](https://github.com/helium/helium-console-cli/releases).
 
 ## Setup 
-First time you use the CLI, you will need to provide an API key. To create an account key, go to your [profile](https://console.helium.com/profile) on Helium Console. From the top right corner, click: Account->Profile.
+The first time you use the CLI, you will need to provide an API key. To create an account key, go to your [profile](https://console.helium.com/profile) on Helium Console. From the top right corner, click: `Account -> Profile`.
 
-From there, you may generate a key with a specific name and role. The key will only display once.
+From there, you may generate a key with a specific name and role. *The key will only display once.*
 
 The first time you run the CLI, it will prompt you for this key. It will save the key in a local file: `.helium-console-config.toml`
 
