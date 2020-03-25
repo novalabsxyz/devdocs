@@ -200,7 +200,11 @@ Once it's running, you should be able to visit `http://<ip_of_instance>:8080/v1/
 }
 ```
 
-As the ETL server continues syncing and adding blocks to the database you'll see more blocks start to show up in the response.
+As the ETL server continues syncing and adding blocks to the database you'll see more blocks start to show up in the response. 
+
+{% hint style="info" %}
+It can take up to 48hrs for the ETL database to start populating.
+{% endhint %}
 
 Take a look at the [full API documentation](https://developer.helium.com/blockchain/api) to see the various routes and parameters.
 
