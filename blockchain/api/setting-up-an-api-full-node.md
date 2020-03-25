@@ -159,13 +159,15 @@ $ cd ../blockchain-http
 $ cp .env.template .env
 ```
 
-We'll need to edit the configuration to match the database configuration we created in the previous steps of the guide. In larger deployments it is contemplated that there would be separate read and write databases, but in this case both will be the same:
+We'll need to edit the configuration to match the database configuration we created in the previous steps of the guide:
 
 ```bash
 $ nano .env
 ```
 
-And edit so it reads as follows:
+ In larger deployments it is contemplated that there would be separate read replicas and write databases. `DATABASE_RO_URL` is used to specify the read only  database, and the `DATABASE_RW_URL` is used for the the write database \(which can also serve reads\).
+
+In this case we only have one database doing both, so we'll edit so it reads as follows:
 
 ```bash
 DATABASE_RO_URL=postgresql://etl:etl@127.0.0.1/etl
