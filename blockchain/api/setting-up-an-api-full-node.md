@@ -93,7 +93,9 @@ GOOGLE_MAPS_API_KEY="api_key"
 
 Then hit `ctrl-x` to save and exit.
 
+{% hint style="warning" %}
 If you want the database to be populated with Hotspot street/city/state/country locations \(highly recommended\) you'll need to provide a Google Maps API key here. You can follow [this guide to get an API key](https://developers.google.com/maps/documentation/javascript/get-api-key).
+{% endhint %}
 
 Now we can build ETL, which might take a little while:
 
