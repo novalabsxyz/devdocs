@@ -1,13 +1,14 @@
-# Command Line Interface
+# CLI
 
 A web-based dashboard is ideal for getting started. When it comes time to do more than just a couple devices though, doing “just a few clicks” a dozen times is enough to drive any IoT developer insane. And when it comes to shipping a few thousand, it’s just not an option.
 
-This is why we’ve developed a Command-Line Interface (CLI) for Helium’s Console. Download a compiled release [here](https://github.com/helium/helium-console-cli/releases).
+This is why we’ve developed a Command-Line Interface \(CLI\) for Helium’s Console. Download a compiled release [here](https://github.com/helium/helium-console-cli/releases).
 
-## Setup 
+## Setup
+
 The first time you use the CLI, you will need to provide an API key. To create an account key, go to your [profile](https://console.helium.com/profile) on Helium Console. From the top right corner, click: `Account -> Profile`.
 
-From there, you may generate a key with a specific name and role. *The key will only display once.*
+From there, you may generate a key with a specific name and role. _The key will only display once._
 
 The first time you run the CLI, it will prompt you for this key. It will save the key in a local file: `.helium-console-config.toml`
 
@@ -18,23 +19,24 @@ The first time you run the CLI, it will prompt you for this key. It will save th
 You can view the most current commands, features, and documentation by accessing the help menus. For example: `helium-console-cli --help` or `helium-console-cli device --help`.
 
 Current high level features are:
-* create and delete devices records, using (app_eui, app_key, dev_eui) or UUID
+
+* create and delete devices records, using \(app\_eui, app\_key, dev\_eui\) or UUID
 * list all device records
 * create and delete labels by UUID
-* create and delete device labels, by using (device_uuid, label_uuid)
-* import devices from The Things Network (TTN)
+* create and delete device labels, by using \(device\_uuid, label\_uuid\)
+* import devices from The Things Network \(TTN\)
 
 ### Examples
 
 Let's create a device:
 
-```
+```text
 helium-console-cli device create 000A000100000046 CB67C92DD5898D07872224202DED7E76 DEADBEEF23F23454 foo
 ```
 
 You'll get a response with the full record of this new device:
 
-```
+```text
 Device {
     app_eui: "000A000100000046",
     app_key: "CB67C92DD5898D07872224202DED7E76",
@@ -46,14 +48,15 @@ Device {
 }
 ```
 
-You can view this device again by either (app_eui, app_key, dev_eui) or by id/uuid. For example:
+You can view this device again by either \(app\_eui, app\_key, dev\_eui\) or by id/uuid. For example:
 
-```
+```text
 helium-console-cli device get 000A000100000046 CB67C92DD5898D07872224202DED7E76 DEADBEEF23F23454
 ```
+
 or
 
-```
+```text
 helium-console-cli device get-by-id 03f5967a-7c79-42a2-bd5f-6e51015e73e3
 ```
 
@@ -61,24 +64,25 @@ These commands will return the same record as above.
 
 Similarly, you may delete the device:
 
-```
+```text
 helium-console-cli device delete 000A000100000046 CB67C92DD5898D07872224202DED7E76 DEADBEEF23F23454
 ```
+
 or
 
-```
+```text
 helium-console-cli device delete-by-id 03f5967a-7c79-42a2-bd5f-6e51015e73e3
 ```
 
 Finally, at any time, you may list all your devices:
 
-```
+```text
 helium-console-cli device list
 ```
 
 Which will return an array of all your devices:
 
-```
+```text
 [
     Device {
         app_eui: "000A000100000046",
@@ -91,19 +95,22 @@ Which will return an array of all your devices:
     }
 ]
 ```
+
 ### TTN Import
 
 To start an import session, use the ttn import command:
 
-```
+```text
 helium-console-cli ttn import
 ```
 
 You will be prompted for a ttnctl access code, which you can generate by clicking on `ttnctl access code` [here](https://account.thethingsnetwork.org/). This single-use access code is valid for 5 minutes. During this time the CLI may use the code to request an OAuth2 token; it expires after 60 minutes.
 
 The CLI's prompts will help you:
-* select to import from a single application or all applications (maximum 10, otherwise the OAuth2 token is "used up")
+
+* select to import from a single application or all applications \(maximum 10, otherwise the OAuth2 token is "used up"\)
 * you may import all the devices at once or you may approve device import one by one.
 * you may use the TTN App ID as an automatic label for every device or you may approve device labelling one by one
 
 The import process tolerates attempts to re-import or re-label the same device. As such, you may re-run the script to label devices with the TTN App ID even if you already imported the devices during a previous session.
+

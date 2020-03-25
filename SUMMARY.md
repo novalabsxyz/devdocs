@@ -34,7 +34,8 @@
 * [Proof-of-Coverage](blockchain/proof-of-coverage.md)
 * [The Helium Consensus Protocol](blockchain/consensus-protocol.md)
 * [Blockchain Primitives](blockchain/blockchain-primitives.md)
-* [Blockchain API](blockchain/api.md)
+* [Blockchain API](blockchain/api/README.md)
+  * [Setting up an API full node](blockchain/api/setting-up-an-api-full-node.md)
 * [Blockchain CLI](blockchain/blockchain-cli.md)
 * [Ledger Hardware Wallet](blockchain/ledger-hardware-wallet.md)
 
