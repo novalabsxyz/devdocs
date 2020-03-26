@@ -4,7 +4,7 @@ description: Migrating a device from TheThings Network to Helium
 
 # The Things Network
 
-This short guide will walk you through porting your devices to the Helium Network \(and Helium Console\) from TTN and the TTN Console.
+This short guide will walk you through porting your devices to the Helium Network \(and Helium Console\) from TTN and the TTN Console. If you are doing more than a few devices though, you may want to try the [Command-Line Interface for automated import](https://developer.helium.com/console/cli#ttn-import).
 
 At a high level, there are two steps to accomplish this migration:
 
