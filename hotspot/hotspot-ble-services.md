@@ -7,7 +7,7 @@ You can also download a PDF version of the services if this is easier for you to
 {% file src="../.gitbook/assets/helium-hotspot-ble-services.pdf" caption="Helium Hotspot BLE Services" %}
 
 {% hint style="info" %}
-Data must be serialized or de-serialized to [Protocol Buffers](https://developers.google.com/protocol-buffers) depending on the BLE Characteristic, which is indicated in the `Data Type` column. For the `Data Type`that are listed as binary to string, they can be directly interpreted as ASCII strings. The Protocol Buffers message definitions are listed below the table and are referenced by the message definition name in column`Protocol Buffers Definition.`
+Data may need to be serialized or de-serialized to [Protocol Buffers](https://developers.google.com/protocol-buffers) depending on the BLE Characteristic, which is indicated in the `Data Type` column. For the `Data Type`that are listed as binary to string, they can be directly interpreted as ASCII strings. The Protocol Buffers message definitions are listed below the table and are referenced by the message definition name in column`Protocol Buffers Definition.`
 {% endhint %}
 
 | **BLE Type** | **Name** | **UUID** | **Permissions** | **Data Type** | **Protocol Buffers Definition** | **Max Data** | **Default Data** | **Description** | **Example Value** |
