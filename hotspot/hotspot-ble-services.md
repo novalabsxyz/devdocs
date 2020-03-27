@@ -2,7 +2,7 @@
 
 The following table below describes the Bluetooth Low Energy services and advertisement data that the Helium Hotspot provides. You must first press the black button on left side of the Hotpsot to activate the BLE advertising before attempting to connect. 
 
-You can also download a PDF version if this is easier for you to view.
+You can also download a PDF version if this is easier for you to view. 
 
 {% file src="../.gitbook/assets/helium-hotspot-ble-services.pdf" caption="Helium Hotspot BLE Services" %}
 
