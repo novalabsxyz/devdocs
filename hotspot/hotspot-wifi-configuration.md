@@ -69,8 +69,6 @@ The Helium Hotspot provides a WiFi configuration interface via the device's[ BLE
 
       `UUID: 398168aa-0111-4ec0-b1fa-171671270608`
 
-
-
 ### **6. Wait For WiFiSSID Notification to Trigger**
 
 When the notification triggers, this indicates WiFi connection success.  You can repeat step two in order to verify that the correct WiFi SSID name. 
