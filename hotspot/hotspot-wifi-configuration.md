@@ -4,7 +4,7 @@ The Helium Hotspot provides a WiFi configuration interface via the device's[ BLE
 
 ### **1. Connecting to the Hotspot over Bluetooth Low Energy**
 
-1. Press the black button on the side of the Hotspot once, and wait a few seconds for the BLE advertising to begin.
+1. Press the black button on the side of the Hotspot once, and wait a few seconds for the BLE advertising to begin. You will see the LED on top of the Hotspot turn blue when it is available.
 2. Scan for connectable devices.
 3. Connect to the Hotspot of interest with the following name and UUID in its advertising payload.
 
