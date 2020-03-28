@@ -53,12 +53,12 @@ The Helium Hotspot provides a WiFi configuration interface via the device's[ BLE
 
    `UUID: d7515033-7e7b-45be-803f-c8737b171a29`
 
-2. De-serialize the binary value into the WiFi Services [Protocol Buffers](https://developers.google.com/protocol-buffers) message found in [BLE Services Sheet](https://developer.helium.com/hotspot/hotspot-ble-services#wifi_services_v1). This will give you a list of available WiFi SSID string names.
+2. De-serialize the binary value into the WiFi Services [Protocol Buffers](https://developers.google.com/protocol-buffers) message found in [BLE Services Sheet](https://developer.helium.com/hotspot/hotspot-ble-services#wifiservices-characteristic). This will give you a list of available WiFi SSID string names.
 
 ### **5. Set Credentials For WiFi Network**
 
 1. Using the SSID string from the scan, and password string provided by you, do the following to set the credentials.
-   1. Serialize your WiFi Connect [Protocol Buffer](https://developers.google.com/protocol-buffers) message, the definition of which is found in the [BLE Services Sheet](https://developer.helium.com/hotspot/hotspot-ble-services#wifi_connect_v1).
+   1. Serialize your WiFi Connect [Protocol Buffer](https://developers.google.com/protocol-buffers) message, the definition of which is found in the [BLE Services Sheet](https://developer.helium.com/hotspot/hotspot-ble-services#wificonnect-characteristic).
    2. Write serialized Value to
 
       Service
