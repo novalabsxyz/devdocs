@@ -12,9 +12,9 @@ Data may need to be serialized or de-serialized to [Protocol Buffers](https://de
 
 ## **Advertisement**
 
-`Device Name: Helium Hotspot ####`
+**`Device Name: Helium Hotspot ####`**
 
-`UUID: 0fda92b2-44a2-4af2-84f5-fa682baa2b8d`
+**`UUID: 0fda92b2-44a2-4af2-84f5-fa682baa2b8d`**
 
 ## Device Information - Service
 
@@ -26,7 +26,7 @@ Data may need to be serialized or de-serialized to [Protocol Buffers](https://de
 
 **`Data Type: ASCII String`**
 
-**Example Value:** `` **"Helium"**
+**`Example Value:  "Helium"`**
 
 ### Serial Number String - Characteristic
 
@@ -34,7 +34,7 @@ Data may need to be serialized or de-serialized to [Protocol Buffers](https://de
 
 **`Data Type: ASCII String`**
 
-**Example Value:  "6081F989E7BF"**
+**`Example Value:  "6081F989E7BF"`**
 
 ### Firmware Revision String - Characteristic
 
@@ -42,31 +42,31 @@ Data may need to be serialized or de-serialized to [Protocol Buffers](https://de
 
 **`Data Type: ASCII String`**
 
-**Example Value:  "2020.02.18.1"**
+**`Example Value:  "2020.02.18.1"`**
 
 ## Custom Service - Service
 
-**`UUID:`**`0fda92b2-44a2-4af2-84f5-fa682baa2b8d`
+**`UUID: 0fda92b2-44a2-4af2-84f5-fa682baa2b8d`**
 
 ### OnboardingKey - Characteristic
 
-**`UUID:`** `d083b2bd-be16-4600-b397-61512ca2f5ad`
+**`UUID: d083b2bd-be16-4600-b397-61512ca2f5ad`**
 
 **`Data Type: ASCII String`**
 
-**Example Value:**  "11TqqVzycXK5k49bXbmcUcSne91krq7v3VSQCfDXr"
+**`Example Value:  "11TqqVzycXK5k49bXbmcUcSne91krq7v3VSQCfDXr"`**
 
 ### PublicKey - Characteristic
 
-**`UUID:`** `0a852c59-50d3-4492-bfd3-22fe58a24f01`
+**`UUID: 0a852c59-50d3-4492-bfd3-22fe58a24f01`**
 
 **`Data Type: ASCII String`**
 
-**Example Value:**  "117ei8D1Bk2kYqWNjSFuLgg3BrtTNSTi2tt14LRUFgt"
+**`Example Value:  "117ei8D1Bk2kYqWNjSFuLgg3BrtTNSTi2tt14LRUFgt"`**
 
 ### WiFiServices - Characteristic
 
-**`UUID:`** `d7515033-7e7b-45be-803f-c8737b171a29`
+**`UUID: d7515033-7e7b-45be-803f-c8737b171a29`**
 
 **`Data Type: Protocol Buffers`**
 
@@ -78,7 +78,7 @@ message wifi_services_v1 {
 
 ### Diagnostics - Characteristic
 
-**`UUID:`** `b833d34f-d871-422c-bf9e-8e6ec117d57e`
+**`UUID: b833d34f-d871-422c-bf9e-8e6ec117d57e`**
 
 **`Data Type: Protocol Buffers`**
 
@@ -90,31 +90,31 @@ message diagnostics_v1 {
 
 ### No Descriptor Name\(WiFi MAC Address\) - Characteristic
 
-**`UUID:`** `9c4314f2-8a0c-45fd-a58d-d4a7e64c3a57`
+**`UUID: 9c4314f2-8a0c-45fd-a58d-d4a7e64c3a57`**
 
 **`Data Type: ASCII String`**
 
-**Example Value:**  "6081F989E7BF"
+**`Example Value:  "6081F989E7BF"`**
 
 ### Lights - Characteristic
 
-**`UUID:`** `180efdef-7579-4b4a-b2df-72733b7fa2fe`
+**`UUID: 180efdef-7579-4b4a-b2df-72733b7fa2fe`**
 
 **`Data Type: ASCII String`**
 
-**Example Value:**  "on"
+**`Example Value:  "on"`**
 
 ### WiFiSSID - Characteristic
 
-**`UUID:`** `7731de63-bc6a-4100-8ab1-89b2356b038b`
+**`UUID: 7731de63-bc6a-4100-8ab1-89b2356b038b`**
 
 **`Data Type: ASCII String`**
 
-**Example Value:**  ""
+**`Example Value:  ""`**
 
 ### AssertLocation - Characteristic
 
-**`UUID:`** `d435f5de-01a4-4e7d-84ba-dfd347f60275`
+**`UUID: d435f5de-01a4-4e7d-84ba-dfd347f60275`**
 
 **`Data Type: Protocol Buffers`**
 
@@ -132,7 +132,7 @@ message assert_loc_v1 {
 
 ### AddGateway - Characteristic
 
-**`UUID:`** `df3b16ca-c985-4da2-a6d2-9b9b9abdb858`
+**`UUID: df3b16ca-c985-4da2-a6d2-9b9b9abdb858`**
 
 **`Data Type: Protocol Buffers`**
 
@@ -147,7 +147,7 @@ message add_gateway_v1 {
 
 ### WiFiConnect - Characteristic
 
-**`UUID:`** `398168aa-0111-4ec0-b1fa-171671270608`
+**`UUID: 398168aa-0111-4ec0-b1fa-171671270608`**
 
 **`Data Type: Protocol Buffers`**
 
@@ -160,9 +160,9 @@ message wifi_connect_v1 {
 
 ### EthernetOnline - Characteristic
 
-**`UUID:`** `e5866bd6-0288-4476-98ca-ef7da6b4d289`
+**`UUID: e5866bd6-0288-4476-98ca-ef7da6b4d289`**
 
 **`Data Type: ASCII String`**
 
-**Example Value:**  "true" or "false"
+**`Example Value:  "true" or "false"`**
 
