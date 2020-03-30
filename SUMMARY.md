@@ -13,6 +13,7 @@
   * [HTTP Integration](console/integrations/http.md)
   * [Cargo Integration](console/integrations/cargo.md)
   * [AWS IoT Core Integration](console/integrations/awsiotcore.md)
+  * [myDevices Cayenne Integration](console/integrations/mydevices-cayenne-integration.md)
 * [Labels](console/labels.md)
 * [Adding Devices](console/adding-devices.md)
 
