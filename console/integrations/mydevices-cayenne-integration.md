@@ -22,7 +22,9 @@ Devices are connected to integrations through the use of Labels. Labels are name
 
 ### Adding Your Device on myDevices Cayenne 
 
-Before adding your device to Cayenne, be sure you've successfully added it to the Helium network, if you haven't done so yet, then see how to [here](../adding-devices.md).  Once you have a device added on Console and you have verified that packets are being received, you can then proceed to add the device on Cayenne.
+Before adding your device to Cayenne, be sure you've successfully added it to the Helium network as well as attached it to a label that is also attached to the Cayenne integration, if you haven't done so yet, then see how to [here](../adding-devices.md).  Once you have a device added on Console and you have verified that packets are being received, you can then proceed to add the device on Cayenne.
+
+First, signup for Cayenne [here](https://developers.mydevices.com/cayenne/signup/), if you have not already.
 
 From the Cayenne dashboard, click **Add New** &gt; **Device / Widget**.
 
@@ -42,7 +44,7 @@ The only information you'll need once you've selected your device is to enter th
 
 ### Device Data Payload Format 
 
-When adding your device on Cayenne, you'll need to pay close attention to whether or not the device requires the Cayenne Low Power Payload \(CayenneLLP\). If your device is in the list of supported devices, it will specify whether or not it requires CayenneLPP directory above the name field when you've selected the device, and shown in the Cayenne dashboard image above.  If you do not see the line 'This device uses Cayenne LPP', then it is likely an off the shelf device, and it will automatcally be supported by Cayenne. You can find the official documentation on CayenneLLP [here](https://developers.mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload), as well as a popular Arduino library [here](https://github.com/ElectronicCats/CayenneLPP).
+When adding your device on Cayenne, you'll need to pay close attention to whether or not the device requires the Cayenne Low Power Payload \(CayenneLLP\). If your device is in the list of supported devices, it will specify whether or not it requires CayenneLPP directly above the name field when you've selected the device, and shown in the Cayenne dashboard image above.  If you do not see the line 'This device uses Cayenne LPP', then it is automatically supported by Cayenne. You can find the official documentation on CayenneLLP [here](https://developers.mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload), as well as a popular Arduino library [here](https://github.com/ElectronicCats/CayenneLPP). If you have a custom device or it is not in the list of supported devices, then select the  [STM32 B-L072Z-LRWAN1](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html) board as a placeholder, and be sure to use CayenneLPP formatting in your firmware. 
 
 
 
