@@ -9,7 +9,7 @@
 Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to create a wireless peer-to-peer network for low-bandwidth IoT applications. This guide will show you step by step how to transmit LoRaWAN packets using a longfi-arduino sketch on an STMicroelectronics B-L072Z-LRWAN1 Discovery kit.
 
 {% hint style="warning" %}
-Before we begin, please make sure you've followed the steps from this [guide](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/console/quickstart/README.md), which goes over some initial setup steps.
+Before we begin, please make sure you've followed the steps from this [guide](https://developer.helium.com/console/quickstart), which goes over some initial setup steps.
 {% endhint %}
 
 ## Objective and Requirements
