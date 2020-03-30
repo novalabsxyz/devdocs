@@ -8,7 +8,7 @@ Integrations enable devices to connect to pre-configured, cloud-based applicatio
 
 To add a new integration, navigate to the **Integrations** page using the left side navigation, and then select from the available integrations as shown below. Follow the specific integration guides below for more details.
 
-![](../../.gitbook/assets/screenshot-2020-03-11-at-09.35.20.png)
+![](../../.gitbook/assets/consoleintegrations.png)
 
 ## Connecting Integrations to Devices
 
