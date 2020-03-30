@@ -8,6 +8,10 @@ To add an integration, go to **Integrations** on the left menu. Select the integ
 
 The next step is to paste your MQTT broker endpoint, and optional topic prefix.
 
+## Connecting Integrations to Devices
+
+Devices are connected to integrations through the use of Labels. Labels are named identifiers, that can be used to associate an integration with a device. To connect one or more devices to one or more integrations, simply attach the same label to both the device and integration. Labels need to be created before attaching them to devices and integrations. Read more on this [here](../labels.md).
+
 ## MQTT Topic composition:
 
 ### Device Uplink \(Receive Data from Device\)

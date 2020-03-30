@@ -55,6 +55,10 @@ The size of the dot is related to the size of the packet. Larger sized packets w
 
 Event Logs display real-time packets in table form. Here you can see which Hotspot received the packet, its RSSI, and the size of the packet in bytes.
 
+## Connecting Integrations to Devices
+
+Devices are connected to integrations through the use of Labels. Labels are named identifiers, that can be used to associate an integration with a device. To connect one or more devices to one or more integrations, simply attach the same label to both the device and integration. Labels need to be created before attaching them to devices and integrations. Read more on this [here](labels.md).
+
 ## Next Steps
 
 Now that we've added a device on Console, let's build our device!
