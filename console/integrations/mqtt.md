@@ -1,4 +1,4 @@
-# MQTT Integration
+# MQTT
 
 ![](../../.gitbook/assets/artboard.jpg)
 

@@ -1,4 +1,4 @@
-# Cargo Integration
+# Cargo
 
 ![](../../.gitbook/assets/artboard-copy-8.jpg)
 

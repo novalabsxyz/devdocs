@@ -2,7 +2,7 @@
 description: How to connect your Helium Devices directly to AWS IoT Core.
 ---
 
-# AWS IoT Core Integration
+# AWS IoT Core
 
 ![](../../.gitbook/assets/image%20%2815%29.png)
 

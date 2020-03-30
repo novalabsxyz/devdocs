@@ -1,4 +1,4 @@
-# myDevices Cayenne Integration
+# myDevices Cayenne
 
 ![](../../.gitbook/assets/mydevices_icon.png)
 

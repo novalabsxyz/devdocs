@@ -1,4 +1,4 @@
-# HTTP Integration
+# HTTP
 
 ![](../../.gitbook/assets/artboard-copy-7.jpg)
 
