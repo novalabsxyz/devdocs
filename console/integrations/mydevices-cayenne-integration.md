@@ -8,7 +8,7 @@
 
 ### Add a myDevices Cayenne Integration
 
-To add a **myDevices Cayenne** Integration, go to Integrations on the left menu. Select the integration to add, in this case, the **myDevices Cayenne** integration:
+To add a **myDevices Cayenne** Integration, go to Integrations on the left-hand menu. Select the integration to add, in this case, the **myDevices Cayenne** integration:
 
 ![](../../.gitbook/assets/mydevices_cayenne_integration.png)
 
