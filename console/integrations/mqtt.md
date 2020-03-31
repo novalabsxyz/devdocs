@@ -1,4 +1,10 @@
+---
+description: How to set up MQTT Integration for your Helium Devices.
+---
+
 # MQTT
+
+
 
 ![](../../.gitbook/assets/artboard.jpg)
 
