@@ -24,7 +24,7 @@
 * [Migrating Devices to Helium](devices/migrating-devices-to-helium/README.md)
   * [The Things Network](devices/migrating-devices-to-helium/device-migration-the-things-network.md)
 * [LoRaWAN Devices](devices/lorawan-devices/README.md)
-  * [Digital Matter LoRaWAN](devices/lorawan-devices/digital-matter-lorawan.md)
+  * [Digital Matter LoRaWAN GPS](devices/lorawan-devices/digital-matter-lorawan.md)
 
 ## Blockchain
 

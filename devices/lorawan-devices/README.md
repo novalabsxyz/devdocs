@@ -12,5 +12,9 @@ In this section, we’ll go over some off-the-shelf LoRaWAN devices that Helium 
 * RAK7200 GPS Tracker
 * Dragino LGT92 GPS Tracker
 
+**Other Devices:**
+
+* Digital Matter SensorNode \(GPS + Misc\)
+
 
 

@@ -1,4 +1,10 @@
-# Digital Matter LoRaWAN
+---
+description: >-
+  Step by step guide on configuring and onboarding a Digital Matter LoRaWAN GPS
+  device.
+---
+
+# Digital Matter LoRaWAN GPS
 
 ## Introduction
 
@@ -127,6 +133,26 @@ To learn more about routing this payload to our demo visualization tool, visit [
 {% file src="../../.gitbook/assets/oyster-lorawan-battery-life-estimates.xlsx" caption="Oyster LoRaWan Battery Life Estimates" %}
 
 This spreadsheet will help estimate approximate battery life of the Digital Matter Oyster. Simply modify the fields to represent the desired number of transmissions within a day. 
+
+### myDevices/Cayenne Integration:
+
+Helium now supports myDevices and the Cayenne LPP \(low power payload\) format. Cayenne features a simple drag and drop interface that allows developers, designers and engineers quickly prototype and share their connected device projects. 
+
+To learn more about myDevices Cayenne integration, visit [myDevices Cayenne](../../console/integrations/mydevices-cayenne-integration.md). 
+
+{% hint style="info" %}
+myDevices currently only includes the Digital Matter Oyster in their device library. 
+{% endhint %}
+
+When you are adding a device/widget in Cayenne, look for the **Digital Matter Oyster** under **Helium.** 
+
+![myDevices Cayenne - Adding a Digital Matter Oyster](../../.gitbook/assets/image%20%2818%29.png)
+
+Copy the device's **DevEUI** into the field. This value should correspond to the associated Digital Matter Oyster DevEUI in **Console.** Then, click **Add device.** 
+
+![myDevices Cayenne - Digital Matter Oyster DevEUI](../../.gitbook/assets/image%20%2812%29.png)
+
+That's it for adding a Digital Matter Oyster in myDevices Cayenne! 
 
   
 
