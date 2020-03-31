@@ -1,4 +1,10 @@
+---
+description: How to set up a Cayenne dashboard for your Helium Devices.
+---
+
 # myDevices Cayenne
+
+
 
 ![](../../.gitbook/assets/mydevices_icon.png)
 
