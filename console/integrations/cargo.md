@@ -1,3 +1,7 @@
+---
+description: Cargo is an in-house mapping tool used here at Helium.
+---
+
 # Cargo
 
 ![](../../.gitbook/assets/artboard-copy-8.jpg)
