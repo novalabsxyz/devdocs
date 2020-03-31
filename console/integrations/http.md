@@ -1,3 +1,7 @@
+---
+description: How to set up HTTP Integration for your Helium Devices.
+---
+
 # HTTP
 
 ![](../../.gitbook/assets/artboard-copy-7.jpg)
