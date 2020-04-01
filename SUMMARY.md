@@ -57,5 +57,6 @@
 
 ## Resources
 
-* [Videos](resources/videos.md)
+* [Videos](resources/videos/README.md)
+  * [03/26/2020 Webinar](resources/videos/03-26-2020-webinar.md)
 
