@@ -55,3 +55,7 @@
 * [Data Credits](longfi/data-credits.md)
 * [Routing](longfi/longfi-routing.md)
 
+## Resources
+
+* [Videos](resources/videos.md)
+
