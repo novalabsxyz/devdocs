@@ -28,8 +28,9 @@
 
 ## Developer Resources <a id="resources"></a>
 
-* [Videos and Webinars](resources/videos/README.md)
-  * [03/26/2020 Webinar](resources/videos/03-26-2020-webinar.md)
+* [Webinars](resources/webinars/README.md)
+  * [Helium and LoRaWAN Webinar](resources/webinars/03-26-2020-webinar.md)
+* [Videos](resources/videos.md)
 
 ## Blockchain
 
