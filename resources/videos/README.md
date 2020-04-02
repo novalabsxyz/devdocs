@@ -1,4 +1,10 @@
-# Videos
+---
+description: >-
+  A list of videos, webinars, slides, and other resources to help you on your
+  Helium Network journey.
+---
+
+# Videos and Webinars
 
 ## Introduction:
 

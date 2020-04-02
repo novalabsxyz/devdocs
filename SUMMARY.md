@@ -26,6 +26,11 @@
 * [LoRaWAN Devices](devices/lorawan-devices/README.md)
   * [Digital Matter LoRaWAN GPS](devices/lorawan-devices/digital-matter-lorawan.md)
 
+## Developer Resources <a id="resources"></a>
+
+* [Videos and Webinars](resources/videos/README.md)
+  * [03/26/2020 Webinar](resources/videos/03-26-2020-webinar.md)
+
 ## Blockchain
 
 * [Introduction](blockchain/introduction.md)
@@ -54,9 +59,4 @@
 * [LoRaWAN Versions](longfi/routerv3-and-lorawan.md)
 * [Data Credits](longfi/data-credits.md)
 * [Routing](longfi/longfi-routing.md)
-
-## Resources
-
-* [Videos](resources/videos/README.md)
-  * [03/26/2020 Webinar](resources/videos/03-26-2020-webinar.md)
 
