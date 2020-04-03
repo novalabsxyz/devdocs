@@ -4,7 +4,7 @@ description: How to connect your Helium Devices directly to AWS IoT Core.
 
 # AWS IoT Core
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](../../.gitbook/assets/image%20%2818%29.png)
 
 [AWS IoT Core](https://aws.amazon.com/iot-core/) is a powerful offering that lets developers build device-based applications and services on the AWS Cloud. And this Integration via Helium Console automates the complexity of securely connecting your devices to AWS IoT Core. 
 
@@ -20,23 +20,23 @@ Open up the [AWS Console](https://console.aws.amazon.com/)
 
 Under the Services menu in the upper-left, go to **Security, Identity, & Compliance**-&gt;**IAM**:
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%289%29.png)
 
 We are now going to create a new **User:**
 
-![](../../.gitbook/assets/image%20%2822%29.png)
+![](../../.gitbook/assets/image%20%2825%29.png)
 
 Set the user name to "**HeliumIntegrationAccess**" and select only "**Programmatic access**"
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../../.gitbook/assets/image%20%2828%29.png)
 
 We now attach a policy to the newly created user that defines what permissions they hold.
 
 Select "**Attach existing policies directly**" and type "**AWSIoTConfigAccess"** into the "**Filter Policies**" box and check the box to the left of the row:
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2833%29.png)
 
-![](../../.gitbook/assets/image%20%2823%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 {% hint style="danger" %}
 Ensure you record and store these keys securely, as you will not have an opportunity to get access to them again!
@@ -44,13 +44,13 @@ Ensure you record and store these keys securely, as you will not have an opportu
 
 Back in the **Helium Console**, enter the credentials we just created under **AWS Connection Details**:
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 For **Topic**,  enter an MQTT compatible topic. For now, let's just enter `sensor`.
 
 Finally, we give our new Integration a name:
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 And click **Create Integration**. Your new Integration is now ready for use. 
 
@@ -62,15 +62,15 @@ Devices are connected to integrations through the use of Labels. Labels are name
 
 Once a label has been set up to connect our devices to our new Integration, let's return to the [AWS Console](https://console.aws.amazon.com/), and go to **IoT Core** under the **Services** menu:
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 Here you are able to monitor the connections to AWS:
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2832%29.png)
 
 When data comes in from the Helium Network Integration, Things will be automatically created within AWS IoT Core:
 
-![](../../.gitbook/assets/image%20%2813%29.png)
+![](../../.gitbook/assets/image%20%2814%29.png)
 
 Going to **Interact** on the left while on a **Thing** takes us to a list of topics for interacting with the **Thing Shadows**:
 
@@ -82,7 +82,7 @@ To monitor in real-time what is being sent to AWS from Helium, we can open the *
 
 ![](../../.gitbook/assets/image%20%282%29.png)
 
-![](../../.gitbook/assets/image%20%2819%29.png)
+![](../../.gitbook/assets/image%20%2822%29.png)
 
 The payload field is the actual data received from the device, [encoded in a base64](https://www.base64decode.org/) string.
 

@@ -20,7 +20,7 @@ We also have a growing list of sensors we've[ pre-certified and documented on th
 
 The easiest way to prototype a new connected device for the Helium Network is to use the [LongFi Arduino library.](https://github.com/helium/longfi-arduino) 
 
-And we have a complete [LongFi Arduino Quickstart Guide](arduino-quickstart.md) that walks you through the simple setup and deployment process.
+And we have complete [LongFi Arduino Quickstart Guides](arduino-quickstart/) that walks you through the simple setup and deployment process.
 
 ### Migrating Devices to the Helium Network
 

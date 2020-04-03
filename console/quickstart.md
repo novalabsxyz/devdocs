@@ -63,7 +63,7 @@ Devices are connected to integrations through the use of Labels. Labels are name
 
 Now that we've added a device on Console, let's build our device!
 
-We've curated an Arduino quickstart guide for you to follow, which you can access directly below.
+We've curated Arduino quickstart guides for you to follow, which you can access directly below.
 
-* [LongFi Arduino - Quickstart](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/device/arduino-quickstart/README.md)
+* [LongFi Arduino](../devices/arduino-quickstart/)
 
