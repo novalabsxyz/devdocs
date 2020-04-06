@@ -73,13 +73,13 @@ CONF_SWAPSIZE=1024
 Save the file and exit by pressing `ctrl-x`, then reboot:
 
 ```text
-$ sudo reboot
+sudo reboot
 ```
 
 Next, enable SPI and I2C using the raspi-config tool:
 
 ```text
-$ sudo raspi-config
+sudo raspi-config
 ```
 
 Select `Interfacing Options`, and enable `I2C` and `SPI` from within the menu system.
@@ -87,7 +87,7 @@ Select `Interfacing Options`, and enable `I2C` and `SPI` from within the menu sy
 Now let's go ahead and update our install with:
 
 ```text
-$ sudo apt-get update
+sudo apt-get update
 ```
 
 
@@ -107,7 +107,7 @@ $ git clone https://github.com/Lora-net/lora_gateway
 We'll then download the Helium-specific packet forwarder configuration file and move it in to the right folder:
 
 ```text
-$ wget https://helium-media.s3-us-west-2.amazonaws.com/
+wget https://helium-media.s3-us-west-2.amazonaws.com/
 ```
 
 ### One Quick Change
@@ -115,7 +115,7 @@ $ wget https://helium-media.s3-us-west-2.amazonaws.com/
 We need to modify the SPI speed for this particular RAK concentrator. You may not have to do this with different concentrators. To do that:
 
 ```text
-$ nano lora_gateway/libloragw/src/loragw_spi.native.c
+nano lora_gateway/libloragw/src/loragw_spi.native.c
 ```
 
 And modify line 56 to read:
@@ -159,7 +159,13 @@ From Your EC2 dashboard, you should select your miner and take a look at the des
 
 In this case,  the IP is `18.218.135.176`. You now have to go back edit the packet forwarder's configuration such that it connects to you Miner on AWS. 
 
-With your favorite editor,  open `packet_forwarder/lora_pkt_fwd/global_conf.json`. You want to change the field "server\_address" from "localhost" the the IP address of my server, so in this case:
+With your favorite editor,  open `packet_forwarder/lora_pkt_fwd/global_conf.json`:
+
+```text
+nano packet_forwarder/lora_pkt_fwd/global_conf.json
+```
+
+You want to change the field "server\_address" from "localhost" the the IP address of my server, so in this case:
 
 ```text
 "server_address": "18.218.135.176",
