@@ -134,7 +134,7 @@ $ ulimit -n 64000
 
 For the rest of this guide, we will assume you've exported the miner root to your PATH and that you've aliased `miner` to the executable \(eg: _build/prod/rel/miner/bin/miner_\).
 
-On the AWS AMI, this is already done for you. Otherwise, this should work on most Linux environments`~/.bash.rc`:
+On the AWS AMI, this is already done for you. Otherwise, this should work on most Linux environments `~/.bashrc`:
 
 ```text
 export PATH=$PATH:$HOME/miner
