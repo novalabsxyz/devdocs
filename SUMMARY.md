@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home](README.md)
+* [Helium Developer Documentation](README.md)
 
 ## Console
 

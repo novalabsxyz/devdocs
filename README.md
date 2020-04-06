@@ -1,4 +1,8 @@
-# Home
+---
+description: The home for all Helium Network Documentation
+---
+
+# Helium Developer Documentation
 
 ![](.gitbook/assets/vdvr.jpg)
 
