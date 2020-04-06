@@ -1,20 +1,20 @@
 # Run Your Own Miner
 
-Running a Helium Miner is a great way to get some exposure to the blockchain and to support the network. And if you have [your own hardware deployed](../hotspot/developer-setup.md), this is necessary for routing LoRaWAN packets according to our LongFi protocol.
+Running a Helium Miner is a great way to get some exposure to the blockchain and to support the network. If you have [your own hardware deployed](../hotspot/developer-setup.md), this is necessary for routing LoRaWAN packets according to our [LongFi](https://developer.helium.com/longfi/introduction) protocol.
 
 ![](../.gitbook/assets/architecture.png)
 
 
 
-First and foremost, the Miner is critical in routing data across the Helium Network. It is one of three pieces:
+As you can see above, the Miner is critical in routing data across the Helium Network. It is one of three pieces:
 
 * Packet Forwarder: this is a utility that interacts with the radio front-end and sends and receives raw radio packets with the Helium Miner
 * Miner: the Helium Blockchain comes into the picture here; the Miner is responsible for routing packets to the appropriate Router \(read more about that here\) entering into microtransactions brokered via libp2p
 * Router: a Helium compatible LoRaWAN Network Server, basically; this component is interested in receiving the packets relating to its devices and handles downlink responses when appropriate
 
-In addition to packet routing, the Miner is constantly connecting to other Miners of libp2p where, amongst other things, it is learning about blocks and maintaining a local copies and a ledger of the blockchain.
+In addition to packet routing, the Miner is connecting to other Miners over libp2p where, amongst other things, it is gossiping and saving blocks, while maintaining a ledger of the blockchain.
 
-In this guide, we offer two ways of getting a miner running:
+In this guide, we offer two ways of getting a Miner running:
 
 * deploying a plug-and-play AMI on AWS, if you want an easy setup and to avoid the initial sync time
 * building from source on a Debian-based system, if you are feeling adventurous
@@ -33,7 +33,7 @@ On the left menu, click Images -&gt; AMIs
 
 ![](../.gitbook/assets/ami.png)
 
-To the left of the search bar,  select “Public Images” and then search \`AMI ID : ami-04c4cca34b82100dc\`
+To the left of the search bar,  select “Public Images” and then search `AMI ID : ami-04c4cca34b82100dc`
 
 You can quickly launch by clicking Launch, but if you’d rather launch from a region other than us-east2, you’ll want to make a Copy of the AMI to that region before launching.
 
