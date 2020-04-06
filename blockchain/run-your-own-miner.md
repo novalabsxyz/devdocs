@@ -93,7 +93,7 @@ If you are using the AWS AMI, these steps are already done. But there's plenty o
 The `sys.config` will need to be edited to match your configuration. Assuming you aren't using Helium Hotspot hardware you'll need to change the following lines of the configuration file:
 
 ```text
-$ nano _build/prod/rel/miner/releases/0.1.0/sys.config
+nano _build/prod/rel/miner/releases/0.1.0/sys.config
 ```
 
 Find the following line:
@@ -127,7 +127,7 @@ Again press `ctrl-x` to save and exit.
 You will also want to increase the open file limit. Note that make the change this will only be effective until you reboot:
 
 ```text
-$ ulimit -n 64000
+ulimit -n 64000
 ```
 
 ### Putting Miner in Your Environment
@@ -152,7 +152,7 @@ If you are using the AWS AMI, systemd is running the Miner for you. Otherwise,  
 To run in the background \(recommended\):
 
 ```text
-$ sudo _build/prod/rel/miner/bin/miner start
+sudo _build/prod/rel/miner/bin/miner start
 ```
 
 After a few moments you should be back at the shell prompt. Don't worry, that's a good thing.
@@ -160,7 +160,7 @@ After a few moments you should be back at the shell prompt. Don't worry, that's 
 If you're an advanced user, you might instead want to run miner via the interactive console:
 
 ```text
-$ sudo _build/prod/rel/miner/bin/miner console
+sudo _build/prod/rel/miner/bin/miner console
 ```
 
 If you run in console mode, you'll need to open another SSH session to the Pi to execute any other commands, or use a tool like `tmux` if you're an advanced user. We'd recommend running in the background for now.
