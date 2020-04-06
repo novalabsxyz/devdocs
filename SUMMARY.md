@@ -46,6 +46,7 @@
 * [Blockchain API](blockchain/api/README.md)
   * [Setting up an API full node](blockchain/api/setting-up-an-api-full-node.md)
 * [Blockchain CLI](blockchain/blockchain-cli.md)
+* [Run Your Own Miner](blockchain/run-your-own-miner.md)
 * [Ledger Hardware Wallet](blockchain/ledger-hardware-wallet.md)
 
 ## Hotspot
