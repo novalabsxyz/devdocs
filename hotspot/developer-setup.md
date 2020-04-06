@@ -29,7 +29,6 @@ This guide is experimental and for advanced users only, and you may run in to va
 
 Any hardware that can run an 8 channel LoRa front-end \(such as SX1301 or SX1302\) and send and receive packets using the [Semtech UDP Protocol](https://github.com/Lora-net/packet_forwarder/blob/master/PROTOCOL.TXT) can be used to participate in the Helium Network.
 
-  
 If you don’t have your own hardware yet, we recommend using a[ Raspberry Pi 3B+ or 4B](https://www.raspberrypi.org/) running the latest[ Raspian Buster](https://www.raspberrypi.org/downloads/raspbian/) image with a[ RAK2245 Pi Hat](https://store.rakwireless.com/products/rak2245-pi-hat) installed, and a recommended 64GB SD card.
 
 It is also possible to use any LoRa gateway that can run Semtech's [packet forwarder](https://github.com/Lora-net/packet_forwarder) application and run the `miner` application on a separate host.
