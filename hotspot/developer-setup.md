@@ -1,6 +1,6 @@
 # Build a Hotspot
 
-![](../.gitbook/assets/architecture.png)
+![](../.gitbook/assets/architecture%20%281%29.png)
 
 
 

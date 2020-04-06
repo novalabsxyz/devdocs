@@ -2,7 +2,19 @@
 
 Running a Helium Miner is a great way to get some exposure to the blockchain and to support the network. And if you have [your own hardware deployed](../hotspot/developer-setup.md), this is necessary for routing LoRaWAN packets according to our LongFi protocol.
 
-In this guide, we offer two ways of doing this: 
+![](../.gitbook/assets/architecture.png)
+
+
+
+First and foremost, the Miner is critical in routing data across the Helium Network. It is one of three pieces:
+
+* Packet Forwarder: this is a utility that interacts with the radio front-end and sends and receives raw radio packets with the Helium Miner
+* Miner: the Helium Blockchain comes into the picture here; the Miner is responsible for routing packets to the appropriate Router \(read more about that here\) entering into microtransactions brokered via libp2p
+* Router: a Helium compatible LoRaWAN Network Server, basically; this component is interested in receiving the packets relating to its devices and handles downlink responses when appropriate
+
+In addition to packet routing, the Miner is constantly connecting to other Miners of libp2p where, amongst other things, it is learning about blocks and maintaining a local copies and a ledger of the blockchain.
+
+In this guide, we offer two ways of getting a miner running:
 
 * deploying a plug-and-play AMI on AWS, if you want an easy setup and to avoid the initial sync time
 * building from source on a Debian-based system, if you are feeling adventurous
@@ -82,13 +94,11 @@ $ cd miner
 $ make release
 ```
 
-## Using the Miner
+## Setting up the Miner
 
-In this section, we have a working Miner installation and now it's time to make some things happen!
+In this section, we will have you configure a newly setup Miner. This section is not necessary when using the AWS AMI the Miner is already up and running upon deployment. Nonetheless, if you want to learn more, this section might be interesting background.
 
 ### Editing the configuration
-
-If you are using the AWS AMI, these steps are already done. But there's plenty of interesting stuff to learn in this section for the curious.
 
 The `sys.config` will need to be edited to match your configuration. Assuming you aren't using Helium Hotspot hardware you'll need to change the following lines of the configuration file:
 
@@ -165,6 +175,45 @@ sudo _build/prod/rel/miner/bin/miner console
 
 If you run in console mode, you'll need to open another SSH session to the Pi to execute any other commands, or use a tool like `tmux` if you're an advanced user. We'd recommend running in the background for now.
 
+{% hint style="info" %}
+**Note**: if you want to avoid running the miner as `sudo`, you'll want to either adjust the paths used in sys.config or change ownership of the default `/var/data`. For the interest of brevity, we are running the miner as `sudo`
+{% endhint %}
+
+### Loading the Genesis block
+
+If you are using the AWS AMI, the Miner has the genesis block loaded and is at least partially synced. If you are running from source or have wiped your blockchain data, you'll need to load the genesis block.
+
+First, you need a genesis block for the main network. 
+
+```text
+wget https://github.com/helium/blockchain-api/raw/master/priv/prod/genesis
+```
+
+Now you'll need to load the genesis block in to your miner:
+
+```text
+miner genesis load ~/miner/genesis
+```
+
+You should now be able to check your block height and see a height of 1, which is the genesis \(first\) block:
+
+```text
+miner info height
+```
+
+The first number is the election epoch and the second number is the block height of your miner. 
+
+As blocks get gossiped around from peers in your peerbook and added to your local chain you should see both of these numbers go up. It will take several hours or more to catch up to the tip of the blockchain.
+
+To check, you can either check the mobile app, check [the browser-based block explorer](https://network.helium.com/blocks), or run a simple curl command to check in a Terminal:
+
+```text
+~$ curl https://api.helium.io/v1/blocks/height
+{"data":{"height":280775}}
+```
+
+## Using the Miner
+
 ### Checking the peer-to-peer network
 
 This is the first health check you can do to see how your Miner is doing. Is it finding other Helium miners over libp2p properly?
@@ -214,31 +263,35 @@ You will see an output roughly like the following:
 
 As long as you have an address listed in `listen_addrs` and some peers in the table at the bottom, you're connected to the p2p network and good to go.
 
-If you are having trouble, try forwarding port 44158 to the miner. On AWS, double check your security group settings.
+If you are having trouble, try forwarding port `44158` to the miner. On AWS, double check your security group settings.
 
-### Loading the Genesis block
+### Checking Block Height
 
-If you are using the AWS AMI, the Miner has the genesis block loaded and is at least partially synced. If you are running from source or have wiped your blockchain data, you'll need to load the genesis block.
-
-First, you need a genesis block for the main network. 
-
-```text
-wget https://github.com/helium/blockchain-api/raw/master/priv/prod/genesis
-```
-
-Now you'll need to load the genesis block in to your miner:
-
-```text
-miner genesis load ~/miner/genesis
-```
-
-You should now be able to check your block height and see a height of 1, which is the genesis \(first\) block:
+As long as a genesis block is loaded, this query will work and return height 1 at least:
 
 ```text
 miner info height
 ```
 
-The first number is the election epoch, and the second number is the block height of your miner. As blocks get gossiped around from peers in your peerbook and added to your local chain you should see both of these numbers go up. It will take several hours or more to catch up to the tip of the blockchain.
+If you are syncing, you should see something like this:
 
+```text
+~$ miner info height
+6889		280756
+```
 
+The first number is the election epoch and the second number is the block height of your miner. You can compare
+
+If you just launched an AMI instance, your Miner is been disconnected, or you simply have a slow connection, you may be a few blocks behind. To check, you can either check the mobile app, check [the browser-based block explorer](https://network.helium.com/blocks), or run a simple curl command to check in a Terminal:
+
+```text
+~$ curl https://api.helium.io/v1/blocks/height
+{"data":{"height":280775}}
+```
+
+### Providing Coverage
+
+While participating in libp2p is helpful for the network, the Helium Blockchain does not exist for its own sake. It is there to incentivize coverage and one of the ways to earn tokens as a coverage provider for Helium is by routing IoT traffic. 
+
+To learn more about this, check out the [Build a Hotspot](../hotspot/developer-setup.md) section.
 
