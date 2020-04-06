@@ -52,7 +52,7 @@
 ## Hotspot
 
 * [Introduction](hotspot/introduction.md)
-* [Building a Developer Hotspot](hotspot/developer-setup.md)
+* [Build a Hotspot](hotspot/developer-setup.md)
 * [Hotspot BLE Services](hotspot/hotspot-ble-services.md)
 * [Hotspot WiFi Configuration](hotspot/hotspot-wifi-configuration.md)
 
