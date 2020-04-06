@@ -96,10 +96,6 @@ Once the device has been configured, it will attempt to join the Helium Network 
 
 These devices use an accelerometer to detect movement, allowing it to decide when an asset is in-trip and when it is stationary. This allows it schedule battery-hungry GPS fixes when appropriate, to optimize battery life. Each time a status update is scheduled, the device will attempt a GPS fix, then transmit results \(regardless of whether a fix succeeded or not\).
 
-### OTA Configuration: 
-
-Coming Soon...
-
 ### Device Payload: 
 
 A sample device payload is as follows: 

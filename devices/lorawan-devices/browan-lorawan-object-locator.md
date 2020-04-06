@@ -52,7 +52,5 @@ The Browan Object Locator payload is compatible with the [Helium Cargo](../../co
 
 ![Browan Object Locator Payload](../../.gitbook/assets/image%20%2821%29.png)
 
-###  Configuration: 
-
- ****Coming soon...
+###  
 
