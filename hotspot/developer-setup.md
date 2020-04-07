@@ -180,7 +180,7 @@ You want to change the field "server\_address" from "localhost" the the IP addre
 "server_address": "18.218.135.176",
 ```
 
-To verify that things are working, you can follow the logs **on the AWS instance:**
+You'll need to restart the packet forwarder for the configuration change to take effect. To verify that things are working, you can follow the logs **on the AWS instance:**
 
 ```text
 tail -f /var/data/log/miner/console.log | grep lora
