@@ -51,7 +51,7 @@ At this point, the instance is running and the Miner is running at boot. To conn
 
 ![](../.gitbook/assets/connect.png)
 
-
+Once you connect with your desired method, you're running a Helium Miner! Skip on down to the **Using the Miner** section, unless you want to read the other sections for background.
 
 ## Installing Miner from Source
 
@@ -213,6 +213,18 @@ To check, you can either check the mobile app, check [the browser-based block ex
 ```
 
 ## Using the Miner
+
+### Checking the logs
+
+Unless you've changed things in `sys.config`, you can find the logs at `/var/data/log/miner`.
+
+These can be helpful at anytime to get some idea of what's going on:
+
+```text
+tail -f /var/data/log/miner/console.log
+```
+
+Beware, as is very common in Linux logs, the file is rotated from time to time. So if you see that logs aren't streaming in anymore, exit out of the `tail`instance and run the command again.
 
 ### Checking the peer-to-peer network
 

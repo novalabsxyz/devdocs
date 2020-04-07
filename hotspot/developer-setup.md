@@ -95,19 +95,27 @@ sudo apt-get update
 
 Once you have miner running, you'll need the Semtech packet forwarder to receive packets via SPI and the RAK2245 board and deliver them to the miner via UDP.
 
+You may need to install git:
+
+```text
+sudo apt-get install git
+```
+
 Clone the git repository:
 
 ```text
-$ cd ..
+$ cd ~
 $ git clone https://github.com/Lora-net/packet_forwarder
 $ git clone https://github.com/Lora-net/lora_gateway
 ```
 
-We'll then download the Helium-specific packet forwarder configuration file and move it in to the right folder:
+We'll then download the Helium-specific packet forwarder configuration file :
 
 ```text
-wget https://helium-media.s3-us-west-2.amazonaws.com/
+wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
 ```
+
+Note that we should have downloaded the configuration file to the Linux home directory. This will be important when launching the binary.
 
 ### One Quick Change
 
@@ -145,6 +153,8 @@ We can now start the packet forwarder:
 ```text
 ./lora_pkt_fwd/lora_pkt_fwd
 ```
+
+Note that we are doing this from the Linux home directory. This is important for finding the configuration file downloaded previously.
 
 That's it, now you're running a packet forwarder! The last step is connecting to a Helium Miner.
 
