@@ -525,8 +525,16 @@ Get block descriptor for block at height
 
 {% endapi-method-response-example-description %}
 
-```
-
+```javascript
+{
+  "data": {
+    "transaction_count": 37,
+    "time": 1582192928,
+    "prev_hash": "Xj6vrBi_IcP0vqHHawf0FFWkG1qn18I9thQKOEhblXg",
+    "height": 213787,
+    "hash": "o5o8cBL1Zvp1KmA1d8vYJ38wXXWVxf1HW2e1uZxVJYg"
+  }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
