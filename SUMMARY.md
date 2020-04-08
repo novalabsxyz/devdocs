@@ -60,6 +60,8 @@
 
 * [Introduction](hotspot/introduction.md)
 * [Build a Hotspot](hotspot/developer-setup.md)
+* [LoRaWAN Gateway Migration](hotspot/lorawan-gateway-migration/README.md)
+  * [Laird Sentrius RG191](hotspot/lorawan-gateway-migration/laird.md)
 * [Hotspot BLE Services](hotspot/hotspot-ble-services.md)
 * [Hotspot WiFi Configuration](hotspot/hotspot-wifi-configuration.md)
 
