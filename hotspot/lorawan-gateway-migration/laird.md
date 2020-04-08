@@ -4,6 +4,10 @@ description: Migrating to the Helium Network
 
 # Laird Sentrius RG191
 
+## Introduction
+
+This guide will help you connect a Laird Sentrius RG191 to a Helium Miner. This will allow your gateway to participate in the Helium Network and to provide coverage!
+
 ![](../../.gitbook/assets/image%20%2848%29.png)
 
 [Laird Sentrius™ RG1xx LoRaWAN-Enabled Gateway](https://www.lairdconnect.com/wireless-modules/lorawan-solutions/sentrius-rg1xx-lora-enabled-gateway-wi-fi-ethernet)
@@ -151,6 +155,30 @@ By clicking on a row, we can examine the packet details:
 A live logging console may be pulled up using the arrows in the lower-left of the screen. Make sure to set it to Start Updating:
 
 ![](../../.gitbook/assets/image%20%2841%29.png)
+
+## **Connecting to a Helium Miner**
+
+If you haven't done it yet, you'll want to get your [Helium Miner running](../../blockchain/run-your-own-miner.md). We'll assume you've done this with an Amazon AMI for the sake of this tutorial. 
+
+From Your EC2 dashboard, you should select your miner and take a look at the description at the bottom of the page:
+
+![Extract IP Address](../../.gitbook/assets/ipv4.png)
+
+In this case,  the IP is `18.218.135.176`. You now have to go back edit the packet forwarder's configuration such that it connects to you Miner on AWS. 
+
+Now you'll want to update your `Sentrius_LoRa_Config_2020-03-20T19_48_05.347Z.json` file to include the address of your miner as the "server\_address"
+
+```text
+"server_address": "18.218.135.176",
+```
+
+To verify that things are working, you can follow the logs **on the AWS instance:**
+
+```text
+tail -f /var/data/log/miner/console.log | grep lora
+```
+
+At the very lease, you should see PULL\_DATA messages every few seconds. If so, then you've done it!
 
 
 
