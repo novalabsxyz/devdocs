@@ -9,7 +9,7 @@ The Helium Developer Kit is the perfect development setup to get started on the 
 * [Product Page](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html)
 * [Manual](https://www.st.com/resource/en/user_manual/dm00352032-getting-started-with-ultralowpower-stm32l0-and-lora-discovery-kit-stmicroelectronics.pdf)
 
-**X-NUCLEO-IKS01A3 - Motion MEMS and environmental sensor expansion board for STM32 Nucleo**
+#### **X-NUCLEO-IKS01A3 - Motion MEMS and environmental sensor expansion board for STM32 Nucleo**
 
 * \*\*\*\*[**Product Page**](https://www.st.com/en/ecosystems/x-nucleo-iks01a3.html)\*\*\*\*
 * \*\*\*\*[**Manual**](https://www.st.com/resource/en/user_manual/dm00601501-getting-started-with-the-xnucleoiks01a3-motion-mems-and-environmental-sensor-expansion-board-for-stm32-nucleo-stmicroelectronics.pdf)\*\*\*\*
