@@ -44,7 +44,7 @@ You have two options for adding an antenna on this board.
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_antenna_ufl.jpg)
 
-**Wire Antenna:** Solder a short wire\(78mm for Americas\) to the pin-out as shown below.
+**Wire Antenna:** Solder a short wire\(78mm in length for Americas\) to the pin-out as shown below.
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_antenna_wire.jpg)
 
@@ -144,7 +144,7 @@ We're finally ready to upload our sketch to the board. In the Arduino IDE, click
 
 ### Viewing Serial Output
 
-When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again navigate to \(**Tools &gt; Port: Sparkfun SAMD21 Pro RF**\), but make sure the serial device, either COM\# or ttyACM\# is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below.
+When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again, navigate to \(**Tools &gt; Port: Sparkfun SAMD21 Pro RF**\), but make sure the serial device, either COM\# or ttyACM\#,  is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below.
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_console_terminal.png)
 
