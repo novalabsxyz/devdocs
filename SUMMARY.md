@@ -20,6 +20,7 @@
 ## Devices
 
 * [Introduction to Helium Devices](devices/introduction.md)
+* [Helium Developer Kit](devices/devkit.md)
 * [LongFi Arduino](devices/arduino-quickstart/README.md)
   * [ST B-L072Z-LRWAN1](devices/arduino-quickstart/st-discovery-lrwan1.md)
   * [Sparkfun Pro RF](devices/arduino-quickstart/sparkfun-pro-rf.md)
