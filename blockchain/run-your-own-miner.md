@@ -292,13 +292,11 @@ If you are syncing, you should see something like this:
 6889		280756
 ```
 
-The first number is the election epoch and the second number is the block height of your miner. You can compare
-
-If you just launched an AMI instance, your Miner is been disconnected, or you simply have a slow connection, you may be a few blocks behind. To check, you can either check the mobile app, check [the browser-based block explorer](https://network.helium.com/blocks), or run a simple curl command to check in a Terminal:
+The first number is the election epoch and the second number is the block height of your miner. If you just launched an AMI instance, your Miner is been disconnected, or you simply have a slow connection, you may be a few blocks behind. To check, you can either check the mobile app, check [the browser-based block explorer](https://network.helium.com/blocks), or run a simple curl command to check in a Terminal:
 
 ```text
 ~$ curl https://api.helium.io/v1/blocks/height
-{"data":{"height":280775}}
+{"data":{"height":280756}}
 ```
 
 ### Providing Coverage

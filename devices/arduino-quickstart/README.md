@@ -9,6 +9,7 @@ Helium’s LongFi architecture combines LoRaWAN and the Helium blockchain to cre
 #### Quickstart Guides for LoRaWAN Development Boards
 
 * [ST Discovery B-L072Z-LRWAN1](st-discovery-lrwan1.md)
+* [Sparkfun Pro RF](sparkfun-pro-rf.md)
 
 
 
