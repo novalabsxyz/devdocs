@@ -64,8 +64,8 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="transaction" type="object" required=true %}
-A JSON object with an encoded `txn` field. For example:   
+{% api-method-parameter name="txn" type="string" required=true %}
+A base64 encoded transaction. An exmple of the both of a post  request:   
 `{ "txn": "QoWBCIe..."}`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
