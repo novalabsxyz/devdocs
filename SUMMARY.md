@@ -51,7 +51,7 @@
   * [Hotspots](blockchain/api/api-hotspots.md)
   * [Transactions](blockchain/api/api-transactions.md)
   * [Pending Transactions](blockchain/api/api-pending-transactions.md)
-* [Blockchain CLI](blockchain/blockchain-cli.md)
+* [Blockchain Wallet CLI](blockchain/blockchain-cli.md)
 * [Run Your Own Miner](blockchain/run-your-own-miner.md)
 * [Run an API Full Node](blockchain/setting-up-an-api-full-node.md)
 * [Ledger Hardware Wallet](blockchain/ledger-hardware-wallet.md)

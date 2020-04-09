@@ -2,7 +2,7 @@
 description: Full usage details on the Helium Wallet CLI
 ---
 
-# Blockchain CLI
+# Blockchain Wallet CLI
 
 ![](../.gitbook/assets/artboard-copy-20.jpg)
 
