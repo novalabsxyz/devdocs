@@ -91,5 +91,5 @@ The main attack vector that we are concerned with, then, is a computer running m
 
    Example: the user runs `./helium-ledger-app pay IntendedAddress amount`, yeet the program again uses a hard-coded address
 
-To combat these attacks, the makes use of the embedded display on the Nano S. Data sent to/from the Nano S is displayed on the screen so the user can verify that the computer is not lying about what it sent or received. In the interest of user-friendliness, we would like to display as little information as much as possible, but each omission brings with it the risk of introducing a vulnerability. Therefore, the app displays all data by default, and omits data only after subjecting the omission to extreme scrutiny.
+To combat these attacks, the app makes use of the embedded display on the Nano S. Data sent to/from the Nano S is displayed on the screen so the user can verify that the computer is not lying about what it sent or received. In the interest of user-friendliness, we would like to display as little information as much as possible, but each omission brings with it the risk of introducing a vulnerability. Therefore, the app displays all data by default, and omits data only after subjecting the omission to extreme scrutiny.
 
