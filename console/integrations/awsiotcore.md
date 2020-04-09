@@ -70,7 +70,7 @@ This topic is defined in the **Topic** field when creating the AWS IoT intgerati
 
 **Publish to:** `helium/devices/{Device ID}/down`
 
-Example: `helium/devices/3c822699-37fd-4df6-a84d-93037a450843/down`
+Example: `helium/devices/4f10d99a-e22e-4007-a3f0-6af3bc63acfe/down`
 
 ## AWS IoT MQTT Messages
 
