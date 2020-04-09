@@ -8,7 +8,7 @@ description: Migrating to the Helium Network
 
 This guide will help you connect a Laird Sentrius RG191 to a Helium Miner. This will allow your gateway to participate in the Helium Network and to provide coverage!
 
-![](../../.gitbook/assets/image%20%2848%29.png)
+![](../../.gitbook/assets/image%20%2850%29.png)
 
 [Laird Sentrius™ RG1xx LoRaWAN-Enabled Gateway](https://www.lairdconnect.com/wireless-modules/lorawan-solutions/sentrius-rg1xx-lora-enabled-gateway-wi-fi-ethernet)
 
@@ -18,7 +18,7 @@ Following the instructions in the [Quick Start Guide](https://connectivity-stagi
 
 ## Ensure firmware is up to date:
 
-![](../../.gitbook/assets/image%20%2813%29.png)
+![](../../.gitbook/assets/image%20%2814%29.png)
 
 Follow the instructions in the [User Guide](https://connectivity-staging.s3.us-east-2.amazonaws.com/2020-03/CS-GUIDE-RG1xx%20v4_0.pdf) to update to the most recent version of the firmware. The Firmware URL will differ depending upon what version you are currently running.
 
@@ -26,7 +26,7 @@ Follow the instructions in the [User Guide](https://connectivity-staging.s3.us-e
 
 At the end of the update, you are prompted to reboot the gateway. Click Reboot. The gateway must be rebooted for the update to take effect.
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 ## Reconfigure sub-band frequencies to work with the Helium Network:
 
@@ -120,41 +120,41 @@ Rather than setting the sub-band frequencies by hand, you can upload a saved LoR
 ```
 {% endcode %}
 
-![](../../.gitbook/assets/image%20%2825%29.png)
+![](../../.gitbook/assets/image%20%2826%29.png)
 
 
 
 This is what the channels look like when configured for TTN:
 
-![](../../.gitbook/assets/image%20%2837%29.png)
+![](../../.gitbook/assets/image%20%2839%29.png)
 
 We need to make the following channel modifications to allow the gateway to work on the Helium Network:
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../../.gitbook/assets/image%20%2825%29.png)
 
-![](../../.gitbook/assets/image%20%2812%29.png)
+![](../../.gitbook/assets/image%20%2813%29.png)
 
 
 
 It should come out looking like this:
 
-![](../../.gitbook/assets/image%20%2844%29.png)
+![](../../.gitbook/assets/image%20%2846%29.png)
 
 ## Monitor traffic coming through the device:
 
 Click the "Start Polling" button in the upper-left, and, if you have a Helium node in the vicinity, you should start to see traffic:
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
 By clicking on a row, we can examine the packet details:
 
-![](../../.gitbook/assets/image%20%2820%29.png)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 A live logging console may be pulled up using the arrows in the lower-left of the screen. Make sure to set it to Start Updating:
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2843%29.png)
 
 ## **Connecting to a Helium Miner**
 
