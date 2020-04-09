@@ -42,11 +42,11 @@ Select "**Attach existing policies directly**" and type "**AWSIoTConfigAccess"**
 Ensure you record and store these keys securely, as you will not have an opportunity to get access to them again!
 {% endhint %}
 
-Back in the **Helium Console**, enter the credentials we just created under **AWS Connection Details**:
+Back in the **Helium Console**, enter the credentials we just created under **AWS Connection Details,** as well as the AWS region that you would like AWS IoT to run in.
 
 ![](../../.gitbook/assets/image%20%2846%29.png)
 
-For **Topic**,  enter an MQTT compatible topic. For now, let's just enter `sensor`.
+The **Topic** field is the AWS IoT MQTT topic that this integration will publish uplink messages to, from devices.
 
 Finally, we give our new Integration a name:
 
@@ -57,6 +57,79 @@ And click **Create Integration**. Your new Integration is now ready for use.
 ### Connecting Integrations to Devices
 
 Devices are connected to integrations through the use of Labels. Labels are named identifiers, that can be used to associate an integration with a device. To connect one or more devices to one or more integrations, simply attach the same label to both the device and integration. Labels need to be created before attaching them to devices and integrations. You can read more about how to do that [here](https://developer.helium.com/console/labels).
+
+## AWS IoT MQTT Topic composition:
+
+### Device Uplink \(Receive Data from Device\)
+
+This topic is defined in the **Topic** field when creating the AWS IoT intgeration.
+
+**Subscribe to:** `{custom_topic}`
+
+### Device Downlink \(Send Data to Device\)
+
+**Publish to:** `helium/devices/{Device ID}/down`
+
+Example: `helium/devices/3c822699-37fd-4df6-a84d-93037a450843/down`
+
+## AWS IoT MQTT Messages
+
+To send data to a device, use JSON with a `payload_raw` field with a base64 encoded string.  
+**Sending Data to Device \(Downlink\):**
+
+```javascript
+{
+   "payload_raw": "encoded_string"
+}
+```
+
+When receiving data from a device, the messages will be in JSON and look like the following. The data from the device is in the `payload` field, and is a base64 encoded string.  
+**Receiving data from Device \(Uplink\):**
+
+```javascript
+{
+  "app_eui": "06B02F1A0E482128",
+  "dev_eui": "5F67F99E10B47006",
+  "devaddr": "1A2FB006",
+  "fcnt": 10,
+  "hotspots": [
+    {
+      "frequency": 911.9000244140625,
+      "id": "112ErPy4pa8bRBQj9XgtRrHdk4i4ciTzB5gHwBbFupgNnwaGdExi",
+      "name": "mammoth-tartan-tortoise",
+      "reported_at": 1586466818,
+      "rssi": -57,
+      "snr": 12.5,
+      "spreading": "SF9BW125",
+      "status": "success"
+    },
+    {
+      "frequency": 911.9000244140625,
+      "id": "112kFNJoxBYn7UWwZqUABrTXjhn7mkP8ePrbi6w9Hj1NXJfodwP3",
+      "name": "howling-gauze-guppy",
+      "reported_at": 1586466818,
+      "rssi": -91,
+      "snr": 13,
+      "spreading": "SF9BW125",
+      "status": "success"
+    }
+  ],
+  "id": "4f10d99a-e22e-4007-a3f0-6af3bc63acfe",
+  "metadata": {
+    "labels": [
+      {
+        "id": "0ec71594-de64-4794-acd7-9ace0b7137a3",
+        "name": "aws-iot-integration-label",
+        "organization_id": "0c3fbfb6-f8ed-4dbe-af7c-1a86bf372764"
+      }
+    ]
+  },
+  "name": "Sparkfun Pro RF",
+  "payload": "AWcA8AJodANzJ18Ecc04B9CYMAWGyVCIuDaw",
+  "port": 1,
+  "reported_at": 1586466818
+}
+```
 
 ### Viewing Integration in AWS IoT Core
 
