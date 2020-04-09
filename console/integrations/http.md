@@ -12,6 +12,8 @@ description: How to set up HTTP Integration for your Helium Devices.
 
 To add a Integration, go to **Integrations** on the left-hand menu. Select the integration to add - in this case, the **HTTP** integration.
 
+![](../../.gitbook/assets/integrations-http.png)
+
 The next step is to paste the HTTP endpoint.
 
 If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. [Requestbin](https://www.requestbin.com) and [Beeceptor](https://www.beeceptor.com)provide tools to make an HTTP endpoint quickly and easily.

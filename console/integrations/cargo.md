@@ -14,6 +14,8 @@ description: Cargo is an in-house mapping tool used here at Helium.
 
 To add an integration, go to **Integrations** on the left-hand menu. Select the integration to add - in this case, the **Cargo** integration.
 
+![](../../.gitbook/assets/integrations-cargo.png)
+
 The next step is to name the integration.
 
 Last, apply any optional Labels. For more information on Labels please visit the [Labels guide](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/console/labels/README.md).

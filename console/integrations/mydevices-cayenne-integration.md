@@ -16,7 +16,7 @@ description: How to set up a Cayenne dashboard for your Helium Devices.
 
 To add a **myDevices Cayenne** Integration, go to Integrations on the left-hand menu. Select the integration to add, in this case, the **myDevices Cayenne** integration:
 
-![](../../.gitbook/assets/mydevices_cayenne_integration.png)
+![](../../.gitbook/assets/integrations-cayenne.png)
 
 The next step is to name the integration
 

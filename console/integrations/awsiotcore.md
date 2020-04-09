@@ -12,7 +12,7 @@ description: How to connect your Helium Devices directly to AWS IoT Core.
 
 To add an **AWS IoT Core Integration**, go to **Integrations** on the left-hand menu. Select the integration to add - in this case, the **AWS IoT Core** integration:
 
-![](../../.gitbook/assets/aws001.png)
+![](../../.gitbook/assets/integrations-aws-iot-core.png)
 
 The next step is to create a new user with limited permissions that this Integration will use.
 

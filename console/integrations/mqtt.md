@@ -12,6 +12,8 @@ description: How to set up MQTT Integration for your Helium Devices.
 
 To add an integration, go to **Integrations** on the left-hand menu. Select the integration to add - in this case, the **MQTT** integration.
 
+![](../../.gitbook/assets/integrations-mqtt.png)
+
 The next step is to paste your MQTT broker endpoint, and optional topic prefix.
 
 ## Connecting Integrations to Devices
