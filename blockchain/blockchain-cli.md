@@ -13,7 +13,7 @@ The Wallet CLI source code [is available on GitHub](https://github.com/helium/he
 {% endhint %}
 
 {% hint style="info" %}
-This documentation is current as of **v1.1.3.**
+This documentation is current as of **v1.1.4.**
 {% endhint %}
 
 {% hint style="info" %}
