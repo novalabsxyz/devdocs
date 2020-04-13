@@ -12,7 +12,7 @@ Fetches the status for a given pending transaction hash.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="hash" type="string" %}
+{% api-method-parameter name="hash" type="string" required=true %}
 Hash of the pending transaction to fetch. 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -24,18 +24,16 @@ Hash of the pending transaction to fetch.
 Cake successfully retrieved.
 {% endapi-method-response-example-description %}
 
-```
-{    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Could not find a cake matching this query.
-{% endapi-method-response-example-description %}
-
-```
-{    "message": "Ain't no cake like that."}
+```javascript
+{
+  "data": {
+    "updated_at": "2020-04-13T04:19:31.713044Z",
+    "status": "pending",
+    "hash": "Coy2WqcmCt6k8MgSq3hK0XW1Um5NtwHskoY1zwYADKE",
+    "failed_reason": "",
+    "created_at": "2020-04-13T04:19:23.105879Z"
+  }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -77,8 +75,12 @@ A base64 encoded transaction. An exmple of the both of a post  request:
 
 {% endapi-method-response-example-description %}
 
-```
-
+```javascript
+{
+  "data": {
+    "hash": "Coy2WqcmCt6k8MgSq3hK0XW1Um5NtwHskoY1zwYADKE"
+  }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
