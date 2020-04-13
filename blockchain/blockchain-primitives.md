@@ -82,7 +82,7 @@ Users have several options for creating Helium wallets and managing their privat
 * If you’re using the Helium Mobile Wallet \([iOS](https://apps.apple.com/app/id1450463605), [Android](https://play.google.com/store/apps/details?id=com.helium.wallet&hl=en_US)\), your private key is encrypted locally \(and can be recreated on another mobile device using the 12 word passphrase generated when your wallet was first created\);
 * Using the [Helium CLI Wallet](https://github.com/helium/helium-wallet-rs), users are responsible for creating, storing, and securing a wallet’s private key and associated passphrase;
 
-Both the Helium Mobile Wallet and the CLI Wallet create and use keys based on the ed25519 public key signature system. The CLI can also support NIST p-256 keys. And the Helium blockchain supports both key types.
+Both the Helium Mobile Wallet and the CLI Wallet create and use keys based on the [ed25519 public key signature system](https://ed25519.cr.yp.to/). The CLI can also support NIST p-256 keys. And the Helium blockchain supports both key types.
 
 ### Public Key Format
 
@@ -98,8 +98,4 @@ The key type indicates the kind of key that follows. The following key types are
 | ed25519 | 1 |
 
 Since this is a public key the base58check encoded version is `0`
-
-### Extended Reading
-
-* [edd25519 public-key Signature System](https://ed25519.cr.yp.to/)
 
