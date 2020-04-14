@@ -87,5 +87,5 @@ Here is an example of data received:
 | **name** | String | A human-friendly three-word encoding of the hotspot's public key; link to [JavaScript](https://github.com/helium/angry-purple-tiger) and [Erlang](https://github.com/helium/erl_angry_purple_tiger) implementations |
 | **rssi** | Number | Received Signal Strength Indicator is reported by the hotspot and indicates how strong the signal device's radio signal was; the larger the number \(closer to 0\), the better the signal |
 | **snr** | Number | In dB, Signal to Noise Ratio is reported by the hotspot to indicate how clear the signal was relative to environmental noise; this generally ranges between -20 and +10 and the larger the number \(closer to 10 dB\) the better |
-| **spreading** | String | LoRa Spreading Factor and Bandwidth used for the radio transmission. In the US, spreading factor ranges from 7 to 10 and bandwidth is always 125 kHz. For example, "SF7BW125" means a Spreading Factor of 7 was used and a channel width of 125 kHz. |
+| **spreading** | String | LoRa Spreading Factor and Bandwidth used for the radio transmission. In the US, spreading factor ranges from 7 to 10 and bandwidth is always 125 kHz. For example, "SF7BW125" means a Spreading Factor of 7 was used and a channel width of 125 kHz |
 
