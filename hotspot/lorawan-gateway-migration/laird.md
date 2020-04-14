@@ -150,8 +150,6 @@ By clicking on a row, we can examine the packet details:
 
 ![](../../.gitbook/assets/image%20%2821%29.png)
 
-![](../../.gitbook/assets/image%20%2827%29.png)
-
 A live logging console may be pulled up using the arrows in the lower-left of the screen. Make sure to set it to Start Updating:
 
 ![](../../.gitbook/assets/image%20%2843%29.png)
