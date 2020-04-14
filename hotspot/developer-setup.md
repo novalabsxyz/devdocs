@@ -112,10 +112,11 @@ $ git clone https://github.com/Lora-net/lora_gateway
 We'll then download the Helium-specific packet forwarder configuration file :
 
 ```text
-wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
+$ cd packet_forwarder/lora_pkt_fwd
+$ wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
 ```
 
-Note that we should have downloaded the configuration file to the Linux home directory. This will be important when launching the binary.
+Note that we should have downloaded the configuration file to a specific directory. This will be important when launching the binary.
 
 ### One Quick Change
 
@@ -151,10 +152,11 @@ Before we can start the packet forwarder you will often have to issue a reset co
 We can now start the packet forwarder:
 
 ```text
-./lora_pkt_fwd/lora_pkt_fwd
+$ cd ~/packet_forwarder/lora_pkt_fwd
+./lora_pkt_fwd
 ```
 
-Note that we are doing this from the Linux home directory. This is important for finding the configuration file downloaded previously.
+Note that we are doing from `~/packet_forwarder/lora_pkt_fwd` ; this is important for finding the configuration file downloaded previously.
 
 That's it, now you're running a packet forwarder! The last step is connecting to a Helium Miner.
 
