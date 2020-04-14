@@ -9,6 +9,7 @@
 * [CLI](console/cli.md)
 * [Users](console/users.md)
 * [Integrations](console/integrations/README.md)
+  * [JSON Schema](console/integrations/json-schema.md)
   * [MQTT](console/integrations/mqtt.md)
   * [HTTP](console/integrations/http.md)
   * [Cargo](console/integrations/cargo.md)
@@ -71,5 +72,6 @@
 * [LongFi Network Server](longfi/longfi-network-server.md)
 * [LoRaWAN Versions](longfi/routerv3-and-lorawan.md)
 * [Data Credits](longfi/data-credits.md)
+* [Regional Channels](longfi/regional-channels.md)
 * [Routing](longfi/longfi-routing.md)
 

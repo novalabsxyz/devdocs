@@ -21,20 +21,9 @@ In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Appli
 
 Next, you need to ensure the device can use LoRaWAN US channels `48-55` \(also known as `Sub-band 7`\). This process can vary by device. Some come bundled with configuration utilities, others you will have to recompile and flash the firmware yourself. It is also possible that the network negotiates the sub-channel band itself.
 
-The frequency table for the US915 band is below. By default, the end node will use all channels \(8~15\) for the OTAA join process. After OTAA JOINED, the end node will use these channels \(8~15\) to send uplink packets.
+The full frequency table for the US915 band is found [here](../../longfi/regional-channels.md) but comparison is available below. 
 
-### LoRaWAN US915 Uplink Channels \(125KHz,4/5,Unit:MHz,CHS=0\)
-
-| Sub-band |  |  |  |  |  |  |  |  | Channels |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | 902.3 | 902.5 | 902.7 | 902.9 | 903.1 | 903.3 | 903.5 | 903.7 | 0-7 |
-| **2 \(TTN\)** | **903.9** | **904.1** | **904.3** | **904.5** | **904.7** | **904.9** | **905.1** | **905.3** | **8-15** |
-| 3 | 905.5 | 905.7 | 905.9 | 906.1 | 906.3 | 906.5 | 906.7 | 906.9 | 16-23 |
-| 4 | 907.1 | 907.3 | 907.5 | 907.7 | 907.9 | 908.1 | 908.3 | 908.5 | 24-31 |
-| 5 | 908.7 | 908.9 | 909.1 | 909.3 | 909.5 | 909.7 | 909.9 | 910.1 | 32-39 |
-| 6 | 910.3 | 910.5 | 910.7 | 910.9 | 911.1 | 911.3 | 911.5 | 911.7 | 40-47 |
-| **7 \(Helium\)** | **911.9** | **912.1** | **912.3** | **912.5** | **912.7** | **912.9** | **913.1** | **913.3** | **48-55** |
-| 8 | 913.5 | 913.7 | 913.9 | 914.1 | 914.3 | 914.5 | 914.7 | 914.9 | 56-63 |
+By default, LoRaWAN compliant end nodes should use all channels \(0-63\) for the OTAA join process. After OTAA Joined, the first uplink packet on sub-band 7 will receive a downlink response with an ADR command with the appropriate channel mask; thereafter, the end node should use these channels \(48-55\) to send uplink packets.
 
 ### Comparison \(MHz\):
 
