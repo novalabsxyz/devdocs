@@ -10,5 +10,5 @@ Device Management includes:
 * Device ID registration and seamless, secure onboarding and authentication
 * Data Credits for utilizing the Helium Network
 
-Console is available as a free to use hosted application at [https://console.helium.com](https://console.helium.com), or can be downloaded and hosted on your own infrastructure. The code is available online at [https://github.com/helium/console](https://github.com/helium/console) and can be run on any linux or macOS system.
+Console is available as a free to use hosted application at [https://console.helium.com](https://console.helium.com).
 
