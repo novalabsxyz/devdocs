@@ -6,10 +6,10 @@ Running a Helium Miner is a great way to get some exposure to the blockchain and
 
 
 
-As you can see above, the Miner is critical in routing data across the Helium Network. It is one of three pieces:
+As you can see above, the Miner is central in routing data across the Helium Network. It is one of three pieces:
 
 * Packet Forwarder: this is a utility that interacts with the radio front-end and sends and receives raw radio packets with the Helium Miner
-* Miner: the Helium Blockchain comes into the picture here; the Miner is responsible for routing packets to the appropriate Router \(read more about that here\) entering into microtransactions brokered via libp2p
+* Miner: the Helium Blockchain comes into the picture here; the Miner is responsible for routing packets to the appropriate Router \(see [our Routing article](../longfi/longfi-routing.md)\) and entering into micro-transactions brokered via libp2p
 * Router: a Helium compatible LoRaWAN Network Server, basically; this component is interested in receiving the packets relating to its devices and handles downlink responses when appropriate
 
 In addition to packet routing, the Miner is connecting to other Miners over libp2p where, amongst other things, it is gossiping and saving blocks, while maintaining a ledger of the blockchain.
