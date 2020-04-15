@@ -10,5 +10,5 @@ Device Management includes:
 * Device ID registration and seamless, secure onboarding and authentication
 * Data Credits for utilizing the Helium Network
 
-Console is available as a free to use hosted application at [https://console.helium.com](https://console.helium.com).
+Console is available as a free to use hosted application at [console.helium.com](https://console.helium.com).
 
