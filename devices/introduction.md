@@ -12,7 +12,7 @@ The Helium Network was built to transfer device data. Here you will learn about 
 
 ### Adding New Devices
 
-If you're ready to add your LoRaWAN devices to the Helium Network, head over the [Co](../console/quickstart.md)[sole Quickstart](../console/quickstart.md).
+If you're ready to add your LoRaWAN devices to the Helium Network, head over the [Console Quickstart](../console/quickstart.md).
 
 We also have a growing list of sensors we've[ pre-certified and documented on the Helium Network](lorawan-devices/) for your convenience.
 
