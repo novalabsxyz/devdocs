@@ -6,7 +6,7 @@ The Helium Developer Kit is the perfect development setup to get started on the 
 
 ### Part List & Resource Links
 
-#### B-L072Z-LRWAN1 - **STM32L0 Discovery kit LoRa, Sigfox, low-power wireless**
+#### B-L072Z-LRWAN1 - **STM32L0 Discovery Kit** 
 
 * [Product Page](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html)
 * [Manual](https://www.st.com/resource/en/user_manual/dm00352032-getting-started-with-ultralowpower-stm32l0-and-lora-discovery-kit-stmicroelectronics.pdf)
