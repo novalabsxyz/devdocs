@@ -580,7 +580,7 @@ Cursor for the  page to fetch
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.helium.io" path="/v1/blocks/:hash" %}
+{% api-method method="get" host="https://api.helium.io" path="/v1/blocks/hash/:hash" %}
 {% api-method-summary %}
 Block at Hash
 {% endapi-method-summary %}
@@ -612,7 +612,7 @@ Block hash for the block to fetch
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.helium.io" path="/v1/blocks/:hash/transactions" %}
+{% api-method method="get" host="https://api.helium.io" path="/v1/blocks/hash/:hash/transactions" %}
 {% api-method-summary %}
 Block at Hash Transactions
 {% endapi-method-summary %}
