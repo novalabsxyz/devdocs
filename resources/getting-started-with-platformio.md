@@ -6,7 +6,7 @@ description: Helium development using PlatformIO within Visual Studio Code
 
 ![The very fine PlatformIO logo](../.gitbook/assets/image%20%2813%29.png)
 
-### PlatformOI - An Easier Way to Develop Embedded Applications 
+### PlatformIO - An Easier Way to Develop Embedded Applications 
 
 [PlatformIO ](https://platformio.org/)is a cross-platform, cross-architecture, multiple framework, professional tool for embedded systems engineers and for software developers who write applications for embedded products.
 
