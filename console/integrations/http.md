@@ -48,7 +48,7 @@ View the details of your integration by clicking on the Integration name.
 
 ## Downlink with HTTP
 
-Currently, downlink via HTTP is only supported by providing a response the HTTP Post of an Uplink packet. In the body of the response, provide a downlink packet by using the [JSON schema documented here](json-schema.md).
+Currently, downlink via HTTP is only supported by providing a response to the HTTP Post of an Uplink packet. In the body of the response, provide a downlink packet by using the [JSON schema documented here](json-schema.md).
 
 ## Connecting Integrations to Devices
 
