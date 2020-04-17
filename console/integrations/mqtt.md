@@ -38,33 +38,7 @@ Example without prefix: `helium/3c822699-37fd-4df6-a84d-93037a450843/tx`
 
 ## MQTT Messages
 
-To send data to a device, use JSON with a `payload_raw` field with a base64 encoded string.  
-**Sending Data to Device \(Downlink\):**
-
-```javascript
-{
-   "payload_raw": "encoded_string"
-}
-```
-
-When receiving data from a device, the messages will be in JSON and look like the following.  
-**Receiving data from Device \(Uplink\):**
-
-```javascript
-{
-   "app_eui": "415D0A10B5DD763A",
-   "dev_eui": "7778223FAE245EA5",
-   "gateway": "mean-lava-fox",
-   "id": "3c822699-37fd-4df6-a84d-93037a450843",
-   "name": "Tracking Device",
-   "payload": "SGVsbG8sIHdvcmxkIQ==",
-   "rssi": -24.0,
-   "sequence": 100,
-   "snr": 9.800000190734863,
-   "spreading": "SF8BW500",
-   "timestamp": 1583361466
-}
-```
+The MQTT for downlink and uplink follow the [JSON schema documented here.](json-schema.md)
 
 ## Connecting Integrations to Devices
 

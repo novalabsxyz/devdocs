@@ -33,6 +33,7 @@
 
 ## Developer Resources <a id="resources"></a>
 
+* [Getting started with Helium and PlatformIO](resources/getting-started-with-platformio.md)
 * [Webinars](resources/webinars/README.md)
   * [Helium and LoRaWAN Webinar](resources/webinars/03-26-2020-webinar.md)
 * [Videos](resources/videos.md)
