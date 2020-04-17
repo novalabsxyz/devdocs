@@ -4,8 +4,6 @@ Running a Helium Miner is a great way to get some exposure to the blockchain and
 
 ![](../.gitbook/assets/architecture.png)
 
-
-
 As you can see above, the Miner is central in routing data across the Helium Network. It is one of three pieces:
 
 * Packet Forwarder: this is a utility that interacts with the radio front-end and sends and receives raw radio packets with the Helium Miner
@@ -19,21 +17,19 @@ In this guide, we offer two ways of getting a Miner running:
 * deploying a plug-and-play AMI on AWS, if you want an easy setup and to avoid the initial sync time
 * building from source on a Debian-based system, if you are feeling adventurous
 
-A Docker container for the miner is coming soon as well, which will allow for an easy setup without restricting you to AWS.  
-
+A Docker container for the miner is coming soon as well, which will allow for an easy setup without restricting you to AWS.
 
 ## Deploy an AMI
 
-To deploy a ready made AMI, make sure you are logged into your AWS account, then go to: 
+To deploy a ready made AMI, make sure you are logged into your AWS account, then go to:
 
-[**https://us-east-2.console.aws.amazon.com/ec2**](https://us-east-2.console.aws.amazon.com/ec2)  
-
+[**https://us-east-2.console.aws.amazon.com/ec2**](https://us-east-2.console.aws.amazon.com/ec2)
 
 On the left menu, click Images -&gt; AMIs
 
 ![](../.gitbook/assets/ami.png)
 
-To the left of the search bar,  select “Public Images” and then search `AMI ID : ami-04c4cca34b82100dc`
+To the left of the search bar, select “Public Images” and then search `AMI ID : ami-04c4cca34b82100dc`
 
 You can quickly launch by clicking Launch, but if you’d rather launch from a region other than us-east2, you’ll want to make a Copy of the AMI to that region before launching.
 
@@ -87,7 +83,7 @@ $ sudo apt-get install -f
 
 ### Compile the Miner
 
-Now it's time to build the miner. This will  take a while:
+Now it's time to build the miner. This will take a while:
 
 ```text
 $ cd miner
@@ -153,7 +149,7 @@ alias miner=$HOME/miner/_build/prod/rel/miner/bin/miner
 
 ### Starting Up
 
-If you are using the AWS AMI, systemd is running the Miner for you. Otherwise,  you can run the Miner in the background, or via an interactive console. 
+If you are using the AWS AMI, systemd is running the Miner for you. Otherwise, you can run the Miner in the background, or via an interactive console.
 
 {% hint style="info" %}
 **Note**: because we assume you did not change `log_root`, `base_dir` or `update_dir` in the previous step you'll have to run these commands as root using `sudo` otherwise the default `pi` user won't have sufficient permission to access these directories. If you changed these values in the previous step, you won't have to run as root here.
@@ -183,7 +179,7 @@ If you run in console mode, you'll need to open another SSH session to the Pi to
 
 If you are using the AWS AMI, the Miner has the genesis block loaded and is at least partially synced. If you are running from source or have wiped your blockchain data, you'll need to load the genesis block.
 
-First, you need a genesis block for the main network. 
+First, you need a genesis block for the main network.
 
 ```text
 wget https://github.com/helium/blockchain-api/raw/master/priv/prod/genesis
@@ -201,7 +197,7 @@ You should now be able to check your block height and see a height of 1, which i
 miner info height
 ```
 
-The first number is the election epoch and the second number is the block height of your miner. 
+The first number is the election epoch and the second number is the block height of your miner.
 
 As blocks get gossiped around from peers in your peerbook and added to your local chain you should see both of these numbers go up. It will take several hours or more to catch up to the tip of the blockchain.
 
@@ -289,7 +285,7 @@ If you are syncing, you should see something like this:
 
 ```text
 ~$ miner info height
-6889		280756
+6889        280756
 ```
 
 The first number is the election epoch and the second number is the block height of your miner. If you just launched an AMI instance, your Miner is been disconnected, or you simply have a slow connection, you may be a few blocks behind. To check, you can either check the mobile app, check [the browser-based block explorer](https://network.helium.com/blocks), or run a simple curl command to check in a Terminal:
@@ -301,7 +297,7 @@ The first number is the election epoch and the second number is the block height
 
 ### Providing Coverage
 
-While participating in libp2p is helpful for the network, the Helium Blockchain does not exist for its own sake. It is there to incentivize coverage and one of the ways to earn tokens as a coverage provider for Helium is by routing IoT traffic. 
+While participating in libp2p is helpful for the network, the Helium Blockchain does not exist for its own sake. It is there to incentivize coverage and one of the ways to earn tokens as a coverage provider for Helium is by routing IoT traffic.
 
 To learn more about this, check out the [Build a Hotspot](../hotspot/developer-setup.md) section.
 

@@ -4,6 +4,16 @@
 
 The Helium Developer Kit is the perfect development setup to get started on the Helium network. It consists of two hardware parts, the main development board with a LoRa capable radio, and an expansion shield with six environmental and motion MEMS sensors. This page will provide all the information you need to quickly and easily program your development board with the correct firmware, add the device to the Helium network using the Helium Console, and finally route the sensor data to somewhere you can view your data or begin building your application!
 
+### Buy Your Helium Developer Kit
+
+{% hint style="info" %}
+[Buy on Mouser](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?State=EDIT&ProjectGUID=a405f943-5ada-49c3-b981-0a38541ed8ab)
+{% endhint %}
+
+{% hint style="info" %}
+[Buy on Digi-Key](https://www.digikey.com/ordering/shoppingcart)
+{% endhint %}
+
 ### Part List & Resource Links
 
 #### B-L072Z-LRWAN1 - **STM32L0 Discovery Kit** 
