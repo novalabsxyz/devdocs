@@ -126,8 +126,6 @@ We need to make the following channel modifications to allow the gateway to work
 
 ![](../../.gitbook/assets/image%20%2846%29.png)
 
-
-
 It should come out looking like this:
 
 ![](../../.gitbook/assets/image%20%2874%29.png)
