@@ -28,11 +28,11 @@ The Browan Object Locator is shipped with device credentials \(DevEUI, AppEUI an
 
 If you look at the back of the Object Locator, you will notice a QR Code, along with a serial number. Match that serial number with the value that the manufacturer has provided to determine the appropriate credentials. 
 
-![Browan Object Locator Serial Number](../../.gitbook/assets/image%20%2862%29.png)
+![Browan Object Locator Serial Number](../../.gitbook/assets/image%20%2864%29.png)
 
 Once you have the device credentials, you can simply [add a device](../../console/adding-devices.md) in [Console](../../console/introduction.md) with these device credentials. 
 
-![Adding Browan Object Locator in Console](../../.gitbook/assets/image%20%2820%29.png)
+![Adding Browan Object Locator in Console](../../.gitbook/assets/image%20%2821%29.png)
 
 ### Usage: 
 
@@ -50,7 +50,7 @@ If the Object Locator is in motion, it will transmit every 30 seconds.
 
 The Browan Object Locator payload is compatible with the [Helium Cargo](../../console/integrations/cargo.md) location visualization tool. 
 
-![Browan Object Locator Payload](../../.gitbook/assets/image%20%2850%29.png)
+![Browan Object Locator Payload](../../.gitbook/assets/image%20%2852%29.png)
 
 ###  
 

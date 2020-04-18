@@ -142,11 +142,11 @@ myDevices currently only includes the Digital Matter Oyster in their device libr
 
 When you are adding a device/widget in Cayenne, look for the **Digital Matter Oyster** under **Helium.** 
 
-![myDevices Cayenne - Adding a Digital Matter Oyster](../../.gitbook/assets/image%20%2810%29.png)
+![myDevices Cayenne - Adding a Digital Matter Oyster](../../.gitbook/assets/image%20%2811%29.png)
 
 Copy the device's **DevEUI** into the field. This value should correspond to the associated Digital Matter Oyster DevEUI in **Console.** Then, click **Add device.** 
 
-![myDevices Cayenne - Adding a Digital Matter Oyster](../../.gitbook/assets/image%20%2849%29.png)
+![myDevices Cayenne - Adding a Digital Matter Oyster](../../.gitbook/assets/image%20%2851%29.png)
 
 That's it for adding a Digital Matter Oyster in myDevices Cayenne! 
 
