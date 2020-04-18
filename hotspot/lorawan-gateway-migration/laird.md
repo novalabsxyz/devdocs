@@ -120,8 +120,6 @@ Rather than setting the sub-band frequencies by hand, you can upload a saved LoR
 
 This is what the channels look like when configured for TTN:
 
-![](../../.gitbook/assets/image%20%2845%29.png)
-
 ![](../../.gitbook/assets/image%20%2861%29.png)
 
 We need to make the following channel modifications to allow the gateway to work on the Helium Network:
