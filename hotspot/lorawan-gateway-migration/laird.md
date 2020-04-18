@@ -8,7 +8,7 @@ description: Migrating to the Helium Network
 
 This guide will help you connect a Laird Sentrius RG191 to a Helium Miner. This will allow your gateway to participate in the Helium Network and to provide coverage!
 
-![](../../.gitbook/assets/image%20%2881%29.png)
+![](../../.gitbook/assets/image%20%2882%29.png)
 
 [Laird Sentrius™ RG1xx LoRaWAN-Enabled Gateway](https://www.lairdconnect.com/wireless-modules/lorawan-solutions/sentrius-rg1xx-lora-enabled-gateway-wi-fi-ethernet)
 
@@ -24,7 +24,7 @@ Follow the instructions in the [User Guide](https://connectivity-staging.s3.us-e
 
 At the end of the update, you are prompted to reboot the gateway. Click Reboot. The gateway must be rebooted for the update to take effect.
 
-![](../../.gitbook/assets/image%20%2876%29.png)
+![](../../.gitbook/assets/image%20%2877%29.png)
 
 ## Reconfigure sub-band frequencies to work with the Helium Network:
 
@@ -120,23 +120,23 @@ Rather than setting the sub-band frequencies by hand, you can upload a saved LoR
 
 This is what the channels look like when configured for TTN:
 
-![](../../.gitbook/assets/image%20%2861%29.png)
+![](../../.gitbook/assets/image%20%2862%29.png)
 
 We need to make the following channel modifications to allow the gateway to work on the Helium Network:
 
-![](../../.gitbook/assets/image%20%2845%29.png)
+![](../../.gitbook/assets/image%20%2846%29.png)
 
 
 
 It should come out looking like this:
 
-![](../../.gitbook/assets/image%20%2873%29.png)
+![](../../.gitbook/assets/image%20%2874%29.png)
 
 ## Monitor traffic coming through the device:
 
 Click the "Start Polling" button in the upper-left, and, if you have a Helium node in the vicinity, you should start to see traffic:
 
-![](../../.gitbook/assets/laird002%20%281%29.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 By clicking on a row, we can examine the packet details:
 
@@ -144,7 +144,7 @@ By clicking on a row, we can examine the packet details:
 
 A live logging console may be pulled up using the arrows in the lower-left of the screen. Make sure to set it to Start Updating:
 
-![](../../.gitbook/assets/image%20%2869%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
 
 ## **Connecting to a Helium Miner**
 

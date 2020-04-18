@@ -4,7 +4,7 @@ description: Helium development using PlatformIO within Visual Studio Code
 
 # Getting started with Helium and PlatformIO
 
-![The very fine PlatformIO logo](../.gitbook/assets/image%20%2814%29.png)
+![The very fine PlatformIO logo](../.gitbook/assets/image%20%2815%29.png)
 
 ### PlatformIO - An Easier Way to Develop Embedded Applications 
 
@@ -14,7 +14,7 @@ description: Helium development using PlatformIO within Visual Studio Code
 
 If you are used to developing using the Arduino IDE but constantly feel constrained by the environment, you are going to love what [PlatformIO ](https://platformio.org/)opens up for you.
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2844%29.png)
 
 
 
@@ -30,17 +30,17 @@ This guide will walk through installing PlatformIO and deploying a Helium Arduin
 2. Search for official PlatformIO IDE extension
 3. Install PlatformIO IDE. \([https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide)\)
 
-![](../.gitbook/assets/image%20%2868%29.png)
+![](../.gitbook/assets/image%20%2869%29.png)
 
 It is highly recommended to give the quick-start guide a read. It will help you navigate the new interface. [https://docs.platformio.org/en/latest/integration/ide/vscode.html\#quick-start](https://docs.platformio.org/en/latest/integration/ide/vscode.html#quick-start)
 
 In this tutorial, I will be using the [Helium Developer Kit](https://developer.helium.com/devices/devkit).
 
-![](../.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/image%20%2817%29.png)
 
 Once PlatformIO is installed, you should be welcomed to VSCode with the following "PIO Home" screen:
 
-![](../.gitbook/assets/image%20%2878%29.png)
+![](../.gitbook/assets/image%20%2879%29.png)
 
 ### Starting a new PlatformIO Project
 
@@ -84,7 +84,7 @@ Above, PlatformIO "knew" what platform we were building on and installed what wa
 
 If, on the **PIO Home** page, you select the "Devices" icon on the left, you will see the physical devices that are connected to your development machine, and what ports they are connected to:
 
-![](../.gitbook/assets/image%20%2872%29.png)
+![](../.gitbook/assets/image%20%2873%29.png)
 
  Notice that under **Description**, it says we are running "JLink" rather than "ST-Link". If we were to attempt to flash the board at this point, we would get a failure that looked like this:
 
@@ -116,7 +116,7 @@ What happened here? Well, we have this board set up to use a `SEGGER JTAG` inter
 
 Luckily, `SEGGER` has provided a method to \(non-destructively\) replace the ST-Link on our board with a JTAG interface.
 
-![](../.gitbook/assets/image%20%2859%29.png)
+![](../.gitbook/assets/image%20%2860%29.png)
 
 [Head here](https://www.segger.com/products/debug-probes/j-link/models/other-j-links/st-link-on-board/) to walk through the simple process. 
 
@@ -126,11 +126,11 @@ We then need to add one additional line to our `platformio.ini` file to let Plat
 
 The next time we build and attempt to upload our project, we will be presented with the following Terms of Use:
 
-![](../.gitbook/assets/image%20%2828%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 Accept this agreement, and you should see the following popup:
 
-![](../.gitbook/assets/image%20%2884%29.png)
+![](../.gitbook/assets/image%20%2885%29.png)
 
 And there you have it. At this point, we have successfully programmed an empty sketch onto our Helium Developer Kit using PlatformIO! Go forth and build magical things. 
 
