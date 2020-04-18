@@ -18,15 +18,11 @@ Following the instructions in the [Quick Start Guide](https://connectivity-stagi
 
 ## Ensure firmware is up to date:
 
-![](../../.gitbook/assets/image%20%2822%29.png)
-
 Follow the instructions in the [User Guide](https://connectivity-staging.s3.us-east-2.amazonaws.com/2020-03/CS-GUIDE-RG1xx%20v4_0.pdf) to update to the most recent version of the firmware. The Firmware URL will differ depending upon what version you are currently running.
 
 ![](../../.gitbook/assets/laird001.png)
 
 At the end of the update, you are prompted to reboot the gateway. Click Reboot. The gateway must be rebooted for the update to take effect.
-
-![](../../.gitbook/assets/image%20%2846%29.png)
 
 ## Reconfigure sub-band frequencies to work with the Helium Network:
 
@@ -120,8 +116,6 @@ Rather than setting the sub-band frequencies by hand, you can upload a saved LoR
 ```
 {% endcode %}
 
-![](../../.gitbook/assets/image%20%2839%29.png)
-
 
 
 This is what the channels look like when configured for TTN:
@@ -129,10 +123,6 @@ This is what the channels look like when configured for TTN:
 ![](../../.gitbook/assets/image%20%2859%29.png)
 
 We need to make the following channel modifications to allow the gateway to work on the Helium Network:
-
-![](../../.gitbook/assets/image%20%2838%29.png)
-
-![](../../.gitbook/assets/image%20%2821%29.png)
 
 
 
@@ -144,11 +134,7 @@ It should come out looking like this:
 
 Click the "Start Polling" button in the upper-left, and, if you have a Helium node in the vicinity, you should start to see traffic:
 
-![](../../.gitbook/assets/image%20%2811%29.png)
-
 By clicking on a row, we can examine the packet details:
-
-![](../../.gitbook/assets/image%20%2832%29.png)
 
 A live logging console may be pulled up using the arrows in the lower-left of the screen. Make sure to set it to Start Updating:
 
@@ -176,7 +162,7 @@ To verify that things are working, you can follow the logs **on the AWS instance
 tail -f /var/data/log/miner/console.log | grep lora
 ```
 
-At the very lease, you should see PULL\_DATA messages every few seconds. If so, then you've done it!
+At the very least, you should see PULL\_DATA messages every few seconds. If so, then you've done it!
 
 
 
