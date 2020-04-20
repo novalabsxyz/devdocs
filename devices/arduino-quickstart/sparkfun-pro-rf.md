@@ -110,6 +110,14 @@ To install, open your Arduino IDE:
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_library.png)
 
+#### Update IBM LMIC framekwork config.h
+
+This library requires that a config file be setup properly. After you have installed the `IBM LMIC framework` library, navigate to it's directory on your operating system found below. Next, replace the `config.h` file in this directory with this [config.h](https://github.com/helium/longfi-arduino/blob/master/Sparkfun-Pro-RF/longfi-us915/config.h) file.
+
+linux: /home/{user}/Arduino/libraries/IBM\_LMIC\_framework/src/lmic  
+windows: Documents/Arduino/libraries/IBM\_LMIC\_framework/src/lmic  
+mac os: Documents/Arduino/libraries/IBM\_LMIC\_framework/src/lmic
+
 ### Programming **Example Sketch**
 
 Now that we have the required Arduino board support and library installed, lets program the board with the provided example sketch.
