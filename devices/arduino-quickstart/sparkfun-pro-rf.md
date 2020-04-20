@@ -114,7 +114,7 @@ To install, open your Arduino IDE:
 
 Now that we have the required Arduino board support and library installed, lets program the board with the provided example sketch.
 
-To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://raw.githubusercontent.com/helium/longfi-arduino/master/sparkfun-pro-rf/longfi-us915.ino), copy and paste the entirety of it. 
+To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://github.com/helium/longfi-arduino/blob/master/Sparkfun-Pro-RF/longfi-us915/longfi-us915.ino), copy and paste the entirety of it. 
 
 Next we'll need to fill in the AppEUI, DevEUI, and AppKey, in the sketch, which you can find on the device details page on Console. Be sure to use the formatting buttons to match the endianess  and formatting required for the sketch, shown below.
 

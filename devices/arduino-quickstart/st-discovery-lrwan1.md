@@ -92,7 +92,7 @@ Search for `MCCI LMIC` and install the latest version of `MCCI LoRaWAN LMIC Libr
 
 ## LongFi Example Sketch and Sending Data
 
-This [an example sketch](https://github.com/helium/longfi-arduino/blob/master/longfi-us915/longfi-us915.ino) is included in the LongFi repository and we'll be using it for this demo.
+This [an example sketch](https://github.com/helium/longfi-arduino/blob/master/ST-B-L072Z-LRWAN1/longfi-us915/longfi-us915.ino) is included in the LongFi repository and we'll be using it for this demo.
 
 To deploy it, create a new sketch and copy the source code over. All you need to do is update it with the the `DevEUI`, `AppEUI`, and `AppKey` generated for you when you [create a device](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/console/quickstart/README.md) in [Helium Console](https://console.helium.com).
 
