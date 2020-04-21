@@ -110,7 +110,7 @@ To install, open your Arduino IDE:
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_library.png)
 
-#### Update IBM LMIC framekwork config.h
+#### Update IBM LMIC framework config.h
 
 This library requires that a config file be setup properly. After you have installed the `IBM LMIC framework` library, navigate to it's directory on your operating system found below. Next, replace the `config.h` file in this directory with this [config.h](https://github.com/helium/longfi-arduino/blob/master/Sparkfun-Pro-RF/longfi-us915/config.h) file.
 
@@ -134,7 +134,7 @@ At the top of the sketch, replace the three **FILL\_ME\_IN** fields, with the ma
 
 ### Selecting Board
 
-Next, we need to select the correct board to build for in the Arduion IDE.  Navigate to  \(**Select Tools &gt; Board: &gt; SparkFun SAMD21 Pro RF\).**
+Next, we need to select the correct board to build for in the Arduino IDE.  Navigate to  \(**Select Tools &gt; Board: &gt; SparkFun SAMD21 Pro RF\).**
 
 ### Enter Bootloader Mode
 
