@@ -34,13 +34,13 @@ For this example, you will need the following:
 
 ## Hardware Setup
 
-This step will cover adding an antenna and closing the LoRaWAN jumpers on this board. 
+This step will cover adding an antenna and closing the LoRaWAN jumpers on this board.
 
 ### Adding the Antenna
 
 You have two options for adding an antenna on this board.
 
-**U.FL Antenna:**  Connect any 915Mhz compatible antenna, for instance, [this ](https://www.mouser.com/ProductDetail/Anaren/66089-0906?qs=sGAEpiMZZMuBTKBKvsBmlGlvlFGR4gdSgkIgGKwINqg%3D)small, low cost antenna, to the U.FL port shown in the image below.
+**U.FL Antenna:** Connect any 915Mhz compatible antenna, for instance, [this ](https://www.mouser.com/ProductDetail/Anaren/66089-0906?qs=sGAEpiMZZMuBTKBKvsBmlGlvlFGR4gdSgkIgGKwINqg%3D)small, low cost antenna, to the U.FL port shown in the image below.
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_antenna_ufl.jpg)
 
@@ -76,7 +76,7 @@ To install, open your Arduino IDE:
 2. Search for **SAMD Boards \(32-bits ARM Cortex-M0+\)**
 3. Select the newest version and click Install
 
- **SparkFun SAMD Boards**
+   **SparkFun SAMD Boards**
 
 To install, open your Arduino IDE:
 
@@ -85,13 +85,13 @@ To install, open your Arduino IDE:
 
 ![](../../.gitbook/assets/arduino-board-add-sparkfun.png)
 
-3.  Add this URL in the text box:
+1. Add this URL in the text box:
 
 ```text
 https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
 ```
 
-4. Close the Preferences windows
+1. Close the Preferences windows
 
 Next, to install this board support package:
 
@@ -106,7 +106,7 @@ To communicate with Helium's LoRaWAN network, we'll need to install an Arduino l
 To install, open your Arduino IDE:
 
 1. Navigate to Library Manager \(**Sketch &gt; Include Library &gt; Manage Libraries**\).
-2.  In the search box, type **IBM LMIC framework** into the search, select the version shown below, and click Install.
+2. In the search box, type **IBM LMIC framework** into the search, select the version shown below, and click Install.
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_library.png)
 
@@ -122,9 +122,9 @@ mac os: Documents/Arduino/libraries/IBM\_LMIC\_framework/src/lmic
 
 Now that we have the required Arduino board support and library installed, lets program the board with the provided example sketch.
 
-To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://github.com/helium/longfi-arduino/blob/master/Sparkfun-Pro-RF/longfi-us915/longfi-us915.ino), copy and paste the entirety of it. 
+To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://github.com/helium/longfi-arduino/blob/master/Sparkfun-Pro-RF/longfi-us915/longfi-us915.ino), copy and paste the entirety of it.
 
-Next we'll need to fill in the AppEUI, DevEUI, and AppKey, in the sketch, which you can find on the device details page on Console. Be sure to use the formatting buttons to match the endianess  and formatting required for the sketch, shown below.
+Next we'll need to fill in the AppEUI, DevEUI, and AppKey, in the sketch, which you can find on the device details page on Console. Be sure to use the formatting buttons to match the endianess and formatting required for the sketch, shown below.
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_console.png)
 
@@ -134,25 +134,25 @@ At the top of the sketch, replace the three **FILL\_ME\_IN** fields, with the ma
 
 ### Selecting Board
 
-Next, we need to select the correct board to build for in the Arduino IDE.  Navigate to  \(**Select Tools &gt; Board: &gt; SparkFun SAMD21 Pro RF\).**
+Next, we need to select the correct board to build for in the Arduino IDE. Navigate to \(**Select Tools &gt; Board: &gt; SparkFun SAMD21 Pro RF\).**
 
 ### Enter Bootloader Mode
 
-Next, we need to place the board into bootloader mode, which allows us to update it with new firmware. To do this, first plug the device into your computer, make sure the power switch is turned on \(you should see a red LED on\).  Next, quickly double click the reset push button on the side of the board, you should see a blue LED come on now too. If you see this then you have successfully entered bootloader mode.
+Next, we need to place the board into bootloader mode, which allows us to update it with new firmware. To do this, first plug the device into your computer, make sure the power switch is turned on \(you should see a red LED on\). Next, quickly double click the reset push button on the side of the board, you should see a blue LED come on now too. If you see this then you have successfully entered bootloader mode.
 
 ### Selecting Port
 
-We're almost ready to upload our sketch, the very last step is to select the correct Serial port in the Arduino IDE. Navigate to \(**Tools &gt; Port: Sparkfun SAMD21 Pro RF**\). You will also see either **COM\# or /dev/ttyACM\#** depending on whether you are on Windows, Mac, or Linux. If you do not see a port, please visit the Drivers section in [Sparkfun's guide](https://learn.sparkfun.com/tutorials/sparkfun-samd21-pro-rf-hookup-guide?_ga=2.148378999.1172134851.1586114454-289367592.1582349414&_gac=1.242421430.1585837307.EAIaIQobChMI86GEgfjJ6AIVBQF9Ch0mpwyeEAEYASAAEgLFn_D_BwE#hardware-overview) to make sure you have what's needed for your operating system. 
+We're almost ready to upload our sketch, the very last step is to select the correct Serial port in the Arduino IDE. Navigate to \(**Tools &gt; Port: Sparkfun SAMD21 Pro RF**\). You will also see either **COM\# or /dev/ttyACM\#** depending on whether you are on Windows, Mac, or Linux. If you do not see a port, please visit the Drivers section in [Sparkfun's guide](https://learn.sparkfun.com/tutorials/sparkfun-samd21-pro-rf-hookup-guide?_ga=2.148378999.1172134851.1586114454-289367592.1582349414&_gac=1.242421430.1585837307.EAIaIQobChMI86GEgfjJ6AIVBQF9Ch0mpwyeEAEYASAAEgLFn_D_BwE#hardware-overview) to make sure you have what's needed for your operating system.
 
 ### Upload Sketch
 
-We're finally ready to upload our sketch to the board. In the Arduino IDE, click the right arrow button, or navigate to  \(**Sketch &gt; Upload\),** to build and upload your new firmware to the board.  You should see something similar to the image below at the bottom of your Arduino IDE, when the upload is successful.
+We're finally ready to upload our sketch to the board. In the Arduino IDE, click the right arrow button, or navigate to \(**Sketch &gt; Upload\),** to build and upload your new firmware to the board. You should see something similar to the image below at the bottom of your Arduino IDE, when the upload is successful.
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_upload.png)
 
 ### Viewing Serial Output
 
-When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again, navigate to \(**Tools &gt; Port: Sparkfun SAMD21 Pro RF**\), but make sure the serial device, either COM\# or ttyACM\#,  is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below.
+When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again, navigate to \(**Tools &gt; Port: Sparkfun SAMD21 Pro RF**\), but make sure the serial device, either COM\# or ttyACM\#, is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below.
 
 ![](../../.gitbook/assets/sparkfun_pro_rf_console_terminal.png)
 
