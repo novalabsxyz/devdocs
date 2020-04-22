@@ -24,6 +24,10 @@ All the command examples below assume you've built the wallet from source. If yo
 Please be sure to keep wallet files and passwords secure. If you forget a password or lose a key file, they are gone. Back things up in more than one location. This is your responsibility.
 {% endhint %}
 
+
+
+{% embed url="https://www.youtube.com/watch?v=HjbmNehXNg8" caption="Using the Helium blockchain Wallet CLI" %}
+
 ## Installation \(from source\)
 
 The Wallet application can either be downloaded from the [GitHub releases page](https://github.com/helium/helium-wallet-rs/releases), or built from source. This guide will walk through building from source.
