@@ -30,7 +30,7 @@ Cake successfully retrieved.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.heliun.io" path="/v1/blocks" %}
+{% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
 {% api-method-summary %}
 Get Block List
 {% endapi-method-summary %}
