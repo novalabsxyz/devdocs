@@ -36,6 +36,7 @@
 * [Getting started with Helium and PlatformIO](resources/getting-started-with-platformio.md)
 * [Webinars](resources/webinars/README.md)
   * [Helium and LoRaWAN Webinar](resources/webinars/03-26-2020-webinar.md)
+  * [AWS IoT Core App in 20 Minutes](resources/webinars/aws-iot-core-app-in-20-minutes.md)
 * [Videos](resources/videos.md)
 
 ## Blockchain
