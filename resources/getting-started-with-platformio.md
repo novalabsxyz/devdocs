@@ -132,9 +132,9 @@ Accept this agreement, and you should see the following popup:
 
 ![](../.gitbook/assets/image%20%2885%29.png)
 
-And there you have it. At this point, we have successfully programmed an empty sketch onto our Helium Developer Kit using PlatformIO!  Check out [https://github.com/helium/longfi-platformio](https://github.com/helium/longfi-platformio) for some example programs to get you started.
+And there you have it. At this point, we have successfully programmed an empty sketch onto our Helium Developer Kit using PlatformIO!  Check out the [Helium LongFi PlatformIO repo](https://github.com/helium/longfi-platformio) for some example programs to get you started.
 
-Go forth and build magical things. 
+**Go forth and build magical things.** 
 
 
 
