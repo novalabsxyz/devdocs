@@ -74,6 +74,6 @@
 * [LongFi Network Server](longfi/longfi-network-server.md)
 * [LoRaWAN Versions](longfi/routerv3-and-lorawan.md)
 * [Data Credits](longfi/data-credits.md)
-* [Regional Channels](longfi/regional-channels.md)
+* [Regional Channels & Data Rates](longfi/regional-channels.md)
 * [Routing](longfi/longfi-routing.md)
 
