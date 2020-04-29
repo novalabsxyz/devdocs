@@ -18,7 +18,7 @@ If you are used to developing using the Arduino IDE but constantly feel constrai
 
 
 
-This guide will walk through installing PlatformIO and deploying a Helium Arduino program on the [ST Discovery Development Kit](../devices/devkit.md). Let's do it. 
+This guide will walk through installing PlatformIO and deploying a Helium Arduino program on the [ST Discovery Development Kit](../devices/devkit/). Let's do it. 
 
 ### Installing PlatformIO
 
