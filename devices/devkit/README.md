@@ -24,7 +24,7 @@ The Helium Developer Kit is the perfect development setup to get started on the 
 
 #### **Sensor Expansion Board - X-NUCLEO-IKS01A3**
 
-* [Overview](sensor-shield.md)
+* [Overview](sensor-expansion-board.md)
 * [Product Page](https://www.st.com/en/ecosystems/x-nucleo-iks01a3.html)
 * [Manual](https://www.st.com/resource/en/user_manual/dm00601501-getting-started-with-the-xnucleoiks01a3-motion-mems-and-environmental-sensor-expansion-board-for-stm32-nucleo-stmicroelectronics.pdf)
 
