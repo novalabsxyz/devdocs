@@ -21,7 +21,7 @@ Hash of the pending transaction to fetch.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+A successful pending transaction status request
 {% endapi-method-response-example-description %}
 
 ```javascript
