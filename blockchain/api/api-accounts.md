@@ -175,14 +175,16 @@ The list of returned pending transactions is paged. If a `cursor` field is prese
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="cursor" type="string" required=false %}
-Cursor for the next page of transactions to fetch 
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="address" type="string" required=true %}
 Account B58 address to fetch pending transactions for
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="cursor" type="string" required=false %}
+Cursor for the next page of transactions to fetch
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
