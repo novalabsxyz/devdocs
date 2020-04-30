@@ -6,7 +6,7 @@ description: Migrating to the Helium Network
 
 ## Introduction
 
-This guide will help you connect a Laird Sentrius RG191 to a Helium Miner. This will allow your gateway to participate in the Helium Network and to provide coverage!
+This guide will help you connect a[ Laird Sentrius RG191](https://www.lairdconnect.com/wireless-modules/lorawan-solutions/sentrius-rg1xx-lorawan-gateway-wi-fi-ethernet-optional-lte-us-only) to the Helium Network using the Helium Miner. This will allow your gateway to participate in the Helium Network and to provide coverage!
 
 ![](../../.gitbook/assets/image%20%2882%29.png)
 
@@ -14,7 +14,7 @@ This guide will help you connect a Laird Sentrius RG191 to a Helium Miner. This 
 
 ## Log in to the Sentrius web console
 
-Following the instructions in the [Quick Start Guide](https://connectivity-staging.s3.us-east-2.amazonaws.com/2020-03/CS-GUIDE-RG1xx-Quickstart%20v3_0.pdf) or the [User Guide](https://connectivity-staging.s3.us-east-2.amazonaws.com/2020-03/CS-GUIDE-RG1xx%20v4_0.pdf), log into the web administration console for the Laird gateway. You will most likely get a certificate warning here, but you may safely ignore this \(Laird discusses this in their guides\).
+Following the instructions in the [Quick Start Guide](https://connectivity-staging.s3.us-east-2.amazonaws.com/2020-03/CS-GUIDE-RG1xx-Quickstart%20v3_0.pdf) or the [User Guide](https://connectivity-staging.s3.us-east-2.amazonaws.com/2020-03/CS-GUIDE-RG1xx%20v4_0.pdf), log in to the web administration console for the Laird gateway. You will most likely get a certificate warning here, but you may safely ignore this \(Laird discusses this in their guides\).
 
 ## Ensure firmware is up to date:
 
@@ -22,11 +22,9 @@ Follow the instructions in the [User Guide](https://connectivity-staging.s3.us-e
 
 ![](../../.gitbook/assets/laird001.png)
 
-At the end of the update, you are prompted to reboot the gateway. Click Reboot. The gateway must be rebooted for the update to take effect.
+At the end of the update, you are prompted to reboot the gateway. Click **Reboot**. The gateway must be rebooted for the update to take effect.
 
-![](../../.gitbook/assets/image%20%2877%29.png)
-
-## Reconfigure sub-band frequencies to work with the Helium Network:
+## Reconfigure sub-band frequencies to Helium compatible
 
 {% hint style="info" %}
 Rather than setting the sub-band frequencies by hand, you can upload a saved LoRa configuration file under LoRa-&gt;Advanced in the Laird Web Console.
@@ -124,29 +122,19 @@ This is what the channels look like when configured for TTN:
 
 We need to make the following channel modifications to allow the gateway to work on the Helium Network:
 
-![](../../.gitbook/assets/image%20%2846%29.png)
-
 It should come out looking like this:
 
 ![](../../.gitbook/assets/image%20%2874%29.png)
 
-## Monitor traffic coming through the device:
+## Monitor Traffic Coming through the Device
 
-Click the "Start Polling" button in the upper-left, and, if you have a Helium node in the vicinity, you should start to see traffic:
-
-![](../../.gitbook/assets/image%20%2811%29.png)
-
-By clicking on a row, we can examine the packet details:
-
-![](../../.gitbook/assets/image%20%281%29.png)
-
-A live logging console may be pulled up using the arrows in the lower-left of the screen. Make sure to set it to Start Updating:
+Click the  **Start Polling** button in the upper-left, and, if you have a Helium node in the vicinity, you should start to see traffic. By clicking on a row, we can examine the packet details:
 
 ![](../../.gitbook/assets/image%20%2870%29.png)
 
 ## **Connecting to a Helium Miner**
 
-If you haven't done it yet, you'll want to get your [Helium Miner running](../../blockchain/run-your-own-miner.md). We'll assume you've done this with an Amazon AMI for the sake of this tutorial. 
+Next you'll need to get the [Helium Miner running](../../blockchain/run-your-own-miner.md). We'll assume you've done this with an Amazon AMI for the sake of this tutorial. 
 
 From Your EC2 dashboard, you should select your miner and take a look at the description at the bottom of the page:
 
@@ -166,7 +154,7 @@ To verify that things are working, you can follow the logs **on the AWS instance
 tail -f /var/data/log/miner/console.log | grep lora
 ```
 
-At the very least, you should see PULL\_DATA messages every few seconds. If so, then you've done it!
+At this point ,  you should see `PULL_DATA` messages every few seconds. If so, then you've done it!
 
 
 
