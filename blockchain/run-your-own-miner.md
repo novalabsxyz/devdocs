@@ -23,23 +23,25 @@ A Docker container for the miner is coming soon as well, which will allow for an
 
 To deploy a ready made AMI, make sure you are logged into your AWS account, then go to:
 
-[**https://us-east-2.console.aws.amazon.com/ec2**](https://us-east-2.console.aws.amazon.com/ec2)
+\*\*\*\*[**https://us-east-1.console.aws.amazon.com/ec2**](https://us-east-1.console.aws.amazon.com/ec2)
 
 On the left menu, click Images -&gt; AMIs
 
 ![](../.gitbook/assets/ami.png)
 
-To the left of the search bar, select “Public Images” and then search `AMI ID : ami-04c4cca34b82100dc`
+To the left of the search bar, select “Public Images” and then search
 
-You can quickly launch by clicking Launch, but if you’d rather launch from a region other than us-east2, you’ll want to make a Copy of the AMI to that region before launching.
+`AMI ID: ami-0a2a7a4d50aea92c1`
 
-![](../.gitbook/assets/launch.png)
+You can quickly launch by clicking Launch, but if you’d rather launch from a region other than us-east1, you’ll want to make a Copy of the AMI to that region before launching.
 
-From launch, select what kind of instance you want; a t2.micro instance is cheap, but not free since the disk must be bigger than the free tier allows.
+![](../.gitbook/assets/screenshot-from-2020-05-03-13-25-00.png)
+
+From launch, select what kind of instance you want; a t2.medium instance seems to balance out cost and computation/networking abilities, but is unfortunately not free.
 
 During the instance configuration, you’ll want to be careful about setting the security group to allow for Miner and Packet Forwarder Traffic.
 
-Note: if you are not using a packet forwarder, you can skip the packet forwarder settings. And if you want to be more careful, you can allow packet forwarder traffic only from the IP of your packet forwarder instead of all IPs.
+**Note**: if you are _not_ using a packet forwarder, you can skip the packet forwarder settings. And if you want to be more careful, you can allow packet forwarder traffic only from the IP of your packet forwarder instead of all IPs.
 
 ![](../.gitbook/assets/security-group.png)
 
@@ -294,6 +296,18 @@ The first number is the election epoch and the second number is the block height
 ~$ curl https://api.helium.io/v1/blocks/height
 {"data":{"height":280756}}
 ```
+
+### Locating and Migrating Your Swarm Keys
+
+Periodically, we may release updates or you may want to migrate your miner from one machine to another. If the miner has been asserted to the blockchain, you will want to be careful maintaining your identity via a copy of the "swarm key" \(this maps directly to the friendly three word name of your miner\). 
+
+The default location of the swarm\_key \(may be edited in sys.config\), is here:
+
+```text
+/var/data/miner/swarm_key
+```
+
+Note that for production hotspots sold by Helium, the swarm key is stored inside of a secure element and is thus unable to be migrated.
 
 ### Providing Coverage
 
