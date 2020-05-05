@@ -163,7 +163,11 @@ We're finally ready to upload our sketch to the board. In the Arduino IDE, click
 
 ### Viewing Serial Output <a id="viewing-serial-output"></a>
 
-When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again, navigate to \(**Tools &gt; Port: COM\#/ttyACM\#**\), but make sure the serial device, either COM\# or ttyACM\#, is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below. Your device may take several minutes to join and begin to send uplink packets because the library is designed to work in several LoRaWAN regions and networks. Because of this, the firmware will attempt different sub-bands and data rates until it is successful. If you would like to change the default channel mask and data rates in the library you can, make the following two changes below in the file specified.
+When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again, navigate to \(**Tools &gt; Port: COM\#/ttyACM\#**\), but make sure the serial device, either COM\# or ttyACM\#, is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below. 
+
+![](../../.gitbook/assets/heltec-guide-debug-console.png)
+
+Your device may take several minutes to join and begin to send uplink packets because the library is designed to work in several LoRaWAN regions and networks. Because of this, the firmware will attempt different sub-bands and data rates until it is successful. If you would like to change the default channel mask and data rates in the library you can, make the following two changes below in the file specified.
 
 `linux: /home/{user}/Arduino/libraries/ESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp` 
 
@@ -188,8 +192,6 @@ channelsMaskTemp[3] = 0x00FF;
 channelsMaskTemp[4] = 0x0000;
 channelsMaskTemp[5] = 0x0000;
 ```
-
-![](../../.gitbook/assets/heltec-guide-debug-console.png)
 
 Now let's head back to [Helium Console](https://console.helium.com) and look at our device page, you should see something similar to the screenshot below.
 
