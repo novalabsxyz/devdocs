@@ -6,7 +6,7 @@ description: A tutorial to add a Browan Object Locator for use on the Helium Net
 
 ## Introduction:
 
-The Browan Object Locator is a battery-powered GNSS LoRaWAN tracking device. It's intended to to be attached to a backpack or purse. Functionally the device is composed of a GNSS receiver, 3D accelerometer,  an LED indicator and a USB-C connector. 
+The Browan Object Locator is a battery-powered GNSS LoRaWAN tracking device. It's intended to to be attached to a backpack or purse. Functionally the device is composed of a GNSS receiver, 3D accelerometer, an LED indicator and a USB-C connector. 
 
 
 
@@ -19,7 +19,7 @@ The Browan Object Locator is a battery-powered GNSS LoRaWAN tracking device. It'
 
 ### Software: 
 
-* Helium  [Console](../../console/introduction.md)
+* Helium [Console](../../console/introduction.md)
 * Helium [Cargo ](../../console/integrations/cargo.md)\(Optional if you have your own location visualization tool\) 
 
 ### Setup: 
@@ -36,11 +36,11 @@ Once you have the device credentials, you can simply [add a device](../../consol
 
 ### Usage: 
 
-The Browan Object Locator has a rechargeable  LiPo battery, which can be recharged with the USB Type-C connector.  If the battery is charging, the LED will remain on. If the battery is fully charged while a charger is connected, the green LED will fade in and out. 
+The Browan Object Locator has a rechargeable LiPo battery, which can be recharged with the USB Type-C connector. If the battery is charging, the LED will remain on. If the battery is fully charged while a charger is connected, the green LED will fade in and out. 
 
 The Object Locator has a few distinct modes of operation. 
 
-The Object Locator will sleep or hibernate during periods of no activity to prevent transmissions and minimize battery usage. If motion is detected a period of rest, the LED will flash 3 times and the device will transmit immediately. 
+The Object Locator will sleep or hibernate during periods of no activity to prevent transmissions and minimize battery usage. If motion is detected after a period of rest, the LED will flash 3 times and the device will transmit immediately. 
 
 If you press the button on the Object Locator, you will schedule an uplink transmission. The device will transmit regardless of whether or not it has a GPS fix. 
 
