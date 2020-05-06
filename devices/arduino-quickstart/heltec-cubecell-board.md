@@ -1,10 +1,6 @@
 # Heltec CubeCell Board
 
-
-
 ![](../../.gitbook/assets/cubecell-board.png)
-
-
 
 ## Introduction
 
