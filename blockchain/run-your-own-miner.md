@@ -31,7 +31,7 @@ On the left menu, click Images -&gt; AMIs
 
 To the left of the search bar, select “Public Images” and then search
 
-`AMI ID: ami-0a2a7a4d50aea92c1`
+`AMI ID: ami-02ea96c047854e01f`
 
 You can quickly launch by clicking Launch, but if you’d rather launch from a region other than us-east1, you’ll want to make a Copy of the AMI to that region before launching.
 
