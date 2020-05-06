@@ -78,6 +78,8 @@ To install, open your Arduino IDE:
 
    **SparkFun SAMD Boards**
 
+#### SparkFun SAMD Boards
+
 To install, open your Arduino IDE:
 
 1. Navigate to **\(File &gt; Preferences\)**

@@ -27,6 +27,7 @@
 * [LongFi Arduino](devices/arduino-quickstart/README.md)
   * [ST B-L072Z-LRWAN1](devices/arduino-quickstart/st-discovery-lrwan1.md)
   * [Sparkfun Pro RF](devices/arduino-quickstart/sparkfun-pro-rf.md)
+  * [Adafruit Feather M0 RFM95](devices/arduino-quickstart/adafruit-feather-m0-rfm95.md)
   * [Heltec CubeCell Board](devices/arduino-quickstart/heltec-cubecell-board.md)
   * [Heltec WiFi LoRa 32 V2](devices/arduino-quickstart/heltec-wifi-lora-32-v2.md)
 * [Migrating Devices to Helium](devices/migrating-devices-to-helium/README.md)
