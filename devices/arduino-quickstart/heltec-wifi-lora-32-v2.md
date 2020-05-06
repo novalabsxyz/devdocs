@@ -151,7 +151,11 @@ Next, we need to select the correct Serial port in the Arduino IDE. Navigate to 
 
 ### Select LoRaWAN Region
 
-The last step before we upload our sketch is to select the 
+The last step before we upload our sketch is to select the correct LoRaWAN Region, navigate to **\(Tools &gt; LoRaWAN Region:  &gt; REGION\_US915\).**
+
+### Select **Uplink Mode**
+
+The last step before we upload our sketch is to select the LoRaWAN Uplink Mode, navigate to **\(Tools &gt; LoRaWAN Uplink Mode:  &gt; UNCONFIRMED\).**
 
 ### Upload Sketch
 
