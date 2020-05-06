@@ -100,12 +100,6 @@ Arduino IDE:
 
 1. Select Tools -&gt; Board: -&gt; WiFi LoRa 32\(V2\)
 
-### Select Region
-
-Arduino IDE:
-
-1. Select Tools -&gt; LoRaWAN Region: -&gt; REGION\_US915
-
 ### Obtain Heltec License Key
 
 #### **Upload GetChipID example**
@@ -140,10 +134,6 @@ Next we'll need to fill in the AppEUI\(msb\), DevEUI\(msb\), and AppKey\(msb\), 
 At the top of the sketch, replace the three **FILL\_ME\_IN** fields, with the matching field from Console, example shown below.
 
 ![](../../.gitbook/assets/heltec-guide-keys.png)
-
-### Selecting Board
-
-Next, we need to select the correct board to build for in the Arduino IDE. Navigate to \(**Select Tools &gt; Board: &gt; WiFi LoRa 32\(V2\).**
 
 ### Selecting Port
 
