@@ -1,6 +1,6 @@
 # Adafruit Feather M0 RFM95
 
-![](../../.gitbook/assets/feather_m0_rfm95.jpg)
+![Image courteous of Adafruit](../../.gitbook/assets/feather_m0_rfm95.jpg)
 
 ## Introduction
 
@@ -44,7 +44,7 @@ Please visit Adafruit's Documentation for antenna options and instructions [here
 
 In order to use the RFM95 radio module onboard the Feather M0 for LoRaWAN we'll need to connect two pins together.  The pins are labeled io1 and 6 on the board, as shown below. If you have the headers soldered on, you can use a female to female jumper cable to connect them, or you can simply solder a wire from pin to pin.
 
-![](../../.gitbook/assets/feather_m0_rfm95_jumper_pins.jpg)
+![Image courteous of Adafruit](../../.gitbook/assets/feather_m0_rfm95_jumper_pins.jpg)
 
 ## Software Setup
 
