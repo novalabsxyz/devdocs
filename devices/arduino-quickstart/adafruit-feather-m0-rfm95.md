@@ -24,8 +24,6 @@ For this example, you will need the following:
 
 * [Adafruit Feather M0 - RFM95](https://www.adafruit.com/product/3178)
 * Micro USB Type B Cable - [Example](https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B0719H12WD/ref=sr_1_2_sspa?)
-* Soldering Iron
-* Small gauge wire
 
 ### Software
 
