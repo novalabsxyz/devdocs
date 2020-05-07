@@ -161,11 +161,11 @@ When your firmware update completes, the board will reset, and begin by joining 
 
 ![](../../.gitbook/assets/heltec-guide-debug-console.png)
 
-Your device may take several minutes to join and begin to send uplink packets because the library is designed to work in several LoRaWAN regions and networks. Because of this, the firmware will attempt different sub-bands and data rates until it is successful. If you would like to change the default channel mask and data rates in the library you can, make the following two changes below in the file specified.
+Your device may take several minutes to join and begin to send uplink packets because the library is designed to work in several LoRaWAN regions and networks. Because of this, the firmware will attempt different sub-bands and data rates until it is successful. If you would like to change the default channel mask and data rates in the library you can, just make the following two changes below in the file specified.
 
 `linux: /home/{user}/Arduino/libraries/ESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp` 
 
-`windows: Documents/Arduino/libraries /ESP32_LoRaWAN-master\src\ESP32_LoRaWAN.cpp`
+`windows: Documents\Arduino\libraries\ESP32_LoRaWAN-master\src\ESP32_LoRaWAN.cpp`
 
 `mac os: Documents/Arduino/librariesESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp`
 
