@@ -54,6 +54,7 @@
 * [The Helium Consensus Protocol](blockchain/consensus-protocol.md)
 * [Blockchain Primitives](blockchain/blockchain-primitives.md)
 * [Blockchain API](blockchain/api/README.md)
+  * [Stats](blockchain/api/stats.md)
   * [Blocks](blockchain/api/api-blocks.md)
   * [Accounts](blockchain/api/api-accounts.md)
   * [Hotspots](blockchain/api/api-hotspots.md)
