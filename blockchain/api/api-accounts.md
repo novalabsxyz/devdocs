@@ -161,7 +161,7 @@ The hotspot list for an account
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.helium.iu" path="/v1/acccounts/:address/pending\_transactions" %}
+{% api-method method="get" host="https://api.helium.io" path="/v1/accounts/:address/pending\_transactions" %}
 {% api-method-summary %}
 Pending Transactions for Account
 {% endapi-method-summary %}
