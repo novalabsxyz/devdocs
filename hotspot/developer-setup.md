@@ -188,5 +188,5 @@ You'll need to restart the packet forwarder for the configuration change to take
 tail -f /var/data/log/miner/console.log | grep lora
 ```
 
-At the very lease, you should see PULL\_DATA messages every few seconds. If so, then you've done it!
+At the very least, you should see PULL\_DATA messages every few seconds. If so, then you've done it!
 
