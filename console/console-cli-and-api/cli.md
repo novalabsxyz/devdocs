@@ -1,14 +1,22 @@
 # CLI
 
-A web-based dashboard is ideal for getting started. When it comes time to do more than just a couple devices though, doing “just a few clicks” a dozen times is enough to drive any IoT developer insane. And when it comes to shipping a few thousand, it’s just not an option.
+## Introduction
 
-This is why we’ve developed a Command-Line Interface \(CLI\) for Helium’s Console. Download a compiled release [here](https://github.com/helium/helium-console-cli/releases).
+The Command Line Interface \(CLI\) allows you to interact with the Console API without making HTTP Requests, but instead via a command line prompt. It's ideal for mass provisioning or for integrating onto a production line.
 
-## Setup
+In addition, it has certain high-level features for account setup like importing devices from other network providers.
 
-The first time you use the CLI, you will need to provide an API key. To create an account key, go to your [profile](https://console.helium.com/profile) on Helium Console. From the top right corner, click: `Account -> Profile`.
+## Installation
 
-From there, you may generate a key with a specific name and role. _The key will only display once._
+Download a compiled release [here](https://github.com/helium/helium-console-cli/releases) for your appropriate platform.
+
+## API Key Setup
+
+All Console API requests require an API Key which provides access to devices owned by the **organization** which owns the device. Devices are never associated to a single user, but instead to an organization.
+
+The first time you use the CLI, you will need to provide the API key. To create an account key, go to your [profile](https://console.helium.com/profile) on Helium Console. From the top right corner, click: `Account -> Profile`.
+
+From there, you may generate a key for your organization. _The key will only display once._
 
 The first time you run the CLI, it will prompt you for this key. It will save the key in a local file: `.helium-console-config.toml`
 

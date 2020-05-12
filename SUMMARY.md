@@ -6,7 +6,9 @@
 
 * [Introduction](console/introduction.md)
 * [Quickstart](console/quickstart.md)
-* [CLI](console/cli.md)
+* [Console CLI and API](console/console-cli-and-api/README.md)
+  * [CLI](console/console-cli-and-api/cli.md)
+  * [API](console/console-cli-and-api/api.md)
 * [Users](console/users.md)
 * [Integrations](console/integrations/README.md)
   * [JSON Schema](console/integrations/json-schema.md)
