@@ -11,7 +11,7 @@ At a high level, there are two steps to accomplish this migration:
 1. Copying your keys from the TTN Console to the Helium Console. \(Right now this is a manual process, but we'll soon have a CLI that automates this\).
 2. Porting your `application`logic from TTN Console to use the far superior `labels` construct in the Helium Console.
 
-## Copying Keys and Ensuring you're using Sub Band 7
+## Copying Keys and Ensuring you're using Sub Band 2
 
 In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Application](https://console.thethingsnetwork.org/applications) containing the device we want to migrate and copy these keys over into a new Device created in [Helium Console](https://console.helium.com).
 
@@ -19,25 +19,25 @@ In the [TTN Console](https://console.thethingsnetwork.org/), we go to the [Appli
 
 ![](../../.gitbook/assets/migratory_helium_console.png)
 
-Next, you need to ensure the device can use LoRaWAN US channels `48-55` \(also known as `Sub-band 7`\). This process can vary by device. Some come bundled with configuration utilities, others you will have to recompile and flash the firmware yourself. It is also possible that the network negotiates the sub-channel band itself.
+Next, you need to ensure the device can use LoRaWAN US channels `8-15` \(also known as `Sub-band 2`\). This process can vary by device. Some come bundled with configuration utilities, others you will have to recompile and flash the firmware yourself. It is also possible that the network negotiates the sub-channel band itself.
 
 The full frequency table for the US915 band is found [here](../../longfi/regional-channels.md) but comparison is available below. 
 
-By default, LoRaWAN compliant end nodes should use all channels \(0-63\) for the OTAA join process. After OTAA Joined, the first uplink packet on sub-band 7 will receive a downlink response with an ADR command with the appropriate channel mask; thereafter, the end node should use these channels \(48-55\) to send uplink packets.
+By default, LoRaWAN compliant end nodes should use all channels \(0-63\) for the OTAA join process. After OTAA Joined, the first uplink packet on sub-band 2 will receive a downlink response with an ADR command with the appropriate channel mask; thereafter, the end node should use these channels \(8-15\) to send uplink packets.
 
 ### Comparison \(MHz\):
 
 | **TTN Frequency** | **Helium Frequency** | **SFBW** |
 | :--- | :--- | :--- |
-| 903.9 | **911.9** | SF7BW125 to SF10BW125 |
-| 904.1 | **912.1** | SF7BW125 to SF10BW125 |
-| 904.3 | **912.3** | SF7BW125 to SF10BW125 |
-| 904.5 | **912.5** | SF7BW125 to SF10BW125 |
-| 904.7 | **912.7** | SF7BW125 to SF10BW125 |
-| 904.9 | **912.9** | SF7BW125 to SF10BW125 |
-| 905.1 | **913.1** | SF7BW125 to SF10BW125 |
-| 905.3 | **913.3** | SF7BW125 to SF10BW125 |
-| 904.6 | **912.6** | SF8BW500 |
+| 903.9 | **903.9** | SF7BW125 to SF10BW125 |
+| 904.1 | **904.1** | SF7BW125 to SF10BW125 |
+| 904.3 | **904.3** | SF7BW125 to SF10BW125 |
+| 904.5 | **904.5** | SF7BW125 to SF10BW125 |
+| 904.7 | **904.7** | SF7BW125 to SF10BW125 |
+| 904.9 | **904.9** | SF7BW125 to SF10BW125 |
+| 905.1 | **905.1** | SF7BW125 to SF10BW125 |
+| 905.3 | **905.3** | SF7BW125 to SF10BW125 |
+| 904.6 | **904.6** | SF8BW500 |
 
 ## Porting Your Application Logic to use Helium's Labels Construct
 

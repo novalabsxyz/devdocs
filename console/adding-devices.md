@@ -16,7 +16,7 @@ Enter a name for your device. Device names do not have to be unique \(as every d
 * **App EUI** - 64 bit application identifier
 * **App Key** - 128 bit AES key, used to secure communication between device and network
 
-Once added, you'll see a consolidated view of all your device details, as well as the Activation Method \(only `OTAA` is currently supported\) and the LoRaWAN US Channels used by the Helium Network \(which will always be `sub-band 7`\).
+Once added, you'll see a consolidated view of all your device details, as well as the Activation Method \(only `OTAA` is currently supported\) and the LoRaWAN US Channels used by the Helium Network \(which will always be `sub-band 2`\).
 
 ![](../.gitbook/assets/screenshot-2020-03-11-at-09.31.21.png)
 
@@ -28,7 +28,7 @@ The Helium Network is a Public LoRaWAN Network. You can read more about the uniq
 
 ### Delay After Adding Device
 
-LoRaWAN devices may behave differently from one manufacturer to another. After adding a new device, it may take some time to join the network and begin receiving data. This can range from less than a minute to as long as several minutes. If your device does not try all 8 sub-bands, then you will need to ensure it is trying to communicate on the correct sub-band, which is sub-band 7.
+LoRaWAN devices may behave differently from one manufacturer to another. After adding a new device, it may take some time to join the network and begin receiving data. This can range from less than a minute to as long as several minutes. If your device does not try all 8 sub-bands, then you will need to ensure it is trying to communicate on the correct sub-band, which is sub-band 2.
 
 ### MSB vs LSB; and using the Correct Endianness
 

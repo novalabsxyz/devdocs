@@ -22,13 +22,13 @@ Currently Helium is only available in the United States. Additional regions will
 
 ### United States \(US915\)
 
-Helium operates on sub-band 7 \(Channels 48-55, 911.9-913.3 MHz\). RouterV3 will send a MAC ADR command with the appropriate submask until confirmation from the device. These are sent during the receive windows after Data uplinks.
+Helium operates on sub-band 2 \(Channels 8-15, 903.9-905.3 MHz\). RouterV3 will send a MAC ADR command with the appropriate submask until confirmation from the device. These are sent during the receive windows after Data uplinks.
 
 Generally, this will work well with stacks that implement the full LoRaWAN specification. That is to say, devices should send Join requests on all 64 channels.
 
-They may, however, be biased towards a certain sub-band \(preferably 7\), such that their first Join attempt is on one of the 8 channels of that preferred sub-band.
+They may, however, be biased towards a certain sub-band \(preferably 2\), such that their first Join attempt is on one of the 8 channels of that preferred sub-band.
 
-After a successful Join, the devices should also be transmitting Data frames on all 64 channels; similarly, biasing towards subband 7 is preferable. This will allow them to eventually transmit and then receive the MAC ADR command on a Helium subband and thus receive the channel mask update.
+After a successful Join, the devices should also be transmitting Data frames on all 64 channels; similarly, biasing towards subband 2 is preferable. This will allow them to eventually transmit and then receive the MAC ADR command on a Helium subband and thus receive the channel mask update.
 
 Unfortunately, many devices do not use all 64 channels and will constrain themselves to a programmed sub-band. These devices will require a firmware update or configuration change to join the Helium network.
 

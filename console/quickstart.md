@@ -39,7 +39,7 @@ When prompted, enter a name for your device. Device names do not have to be uniq
 
 ![](../.gitbook/assets/screenshot-2020-03-11-at-09.29.44.png)
 
-Once added, you'll see a consolidated view of all your device details, as well as the Activation Method \(only `OTAA` is currently supported\) and the LoRaWAN US Channels used by the Helium Network \(which will always be `sub-band 7`\).
+Once added, you'll see a consolidated view of all your device details, as well as the Activation Method \(only `OTAA` is currently supported\) and the LoRaWAN US Channels used by the Helium Network \(which will always be `sub-band 2`\).
 
 ![](../.gitbook/assets/screenshot-2020-03-11-at-09.31.21.png)
 

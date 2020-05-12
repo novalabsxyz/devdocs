@@ -64,7 +64,7 @@ In Trip Fix : hh:mm:ss : Will determine transmission frequency
 
 Basic LoRaWAN:
 	Region : US915 [1.0.2B]
-	Sub-Band : 7 (ch. 48-55, 70)
+	Sub-Band : 2 (ch. 8-15, 70)
 	Activation : OTAA
 	JoinEUI / AppEUI : [ Blank to use pre-provisioned / AppEUI from Console ]
 	NwkKey (1.1) / AppKey (1.0) : [ Blank to use pre-provisioned / AppKey from Console ]
