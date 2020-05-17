@@ -44,7 +44,7 @@ If you will be running the device using the AAA battery supply, you will need to
 
 ![](../../.gitbook/assets/t-stm32-002.jpg)
 
-That’s it for the hardware setup! Next we will setup your environment. We are going to use the Arduino IDE here. \(Intsructions on how do use [PlatformIO](https://platformio.org/) for this will be added soon.\)
+That’s it for the hardware setup! Next we will setup your environment. We are going to use the Arduino IDE here. \(Instructions on how do use [PlatformIO](https://platformio.org/) for this will be added soon.\)
 
 ### Getting the Arduino IDE
 

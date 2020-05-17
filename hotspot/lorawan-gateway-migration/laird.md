@@ -24,17 +24,19 @@ Follow the instructions in the [User Guide](https://connectivity-staging.s3.us-e
 
 At the end of the update, you are prompted to reboot the gateway. Click **Reboot**. The gateway must be rebooted for the update to take effect.
 
-## Reconfigure sub-band frequencies to Helium compatible
+## Ensure sub-bands are Helium compatible
 
 {% hint style="info" %}
-Rather than setting the sub-band frequencies by hand, you can upload a saved LoRa configuration file under LoRa-&gt;Advanced in the Laird Web Console.
+No changes should need to be made on the sub-bands to support the Helium Network.
+
+Rather than verifying the sub-band frequencies by hand, you can upload a saved LoRa configuration file under LoRa-&gt;Advanced in the Laird Web Console.
 {% endhint %}
 
 {% code title="Sentrius\_LoRa\_Config\_2020-03-20T19\_48\_05.347Z.json" %}
 ```javascript
 {
     "data": {
-        "name": "Sentrius configuration 2020-03-20T19:48:05.861Z",
+        "name": "Sentrius configuration 2020-05-12T05:08:54.684Z",
         "country_code": "US"
     },
     "lora": {
@@ -42,9 +44,9 @@ Rather than setting the sub-band frequencies by hand, you can upload a saved LoR
         "gateway_mode": "semtech"
     },
     "forwarder": {
-        "server_address": "",
-        "serv_port_up": 1680,
-        "serv_port_down": 1680,
+        "server_address": "ENTER_SERVER_ADDRESS_HERE",
+        "serv_port_up": 1600,
+        "serv_port_down": 1600,
         "keepalive_interval": 10,
         "stat_interval": 30,
         "push_timeout_ms": 100,
@@ -54,10 +56,10 @@ Rather than setting the sub-band frequencies by hand, you can upload a saved LoR
     },
     "radios": {
         "radio_0": {
-            "freq": 912300000
+            "freq": 904300000
         },
         "radio_1": {
-            "freq": 913000000
+            "freq": 905000000
         },
         "chan_multiSF_0": {
             "enable": true,
@@ -107,24 +109,16 @@ Rather than setting the sub-band frequencies by hand, you can upload a saved LoR
             "spread_factor": 8
         },
         "chan_FSK": {
-            "enable": false,
-            "bandwidth": 500000,
-            "datarate": 0
+            "enable": false
         }
     }
 }
 ```
 {% endcode %}
 
-This is what the channels look like when configured for TTN:
+This is what the channels look like when configured for the Helium Network:
 
 ![](../../.gitbook/assets/image%20%2862%29.png)
-
-We need to make the following channel modifications to allow the gateway to work on the Helium Network:
-
-It should come out looking like this:
-
-![](../../.gitbook/assets/image%20%2874%29.png)
 
 ## Monitor Traffic Coming through the Device
 
