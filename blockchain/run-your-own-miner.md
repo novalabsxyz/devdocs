@@ -72,14 +72,14 @@ Miner has been tested against Erlang OTP 21.3.3.
 To install OTP 21.3.3 in Raspian, we'll first acquire the Erlang package from [Erlang Solutions](https://www.erlang-solutions.com/resources/download.html):
 
 ```text
-wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_21.3.3-1~ubuntu~bionic_amd64.deb
+https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_22.1.6-1~raspbian~buster_armhf.deb
 ```
 
 Now we'll install various other dependencies and then install Erlang itself. You'll see some errors after running `dpkg`, you can ignore them:
 
 ```text
 $ sudo apt-get install libdbus-1-dev autoconf automake libtool flex libgmp-dev cmake libsodium-dev libssl-dev bison libsnappy-dev libclang-dev doxygen
-$ sudo dpkg -i esl-erlang_21.3.3-1~raspbian~stretch_armhf.deb
+$ sudo dpkg -i esl-erlang_22.1.6-1~raspbian~buster_armhf.deb
 $ sudo apt-get install -f
 ```
 
