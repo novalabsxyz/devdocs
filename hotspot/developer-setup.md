@@ -18,7 +18,7 @@ In this guide, we are going to do something a little different. We are going to 
 
 ![Build Your Own Hotspot](../.gitbook/assets/tutorial.png)
 
-And rest assured, while this guide uses Amazon AMI images to makes Miner deployment more or less plug-and-play, we are working on a Docker container version which will make it easy to not only run other Cloud Service providers, but your own server hardware or perhaps even your own gateway if the hardware is sufficient.  
+And rest assured, while this guide uses Amazon AMI images to makes Miner deployment more or less plug-and-play, we are working on a Docker container version which will make it easy to not only run other Cloud Service providers, but your own server hardware or perhaps even your own gateway if the hardware is sufficient.
 ****
 
 {% hint style="warning" %}
@@ -104,16 +104,16 @@ sudo apt-get install git
 Clone the git repository:
 
 ```text
-$ cd ~
-$ git clone https://github.com/Lora-net/packet_forwarder
-$ git clone https://github.com/Lora-net/lora_gateway
+cd ~ &&
+git clone https://github.com/Lora-net/packet_forwarder &&
+git clone https://github.com/Lora-net/lora_gateway
 ```
 
 We'll then download the Helium-specific packet forwarder configuration file :
 
 ```text
-$ cd packet_forwarder/lora_pkt_fwd
-$ wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
+cd packet_forwarder/lora_pkt_fwd &&
+wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
 ```
 
 Note that we should have downloaded the configuration file to a specific directory. This will be important when launching the binary.
@@ -123,6 +123,7 @@ Note that we should have downloaded the configuration file to a specific directo
 We need to modify the SPI speed for this particular RAK concentrator. You may not have to do this with different concentrators. To do that:
 
 ```text
+cd .. &&
 nano lora_gateway/libloragw/src/loragw_spi.native.c
 ```
 
@@ -139,8 +140,8 @@ Now we are ready to build.
 Compile the packet forwarder:
 
 ```text
-$ cd packet_forwarder
-$ ./compile.sh
+cd packet_forwarder &&
+./compile.sh
 ```
 
 Before we can start the packet forwarder you will often have to issue a reset command to the RAK concentrator. In most cases you have to issue this command every time before starting the packet forwarder. This resets the concentrator using GPIO pin 17 of the Raspberry Pi, which is connected to the reset pin on the concentrator:
@@ -152,7 +153,7 @@ Before we can start the packet forwarder you will often have to issue a reset co
 We can now start the packet forwarder:
 
 ```text
-$ cd ~/packet_forwarder/lora_pkt_fwd
+cd ~/packet_forwarder/lora_pkt_fwd &&
 ./lora_pkt_fwd
 ```
 
@@ -162,13 +163,13 @@ That's it, now you're running a packet forwarder! The last step is connecting to
 
 ## **Connecting to a Helium Miner**
 
-If you haven't done it yet, you'll want to get your [Helium Miner running](../blockchain/run-your-own-miner.md). We'll assume you've done this with an Amazon AMI for the sake of this tutorial. 
+If you haven't done it yet, you'll want to get your [Helium Miner running](../blockchain/run-your-own-miner.md). We'll assume you've done this with an Amazon AMI for the sake of this tutorial.
 
 From Your EC2 dashboard, you should select your miner and take a look at the description at the bottom of the page:
 
 ![Extract IP Address](../.gitbook/assets/ipv4.png)
 
-In this case,  the IP is `18.218.135.176`. You now have to go back edit the packet forwarder's configuration such that it connects to you Miner on AWS. 
+In this case,  the IP is `18.218.135.176`. You now have to go back edit the packet forwarder's configuration such that it connects to you Miner on AWS.
 
 With your favorite editor,  open `packet_forwarder/lora_pkt_fwd/global_conf.json`:
 
@@ -185,8 +186,7 @@ You want to change the field "server\_address" from "localhost" the the IP addre
 You'll need to restart the packet forwarder for the configuration change to take effect. To verify that things are working, you can follow the logs **on the AWS instance:**
 
 ```text
-tail -f /var/data/log/miner/console.log | grep lora
+tail -f /var/log/miner/console.log | grep lora
 ```
 
 At the very least, you should see PULL\_DATA messages every few seconds. If so, then you've done it!
-

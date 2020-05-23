@@ -145,7 +145,7 @@ Now you'll want to update your `Sentrius_LoRa_Config_2020-03-20T19_48_05.347Z.js
 To verify that things are working, you can follow the logs **on the AWS instance:**
 
 ```text
-tail -f /var/data/log/miner/console.log | grep lora
+tail -f /var/log/miner/console.log | grep lora
 ```
 
 At this point ,  you should see `PULL_DATA` messages every few seconds. If so, then you've done it!
