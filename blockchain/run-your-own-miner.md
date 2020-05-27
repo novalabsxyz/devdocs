@@ -103,6 +103,12 @@ docker exec miner miner info height
 
 In other words, prepend `docker exec miner` to any of the commands documented in Using [Using the Miner](run-your-own-miner.md#using-the-miner). Or simply create an alias such as: `alias miner="docker exec miner miner"`
 
+Another useful trick is following the logs from the miner and looking for packets from a packet forwarder. The command becomes:
+
+```text
+docker exec miner tail -f /var/log/miner/console.log | grep lora
+```
+
 ### Updating the Docker Image
 
 From time to time, the Helium Miner is updated. Keep tabs on [the releases here](https://github.com/helium/miner/releases). Depending on whether you are running a miner for fun, to route packets, or to participate in POC, keeping it updated may be more or less urgent. Each release tagged on the Github will be on the quay repository. Simply remove the current image:
