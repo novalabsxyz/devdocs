@@ -50,7 +50,7 @@ At this point, the instance is running and the Miner is running at boot. To conn
 
 ![](../.gitbook/assets/connect.png)
 
-Once you connect with your desired method, you're running a Helium Miner! Skip on down to the **Using the Miner** section, unless you want to read the other sections for background.RDeploy an AMI
+Once you connect with your desired method, you're running a Helium Miner! Skip on down to the **Using the Miner** section, unless you want to read the other sections for background.
 
 ## Run a Docker Container
 
