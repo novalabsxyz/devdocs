@@ -276,12 +276,12 @@ To check, you can either check the mobile app, check [the browser-based block ex
 
 ### Checking the logs
 
-Unless you've changed things in `sys.config`, you can find the logs at `/var/data/log/miner`.
+Unless you've changed things in `sys.config`, you can find the logs at `/var/log/miner`.
 
 These can be helpful at anytime to get some idea of what's going on:
 
 ```text
-tail -f /var/data/log/miner/console.log
+tail -f /var/log/miner/console.log
 ```
 
 Beware, as is very common in Linux logs, the file is rotated from time to time. So if you see that logs aren't streaming in anymore, exit out of the `tail`instance and run the command again.
