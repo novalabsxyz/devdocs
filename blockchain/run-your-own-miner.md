@@ -8,14 +8,15 @@ As you can see above, the Miner is central in routing data across the Helium Net
 
 * Packet Forwarder: this is a utility that interacts with the radio front-end and sends and receives raw radio packets with the Helium Miner
 * Miner: the Helium Blockchain comes into the picture here; the Miner is responsible for routing packets to the appropriate Router \(see [our Routing article](../longfi/longfi-routing.md)\) and entering into micro-transactions brokered via libp2p
-* Router: a Helium compatible LoRaWAN Network Server, basically; this component is interested in receiving the packets relating to its devices and handles downlink responses when appropriate
+* Router: a Helium compatible LoRaWAN Network Server, basically; this component is interested in receiving the packets relating to its devices and handles downlink messages when appropriate
 
 In addition to packet routing, the Miner is central in connecting to other Miners over libp2p where, amongst other things, it is gossiping and saving blocks, while maintaining a ledger of the blockchain.
 
-In this guide, we offer two ways of getting a Miner running:
+In this guide, we offer three ways of getting a Miner running:
 
-* deploying a plug-and-play AMI on AWS, if you want an easy setup and to avoid the initial sync time
-* building from source on a Debian-based system, if you are feeling adventurous
+* deploying a plug-and-play AMI on AWS, if you want an easy setup and to minimize the initial sync time
+* run a Docker image, if you want better flexibility in deploying and maintaining your miner without the complexity of building 
+* building from source on a Debian-based system, if you really want to get into the nitty-gritty
 
 A Docker container for the miner is coming soon as well, which will allow for an easy setup without restricting you to AWS.
 
@@ -29,9 +30,9 @@ On the left menu, click Images -&gt; AMIs
 
 ![](../.gitbook/assets/ami.png)
 
-To the left of the search bar, select “Public Images” and then search
+To the left of the search bar, select “Public Images” and then search:
 
-`AMI ID : ami-0b7ac0ff8f893a6d5`
+`AMI ID: ami-027d29273a598a961`
 
 You can quickly launch by clicking Launch, but if you’d rather launch from a region other than us-east1, you’ll want to make a Copy of the AMI to that region before launching.
 
@@ -49,7 +50,68 @@ At this point, the instance is running and the Miner is running at boot. To conn
 
 ![](../.gitbook/assets/connect.png)
 
-Once you connect with your desired method, you're running a Helium Miner! Skip on down to the **Using the Miner** section, unless you want to read the other sections for background.
+Once you connect with your desired method, you're running a Helium Miner! Skip on down to the **Using the Miner** section, unless you want to read the other sections for background.RDeploy an AMI
+
+## Run a Docker Container
+
+Miner releases are available as amd64 and ard64 images on at [quay.io](https://quay.io/repository/team-helium/miner?tab=tags). These will run on any machine of these two architectures which feature an OCI-compliant runtime such as Docker. For simplicity, this guide will help run the image with Docker.
+
+**Note**: the AMI image detailed above is configured as described here.
+
+### Start Container
+
+Before running the container for the first time, it is advisable to pick a 'system mount point\`, ie: a directory in your host system; some long-term miner data is stored there. This allows you to easily maintain your miner's blockchain identity \(ie: swarm keys\) and blockchain state through miner image updates.
+
+If you are using a Linux system, you can just create a directory in your user's home directory:
+
+```text
+mkdir ~/miner_data
+```
+
+If you are using Ubuntu as user ubuntu, this path would now be `/home/ubuntu/miner_data`. This will be used later.
+
+Now you can try the `run` command to start your container for the first time:
+
+```
+docker run -d \
+--restart always \
+--port 1680:1680/udp \
+--name miner \
+--mount type=bind,source=/home/ubuntu/miner_data,target=/var/data \
+quay.io/team-helium/miner:miner-xxxNN_YYYY.MM.DD
+```
+
+Replace xxxNN with the architecture used, ie: amd64 or arm64, and with the release date of the image.
+
+The `-d` option runs in detached mode, which makes the command return or not; you may want to omit if you have a daemon manager running the docker for you.
+
+The `--restart always` option asks Docker to keep the image running, starting the image on boot and restarting the image if it crashes. Depending on how you installed Docker in your system, it'll start on boot. In the AWS AMI above, we use systemd \(`systemctl status docker` to check\).
+
+The `--port 1680:1680/udp` binds your system port 1680 to the containers port 1680, where the Miner is hosting a packet forwarder UDP server; this is necessary if you want to do any radio interactions with your miner.
+
+The `--name miner` names the container, which makes interacting with the docker easier, but feel free to name the container whatever you want.
+
+The `--mount` with the parameters above will mount the container's `/var/data/` directory to the systems directory `/home/ec2-user/miner_data`.   
+
+### Interact with the Miner within the Container
+
+You may want to interrogate the Miner or interact with it it as described in [Using the Miner](run-your-own-miner.md#using-the-miner). Docker's `exec` command enables this, eg:
+
+```text
+docker exec miner miner info height
+```
+
+In other words, prepend `docker exec miner` to any of the commands documented in Using [Using the Miner](run-your-own-miner.md#using-the-miner). Or simply create an alias such as: `alias miner="docker exec miner miner"`
+
+### Updating the Docker Image
+
+From time to time, the Helium Miner is updated. Keep tabs on [the releases here](https://github.com/helium/miner/releases). Depending on whether you are running a miner for fun, to route packets, or to participate in POC, keeping it updated may be more or less urgent. Each release tagged on the Github will be on the quay repository. Simply remove the current image:
+
+```text
+docker rm miner
+```
+
+And [Start the Container ](run-your-own-miner.md#start-container)again as described above, but with the new release tag!
 
 ## Installing Miner from Source
 
