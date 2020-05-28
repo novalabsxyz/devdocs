@@ -54,7 +54,7 @@ Once you connect with your desired method, you're running a Helium Miner! Skip o
 
 ## Run a Docker Container
 
-Miner releases are available as amd64 and ard64 images on at [quay.io](https://quay.io/repository/team-helium/miner?tab=tags). These will run on any machine of these two architectures which feature an OCI-compliant runtime such as Docker. For simplicity, this guide will help run the image with Docker.
+Miner releases are available as amd64 and arm64 images on at [quay.io](https://quay.io/repository/team-helium/miner?tab=tags). These will run on any machine of these two architectures which feature an OCI-compliant runtime such as Docker. For simplicity, this guide will help run the image with Docker.
 
 **Note**: the AMI image detailed above is configured as described here.
 
@@ -75,7 +75,7 @@ Now you can try the `run` command to start your container for the first time:
 ```
 docker run -d \
 --restart always \
---port 1680:1680/udp \
+--publish 1680:1680/udp \
 --name miner \
 --mount type=bind,source=/home/ubuntu/miner_data,target=/var/data \
 quay.io/team-helium/miner:miner-xxxNN_YYYY.MM.DD
@@ -87,7 +87,7 @@ The `-d` option runs in detached mode, which makes the command return or not; yo
 
 The `--restart always` option asks Docker to keep the image running, starting the image on boot and restarting the image if it crashes. Depending on how you installed Docker in your system, it'll start on boot. In the AWS AMI above, we use systemd \(`systemctl status docker` to check\).
 
-The `--port 1680:1680/udp` binds your system port 1680 to the containers port 1680, where the Miner is hosting a packet forwarder UDP server; this is necessary if you want to do any radio interactions with your miner.
+The `--publish 1680:1680/udp` binds your system port 1680 to the containers port 1680, where the Miner is hosting a packet forwarder UDP server; this is necessary if you want to do any radio interactions with your miner.
 
 The `--name miner` names the container, which makes interacting with the docker easier, but feel free to name the container whatever you want.
 
