@@ -197,6 +197,10 @@ Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
 
 ![](../../.gitbook/assets/t-arduino-menu009.jpeg)
 
+### Selecting Port
+
+We're almost ready to upload our sketch, the very last step is to select the correct Serial port in the Arduino IDE. Navigate to \(**Tools &gt; Port: COM\# or /dev/ttyACM\#** **or usbmodem**\) depending on whether you are on Windows, Mac, or Linux. 
+
 ### Programming your Arduino Sketch and Sending Data
 
 From the Arduino IDE:
