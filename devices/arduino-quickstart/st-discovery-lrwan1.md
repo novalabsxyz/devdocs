@@ -1,6 +1,6 @@
 # ST B-L072Z-LRWAN1
 
-![](../../.gitbook/assets/t-stm32-001.jpg)
+![](../../.gitbook/assets/b-l072z-lrwan1_dsl.webp)
 
 ## Introduction
 
@@ -14,7 +14,7 @@ Before we begin, please make sure you've followed the steps from this [guide](ht
 
 In this guide, you will learn:
 
-* How to setup your environment \(Add STM32 board support to Arduino IDE and STLink debugging utility\)
+* How to setup your environment 
 * How to build and program a basic application that will send packets over the Helium Network
 * Verify real-time packets sent to the Helium Console via Hotspot that's in range
 
@@ -28,13 +28,12 @@ For this example, you will need the following:
 ### Software
 
 * [Arduino software \(IDE\)](https://www.arduino.cc/en/Main/Software) 
-* [STM32 Board Support](https://github.com/stm32duino/Arduino_Core_STM32#getting-started) 
-* [STLink Debugging Utility](https://www.st.com/en/development-tools/stm32cubeprog.html) 
+* [Arduino Core for STM32L0](https://github.com/GrumpyOldPizza/ArduinoCore-stm32l0)
 * [Helium Console](https://console.helium.com/) 
 
 ## Hardware Setup
 
-The build for this project is easy! You’ll just need to install the included antenna.
+To start you’ll just need to install the included antenna.
 
 We'll be using the ST-Link debugger on the Discovery board, so you'll want to connect the micro-USB B connector to the micro-USB port labeled `CN7 USB STLINK`.
 
@@ -44,7 +43,11 @@ If you will be running the device using the AAA battery supply, you will need to
 
 ![](../../.gitbook/assets/t-stm32-002.jpg)
 
-That’s it for the hardware setup! Next we will setup your environment. We are going to use the Arduino IDE here. \(Instructions on how do use [PlatformIO](https://platformio.org/) for this will be added soon.\)
+### Required Driver \(Windows Only\) <a id="required-driver-windows-only"></a>
+
+Download driver [here](https://www.st.com/en/development-tools/stsw-link009.html).
+
+That’s it for the hardware setup! Next we will setup your environment. 
 
 ### Getting the Arduino IDE
 
@@ -54,176 +57,70 @@ Download and install the latest version of [Arduino IDE](https://www.arduino.cc/
 * [Linux](https://www.arduino.cc/en/Guide/linux)
 * [Mac OSX](https://www.arduino.cc/en/Guide/MacOSX)
 
-### Add STM32 board support to Arduino
+### STM32L0 Core Support & Libraries
 
-![](../../.gitbook/assets/t-arduino-preferences002.jpeg)
+The ST B-L072Z-LRWAN1 requires one package to be installed follow the instructions below.
 
-And add the following line under "Additional Boards Manager URLs":
+#### Arduino Core for STM32L0
 
-```markup
-https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
-```
+To install, open your Arduino IDE:
 
-![](../../.gitbook/assets/t-arduino-preferences004.jpeg)
+1. Navigate to **\(File &gt; Preferences\)**
+2. Find the section at the bottom called **Additional Boards Manager URLs:**
 
-Now go to your `Boards Manager`, Select the "STM32 Cores" and click on Install:
+![](../../.gitbook/assets/disco_stm32l0_core_pref_arduino.png)
 
-![](../../.gitbook/assets/t-arduino-menu001.jpeg)
-
-![](../../.gitbook/assets/t-boardsmanager.jpeg)
-
-### Install MCCI LoRaWAN LMIC Library
-
-The MCCI LoRaWAN LMIC Library then needs to be installed from the Arduino IDE if you don't already have it.
-
-{% hint style="danger" %}
-If you have already installed the MCCI LMIC library, please make sure to check for updates.
-{% endhint %}
-
-From inside the Arduino IDE:
+1. Add this URL in the text box:
 
 ```text
-Sketch -> Include Libraries -> Manage Libraries
+https://grumpyoldpizza.github.io/ArduinoCore-stm32l0/package_stm32l0_boards_index.json
 ```
 
-Search for `MCCI LMIC` and install the latest version of `MCCI LoRaWAN LMIC Library`
+1. Close the Preferences windows
 
-![](../../.gitbook/assets/library_manager.png)
+Next, to install this board support package:
 
-## LongFi Example Sketch and Sending Data
+1. Navigate to \(**Tools &gt; Boards &gt; Boards Manager...\)**
+2. Search for  **Tlera Corp STM32L0 Boards**
+3. Select the newest version and click Install
 
-This [an example sketch](https://github.com/helium/longfi-arduino/blob/master/ST-B-L072Z-LRWAN1/longfi-us915/longfi-us915.ino) is included in the LongFi repository and we'll be using it for this demo.
+### Programming **Example Sketch** <a id="programming-example-sketch"></a>
 
-To deploy it, create a new sketch and copy the source code over. All you need to do is update it with the the `DevEUI`, `AppEUI`, and `AppKey` generated for you when you [create a device](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/console/quickstart/README.md) in [Helium Console](https://console.helium.com).
+Now that we have the required Arduino board support and libraries installed, lets program the board with the provided example sketch.
 
-Note that the byte ordering of the `DevEUI`, `AppEUI`, and `AppKey` are important.
+To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://raw.githubusercontent.com/helium/longfi-arduino/master/ST-B-L072Z-LRWAN1/longfi-us915/longfi-us915.ino), copy and paste the entirety of it.
 
-* `DevEUI` and `AppEUI` need to be copied over in the `LSB` format. 
-* `AppKey` needs to be input using `MSB`
+Next we'll need to fill in the AppEUI, DevEUI, and AppKey, in the sketch, which you can find on the device details page on Console.  For this sketch you do not need to modify the formatting of the EUIs and Key at all, simply copy and paste them as is. 
 
-![](../../.gitbook/assets/t-helium-key003.jpeg)
+![](../../.gitbook/assets/st-disco-console%20%281%29.png)
 
-![](../../.gitbook/assets/t-helium-key004.jpeg)
+At the top of the sketch, replace the three **FILL\_ME\_IN** fields, with the matching field from Console, example shown below.
 
-Be sure to select the appropriate format and copy the information into the sketch:
+![](../../.gitbook/assets/st-disco-arduino-code.png)
 
-```c
-static const u1_t PROGMEM DEVEUI[8]= {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED, 0xFF, 0xFF };
-void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
+### Selecting Board
 
-static const u1_t PROGMEM APPEUI[8]= { 0x81, 0x6A, 0xE9, 0xDD, 0x50, 0xD8, 0x16, 0x8B };
-void os_getArtEui (u1_t* buf) { memcpy_P(buf, APPEUI, 8);}
-
-static const u1_t PROGMEM APPKEY[16] = { 0x29, 0xFE, 0xF6, 0x75, 0x97, 0x18, 0xE3, 0x25, 0x72, 0x64, 0xBA, 0x25, 0x82, 0x8C, 0x94, 0xFA };
-void os_getDevKey (u1_t* buf) {  memcpy_P(buf, APPKEY, 16);}
-```
-
-### Adding B-L072Z-LRWAN1 Board Support
-
-You then need to configuring the Arduino IDE for the `B-L072Z-LRWAN1 - ST STM32L0 Discovery kit`. \(Full istructions to install the board support package can be found [here](https://github.com/stm32duino/Arduino_Core_STM32#getting-started) but we'll walk you through it below.\)
-
-In the Arduino IDE:
-
-```text
-Select Tools -> Board -> Discovery
-```
-
-![](../../.gitbook/assets/t-arduino-menu002.jpeg)
-
-```text
-Select Tools -> Board part number -> Discovery L072Z-LRWAN1
-```
-
-![](../../.gitbook/assets/t-arduino-menu003.jpeg)
-
-![](../../.gitbook/assets/t-arduino-menu004.jpeg)
-
-![](../../.gitbook/assets/t-arduino-menu005.jpeg)
-
-![](../../.gitbook/assets/t-arduino-menu006.jpeg)
-
-![](../../.gitbook/assets/t-arduino-menu007.jpeg)
-
-![](../../.gitbook/assets/t-arduino-menu008.jpeg)
-
-### Programming \(Upload Method\)
-
-Now we're ready to upload our Sketch. For this, we will use the onboard ST-Link \(Flasher/Debugger\).
-
-Download and install the required utility from ST [here](https://www.st.com/en/development-tools/stm32cubeprog.html)
-
-The download comes in the form of a `stm32cubeprog.zip` file, which you'll need to unpack. After you unzip, you should see the following files:
-
-```c
-SetupSTM32CubeProgrammer-[version].exe
-
-SetupSTM32CubeProgrammer-[version].linux
-SetupSTM32CubeProgrammer-[version].app
-```
-
-### Installation Requirements
-
-**Supported operating systems and architectures**
-
-* Linux 64-bit 
-* Windows 7/8/10 32-bit and 64-bit 
-* MacOS \(minimum version OS X Yosemite\)
-
-**Software Requirements**
-
-* [Java SE Run Time Environment 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) or newer must be installed \(from Oracle\)
-
-### Windows Instructions
-
-The download comes with a `SetupSTM32CubeProgrammer-[version].exe`, which guides you through the installation process.
-
-### Linux Instructions
-
-The download comes with a `SetupSTM32CubeProgrammer-[version].linux`, which guides you through the installation process.
-
-### MacOS Instructions
-
-Run the following command:
-
-`java -jar SetupSTM32CubeProgrammer-[version].exe`
-
-**You should use the default installation path.**
-
-In the Arduino IDE:
-
-```text
-Select Tools -> Upload Method -> STM32CubeProgrammer(SWD)
-```
-
-![](../../.gitbook/assets/t-arduino-menu009.jpeg)
+Next, we need to select the correct board to build for in the Arduino IDE. Navigate to \(**Select Tools &gt; Board: &gt; B-L072Z-LRWAN1\).**
 
 ### Selecting Port
 
-We're almost ready to upload our sketch, the very last step is to select the correct Serial port in the Arduino IDE. Navigate to \(**Tools &gt; Port: COM\# or /dev/ttyACM\#** **or usbmodem**\) depending on whether you are on Windows, Mac, or Linux. 
+We're almost ready to upload our sketch, the very last step is to select the correct Serial port in the Arduino IDE. Navigate to \(**Tools &gt; Port: COM\# or /dev/ttyACM\#** **or usbmodem\)** depending on whether you are on Windows, Mac, or Linux. 
 
-### Programming your Arduino Sketch and Sending Data
+### Upload Sketch
 
-From the Arduino IDE:
+We're finally ready to upload our sketch to the board. In the Arduino IDE, click the right arrow button, or navigate to \(**Sketch &gt; Upload\),** to build and upload your new firmware to the board. You should see something similar to the image below at the bottom of your Arduino IDE, when the upload is successful.
 
-```text
-Select Sketch -> Verify/Compile (Ctrl + R)
-```
+![](../../.gitbook/assets/st-disco-upload.png)
 
-If there are no errors with your sketch, you should see `Done Compiling`.
+### Viewing Serial Output
 
-Then, you can upload the sketch and program the development board.
+When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board.  Navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below.
 
-Arduino IDE:
+![](../../.gitbook/assets/st-disco-serial.png)
 
-```text
-Select Sketch -> Upload (Ctrl + U)
-```
+Now let's head back to [Helium Console](https://console.helium.com) and look at our device page, you should see something similar to the screenshot below.
 
-Congratulations! You have just programmed your first Helium LongFi application!
+![](../../.gitbook/assets/st-disco-console-events.png)
 
-However, we are not done just yet. Now let's head back to [Helium Console](https://console.helium.com) and look at our device.
-
-You should be able to see some packets appear as Live Data.
-
-![](../../.gitbook/assets/no_channel_packets.png)
+Congratulations! You have just transmitted data on the Helium network! The next step is to learn how to use your device data to build applications, visit our Integrations docs [here](../../console/integrations/).
 
