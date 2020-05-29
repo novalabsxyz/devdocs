@@ -56,6 +56,8 @@ Once you connect with your desired method, you're running a Helium Miner! Skip o
 
 Miner releases are available as amd64 and arm64 images on at [quay.io](https://quay.io/repository/team-helium/miner?tab=tags). These will run on any machine of these two architectures which feature an OCI-compliant runtime such as Docker. For simplicity, this guide will help run the image with Docker.
 
+**WARNING**: ****quay.io has some arm32 images, but those do not work!
+
 **Note**: the AMI image detailed above is configured as described here.
 
 ### Start Container
@@ -114,10 +116,10 @@ docker exec miner tail -f /var/log/miner/console.log | grep lora
 From time to time, the Helium Miner is updated. Keep tabs on [the releases here](https://github.com/helium/miner/releases). Depending on whether you are running a miner for fun, to route packets, or to participate in POC, keeping it updated may be more or less urgent. Each release tagged on the Github will be on the quay repository. Simply remove the current image:
 
 ```text
-docker rm miner
+docker stop miner && docker rm miner
 ```
 
-And [Start the Container ](run-your-own-miner.md#start-container)again as described above, but with the new release tag!
+And [Start the Container ](run-your-own-miner.md#start-container)again as described above, but with the new release tag! Thanks to the `--mount` option, the blockchain data and the miner keys are preserved through updates.
 
 ## Installing Miner from Source
 
