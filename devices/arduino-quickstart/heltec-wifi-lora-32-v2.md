@@ -172,17 +172,17 @@ Your device may take several minutes to join and begin to send uplink packets be
 **Change line 20 to:**
 
 ```text
-#define LORAWAN_DEFAULT_DATARATE                    DR_0
+#define LORAWAN_DEFAULT_DATARATE                    DR_3
 ```
 
   
 **Change lines 343-348 to:**
 
 ```text
-channelsMaskTemp[0] = 0x0000;
+channelsMaskTemp[0] = 0xFF00;
 channelsMaskTemp[1] = 0x0000;
 channelsMaskTemp[2] = 0x0000;
-channelsMaskTemp[3] = 0x00FF;
+channelsMaskTemp[3] = 0x0000;
 channelsMaskTemp[4] = 0x0000;
 channelsMaskTemp[5] = 0x0000;
 ```
