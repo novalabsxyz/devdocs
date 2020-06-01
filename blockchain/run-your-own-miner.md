@@ -32,7 +32,7 @@ On the left menu, click Images -&gt; AMIs
 
 To the left of the search bar, select “Public Images” and then search:
 
-`AMI ID: ami-027d29273a598a961`
+`AMI ID: ami-01ce02ff33f51418f`
 
 You can quickly launch by clicking Launch, but if you’d rather launch from a region other than us-east1, you’ll want to make a Copy of the AMI to that region before launching.
 
@@ -50,7 +50,13 @@ At this point, the instance is running and the Miner is running at boot. To conn
 
 ![](../.gitbook/assets/connect.png)
 
-Once you connect with your desired method, you're running a Helium Miner! Skip on down to the **Using the Miner** section, unless you want to read the other sections for background.
+Once you connect with your desired method, you're running a Helium Miner! Skip on down to the **Using the Miner** section, unless you want to read the other sections for background. 
+
+Just know that this AMI runs the Miner inside of a Docker container. An alias makes interacting with the miner concise \(just `miner`\), but checking the logs for example looks like this:
+
+```text
+docker exec miner tail -f /var/log/miner/console.log
+```
 
 ## Run a Docker Container
 
