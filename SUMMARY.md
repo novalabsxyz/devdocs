@@ -43,7 +43,10 @@
 * [Getting started with Helium and PlatformIO](resources/getting-started-with-platformio.md)
 * [Webinars](resources/webinars/README.md)
   * [Helium and LoRaWAN Webinar](resources/webinars/03-26-2020-webinar.md)
+  * [myDevices Cayenne & AWS Integration](resources/webinars/mydevices-cayenne-and-aws-integration.md)
   * [AWS IoT Core App in 20 Minutes](resources/webinars/aws-iot-core-app-in-20-minutes.md)
+  * [New Console Features](resources/webinars/new-console-features.md)
+  * [\#IoTforGood hackster.io contest](resources/webinars/iotforgood-hackster.io-contest.md)
 * [Videos](resources/videos.md)
 
 ## Blockchain
