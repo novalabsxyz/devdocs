@@ -1,8 +1,10 @@
 # Run Your Own Miner
 
+![](../.gitbook/assets/artboard-copy-57.jpg)
+
 Running a Helium Miner is a great way to get some exposure to the blockchain and to support the network. If you have [your own hardware deployed](../hotspot/developer-setup.md), this is necessary for routing LoRaWAN packets according to our [LongFi](https://developer.helium.com/longfi/introduction) protocol.
 
-![](../.gitbook/assets/architecture.png)
+![](../.gitbook/assets/artboard%20%281%29.png)
 
 As you can see above, the Miner is central in routing data across the Helium Network. It is one of three pieces:
 
