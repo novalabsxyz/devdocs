@@ -86,5 +86,6 @@
 * [LoRaWAN Versions](longfi/routerv3-and-lorawan.md)
 * [Data Credits](longfi/data-credits.md)
 * [Regional Channels & Data Rates](longfi/regional-channels.md)
+* [MAC Commands, FOpts, ADR](longfi/mac-commands-fopts-adr.md)
 * [Routing](longfi/longfi-routing.md)
 
