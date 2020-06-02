@@ -36,7 +36,7 @@ The, install Docker:
 sudo apt-get install docker.io
 ```
 
-To avoid needing to user docker with `sudo` privileges, add your user to the docker, replacing $USER with your username:
+To avoid needing to user docker with `sudo` privileges, add your user to the `docker` group, replacing $USER with your username:
 
 ```text
 sudo usermod -aG docker $USER
