@@ -1,5 +1,7 @@
 # Hotspot WiFi Configuration
 
+![](../.gitbook/assets/artboard-copy-65.jpg)
+
 The Helium Hotspot provides a WiFi configuration interface via the device's[ BLE services](hotspot-ble-services.md). The following are instructions for how to configure a Hotspot's WiFi.
 
 ### **1. Connecting to the Hotspot over Bluetooth Low Energy**

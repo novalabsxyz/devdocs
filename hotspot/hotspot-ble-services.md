@@ -1,5 +1,7 @@
 # Hotspot BLE Services
 
+![](../.gitbook/assets/artboard-copy-64.jpg)
+
 The Helium Hotspot provides a Bluetooth Low Energy\(BLE\) interface for users to configure several aspects of the device. The BLE services and advertisement data are provided below. You must first press the black button on left side of the Hotpsot to activate the BLE advertising before attempting to connect.
 
 You can also download a PDF version of the services if this is easier for you to view. 

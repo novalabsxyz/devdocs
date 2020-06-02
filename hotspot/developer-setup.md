@@ -1,6 +1,8 @@
 # Build a Hotspot
 
-![](../.gitbook/assets/architecture%20%281%29.png)
+![](../.gitbook/assets/artboard-copy-66.jpg)
+
+![](../.gitbook/assets/artboard%20%281%29.png)
 
 
 
@@ -12,11 +14,11 @@ To be a Helium Miner, there are three principle components to know about
 
 When you buy a Helium Hotspot, you are buying a Packet Forwarder and a Miner in a convenient package:
 
-![Helium Hotspot Product](../.gitbook/assets/heliumhotspot.png)
+![](../.gitbook/assets/artboard-copy-67.png)
 
 In this guide, we are going to do something a little different. We are going to decouple the Packet Forwarder and the Miner from one another from a hardware standpoint. This allows you to use almost any LoRaWAN Gateway on the Helium Network while also reducing the bandwidth and hardware requirements of the gateway hardware.
 
-![Build Your Own Hotspot](../.gitbook/assets/tutorial.png)
+![](../.gitbook/assets/artboard-copy-68.png)
 
 And rest assured, while this guide uses Amazon AMI images to makes Miner deployment more or less plug-and-play, we are working on a Docker container version which will make it easy to not only run other Cloud Service providers, but your own server hardware or perhaps even your own gateway if the hardware is sufficient.  
 ****
