@@ -82,7 +82,7 @@ To install, open your Arduino IDE:
 
 To install, open your Arduino IDE:
 
-1. Navigate to **\(File &gt; Preferences\)**
+1. Navigate to **\(File &gt; Preferences\), \(Arduino &gt; Preferences\) on MacOS.**
 2. Find the section at the bottom called **Additional Boards Manager URLs:**
 
 ![](../../.gitbook/assets/arduino-board-add-sparkfun.png)

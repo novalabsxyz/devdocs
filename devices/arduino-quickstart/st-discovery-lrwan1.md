@@ -65,7 +65,7 @@ The ST B-L072Z-LRWAN1 requires one package to be installed follow the instructio
 
 To install, open your Arduino IDE:
 
-1. Navigate to **\(File &gt; Preferences\)**
+1. Navigate to **\(File &gt; Preferences\), \(Arduino &gt; Preferences\) on MacOS.**
 2. Find the section at the bottom called **Additional Boards Manager URLs:**
 
 ![](../../.gitbook/assets/disco_stm32l0_core_pref_arduino.png)

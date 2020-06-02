@@ -58,7 +58,7 @@ The Heltec WiFi LoRa 32 V2 requires one Arduino board support package. Follow th
 
 To install, open your Arduino IDE:
 
-1. Navigate to **\(File &gt; Preferences\)**
+1. Navigate to **\(File &gt; Preferences\), \(Arduino &gt; Preferences\) on MacOS.**
 2. Find the section at the bottom called **Additional Boards Manager URLs:**
 
 ![](../../.gitbook/assets/heltec-guide-arduino-preferences.png)
