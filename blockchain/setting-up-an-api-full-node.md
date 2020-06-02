@@ -1,5 +1,7 @@
 # Run an API Full Node
 
+![](../.gitbook/assets/artboard-copy-61.jpg)
+
 This guide walks through setting up a full blockchain node that serves an HTTP API. Once complete you'll have your own version of our hosted [blockchain API](https://developer.helium.com/blockchain/api) and a full node following the blockchain and keeping the API updated.
 
 There are two components needed to run an API node:

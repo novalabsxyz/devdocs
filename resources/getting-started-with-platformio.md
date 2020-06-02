@@ -4,7 +4,7 @@ description: Helium development using PlatformIO within Visual Studio Code
 
 # Getting started with Helium and PlatformIO
 
-![The very fine PlatformIO logo](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/artboard-copy-63.jpg)
 
 ### PlatformIO - An Easier Way to Develop Embedded Applications 
 

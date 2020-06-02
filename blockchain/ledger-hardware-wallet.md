@@ -1,5 +1,7 @@
 # Ledger Hardware Wallet
 
+![](../.gitbook/assets/artboard-copy-62.jpg)
+
 The Helium blockchain has support for Ledger hardware wallets. When installed on a Nano S, the Helium ledger app allows you to view your Helium address, check your balance, and submit transactions while using the companion app.
 
 This guide will walk through using Helium on a Ledger Nano S.
