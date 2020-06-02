@@ -2,7 +2,7 @@
 
 ## LoRaWAN Specification Background
 
-The LoRaWAN specification separates the notion of **Network** and **Application** messages. This separation of concerns is merited as an application should not have to worry about notions such as transmit power or channels and likewise, a network or gateway should not worry about the actual application-specific data.
+The LoRaWAN specification separates the notion of **Network** and **Application** messages. This separation of concerns is merited as an application should not have to worry about notions such as transmit power or channels and, likewise, a network or gateway should not worry about the actual application-specific data, such as temperature sensor reading or GPS location.
 
 In order to provide a way for the Network to talk to devices, the [LoRaWAN specification v1.0.2](https://lora-alliance.org/resource-hub/lorawanr-specification-v102) provides for a notion of MAC Commands. These are transmitted from the Network Server to end-device in one of two ways:
 
