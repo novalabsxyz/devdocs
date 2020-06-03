@@ -24,13 +24,15 @@ Ubuntu is a widely available Linux distribution. Notably, it has an easy-to-use 
 
 For Raspberry Pi, [select the 64-bit version of Ubuntu](https://ubuntu.com/download/raspberry-pi) for your appropriate model. We currently do not have Docker image support for 32-bit systems, so please double-check that you're using a 64-bit image. Once you have followed the instructions and are logged into the system, you are ready for the rest of this guide.
 
+For most cloud service providers, launching an instance with Ubuntu 20.04 LTS should be fairly straightforward. With AWS for example, search commercial or community AMIs with the Ubuntu 20.04 loaded onto it. Once that's launched and your connected, you are ready for the rest of this guide too.
+
 First, update the package manager registry:
 
 ```text
 sudo apt-get update
 ```
 
-The, install Docker:
+Then, install Docker:
 
 ```text
 sudo apt-get install docker.io
