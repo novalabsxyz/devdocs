@@ -10,13 +10,9 @@ In addition, it has certain high-level features for account setup like importing
 
 Download a compiled release [here](https://github.com/helium/helium-console-cli/releases) for your appropriate platform.
 
-## API Key Setup
+## API Key
 
-All Console API requests require an API Key which provides access to devices owned by the **organization** which owns the device. Devices are never associated to a single user, but instead to an organization.
-
-The first time you use the CLI, you will need to provide the API key. To create an account key, go to your [profile](https://console.helium.com/profile) on Helium Console. From the top right corner, click: `Account -> Profile`.
-
-From there, you may generate a key for your organization. _The key will only display once._
+You must activate [an API key](api.md#api-key) before using the CLI.
 
 The first time you run the CLI, it will prompt you for this key. It will save the key in a local file: `.helium-console-config.toml`
 
