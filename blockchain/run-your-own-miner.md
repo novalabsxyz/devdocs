@@ -44,6 +44,19 @@ sudo usermod -aG docker $USER
 
 Log in and out of your account to apply these changes. You are now ready to use Docker!
 
+## Port Forwarding
+
+Before launching the Miner, you will want to configure ports on your network to forward two ports:
+
+* **44158/TCP**: the Miner communicates to other Miners over this port. The networking logic knows how to get around a lack of forwarding here, but you will get better performance by forwarding the port
+* **1680/UDP**: the radio connects to the Miner over this port. You will not be able to forward packets or participate in Proof of Coverage without this
+
+"Forwarding" on the second port is less relevant if you are running a radio packet forwarder on the same system at the miner \(both on a Raspberry Pi, for example\). But it is essential if you are running a Miner on the cloud for example.
+
+For AWS, for example, you will want to configure the "Security Group" of your EC2 as so:
+
+![](../.gitbook/assets/security-group%20%281%29.png)
+
 ## Run a Docker Container
 
 Miner releases are available as amd64 and arm64 images on at [quay.io](https://quay.io/repository/team-helium/miner?tab=tags). We do not currently provide 32-bit support.
@@ -66,6 +79,7 @@ Now you can try the `run` command to start your container for the first time:
 docker run -d \
 --restart always \
 --publish 1680:1680/udp \
+--publish 44158:44158/tcp \
 --name miner \
 --mount type=bind,source=/home/ubuntu/miner_data,target=/var/data \
 quay.io/team-helium/miner:miner-xxxNN_YYYY.MM.DD
