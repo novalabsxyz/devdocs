@@ -16,6 +16,8 @@ The next step is to paste the HTTP endpoint.
 
 If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. [Requestbin](https://www.requestbin.com) and [Beeceptor](https://www.beeceptor.com) provide tools to make an HTTP endpoint quickly and easily.
 
+### Uplink
+
 ### RequestBin Example
 
 Create an endpoint by going to requestbin.com and click **Create a Request Bin**. Once created, copy the endpoint.
@@ -46,9 +48,38 @@ View the details of your integration by clicking on the Integration name.
 
 **Update your Connection Details** allows you to update your HTTP connection details for the currently viewed integration.
 
-## Downlink with HTTP
+## Downlink
 
-Currently, downlink via HTTP is only supported by providing a response to the HTTP `POST` of an Uplink packet. In the body of the response, provide a downlink packet by using the [JSON schema documented here](json-schema.md).
+To send data down to your device,  use the `downlink_url` found in the uplink JSON message for that particular device.  It will look similar to the URL shown below.
+
+```text
+"downlink_url": "https://console.helium.com/api/v1/down/897780bc-6980-42c1-a659-30077e8dbcd1/h4IxFDle6biV1ZKmrUJamaXhKjRRF3c-/d2c7b8dc-221a-4ec8-aedd-6c19ae348a33"
+```
+
+To send the downlink message, make a POST request including a JSON body with the following fields shown below, see more details on the fields [here](https://developer.helium.com/console/integrations/json-schema#downlink-transmitting-data-to-a-device).
+
+```text
+{
+    "payload_raw": "SGVsbG8sIHdvcmxkIQ==",
+    "port": 1,
+    "confirmed": false
+}
+```
+
+### Postman Example
+
+Postman is a popular developer utility for HTTP based services, you can download it [here](https://www.postman.com/downloads/). We can use this utility to easily make a POST request to the downlink URL with our downlink JSON message.  Follow the steps below to successfully send your downlink message to your device.
+
+1. Select the type of HTTP request, POST in this case.
+2. Enter the downlink URL here.
+3. Select Body to begin entering your message details.
+4. Select `raw` as your body type.
+5. Select `JSON` as the body format.
+6. Enter your JSON message with the required fields.
+7. Finally press `Send` to transmit the message.
+8. You should see a response of `Downlink scheduled` if successful.
+
+![](../../.gitbook/assets/http-downlink-postman%20%282%29.png)
 
 ## Connecting Integrations to Devices
 
