@@ -20,7 +20,7 @@ To add a **myDevices Cayenne** Integration, go to Integrations on the left-hand 
 
 The next step is to name the integration
 
-Last, apply any optional Labels. For more information on Labels please visit the [Labels guide](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/console/labels/README.md).
+Last, apply any optional Labels. For more information on Labels please visit the [Labels guide](../labels.md).
 
 ## Connecting Integrations to Devices
 
