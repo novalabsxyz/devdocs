@@ -16,7 +16,9 @@ The next step is to paste the HTTP endpoint.
 
 If you're still testing, you can find popular sites that can create HTTP endpoints for you and inspect packets. [Requestbin](https://www.requestbin.com) and [Beeceptor](https://www.beeceptor.com) provide tools to make an HTTP endpoint quickly and easily.
 
-### Uplink
+### Uplink \(Receive Data from Device\)
+
+Uplink refers to your device sending data to be received by the network. With regards to the HTTP integration, this will be the device data that is sent to your HTTP endpoint of choice. 
 
 ### RequestBin Example
 
@@ -48,9 +50,19 @@ View the details of your integration by clicking on the Integration name.
 
 **Update your Connection Details** allows you to update your HTTP connection details for the currently viewed integration.
 
-## Downlink
+## Downlink \(Send Data to Device\)
 
-To send data down to your device,  use the `downlink_url` found in the uplink JSON message for that particular device.  It will look similar to the URL shown below.
+Downlink refers to the network sending data down to be received by your device. With regards to the HTTP integration, this will be data sent to a unique URL called the `downlink_url` provided by Console.  
+
+#### Downlink URL Format
+
+`https://console.helium.com/api/v1/down/{Integration_ID}/{Downlink_Key}/{:optional_device_id}`
+
+You can send downlinks to every device that your HTTP integration is attached to or just a single device by including the device UUID at the end. You can find this `downlink_url` with the required downlink key in it on the HTTP integration page in the details section, an example is shown below.
+
+![](../../.gitbook/assets/http-downlink-console.png)
+
+The downlink URL can aslo be found in the uplink JSON message for that particular device.  It will look similar to the URL shown below. You can also find it using the Debug window on your device page.
 
 ```text
 "downlink_url": "https://console.helium.com/api/v1/down/897780bc-6980-42c1-a659-30077e8dbcd1/h4IxFDle6biV1ZKmrUJamaXhKjRRF3c-/d2c7b8dc-221a-4ec8-aedd-6c19ae348a33"
