@@ -6,10 +6,11 @@
 
 * [Introduction](console/introduction.md)
 * [Quickstart](console/quickstart.md)
+* [Users](console/users.md)
+* [Adding Devices](console/adding-devices.md)
 * [Console CLI and API](console/console-cli-and-api/README.md)
   * [CLI](console/console-cli-and-api/cli.md)
   * [API](console/console-cli-and-api/api.md)
-* [Users](console/users.md)
 * [Integrations](console/integrations/README.md)
   * [JSON Schema](console/integrations/json-schema.md)
   * [MQTT](console/integrations/mqtt.md)
@@ -19,7 +20,6 @@
   * [myDevices Cayenne](console/integrations/mydevices-cayenne-integration.md)
 * [Labels](console/labels.md)
 * [Functions](console/functions.md)
-* [Adding Devices](console/adding-devices.md)
 
 ## Devices
 
