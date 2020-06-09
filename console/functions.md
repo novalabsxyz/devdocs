@@ -16,7 +16,11 @@ These types of standards allow you to easily encode your data much more efficien
 
 ## Creating a Function Decoder
 
+{% hint style="info" %}
+**Decoder Library on GitHub**
+
 If you have purchased an off-the-shelf device, it is likely that there already exists a decoder you can use! We have a [repository ](https://github.com/helium/console-decoders)that contains decoders for a number of popular devices.
+{% endhint %}
 
 To begin creating a new function within the Helium Console, select Functions from the left side navigation. Then create a new Function by clicking on the `Create New Function` button in the upper-right.
 
@@ -28,12 +32,15 @@ Next we need to enter the JavaScript that will decode our payloads for us. The S
 
 ![](../.gitbook/assets/functions-console-enter-script.png)
 
-Once we have entered our decoder script, the last step is to optionally attach or create a new label. If you're not familiar with labels yet, you can learn about them [here](labels.md). You will likely want to attach your function to a device or integration via Labels. 
+### Attaching Labels to Functions
 
-There are two common ways in which labels are attached to functions, and thereby used.
+  
+Once we have entered our decoder script, the last step is to optionally attach it to or create a new label. If you're not familiar with labels yet, you can learn about them [here](labels.md). You will likely want to attach your function to a device or integration via Labels. 
 
-1. Create a label just for your function and attach it to your function and a device. This will result in the function only being applied to the device payload in the Debug utility. 
-2. Create a single label for both an integration and a function, and attach that to the integration, the function, and finally the device. This will result in the function be applied to payloads before being sent to the integration. 
+There are two common ways in which labels are attached to functions, and thereby used:
+
+1. Create a label just for your function and attach it to your function and a device. **This will result in the function only being applied to the device payload in the Debug utility**. 
+2. Create a single label for both an integration and a function, and attach that to the integration, the function, and finally the device. **This will result in the function being applied to payloads before being sent to the integration**. 
 
 ![](../.gitbook/assets/functions-console-labels-save.png)
 
