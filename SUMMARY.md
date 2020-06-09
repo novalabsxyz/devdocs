@@ -18,6 +18,7 @@
   * [AWS IoT Core](console/integrations/awsiotcore.md)
   * [myDevices Cayenne](console/integrations/mydevices-cayenne-integration.md)
 * [Labels](console/labels.md)
+* [Functions](console/functions.md)
 * [Adding Devices](console/adding-devices.md)
 
 ## Devices
