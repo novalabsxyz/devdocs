@@ -32,6 +32,23 @@ Next we need to enter the JavaScript that will decode our payloads for us. The S
 
 ![](../.gitbook/assets/functions-console-enter-script.png)
 
+### Function Output
+
+The data returned by your function decoder will be included in an additional field in the standard [JSON message](https://developer.helium.com/console/integrations/json-schema#uplink-receiving-data-from-a-device), it will not alter the original payload field.  An example of the decoded field is shown below.
+
+```text
+"decoded": {
+ "payload": {
+   "BatV": 3.039,
+   "Ext_sensor": "Temperature Sensor",
+   "Hum_SHT": "53.8",
+   "TempC_DS": "327.67",
+   "TempC_SHT": "24.58"
+  },
+ "status": "success"
+},
+```
+
 ### Attaching Labels to Functions
 
   
