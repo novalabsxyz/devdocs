@@ -14,7 +14,7 @@ LoRaWAN networks are, by design, low bandwidth. This means that we must make the
 
 These types of standards allow you to easily encode your data much more efficiently. Once your data has been received over the air by the network, there is no longer the necessity of encoding the data with a standard that can make it more challenging for humans to interpret. This is where Function Decoders come in, they allow you to decode your device data so that you can interpret it for debugging issues or translate it before sending it to your application or another service.
 
-## Creating a Function Decoder
+## Creating a Decoder Function
 
 {% hint style="info" %}
 **Decoder Library on GitHub**
@@ -32,9 +32,20 @@ Next we need to enter the JavaScript that will decode our payloads for us. The S
 
 ![](../.gitbook/assets/functions-console-enter-script.png)
 
-### Function Output
+### Decoder Function Definition
 
-The data returned by your function decoder will be included in an additional field in the standard [JSON message](https://developer.helium.com/console/integrations/json-schema#uplink-receiving-data-from-a-device), it will not alter the original payload field.  An example of the decoded field is shown below.
+The decoder function parameters  will include the device uplink payload as an array of bytes and the uplink port. You can return any valid type value which will then be used at the decoder output. 
+
+```text
+function Decoder(bytes, port) { 
+
+  return decoded; 
+}
+```
+
+### Decoder Function Output
+
+The data returned by your function decoder will be included in an additional decoded.payload field in the standard [JSON message](https://developer.helium.com/console/integrations/json-schema#uplink-receiving-data-from-a-device), it will not alter the original payload field.  An example of the decoded field is shown below.
 
 ```text
 "decoded": {
@@ -51,7 +62,6 @@ The data returned by your function decoder will be included in an additional fie
 
 ### Attaching Labels to Functions
 
-  
 Once we have entered our decoder script, the last step is to optionally attach it to or create a new label. If you're not familiar with labels yet, you can learn about them [here](labels.md). You will likely want to attach your function to a device or integration via Labels. 
 
 There are two common ways in which labels are attached to functions, and thereby used:
