@@ -51,7 +51,7 @@ The Challenger first generates an ephemeral public/private key pair to be used i
 
 ### Constructing The Multi-layer Challenge
 
-This phase of the challenge begins with the Challenger selecting a target, followed by set of Hotspots known by the blockchain to be within a continuous radio network of said target target. Challenge packets are transmitted over RF using the Hotspot’s on-board sub GHz radio, so the distance between any two targets must be achievable using this RF link. A Hotspot’s location is established in the `assert location` transaction used when deployed.
+This phase of the challenge begins with the Challenger selecting a target, followed by set of Hotspots known by the blockchain to be within a continuous radio network of said target. Challenge packets are transmitted over RF using the Hotspot’s on-board sub GHz radio, so the distance between any two targets must be achievable using this RF link. A Hotspot’s location is established in the `assert location` transaction used when deployed.
 
 Once complete, the Challenger constructs a multi-layer challenge packet that is to be completed by the challenge targets. This multi-layer packet is essentially an “envelope of envelopes”, with each layer of the packet only decryptable by its intended target. The innermost packet layer is then created and added to the challenge packet, encrypted using the Diffie-Hellman exchange of the public key of the final target \(accessible via the blockchain\) and the ephemeral private key. This layer creation and encryption process repeats for each target in the challenge list until the complete challenge packet has been completed.
 
