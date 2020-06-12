@@ -1,8 +1,8 @@
 ---
-description: An API endpoint that returns data relevant to the HNT Price Oracle
+description: An API endpoint that returns current and historical HNT Oracle Prices
 ---
 
-# HNT Price Oracle
+# Oracle Price Reports
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices" %}
 {% api-method-summary %}
@@ -10,19 +10,13 @@ Get historical HNT Oracle prices by block
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the last 100 HNT prices along with their block. It also returns a cursor to use to page through the results.   
+Returns up to 100 HNT prices along with their block. It also returns a cursor to page through the results if needed.  
   
 To get the price in $USD, divide the `price` field in the response by `100,000,000`. For example, the price from block `370580` in the response below would be `$0.29145000`. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
@@ -72,12 +66,6 @@ To get the price in $USD, divide the `price` field in the response by `100,000,0
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
