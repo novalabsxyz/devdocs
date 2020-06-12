@@ -53,7 +53,7 @@ A successful oracle price history query
 
 
 
-{% api-method method="get" host="https://api.helium.i/v1/oracle/prices" path="/current" %}
+{% api-method method="get" host="https://api.helium.io/v1/oracle/prices" path="/current" %}
 {% api-method-summary %}
 Get Current HNT Oracle Price
 {% endapi-method-summary %}
