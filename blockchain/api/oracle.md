@@ -10,7 +10,7 @@ Get historical HNT Oracle prices by block
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns up to 100 HNT prices along with their block. It also returns a cursor to page through the results if needed.  
+Returns up to 100 HNT prices along with the block in which they changed. It also returns a cursor to page through the results if needed.  
   
 To get the price in $USD, divide the `price` field in the response by `100,000,000`. For example, the price from block `370580` in the response below would be `$0.29145000`. 
 {% endapi-method-description %}
@@ -59,7 +59,7 @@ Get Current HNT Oracle Price
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the most recent HNT Oracle price, along with its block.   
+Returns the most recent HNT Oracle price, along with the block in which it was updated.   
   
 To get the price in $USD, divide the `price` field in the response by `100,000,000`. For example, the price from the response below is `$0.29145000`  
 {% endapi-method-description %}
