@@ -2,7 +2,7 @@
 description: An API endpoint that returns data relevant to the HNT Price Oracle
 ---
 
-# Oracle
+# HNT Price Oracle
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices" %}
 {% api-method-summary %}
