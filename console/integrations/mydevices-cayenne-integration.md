@@ -24,6 +24,12 @@ Last, apply any optional Labels. For more information on Labels please visit the
 
 ## Connecting Integrations to Devices
 
+{% hint style="info" %}
+**Downlink Not Yet Supported**
+
+The MyDevices integration currently only supports uplinks. Downlinks are in the process of being implemented and will be available soon.
+{% endhint %}
+
 Devices are connected to integrations through the use of Labels. Labels are named identifiers, that can be used to associate an integration with a device. To connect one or more devices to one or more integrations, simply attach the same label to both the device and integration. Labels need to be created before attaching them to devices and integrations. Read more on this [here](../labels.md).
 
 ### Adding Your Device on myDevices Cayenne 
