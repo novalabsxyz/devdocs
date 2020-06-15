@@ -14,8 +14,8 @@ Every [epoch](mining-token-rewards.md), the current consensus group mines some a
 
 | Reward Type | Description |
 | :--- | :--- |
-| PoC Challenger | Paid to any Hotspot that creates a valid PoC challenge and submits the corresponding receipt to the blockchain. |
-| PoC Challengees | Awarded toa any Hotspot that completes a stage of a PoC challenge. |
+| PoC Challenger | Rewarded to any Hotspot that creates a valid PoC challenge and submits the corresponding receipt to the blockchain. |
+| PoC Challengees | Awarded to any Hotspot that completes a stage of a PoC challenge. |
 | Witnesses | Distributed to all Hotspots that witness a packet as part of a PoC Challenge. |
 | Consensus Group | Divided equally among the Hotspots that are part of outgoing Concesus Group, responsible for mining blocks. |
 | Security | Awarded to Helium, Inc and other Network investors who hold Security Tokens. |
@@ -73,7 +73,7 @@ With the Network being very new, the reward distrubution is currently designed t
 
 ## HNT Earnings Per Hotspot By Reward Type
 
-The last thing to examine is the amout of `HNT` earned per Hotspot in a given epoch, taking into acount the total number of Hotspots live on the Network eligible for each category of `HNT` reward. The following table shows the precise `HNT` payouts for a recently concluded epoch. These specific rewards were paid out in block `113718` and precise amount of `HNT` mined in this epoch was `3472.22222152`.
+The last thing to examine is the amount of `HNT` earned per Hotspot in a given epoch, taking into acount the total number of Hotspots live on the Network eligible for each category of `HNT` reward. The following table shows the precise `HNT` payouts for a recently concluded epoch. These specific rewards were distributed in block `113718` and precise amount of `HNT` mined in this epoch was `3472.22222152`.
 
 | Reward Type | Hotspots Earning Reward | HNT Earned Per Hotspot | Total Earned by Reward Type |
 | :--- | :--- | :--- | :--- |
