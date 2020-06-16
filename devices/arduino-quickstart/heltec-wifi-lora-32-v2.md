@@ -147,6 +147,22 @@ The last step before we upload our sketch is to select the correct LoRaWAN Regio
 
 The last step before we upload our sketch is to select the LoRaWAN Uplink Mode, navigate to **\(Tools &gt; LoRaWAN Uplink Mode:  &gt; UNCONFIRMED\).**
 
+### Required Change to Default DataRate
+
+The Helium network does not fully support ADR \(Adapative Data Rate\), read more [here](https://developer.helium.com/longfi/mac-commands-fopts-adr#linkadrreq-linkadrans). In this example sketch, ADR is turned off, therefore you must manually set the desired data rate for your payload size manually. This library uses a default data rate that is not supported by the Helium Network so you must change it to one in the following range DR\_0 - DR\_4. To do this change the default data rate on line 20 in the file found below for your operating system
+
+`linux: /home/{user}/Arduino/libraries/ESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp` 
+
+`windows: Documents\Arduino\libraries\ESP32_LoRaWAN-master\src\ESP32_LoRaWAN.cpp`
+
+`mac os: Documents/Arduino/librariesESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp`
+
+**Change line 20 to:**
+
+```text
+#define LORAWAN_DEFAULT_DATARATE                    DR_3
+```
+
 ### Upload Sketch
 
 We're finally ready to upload our sketch to the board. In the Arduino IDE, click the right arrow button, or navigate to \(**Sketch &gt; Upload\),** to build and upload your new firmware to the board. You should see something similar to the image below at the bottom of your Arduino IDE, when the upload is successful.
@@ -161,19 +177,7 @@ When your firmware update completes, the board will reset, and begin by joining 
 
 ![](../../.gitbook/assets/heltec-guide-debug-console.png)
 
-Your device may take several minutes to join and begin to send uplink packets because the library is designed to work in several LoRaWAN regions and networks. Because of this, the firmware will attempt different sub-bands and data rates until it is successful. If you would like to change the default channel mask and data rates in the library you can, just make the following two changes below in the file specified.
-
-`linux: /home/{user}/Arduino/libraries/ESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp` 
-
-`windows: Documents\Arduino\libraries\ESP32_LoRaWAN-master\src\ESP32_LoRaWAN.cpp`
-
-`mac os: Documents/Arduino/librariesESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp`
-
-**Change line 20 to:**
-
-```text
-#define LORAWAN_DEFAULT_DATARATE                    DR_3
-```
+Your device may take several minutes to join and begin to send uplink packets because the library is designed to work in several LoRaWAN regions and networks. Because of this, the firmware will attempt different sub-bands until it is successful. If you would like to change the default channel mask in the library to speed up this process you can make the following change below in the file specified.
 
   
 **Change lines 343-348 to:**
