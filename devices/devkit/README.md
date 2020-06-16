@@ -11,7 +11,7 @@ The Helium Developer Kit is the perfect development setup to get started on the 
 {% endhint %}
 
 {% hint style="info" %}
-[Buy on Digi-Key](https://www.digikey.com/ordering/shoppingcart)
+[Buy on Digi-Key](https://www.digikey.com/short/zhhc7q)
 {% endhint %}
 
 ### Part List & Resource Links
