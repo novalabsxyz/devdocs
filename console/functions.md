@@ -1,6 +1,6 @@
 # Functions
 
-![](../.gitbook/assets/functions.png)
+![](../.gitbook/assets/artboard-copy-73%20%281%29.jpg)
 
 You can now execute functions on Console! With the Decoder Function, users can transform and/or parse a raw payload before it is posted to an endpoint. 
 
