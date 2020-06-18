@@ -170,11 +170,11 @@ Lists all chain variable transaction activity. This route is paged using a curso
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
+{% api-method-query-parameters %}
 {% api-method-parameter name="cursor" type="string" required=false %}
-Cursor for the next page of activity transactions
+Cursor for the next page to fetch
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
