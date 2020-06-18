@@ -159,3 +159,92 @@ This fetched the \`block\_time\` chain variable
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="https://api.helium.io" path="/v1/vars/activity" %}
+{% api-method-summary %}
+List chain variable activity
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Lists all chain variable transaction activity. This route is paged using a cursor.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="cursor" type="string" required=false %}
+Cursor for the next page of activity transactions
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "data": [
+        {
+            "cancels": [],
+            "hash": "FXLaw6csD1q_sRU9oyk6Vz6p47vBIhVPhSDcIEGXPiQ",
+            "height": 365778,
+            "key_proof": "",
+            "master_key": null,
+            "nonce": 28,
+            "proof": "MEUCIF255lwe5je1GMM5OdWAbc86sZ5xaU3-75VSjILrVZ0GAiEAjpFTh7bSvrZV4fC2vnFN7KKG3bsBUhdBDe6JRUJ-AyM",
+            "time": 1591646992,
+            "type": "vars_v1",
+            "unsets": [],
+            "vars": {
+                "price_oracle_height_delta": 10,
+                "price_oracle_price_scan_delay": 3600,
+                "price_oracle_price_scan_max": 90000,
+                "price_oracle_public_keys": "IQEgHuJGDwcAoZZsw1rNcZIpbsIrVqihXfFEKX2g5YLNjCEBIO1OyYQtE8A+UdHQnGfgiTPBoA9g7qAq665jgMcUmt4hAY+mQWlLOM6dVi7hrugbt5H4Mo3SkJv+UOHwpKTVDJJkIQEUgzPrDa98YpqHWsRTDnbfvd2atT5pt4d5aWUzo3fOhCEB/oFGezNl0OBjrD5+/DuCVF3n1vjPi1SeeOgGCHnzGc0hAZTW/LUBIchFlJIiHRZbbBASIS0A0mT907FOUnF6lS/wIQFaM7GI+z26SkZoPG510rm0As7zf9ZlGLS+o50txhXIwiEBqtvQSZyN25QHlP3RQjDaW0fo9Mb97CjJWnA97JxF620hAZrrw1ilYRXLAaFgR+zBvDK51g8OVj31g24WlggwrmhC",
+                "price_oracle_refresh_interval": 10
+            },
+            "version_predicate": 0
+        },
+        {
+            "cancels": [],
+            "hash": "J-c9UpTKIXtnDtLOJihaI7F99nrXa1IDbymVVgsugvM",
+            "height": 352052,
+            "key_proof": "",
+            "master_key": "1Wh4bh",
+            "nonce": 27,
+            "proof": "MEQCIEkPl2ekYjQRvNwp3CQ9wnu3nHvuiDHCs4bNkK7kntyUAiB_0fspgA60E6TNViasYBuTcla06__jpxFGMpsWPnJ3xA",
+            "time": 1590705257,
+            "type": "vars_v1",
+            "unsets": [],
+            "vars": {
+                "snapshot_interval": 720,
+                "snapshot_version": 1
+            },
+            "version_predicate": 0
+        },
+        {
+            "cancels": [],
+            "hash": "UI2IoTs4eXA68wKyL8059alByHjszUU3GMgj7Ef9Uc4",
+            "height": 339406,
+            "key_proof": "",
+            "master_key": "1Wh4bh",
+            "nonce": 26,
+            "proof": "MEUCIHhP-ADAk1dpz4NB1_RaHapWCBTMxRR8m0Fg4_Pq9ea-AiEAqgnPEc09kclYyv7LO3NT93fb-KbjgK4YOIQYiUm_ero",
+            "time": 1589921323,
+            "type": "vars_v1",
+            "unsets": [],
+            "vars": {
+                "witness_refresh_interval": 10080,
+                "witness_refresh_rand_n": 1000
+            },
+            "version_predicate": 0
+        }
+    ]
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
