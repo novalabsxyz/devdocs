@@ -76,8 +76,7 @@
 ## Hotspot
 
 * [Introduction](hotspot/introduction.md)
-* [Build a Hotspot](hotspot/developer-setup/README.md)
-  * [Extensions to the Semtech UDP Protocol](hotspot/developer-setup/extensions-to-the-semtech-udp-protocol.md)
+* [Build a Hotspot](hotspot/developer-setup.md)
 * [LoRaWAN Gateway Migration](hotspot/lorawan-gateway-migration/README.md)
   * [Laird Sentrius RG191](hotspot/lorawan-gateway-migration/laird.md)
 * [Hotspot BLE Services](hotspot/hotspot-ble-services.md)

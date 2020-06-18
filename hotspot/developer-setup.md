@@ -29,7 +29,7 @@ This guide is experimental and for advanced users only, and you may run in to va
 
 ## Example Custom Hardware
 
-Any hardware that can run an 8 channel LoRa front-end \(such as SX1301 or SX1302\) and send and receive packets using the [Semtech UDP Protocol](https://github.com/Lora-net/packet_forwarder/blob/master/PROTOCOL.TXT) can be used to participate in the Helium Network.
+Any hardware that can run an 8 channel LoRa front-end \(such as SX1301 or SX1302\) and send and receive packets using the [Semtech UDP Protocol](https://github.com/Lora-net/packet_forwarder/blob/master/PROTOCOL.TXT) can be used to participate in the Helium Network. To fully participate in [all potential earning opportunities](../blockchain/mining-token-rewards.md#hnt-distributions-per-epoch), a gateway must also have a GPS module and feature some extensions to the standard Semtech UDP Protocol.
 
 If you don’t have your own hardware yet, we recommend using a[ Raspberry Pi 3B+ or 4B](https://www.raspberrypi.org/) running the latest[ Raspian Buster](https://www.raspberrypi.org/downloads/raspbian/) image with a[ RAK2245 Pi Hat](https://store.rakwireless.com/products/rak2245-pi-hat) installed, and a recommended 64GB SD card.
 
@@ -187,7 +187,7 @@ You want to change the field "server\_address" from "localhost" the the IP addre
 You'll need to restart the packet forwarder for the configuration change to take effect. To verify that things are working, you can follow the logs **on the AWS instance:**
 
 ```text
-tail -f /var/log/miner/console.log | grep lora
+tail -f /var/data/log/miner/console.log | grep lora
 ```
 
 At the very least, you should see PULL\_DATA messages every few seconds. If so, then you've done it!

@@ -28,7 +28,7 @@ The [Helium blockchain](blockchain/blockchain-primitives.md) is what sets the He
 
 ## ![](.gitbook/assets/group-18-copy-4.png) Hotspot
 
-The Helium Hotspot is the combination LoRaWAN router and Helium blockchain miner. There are [thousands deployed in the United States](http://network.helium.com/) \(and soon across the world\).  If you don't have one, you can [buy one here](https://www.helium.com/store). And if you want to build your own, [you absolutely should](hotspot/developer-setup/).
+The Helium Hotspot is the combination LoRaWAN router and Helium blockchain miner. There are [thousands deployed in the United States](http://network.helium.com/) \(and soon across the world\).  If you don't have one, you can [buy one here](https://www.helium.com/store). And if you want to build your own, [you absolutely should](hotspot/developer-setup.md).
 
 ## ![](.gitbook/assets/combined-sfefrehape.png) LongFi
 

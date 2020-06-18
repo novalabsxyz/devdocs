@@ -2,7 +2,7 @@
 
 ![](../.gitbook/assets/artboard-copy-57%20%281%29.jpg)
 
-Running a Helium Miner is a great way to get some exposure to the blockchain and to support the network. If you have [your own hardware deployed](../hotspot/developer-setup/), this is necessary for routing LoRaWAN packets according to our [LongFi](https://developer.helium.com/longfi/introduction) protocol.
+Running a Helium Miner is a great way to get some exposure to the blockchain and to support the network. If you have [your own hardware deployed](../hotspot/developer-setup.md), this is necessary for routing LoRaWAN packets according to our [LongFi](https://developer.helium.com/longfi/introduction) protocol.
 
 ![](../.gitbook/assets/artboard%20%281%29.png)
 
@@ -219,5 +219,5 @@ Another fun tidbit: for production hotspots sold by Helium, the swarm key is sto
 
 While participating in libp2p is helpful for the network, the Helium Blockchain does not exist for its own sake. It is there to incentivize coverage and one of the ways to earn tokens as a coverage provider for Helium is by routing IoT traffic.
 
-To learn more about this, check out the [Build a Hotspot](../hotspot/developer-setup/) section.
+To learn more about this, check out the [Build a Hotspot](../hotspot/developer-setup.md) section.
 
