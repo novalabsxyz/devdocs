@@ -18,6 +18,10 @@ The Adeunis Field Test Device \(ARF8124A\) is a great tool for network testing. 
 
 [Manual](https://www.adeunis.com/wp-content/uploads/2019/12/FTD_LoRaWAN_US902-928_UG_GB_V1.0.0.pdf)
 
+### Add Device to Console
+
+To start, you'll need to add your device to Console. You should have been provided with a DevEUI, AppEUI, and AppKey from the seller of the device.  Follow our [quickstart ](../../console/quickstart.md)for instructions on how to add a new device to Console.
+
 ### Device Configuration
 
 The following device configuration changes are required for the device to function properly on the Helium Network. Although the Adeunis IoT Configurator application makes the device configuration much easier, it does not allow you to change all the required settings, so we must use a serial utility. We are using Realterm for our serial utility, but any will work, just be sure to use the correct serial settings and send the commands in the correct format.
@@ -79,9 +83,11 @@ You should see the following responses below from the device after entering the 
 
 ![](../../.gitbook/assets/adeunis-realterm-commands.png)
 
-### 
+### Sending Packets
 
+After exiting command mode and on every power on, the device will immediately attempt to join the network. You will the status of the join attempt on the Uplink/Downlink screen, please see the manual for more details on this screen. Once the device has joined press the large push button in the center of the device to send the uplink payload.
 
+![](../../.gitbook/assets/adeunis-console-events.png)
 
 
 
