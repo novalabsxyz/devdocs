@@ -1,0 +1,87 @@
+---
+description: Qualify and validate the Network
+---
+
+# Adeunis Field Test Device
+
+![](../../.gitbook/assets/adeunis-device.png)
+
+### Introduction
+
+The Adeunis Field Test Device \(ARF8124A\) is a great tool for network testing. It allows you to rapidly test network coverage at specific geographical positions to verify that devices will have coverage. 
+
+### Resources
+
+[Product Page](https://www.adeunis.com/en/produit/ftd-iot-lorawan-network-tester-915-923/)
+
+[Datasheet](https://www.adeunis.com/wp-content/uploads/2020/02/Data_Sheet_FTD_915-923_EN.pdf)
+
+[Manual](https://www.adeunis.com/wp-content/uploads/2019/12/FTD_LoRaWAN_US902-928_UG_GB_V1.0.0.pdf)
+
+### Device Configuration
+
+The following device configuration changes are required for the device to function properly on the Helium Network. Although the Adeunis IoT Configurator application makes the device configuration much easier, it does not allow you to change all the required settings, so we must use a serial utility. We are using Realterm for our serial utility, but any will work, just be sure to use the correct serial settings and send the commands in the correct format.
+
+[Realterm - Serial Utility](https://sourceforge.net/projects/realterm/)
+
+#### Serial Settings
+
+* Rate 115 200 bps
+* Parity None
+* Data 8
+*  Stop Bit 1
+
+![](../../.gitbook/assets/adeunis-realterm-settings.png)
+
+#### Activate Command Mode
+
+Only this command requires that you send the command in number form.
+
+Enter Command Mode Command: `0xFF 0xFF 0xFF 0x2B 0x2B 0x2B`
+
+![](../../.gitbook/assets/adeunis-realterm-send-numbers.png)
+
+#### Unblock Operating Range
+
+Command: `ATT63 PROVIDER`
+
+This command and all that follow should be sent using the ASCII format with a carriage return\(CR\) at the end.
+
+![](../../.gitbook/assets/adeunis-realterm-send-ascii.png)
+
+#### Select Sub band 2
+
+Set Value Command: `ATS259=2`
+
+Read Value Command: `ATS259?`
+
+#### Uplink Unconfirmed
+
+Set Value Command:`ATS382=0`
+
+Read Value Command: `ATS382?`
+
+#### ADR ON
+
+Set Value Command: `ATS220=1`
+
+Read Value Command: `ATS220?`
+
+#### Save Configuration
+
+Command: `AT&W`
+
+#### Exit Command View 
+
+Command: `ATO`
+
+You should see the following responses below from the device after entering the above commands.
+
+![](../../.gitbook/assets/adeunis-realterm-commands.png)
+
+### 
+
+
+
+
+

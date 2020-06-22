@@ -38,6 +38,7 @@
 * [LoRaWAN Devices](devices/lorawan-devices/README.md)
   * [Digital Matter LoRaWAN GPS](devices/lorawan-devices/digital-matter-lorawan.md)
   * [Browan LoRaWAN Object Locator](devices/lorawan-devices/browan-lorawan-object-locator.md)
+  * [Adeunis Field Test Device](devices/lorawan-devices/adeunis-field-test-device.md)
 
 ## Developer Resources <a id="resources"></a>
 
