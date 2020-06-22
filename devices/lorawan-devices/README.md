@@ -19,6 +19,7 @@ If a device is denoted with \(Cargo\), that means that the device has been vette
 
 **Other Devices:**
 
+* [Adeunis Field Test Device](adeunis-field-test-device.md)
 * Digital Matter SensorNode \(GPS + Misc\)
 
 
