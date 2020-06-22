@@ -33,7 +33,7 @@ The following device configuration changes are required for the device to functi
 * Rate 115 200 bps
 * Parity None
 * Data 8
-*  Stop Bit 1
+* Stop Bit 1
 
 ![](../../.gitbook/assets/adeunis-realterm-settings.png)
 
