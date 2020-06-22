@@ -64,6 +64,12 @@ You can send downlinks to every device that your HTTP integration is attached to
 
 The downlink URL can aslo be found in the uplink JSON message for that particular device.  It will look similar to the URL shown below. You can also find it using the Debug window on your device page.
 
+#### Downlink URL Example \(Sends to all Devices with Integration Attached\)
+
+```text
+"downlink_url": "https://console.helium.com/api/v1/down/897780bc-6980-42c1-a659-30077e8dbcd1/h4IxFDle6biV1ZKmrUJamaXhKjRRF3c-"
+```
+
 #### Downlink URL Example \(Device Specific\)
 
 ```text
