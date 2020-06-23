@@ -12,11 +12,11 @@ To find this price, nine oracles \(this number may change in the future\) period
 
 ### Calculating the HNT Price based on Oracle inputs
 
-Every `50` blocks \(roughly every 50 minutes\) the blockchain will attempt to establish a new HNT/$USD price.  To do this:
+Every `10` blocks \(roughly every 10 minutes\) the blockchain will attempt to establish a new HNT/$USD price.  To do this:
 
 1. The blockchain looks for recent price submissions from valid Oracles \(submitted using a new transaction called `price_oracle_submission`\). A valid price submission is anything that was submitted within the last 25 hours but is older than 1 hour. This gives us the ability to calculate a trailing 24 hour median while also having a buffer against outlier price inputs in the most recent 60 minutes.
 2. If there are enough new, valid price submissions in the 24 hour window, a new price will be calculated. For this to happen, a majority of the price Oracles need to have submitted a price in the window - `((N / 2) +1 )`. So, in our system of `9` Oracles, we would need valid prices from at least `5`. \(If there aren’t `((N / 2) +1 )` new prices, no new HNT price is calculated.\)
-3. If there are at least `5` new prices, we then proceed to sort order the list low to high, and take the median. So, if we had `7` valid submissions of `$.20,` `$.22`, `$.235`, `$.238`, `$.25`, `$.27`, `$.45`, the blockchain would select `$.238`, and use this as the external price of HNT for all HNT / DC burn transactions until a new price is established \(which could be as soon as `50` blocks\).
+3. If there are at least `5` new prices, we then proceed to sort order the list low to high, and take the median. So, if we had `7` valid submissions of `$.20,` `$.22`, `$.235`, `$.238`, `$.25`, `$.27`, `$.45`, the blockchain would select `$.238`, and use this as the external price of HNT for all HNT / DC burn transactions until a new price is established \(which could be as soon as `10` blocks\).
 
 {% hint style="info" %}
 What's the current HNT Oracle Price? [Click here.](https://api.helium.io/v1/oracle/prices/current) 
