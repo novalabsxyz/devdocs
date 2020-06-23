@@ -125,7 +125,7 @@ Note that we should have downloaded the configuration file to a specific directo
 We need to modify the SPI speed for this particular RAK concentrator. You may not have to do this with different concentrators. To do that:
 
 ```text
-cd .. && nano lora_gateway/libloragw/src/loragw_spi.native.c
+cd ../.. && nano lora_gateway/libloragw/src/loragw_spi.native.c
 ```
 
 And modify line 56 to read:
