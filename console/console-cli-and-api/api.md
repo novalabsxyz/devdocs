@@ -14,6 +14,8 @@ From there, you may generate a key for your organization. _The key will only dis
 
 **You must confirm the API key** creation by clicking a link that is emailed to the account that created the API key.
 
+From then on, you will want to include the API key in all of your API requests. You do this by placing your API key in an HTTP header field called "key. 
+
 {% api-method method="get" host="https://console.helium.com/api/v1" path="/devices" %}
 {% api-method-summary %}
 Devices List
