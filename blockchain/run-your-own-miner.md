@@ -128,10 +128,8 @@ These commands will assume you are running in Docker and they have the same pref
 This is always helpful to get some idea of what's going on:
 
 ```text
-docker exec miner tail -f /var/log/miner/console.log 
+docker exec miner tail -F /var/log/miner/console.log 
 ```
-
-Beware, as is very common in Linux logs, the file is rotated from time to time. So if you see that logs aren't streaming in anymore, exit out of the `tail`instance and run the command again.
 
 Also, if you are particularly interested in radio traffic, it can be helpful to filter for `lora` as so:
 
