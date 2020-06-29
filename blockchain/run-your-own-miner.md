@@ -121,7 +121,7 @@ And [Start the Container ](run-your-own-miner.md#start-container)again as descri
 
 ## Using the Miner
 
-These commands will assume you've created an alias such as: `alias miner="docker exec miner miner"`. You can always use the full `docker exec miner miner` if you choose not to do so. 
+These commands will assume you are running in Docker and they have the same prefix to get you exceuting a command within the docker: `docker exec miner` . If you want to make it easier, you can always created an an alias such as: `alias miner="docker exec miner miner"`. 
 
 ### Checking the logs
 
@@ -148,7 +148,7 @@ The Helium blockchain uses an Erlang implementation of [libp2p](https://libp2p.i
 The first order of business once the Miner is running is to see if you're connected to any peers, whether your NAT type has been correctly identified, and that you have some listen addresses:
 
 ```text
-miner peer book -s
+docker exec miner miner peer book -s
 ```
 
 You will see an output roughly like the following:
@@ -186,7 +186,7 @@ If you are having trouble, try forwarding port `44158` to the miner. On AWS, dou
 As long as a genesis block is loaded, this query will work and return height 1 at least:
 
 ```text
-miner info height
+docker exec miner miner info height
 ```
 
 If you are syncing, you should see something like this:
