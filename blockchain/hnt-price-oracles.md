@@ -41,7 +41,7 @@ The current set of public keys for the nine HNT Price Oracles are \(in no partic
 136n9BEbreGUNgXJWtyzkBQcXiNzdMQ5GBoP8L2J6ZReFUAwUjy
 14sqAYg1qxzjKTtyHLYZdH6yDtA3KgyoARhWN1cvLZ94dZw5vEc
 145J6Aye86pKTJrUHREiXu7qqppZBcWY1bvWo8id7ZjxyuainYj
-13dUGHis1PdrSwxdseoyZKzQhc8WuWcueAWdT95sDVGDNhGRWV9
+14t33QjopqCUVr8FXG4sr58FTu5HnPwGBLPrVK1BFXLR3UsnQSn
 14EzXp4i1xYA7SNyim6R4J5aXN1yHYKNiPrrJ2WEvoDnxmLgaCg
 147yRbowD1krUCC1DhhSMhpFEqnkwb26mHBow5nk9q43AakSHNA
 ```
