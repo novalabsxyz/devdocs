@@ -16,12 +16,30 @@ The following is a list of the current set of fees required for various transact
 
 | Fee Type | Fee Description | **Cost \(DC\)** | Cost \(USD\) | Required As Of |
 | :--- | :--- | :--- | :--- | :--- |
-| Send HNT | Transferring HNT from wallet to wallet | `35000` | `$.35` | `6/29/2020` |
+| Send HNT | Transferring HNT from wallet to wallet | `Variable` | `Variable` | `6/29/2020` |
 | Transferring Device Packet Data | Fee paid by device owner when sending or receiving sensor data. Metered per 24 bytes. | `1` | `$.00001` | `Not Yet Required` |
 | Add Gateway | Fee paid to add Gateway to the blockchain. \(**Only applies to non-Helium Hotspots.\)** | `4000000` | `$40` | `6/29/2020` |
 | Assert Gateway Location | Required when asserting a Gateway's location. \(The **first location assertion** for Helium Hotspots is paid by Helium Inc. \) | `1000000` | `$10` | `6/29/2020` |
 | Purchasing a blockchain OUI  | Buy an OUI from the Helium blockchain | `10000000` | `$100` | `Not Yet Required` |
 | Purchasing a blockchain Subnet | Buy a Subnet from the Helium blockchain | `10000000` | `$100` | `Not Yet Required` |
+
+### Calculating the DC cost for Sending HNT
+
+As noted above, the `DC` cost of a `Send`transaction is variable. The precise cost is based on the size of the transaction, in bytes. Once the size  calculated, we apply a `5000x` multiplier. For a typical send transaction, where one wallet is sending to one wallet \([like this one here](https://explorer.helium.com/txns/RP8xdjuYsvIAaEuyNvMmlBF7Kc8ShNoURtA1ccgMGpk)\), the complete transaction is made up of the following:
+
+| Transaction Component | Component Size \(Bytes\) |
+| :--- | :--- |
+| Payer Wallet Key | 33 |
+| Payee Wallet Key | 33 |
+| Payer Signature | 64 |
+| Nonce | 3 \(approximate; ranges from 2-4\) |
+| Payment Amount | 6 \(approximate; ranges from 4-8\) |
+
+* In total, this is `139` bytes. 
+* Each `24` bytes requires one Data Credit \(as is the case when you're transferring device packet data\).  
+* `139` / `24` results in `6` Data Credits.  
+* We then apply our 5000x multiplier, and the result is a transaction fee 
+* This results in a `30000 Data Credit` cost for the above transaction.
 
 ### Transaction Fees and Implicit Burn 
 
