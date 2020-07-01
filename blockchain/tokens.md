@@ -1,3 +1,7 @@
+---
+description: An overview of HNT and Data Credits
+---
+
 # Helium Tokens and Data Credits
 
 ![](../.gitbook/assets/artboard-copy-15.jpg)

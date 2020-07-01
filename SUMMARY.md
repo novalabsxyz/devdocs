@@ -57,6 +57,7 @@
 * [Mining and Token Rewards](blockchain/mining-token-rewards.md)
 * [Network Components](blockchain/network-components.md)
 * [Helium Tokens and Data Credits](blockchain/tokens.md)
+* [Transaction Fees](blockchain/transaction-fees.md)
 * [Proof-of-Coverage](blockchain/proof-of-coverage.md)
 * [The Helium Consensus Protocol](blockchain/consensus-protocol.md)
 * [Blockchain Primitives](blockchain/blockchain-primitives.md)
