@@ -274,7 +274,7 @@ Cursor for page to fetch
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/:city" %}
+{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/cities/:city" %}
 {% api-method-summary %}
 List Hotspots for a City
 {% endapi-method-summary %}
