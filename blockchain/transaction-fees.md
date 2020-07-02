@@ -63,7 +63,7 @@ In the above example, had you attempted to send `10.0001HNT` with only. `11 HNT`
 
 ### Failed Transactions Result in No DCs Being Spent
 
-Transactions in the Helium blockchain are `atomic`. In short, this means that they either succeed entirely or they don't. So, if you attempt to send HNT from a Helium Wallet without enough HNT to supply the required Data Credits, the transaction will fail after being submitted to the blockchain API by you wallet. And your `HNT` balance will be the same. No `DCs` were burned \(or harmed\) in this failed transaction. 
+Transactions in the Helium blockchain are `atomic`. In short, this means that they either succeed entirely or they don't. So, if you attempt to send HNT from a Helium Wallet without enough HNT to supply the required Data Credits, the transaction will fail after being submitted to the blockchain API by your wallet. And your `HNT` balance will be the same. No `DCs` were burned \(or harmed\) in this failed transaction. 
 
 
 
