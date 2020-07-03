@@ -20,6 +20,7 @@
   * [myDevices Cayenne](console/integrations/mydevices-cayenne-integration.md)
 * [Labels](console/labels.md)
 * [Functions](console/functions.md)
+* [Debug](console/debug.md)
 
 ## Devices
 
