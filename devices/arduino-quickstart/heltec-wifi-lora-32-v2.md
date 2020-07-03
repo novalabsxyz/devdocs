@@ -81,7 +81,9 @@ Next, to install this board support package:
 
 ### Arduino Library
 
-To communicate with Helium's LoRaWAN network, we'll need to install an Arduino library.
+To communicate with Helium's LoRaWAN network, we'll need to install two Arduino libraries.
+
+#### Heltec ESP32
 
 To install, open your Arduino IDE:
 
@@ -89,6 +91,16 @@ To install, open your Arduino IDE:
 2.  In the search box, type **Heltec ESP32** into the search, select the version shown below, and click Install.
 
 ![](../../.gitbook/assets/heltec-guide-arduino-library.png)
+
+#### Heltec ESP32 LoRaWAN
+
+Download [this](https://github.com/HelTecAutomation/ESP32_LoRaWAN/archive/master.zip) find into the directory below and unzip.
+
+```text
+linux: /home/{user}/Arduino/libraries 
+windows: Documents\Arduino\libraries
+mac os: Documents/Arduino/libraries
+```
 
 ### Install Serial Driver
 
