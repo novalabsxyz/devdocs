@@ -4,7 +4,7 @@ description: View Live Device Data in Console
 
 # Debug
 
-The Console Debug tool allows you to quickly and easily examine device messages. This enables you to verify and debug issues much more easily without requiring the data to be sent to an application endpoint first.  For security reasons the Debug tool does not persist data, instead then ten most recent messages are accumulated from the time the Debug window is opened. 
+The Console Debug tool allows you to quickly and easily examine device messages. This enables you to verify and debug issues much more easily without requiring the data to be sent to an application endpoint first.  For security reasons the Debug tool does not persist data, instead the ten most recent messages are accumulated from the time the Debug window is opened. 
 
 ### Using The Debug Tool
 
