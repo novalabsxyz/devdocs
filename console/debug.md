@@ -22,7 +22,7 @@ Once packets are received or sent down to your device, you will see them display
 
 ### Debug Packet Types
 
-The Debug tool will display a debug type message for every uplink or downlink. 
+The Debug tool will display a message for every uplink or downlink. For detailed information on the contents of the messages please see the [JSON schema documentation](integrations/json-schema.md).
 
 {% hint style="info" %}
 Payloads shown in the debug messages are base64 encoded, just as the JSON messages received by integrations. You will need to decode the payload strings in order to correctly interpret the payload data.
