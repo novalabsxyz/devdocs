@@ -58,7 +58,7 @@ When your device first joins the network, you will see a special uplink message 
 
 #### Uplink
 
-For uplink packets, a message similar to the one below will be shown. In addition to the original uplink message data, which starts at the very bottom, this message types will also show a message for each integration attached to the device, so that you can examine what is being sent to those enpoints. For the message shown below, you can see there is a message for the RequestBin and Cayenne Integrations I have attached to this device. You can differentiate uplink messages by keeping track of the _frame\_up_ count.
+For uplink packets, a message similar to the one below will be shown. In addition to the original uplink message data, which starts at the very bottom, this message types will also show a message for each integration attached to the device, so that you can examine what is being sent to those enpoints. For the message shown below, you can see there is a message for a RequestBin and Cayenne Integrations attached to this device. You can differentiate uplink messages by keeping track of the _frame\_up_ count.
 
 ```text
 {
