@@ -67,6 +67,7 @@
   * [Blocks](blockchain/api/api-blocks.md)
   * [Accounts](blockchain/api/api-accounts.md)
   * [Hotspots](blockchain/api/api-hotspots.md)
+  * [Cities](blockchain/api/cities.md)
   * [Transactions](blockchain/api/api-transactions.md)
   * [Pending Transactions](blockchain/api/api-pending-transactions.md)
   * [Oracle Price Reports](blockchain/api/oracle.md)
