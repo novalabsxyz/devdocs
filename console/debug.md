@@ -4,19 +4,19 @@ description: View Live Device Data in Console
 
 # Debug
 
-The Console Debug tool allows you to quickly and easily examine device messages. This enables you to verify and debug issues much more easily without requiring the data to be sent to an application endpoint first.  For security reasons the Debug tool does not persist data, instead the ten most recent messages are accumulated from the time the Debug window is opened. 
+The Console Debug tool allows you to quickly and easily examine device messages. This enables you to verify and debug issues much more easily without requiring the data to be sent to an application endpoint first.  For security reasons the Debug tool does not persist data. Instead, the 10 most recent messages are accumulated from the time the Debug window is opened. 
 
 ### Using The Debug Tool
 
-The Debug tool is located on the upper right side of every device page, see the image below. To access it, just click the Debug tab and a window will pop out. 
+The Debug tool is located on the upper right side of every device page \(shown in the image below\). To access it, just click the Debug tab and a window will pop out. 
 
 ![](../.gitbook/assets/console-debug.png)
 
-At first you will see a spinning wheel and the message _Waiting for data,_ this is because the debug tool only shows packets that come through while the window is open, see below.
+At first you will see a spinning wheel and the message w_aiting for data._ This is because the Debug tool only shows packets that come through while the window is open.
 
 ![](../.gitbook/assets/console-debug-waiting.png)
 
-Once packets are received or sent down to your device, you will see them display immediately in the Debug window, see below.
+Once packets are received or sent down to your device, you will see them display immediately in the Debug window, seen here:
 
 ![](../.gitbook/assets/console-debug-data.png)
 
@@ -25,7 +25,7 @@ Once packets are received or sent down to your device, you will see them display
 The Debug tool will display a message for every uplink or downlink. For detailed information on the contents of the messages please see the [JSON schema documentation](integrations/json-schema.md).
 
 {% hint style="info" %}
-Payloads shown in the debug messages are base64 encoded, just as the JSON messages received by integrations. You will need to decode the payload strings in order to correctly interpret the payload data.
+Payloads shown in the debug messages are [base64 encoded](https://en.wikipedia.org/wiki/Base64), as are the JSON messages received by integrations. You will need to decode the payload strings in order to correctly interpret the payload data. One way to do this is to use a [Function Decoder](functions.md).
 {% endhint %}
 
 #### Activation
@@ -58,7 +58,7 @@ When your device first joins the network, you will see a special uplink message 
 
 #### Uplink
 
-For uplink packets, a message similar to the one below will be shown. In addition to the original uplink message data, which starts at the very bottom, this message types will also show a message for each integration attached to the device, so that you can examine what is being sent to those enpoints. For the message shown below, you can see there is a message for a RequestBin and Cayenne Integrations attached to this device. You can differentiate uplink messages by keeping track of the _frame\_up_ count.
+For uplink packets, a message similar to the one below will be shown. In addition to the original uplink message data, which starts at the very bottom, this message types will also show a message for each integration attached to the device, so that you can examine what is being sent to those endpoints. For the message shown below, you can see there is a message for a **RequestBin** and **Cayenne** Integrations attached to this device. You can differentiate uplink messages by keeping track of the `frame_up` __count.
 
 ```text
 {
@@ -259,7 +259,7 @@ For uplink packets, a message similar to the one below will be shown. In additio
 
 #### Downlink / ACK
 
-Downlink and ACK messages will only show a single hotspot, similar to the activation message. You can differentiate downlink messages by keeping track of the _frame\_down_ count.
+`Downlink` and `ACK` messages will only show a single hotspot, similar to the activation message. You can differentiate downlink messages by keeping track of the `frame_down` __count.
 
 ```text
 {
