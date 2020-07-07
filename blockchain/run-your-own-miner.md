@@ -79,6 +79,7 @@ Now you can try the `run` command to start your container for the first time:
 
 ```
 docker run -d \
+--env REGION_OVERRIDE=US915 \
 --restart always \
 --publish 1680:1680/udp \
 --publish 44158:44158/tcp \
@@ -90,6 +91,11 @@ quay.io/team-helium/miner:miner-xxxNN_YYYY.MM.DD
 Replace xxxNN with the architecture used, ie: amd64 or arm64, and with the release date of the image.
 
 The `-d` option runs in detached mode, which makes the command return or not; you may want to omit if you have a daemon manager running the docker for you.
+
+The `-env REGION_OVERRIDE=US915` tells your miner that you are connecting to a packet forwarder configured for the US915 region. You will want to change this to your region, ie:  
+`US915 | EU868 | EU433 | CN470 | CN779 | AU915 | AS923 | KR920 | IN865`
+
+> Note: REGION\_OVERRIDE may be completely omitted once your Miner has asserted location and is fully synced, but leaving it there \(as long as the region is properly configured\) is not harmful
 
 The `--restart always` option asks Docker to keep the image running, starting the image on boot and restarting the image if it crashes. Depending on how you installed Docker in your system, it'll start on boot. In the AWS AMI above, we use systemd \(`systemctl status docker` to check\).
 
