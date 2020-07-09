@@ -24,7 +24,7 @@ Ubuntu is a widely available Linux distribution. Notably, it has an easy-to-use 
 
 For Raspberry Pi, [select the 64-bit version of Ubuntu](https://ubuntu.com/download/raspberry-pi) for your appropriate model. We currently do not have Docker image support for 32-bit systems, so please double-check that you're using a 64-bit image. Once you have followed the instructions and are logged into the system, you are ready for the rest of this guide.
 
-For most cloud service providers, launching an instance with Ubuntu 20.04 LTS should be fairly straightforward. With AWS for example, search commercial or community AMIs with the Ubuntu 20.04 loaded onto it. Once that's launched and your connected, you are ready for the rest of this guide too.
+For most cloud service providers, launching an instance with Ubuntu 20.04 LTS should be fairly straightforward. With AWS for example, create an EC2 instance running Ubuntu 20.04. A t2.small will run the miner well once the initial blockchain sync has completed. Once that's launched and you're connected, you are ready for the rest of this guide.
 
 First, update the package manager registry:
 
@@ -103,7 +103,10 @@ The `--publish 1680:1680/udp` binds your system port 1680 to the containers port
 
 The `--name miner` names the container, which makes interacting with the docker easier, but feel free to name the container whatever you want.
 
-The `--mount` with the parameters above will mount the container's `/var/data/` directory to the systems directory `/home/ec2-user/miner_data`.   
+The `--mount` with the parameters above will mount the container's `/var/data/` directory to the systems directory `/home/ec2-user/miner_data`.
+
+### Configure AWS Instance for Sync
+Amazon EC2 instances have CPU usage credits that will easily be depleted during the initial sync of the blockchain. To avoid having your instance throttled, you can temporarily uncap your instance by setting CPU credit usage to unlimited. Once your miner has reached full block height, a t2.small instance is sufficient to keep your miner running.
 
 ### Interact with the Miner within the Container
 
@@ -224,4 +227,3 @@ Another fun tidbit: for production hotspots sold by Helium, the swarm key is sto
 While participating in libp2p is helpful for the network, the Helium Blockchain does not exist for its own sake. It is there to incentivize coverage and one of the ways to earn tokens as a coverage provider for Helium is by routing IoT traffic.
 
 To learn more about this, check out the [Build a Hotspot](../hotspot/developer-setup.md) section.
-
