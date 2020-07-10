@@ -70,7 +70,7 @@
   * [Cities](blockchain/api/cities.md)
   * [Transactions](blockchain/api/api-transactions.md)
   * [Pending Transactions](blockchain/api/api-pending-transactions.md)
-  * [Oracle Price Reports](blockchain/api/oracle.md)
+  * [Oracle Prices](blockchain/api/oracle.md)
   * [Chain Variables](blockchain/api/chain-variables.md)
 * [HNT Price Oracles](blockchain/hnt-price-oracles.md)
 * [Blockchain Wallet CLI](blockchain/blockchain-cli.md)

@@ -2,7 +2,7 @@
 description: An API endpoint that returns current and historical HNT Oracle Prices
 ---
 
-# Oracle Price Reports
+# Oracle Prices
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices" %}
 {% api-method-summary %}
@@ -169,7 +169,7 @@ Cursor for the next page to fetch
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.helium.io" path="/v1/:address/activity" %}
+{% api-method method="get" host="https://api.helium.io" path="/v1/oracle/:address/activity" %}
 {% api-method-summary %}
 List activity for one Oracle
 {% endapi-method-summary %}
@@ -212,6 +212,53 @@ Cursor for the next page to fetch
             "public_key": "13Btezbvbwr9LhKmDQLgBnJUgjhZighEjNPLeu79dqBbmXRwoWm",
             "time": 1592484227,
             "type": "price_oracle_v1"
+        }
+    ]
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://api.helium.io" path="/v1/oracle/predictions" %}
+{% api-method-summary %}
+Get Predicted HNT Oracle Price
+{% endapi-method-summary %}
+
+{% api-method-description %}
+This returns a list of expected times when the Oracle Price is expected to change.  
+  
+The blockchain operates in "block-time", meaning that blocks can come out at some schedule close to 1 per minute. Oracles report in "wall-clock-time", meaning they report what they believe the price should be.  
+  
+If the route returns one or more prices and times, it indicates that the chain is expected to adjust the **price** \(based on Oracle reports\) no earlier than the indicated **time** to the returned price.   
+  
+**NOTE:** A prediction may not be seen in the blockchain if they are close together \(within 10 blocks\) since block times may cause the blockchain to skip to a next predicted price.  
+  
+If no predictions are returned the current HNT Oracle Price is valid for at least 1 hour.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Returns a prediction that the price will change to 47000000 at the earliest at the indicated seconds since Unix epoch time. 
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "data": [
+        {
+            "price": 47000000,
+            "time": 1594410146
         }
     ]
 }
