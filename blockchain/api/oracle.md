@@ -223,7 +223,7 @@ Cursor for the next page to fetch
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/predictions" %}
 {% api-method-summary %}
-Get Predicted HNT Oracle Price
+Get Predicted HNT Oracle Prices
 {% endapi-method-summary %}
 
 {% api-method-description %}
