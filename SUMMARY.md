@@ -35,6 +35,7 @@
   * [Heltec CubeCell Board](devices/arduino-quickstart/heltec-cubecell-board.md)
   * [Heltec WiFi LoRa 32 V2](devices/arduino-quickstart/heltec-wifi-lora-32-v2.md)
 * [Migrating Devices to Helium](devices/migrating-devices-to-helium/README.md)
+  * [Migrating from TTN via the Helium Console](devices/migrating-devices-to-helium/the-things-network-using-helium-console.md)
   * [The Things Network](devices/migrating-devices-to-helium/device-migration-the-things-network.md)
 * [LoRaWAN Devices](devices/lorawan-devices/README.md)
   * [Digital Matter LoRaWAN GPS](devices/lorawan-devices/digital-matter-lorawan.md)
