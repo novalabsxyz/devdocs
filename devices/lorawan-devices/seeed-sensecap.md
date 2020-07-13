@@ -44,10 +44,6 @@ At this point, we can either connect to the device directly using a serial termi
 
 Connect your cable, turn the unit on, and then tap the Reset button while holding the Set button. This will put you into programming mode.
 
-Using this tool, you will first need to upgrade the firmware so that it will be set to use sub-band 7 that allows the node to operate on the Helium Network.
-
-{% file src="../../.gitbook/assets/lora-mac-sensor-node-class-a-release-us915-tcxo-sub7.bin" caption="Helium - US915 Firmware on Sub-band 7" %}
-
 Following that, either jot down your Device EUI/App EUI/App Key from the right pane in the utility and enter those into the Helium Console, or get the Helium keys from the Console, enter them in this utility, and write them down to the node.
 
 ![](../../.gitbook/assets/image%20%2857%29.png)
