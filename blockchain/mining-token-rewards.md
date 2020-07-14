@@ -109,9 +109,9 @@ Hotspots earn HNT based on how much data they route, and specifically how many D
 * Let's assume that, during a given epoch, a total of 500,000 Data Credits were spent on routing sensor data. 
 * Only three Hotspots - `Wobbly Blue Cougar`, `Steep Fern Trout`, and `Damp Peanut Hippo` - were collectively responsible for routing all the sensor data packets for the blockchain accounts that spent the 500,000 DCs to send and receive this data. 
 * Across those 500,000 DCs let's assume the following:
-* `Wobbly Blue Cougar`was responsible for 300,000 DCs; 
-* `Steep Fern Trout`routed 150,000 DCs worth of data; 
-* `Damp Peanut Hippo`handled 50,000 DCs of network data transfer.
+  * `Wobbly Blue Cougar`was responsible for 300,000 DCs; 
+  * `Steep Fern Trout`routed 150,000 DCs worth of data; 
+  * `Damp Peanut Hippo`handled 50,000 DCs of network data transfer.
 
 With these assumptions in mind, here's how the entire `30%` of HNT reward during this epoch for Network Data Transfer would be distributed:
 
