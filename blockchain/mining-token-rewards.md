@@ -1,3 +1,7 @@
+---
+description: How do HNT get allocated? Read on to find out.
+---
+
 # Mining and Token Rewards
 
 ![](../.gitbook/assets/efee.jpg)
@@ -19,7 +23,7 @@ Every [epoch](mining-token-rewards.md), the current consensus group mines some a
 | Witnesses | Distributed to all Hotspots that witness a packet as part of a PoC Challenge. |
 | Consensus Group | Divided equally among the Hotspots that are part of outgoing Concesus Group, responsible for mining blocks. |
 | Security | Awarded to Helium, Inc and other Network investors who hold Security Tokens. |
-| Network Data Transfer | Distributed each epoch to Hotspots that route LongFi sensor data for sensors on the Network during that epoch. _Not yet activated._ |
+| Network Data Transfer | Distributed each epoch to Hotspots that route LongFi sensor data for sensors on the Network during that epoch.  |
 
 {% hint style="info" %}
 **Do I Have To Actively Participate to Earn Rewards Once My Hotspot is Deployed?**
@@ -36,7 +40,7 @@ The target production rate for new `HNT` minted per month is `5,000,000`. This m
 
 Recall that, in the Helium blockchain, [blocks](mining-token-rewards.md) contain some number of individual transactions and [epochs](mining-token-rewards.md) are comprised of all the blocks mined by a the current Consensus Group since the last epoch.
 
-So, if we acheive our target block time of `60` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows:
+So, if we achieve our target block time of `60` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows:
 
 * `43800` minutes in the average month;
 * `30` minutes per epoch; 
@@ -46,50 +50,83 @@ So, if we acheive our target block time of `60` seconds, and target epoch of `30
 {% hint style="info" %}
 #### What Are The Current Block and Epoch Times?
 
-At any point you can go to the [Helium blockchain Dashboard](http://dashboard.helium.com/) to view recent block and epoch statistics, past HNT production numbers, and much more. Your Helium Mobile Wallet will also give you the average block and epoch times for the trailing 24 hour period.
+At any point you can go to the [Helium blockchain Explorer](http://explorer.helium.com/) to view recent block and epoch statistics, past HNT production numbers, and much more. Your Helium Mobile Wallet will also give you the average block and epoch times for the trailing 24 hour period.
 {% endhint %}
 
 ## HNT Distributions Per Epoch
 
 As calculated above, the target `HNT` per epoch is approximately `3424.66`. The next logical question is "Where does all this HNT go?" Let's take a look.
 
-Below are the current mining rewards per epoch. For every complete epoch \(marked by the election of a new Consensus Group\), all the `HNT` produced get distributed over the following reward types:
+Below are the mining rewards per epoch. For every complete epoch \(marked by the election of a new Consensus Group\), all the `HNT` produced get distributed over the following reward types:
+
+{% hint style="info" %}
+**Rewards Change Over Time**
+
+You can always find the current rewards schedule using the [Chain Variables API.](api/chain-variables.md) What's shown below reflects what the rewards distribution will be when [Data Credits](tokens.md#data-credits) are fully deployed and Hotspots are being rewarded for routing traffic. This is slated to happen at the end of July 2020. 
+{% endhint %}
 
 | Reward Type | Percentage | HNT Earned by Reward Type |
 | :--- | :--- | :--- |
-| PoC Challenger | 15% | 513.69 |
-| PoC Challengees | 35% | 1198.63 |
-| Witnesses | 5% | 171.24 |
-| Consensus Group | 10% | 342.47 |
-| Security | 35% | 1198.63 |
-| Network Data Transfer | 0% | 0 |
+| PoC Challenger | 1% | 34.2466 |
+| PoC Challengees | 19% | 650.6854 |
+| Witnesses | 9% | 308.2194 |
+| Consensus Group | 6% | 205.4796 |
+| Security Tokens | 35% | 1198.631 |
+| Network Data Transfer | 30% | 1027.398 |
 | **Total** | **100%** | **3424.66** |
-
-{% hint style="info" %}
-#### Why is 0% Allocated for Network Data Transfer?
-
-With the Network being very new, the reward distrubution is currently designed to incentivize the building of coverage. When the Data Credit infrastructure goes live, roughly Q2-2020, `30%` of HNT per epoch will be allocated to Network Data Transfer to ensure that Hotspots routing sensor data are compensated accordingly.
-{% endhint %}
 
 ## HNT Earnings Per Hotspot By Reward Type
 
-The last thing to examine is the amount of `HNT` earned per Hotspot in a given epoch, taking into acount the total number of Hotspots live on the Network eligible for each category of `HNT` reward. The following table shows the precise `HNT` rewards for a recently concluded epoch. These specific rewards were distributed in block `113718` and precise amount of `HNT` mined in this epoch was `3472.22222152`.
+Using the above rewards schedule, we can calculate some example distributions for a given epoch.
+
+
 
 | Reward Type | Hotspots Earning Reward | HNT Earned Per Hotspot | Total Earned by Reward Type |
 | :--- | :--- | :--- | :--- |
-| PoC Challenger | 160 | 3.25520833 | 520.833333228 |
-| PoC Challengee | 128 \(unique instances\) | 9.49435764 | 1215.277777532 |
-| Witnesses | 409 \(unique instances\) | 0.42447704 | 173.611111076 |
-| Consensus Group | 16 | 21.70138889 | 347.222222152 |
-| Security | N/A | N/A | 1215.277777532 |
-| Network Data Transfer | 0% | 0 | 0 |
-| **Total** | N/A | N/A | **3472.22222152** |
+| PoC Challenger | 160 | 0.21404125 | 34.2466 |
+| PoC Challengee | 128 \(unique instances\) | 5.083479688 | 650.6854 |
+| Witnesses | 409 \(unique instances\) | 0.753592665 | 308.2194 |
+| Consensus Group | 16 | 12.842475 | 205.4796 |
+| Security | N/A | N/A | 1198.631 |
+| Network Data Transfer | _**See below\***_ | _**See below\***_ | 1027.398 |
+| **Total** | N/A | N/A | 3424.66 |
 
-**Notes on Reward Types and Payouts:**
+### **Calculating The Network Data Transfer Reward Per Hotspot**
 
-* All Hotspots that have earned a specific reward type will split it equally. 
-* Hotposts can earn one or more reward types during any given epoch. 
-* Hotspots are only eligible to submit one Proof of Coverage Challenge - which results in them earning the `POC Challenger` reward type - once per epoch.
+As shown above, the `Network Data Transfer`  __reward type earns `30%` of the HNT mined per epoch. The calculation for this warrants some explanation. At a high level, every Hotspot that routes data in a given epoch will earn some part of the roughly `1027.398HNT` that is allocated to this reward type.  
+
+Hotspots earn HNT based on how much data they route, and specifically how many Data Credits are burned in their name, at a rate that equals the percentage of the total amount of Data Credits spend on Network Data Transfer during that epoch.  The simple calculation for finding the amount of HNT awarded to any given Hotspot for Network Data Transfer is:
+
+ `X` =  \(`A` / `C`\) \* `R` where:
+
+* `X` = `Hotspot`
+* `A` = `Total DCs routed by Hotpost`
+* `C` = `Total DCs spent during Epoch on Network Data Transfer`
+* `R` = `Total HNT allocated for Network Data Per Epoch (approximately 1027.398HNT)`
+
+**Example Calculation**
+
+* Let's assume that, during a given epoch, a total of 500,000 Data Credits were spent on routing sensor data. 
+* Only three Hotspots - `Wobbly Blue Cougar`, `Steep Fern Trout`, and `Damp Peanut Hippo` - were collectively responsible for routing all the sensor data packets for the blockchain accounts that spent the 500,000 DCs to send and receive this data. 
+* Across those 500,000 DCs let's assume the following:
+* `Wobbly Blue Cougar`was responsible for 300,000 DCs; 
+* `Steep Fern Trout`routed 150,000 DCs worth of data; 
+* `Damp Peanut Hippo`handled 50,000 DCs of network data transfer.
+
+With these assumptions in mind, here's how the entire `30%` of HNT reward during this epoch for Network Data Transfer would be distributed:
+
+| Hotspot Name | DC Routed  | % of whole during epoch | HNT Earned |
+| :--- | :--- | :--- | :--- |
+| Wobbly Blue Cougar | 300,000 | 60% | 616.4388 |
+| Steep Fern Trout | 150,000 | 30% | 308.2194 |
+| Damp Peanut Hippo | 50,000 | 10% | 102.7398 |
+| **Total** | **500,000** | **100%** | **1027.398** |
+
+**Additional Notes on Reward Types and Payouts:**
+
+* All Hotspots that have earned a specific reward type will split it equally \(with the exception of the `Network Data Transfer` reward as shown above. 
+* Hotspots can earn one or more reward types during any given epoch. 
+* Hotspots are only eligible to submit one Proof of Coverage Challenge - which results in them earning the `POC Challenger` reward  - **once per two epochs**.
 * `PoC Challenger`, `PoC Challengee`, and `Witness` reward types get distributed in the epoch that includes the corresponding PoC receipt. 
 * A Hotspot can earn more than one `PoC Challengee` and `Witness` rewards per epoch. 
 
@@ -105,7 +142,7 @@ It's easiest to think of target HNT production over the span of one month. Meani
 
 ### What Happens to HNT When Block Times are Slow?
 
-As the network scales up and we fix bugs, there have been some less-than-optimal block times. This results in slower epochs. When this happens the Network will produce **less** HNT over the same period of time. This may seem counterintituve. _Shouldn't the blockchain produce more HNT when block times are slower to ensure the 5MM per month target is hit?_ No. Again, think blocks, not clocks. Here's a step-by-step example to hopefully make it more transparent:
+As the network scales up and we fix bugs, there have been some less-than-optimal block times. This results in slower epochs. When this happens the Network will produce **less** HNT over the same period of time. This may seem counterintuitive. _Shouldn't the blockchain produce more HNT when block times are slower to ensure the 5MM per month target is hit?_ No. Again, think blocks, not clocks. Here's a step-by-step example to hopefully make it more transparent:
 
 * Let's assume for a given `60` minute period, the average block time was `120` seconds \(instead of the target `60` seconds\). 
 * This would mark `30` blocks over the `60` minute period, conclude an epoch, and result in an HNT distribution. 
@@ -118,15 +155,22 @@ The most important take away here is that, when block times slow and HNT product
 
 ### Consensus Groups and Slow Block Times
 
-The only group that doesn't see its HNT reduced per epoch when blocks are slow is the Consensus Group. Currently there are 16 members of each Consensus Group, sharing 10% of the HNT produced per epoch - or approximately `21.70` HNT.
+The only group that doesn't see its HNT reduced per epoch when blocks are slow is the Consensus Group. Currently there are 16 members of each Consensus Group, sharing 6% of the HNT produced per epoch - or approximately `12.842475` HNT.
 
-This amount stays fixed while every other category of HNT payout is prorated so that members of the Consensus Group are incentived to keep elections fast. Otherwise, a malicious Consensus Group member might be inclined to prolong elections. This could be done, for example, to prevent a subsequent election, thus ensuring current membership in the Consensus Group stays intact. By distributing a fixed amount of HNT per `30` block epoch \(as opposed to prorating payouts\), we remove the incentive to disrupt elections.
+This amount stays fixed while every other category of HNT payout is prorated so that members of the Consensus Group are incentivized to keep elections fast. Otherwise, a malicious Consensus Group member might be inclined to prolong elections. This could be done, for example, to prevent a subsequent election, thus ensuring current membership in the Consensus Group stays intact. By distributing a fixed amount of HNT per `30` block epoch \(as opposed to prorating payouts\), we remove the incentive to disrupt elections.
 
 ## Optimizing Your HNT Earnings
 
+{% hint style="info" %}
+**Join the Helium Discord Server**
+
+Looking to get advice from 1000s of community members on how to optimize your HNT earnings? Join the [Helium Discord Server](https://discord.gg/helium) and start asking questions.
+{% endhint %}
+
 In order to optimize your HNT earnings, there are a few things we recommend:
 
+* **Deploy Sensors** as 30% of all HNT goes to Hotspots that route actual sensor data. 
 * **Ensuring you aren't the only Hotspot in your area** is the method most likely to increase your earnings. If you are in an area with three or more Hotspots you are likely to participate as a `PoC Challengee` and `Witness` more PoC challenges that are happening around you. These are the two highest `HNT` distributions per epoch so optimizing around them has the highest impact.
-* **Updgrading to a larger antenna** will help in situations where you have other Hotspots nearby but either fail challenges that you participate in or do not witness challenges that they are participating in. Note, upgrading to a larger antenna will not help in situations when you are the only Hotspot in the area, as your only HNT earnings will come from issuing challenges which only uses your internet connection. Figuring out which antenna to upgrade to is a complex question, and we recommend joining our [Community Slack](http://chat.helium.com) where plenty of antenna discussion occurs.
+* **Upgrading to a larger antenna** will help in situations where you have other Hotspots nearby but either fail challenges that you participate in or do not witness challenges that they are participating in. Note, upgrading to a larger antenna will not help in situations when you are the only Hotspot in the area, as your only HNT earnings will come from issuing challenges which only uses your internet connection. Figuring out which antenna to upgrade to is a complex question, and we recommend joining our [Community Slack](http://chat.helium.com) where plenty of antenna discussion occurs.
 * **Opening internet network ports** helps in delivering `PoC Challengee` and `Witness` receipts to the `PoC Challenger`. These receipts are delivered via the internet through a peer-to-peer network, and can be affected by NAT, firewalls, and other networking issues. The most optimal configuration is adding the Hotspot to your network [DMZ ](https://en.wikipedia.org/wiki/DMZ_%28computing%29)which allows unfettered access to and from the internet, but not to your local network. Alternatively manually opening port `44158` to the Hotspot will help, and enabling `uPNP` on your network router is a good fallback.
 
