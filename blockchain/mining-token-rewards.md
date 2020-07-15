@@ -26,7 +26,7 @@ Every [epoch](mining-token-rewards.md), the current consensus group mines a bloc
 | Network Data Transfer | Distributed each epoch to Hotspots that route LongFi sensor data for sensors on the Network during that epoch.  |
 
 {% hint style="info" %}
-**Do I Have To Actively Participate to Earn Rewards Once My Hotspot is deployed?**
+**Do I Have To Actively Participate to Earn Rewards Once My Hotspot is Deployed?**
 
 No. Once your Hotspot is completely deployed and fully synced with the Helium blockchain, you as the owner are not required to do anything else in order to earn HNT. Your Hotspot will perform all of the above activities on its own while it runs. That said, there are some optimizations you can make to ensure your Hotspot is operating at full capacity.
 {% endhint %}
