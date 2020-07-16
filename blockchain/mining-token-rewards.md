@@ -14,7 +14,7 @@ While there's no exact formula for for calculating how much `HNT` you'll earn ov
 
 The Helium blockchain rewards Hotspots for providing wireless coverage and verifying the Helium Network. Hotspots are rewarded in Helium Token \(`HNT`\).
 
-Every [epoch](mining-token-rewards.md), the current consensus group mines a block on the blockchain. In each block, hotspots earn `HNT` for the work they have contributed. Hotspots and other network participants earn `HNT` according to the following distribution:
+Every [epoch](mining-token-rewards.md), the current consensus group mines 30 blocks on the blockchain. In each block, Hotspots earn `HNT` for the work they have contributed according to the following distribution:
 
 | Reward Type | Description |
 | :--- | :--- |
