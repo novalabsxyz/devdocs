@@ -111,14 +111,16 @@ $ git clone https://github.com/Lora-net/packet_forwarder
 $ git clone https://github.com/Lora-net/lora_gateway
 ```
 
-We'll then download the Helium-specific packet forwarder configuration file :
+We'll then need to replace the existing packet forwarder configuration file with a Helium-specific version:
 
 ```text
 $ cd packet_forwarder/lora_pkt_fwd
-$ wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json
+$ wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json --backups
 ```
 
-Note that we should have downloaded the configuration file to a specific directory. This will be important when launching the binary.
+Make sure that the file was downloaded to the `packet_forwarder/lora_pkt_fwd/` directory. This will be important when launching the binary.
+
+This new file sets the correct radio frequencies for the US region. Note that this backs up the existing configuration file (with European frequencies) to `global_conf.json.1`.
 
 ### One Quick Change
 
