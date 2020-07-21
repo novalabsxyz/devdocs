@@ -95,7 +95,9 @@ DATABASE_URL=postgresql://etl:etl@127.0.0.1/etl
 Then hit `ctrl-x` to save and exit.
 
 {% hint style="warning" %}
-If you want the database to be populated with Hotspot street/city/state/country locations \(highly recommended\) you'll need to provide a Google Maps API key here. You can follow [this guide to get an API key](https://developers.google.com/maps/documentation/javascript/get-api-key). Otherwise you'll need to remove the `GOOGLE_MAPS_API_KEY` completely.
+If you want the database to be populated with Hotspot street/city/state/country locations  you will need to provide a Google Maps API key here. You can follow [this guide to get an API key](https://developers.google.com/maps/documentation/javascript/get-api-key). Otherwise you'll need to remove the `GOOGLE_MAPS_API_KEY` completely.
+
+**NOTE** : Using Google Maps will incur usage charges!
 {% endhint %}
 
 Now we can build ETL, which might take a little while:
