@@ -7,6 +7,7 @@ In this section, we’ll go over some off-the-shelf LoRaWAN gateways that Helium
 **LoRaWAN Gateways:**
 
 * [Laird Sentrius RG191](laird.md)
+* [Tektelic KONA](tektelic-kona.md)
 
 ​
 
