@@ -9,7 +9,7 @@
 To be a Helium Miner, there are three principle components to know about
 
 * Packet Forwarder: this is a utility that interacts with the radio front-end and sends and receives raw radio packets with the Helium Miner
-* Miner: the Helium Blockchain comes into the picture here; the Miner is responsible for routing packets to the appropriate Router \(read more about that here\) entering into microtransactions brokered via libp2p
+* Miner: the Helium Blockchain comes into the picture here; the Miner is responsible for routing packets to the appropriate Router \(see [our Routing article](../longfi/longfi-routing.md)\) entering into microtransactions brokered via libp2p
 * Router: a Helium compatible LoRaWAN Network Server, basically; this component is interested in receiving the packets relating to its devices and handles downlink responses when appropriate
 
 When you buy a Helium Hotspot, you are buying a Packet Forwarder and a Miner in a convenient package:
