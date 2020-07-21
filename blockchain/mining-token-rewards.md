@@ -23,7 +23,7 @@ Every [epoch](mining-token-rewards.md), the current consensus group mines a bloc
 | Witnesses | Distributed to all Hotspots that witness a packet as part of a PoC Challenge. |
 | Consensus Group | Divided equally among the Hotspots that are part of outgoing Concesus Group, responsible for mining blocks. |
 | Security | Awarded to Helium, Inc and other Network investors who hold Security Tokens. |
-| Network Data Transfer | Distributed each epoch to Hotspots that route LongFi sensor data for sensors on the Network during that epoch.  |
+| Network Data Transfer | Distributed each epoch to Hotspots that route LongFi sensor data for sensors on the Network during that epoch. |
 
 {% hint style="info" %}
 **Do I Have To Actively Participate to Earn Rewards Once My Hotspot is Deployed?**
@@ -60,7 +60,7 @@ Below are the mining rewards per epoch. For every complete epoch \(marked by the
 {% hint style="info" %}
 **Rewards Change Over Time**
 
-You can always find the current rewards schedule using the [Chain Variables API.](api/chain-variables.md) What's shown below reflects what the rewards distribution will be when [Data Credits](tokens.md#data-credits) are fully deployed and Hotspots are being rewarded for routing traffic. This is slated to happen at the end of July 2020. 
+You can always find the current rewards schedule using the [Chain Variables API.](api/chain-variables.md) What's shown below reflects what the rewards distribution will be when [Data Credits](tokens.md#data-credits) are fully deployed and Hotspots are being rewarded for routing traffic. This is slated to happen at the end of July 2020.
 {% endhint %}
 
 | Reward Type | Percentage | HNT Earned by Reward Type |
@@ -77,8 +77,6 @@ You can always find the current rewards schedule using the [Chain Variables API.
 
 Using the above rewards schedule, we can calculate some example distributions for a given epoch.
 
-
-
 | Reward Type | Hotspots Earning Reward | HNT Earned Per Hotspot | Total Earned by Reward Type |
 | :--- | :--- | :--- | :--- |
 | PoC Challenger | 160 | 0.21404125 | 34.2466 |
@@ -91,11 +89,11 @@ Using the above rewards schedule, we can calculate some example distributions fo
 
 ### **Calculating The Network Data Transfer Reward Per Hotspot**
 
-As shown above, the `Network Data Transfer`  __reward type earns `30%` of the HNT mined per epoch. The calculation for this warrants some explanation. At a high level, every Hotspot that routes data in a given epoch will earn some part of the roughly `1027.398HNT` that is allocated to this reward type.  
+As shown above, the `Network Data Transfer` \_\_reward type earns `30%` of the HNT mined per epoch. The calculation for this warrants some explanation. At a high level, every Hotspot that routes data in a given epoch will earn some part of the roughly `1027.398HNT` that is allocated to this reward type.
 
-Hotspots earn HNT based on how much data they route, and specifically how many Data Credits are burned in their name, at a rate that equals their percentage share of the total amount of Data Credits spent on Network Data Transfer during that epoch.  The simple calculation for finding the amount of HNT awarded to any given Hotspot for Network Data Transfer is:
+Hotspots earn HNT based on how much data they route, and specifically how many Data Credits are burned in their name, at a rate that equals their percentage share of the total amount of Data Credits spent on Network Data Transfer during that epoch. The simple calculation for finding the amount of HNT awarded to any given Hotspot for Network Data Transfer is:
 
- `X` =  \(`A` / `C`\) \* `R` where:
+`X` = \(`A` / `C`\) \* `R` where:
 
 * `X` = `Hotspot HNT earnings from Network Data Transfer`
 * `A` = `Total DCs routed by Hotspot`
@@ -113,7 +111,7 @@ Hotspots earn HNT based on how much data they route, and specifically how many D
 
 With these assumptions in mind, here's how the entire `30%` of HNT reward during this epoch for Network Data Transfer would be distributed:
 
-| Hotspot Name | DC Routed  | % of whole during epoch | HNT Earned |
+| Hotspot Name | DC Routed | % of whole during epoch | HNT Earned |
 | :--- | :--- | :--- | :--- |
 | Wobbly Blue Cougar | 300,000 | 60% | 616.4388 |
 | Steep Fern Trout | 150,000 | 30% | 308.2194 |

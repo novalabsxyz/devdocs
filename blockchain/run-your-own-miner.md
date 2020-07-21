@@ -14,7 +14,7 @@ As you can see above, the Miner is central in routing data across the Helium Net
 
 In addition to packet routing, the Miner is central in connecting to other Miners over libp2p where, amongst other things, it is gossiping and saving blocks, while maintaining a ledger of the blockchain.
 
-In this guide, we will explain how to get a Docker image of the Helium Miner running on Ubuntu 20.04 LTS, and finally some tips on how to interact with a running Miner. 
+In this guide, we will explain how to get a Docker image of the Helium Miner running on Ubuntu 20.04 LTS, and finally some tips on how to interact with a running Miner.
 
 If you are interested in contributing to Miner development and code-review, please visit [the Miner's repository on Github](https://github.com/helium/miner).
 
@@ -77,7 +77,7 @@ If you are using Ubuntu as user ubuntu, this path would now be `/home/ubuntu/min
 
 Now you can try the `run` command to start your container for the first time:
 
-```
+```text
 docker run -d \
 --env REGION_OVERRIDE=US915 \
 --restart always \
@@ -106,6 +106,7 @@ The `--name miner` names the container, which makes interacting with the docker 
 The `--mount` with the parameters above will mount the container's `/var/data/` directory to the systems directory `/home/ec2-user/miner_data`.
 
 ### Configure AWS Instance for Sync
+
 Amazon EC2 instances have CPU usage credits that will easily be depleted during the initial sync of the blockchain. To avoid having your instance throttled, you can temporarily uncap your instance by setting CPU credit usage to unlimited. Once your miner has reached full block height, a t2.small instance is sufficient to keep your miner running.
 
 ### Interact with the Miner within the Container
@@ -130,19 +131,19 @@ And [Start the Container ](run-your-own-miner.md#start-container)again as descri
 
 ## Using the Miner
 
-These commands will assume you are running in Docker and they have the same prefix to get you exceuting a command within the docker: `docker exec miner` . If you want to make it easier, you can always created an an alias such as: `alias miner="docker exec miner miner"`. 
+These commands will assume you are running in Docker and they have the same prefix to get you exceuting a command within the docker: `docker exec miner` . If you want to make it easier, you can always created an an alias such as: `alias miner="docker exec miner miner"`.
 
 ### Checking the logs
 
 This is always helpful to get some idea of what's going on:
 
 ```text
-docker exec miner tail -F /var/log/miner/console.log 
+docker exec miner tail -F /var/log/miner/console.log
 ```
 
 Also, if you are particularly interested in radio traffic, it can be helpful to filter for `lora` as so:
 
-```
+```text
 docker exec miner tail -f /var/log/miner/console.log | grep lora
 ```
 
@@ -227,3 +228,4 @@ Another fun tidbit: for production hotspots sold by Helium, the swarm key is sto
 While participating in libp2p is helpful for the network, the Helium Blockchain does not exist for its own sake. It is there to incentivize coverage and one of the ways to earn tokens as a coverage provider for Helium is by routing IoT traffic.
 
 To learn more about this, check out the [Build a Hotspot](../hotspot/developer-setup.md) section.
+
