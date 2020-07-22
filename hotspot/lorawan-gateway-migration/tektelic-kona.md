@@ -1,4 +1,14 @@
+---
+description: >-
+  A guide on how to configure the Tektelic KONA Gateway to create Helium Network
+  coverage.
+---
+
 # Tektelic KONA
+
+{% hint style="info" %}
+Non-Helium manufactured LoRaWAN gateways are not yet able to mine Helium tokens.  This will be supported soon.
+{% endhint %}
 
 Tektelic features [a robust catalogue of LoRaWAN gateways](https://tektelic.com/iot/lorawan-gateways/) suitable for various deployments requirements.
 
