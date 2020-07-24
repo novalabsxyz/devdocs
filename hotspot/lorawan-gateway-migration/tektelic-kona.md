@@ -6,7 +6,7 @@ description: >-
 
 # Tektelic KONA
 
-![KONA Macro IoT Gateway](../../.gitbook/assets/kona_macro_tilt-e1574283468530.png)
+![Tektelic KONA Macro IoT Gateway](../../.gitbook/assets/kona_macro_tilt-e1574283468530.png)
 
 {% hint style="info" %}
 Non-Helium manufactured LoRaWAN gateways are not yet able to mine Helium tokens.  This will be supported soon.
