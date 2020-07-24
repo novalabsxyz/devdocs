@@ -12,9 +12,15 @@ Non-Helium manufactured LoRaWAN gateways are not yet able to mine Helium tokens.
 
 Tektelic features [a robust catalogue of LoRaWAN gateways](https://tektelic.com/iot/lorawan-gateways/) suitable for various deployments requirements. Their ruggedized gateways with Cellular backhaul are becoming particularly popular for Helium Network deployments where coverage needs to be deployed outdoors, where Ethernet or WiFi infrastructure cannot be relied on for communicating with the Internet.
 
+## Prerequisites
 
+#### Deploy Helium Cloud Miner
 
-All of their gateways have a similar setup process and options. In this guide, we'll get you up and running using the [KonaFT utility](https://support.tektelic.com/portal/en/kb/articles/konaft) \(for Windows only\). Once you have downloaded and installed the utility, you can follow along with this guide.
+Using the Tektelic KONA on the Helium Network requires a running the blockchain miner in the cloud. [If you haven't already, get this deployed before moving on. ](../../blockchain/run-your-own-miner.md)
+
+#### Download KonaFT Utility
+
+All of the Tektelic gateways have a similar setup process and options. In this guide, we'll get you up and running using the [KonaFT utility](https://support.tektelic.com/portal/en/kb/articles/konaft) \(for Windows only\). Once you have downloaded and installed the utility, you can follow along with this guide.
 
 Before starting, you'll want to connect the gateway via Ethernet to the network where your desktop or laptop is connected. 
 
@@ -60,7 +66,7 @@ Click the "Configuration" tab on top. From that tab:
 
 ## **6 -** Update Sub-band
 
-Scroll down until you see the JSON field `"SX1301_conf"`. Generally, sub-band 2 is already there \(ie: channels from 903.9 to 905.3 MHz.  
+Scroll down until you see the JSON field `"SX1301_conf"`. Generally, sub-band 2 is already there \(ie: channels from 903.9 to 905.3 MHz\).  
 
 ![](../../.gitbook/assets/tektelic_subband_config.png)
 
@@ -86,7 +92,7 @@ If not, you can paste this configuration to one of the singular or one of the co
 
 ## **7 -** Update Server Configuration
 
-**Step 1**: Scroll further down until you find the JSON field `"gateway_conf"`. You'll want to put the IP address and the radio UDP port interface \(default 1680\) of your Miner. If you need to setup a Miner, please follow [our tutorial here](../../blockchain/run-your-own-miner.md).
+**Step 1**: Scroll further down until you find the JSON field `"gateway_conf"`. You'll want to put the IP address and the radio UDP port interface \(default `1680`\) of your Miner. If you need to setup a Miner, please follow [our tutorial here](../../blockchain/run-your-own-miner.md).
 
 **Step 2:** Click `Write` to write the sub-band and server configurations to the file.
 

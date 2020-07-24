@@ -4,8 +4,6 @@
 
 ![](../.gitbook/assets/artboard%20%281%29.png)
 
-
-
 To be a Helium Miner, there are three principle components to know about
 
 * Packet Forwarder: this is a utility that interacts with the radio front-end and sends and receives raw radio packets with the Helium Miner
@@ -20,8 +18,7 @@ In this guide, we are going to do something a little different. We are going to 
 
 ![](../.gitbook/assets/artboard-copy-68.png)
 
-And rest assured, while this guide uses Amazon AMI images to makes Miner deployment more or less plug-and-play, we are working on a Docker container version which will make it easy to not only run other Cloud Service providers, but your own server hardware or perhaps even your own gateway if the hardware is sufficient.  
-****
+And rest assured, while this guide uses Amazon AMI images to makes Miner deployment more or less plug-and-play, we are working on a Docker container version which will make it easy to not only run other Cloud Service providers, but your own server hardware or perhaps even your own gateway if the hardware is sufficient.
 
 {% hint style="warning" %}
 This guide is experimental and for advanced users only, and you may run in to various issues trying to get this working. We eventually intend to make it possible for LoRaWAN gateways of any kind to connect to our cloud-hosted Console directly without needing to follow these instructions.
@@ -91,8 +88,6 @@ Now let's go ahead and update our install with:
 sudo apt-get update
 ```
 
-
-
 ## Installing the Semtech packet forwarder
 
 Once you have miner running, you'll need the Semtech packet forwarder to receive packets via SPI and the RAK2245 board and deliver them to the miner via UDP.
@@ -120,7 +115,7 @@ $ wget https://helium-media.s3-us-west-2.amazonaws.com/global_conf.json --backup
 
 Make sure that the file was downloaded to the `packet_forwarder/lora_pkt_fwd/` directory. This will be important when launching the binary.
 
-This new file sets the correct radio frequencies for the US region. Note that this backs up the existing configuration file (with European frequencies) to `global_conf.json.1`.
+This new file sets the correct radio frequencies for the US region. Note that this backs up the existing configuration file \(with European frequencies\) to `global_conf.json.1`.
 
 ### One Quick Change
 
@@ -166,15 +161,15 @@ That's it, now you're running a packet forwarder! The last step is connecting to
 
 ## **Connecting to a Helium Miner**
 
-If you haven't done it yet, you'll want to get your [Helium Miner running](../blockchain/run-your-own-miner.md). We'll assume you've done this with an Amazon AMI for the sake of this tutorial. 
+If you haven't done it yet, you'll want to get your [Helium Miner running](../blockchain/run-your-own-miner.md). We'll assume you've done this with an Amazon AMI for the sake of this tutorial.
 
 From Your EC2 dashboard, you should select your miner and take a look at the description at the bottom of the page:
 
 ![Extract IP Address](../.gitbook/assets/ipv4.png)
 
-In this case,  the IP is `18.218.135.176`. You now have to go back edit the packet forwarder's configuration such that it connects to you Miner on AWS. 
+In this case, the IP is `18.218.135.176`. You now have to go back edit the packet forwarder's configuration such that it connects to you Miner on AWS.
 
-With your favorite editor,  open `packet_forwarder/lora_pkt_fwd/global_conf.json`:
+With your favorite editor, open `packet_forwarder/lora_pkt_fwd/global_conf.json`:
 
 ```text
 nano packet_forwarder/lora_pkt_fwd/global_conf.json
