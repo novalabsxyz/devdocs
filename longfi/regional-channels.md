@@ -52,7 +52,7 @@ Max application payload is given assuming the absence of the optional FOpt MAC C
 
 | Channel | Frequency \(MHz\) |
 | :--- | :--- |
-| 0 | 922.3 |
+| 0 | 923.3 |
 | 1 | 923.9 |
 | 2 | 924.5 |
 | 3 | 925.1 |
