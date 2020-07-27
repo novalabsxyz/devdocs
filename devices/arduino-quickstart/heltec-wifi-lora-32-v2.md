@@ -199,7 +199,7 @@ channelsMaskTemp[0] = 0xFF00;
 channelsMaskTemp[1] = 0x0000;
 channelsMaskTemp[2] = 0x0000;
 channelsMaskTemp[3] = 0x0000;
-channelsMaskTemp[4] = 0x0000;
+channelsMaskTemp[4] = 0x0002;
 channelsMaskTemp[5] = 0x0000;
 ```
 
