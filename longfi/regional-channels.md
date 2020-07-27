@@ -19,7 +19,7 @@ Helium uses `sub-band 2` as detailed in the table below. \(The channel frequenci
 
 In addition, there are channels number 64-72 which have a bandwidth of 500 kHz, encoding of 4/5 bit encoding, permitting data rate 4 only.
 
-Helium uses channel 70.
+Helium uses channel 65.
 
 | Channel | Frequency \(MHz\) |
 | :--- | :--- |
