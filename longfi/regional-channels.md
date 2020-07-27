@@ -34,21 +34,19 @@ Helium uses channel 65.
 
 ## LoRaWAN US915 Uplink Data Rates
 
-The uplink data rates  correspond to specific configurations as details below. Note how the BW of DR0-3 match the channels on which it is tolerated \(0-63\). Similarly, DR4 is only tolerated on channels 64-72.
+The uplink data rates correspond to specific configurations as details below. Note how the BW of DR0-3 match the channels on which it is tolerated \(0-63\). Similarly, DR4 is only tolerated on channels 64-72.
 
 Max application payload is given assuming the absence of the optional FOpt MAC Control field.
 
 | Data Rate \(DR\) | Spreading Factor \(SF\) | BW \(kHz\) | Physical bit/s | Max Application Payload |
 | :--- | :--- | :--- | :--- | :--- |
-| 0 | 10  | 125 | 980 | 11 |
+| 0 | 10 | 125 | 980 | 11 |
 | 1 | 9 | 125 | 1,760 | 53 |
 | 2 | 8 | 125 | 3,125 | 125 |
 | 3 | 7 | 125 | 5,470 | 242 |
 | 4 | 8 | 500 | 12,500 | 242 |
 
 ## LoRaWAN US915  Downlink Channels
-
-
 
 | Channel | Frequency \(MHz\) |
 | :--- | :--- |
@@ -67,7 +65,7 @@ Max application payload is given assuming the absence of the optional `FOpt` MAC
 
 | Data Rate | Spreading Factor \(SF\) | BW \(kHz\) | Physical bit/s | Max Application Payload |
 | :--- | :--- | :--- | :--- | :--- |
-| 8 | 12  | 500 | 980 | 53 |
+| 8 | 12 | 500 | 980 | 53 |
 | 9 | 11 | 500 | 1,760 | 125 |
 | 10 | 10 | 500 | 3,900 | 242 |
 | 11 | 9 | 500 | 7,000 | 242 |

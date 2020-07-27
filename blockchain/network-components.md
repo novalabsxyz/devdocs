@@ -23,7 +23,7 @@ It’s expected that developers and manufacturers will build other “Hotspot”
 
 ## LongFi
 
-LongFi is the top-level architecture that combines the Helium blockchain with the LoRaWAN wireless protocol under the Helium Network umbrella. [Read full details on the LongFi architecture here](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/longfi/README.md).
+LongFi is the top-level architecture that combines the Helium blockchain with the LoRaWAN wireless protocol under the Helium Network umbrella. [Read full details on the LongFi architecture here.](../longfi/introduction.md)
 
 ## Routers
 
