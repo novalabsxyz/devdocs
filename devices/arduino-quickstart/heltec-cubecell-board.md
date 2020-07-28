@@ -10,6 +10,8 @@ This guide will show you step by step how to transmit LoRaWAN packets using a lo
 Before we begin, please make sure you've followed the steps from this [guide](https://developer.helium.com/console/quickstart), which goes over some initial steps to add your device to Console.
 {% endhint %}
 
+Our Helium community member @suprnrdy has a store set up in the US at [https://parleylabs.com/shop/](https://parleylabs.com/shop/) where you can find multiple variants of the CubeCell boards.
+
 ## Objective and Requirements
 
 In this guide, you will learn:
