@@ -26,13 +26,27 @@ A successful pending transaction status request
 
 ```javascript
 {
-  "data": {
-    "updated_at": "2020-04-13T04:19:31.713044Z",
-    "status": "pending",
-    "hash": "Coy2WqcmCt6k8MgSq3hK0XW1Um5NtwHskoY1zwYADKE",
-    "failed_reason": "",
-    "created_at": "2020-04-13T04:19:23.105879Z"
-  }
+    "data": {
+        "updated_at": "2020-07-29T00:44:13.578098Z",
+        "type": "payment_v2",
+        "txn": {
+            "type": "payment_v2",
+            "payments": [
+                {
+                    "payee": "13FkKYnwHPoa6F7K23jJ7j2WNg9cMPsznJ7i4c9ysCwLoS8vx3E",
+                    "amount": 100000000
+                }
+            ],
+            "payer": "14h5MCATzJAB88gGBph8YtPM9539FdyBnMdTt7sYxg4Ts1D1aW3",
+            "nonce": 7,
+            "hash": "q7pnrm2LvPoZKclF4f2BB6AmcnD0SORECgq9VbNLir4",
+            "fee": 35000
+        },
+        "status": "pending",
+        "hash": "q7pnrm2LvPoZKclF4f2BB6AmcnD0SORECgq9VbNLir4",
+        "failed_reason": "",
+        "created_at": "2020-07-29T00:44:11.516601Z"
+    }
 }
 ```
 {% endapi-method-response-example %}
@@ -40,7 +54,7 @@ A successful pending transaction status request
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https//api.helium.io" path="/v1/pending\_transactions" %}
+{% api-method method="post" host="https://api.helium.io" path="/v1/pending\_transactions" %}
 {% api-method-summary %}
 Submit a New Transaction
 {% endapi-method-summary %}
