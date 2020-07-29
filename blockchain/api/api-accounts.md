@@ -25,21 +25,85 @@ Cursor for the page of accounts to fetch
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+Account successfully retrieved.
 {% endapi-method-response-example-description %}
 
-```
-{    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
+```javascript
+{
+    "data": [
+        {
+            "sec_nonce": 0,
+            "sec_balance": 0,
+            "nonce": 2,
+            "dc_nonce": 0,
+            "dc_balance": 0,
+            "block": 435239,
+            "balance": 0,
+            "address": "13etjTqyGLK7WQh8pp9VJy5ejh5MXmwFee2eAi3TfAA5kS1jEJb"
+        },
+        {
+            "sec_nonce": 0,
+            "sec_balance": 0,
+            "nonce": 1,
+            "dc_nonce": 0,
+            "dc_balance": 0,
+            "block": 435239,
+            "balance": 0,
+            "address": "14Vshtwv9RMY5GuTe1sgLDJmmF2f46EW3etEJzjDjhKJSEprtHh"
+        },
+        {
+            "sec_nonce": 0,
+            "sec_balance": 0,
+            "nonce": 0,
+            "dc_nonce": 0,
+            "dc_balance": 0,
+            "block": 435239,
+            "balance": 404040732,
+            "address": "14PaJeSfNp5Q3MtDw5yEsJwb2kHJqbcjjLe9aycjroqNFnL4EyS"
+        },
+        {
+            "sec_nonce": 0,
+            "sec_balance": 0,
+            "nonce": 0,
+            "dc_nonce": 0,
+            "dc_balance": 0,
+            "block": 435239,
+            "balance": 1025990703,
+            "address": "13rUthiDQUeY9HfwoZFpkqtsbtaubzRyerCsSu1qdDXuVZGL45k"
+        },
+        {
+            "sec_nonce": 0,
+            "sec_balance": 0,
+            "nonce": 0,
+            "dc_nonce": 0,
+            "dc_balance": 0,
+            "block": 435239,
+            "balance": 179087000000,
+            "address": "14Xg1SqiJDsmM2YvchR4UacevcuxjfyrjdyNEpRMmfBU7vrZba9"
+        }
+    ],
+    "cursor": "eyJoZWlnaHQiOjQzNTIzOSwiYmVmb3JlX2Jsb2NrIjo0MTM3MDIsImJlZm9yZV9hZGRyZXNzIjoiMTRpdndTNnRBQXVzRFo0QXVucTZXZ2dUc285cEZFbXZ2eXM5S1NXYUJDRENMd1UyMURkIn0"
+}
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Could not find a cake matching this query.
-{% endapi-method-response-example-description %}
 
-```
-{    "message": "Ain't no cake like that."}
+
+```javascript
+{
+    "data": {
+        "speculative_sec_nonce": 0,
+        "speculative_nonce": 6,
+        "sec_nonce": 0,
+        "sec_balance": 0,
+        "nonce": 6,
+        "dc_nonce": 0,
+        "dc_balance": 0,
+        "block": 435242,
+        "balance": 2860303659847,
+        "address": "13GCcF7oGb6waFBzYDMmydmXx4vNDUZGX4LE3QUh8eSBG53s5bx"
+    }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -134,27 +198,36 @@ The hotspot list for an account
 {
     "data": [
         {
-            "address": "1182nyT3oXZPMztMSww4mzaaQXGXd5T7JwDfEth6obSCwwxxfsB",
-            "block": 311958,
-            "geocode": {
-                "long_city": "Cleveland",
-                "long_country": "United States",
-                "long_state": "Ohio",
-                "long_street": "West 32nd Street",
-                "short_city": "Cleveland",
-                "short_country": "US",
-                "short_state": "OH",
-                "short_street": "W 32nd St"
-            },
-            "lat": 41.480133219396784,
             "lng": -81.70707772367822,
-            "location": "8c2ab38f19a43ff",
-            "name": "sneaky-violet-penguin",
+            "lat": 41.480133219396784,
+            "status": {
+                "online": "online",
+                "height": 435166,
+                "gps": "good_fix"
+            },
+            "score_update_height": 435153,
+            "score": 0.9222412109375,
             "owner": "13GCcF7oGb6waFBzYDMmydmXx4vNDUZGX4LE3QUh8eSBG53s5bx",
-            "score": 0.988006591796875,
-            "score_update_height": 311925
+            "nonce": 1,
+            "name": "sneaky-violet-penguin",
+            "location": "8c2ab38f19a43ff",
+            "geocode": {
+                "short_street": "W 32nd St",
+                "short_state": "OH",
+                "short_country": "US",
+                "short_city": "Cleveland",
+                "long_street": "West 32nd Street",
+                "long_state": "Ohio",
+                "long_country": "United States",
+                "long_city": "Cleveland",
+                "city_id": "Y2xldmVsYW5kb2hpb3VuaXRlZCBzdGF0ZXM"
+            },
+            "block_added": 96087,
+            "block": 435241,
+            "address": "1182nyT3oXZPMztMSww4mzaaQXGXd5T7JwDfEth6obSCwwxxfsB"
         }
     ]
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -223,6 +296,5 @@ A single pending transaction for a given account
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
 
 
