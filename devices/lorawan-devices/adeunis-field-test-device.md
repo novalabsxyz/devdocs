@@ -71,6 +71,12 @@ Set Value Command: `ATS220=1`
 
 Read Value Command: `ATS220?`
 
+#### Set Transmission Interval to 5 seconds
+
+Set Value Command: `ATS380=5`
+
+Read Value Command: `ATS380?`
+
 #### Save Configuration
 
 Command: `AT&W`
