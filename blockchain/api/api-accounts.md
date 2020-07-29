@@ -25,7 +25,7 @@ Cursor for the page of accounts to fetch
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Account successfully retrieved.
+Accounts successfully retrieved.
 {% endapi-method-response-example-description %}
 
 ```javascript
