@@ -23,7 +23,7 @@ Cursor for the page to fetch
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+Hotspots successfully retrieved.
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -51,7 +51,8 @@ Cake successfully retrieved.
         "long_street": "Bryant Street",
         "long_state": "California",
         "long_country": "United States",
-        "long_city": "San Francisco"
+        "long_city": "San Francisco",
+        "city_id": "c2FuIGZyYW5jaXNjb2NhbGlmb3JuaWF1bml0ZWQgc3RhdGVz"
       },
       "block_added": 395575,
       "block": 397023,
@@ -79,7 +80,8 @@ Cake successfully retrieved.
         "long_street": "Chemin de la Colline",
         "long_state": "Auvergne-Rhône-Alpes",
         "long_country": "France",
-        "long_city": "Lans-en-Vercors"
+        "long_city": "Lans-en-Vercors",
+        "city_id": "bGFucy1lbi12ZXJjb3JzYXV2ZXJnbmUtcmjDtG5lLWFscGVzZnJhbmNl"
       },
       "block_added": 395500,
       "block": 397023,
@@ -108,7 +110,8 @@ Cake successfully retrieved.
         "long_street": "Seidenberg Avenue",
         "long_state": "Florida",
         "long_country": "United States",
-        "long_city": "Key West"
+        "long_city": "Key West",
+        "city_id": "a2V5IHdlc3RmbG9yaWRhdW5pdGVkIHN0YXRlcw"
       },
       "block_added": 377240,
       "block": 397023,
@@ -162,7 +165,8 @@ Address of hotspot to fetch
             "short_city": "SF",
             "short_country": "US",
             "short_state": "CA",
-            "short_street": "Bryant St"
+            "short_street": "Bryant St",
+            "city_id": "c2FuIGZyYW5jaXNjb2NhbGlmb3JuaWF1bml0ZWQgc3RhdGVz"
         },
         "lat": 37.784056617819544,
         "lng": -122.39186733984285,
