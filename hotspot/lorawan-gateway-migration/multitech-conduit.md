@@ -20,6 +20,10 @@ The MultiTech Conduit features cellular backhaul and a robust aluminum casing. I
 
 ## Prerequisites
 
+**AEP Version of the Conduit**
+
+This guide assumes you have the AEP version of the conduit. The AEP version provides the Web GUI that we will be using throughout. The mLinux version will also work with the Helium Network, but the setup will be different than describe here.
+
 #### Deploy Helium Cloud Miner
 
 Using the MultiTech Conduit on the Helium Network requires a running the blockchain miner in the cloud. [If you haven't already, get this deployed before moving on. ](../../blockchain/run-your-own-miner.md)
