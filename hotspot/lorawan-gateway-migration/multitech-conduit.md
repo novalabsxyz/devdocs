@@ -10,7 +10,7 @@ description: >-
 
 
 
-![MultiTech Conduit&#xAE;](../.gitbook/assets/image%20%2891%29.png)
+![MultiTech Conduit&#xAE;](../../.gitbook/assets/image%20%2891%29.png)
 
 {% hint style="info" %}
 Non-Helium manufactured LoRaWAN gateways are not yet able to mine Helium tokens.  This will be supported soon.
@@ -22,7 +22,7 @@ The MultiTech Conduit features cellular backhaul and a robust aluminum casing. I
 
 #### Deploy Helium Cloud Miner
 
-Using the MultiTech Conduit on the Helium Network requires a running the blockchain miner in the cloud. [If you haven't already, get this deployed before moving on. ](../blockchain/run-your-own-miner.md)
+Using the MultiTech Conduit on the Helium Network requires a running the blockchain miner in the cloud. [If you haven't already, get this deployed before moving on. ](../../blockchain/run-your-own-miner.md)
 
 #### Laptop or Desktop with Ethernet Port
 
@@ -38,23 +38,23 @@ This is very similar to your standard WiFi Router in that it is now waiting for 
 
 In your favorite browser,  type the default IP address `192.168.2.1`. You will be me with a privacy warning and most browsers require you to click something like "Advanced" to proceed:
 
-![Click Advanced](../.gitbook/assets/multitech_privacy_warning.png)
+![Click Advanced](../../.gitbook/assets/multitech_privacy_warning.png)
 
 Only then, will you then be provided with an option of proceeding:
 
-![Proceed to 192.168.2.1](../.gitbook/assets/multitech_privacy_warning_proceed.png)
+![Proceed to 192.168.2.1](../../.gitbook/assets/multitech_privacy_warning_proceed.png)
 
 After proceeding, you will be greeted with the MultiTech commissioning screen!
 
 ##  2 **- Commissioning**
 
-![Commissioning Mode](../.gitbook/assets/multitech_commissioning_login.png)
+![Commissioning Mode](../../.gitbook/assets/multitech_commissioning_login.png)
 
 The next series of screens will assist you in configuring a secure username and password for your Conduit.
 
 ##  3 **- Setup Wizard**
 
-![](../.gitbook/assets/multitech_setup_wizard.png)
+![](../../.gitbook/assets/multitech_setup_wizard.png)
 
 Since it's your first login, you are prompted with a setup wizard. Feel free to use the Wizard, in particular if you want to use the DeviceHQ remote management service. We will skip that in this tutorial though and you can feel free to "X" out of the Wizard.
 
@@ -64,11 +64,11 @@ Since it's your first login, you are prompted with a setup wizard. Feel free to 
 
 On the left menu, click LoRaWAN. On this configuration page, you will first want to set the mode to "PACKET FORWARDER"
 
-![Configure as Packet Fowarder](../.gitbook/assets/multitech_lorawan_mode.png)
+![Configure as Packet Fowarder](../../.gitbook/assets/multitech_lorawan_mode.png)
 
-Then you will want to configure the appropriate sub-band \(2\) and the Network Server of your Miner. If you need to setup a Miner, please follow [our tutorial here](../blockchain/run-your-own-miner.md).
+Then you will want to configure the appropriate sub-band \(2\) and the Network Server of your Miner. If you need to setup a Miner, please follow [our tutorial here](../../blockchain/run-your-own-miner.md).
 
-![](../.gitbook/assets/multitech_lorawan_channel_and_server.png)
+![](../../.gitbook/assets/multitech_lorawan_channel_and_server.png)
 
 Click "Save and Apply" in the top left to save this LoRaWAN configuration.
 
@@ -78,7 +78,7 @@ If you are interested in having the Conduit use Ethernet as an option for Intern
 
 Click on the `Adminstration -> Access Configuration` tab on the left and tick all the boxes indicated here:
 
-![Tick all the Boxes](../.gitbook/assets/multitech_access_configuration_outlined.png)
+![Tick all the Boxes](../../.gitbook/assets/multitech_access_configuration_outlined.png)
 
 Note that we've enabled SSH here. You could skip that, but its a nice option to have.
 
@@ -90,7 +90,7 @@ To get Internet over the Ethernet port on most networks, the easiest way is to c
 
 Go to `Setup -> Network Interfaces`and change the IPv4 Mode to "DHCP Client".
 
-![Configure as DHCP Client](../.gitbook/assets/multitech_dhcp_client.png)
+![Configure as DHCP Client](../../.gitbook/assets/multitech_dhcp_client.png)
 
 You'll get a warning in an orange box in the top right about potentially losing access to the browser GUI by doing this. The previous step will prevent this from happening. Double check that you hit "Save and Apply" during the previous step.
 
@@ -108,5 +108,5 @@ For example, if your Miner is running in a docker container called `miner`, you 
 docker exec miner tail -F /var/log/miner/console.log | grep lora
 ```
 
-Every 10 seconds or so, you should see a `PULL_RESP` heartbeat from the forwarder to the Miner. If that is not happening, double check the IP address configured above in "Update Server Configuration". If that looks okay, make sure that UDP port on the Miner is open. On cloud services such as AWS, you'll need to open up ports as described [in the tutorial](../blockchain/run-your-own-miner.md).
+Every 10 seconds or so, you should see a `PULL_RESP` heartbeat from the forwarder to the Miner. If that is not happening, double check the IP address configured above in "Update Server Configuration". If that looks okay, make sure that UDP port on the Miner is open. On cloud services such as AWS, you'll need to open up ports as described [in the tutorial](../../blockchain/run-your-own-miner.md).
 

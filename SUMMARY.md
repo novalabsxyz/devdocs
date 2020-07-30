@@ -84,10 +84,10 @@
 
 * [Introduction](hotspot/introduction.md)
 * [Build a Hotspot](hotspot/developer-setup.md)
-* [Multitech Conduit](hotspot/multitech-conduit.md)
 * [LoRaWAN Gateway Migration](hotspot/lorawan-gateway-migration/README.md)
-  * [Tektelic KONA](hotspot/lorawan-gateway-migration/tektelic-kona.md)
   * [Laird Sentrius RG191](hotspot/lorawan-gateway-migration/laird.md)
+  * [Tektelic KONA](hotspot/lorawan-gateway-migration/tektelic-kona.md)
+  * [Multitech Conduit](hotspot/lorawan-gateway-migration/multitech-conduit.md)
 * [Hotspot BLE Services](hotspot/hotspot-ble-services.md)
 * [Hotspot WiFi Configuration](hotspot/hotspot-wifi-configuration.md)
 

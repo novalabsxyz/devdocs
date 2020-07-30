@@ -8,6 +8,7 @@ In this section, we’ll go over some off-the-shelf LoRaWAN gateways that Helium
 
 * [Laird Sentrius RG191](laird.md)
 * [Tektelic KONA](tektelic-kona.md)
+* [MultiTech Conduit](multitech-conduit.md)
 
 ​
 
