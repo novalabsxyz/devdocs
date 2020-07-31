@@ -15,3 +15,28 @@ While anyone can run a node and a corresponding API, the Helium hosted version o
 
 The API routes are grouped together in sub-pages of this page. Refer to the subpages for details.  
 
+## Cursors
+
+In order to return data quickly and reduce the load on the API,  a `cursor` may be returned from an API request.  The documentation for each route will indicate whether the result is paged with a cursor. 
+
+The request the next page of results add a cursor URL parameter to the URL that was used to make the first request. 
+
+For example:
+
+```text
+export API_URL=https://api.helium.io
+http get $(API_URL)/v1/blocks
+```
+
+will return a `data` array  with _zero or more_ block results and a `cursor` field.  To request the next page:
+
+```text
+http get $(API_URL)/v1/blocks?cursor=eyJiZWZvcmUiOjQzOTIwMX0
+```
+
+Which will return the next page of results and a next `cursor` for the following page.
+
+{% hint style="warning" %}
+In order to improve caching the API may return an empty data array and a cursor. Use the cursor to request more data.
+{% endhint %}
+
