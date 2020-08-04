@@ -80,7 +80,7 @@ Next, enable SPI and I2C using the raspi-config tool:
 sudo raspi-config
 ```
 
-Select `Interfacing Options`, and enable `I2C` and `SPI` from within the menu system.
+Select `Interfacing Options`, and enable `I2C` and `SPI` from within the menu system. Additionally, set `Serial` options to disable "login shell to be accessible over serial" and enable "serial port hardware".
 
 Now let's go ahead and update our install with:
 
