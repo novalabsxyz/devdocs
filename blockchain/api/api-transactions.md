@@ -21,21 +21,27 @@ Transaction hash to fetch
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+Transaction successfully retrieved.
 {% endapi-method-response-example-description %}
 
-```
-{    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Could not find a cake matching this query.
-{% endapi-method-response-example-description %}
-
-```
-{    "message": "Ain't no cake like that."}
+```javascript
+{
+    "data": {
+        "type": "payment_v2",
+        "time": 1595980494,
+        "payments": [
+            {
+                "payee": "13FkKYnwHPoa6F7K23jJ7j2WNg9cMPsznJ7i4c9ysCwLoS8vx3E",
+                "amount": 100000000
+            }
+        ],
+        "payer": "14h5MCATzJAB88gGBph8YtPM9539FdyBnMdTt7sYxg4Ts1D1aW3",
+        "nonce": 6,
+        "height": 435251,
+        "hash": "bUc6-LQXdR6zOBaR_8TPWlf3THCpb4wI6WPXJHJfnYw",
+        "fee": 35000
+    }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
