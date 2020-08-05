@@ -10,7 +10,7 @@ Blockchain Stats
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Retrieve basic stats for the blockchain such as total token supply, and average block and election times over a number of intervals. 
+Retrieve basic stats for the blockchain such as total token supply, and average block and election times over a number of intervals.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -94,6 +94,4 @@ Retrieve basic stats for the blockchain such as total token supply, and average 
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

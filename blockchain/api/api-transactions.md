@@ -48,5 +48,3 @@ Transaction successfully retrieved.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-

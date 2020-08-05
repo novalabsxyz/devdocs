@@ -6,9 +6,7 @@ List Hotpots
 {% endapi-method-summary %}
 
 {% api-method-description %}
-List known hotspots as registered on the blockchain.  
-  
-The results are paged. If a `cursor` field is present in the response, more results are available.
+List known hotspots as registered on the blockchain.The results are paged. If a `cursor` field is present in the response, more results are available.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -87,7 +85,7 @@ Hotspots successfully retrieved.
       "block": 397023,
       "address": "1122FqmqcH5uk8J1BSAStYK436GAR9CuwDVuBT2gRduofm9Vh7Lq"
     },
-    
+
    {
       "lng": -81.77662146961255,
       "lat": 24.55934059588725,
@@ -120,7 +118,6 @@ Hotspots successfully retrieved.
   ],
   "cursor": "eyJoZWlnaHQiOjM5NzAyMywiYmVmb3JlX2Jsb2NrIjozNzcyNDAsImJlZm9yZV9hZGRyZXNzIjoiMTE3dWNvcmlqRldKNjYySEgxcTZhWXo3OFk1cTJGZkY5RE15eDRLYTczdkJxc0V1dU1HIn0"
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -195,9 +192,7 @@ Hotspot Activity
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Lists all blockchain transactions that the given hotspot was involved in.   
-  
-This route is paged using a `cursor`.
+Lists all blockchain transactions that the given hotspot was involved in.This route is paged using a `cursor`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -218,7 +213,7 @@ Cursor for page of results to fetch
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-This lists the activity for hotspot `11cxkqa2PjpJ9YgY9qK3Njn4uSFu6dyK9xV8XE4ahFSqN1YN2db` which only had one transaction at the time of the request. 
+This lists the activity for hotspot `11cxkqa2PjpJ9YgY9qK3Njn4uSFu6dyK9xV8XE4ahFSqN1YN2db` which only had one transaction at the time of the request.
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -264,9 +259,7 @@ Hotspot Elections
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Lists the consensus group transactions that the given hotspot was involved in.   
-  
-This route is paged using a `cursor`. 
+Lists the consensus group transactions that the given hotspot was involved in.This route is paged using a `cursor`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -279,7 +272,7 @@ B58 address of the hotspot to look up
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="cursor" type="string" required=false %}
-Cursor for page to fetch 
+Cursor for page to fetch
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -411,9 +404,7 @@ Hotspot Challenges
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Lists the challenge \(receipts\) that the given hotspot a challenger, challengee or a witness in.   
-  
-This route is paged using a `cursor`. 
+Lists the challenge \(receipts\) that the given hotspot a challenger, challengee or a witness in.This route is paged using a `cursor`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -434,7 +425,7 @@ Cursor for the page to fetch
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Fetches the challenges that the hotspot with `11DvZivbwHVRx4PbQwAd5w2DQEAcfSCRVzsW7gjRKQ86nCEJxHJ` was involved in. 
+Fetches the challenges that the hotspot with `11DvZivbwHVRx4PbQwAd5w2DQEAcfSCRVzsW7gjRKQ86nCEJxHJ` was involved in.
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -693,12 +684,9 @@ Fetches the challenges that the hotspot with `11DvZivbwHVRx4PbQwAd5w2DQEAcfSCRVz
   ],
   "cursor": "eyJ0eXBlcyI6InBvY19yZWNlaXB0c192MSIsImJsb2NrIjozOTcwMDAsImFuY2hvcl9ibG9jayI6Mzk3MDAwfQ"
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

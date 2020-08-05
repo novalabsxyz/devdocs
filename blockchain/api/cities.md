@@ -13,9 +13,7 @@ List Hotspot Cities
 {% endapi-method-summary %}
 
 {% api-method-description %}
-List all known hotspot cities with the total hotspot count for each city.  Use a `search` parameter to filter the list of cities with the given search term   
-  
-This route is paged with a `cursor`. 
+List all known hotspot cities with the total hotspot count for each city. Use a `search` parameter to filter the list of cities with the given search termThis route is paged with a `cursor`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -34,7 +32,7 @@ Cursor for page to fetch
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Lists  cities including the word `houston` in their city, state or country. 
+Lists cities including the word `houston` in their city, state or country.
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -64,9 +62,7 @@ List Hotspots for a City
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Lists all known hotspots for a given `city_id`. The `city_id` captures the city, state and country and is included in the city list result.    
-  
-This route is paged with a `cursor`. 
+Lists all known hotspots for a given `city_id`. The `city_id` captures the city, state and country and is included in the city list result.This route is paged with a `cursor`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -79,7 +75,7 @@ The id for the city are returned by the cities list
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="cursor" type="string" required=false %}
-Cursor for the page of results to fetch  
+Cursor for the page of results to fetch
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

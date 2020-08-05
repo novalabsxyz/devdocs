@@ -1,43 +1,15 @@
 # Blocks
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/blocks/height" %}
-{% api-method-summary %}
-Get Blockchain Height
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Gets the current block height of the API. Since the API tracks the Helium blockchain this value will update as blocks are added to the chain.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Blocks successfully retrieved.
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "data": {
-        "height": 213787
-    }
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/blocks" %}
 {% api-method-summary %}
-Get Block List
+
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Retrieves block descriptions.   
- Blocks descriptions are paged. A `cursor` field will be in the response when more results are available.
+Retrieves block descriptions.  
+Blocks descriptions are paged. A `cursor` field will be in the response when more results are available.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -234,8 +206,8 @@ Block at Height Transactions
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get transactions for a block at a given height.   
-The list of returned transactions is paged. A `cursor` field is present if more results are available.  
+Get transactions for a block at a given height.  
+The list of returned transactions is paged. A `cursor` field is present if more results are available.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -248,7 +220,7 @@ Block height to fetch transaction for
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="cursor" type="string" required=false %}
-Cursor for the  page to fetch
+Cursor for the page to fetch
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -503,7 +475,7 @@ Block at Hash
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get block descriptor for the given block hash. 
+Get block descriptor for the given block hash.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -544,8 +516,8 @@ Block at Hash Transactions
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get transactions for a block at a given block hash.   
-The list of returned transactions is paged. A `cursor` field is present if more results are available. 
+Get transactions for a block at a given block hash.  
+The list of returned transactions is paged. A `cursor` field is present if more results are available.
 {% endapi-method-description %}
 
 {% api-method-spec %}
