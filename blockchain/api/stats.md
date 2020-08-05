@@ -25,43 +25,68 @@ Retrieve basic stats for the blockchain such as total token supply, and average 
 ```javascript
 {
     "data": {
-        "block_times": {
-            "last_day": {
-                "avg": 58.77889784946237,
-                "stddev": 9.507872269818044
-            },
-            "last_hour": {
-                "avg": 57.24390243902439,
-                "stddev": 0.8249350982291116
+        "token_supply": 43665725.1302733,
+        "state_channel_counts": {
+            "last_week": {
+                "num_packets": 2473044,
+                "num_dcs": 5637970
             },
             "last_month": {
-                "avg": 62.05714969486658,
-                "stddev": 25.980640301206407
+                "num_packets": 8054070,
+                "num_dcs": 19274712
             },
-            "last_week": {
-                "avg": 62.38787067545305,
-                "stddev": 29.094249020022605
+            "last_day": {
+                "num_packets": 236788,
+                "num_dcs": 547374
             }
         },
         "election_times": {
-            "last_day": {
-                "avg": 2023.4418604651162,
-                "stddev": 242.452086805736
-            },
-            "last_hour": {
-                "avg": 2093.5,
-                "stddev": 202.939646200539
+            "last_week": {
+                "stddev": 534.822542840926,
+                "avg": 2144.7836879432625
             },
             "last_month": {
-                "avg": 2184.195615514334,
-                "stddev": 463.575353678042
+                "stddev": 543.816093344539,
+                "avg": 2154
             },
-            "last_week": {
-                "avg": 2211.8394160583944,
-                "stddev": 435.66518941559
+            "last_hour": {
+                "stddev": 42.42640687119285,
+                "avg": 1882
+            },
+            "last_day": {
+                "stddev": 859.488237284275,
+                "avg": 2323.4324324324325
             }
         },
-        "token_supply": 31654459.25935043
+        "counts": {
+            "transactions": 19449205,
+            "hotspots": 4460,
+            "consensus_groups": 11210,
+            "challenges": 6970742,
+            "blocks": 435217
+        },
+        "challenge_counts": {
+            "last_day": 44551,
+            "active": 1375
+        },
+        "block_times": {
+            "last_week": {
+                "stddev": 37.35119910969945,
+                "avg": 59.48209718670077
+            },
+            "last_month": {
+                "stddev": 39.13551465750347,
+                "avg": 59.71646467904705
+            },
+            "last_hour": {
+                "stddev": 13.222930902010502,
+                "avg": 57.40983606557377
+            },
+            "last_day": {
+                "stddev": 54.591247837179495,
+                "avg": 61.43274021352313
+            }
+        }
     }
 }
 ```
