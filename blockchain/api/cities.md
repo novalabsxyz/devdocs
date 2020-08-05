@@ -105,7 +105,8 @@ The list of hotspots for Montrose, New York, which is city\_id `bW9udHJvc2VuZXcg
                 "short_city": "Montrose",
                 "short_country": "US",
                 "short_state": "NY",
-                "short_street": "Dutch St"
+                "short_street": "Dutch St",
+                "city_id": "bW9udHJvc2VuZXcgeW9ya3VuaXRlZCBzdGF0ZXM"                
             },
             "lat": 41.24450048207128,
             "lng": -73.93189556758152,
@@ -133,7 +134,8 @@ The list of hotspots for Montrose, New York, which is city\_id `bW9udHJvc2VuZXcg
                 "short_city": "Montrose",
                 "short_country": "US",
                 "short_state": "NY",
-                "short_street": "Sunset Rd"
+                "short_street": "Sunset Rd",
+                "city_id": "bW9udHJvc2VuZXcgeW9ya3VuaXRlZCBzdGF0ZXM"
             },
             "lat": 41.24464436633493,
             "lng": -73.94293581685558,
@@ -161,7 +163,8 @@ The list of hotspots for Montrose, New York, which is city\_id `bW9udHJvc2VuZXcg
                 "short_city": "Montrose",
                 "short_country": "US",
                 "short_state": "NY",
-                "short_street": "Sycamore Ct"
+                "short_street": "Sycamore Ct",
+                "city_id": "bW9udHJvc2VuZXcgeW9ya3VuaXRlZCBzdGF0ZXM"
             },
             "lat": 41.24524348318981,
             "lng": -73.93254191072695,
