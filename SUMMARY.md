@@ -42,6 +42,7 @@
   * [Digital Matter LoRaWAN GPS](devices/lorawan-devices/digital-matter-lorawan.md)
   * [Browan LoRaWAN Object Locator](devices/lorawan-devices/browan-lorawan-object-locator.md)
   * [Adeunis Field Test Device](devices/lorawan-devices/adeunis-field-test-device.md)
+  * [Dragino LHT65](devices/lorawan-devices/dragino-lht65.md)
 
 ## Developer Resources <a id="resources"></a>
 
