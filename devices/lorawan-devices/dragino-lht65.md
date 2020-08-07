@@ -32,7 +32,7 @@ The device should now begin attempting to join the network. Within a minute or t
 
 ![](../../.gitbook/assets/lht65_activation.png)
 
-Once you have seen event similar to above, your device is now joined to the network and will send its sensor values every ten minutes by default. The transmit frequency and many more settings can be changed, please refer to the manual for instructions.
+Once you have seen an event similar to above, your device is now joined to the network and will send its sensor values every ten minutes by default. The transmit frequency and many more settings can be changed, please refer to the manual for instructions.
 
 ### myDevices Cayenne
 
