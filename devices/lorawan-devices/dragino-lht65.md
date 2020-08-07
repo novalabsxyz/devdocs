@@ -64,3 +64,7 @@ Once you have attached the decoder we can now open the Debug window to view the 
 
 ![](../../.gitbook/assets/lht65_decoded_payload.png)
 
+### Sending Device Payload to Your Application
+
+To learn more about how to send the device data payload to your own application checkout the Console integrations [here](../../console/integrations/).
+
