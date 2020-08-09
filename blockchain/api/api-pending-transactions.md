@@ -6,7 +6,7 @@ Pending Transaction Status
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Fetches the status for a given pending transaction hash.
+Fetches the status for a given pending transaction hash.  Multiple transactions for the same hash may be returned. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -26,7 +26,7 @@ A successful pending transaction status request
 
 ```javascript
 {
-    "data": {
+    "data": [{
         "updated_at": "2020-07-29T00:44:13.578098Z",
         "type": "payment_v2",
         "txn": {
@@ -46,7 +46,7 @@ A successful pending transaction status request
         "hash": "q7pnrm2LvPoZKclF4f2BB6AmcnD0SORECgq9VbNLir4",
         "failed_reason": "",
         "created_at": "2020-07-29T00:44:11.516601Z"
-    }
+    }]
 }
 ```
 {% endapi-method-response-example %}
