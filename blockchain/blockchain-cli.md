@@ -9,11 +9,7 @@ description: Full usage details on the Helium Wallet CLI
 The Helium blockchain CLI is an open-source Rust application that allows the user to create secure address key pairs and interact with the blockchain via the command line. This guide will walk you through how to create various types of wallets, and perform some of the different blockchain specific functions.
 
 {% hint style="info" %}
-The Wallet CLI source code [is available on GitHub](https://github.com/helium/helium-wallet-rs).
-{% endhint %}
-
-{% hint style="info" %}
-This documentation is current as of **v1.1.4.**
+The Wallet CLI source code [is available on GitHub](https://github.com/helium/helium-wallet-rs). This documentation is current as of **v1.3.4.**
 {% endhint %}
 
 {% hint style="info" %}
@@ -26,7 +22,7 @@ Please be sure to keep wallet files and passwords secure. If you forget a passwo
 
 
 
-{% embed url="https://www.youtube.com/watch?v=HjbmNehXNg8" caption="Using the Helium blockchain Wallet CLI" %}
+{% embed url="https://www.youtube.com/watch?v=HjbmNehXNg8" caption="Using the Helium blockchain Wallet CLI. \(Note: only current as of version 1.1.4.\)" %}
 
 ## Installation \(from source\)
 
@@ -52,7 +48,91 @@ Cargo will pull in all the required dependencies and build the application. Once
 You can run `./target/release/helium-wallet -h` or `--help` to get help at any time to get guidance on how to use any of the Wallet CLI commands
 {% endhint %}
 
-## Creating Wallets
+## Subcommands
+
+As of version 1.3.4, the following subcommands are available in the CLI. 
+
+* [balance](blockchain-cli.md#balance) - get a wallet balance
+* [burn](blockchain-cli.md#burn) - burn HNT to data credits to a target wallet address
+* [create](blockchain-cli.md#create) - create a new wallet
+* [help](blockchain-cli.md#help) - prints the help contents for a given subcommands
+* [hotspots](blockchain-cli.md#hotspots) - get the Hotspots for a wallet
+* [htlc](blockchain-cli.md#htlc) - create or redeem from an HTLC address
+* [info](blockchain-cli.md#info) - get wallet information
+* [onboard](blockchain-cli.md#onboard) - onboard a hotspot using a location assertion transaction
+* [oracle](blockchain-cli.md#oracle) - report an oracle price to the blockchain
+* [oui](blockchain-cli.md#oui) - create or update an OUI
+* [pay](blockchain-cli.md#pay) - send one or more payments to a given address
+* [securities](blockchain-cli.md#securities) - administer security tokens
+* [upgrade](blockchain-cli.md#upgrade) - upgrade a wallet to the latest supported version of the given format
+* [vars](blockchain-cli.md#vars) - commands for chain variables
+* [verify](blockchain-cli.md#verify) - verify an encrypted wallet
+
+### balance 
+
+To check your wallet balance:
+
+```bash
+$ ./target/release/helium-wallet balance
++-----------------------------------------------------+------------+--------------+-----------------+
+| Address                                             | Balance    | Data Credits | Security Tokens |
++-----------------------------------------------------+------------+--------------+-----------------+
+| 14d5tFhmy5wW98gS3NzDgqsLAAZ54QsMfMy5dNRdsGPw7a7USbC | 0.00000000 | 0            | 0               |
++-----------------------------------------------------+------------+--------------+-----------------+
+```
+
+### burn
+
+Use the `burn` subcommand to burn HNT from you CLI wallet into DCs to a target Helium Console organization \(and corresponding wallet address\). The full command structure is:
+
+`helium-wallet burn [FLAGS] [OPTIONS] --amount <amount> --payee <payee> --commit`
+
+**burn subcommand options**
+
+* `--amount <amount>` Amount of HNT to burn to DCs
+* `-- memo <memo>`Memo to include; must be a base64 encoded string. This will be provided by your Helium Console org. 
+* `--payee <payee>` Account address to send the resulting DC to. This will be provided by your Helium Console org.
+
+**Obtaining memo and payee info**
+
+Your `memo` and `payee` info can be found in your [Helium Console](https://console.helium.com/) organization. Once logged in, go to the [Data Credits menu](https://console.helium.com/datacredits), and select **Purchase Data Credits**. Enter the amount of DCs you want to convert from HNT, and click the **Burn HNT to DC option**. You'll then be presented with a QR code that can be used to burn HNT from your _Helium Mobile Wallet_ to your Console Org. You don't want this. Instead, click the **I don't want to use QR Code** link under the QR code. You'll then be presented with something like this:
+
+![Burn details for the CLI](../.gitbook/assets/screen-shot-2020-08-11-at-5.42.07-pm.png)
+
+* Use the **Address to Burn HNT** **to** as your `--payee` 
+* Use the **Include Memo** info as your `--memo` 
+* Use the **Amount HNT** as the `--amount` 
+
+{% hint style="info" %}
+The **Amount HNT** is the amount of HNT required to be burned to convert to amount of Data Credits you specified. This number is calculated based on the current [HNT Oracle Price.](hnt-price-oracles.md)
+{% endhint %}
+
+Using the above info, our full burn command will look like this:
+
+```bash
+$ ./target/release/helium-wallet burn --amount 1.52825165 --payee 1124CJ9yJaHq4D6ugyPCDnSBzQik61C1BqD9VMh1vsUmjwt16HNB --memo DsKCkPLEDIQ= --commit
+
+Password: [hidden]
++--------+------------------------------------------------------+
+| Key    | Value                                                |
++--------+------------------------------------------------------+
+| Payee  | 1124CJ9yJaHq4D6ugyPCDnSBzQik61C1BqD9VMh1vsUmjwt16HNB |
++--------+------------------------------------------------------+
+| Memo   | DsKCkPLEDIQ=                                         |
++--------+------------------------------------------------------+
+| Amount | 1.52825165                                           |
++--------+------------------------------------------------------+
+| Fee    | 35000                                                |
++--------+------------------------------------------------------+
+| Nonce  | 11                                                   |
++--------+------------------------------------------------------+
+| Hash   | yYtYCrQ_cRgu9lxGLr5CtkTTJj1baaztL5xo6Vs2fB4          |
++--------+------------------------------------------------------+
+```
+
+After this is submitted to the blockchain and processed, your Console Org will be the recipient of your Data Credits; and your Helium Wallet balance will reflect the amount of HNT burned \(including the transaction fee\). 
+
+### create
 
 Using the Helium Wallet CLI, you can \(re\)create three types of wallets:
 
@@ -60,7 +140,7 @@ Using the Helium Wallet CLI, you can \(re\)create three types of wallets:
 2. Recreate an existing wallet using a 12 word seed phrase
 3. New Helium Wallet with as sharded private key
 
-### Creating a Wallet from Scratch
+#### Creating a Wallet from Scratch
 
 To create a simple wallet, run:
 
@@ -70,7 +150,7 @@ $ ./target/release/helium-wallet create basic
 
 This will create a password protected wallet file located at `wallet.key` If you want to output the wallet file to a different location you can specify `-o /path/to/mywalletfile.key` when creating the wallet.
 
-### Creating a wallet using an existing 12 word seed phrase
+#### Creating a wallet using an existing 12 word seed phrase
 
 If you've been using the Helium iOS/Android mobile application, you're likely to have an existing wallet and you've hopefully written the 12 word seed phrase down somewhere. To create a CLI wallet using that existing seed phrase you can do this:
 
@@ -84,7 +164,7 @@ The CLI will then prompt you for your `Seed Words:` enter them in the correct or
 $ Seed Words: word1 word2 word3 ...
 ```
 
-### Creating a Sharded Wallet
+#### Creating a Sharded Wallet
 
 Basic wallets are secured by a single `wallet.key` file. A more secure option is to break your private key into what are called "shards".  To support this, the CLI uses  [Shamir's Secret Sharing](https://github.com/dsprenkels/sss).  
 
@@ -96,23 +176,26 @@ $ ./target/release/helium-wallet create sharded -n 5 -k 3
 
 This will create a wallet with `5` shards, with any `3` shards required. The files are stored as `wallet.key.1` through `wallet.key.5` As before, the filename can be specified by passing the `-o` flag during the wallet creation.
 
-## Verifying Wallets
+### help
 
-If you have existing wallet files you can verify them by running the `verify` command. You'll be asked for your wallet passphrase. 
+### hotspots
+
+To return all the Hotspots for a given wallet address:
 
 ```bash
-$ ./target/release/helium-wallet verify 
-Password: [hidden]
-+-----------------------------------------------------+---------+--------+
-| Address                                             | Sharded | Verify |
-+-----------------------------------------------------+---------+--------+
-| 13QvnWtjpi3HYoBPpcEmqansMyCbJSkRpSthXAJFTaxwUraKKaP | false   | true   |
-+-----------------------------------------------------+---------+--------+
+./target/release/helium-wallet hotspots
++-----------------------------------------------------+-------------------+
+| Address                                             | Name              |
++-----------------------------------------------------+-------------------+
+| 13QvnWtjpi3HYoBPpcEmqansMyCbJSkRpSthXAJFTaxwUraKKaP | No hotspots found |
++-----------------------------------------------------+-------------------+
 ```
 
-You can pass `-f mywallet.key` to the `verify` command  to use different wallet files.
+This will return a list of Hotspots owned by the `wallet.key` file. 
 
-## Getting Wallet Info
+### htlc
+
+### info
 
 To simply see the public address of a given `wallet.key`, use the \`info
 
@@ -127,7 +210,13 @@ $ ./target/release/helium-wallet info
 
 You can pass `-f mywallet.key` to either the `verify` or `info` commands to use different wallet files.
 
-## Sending Tokens
+### onboard
+
+### oracle
+
+### oui
+
+### pay
 
 Once your wallet has been created it's easy to send HNT via the CLI. The basic command structure is as follows:
 
@@ -158,8 +247,6 @@ Or once the transaction has been confirmed:
 https://api.helium.io/v1/transactions/<hash>
 ```
 
-
-
 #### Sending Tokens to more than one HNT Address in a Single Transaction 
 
 As of CLI v1.1.3, you can send HNT to up to `50` wallets in the same CLI command. To do this, simply follow the `--payee <payee=hnt>` format but include multiple addresses and their desired HNT amounts. For example:
@@ -170,31 +257,29 @@ $ ./target/release/helium-wallet pay --commit --payee 13buBykFQf5VaQtv7mWj2PBY9L
 
 
 
-## Checking Balance
+### securities
 
-To check your wallet balance:
+### upgrade
 
-```bash
-$ ./target/release/helium-wallet balance
-+-----------------------------------------------------+------------+--------------+-----------------+
-| Address                                             | Balance    | Data Credits | Security Tokens |
-+-----------------------------------------------------+------------+--------------+-----------------+
-| 14d5tFhmy5wW98gS3NzDgqsLAAZ54QsMfMy5dNRdsGPw7a7USbC | 0.00000000 | 0            | 0               |
-+-----------------------------------------------------+------------+--------------+-----------------+
-```
+### vars
 
-## Listing Hotspots
+### verify
 
-To return all the Hotspots for a given wallet address:
+If you have existing wallet files you can verify them by running the `verify` command. You'll be asked for your wallet passphrase. 
 
 ```bash
-./target/release/helium-wallet hotspots
-+-----------------------------------------------------+-------------------+
-| Address                                             | Name              |
-+-----------------------------------------------------+-------------------+
-| 13QvnWtjpi3HYoBPpcEmqansMyCbJSkRpSthXAJFTaxwUraKKaP | No hotspots found |
-+-----------------------------------------------------+-------------------+
+$ ./target/release/helium-wallet verify 
+Password: [hidden]
++-----------------------------------------------------+---------+--------+
+| Address                                             | Sharded | Verify |
++-----------------------------------------------------+---------+--------+
+| 13QvnWtjpi3HYoBPpcEmqansMyCbJSkRpSthXAJFTaxwUraKKaP | false   | true   |
++-----------------------------------------------------+---------+--------+
 ```
 
-This will return a list of Hotspots owned by the `wallet.key` file. 
+You can pass `-f mywallet.key` to the `verify` command  to use different wallet files.
+
+
+
+
 
