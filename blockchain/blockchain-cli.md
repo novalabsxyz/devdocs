@@ -70,7 +70,15 @@ As of version 1.3.4, the following subcommands are available in the CLI.
 
 ### balance 
 
-To check your wallet balance:
+Use this to check your local wallet balance, or the balance of any Helium blockchain wallet.
+
+**USAGE**
+
+`helium-wallet balance [OPTIONS]`
+
+**OPTIONS**:
+
+* `-a, --address <addresses>` - Use to specify an address other than your local wallet.
 
 ```bash
 $ ./target/release/helium-wallet balance
@@ -83,11 +91,13 @@ $ ./target/release/helium-wallet balance
 
 ### burn
 
-Use the `burn` subcommand to burn HNT from you CLI wallet into DCs to a target Helium Console organization \(and corresponding wallet address\). The full command structure is:
+Use the `burn` subcommand to burn HNT from you CLI wallet into DCs to a target Helium Console organization \(and corresponding wallet address\).
+
+**USAGE**
 
 `helium-wallet burn [FLAGS] [OPTIONS] --amount <amount> --payee <payee> --commit`
 
-**burn subcommand options**
+**OPTIONS:**
 
 * `--amount <amount>` Amount of HNT to burn to DCs
 * `-- memo <memo>`Memo to include; must be a base64 encoded string. This will be provided by your Helium Console org. 
@@ -134,13 +144,19 @@ After this is submitted to the blockchain and processed, your Console Org will b
 
 ### create
 
-Using the Helium Wallet CLI, you can \(re\)create three types of wallets:
+Use this to create a Helium-compatible wallet.
 
-1. New Helium Wallet 
-2. Recreate an existing wallet using a 12 word seed phrase
-3. New Helium Wallet with as sharded private key
+**USAGE**
 
-#### Creating a Wallet from Scratch
+ `helium-wallet create <SUBCOMMAND>`
+
+**SUBCOMMANDS**
+
+* `basic`  - Create a new basic wallet
+* `help`   - Prints this message or the help of the given subcommand\(s\)
+* `sharded`  - Create a new sharded wallet
+
+#### Creating a Basic Wallet
 
 To create a simple wallet, run:
 
@@ -152,7 +168,7 @@ This will create a password protected wallet file located at `wallet.key` If you
 
 #### Creating a wallet using an existing 12 word seed phrase
 
-If you've been using the Helium iOS/Android mobile application, you're likely to have an existing wallet and you've hopefully written the 12 word seed phrase down somewhere. To create a CLI wallet using that existing seed phrase you can do this:
+If you've been using the Helium Wallet iOS/Android mobile application, you're likely to have an existing wallet and you've hopefully written the 12 word seed phrase down somewhere. To create a CLI wallet using that existing seed phrase you can do this:
 
 ```bash
 $ ./target/release/helium-wallet create basic --seed
@@ -166,7 +182,7 @@ $ Seed Words: word1 word2 word3 ...
 
 #### Creating a Sharded Wallet
 
-Basic wallets are secured by a single `wallet.key` file. A more secure option is to break your private key into what are called "shards".  To support this, the CLI uses  [Shamir's Secret Sharing](https://github.com/dsprenkels/sss).  
+`Basic` wallets are secured by a single `wallet.key` file. A more secure option is to break your private key into what are called "shards".  To support this, the CLI uses  [Shamir's Secret Sharing](https://github.com/dsprenkels/sss).  
 
 A key can be broken into `N` shards such that recovering the original key needs `K` distinct shards. This can be done by passing options to `create`
 
@@ -178,9 +194,23 @@ This will create a wallet with `5` shards, with any `3` shards required. The fil
 
 ### help
 
+Prints relevant help info for target subcommand**.**
+
+**USAGE**
+
+`helium-wallet [OPTIONS] <SUBCOMMAND>`
+
 ### hotspots
 
-To return all the Hotspots for a given wallet address:
+Returns all the Hotspots owned by the local wallet or another specified wallet address.
+
+**USAGE**
+
+`helium-wallet hotspots [OPTIONS]`
+
+**OPTIONS**
+
+`-a, --address <addresses>`  - blockchain wallet address to get Hotspots or gateways for
 
 ```bash
 ./target/release/helium-wallet hotspots
@@ -191,13 +221,31 @@ To return all the Hotspots for a given wallet address:
 +-----------------------------------------------------+-------------------+
 ```
 
-This will return a list of Hotspots owned by the `wallet.key` file. 
-
 ### htlc
+
+Create or Redeem from an HTLC address.
+
+**USAGE**
+
+`helium-wallet htlc <SUBCOMMAND>`
+
+**SUBCOMMANDS**
+
+* `create` - Creates a new HTLC address with a specified hashlock and timelock \(in block height\), and transfers a value of tokens to it. The transaction is not submitted to the system unless the `--commit` option is given
+* `help`  - Prints this message or the help of the given subcommand\(s\)
+* `redeem`  - Redeem the balance from an HTLC address with the specified preimage for the hashlock
 
 ### info
 
-To simply see the public address of a given `wallet.key`, use the \`info
+View the info for a local wallet.
+
+**USAGE**
+
+`helium-wallet info [FLAGS]`
+
+**FLAGS**
+
+* `--qr`  - Display QR code for a given single wallet
 
 ```bash
 $ ./target/release/helium-wallet info
@@ -208,28 +256,71 @@ $ ./target/release/helium-wallet info
 +-----------------------------------------------------+---------+
 ```
 
-You can pass `-f mywallet.key` to either the `verify` or `info` commands to use different wallet files.
-
 ### onboard
+
+Use an onboarding key get a hotspot added or a location assertion transaction signed by the Helium staking server.
+
+**USAGE**
+
+`helium-wallet onboard [FLAGS] [OPTIONS] [TRANSACTION]`
+
+**FLAGS**
+
+* `--commit`  - Commit the transaction to the blockchain
+
+**OPTIONS**
+
+* ~~`--onboarding <onboarding>`~~  - The onboarding key to use if the payer of the transaction fees is the Helium "staking" server
+
+**ARGS**
+
+* `TRANSACTION` - Base64 encoded transaction to sign. If no transaction if given stdin is read for the transaction. Note that the stdin feature only works if the wallet password is set in the `HELIUM_WALLET_PASSWORD` environment variable
 
 ### oracle
 
+Report an oracle price to the blockchain.
+
+{% hint style="info" %}
+Full Documentation on Helium Price Oracles [are here](hnt-price-oracles.md).
+{% endhint %}
+
+**USAGE**
+
+`helium-wallet oracle <SUBCOMMAND>`
+
+**SUBCOMMANDS**
+
+* `-- report`  - Construct an oracle price report and optionally commit it to the Helium Blockchain
+
 ### oui
+
+Create or update a Helium blockchain OUI
+
+**USAGE**
+
+`helium-wallet oui <SUBCOMMAND>`
+
+**SUBCOMMANDS**
+
+* `create`  - Allocates an Organizational Unique Identifier \(OUI\) which identifies endpoints for packets to sent to. The transaction is not submitted to the system unless the `--commit` option is given
+* `submit`   - Submits a given base64 oui transaction to the API. This command can be used when this wallet is not the payer of the oui transaction
 
 ### pay
 
-Once your wallet has been created it's easy to send HNT via the CLI. The basic command structure is as follows:
+Sent HNT from one wallet to one or more wallets.
 
-```bash
-$ ./target/release/helium-wallet pay [FLAGS] [OPTIONS] --payee <payee=hnt>
-```
+**USAGE**
 
-| **Available Flags** | Description |
-| :--- | :--- |
-| --commit | Required to formally commit the transaction to the API |
-| --hash | Only output the transaction hash |
-| --payee, -p | Precedes the address and amount of HNT to send in `<address>=<amount>` format |
-| --file, -f | Wallet to use as the payer `[default: wallet.key]` |
+`helium-wallet pay [FLAGS] --payee <payee=hnt>...`
+
+
+
+**FLAGS**
+
+* `--commit`- Required to formally commit the transaction to the API
+* `--hash`- Only output the transaction hash
+* `--payee, -p`- Precedes the address and amount of HNT to send in `<address>=<amount>` format
+* `--file`- Wallet to use as the payer.  Defaults to the local `wallet.key`
 
 When you submit a payment transaction, you will be prompted for the password you used to create the wallet.
 
