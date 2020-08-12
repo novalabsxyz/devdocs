@@ -95,7 +95,7 @@ Use the `burn` subcommand to burn HNT from you CLI wallet into DCs to a target H
 
 **USAGE**
 
-`helium-wallet burn [FLAGS] [OPTIONS] --amount <amount> --payee <payee> --commit`
+`helium-wallet burn [FLAGS] [OPTIONS] --amount <amount> --payee <payee> --memo <memo> --commit`
 
 **OPTIONS:**
 
