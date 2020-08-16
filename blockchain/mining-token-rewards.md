@@ -60,7 +60,9 @@ Below are the mining rewards per epoch. For every complete epoch \(marked by the
 {% hint style="info" %}
 **Rewards Change Over Time**
 
-You can always find the current rewards schedule using the [Chain Variables API.](api/chain-variables.md) What's shown below reflects what the rewards distribution will be when [Data Credits](tokens.md#data-credits) are fully deployed and Hotspots are being rewarded for routing traffic. This is slated to happen at the end of July 2020.
+You can always find the current rewards schedule using the [Chain Variables API.](api/chain-variables.md) What's shown below reflects the rewards distribution as of **August 12, 2020**. 
+
+The next scheduled change to the HNT rewards distribution is roughly **August 1, 2021**.  
 {% endhint %}
 
 | Reward Type | Percentage | HNT Earned by Reward Type |
@@ -89,7 +91,7 @@ Using the above rewards schedule, we can calculate some example distributions fo
 
 ### **Calculating The Network Data Transfer Reward Per Hotspot**
 
-As shown above, the `Network Data Transfer` \_\_reward type earns `30%` of the HNT mined per epoch. The calculation for this warrants some explanation. At a high level, every Hotspot that routes data in a given epoch will earn some part of the roughly `1027.398HNT` that is allocated to this reward type.
+As shown above, the `Network Data Transfer` reward type earns `32.5%` of the HNT mined per epoch. The calculation for this warrants some explanation. At a high level, every Hotspot that routes data in a given epoch will earn some part of the roughly `1113.0145HNT` that is allocated to this reward type.
 
 Hotspots earn HNT based on how much data they route, and specifically how many Data Credits are burned in their name, at a rate that equals their percentage share of the total amount of Data Credits spent on Network Data Transfer during that epoch. The simple calculation for finding the amount of HNT awarded to any given Hotspot for Network Data Transfer is:
 
