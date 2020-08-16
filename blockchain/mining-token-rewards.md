@@ -65,12 +65,12 @@ You can always find the current rewards schedule using the [Chain Variables API.
 
 | Reward Type | Percentage | HNT Earned by Reward Type |
 | :--- | :--- | :--- |
-| PoC Challenger | 1% | 34.2466 |
-| PoC Challengees | 19% | 650.6854 |
-| Witnesses | 9% | 308.2194 |
+| PoC Challenger | .95% | 32.53427 |
+| PoC Challengees | 18% | 616.43880 |
+| Witnesses | 8.55% | 292.80843 |
 | Consensus Group | 6% | 205.4796 |
-| Security Tokens | 35% | 1198.631 |
-| Network Data Transfer | 30% | 1027.398 |
+| Security Tokens | 34% | 1164.3844 |
+| Network Data Transfer | 32.5% | 1113.0145 |
 | **Total** | **100%** | **3424.66** |
 
 ## HNT Earnings Per Hotspot By Reward Type
@@ -79,12 +79,12 @@ Using the above rewards schedule, we can calculate some example distributions fo
 
 | Reward Type | Hotspots Earning Reward | HNT Earned Per Hotspot | Total Earned by Reward Type |
 | :--- | :--- | :--- | :--- |
-| PoC Challenger | 160 | 0.21404125 | 34.2466 |
-| PoC Challengee | 128 \(unique instances\) | 5.083479688 | 650.6854 |
-| Witnesses | 409 \(unique instances\) | 0.753592665 | 308.2194 |
+| PoC Challenger | 160 | 0.20333919 | 32.53427 |
+| PoC Challengee | 128 \(unique instances\) | 4.81592813 | 616.4388 |
+| Witnesses | 409 \(unique instances\) | 0.71591303 | 292.80843 |
 | Consensus Group | 16 | 12.842475 | 205.4796 |
-| Security | N/A | N/A | 1198.631 |
-| Network Data Transfer | _**See below\***_ | _**See below\***_ | 1027.398 |
+| Security | N/A | N/A | 1164.3844 |
+| Network Data Transfer | _**See below\***_ | _**See below\***_ | 1113.0145 |
 | **Total** | N/A | N/A | 3424.66 |
 
 ### **Calculating The Network Data Transfer Reward Per Hotspot**
@@ -113,10 +113,10 @@ With these assumptions in mind, here's how the entire `30%` of HNT reward during
 
 | Hotspot Name | DC Routed | % of whole during epoch | HNT Earned |
 | :--- | :--- | :--- | :--- |
-| Wobbly Blue Cougar | 300,000 | 60% | 616.4388 |
-| Steep Fern Trout | 150,000 | 30% | 308.2194 |
-| Damp Peanut Hippo | 50,000 | 10% | 102.7398 |
-| **Total** | **500,000** | **100%** | **1027.398** |
+| Wobbly Blue Cougar | 300,000 | 60% | 667.8087 |
+| Steep Fern Trout | 150,000 | 30% | 333.90435 |
+| Damp Peanut Hippo | 50,000 | 10% | 111.30145 |
+| **Total** | **500,000** | **100%** | **1113.0145** |
 
 **Additional Notes on Reward Types and Payouts:**
 
