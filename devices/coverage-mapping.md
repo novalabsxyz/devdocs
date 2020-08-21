@@ -87,6 +87,10 @@ Press _Push Button 2,_ shown below, __once to navigate to the GPS screen, also s
 
 Once you have navigated to the GPS screen you'll next be monitoring this screen to validate that the device has a sufficient GPS fix\(enough satellites are visible to accurately calculate its position and time\). Make sure the device is located in a place where a good amount of the sky is visible. Once your device obtains a fix, this may take a few minutes, you will see a latitude and longitude show as well as how many satellites are visible. It's best if six or more satellites are visible. You can now navigate to the Packet Count screen by again pressing the same _Push Button 2_, once if the display backlight is on, and twice if if is off.
 
+{% hint style="warning" %}
+Ignore the PER % number as shown in the packet count screen below. This value is not meaningful for the current configuration. Only pay attention to the UL\(Uplink\) Count.
+{% endhint %}
+
 ![Packet Count Screen](../.gitbook/assets/adeunis_packet.png)
 
 Once you see a positive number in the UL Count field, you have successfully joined the network and are now transmitting packets with location data. At this point you are ready to begin mapping new area, read about how you can view your location live with Helium Cargo below! When you are finished, simply switch the power switch to OFF.
