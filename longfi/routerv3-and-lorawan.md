@@ -8,8 +8,6 @@ Currently, [RouterV3](https://github.com/helium/routerv3) is LoRaWAN 1.0.2 compa
 
 Devices with arbitrary AppEUI and DevEUI can use the Helium Network only as long as they authenticate using Over-the-Air-Authentication \(OTAA\). After OTAA, a DevAddr is assigned which allows for routing on the Helium Network. Read more about this [here](longfi-routing.md).
 
-Activation By Personalisation \(ABP\) will be supported in the future.
-
 ## Roaming
 
 Despite multiple Network Servers working on the LongFi Network \(as opposed to a traditional LoRaWAN network\), the DevAddr space is arbitrated such that roaming from one Helium hotspot to another provides seamless connection without requiring new Joins.
