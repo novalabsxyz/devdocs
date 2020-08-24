@@ -30,7 +30,7 @@ This is a Proof-of-Coverage Challenge, as seen in the [Helium Network Visualizer
 
 Each Challenge has the following set of participants:
 
-* **Challenger** - The Hotspot that creates a proof and submits it to the blockchain. Hotspots are rewarded for submitting valid Challenges and, as such, submit as many proofs as the Network will allow. Currently each Hotspot can submit one challenge per 30 blocks \(or roughly one per epoch\).
+* **Challenger** - The Hotspot that creates a proof and submits it to the blockchain. Hotspots are rewarded for submitting valid Challenges and, as such, submit as many proofs as the Network will allow. Currently each Hotspot can submit one challenge per 60 blocks \(or roughly one per two epochs\).
 * **Target** -  Any Hotspot chosen to complete the Challenge \(also referred to as a “challengee”\). The minimum number of targets per challenge is three; and the maximum number is seven. All targets in any given Challenge are located in the same geography such that they are able to communicate over RF with at least one target. The Targets do not need to be in geographic proximity to the Challenger.
 * **Witness** - A Hotspot that can verify the existence of the Challenge packet over RF at any stage in the Challenge path. A Witness can also be a Target in any given Challenge.
 
@@ -38,7 +38,7 @@ With this in mind, let’s walk through how a PoC Challenge actually happens on 
 
 ### Challenge Proof Construction and Initial Target Selection
 
-Since Hotspots are rewarded for submitting challenge proofs and their receipts to the Network, they construct and submit as many as possible. Collectively, Hotspots submitting valid proofs and the associated proof receipts split `1%` of all HNT mined each epoch. \(See the full HNT reward breakdown [here](https://www.helium.com/tokens).\) As noted above, they are currently allowed to submit a challenge proof roughly once per epoch.
+Since Hotspots are rewarded for submitting challenge proofs and their receipts to the Network, they construct and submit as many as possible. Collectively, Hotspots submitting valid proofs and the associated proof receipts split `1%` of all HNT mined each epoch. \(See the full HNT reward breakdown [here](https://www.helium.com/tokens).\) As noted above, they are currently allowed to submit a challenge proof roughly once per 60 blocks.
 
 The challenge process begins with the Challenger selecting an initial target Hotspot. The blockchain maintains a discrete probability distribution of Hotspots according to their score that’s used by the Challenger when selecting the initial target. Lower scoring Hotspots have a higher probability of being selected as the initial target because the Network wants to give them the opportunity to increase their score by participating in challenges. Specifically:
 
