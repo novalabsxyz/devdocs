@@ -38,7 +38,7 @@ The target production rate for new `HNT` minted per month is `5,000,000`. This m
 * Target **block time** is `60` seconds.
 * Target **epoch size** is `30` blocks.
 
-Recall that, in the Helium blockchain, [blocks](mining-token-rewards.md) contain some number of individual transactions and [epochs](mining-token-rewards.md) are comprised of all the blocks mined by a the current Consensus Group since the last epoch.
+Recall that, in the Helium blockchain, [blocks](mining-token-rewards.md) contain some number of individual transactions and [epochs](mining-token-rewards.md) are comprised of all the blocks mined by a the current [Consensus Group](consensus-protocol.md#the-consensus-group-election) since the last epoch.
 
 So, if we achieve our target block time of `60` seconds, and target epoch of `30` blocks, the blockchain will produce `5MM` HNT per month. Per epoch, this equals roughly `3424.66` HNT. The math for this is as follows:
 
@@ -48,7 +48,7 @@ So, if we achieve our target block time of `60` seconds, and target epoch of `30
 {% hint style="info" %}
 #### What Are The Current Block and Epoch Times?
 
-At any point you can go to the [Helium blockchain Explorer](http://explorer.helium.com/) to view recent block and epoch statistics, past HNT production numbers, and much more. Your Helium Mobile Wallet will also give you the average block and epoch times for the trailing 24 hour period.
+At any point you can go to the [Helium blockchain Explorer](http://explorer.helium.com/) to view recent block and epoch statistics, past HNT production numbers, and much more. Your [Helium Mobile Wallet](https://helium.com/app) will also give you the average block and epoch times for the trailing 24 hour period.
 {% endhint %}
 
 ## HNT Distributions Per Epoch
@@ -60,7 +60,7 @@ Below are the mining rewards per epoch. For every complete epoch \(marked by the
 {% hint style="info" %}
 **Rewards Change Over Time**
 
-You can always find the current rewards schedule using the [Chain Variables API.](api/chain-variables.md) What's shown below reflects the rewards distribution as of **August 12, 2020**. 
+You can always find the current rewards schedule using the [Chain Variables API.](api/chain-variables.md) What's shown below reflects the rewards distribution as of **August 24, 2020,** when [HIP10 was activated.](https://github.com/helium/HIP/blob/master/0010-usage-based-data-transfer-rewards.md)
 
 The next scheduled change to the HNT rewards distribution is roughly **August 1, 2021**.  
 {% endhint %}
@@ -72,57 +72,36 @@ The next scheduled change to the HNT rewards distribution is roughly **August 1,
 | Witnesses | 8.55% | 292.80843 |
 | Consensus Group | 6% | 205.4796 |
 | Security Tokens | 34% | 1164.3844 |
-| Network Data Transfer | 32.5% | 1113.0145 |
+| Network Data Transfer | _Up to 32.5%_ | _Up to 1113.0145_ |
 | **Total** | **100%** | **3424.66** |
 
-## HNT Earnings Per Hotspot By Reward Type
+### HIP10 and Variable HNT Rewards for Network Data Transfer
 
-Using the above rewards schedule, we can calculate some example distributions for a given epoch.
+As noted above, [HIP10 was activated on August 24th, 2020](https://github.com/helium/HIP/blob/master/0010-usage-based-data-transfer-rewards.md). Introduced by Helium Community Member `hashc0de` and eventually adopted by the Helium Community, HIP10 modifies HNT distribution to reward _up to 32.5% of HNT_  to Hotspots routing sensor data. Using this scheme, HNT is rewarded at rate of 1:1 to the amount of Data Credits routed by any given Hotspot.  This rate of 1:1 remains in place until the amount of sensor data traffic exceeds the 32.5% of HNT that could be rewarded per epoch.  If the 32.5% of HNT is not burned as DCs in a given epoch, the remaining HNT from Network Data Transfer rewards pool is redistributed the Proof of Coverage rewards groups pro rata.  Here are a few examples to illustrate how this works in practice:
 
-| Reward Type | Hotspots Earning Reward | HNT Earned Per Hotspot | Total Earned by Reward Type |
-| :--- | :--- | :--- | :--- |
-| PoC Challenger | 160 | 0.20333919 | 32.53427 |
-| PoC Challengee | 128 \(unique instances\) | 4.81592813 | 616.4388 |
-| Witnesses | 409 \(unique instances\) | 0.71591303 | 292.80843 |
-| Consensus Group | 16 | 12.842475 | 205.4796 |
-| Security | N/A | N/A | 1164.3844 |
-| Network Data Transfer | _**See below\***_ | _**See below\***_ | 1113.0145 |
-| **Total** | N/A | N/A | 3424.66 |
+**Example 1: DC Burn does not exceed 32.5% HNT**
 
-### **Calculating The Network Data Transfer Reward Per Hotspot**
+* In a given epoch, `2,000,000` DCs are transferred across the network
+* The HNT Oracle Price is `$2.00` 
+* In this scenario, total HNT value of DC transferred in this epoch is `10HNT`. This calculation is:`(2,000,000 DC * $0.00001 / $2 HNT Oracle Price)`
+* These `10 HNT` would be split proportionally to the Hotspots who did the work routing packets at the 1:1 rate.
+* The remaining `1103.0145HNT` from the Network Data Transfer reward would be distributed ratably among the Challengers, Witnesses and Challengees.
+  * `38.10413727` to the Challenger group 
+  * `342.9372355` to the Witness group
+  * `721.9731273` to the Challengee Group
 
-As shown above, the `Network Data Transfer` reward type earns `32.5%` of the HNT mined per epoch. The calculation for this warrants some explanation. At a high level, every Hotspot that routes data in a given epoch will earn some part of the roughly `1113.0145HNT` that is allocated to this reward type.
+**Example 2: DC Burn exceeds 32.5% HNT**
 
-Hotspots earn HNT based on how much data they route, and specifically how many Data Credits are burned in their name, at a rate that equals their percentage share of the total amount of Data Credits spent on Network Data Transfer during that epoch. The simple calculation for finding the amount of HNT awarded to any given Hotspot for Network Data Transfer is:
+* In a given epoch, `500,000,000` DCs are transferred across the network
+* The HNT Oracle Price is `$2.00`
 
-`X` = \(`A` / `C`\) \* `R` where:
+  In this scenario, total HNT value of DC transferred in this epoch is `2500HNT`. This calculation is:`(500,000,000 DC * $0.00001 / $2 HNT Oracle Price)`
 
-* `X` = `Hotspot HNT earnings from Network Data Transfer`
-* `A` = `Total DCs routed by Hotspot`
-* `C` = `Total DCs spent during Epoch on Network Data Transfer`
-* `R` = `Total HNT allocated for Network Data per Epoch (approximately 1027.398HNT)`
+* Because the Network DC burn exceeded the `1113.0145HNT`   available to the Network Data Transfer reward,  all Hotspots who did the work over this epoch with split the full `1113.0145HNT` proportionally. 
 
-**Example Calculation**
+### **Additional Notes on Reward Types and Payouts**
 
-* Let's assume that, during a given epoch, a total of 500,000 Data Credits were spent on routing sensor data. 
-* Only three Hotspots - `Wobbly Blue Cougar`, `Steep Fern Trout`, and `Damp Peanut Hippo` - were collectively responsible for routing all the sensor data packets for the blockchain accounts that spent the 500,000 DCs to send and receive this data. 
-* Across those 500,000 DCs let's assume the following:
-  * `Wobbly Blue Cougar` was responsible for 300,000 DCs; 
-  * `Steep Fern Trout` routed 150,000 DCs worth of data; 
-  * `Damp Peanut Hippo` handled 50,000 DCs of network data transfer.
-
-With these assumptions in mind, here's how the entire `30%` of HNT reward during this epoch for Network Data Transfer would be distributed:
-
-| Hotspot Name | DC Routed | % of whole during epoch | HNT Earned |
-| :--- | :--- | :--- | :--- |
-| Wobbly Blue Cougar | 300,000 | 60% | 667.8087 |
-| Steep Fern Trout | 150,000 | 30% | 333.90435 |
-| Damp Peanut Hippo | 50,000 | 10% | 111.30145 |
-| **Total** | **500,000** | **100%** | **1113.0145** |
-
-**Additional Notes on Reward Types and Payouts:**
-
-* All Hotspots in the `Consensus` group will earn an equal rewards.
+* All Hotspots in the `Consensus` group will earn an equal reward.
 * All Hotspots participating in PoC, including `Challengers`, `Challengees` and `Witnesses` will earn rewards proportional to how many events they participated in out of the total number of events per epoch.
 * All Hotspots participating in `Network Data Transfer` will earn rewards proportional to their share of the total data transfer in that epoch, as shown above.
 * Hotspots can earn one or more reward types during any given epoch. 
