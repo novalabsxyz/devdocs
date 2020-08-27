@@ -1,4 +1,4 @@
-# MAC Commands, FOpts, ADR
+# MAC Commands, FOpts, ADR, FCnt
 
 ## LoRaWAN Specification Background
 
@@ -28,6 +28,14 @@ As such, it is important that you device eventually send a LinkADRAns; if for so
 The LinkCheckReq is sent from device to gateway to check the quality of the connection. The request is more or less a ping and the interesting stuff is in the LinkCheckAns: "Answer to LinkCheckReq command. Contains the received signal power estimation indicating to the end-device the quality of reception \(link margin\)."
 
 The intention of implementing this command was to allow for devices to manage their own datarate and transmit power until we have time on our end to implement these advanced features.
+
+## FCnt
+
+The [specifications](https://lora-alliance.org/resource-hub/lorawanr-specification-v102) states as follows,
+
+> The LoRaWAN \[FCnt\] allows the use of either 16-bits or 32-bits frame counters. The network side 32 needs to be informed out-of-band about the width of the frame counter implemented in a 33 given end-device.
+
+The Helium Network server does not yet allow for any out-of-band configuration of FCnt and thus the 16-bit default FCnt is used. As such, it is necessary to do a new OTAA authentication when FCnt reaches 65,535.
 
 
 

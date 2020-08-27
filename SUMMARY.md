@@ -101,6 +101,6 @@
 * [Data Credits](longfi/data-credits.md)
 * [Frequency Plans by Country](longfi/frequency-plans-by-country.md)
 * [Regional Channels & Data Rates](longfi/regional-channels.md)
-* [MAC Commands, FOpts, ADR](longfi/mac-commands-fopts-adr.md)
+* [MAC Commands, FOpts, ADR, FCnt](longfi/mac-commands-fopts-adr.md)
 * [Routing](longfi/longfi-routing.md)
 
