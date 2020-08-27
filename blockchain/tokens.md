@@ -43,24 +43,20 @@ At the conclusion of each epoch, 100% of the HNT produced are distributed across
 
 ## Data Credits
 
-{% hint style="info" %}
-Data Credits are not currently active. **We expect them to go live in Q2 2020.**
-{% endhint %}
-
-Data Credits - knows as `DCs` - are used to pay all transaction fees on the Helium Network. DCs are created using an on-chain burn transaction which converts HNT to DCs at a rate pegged to the $US. In other words, the price of a DC will always be fixed. However, the amount of DCs produced by burning HNT will move up and down based on the $USD price of HNT.
+Data Credits - knows as `DCs` - are used to pay all transaction fees on the Helium Network. DCs are created using an on-chain burn transaction which converts HNT to DCs at a rate pegged to the $US. In other words, the price of a DC will always be fixed. However, the amount of DCs produced by burning HNT will move up and down based on the $USD price of HNT as reported by the [HNT Oracles](hnt-price-oracles.md).
 
 **Scenario 1**
 
 * The price of one DC is `$.00001`
-* The price of one HNT is currently `$1`
-* Burning one HNT would produce `100,000` DCs
+* The current HNT Oracle price is `$1`
+* Burning `1` HNT would produce `100,000` DCs
 
 **Scenario 2**
 
 A Helium Network user requires 50,000 DCs per month to send data for their fleet of dog trackers. To acquire these 50,000 DCs per month, they would burn .5 HNT using the following math:
 
 * The price of one DC is `$.00001`
-* The price of one HNT is currently `$1`
+* The current HNT Oracle price is `$1`
 * Burning `.5` HNT would produce the needed `50,000` DCs
 
 {% hint style="warning" %}
