@@ -25,6 +25,7 @@ A successful oracle price history query
 {% endapi-method-response-example-description %}
 
 ```
+{
 "data": [
     {
       "price": 29145000,
@@ -73,7 +74,7 @@ To get the price in $USD, divide the `price` field in the response by `100,000,0
 A successful current HNT price oracle query
 {% endapi-method-response-example-description %}
 
-```
+``` json
 {
   "data": {
     "price": 29145000,
