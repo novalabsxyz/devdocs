@@ -333,7 +333,7 @@ Reward Total for an Account
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the total rewards for a given account in a given timeframe. Timestamps are given in ISO8601 format. The block that contains the `max_time` timestamp is **excluded** from the result.
+Returns the total rewards for a given hostspot account in a given timeframe. Timestamps are given in ISO8601 format. The block that contains the `max_time` timestamp is **excluded** from the result.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -358,7 +358,7 @@ Last timestmap to include rewards for
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Returns the total rewards over a given time range
+Returns the total hotspot rewards over a given time range
 {% endapi-method-response-example-description %}
 
 ```javascript
