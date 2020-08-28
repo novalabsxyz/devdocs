@@ -296,43 +296,28 @@ First timestamp to include rewards for
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-List of rewards entries between start and end-time
+Request for a account rewards between `max_time=2020-08-29&min_time=2020-08-27`. Note the result cursor to fetch more data
 {% endapi-method-response-example-description %}
 
 ```
 {
+    "cursor": "eyJlbmRfYmxvY2siOjQ2OTUzMCwiYmxvY2siOjQ3MDgwMCwiYW5jaG9yX2Jsb2NrIjo0NzA4MDB9",
     "data": [
         {
             "account": "12xUoMKwf12ABjNx4VCvYcNkX79gW1kzz2JnBLxkFbjswRczRvM",
-            "amount": 7885016,
-            "block": 470788,
+            "amount": 11772690,
+            "block": 470864,
             "gateway": "113kQU96zqePySTahB7PEde9ZpoWK76DYK1f57wyhjhXCBoAu88",
-            "hash": "DTU1GGfR0eU15hv6KiV_bg6FOJXfUWz4TjIq1H7TGy4",
-            "timestamp": "2020-08-28T01:29:46.000000Z"
+            "hash": "MQZ9fdiy5wz4utLwp8ePSGUPyNOEdx_0nh32f98b58w",
+            "timestamp": "2020-08-28T02:58:47.000000Z"
         },
         {
             "account": "12xUoMKwf12ABjNx4VCvYcNkX79gW1kzz2JnBLxkFbjswRczRvM",
-            "amount": 3612069,
-            "block": 470753,
+            "amount": 7975287,
+            "block": 470828,
             "gateway": "113kQU96zqePySTahB7PEde9ZpoWK76DYK1f57wyhjhXCBoAu88",
-            "hash": "l3EQR6AJ6R1qE1meHyafDnNF8vJ-X-rH1pujxQRTds4",
-            "timestamp": "2020-08-28T00:50:44.000000Z"
-        },
-        {
-            "account": "12xUoMKwf12ABjNx4VCvYcNkX79gW1kzz2JnBLxkFbjswRczRvM",
-            "amount": 8623955,
-            "block": 470509,
-            "gateway": "113kQU96zqePySTahB7PEde9ZpoWK76DYK1f57wyhjhXCBoAu88",
-            "hash": "5fQJY9MprH9b3IstVU1SdfBteUWoF_sdsVuiARPBtTY",
-            "timestamp": "2020-08-27T19:01:48.000000Z"
-        },
-        {
-            "account": "12xUoMKwf12ABjNx4VCvYcNkX79gW1kzz2JnBLxkFbjswRczRvM",
-            "amount": 4009855,
-            "block": 470475,
-            "gateway": "113kQU96zqePySTahB7PEde9ZpoWK76DYK1f57wyhjhXCBoAu88",
-            "hash": "0M0fudEmzW9dmAsO3dcWT286tTL6wTX9sllXtsyz-0Q",
-            "timestamp": "2020-08-27T18:15:17.000000Z"
+            "hash": "Tl-pp7ysTy2BIB15xNOGo3570MKPT9lrxZzQmv2dJHk",
+            "timestamp": "2020-08-28T02:16:52.000000Z"
         }
     ]
 }
@@ -381,9 +366,9 @@ Returns the total rewards over a given time range
     "data": {
         "max_time": "2020-08-29T00:00:00Z",
         "min_time": "2020-08-27T00:00:00Z",
-        "sum": "164942208"
+        "sum": "176714898"
     }
-}j
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}

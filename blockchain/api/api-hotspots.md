@@ -690,3 +690,132 @@ Fetches the challenges that the hotspot with `11DvZivbwHVRx4PbQwAd5w2DQEAcfSCRVz
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/:address/rewards" %}
+{% api-method-summary %}
+Rewards for a Hotspot
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns rewards for a given hotspot per reward block the hotspot is in, for a given timeframe.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="address" type="string" required=true %}
+B58 address of the hotspot to lookup
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="cursor" type="string" required=false %}
+Cursor for the next page of rewards to fetch
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="max\_time" type="string" required=true %}
+Last timestamp to include rewards for
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="min\_time" type="string" required=true %}
+First timestamp to include rewards for
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Rewards for a hotspot with time range: `max_time=2020-08-29&min_time=2020-08-27`
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "data": [
+        {
+            "account": "12xUoMKwf12ABjNx4VCvYcNkX79gW1kzz2JnBLxkFbjswRczRvM",
+            "amount": 7885016,
+            "block": 470788,
+            "gateway": "113kQU96zqePySTahB7PEde9ZpoWK76DYK1f57wyhjhXCBoAu88",
+            "hash": "DTU1GGfR0eU15hv6KiV_bg6FOJXfUWz4TjIq1H7TGy4",
+            "timestamp": "2020-08-28T01:29:46.000000Z"
+        },
+        {
+            "account": "12xUoMKwf12ABjNx4VCvYcNkX79gW1kzz2JnBLxkFbjswRczRvM",
+            "amount": 3612069,
+            "block": 470753,
+            "gateway": "113kQU96zqePySTahB7PEde9ZpoWK76DYK1f57wyhjhXCBoAu88",
+            "hash": "l3EQR6AJ6R1qE1meHyafDnNF8vJ-X-rH1pujxQRTds4",
+            "timestamp": "2020-08-28T00:50:44.000000Z"
+        },
+        {
+            "account": "12xUoMKwf12ABjNx4VCvYcNkX79gW1kzz2JnBLxkFbjswRczRvM",
+            "amount": 8623955,
+            "block": 470509,
+            "gateway": "113kQU96zqePySTahB7PEde9ZpoWK76DYK1f57wyhjhXCBoAu88",
+            "hash": "5fQJY9MprH9b3IstVU1SdfBteUWoF_sdsVuiARPBtTY",
+            "timestamp": "2020-08-27T19:01:48.000000Z"
+        },
+        {
+            "account": "12xUoMKwf12ABjNx4VCvYcNkX79gW1kzz2JnBLxkFbjswRczRvM",
+            "amount": 4009855,
+            "block": 470475,
+            "gateway": "113kQU96zqePySTahB7PEde9ZpoWK76DYK1f57wyhjhXCBoAu88",
+            "hash": "0M0fudEmzW9dmAsO3dcWT286tTL6wTX9sllXtsyz-0Q",
+            "timestamp": "2020-08-27T18:15:17.000000Z"
+        }
+    ]
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/:address/rewards/sum" %}
+{% api-method-summary %}
+Reward Total for a Hotspot
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns the total rewards earned for a given hotspot over a given time range
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="address" type="string" required=true %}
+B58 addres for hotspot to look up
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="min\_time" type="string" required=true %}
+First timestamp to include rewards for
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="max\_time" type="string" required=true %}
+Last timestamp to include rewards for
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "data": {
+        "max_time": "2020-08-29T00:00:00Z",
+        "min_time": "2020-08-27T00:00:00Z",
+        "sum": "164942208"
+    }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
