@@ -267,7 +267,7 @@ Rewards for an Account
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns reward entries by block and gateway for a given account in a timeframe.  Timestamps are given in ISO8601 format.
+Returns reward entries by block and gateway for a given account in a timeframe.  Timestamps are given in ISO8601 format. The block that contains the `max_time` timestamp is **excluded** from the result.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -333,7 +333,7 @@ Reward Total for an Account
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the total rewards for a given account in a given timeframe. Timestamps are given in ISO8601 format.
+Returns the total rewards for a given account in a given timeframe. Timestamps are given in ISO8601 format. The block that contains the `max_time` timestamp is **excluded** from the result.
 {% endapi-method-description %}
 
 {% api-method-spec %}
