@@ -696,7 +696,7 @@ Rewards for a Hotspot
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns rewards for a given hotspot per reward block the hotspot is in, for a given timeframe.
+Returns rewards for a given hotspot per reward block the hotspot is in, for a given timeframe. Timestamps are given in ISO8601 format. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -777,7 +777,7 @@ Reward Total for a Hotspot
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the total rewards earned for a given hotspot over a given time range
+Returns the total rewards earned for a given hotspot over a given time range. Timestamps are given in ISO8601 format
 {% endapi-method-description %}
 
 {% api-method-spec %}
