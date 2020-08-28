@@ -819,3 +819,134 @@ Last timestamp to include rewards for
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/:address/witnesses" %}
+{% api-method-summary %}
+Witnesses for a Hotspot
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Retrieves the last known list of witnesses for a given hotspot.   
+  
+In addition to the hotspot result information, the result will also include a  `witness_for` and a `witness_info`field which are the given hotspot address and bucket histogram information on witnessed signal strengths.  
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="address" type="string" required=false %}
+B58 address for a hotspot to look up
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "data": [
+        {
+            "address": "1117PRWasdEhTUEeGykmjx5bcQbsRQ7mCuYRHERtrgb4hqBio4u",
+            "block": 290247,
+            "block_added": 192280,
+            "geocode": {
+                "city_id": "YXRsYW50YWdlb3JnaWF1bml0ZWQgc3RhdGVz",
+                "long_city": "Atlanta",
+                "long_country": "United States",
+                "long_state": "Georgia",
+                "long_street": "West Peachtree Street Northwest",
+                "short_city": "Atlanta",
+                "short_country": "US",
+                "short_state": "GA",
+                "short_street": "W Peachtree St NW"
+            },
+            "lat": 33.779308359988256,
+            "lng": -84.38786168354673,
+            "location": "8c44c1a8e2737ff",
+            "name": "small-neon-finch",
+            "nonce": 1,
+            "owner": "14C18AnFwMVXovgR4mskV5AyDH8n9vAx2PPNEjM5NVjFuK9GaTN",
+            "score": 0.25,
+            "score_update_height": 290229,
+            "status": {
+                "gps": "good_fix",
+                "height": 468420,
+                "online": "online"
+            },
+            "witness_for": "112hYxknRPeCP9PLtkAy3f86fWpXaRzRffjPj5HcrS7qePttY3Ek",
+            "witness_info": {
+                "first_time": 1581085089619105739,
+                "histogram": {
+                    "-100": 0,
+                    "-108": 0,
+                    "-116": 3,
+                    "-124": 0,
+                    "-132": 0,
+                    "-60": 0,
+                    "-68": 0,
+                    "-76": 0,
+                    "-84": 0,
+                    "-92": 0,
+                    "28": 0
+                },
+                "recent_time": 1581506570759026847
+            }
+        },
+        {
+            "address": "11TdnjY3VAL71LLd1KMMhY4SzMUAiYo1uP9bgBJSZJhDZ8rUfNh",
+            "block": 290247,
+            "block_added": 226358,
+            "geocode": {
+                "city_id": "YXRsYW50YWdlb3JnaWF1bml0ZWQgc3RhdGVz",
+                "long_city": "Atlanta",
+                "long_country": "United States",
+                "long_state": "Georgia",
+                "long_street": "14th Street Northeast",
+                "short_city": "Atlanta",
+                "short_country": "US",
+                "short_state": "GA",
+                "short_street": "14th St NE"
+            },
+            "lat": 33.78595728279224,
+            "lng": -84.3810410259127,
+            "location": "8c44c1a8a8e41ff",
+            "name": "long-chartreuse-goat",
+            "nonce": 4,
+            "owner": "13YuCz3mZ55HZ6hJJvQHCZXGgE8ooe2CSvbtSHQR3m5vZ1EVCNZ",
+            "score": 0.05584716796875,
+            "score_update_height": 290195,
+            "status": {
+                "gps": "good_fix",
+                "height": 468407,
+                "online": "online"
+            },
+            "witness_for": "112hYxknRPeCP9PLtkAy3f86fWpXaRzRffjPj5HcrS7qePttY3Ek",
+            "witness_info": {
+                "first_time": 1583557733646152170,
+                "histogram": {
+                    "-100": 1,
+                    "-108": 7,
+                    "-116": 10,
+                    "-124": 2,
+                    "-132": 0,
+                    "-60": 0,
+                    "-68": 0,
+                    "-76": 0,
+                    "-84": 0,
+                    "-92": 0,
+                    "28": 2
+                },
+                "recent_time": 1586567745906235190
+            }
+        }
+    ]
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
