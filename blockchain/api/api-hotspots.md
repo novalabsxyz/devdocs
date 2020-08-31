@@ -696,7 +696,9 @@ Rewards for a Hotspot
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns rewards for a given hotspot per reward block the hotspot is in, for a given timeframe. Timestamps are given in ISO8601 format. The block that contains the `max_time` timestamp is **excluded** from the result.
+Returns rewards for a given hotspot per reward block the hotspot is in, for a given timeframe. Timestamps are given in
+[ISO8601](https://en.wikipedia.org/wiki/ISO_8601)  format. The block that
+contains the `max_time` timestamp is **excluded** from the result.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -777,7 +779,9 @@ Reward Total for a Hotspot
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the total rewards earned for a given hotspot over a given time range. Timestamps are given in ISO8601 format. The block that includes the `max_time` timestamp is **excluded** from the result. 
+Returns the total rewards earned for a given hotspot over a given time range. Timestamps are given in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601)
+format. The block that includes the `max_time` timestamp is **excluded** from
+the result.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -825,9 +829,9 @@ Witnesses for a Hotspot
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Retrieves the last known list of witnesses for a given hotspot.   
-  
-In addition to the hotspot result information, the result will also include a  `witness_for` and a `witness_info`field which are the given hotspot address and bucket histogram information on witnessed signal strengths.  
+Retrieves the last known list of witnesses for a given hotspot.
+
+In addition to the hotspot result information, the result will also include a  `witness_for` and a `witness_info`field which are the given hotspot address and bucket histogram information on witnessed signal strengths.
 {% endapi-method-description %}
 
 {% api-method-spec %}
