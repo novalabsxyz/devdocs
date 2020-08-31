@@ -697,7 +697,7 @@ Rewards for a Hotspot
 
 {% api-method-description %}
 Returns rewards for a given hotspot per reward block the hotspot is in, for a given timeframe. Timestamps are given in
-[ISO8601](https://en.wikipedia.org/wiki/ISO_8601)  format. The block that
+[ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)  format. The block that
 contains the `max_time` timestamp is **excluded** from the result.
 {% endapi-method-description %}
 
@@ -779,7 +779,7 @@ Reward Total for a Hotspot
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the total rewards earned for a given hotspot over a given time range. Timestamps are given in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601)
+Returns the total rewards earned for a given hotspot over a given time range. Timestamps are given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
 format. The block that includes the `max_time` timestamp is **excluded** from
 the result.
 {% endapi-method-description %}
