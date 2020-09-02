@@ -184,7 +184,7 @@ You want to change the field "server\_address" from "localhost" the the IP addre
 You'll need to restart the packet forwarder for the configuration change to take effect. To verify that things are working, you can follow the logs **on the AWS instance:**
 
 ```text
-tail -f /var/data/log/miner/console.log | grep lora
+tail -f /var/log/miner/console.log | grep lora
 ```
 
 At the very least, you should see PULL\_DATA messages every few seconds. If so, then you've done it!
