@@ -57,14 +57,6 @@ As calculated above, the target `HNT` per epoch is approximately `3424.66`. The 
 
 Below are the mining rewards per epoch. For every complete epoch \(marked by the election of a new Consensus Group\), all the `HNT` produced get distributed over the following reward types:
 
-{% hint style="info" %}
-**Rewards Change Over Time**
-
-You can always find the current rewards schedule using the [Chain Variables API.](api/chain-variables.md) What's shown below reflects the rewards distribution as of **August 24, 2020,** when [HIP10 was activated.](https://github.com/helium/HIP/blob/master/0010-usage-based-data-transfer-rewards.md)
-
-The next scheduled change to the HNT rewards distribution is roughly **August 1, 2021**.  
-{% endhint %}
-
 | Reward Type | Percentage | HNT Earned by Reward Type |
 | :--- | :--- | :--- |
 | PoC Challenger | .95% | 32.53427 |
@@ -75,9 +67,21 @@ The next scheduled change to the HNT rewards distribution is roughly **August 1,
 | Network Data Transfer | _Up to 32.5%_ | _Up to 1113.0145_ |
 | **Total** | **100%** | **3424.66** |
 
+{% hint style="info" %}
+**Rewards Change Over Time**
+
+In the above table you can see the maximum allotted rewards per reward type in accordance with HIP 10 \(described below\).
+
+If you want to see the current reward type percentage, you can always query the [Chain Variables API](https://developer.helium.com/blockchain/api/chain-variables). 
+
+The next maximum allotted rewards change is currently scheduled for **August 1, 2021.** 
+{% endhint %}
+
 ### HIP10 and Variable HNT Rewards for Network Data Transfer
 
-As noted above, [HIP10 was activated on August 24th, 2020](https://github.com/helium/HIP/blob/master/0010-usage-based-data-transfer-rewards.md). Introduced by Helium Community Member `hashc0de` and eventually adopted by the Helium Community, HIP10 modifies HNT distribution to reward _up to 32.5% of HNT_  to Hotspots routing sensor data. Using this scheme, HNT is rewarded at rate of 1:1 to the amount of Data Credits routed by any given Hotspot.  This rate of 1:1 remains in place until the amount of sensor data traffic exceeds the 32.5% of HNT that could be rewarded per epoch.  If the 32.5% of HNT is not burned as DCs in a given epoch, the remaining HNT from Network Data Transfer rewards pool is redistributed the Proof of Coverage rewards groups pro rata.  Here are a few examples to illustrate how this works in practice:
+As noted above, [HIP10 was activated on August 24th, 2020](https://github.com/helium/HIP/blob/master/0010-usage-based-data-transfer-rewards.md). HIP10 was introduced by Helium Community Member `hashc0de` and was adopted by the Helium Community. It ensures that HNT is rewarded at a rate of 1:1 to the amount of Data Credits \(DC\) routed by any given Hotspot per epoch. In doing so the Network Data Transfer reward is proportional to the DC spent that epoch. This proportional relationship between Network Data Transfer reward type and DC is capped at 32.5% \(1113.0145 HNT\). Therefore, if the DC burned doesn't equal the value of `1113.0145` HNT the remaining HNT is redistributed to the Proof of Coverage \(PoC\) rewards groups pro-rata.
+
+Here are a few examples to illustrate how this works in practice:"
 
 **Example 1: DC Burn does not exceed 32.5% HNT**
 
