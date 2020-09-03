@@ -38,7 +38,7 @@ Your board should have come with a U.FL antenna. All you have to do is attache i
 
 ### Connect Board
 
-Next, lets connect our board to our computer with a USB 2.0 A-Male to Micro B cable. 
+Next, lets connect our board to our computer with a USB 2.0 A-Male to Micro B cable.
 
 ## Software Setup
 
@@ -63,13 +63,13 @@ To install, open your Arduino IDE:
 
 ![](../../.gitbook/assets/heltec-guide-arduino-preferences.png)
 
-3.  Add this URL in the text box:
+1. Add this URL in the text box:
 
 ```text
 http://resource.heltec.cn/download/package_heltec_esp32_index.json
 ```
 
-4. Close the Preferences windows
+1. Close the Preferences windows
 
 Next, to install this board support package:
 
@@ -88,7 +88,7 @@ To communicate with Helium's LoRaWAN network, we'll need to install two Arduino 
 To install, open your Arduino IDE:
 
 1. Navigate to Library Manager \(**Sketch &gt; Include Library &gt; Manage Libraries**\).
-2.  In the search box, type **Heltec ESP32** into the search, select the version shown below, and click Install.
+2. In the search box, type **Heltec ESP32** into the search, select the version shown below, and click Install.
 
 ![](../../.gitbook/assets/heltec-guide-arduino-library.png)
 
@@ -137,9 +137,9 @@ Arduino IDE:
 
 Now that we have the required Arduino board support and library installed, lets program the board with the provided example sketch.
 
-To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://github.com/helium/longfi-arduino/blob/master/Heltec-WiFi-LoRa-32-V2/longfi-us915/longfi-us915.ino), copy and paste the entirety of it. 
+To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://github.com/helium/longfi-arduino/blob/master/Heltec-WiFi-LoRa-32-V2/longfi-us915/longfi-us915.ino), copy and paste the entirety of it.
 
-Next we'll need to fill in the AppEUI\(msb\), DevEUI\(msb\), and AppKey\(msb\), in the sketch, which you can find on the device details page on Console. Be sure to use the formatting buttons to match the endianess  and formatting required for the sketch, shown below.
+Next we'll need to fill in the AppEUI\(msb\), DevEUI\(msb\), and AppKey\(msb\), in the sketch, which you can find on the device details page on Console. Be sure to use the formatting buttons to match the endianess and formatting required for the sketch, shown below.
 
 ![](../../.gitbook/assets/heltec-guide-console-device-details.png)
 
@@ -153,17 +153,17 @@ Next, we need to select the correct Serial port in the Arduino IDE. Navigate to 
 
 ### Select LoRaWAN Region
 
-The last step before we upload our sketch is to select the correct LoRaWAN Region, navigate to **\(Tools &gt; LoRaWAN Region:  &gt; REGION\_US915\).**
+The last step before we upload our sketch is to select the correct LoRaWAN Region, navigate to **\(Tools &gt; LoRaWAN Region: &gt; REGION\_US915\).**
 
 ### Select **Uplink Mode**
 
-The last step before we upload our sketch is to select the LoRaWAN Uplink Mode, navigate to **\(Tools &gt; LoRaWAN Uplink Mode:  &gt; UNCONFIRMED\).**
+The last step before we upload our sketch is to select the LoRaWAN Uplink Mode, navigate to **\(Tools &gt; LoRaWAN Uplink Mode: &gt; UNCONFIRMED\).**
 
 ### Required Change to Default DataRate
 
 The Helium network does not fully support ADR \(Adapative Data Rate\), read more [here](https://developer.helium.com/longfi/mac-commands-fopts-adr#linkadrreq-linkadrans). In this example sketch, ADR is turned off, therefore you must manually set the desired data rate for your payload size manually. This library uses a default data rate that is not supported by the Helium Network so you must change it to one in the following range DR\_0 - DR\_4. To do this change the default data rate on line 20 in the file found below for your operating system
 
-`linux: /home/{user}/Arduino/libraries/ESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp` 
+`linux: /home/{user}/Arduino/libraries/ESP32_LoRaWAN-master/src/ESP32_LoRaWAN.cpp`
 
 `windows: Documents\Arduino\libraries\ESP32_LoRaWAN-master\src\ESP32_LoRaWAN.cpp`
 
@@ -179,19 +179,16 @@ The Helium network does not fully support ADR \(Adapative Data Rate\), read more
 
 We're finally ready to upload our sketch to the board. In the Arduino IDE, click the right arrow button, or navigate to \(**Sketch &gt; Upload\),** to build and upload your new firmware to the board. You should see something similar to the image below at the bottom of your Arduino IDE, when the upload is successful.
 
-
-
 ![](../../.gitbook/assets/heltec-arduino-upload-sketch.png)
 
 ### Viewing Serial Output <a id="viewing-serial-output"></a>
 
-When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again, navigate to \(**Tools &gt; Port: COM\#/ttyACM\#**\), but make sure the serial device, either COM\# or ttyACM\#, is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below. 
+When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again, navigate to \(**Tools &gt; Port: COM\#/ttyACM\#**\), but make sure the serial device, either COM\# or ttyACM\#, is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below.
 
 ![](../../.gitbook/assets/heltec-guide-debug-console.png)
 
 Your device may take several minutes to join and begin to send uplink packets because the library is designed to work in several LoRaWAN regions and networks. Because of this, the firmware will attempt different sub-bands until it is successful. If you would like to change the default channel mask in the library to speed up this process you can make the following change below in the file specified.
 
-  
 **Change lines 343-348 to:**
 
 ```text

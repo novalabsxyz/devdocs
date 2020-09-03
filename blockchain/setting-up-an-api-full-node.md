@@ -18,8 +18,8 @@ For this guide we'll assume you're using Ubuntu 19.10 on Amazon EC2 and are fami
 Both ETL and HTTP require Erlang 22.1 and a variety of dependencies. Let's install them all:
 
 ```bash
-$ wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
-$ sudo dpkg -i erlang-solutions_1.0_all.deb
+$ wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
+$ sudo dpkg -i erlang-solutions_2.0_all.deb
 $ sudo apt-get update
 $ sudo apt-get install esl-erlang build-essential cmake libsodium-dev libssl-dev
 ```
