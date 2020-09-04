@@ -88,6 +88,20 @@ To send the downlink message, make a POST request including a JSON body with the
 }
 ```
 
+### Downlink Tool Example
+
+The easiest way to send a downlink to your device is to use the built in downlink tool in Console. You will find it on the right side of every device page, as shown below. In order to use the downlink tool, you must have an HTTP integration attached to the device.
+
+![](../../.gitbook/assets/console_downlink_tool_1.png)
+
+Once you have the downlink tool open, you can input the downlink payload string in the payload field. Select _Encoded_ if you are inputting a string that is already Base64 encoded, and _Plain_ if it is plain text. Last, select your Fport, whether or not you want to send a confirmed downlink, and click the downlink send button as shown below.
+
+![](../../.gitbook/assets/console_downlink_tool_2%20%281%29.png)
+
+Once you have initiated the downlink, you should see the downlink event show in the event log, as shown below.
+
+![](../../.gitbook/assets/console_downlink_tool_3.png)
+
 ### Postman Example
 
 Postman is a popular developer utility for HTTP based services, you can download it [here](https://www.postman.com/downloads/). We can use this utility to easily make a POST request to the downlink URL with our downlink JSON message.  Follow the steps below to successfully send your downlink message to your device.
