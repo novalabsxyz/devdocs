@@ -81,6 +81,40 @@ Next, to install this board support package:
 
 ![](../../.gitbook/assets/cubecell-board-support-search.png)
 
+### Manual updates to the Heltec runtime libraries
+
+Some versions of Heltec's runtime libraries have set a default configuration variable to a value that is incompatible with the Helium network, especially when the Heltec device is configured for the North American market. Before attempting to use the libraries it is best to verify the value of the variable.
+
+The top level location of the file of interest depends on the library installation directory of the IDE you are using, Arduino IDE vs Platformio IDE, as well as the host platform, Windows vs Linux vs Mac. With the Arduino IDE location, the library version number may also be different depending on when you download the package.
+
+For example on a Linux platform the files should be located at:
+
+- Arduino IDE library version 1.0.0:  ~/.arduino15/packages/CubeCell/hardware/CubeCell/1.0.0/libraries/LoRa/src/LoRaWan_APP.cpp
+
+- Platformio IDE: ~/.platformio/packages/framework-arduinoasrmicro650x/libraries/LoRa/src/LoRaWan_APP.cpp
+
+In LoRaWan_APP.cpp look for #define LORAWAN_DEFAULT_DATARATE  
+Depending on the version of the Heltec runtime that is installed this default may be set to DR_0, DR_3, DR_5 or some other value.
+Note: DR_5 is not valid for US915, the North American market.
+
+The LORAWAN_DEFAULT_DATARATE setting is tied directly to the maximum size of the data packet you are transferring. While other runtime versions may allow programatic overide of this default, the Heltec implementation does not currently support overriding.
+
+NOTE: If you try to transfer a packet that is larger than this setting allows, your device may well successfully join the network but the data transmit will fail silently. Hopefully a future release will give the application layer failure notification.
+
+|Data Rate (DR)  |    Max Application Payload|
+-----------------|--------------------------|
+|DR_0            |     11 bytes             |
+|DR_1            |     53 bytes             |
+|DR_2            |     125 bytes            |
+|DR_3            |     242 bytes            | 
+|DR_4            |     242 bytes            | 
+|DR_5 - 7        |     Not Valid            |
+
+Update the LORAWAN_DEFAULT_DATARATE as appropriate for your application needs.
+
+The above values are valid for the US902-928MHz region(North America), the values may differ for other LoRa regions. This link will take you to document which may help determine the correct value for other LoRa regions.
+https://lora-alliance.org/resource-hub/rp2-101-lorawanr-regional-parameters
+
 ### Install Serial Driver
 
 Find Directions on Heltec's website [here](https://heltec-automation-docs.readthedocs.io/en/latest/general/establish_serial_connection.html).
