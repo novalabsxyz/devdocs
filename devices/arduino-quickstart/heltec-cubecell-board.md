@@ -123,7 +123,12 @@ Find Directions on Heltec's website [here](https://heltec-automation-docs.readth
 
 Arduino IDE:
 
-1. Select Tools -&gt; Board: -&gt;CubeCell-Board
+If you are using the HTCC-AB02 flavor of Heltec board 
+1. Select Tools -&gt; Board: -&gt;CubeCell-Board (HTCC-AB02)
+
+If you are using the HTCC-AB02S GPS enabled flavor of Heltec board
+1. Select Tools -&gt; Board: -&gt;CubeCell-GPS (HTCC-AB02S)
+
 
 ### Select Region
 
@@ -154,6 +159,16 @@ At the top of the sketch, replace the three **FILL\_ME\_IN** fields, with the ma
 We're finally ready to upload our sketch to the board. In the Arduino IDE, click the right arrow button, or navigate to \(**Sketch &gt; Upload\),** to build and upload your new firmware to the board. You should see something similar to the image below at the bottom of your Arduino IDE, when the upload is successful.
 
 ![](../../.gitbook/assets/cubecell-arduino-upload.png)
+
+### Using HTCC-AB02S Board With GPS Capable Sketch <a id="HTCC-AB02S-with-GPS"></a>
+If you are using the HTCC-AB02S board with a sketch that is GPS enabled but find the device is unable to obtain a GPS lock you can try changing the GPS data satellite source via the GPS class Air530.setMode() API. Add the Air530.setmode() to the setup() method of your sketch.
+```text
+// MODE_GPS - US,
+// MODE_GPS_BEIOU - Chinese - This is the default
+// MODE_GPS_GLONASS - Russian
+// set what works best for your connectivity, for example: 
+Air530.setmode(MODE_GPS);
+```
 
 ### Viewing Serial Output <a id="viewing-serial-output"></a>
 
