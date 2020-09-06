@@ -164,7 +164,7 @@ We're finally ready to upload our sketch to the board. In the Arduino IDE, click
 If you are using the HTCC-AB02S board with a sketch that is GPS enabled but find the device is unable to obtain a GPS lock you can try changing the GPS data satellite source via the GPS class Air530.setMode() API. Add the Air530.setmode() to the setup() method of your sketch.
 ```text
 // MODE_GPS - US,
-// MODE_GPS_BEIOU - Chinese - This is the default
+// MODE_GPS_BEIDOU - Chinese - This is the default
 // MODE_GPS_GLONASS - Russian
 // set what works best for your connectivity, for example: 
 Air530.setmode(MODE_GPS);
