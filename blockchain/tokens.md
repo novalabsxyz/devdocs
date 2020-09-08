@@ -35,11 +35,11 @@ At the conclusion of each epoch, 100% of the HNT produced are distributed across
 * **35%** - Hotspot Infrastructure 
 * **35%** - Helium, Inc and Investors 
 
-\(NOTE: Until the Data Credit mechanism is live, 65% of the token rewards are alloted to the Hotspot Infrastructure.\)
-
+{% hint style="info" %}
 ### Extended Reading
 
-* A complete breakdown of the token reward distribution can be found [here](https://www.helium.com/tokens)
+A complete breakdown of the token reward distribution can be found in the [Mining and Token Rewards section](mining-token-rewards.md). 
+{% endhint %}
 
 ## Data Credits
 
