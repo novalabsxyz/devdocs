@@ -1,6 +1,6 @@
 # Coverage Mapping
 
-Helium recently begun an effort to collect device data for the purpose of coverage mapping from voluntary community contributors, you can still apply to participate [here](https://forms.gle/fivp522xsXVUD5mU9). Helium has provided [Adeunis Field Test devices](lorawan-devices/adeunis-field-test-device.md) to applicants across the United States and Canada.  This device was selected initially as it is very simple to operate and provides good feedback on the display. The devices were setup with [this ](https://developer.helium.com/devices/lorawan-devices/adeunis-field-test-device#device-configuration)configuration. 
+Helium recently began an effort to collect device data for the purpose of coverage mapping from voluntary community contributors, you can still apply to participate [here](https://forms.gle/fivp522xsXVUD5mU9). Helium has provided [Adeunis Field Test devices](lorawan-devices/adeunis-field-test-device.md) to applicants across the United States and Canada.  This device was selected initially as it is very simple to operate and provides good feedback on the display. The devices were setup with [this ](https://developer.helium.com/devices/lorawan-devices/adeunis-field-test-device#device-configuration)configuration. 
 
 ### Data
 
