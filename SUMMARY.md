@@ -76,6 +76,7 @@
   * [Pending Transactions](blockchain/api/api-pending-transactions.md)
   * [Oracle Prices](blockchain/api/oracle.md)
   * [Chain Variables](blockchain/api/chain-variables.md)
+  * [OUIs](blockchain/api/ouis.md)
 * [HNT Price Oracles](blockchain/hnt-price-oracles.md)
 * [Blockchain Wallet CLI](blockchain/blockchain-cli.md)
 * [Run Your Own Miner](blockchain/run-your-own-miner.md)
