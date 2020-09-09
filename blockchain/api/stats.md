@@ -95,3 +95,35 @@ Retrieve basic stats for the blockchain such as total token supply, and average 
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="https://api.helium.io" path="/v1/stats/token\_supply" %}
+{% api-method-summary %}
+Get Token Supply 
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returnst the cicrulating token supply in either json or raw form. 
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="format" type="string" required=false %}
+specify `raw` to get a raw number, otherwise returns json
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+RAWN form of the result when called with `/v1/stats/token_supply?format=raw`
+{% endapi-method-response-example-description %}
+
+```javascript
+49450470.73544278
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+

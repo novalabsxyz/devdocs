@@ -86,6 +86,61 @@ Accounts successfully retrieved.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="https://api.helium.io" path="/v1/accounts/rich" %}
+{% api-method-summary %}
+List Richest Accounts
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns up to 1000 of the accounts sorted by highest token balance.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="limit" type="string" required=false %}
+Number of accounts to return. Default 1000, max 1000
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Result for `/v1/accounts/rich?limit=2`
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "data": [
+        {
+            "address": "1398hLeHESZHE5jVtaLAV5fdg2vrUeZEs2B92t7TzeQTtugr8dL",
+            "balance": 616416488712965,
+            "block": 489719,
+            "dc_balance": 0,
+            "dc_nonce": 0,
+            "nonce": 3,
+            "sec_balance": 351543978600,
+            "sec_nonce": 0
+        },
+        {
+            "address": "14GWyFj9FjLHzoN3aX7Tq7PL6fEg4dfWPY8CrK8b9S5ZrcKDz6S",
+            "balance": 292033864604925,
+            "block": 489719,
+            "dc_balance": 0,
+            "dc_nonce": 0,
+            "nonce": 0,
+            "sec_balance": 166398670100,
+            "sec_nonce": 0
+        }
+    ]
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 {% api-method method="get" host="https://api.helium.io" path="/v1/accounts/:address" %}
 {% api-method-summary %}
 Account for Address
