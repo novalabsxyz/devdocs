@@ -32,8 +32,7 @@ Hotspots successfully retrieved.
       "lat": 37.784056617819544,
       "status": {
         "online": "offline",
-        "height": 394065,
-        "gps": "no_fix"
+        "height": 394065
       },
       "score_update_height": 395577,
       "score": 0.25,
@@ -61,8 +60,7 @@ Hotspots successfully retrieved.
       "lat": 45.13127467725158,
       "status": {
         "online": "online",
-        "height": 391690,
-        "gps": "no_fix"
+        "height": 391690
       },
       "score_update_height": 395502,
       "score": 0.25,
@@ -91,8 +89,7 @@ Hotspots successfully retrieved.
       "lat": 24.55934059588725,
       "status": {
         "online": "online",
-        "height": 396910,
-        "gps": "good_fix"
+        "height": 396910
       },
       "score_update_height": 396984,
       "score": 0.2593841552734375,
@@ -174,7 +171,6 @@ Address of hotspot to fetch
         "score": 0.25,
         "score_update_height": 395577,
         "status": {
-            "gps": "no_fix",
             "height": 394065,
             "online": "offline"
         }
@@ -1350,7 +1346,6 @@ B58 address for a hotspot to look up
             "score": 0.25,
             "score_update_height": 290229,
             "status": {
-                "gps": "good_fix",
                 "height": 468420,
                 "online": "online"
             },
@@ -1397,7 +1392,6 @@ B58 address for a hotspot to look up
             "score": 0.05584716796875,
             "score_update_height": 290195,
             "status": {
-                "gps": "good_fix",
                 "height": 468407,
                 "online": "online"
             },
