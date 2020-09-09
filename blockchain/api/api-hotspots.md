@@ -398,6 +398,484 @@ Fetches consensus groups that the hotspot with address `11ztQpmCJbfPxv3RjsnvFToz
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/elected" %}
+{% api-method-summary %}
+Currently Elected Hotspots
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns the list of hotspots that are currently elected to the consensus group. 
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "data": [
+    {
+      "lng": -121.85991310272425,
+      "lat": 37.71966414273407,
+      "status": {
+        "online": "online",
+        "height": 488792
+      },
+      "score_update_height": 488777,
+      "score": 0.9963226318359375,
+      "owner": "14S7ZHRYtCCLExgh5qJphfB25dZHn3Pfy6pBkXHNgG7WvkWxazS",
+      "nonce": 1,
+      "name": "genuine-grape-mockingbird",
+      "location": "8c2830d2334adff",
+      "geocode": {
+        "short_street": "Cranbrook Pl",
+        "short_state": "CA",
+        "short_country": "US",
+        "short_city": "Dublin",
+        "long_street": "Cranbrook Place",
+        "long_state": "California",
+        "long_country": "United States",
+        "long_city": "Dublin",
+        "city_id": "ZHVibGluY2FsaWZvcm5pYXVuaXRlZCBzdGF0ZXM"
+      },
+      "block_added": 450212,
+      "block": 488901,
+      "address": "11A45JqGJ8Jnx9YnuncFYLtBj6Vn8nhcQTc6uh549QzqqFMc4F3"
+    },
+    {
+      "lng": -90.31235668207206,
+      "lat": 38.65572336414821,
+      "status": {
+        "online": "online",
+        "height": 488880
+      },
+      "score_update_height": 488872,
+      "score": 0.98834228515625,
+      "owner": "13FYzYCw1VMJzbFNAqNB7GDD2EWPB7uE82iHj33g5KrWyZAvpPm",
+      "nonce": 1,
+      "name": "polite-raspberry-newt",
+      "location": "8c2646260973bff",
+      "geocode": {
+        "short_street": "Washington Ave",
+        "short_state": "MO",
+        "short_country": "US",
+        "short_city": "University City",
+        "long_street": "Washington Avenue",
+        "long_state": "Missouri",
+        "long_country": "United States",
+        "long_city": "University City",
+        "city_id": "dW5pdmVyc2l0eSBjaXR5bWlzc291cml1bml0ZWQgc3RhdGVz"
+      },
+      "block_added": 459422,
+      "block": 488901,
+      "address": "11UeLFyfHaoL8U2oWmtkDYxSt37ZSd432Jnaa2Uy4rLSTHP5AiG"
+    },
+    {
+      "lng": -74.01032445204942,
+      "lat": 40.72147348660547,
+      "status": {
+        "online": "online",
+        "height": 488871
+      },
+      "score_update_height": 488768,
+      "score": 0.9685516357421875,
+      "owner": "13cAirRyuUzK9pWNHQoQnk6ikLYCxHyACQvV6RJMdt4ymyNpD1K",
+      "nonce": 1,
+      "name": "cool-tawny-chameleon",
+      "location": "8c2a1072c44bdff",
+      "geocode": {
+        "short_street": "Washington St",
+        "short_state": "NY",
+        "short_country": "US",
+        "short_city": "New York",
+        "long_street": "Washington Street",
+        "long_state": "New York",
+        "long_country": "United States",
+        "long_city": "New York",
+        "city_id": "bmV3IHlvcmtuZXcgeW9ya3VuaXRlZCBzdGF0ZXM"
+      },
+      "block_added": 157683,
+      "block": 488901,
+      "address": "1124V1P146uMRpNvyuoRc8Uda1G54wqVBPuRzxzNuhEMFdNFkuaD"
+    },
+    {
+      "lng": -84.14116349722525,
+      "lat": 34.099581418911974,
+      "status": {
+        "online": "online",
+        "height": 488880
+      },
+      "score_update_height": 488885,
+      "score": 0.9802703857421875,
+      "owner": "13Htq8exAPrLx35PhTJU4Tk2N7sGw1sdfLUtaCUcik7cZJQWQJJ",
+      "nonce": 1,
+      "name": "joyful-citron-walrus",
+      "location": "8c44c128eb151ff",
+      "geocode": {
+        "short_street": "Bradford Ln",
+        "short_state": "GA",
+        "short_country": "US",
+        "short_city": "Suwanee",
+        "long_street": "Bradford Lane",
+        "long_state": "Georgia",
+        "long_country": "United States",
+        "long_city": "Suwanee",
+        "city_id": "c3V3YW5lZWdlb3JnaWF1bml0ZWQgc3RhdGVz"
+      },
+      "block_added": 100661,
+      "block": 488901,
+      "address": "11cpUwQf8DpRaJbKpDwr8rBAQTmsVp72X4LePQokUM8SZWfaPSp"
+    },
+    {
+      "lng": -112.02337472794586,
+      "lat": 33.371050552126555,
+      "status": {
+        "online": "online",
+        "height": 488892
+      },
+      "score_update_height": 488877,
+      "score": 0.7867889404296875,
+      "owner": "13ZQv5D9xiAziFxYz5SffsZH3iTaKW7WH5LXeWvnq79usjwrwhN",
+      "nonce": 2,
+      "name": "old-opal-bison",
+      "location": "8c48e96934201ff",
+      "geocode": {
+        "short_street": "E South Mountain Ave",
+        "short_state": "AZ",
+        "short_country": "US",
+        "short_city": "Phoenix",
+        "long_street": "East South Mountain Avenue",
+        "long_state": "Arizona",
+        "long_country": "United States",
+        "long_city": "Phoenix",
+        "city_id": "cGhvZW5peGFyaXpvbmF1bml0ZWQgc3RhdGVz"
+      },
+      "block_added": 102779,
+      "block": 488901,
+      "address": "112ucXwiiR6i6zgkEbfUHpFtggivB4qKx8EMjAG7ZSJmhTrRwTA1"
+    },
+    {
+      "lng": -79.88736058394272,
+      "lat": 40.398811120042815,
+      "status": {
+        "online": "online",
+        "height": 488864
+      },
+      "score_update_height": 488893,
+      "score": 0.8791351318359375,
+      "owner": "14FUSqWYcWfQd7KQjrDSPXehsxvtJqxFf2q2QdxakbH4597KCz9",
+      "nonce": 1,
+      "name": "custom-khaki-bat",
+      "location": "8c2a8472a5287ff",
+      "geocode": {
+        "short_street": "Grant Ave",
+        "short_state": "PA",
+        "short_country": "US",
+        "short_city": "Homestead",
+        "long_street": "Grant Avenue",
+        "long_state": "Pennsylvania",
+        "long_country": "United States",
+        "long_city": "Homestead",
+        "city_id": "aG9tZXN0ZWFkcGVubnN5bHZhbmlhdW5pdGVkIHN0YXRlcw"
+      },
+      "block_added": 161205,
+      "block": 488901,
+      "address": "11rraissynzdXzuvR9C9zsiPuZCMsJ33jMszpNqafKhCN8T1LtJ"
+    },
+    {
+      "lng": -104.9819667654663,
+      "lat": 39.731924587349546,
+      "status": {
+        "online": "online",
+        "height": 488887
+      },
+      "score_update_height": 488873,
+      "score": 0.681549072265625,
+      "owner": "14mgCFAcGKtcu3L3ZFrqFNvcozeWFCNRvqWtwBvifa1R6EqmiaJ",
+      "nonce": 4,
+      "name": "shaggy-pistachio-rabbit",
+      "location": "8c268cda821b9ff",
+      "geocode": {
+        "short_street": "Logan St",
+        "short_state": "CO",
+        "short_country": "US",
+        "short_city": "Denver",
+        "long_street": "Logan Street",
+        "long_state": "Colorado",
+        "long_country": "United States",
+        "long_city": "Denver",
+        "city_id": "ZGVudmVyY29sb3JhZG91bml0ZWQgc3RhdGVz"
+      },
+      "block_added": 126278,
+      "block": 488901,
+      "address": "11pbDpPD8xGQxzJYcEgUTjB2A299bZqd5MyP3CUiEqYLdiDe4CX"
+    },
+    {
+      "lng": -118.43240806178659,
+      "lat": 34.06300352288759,
+      "status": {
+        "online": "online",
+        "height": 488881
+      },
+      "score_update_height": 488816,
+      "score": 0.7606201171875,
+      "owner": "14WKFHYag7LGCFgPBWQUHiM2Pvtie1fiykDSUGUecKQMwPgMNuA",
+      "nonce": 1,
+      "name": "jumpy-pear-toad",
+      "location": "8c29a199d4639ff",
+      "geocode": {
+        "short_street": "Wilshire Blvd",
+        "short_state": "CA",
+        "short_country": "US",
+        "short_city": "Los Angeles",
+        "long_street": "Wilshire Boulevard",
+        "long_state": "California",
+        "long_country": "United States",
+        "long_city": "Los Angeles",
+        "city_id": "bG9zIGFuZ2VsZXNjYWxpZm9ybmlhdW5pdGVkIHN0YXRlcw"
+      },
+      "block_added": 465022,
+      "block": 488901,
+      "address": "11DDaP3k7aZFKr1C8B9gdyvChX79RHvGbydzRxwEVHEBFd3NdKK"
+    },
+    {
+      "lng": -87.90081429668973,
+      "lat": 42.126905592654815,
+      "status": {
+        "online": "online",
+        "height": 488887
+      },
+      "score_update_height": 488879,
+      "score": 0.9979248046875,
+      "owner": "14EQRNNEmjK8bM97NEp5vM441u7mcTxrPjnVJ4dJ8SD2X9Qwseb",
+      "nonce": 5,
+      "name": "brilliant-teal-lemur",
+      "location": "8c2759adc50bdff",
+      "geocode": {
+        "short_street": "Mill Cir",
+        "short_state": "IL",
+        "short_country": "US",
+        "short_city": "Wheeling",
+        "long_street": "Mill Circle",
+        "long_state": "Illinois",
+        "long_country": "United States",
+        "long_city": "Wheeling",
+        "city_id": "d2hlZWxpbmdpbGxpbm9pc3VuaXRlZCBzdGF0ZXM"
+      },
+      "block_added": 117340,
+      "block": 488901,
+      "address": "11UtixMtxVK73SrdDqXGTRsmJNfgiHipXUHmeF6Tjp4HETnSooz"
+    },
+    {
+      "lng": -80.18078079776579,
+      "lat": 26.022409638823497,
+      "status": {
+        "online": "online",
+        "height": 488881
+      },
+      "score_update_height": 488858,
+      "score": 0.9946136474609375,
+      "owner": "14FvBfvRkERkW4RrR16i5NharQh8Ehjq77RowbpWbdxUiHAXUdi",
+      "nonce": 1,
+      "name": "zesty-peanut-nightingale",
+      "location": "8c44a10426003ff",
+      "geocode": {
+        "short_street": "Cleveland St",
+        "short_state": "FL",
+        "short_country": "US",
+        "short_city": "Hollywood",
+        "long_street": "Cleveland Street",
+        "long_state": "Florida",
+        "long_country": "United States",
+        "long_city": "Hollywood",
+        "city_id": "aG9sbHl3b29kZmxvcmlkYXVuaXRlZCBzdGF0ZXM"
+      },
+      "block_added": 452874,
+      "block": 488901,
+      "address": "11VSRV6KZjdhBqabde1Piq4zkRVa1WRNEFAW22XMBfGtAHW7nV9"
+    },
+    {
+      "lng": -121.97991888865624,
+      "lat": 37.31889190483364,
+      "status": {
+        "online": "online",
+        "height": 488862
+      },
+      "score_update_height": 488845,
+      "score": 0.9733428955078125,
+      "owner": "14NHk7ajkBnsBsSfZSmmHRD5SHb1UvWyLdwz5z9MCEDyjezFWXD",
+      "nonce": 1,
+      "name": "rapid-spruce-opossum",
+      "location": "8c28347048cd1ff",
+      "geocode": {
+        "short_street": "Norwalk Dr",
+        "short_state": "CA",
+        "short_country": "US",
+        "short_city": "San Jose",
+        "long_street": "Norwalk Drive",
+        "long_state": "California",
+        "long_country": "United States",
+        "long_city": "San Jose",
+        "city_id": "c2FuIGpvc2VjYWxpZm9ybmlhdW5pdGVkIHN0YXRlcw"
+      },
+      "block_added": 147758,
+      "block": 488901,
+      "address": "112uRR5Vhz1kBW6c2Jbn4wDcokKibUi3NSjLwDGnBBHFuwNYuidN"
+    },
+    {
+      "lng": -74.91795266574553,
+      "lat": 39.04734411775066,
+      "status": {
+        "online": "online",
+        "height": 488888
+      },
+      "score_update_height": 488850,
+      "score": 0.9910125732421875,
+      "owner": "13oBvk7EmZ5nMckycXRoBrR7ymXeFWn86gFhso14QnJWmB8HJQG",
+      "nonce": 3,
+      "name": "acidic-banana-pangolin",
+      "location": "8c2aad1441095ff",
+      "geocode": {
+        "short_street": "N 12th St",
+        "short_state": "NJ",
+        "short_country": "US",
+        "short_city": "Villas",
+        "long_street": "North 12th Street",
+        "long_state": "New Jersey",
+        "long_country": "United States",
+        "long_city": "Villas",
+        "city_id": "dmlsbGFzbmV3IGplcnNleXVuaXRlZCBzdGF0ZXM"
+      },
+      "block_added": 448442,
+      "block": 488901,
+      "address": "11xF1ZrLGDtS1VrLU7zCwzMBu3UCHrLTzPvvT63qkcDvSnLgzYy"
+    },
+    {
+      "lng": -118.3147080907313,
+      "lat": 34.024854598484325,
+      "status": {
+        "online": "online",
+        "height": 488892
+      },
+      "score_update_height": 488863,
+      "score": 0.9638671875,
+      "owner": "146j8VSV8gydkDVmUMeBbzwM5t879uzK5xop9Gx1Hs4pEACEszp",
+      "nonce": 4,
+      "name": "crazy-cedar-swift",
+      "location": "8c29a1d65c687ff",
+      "geocode": {
+        "short_street": "W 35th St",
+        "short_state": "CA",
+        "short_country": "US",
+        "short_city": "Los Angeles",
+        "long_street": "West 35th Street",
+        "long_state": "California",
+        "long_country": "United States",
+        "long_city": "Los Angeles",
+        "city_id": "bG9zIGFuZ2VsZXNjYWxpZm9ybmlhdW5pdGVkIHN0YXRlcw"
+      },
+      "block_added": 338998,
+      "block": 488901,
+      "address": "112UBBKntnNF6LeqDTVfNmay9X3CKQSVW5iaSiFqFVfWpjCP3VKF"
+    },
+    {
+      "lng": -122.42776937373586,
+      "lat": 37.66143533833919,
+      "status": {
+        "online": "online",
+        "height": 488891
+      },
+      "score_update_height": 488803,
+      "score": 0.985321044921875,
+      "owner": "14HvA6X2uKjSwsihJPnHHx2P4E1rbCTjSJuWkKAZzNpeUmfeRR2",
+      "nonce": 1,
+      "name": "rich-oily-whale",
+      "location": "8c2830972d329ff",
+      "geocode": {
+        "short_street": "Treeside Ct",
+        "short_state": "CA",
+        "short_country": "US",
+        "short_city": "South San Francisco",
+        "long_street": "Treeside Court",
+        "long_state": "California",
+        "long_country": "United States",
+        "long_city": "South San Francisco",
+        "city_id": "c291dGggc2FuIGZyYW5jaXNjb2NhbGlmb3JuaWF1bml0ZWQgc3RhdGVz"
+      },
+      "block_added": 147503,
+      "block": 488901,
+      "address": "11oygj4b5zEagbSTP3ozTcYfBCHJwLX9uQKeUtS65howdQyteGJ"
+    },
+    {
+      "lng": -75.27826551964438,
+      "lat": 40.08090500714629,
+      "status": {
+        "online": "online",
+        "height": 488816
+      },
+      "score_update_height": 488885,
+      "score": 0.991241455078125,
+      "owner": "13oBvk7EmZ5nMckycXRoBrR7ymXeFWn86gFhso14QnJWmB8HJQG",
+      "nonce": 4,
+      "name": "noisy-coal-beaver",
+      "location": "8c2aac9492d51ff",
+      "geocode": {
+        "short_street": "State Rte 3014",
+        "short_state": "PA",
+        "short_country": "US",
+        "short_city": "Lafayette Hill",
+        "long_street": "State Route 3014",
+        "long_state": "Pennsylvania",
+        "long_country": "United States",
+        "long_city": "Lafayette Hill",
+        "city_id": "bGFmYXlldHRlIGhpbGxwZW5uc3lsdmFuaWF1bml0ZWQgc3RhdGVz"
+      },
+      "block_added": 448854,
+      "block": 488901,
+      "address": "11judjQVWMVBmsvBaQrtBZE831wVBo7LLdU4RKU1J7aVEqvztrx"
+    },
+    {
+      "lng": -94.24977711202023,
+      "lat": 36.334097707199234,
+      "status": {
+        "online": "online",
+        "height": 488885
+      },
+      "score_update_height": 488783,
+      "score": 0.9935455322265625,
+      "owner": "13ickN56yPe38a3Vga161gp4nkSLckWvy7JChvnFr9osfP4AHGE",
+      "nonce": 1,
+      "name": "colossal-tangerine-reindeer",
+      "location": "8c26ed42c3915ff",
+      "geocode": {
+        "short_street": "SW Layton Rd",
+        "short_state": "AR",
+        "short_country": "US",
+        "short_city": "Bentonville",
+        "long_street": "Southwest Layton Road",
+        "long_state": "Arkansas",
+        "long_country": "United States",
+        "long_city": "Bentonville",
+        "city_id": "YmVudG9udmlsbGVhcmthbnNhc3VuaXRlZCBzdGF0ZXM"
+      },
+      "block_added": 100810,
+      "block": 488901,
+      "address": "11Fi6ynL2ecRiTGoJGtLcWYPJXQv1aH4jxgbUTejZtu4rBtvUYZ"
+    }
+  ]
+}
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 {% api-method method="get" host="https://api.helium.io" path="/v1/hotspost/:address/challenges" %}
 {% api-method-summary %}
 Hotspot Challenges
