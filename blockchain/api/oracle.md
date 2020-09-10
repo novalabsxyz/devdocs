@@ -45,7 +45,7 @@ Returns the Oracle Price that was valid at block `366922`. The response indicate
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="htps://api.helium.io" path="/v1/oracle/activity" %}
+{% api-method method="get" host="https://api.helium.io" path="/v1/oracle/activity" %}
 {% api-method-summary %}
 List Oracle activity
 {% endapi-method-summary %}
