@@ -8,5 +8,5 @@ The main difference between the LongFi Network Server and a traditional LoRaWAN 
 
 Other than that, the LongFi Network Server must simply support the appropriate LoRaWAN stack relative to the device, similar to any traditional LoRaWAN deployment. \(In fact, anyone who registers an OUI can host a LongFi Network Server and could implement an arbitrary RF protocol, as long as the uplink channels used and the uplink routing scheme is congruent with LongFi.\)
 
-In addition, OUI registration requires Data Credits \(DCs\) which are not yet live on the Helium Blockchain. Initial deployments can instead use our hosted Helium’s Network Server and Console, which are currently free to use.
+In addition, OUI registration requires Data Credits \(DCs\) which are currently live on the Helium Blockchain.
 
