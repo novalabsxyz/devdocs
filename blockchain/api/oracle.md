@@ -4,6 +4,43 @@ description: An API endpoint that returns current and historical HNT Oracle Pric
 
 # Oracle Prices
 
+{% api-method method="get" host="https://api.helium.io" path="/v1/oracle/current" %}
+{% api-method-summary %}
+
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="cursor" type="string" required=false %}
+Returned from an initial query, allowing client to fetch more results
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+The current Oracle Price and at which block it took effect.
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "data": {
+        "price": 167000000,
+        "block": 471570
+    }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices" %}
 {% api-method-summary %}
 
@@ -69,14 +106,14 @@ The block to get the HNT Oracle Price at
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Returns the Oracle Price that was valid at block `366922`. The response indicates the returned oracle price was set at block `366920`.
+Returns a list of recent Oracle Prices and at which block they took effect.
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
     "data": {
-        "block": 366920,
-        "price": 26775000
+        "price": 167000000,
+        "block": 471570
     }
 }
 ```
@@ -189,7 +226,7 @@ Get Predicted HNT Oracle Prices
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This returns a list of expected times when the Oracle Price is expected to change.The blockchain operates in "block-time", meaning that blocks can come out at some schedule close to 1 per minute. Oracles report in "wall-clock-time", meaning they report what they believe the price should be.If the route returns one or more prices and times, it indicates that the chain is expected to adjust the **price** \(based on Oracle reports\) no earlier than the indicated **time** to the returned price.**NOTE:** A prediction may not be seen in the blockchain if they are close together \(within 10 blocks\) since block times may cause the blockchain to skip to a next predicted price.If no predictions are returned the current HNT Oracle Price is valid for at least 1 hour.
+This returns a list of expected times when the Oracle Price is expected to change.The blockchain operates in "block-time", meaning that blocks can come out at some schedule close to 1 per minute. Oracles report in "wall-clock-time", meaning they report what they believe the price should be.If the route returns one or more prices and times, it indicates that the chain is expected to adjust the **price** \(based on Oracle reports\) no earlier than the indicated **time** to the returned price.**NOTE:** A prediction may not be seen in the blockchain if they are close together \(within 10 blocks\) since block times may cause the blockchain to skip to a next predicted price. If no predictions are returned the current HNT Oracle Price is valid for at least 1 hour.
 {% endapi-method-description %}
 
 {% api-method-spec %}
