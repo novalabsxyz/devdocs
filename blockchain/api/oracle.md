@@ -5,6 +5,9 @@ description: An API endpoint that returns current and historical HNT Oracle Pric
 # Oracle Prices
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -27,7 +30,9 @@ description: An API endpoint that returns current and historical HNT Oracle Pric
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://api.helium.io/v1/oracle/prices" path="/current" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 {% endapi-method-response-example-description %}
 
 ```javascript
