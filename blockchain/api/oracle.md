@@ -5,9 +5,27 @@ description: An API endpoint that returns current and historical HNT Oracle Pric
 # Oracle Prices
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices" %}
+{% api-method-summary %}
+
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="cursor" type="string" required=false %}
+Returned from an initial query, allowing client to fetch more results
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
+Returns a list of recent Oracle Prices and at which block they took effect.
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -23,24 +41,6 @@ description: An API endpoint that returns current and historical HNT Oracle Pric
         }
     ],
     "cursor": "eyJiZWZvcmUiOjQ2NjE5MH0"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "data": {
-        "price": 167000000,
-        "block": 471570
-    }
 }
 ```
 {% endapi-method-response-example %}
