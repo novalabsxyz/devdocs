@@ -322,9 +322,7 @@ Rewards for an Account
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns reward entries by block and gateway for a given account in a timeframe.  Timestamps are given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
-format. The block that contains the `max_time` timestamp is **excluded** from
-the result.
+Returns reward entries by block and gateway for a given account in a timeframe. Timestamps are given in ISO 8601 format. The block that contains the `max_time` timestamp is **excluded** from the result.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -356,7 +354,7 @@ First timestamp to include rewards for
 Request for a account rewards between `max_time=2020-08-29&min_time=2020-08-27`. Note the result cursor to fetch more data
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "cursor": "eyJlbmRfYmxvY2siOjQ2OTUzMCwiYmxvY2siOjQ3MDgwMCwiYW5jaG9yX2Jsb2NrIjo0NzA4MDB9",
     "data": [
@@ -390,9 +388,7 @@ Reward Total for an Account
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the total rewards for a given account in a given timeframe. Timestamps are given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
-format. The block that contains the `max_time` timestamp is **excluded** from
-the result.
+Returns the total rewards for a given account in a given timeframe. Timestamps are given in ISO 8601 format. The block that contains the `max_time` timestamp is **excluded** from the result.
 {% endapi-method-description %}
 
 {% api-method-spec %}

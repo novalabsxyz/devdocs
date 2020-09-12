@@ -15,12 +15,6 @@ description: An API endpoint that returns current and historical HNT Oracle Pric
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="cursor" type="string" required=false %}
-Returned from an initial query, allowing client to fetch more results
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
