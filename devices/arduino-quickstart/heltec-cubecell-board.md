@@ -98,7 +98,7 @@ Depending on the version of the Heltec runtime that is installed this default ma
 
 The LORAWAN\_DEFAULT\_DATARATE setting is tied directly to the maximum size of the data packet you are transferring. While other runtime versions may allow programatic overide of this default, the Heltec implementation does not currently support overriding.
 
-NOTE: If you try to transfer a packet that is larger than this setting allows, your device may well successfully join the network but the data transmit will fail silently. Hopefully a future release will give the application layer failure notification.
+NOTE: If you try to transfer a packet that is larger than this setting allows, your device may successfully join the network but the data transmit will fail silently.
 
 | Data Rate \(DR\) | Max Application Payload |
 | :--- | :--- |
@@ -111,7 +111,7 @@ NOTE: If you try to transfer a packet that is larger than this setting allows, y
 
 Update the LORAWAN\_DEFAULT\_DATARATE as appropriate for your application needs.
 
-The above values are valid for the US902-928MHz region\(North America\), the values may differ for other LoRa regions. This link will take you to document which may help determine the correct value for other LoRa regions. [https://lora-alliance.org/resource-hub/rp2-101-lorawanr-regional-parameters](https://lora-alliance.org/resource-hub/rp2-101-lorawanr-regional-parameters)
+The above values are valid for the US902-928MHz region\(North America\), the values may differ for other LoRa regions, which you can find [here](https://lora-alliance.org/resource-hub/rp2-101-lorawanr-regional-parameters).
 
 ### Install Serial Driver
 
