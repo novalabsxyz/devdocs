@@ -24,7 +24,7 @@ For this example, you will need the following:
 
 ### Hardware
 
-*  [Heltec CubeCell Board](https://heltec.org/project/htcc-ab01/)
+* [Heltec CubeCell Board](https://heltec.org/project/htcc-ab01/)
 * Micro USB Type B Cable - [Example](https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B0719H12WD/ref=sr_1_2_sspa?)
 
 ### Software
@@ -65,13 +65,13 @@ To install, open your Arduino IDE:
 
 ![](../../.gitbook/assets/cubecell-board-support-json.png)
 
-3.  Add this URL in the text box:
+1. Add this URL in the text box:
 
 ```text
 http://resource.heltec.cn/download/package_CubeCell_index.json
 ```
 
-4. Close the Preferences windows
+1. Close the Preferences windows
 
 Next, to install this board support package:
 
@@ -89,31 +89,29 @@ The top level location of the file of interest depends on the library installati
 
 For example on a Linux platform the files should be located at:
 
-- Arduino IDE library version 1.0.0:  ~/.arduino15/packages/CubeCell/hardware/CubeCell/1.0.0/libraries/LoRa/src/LoRaWan_APP.cpp
+Arduino IDE library version 1.0.0: `~/.arduino15/packages/CubeCell/hardware/CubeCell/1.0.0/libraries/LoRa/src/LoRaWan_APP.cpp`
 
-- Platformio IDE: ~/.platformio/packages/framework-arduinoasrmicro650x/libraries/LoRa/src/LoRaWan_APP.cpp
+Platformio IDE:`~/.platformio/packages/framework-arduinoasrmicro650x/libraries/LoRa/src/LoRaWan_APP.cpp`
 
-In LoRaWan_APP.cpp look for #define LORAWAN_DEFAULT_DATARATE  
-Depending on the version of the Heltec runtime that is installed this default may be set to DR_0, DR_3, DR_5 or some other value.
-Note: DR_5 is not valid for US915, the North American market.
+In LoRaWan\_APP.cpp look for \#define LORAWAN\_DEFAULT\_DATARATE  
+Depending on the version of the Heltec runtime that is installed this default may be set to DR\_0, DR\_3, DR\_5 or some other value. Note: DR\_5 is not valid for US915, the North American market.
 
-The LORAWAN_DEFAULT_DATARATE setting is tied directly to the maximum size of the data packet you are transferring. While other runtime versions may allow programatic overide of this default, the Heltec implementation does not currently support overriding.
+The LORAWAN\_DEFAULT\_DATARATE setting is tied directly to the maximum size of the data packet you are transferring. While other runtime versions may allow programatic overide of this default, the Heltec implementation does not currently support overriding.
 
 NOTE: If you try to transfer a packet that is larger than this setting allows, your device may well successfully join the network but the data transmit will fail silently. Hopefully a future release will give the application layer failure notification.
 
-|Data Rate (DR)  |    Max Application Payload|
------------------|--------------------------|
-|DR_0            |     11 bytes             |
-|DR_1            |     53 bytes             |
-|DR_2            |     125 bytes            |
-|DR_3            |     242 bytes            | 
-|DR_4            |     242 bytes            | 
-|DR_5 - 7        |     Not Valid            |
+| Data Rate \(DR\) | Max Application Payload |
+| :--- | :--- |
+| DR\_0 | 11 bytes |
+| DR\_1 | 53 bytes |
+| DR\_2 | 125 bytes |
+| DR\_3 | 242 bytes |
+| DR\_4 | 242 bytes |
+| DR\_5 - 7 | Not Valid |
 
-Update the LORAWAN_DEFAULT_DATARATE as appropriate for your application needs.
+Update the LORAWAN\_DEFAULT\_DATARATE as appropriate for your application needs.
 
-The above values are valid for the US902-928MHz region(North America), the values may differ for other LoRa regions. This link will take you to document which may help determine the correct value for other LoRa regions.
-https://lora-alliance.org/resource-hub/rp2-101-lorawanr-regional-parameters
+The above values are valid for the US902-928MHz region\(North America\), the values may differ for other LoRa regions. This link will take you to document which may help determine the correct value for other LoRa regions. [https://lora-alliance.org/resource-hub/rp2-101-lorawanr-regional-parameters](https://lora-alliance.org/resource-hub/rp2-101-lorawanr-regional-parameters)
 
 ### Install Serial Driver
 
@@ -123,12 +121,9 @@ Find Directions on Heltec's website [here](https://heltec-automation-docs.readth
 
 Arduino IDE:
 
-If you are using the HTCC-AB02 flavor of Heltec board 
-1. Select Tools -&gt; Board: -&gt;CubeCell-Board (HTCC-AB02)
+If you are using the HTCC-AB02 flavor of Heltec board 1. Select Tools -&gt; Board: -&gt;CubeCell-Board \(HTCC-AB02\)
 
-If you are using the HTCC-AB02S GPS enabled flavor of Heltec board
-1. Select Tools -&gt; Board: -&gt;CubeCell-GPS (HTCC-AB02S)
-
+If you are using the HTCC-AB02S GPS enabled flavor of Heltec board 1. Select Tools -&gt; Board: -&gt;CubeCell-GPS \(HTCC-AB02S\)
 
 ### Select Region
 
@@ -138,15 +133,15 @@ Arduino IDE:
 
 ### Select **Uplink Mode**
 
-The last step before we upload our sketch is to select the LoRaWAN Uplink Mode, navigate to **\(Tools &gt; LoRaWAN Uplink Mode:  &gt; UNCONFIRMED\).**
+The last step before we upload our sketch is to select the LoRaWAN Uplink Mode, navigate to **\(Tools &gt; LoRaWAN Uplink Mode: &gt; UNCONFIRMED\).**
 
 ### Programming **Example Sketch**
 
 Now that we have the required Arduino board support and library installed, lets program the board with the provided example sketch.
 
-To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://github.com/helium/longfi-arduino/blob/master/Heltec-CubeCell-Board/longfi-us915/longfi-us915.ino), copy and paste the entirety of it. 
+To create a new Arduino sketch, open your Arduino IDE, \(**File &gt; New\).** Next, replace the template sketch with the sketch found [here](https://github.com/helium/longfi-arduino/blob/master/Heltec-CubeCell-Board/longfi-us915/longfi-us915.ino), copy and paste the entirety of it.
 
-Next we'll need to fill in the AppEUI\(msb\), DevEUI\(msb\), and AppKey\(msb\), in the sketch, which you can find on the device details page on Console. Be sure to use the formatting buttons to match the endianess  and formatting required for the sketch, shown below.
+Next we'll need to fill in the AppEUI\(msb\), DevEUI\(msb\), and AppKey\(msb\), in the sketch, which you can find on the device details page on Console. Be sure to use the formatting buttons to match the endianess and formatting required for the sketch, shown below.
 
 ![](../../.gitbook/assets/cubecell-console-details.png)
 
@@ -161,7 +156,9 @@ We're finally ready to upload our sketch to the board. In the Arduino IDE, click
 ![](../../.gitbook/assets/cubecell-arduino-upload.png)
 
 ### Using HTCC-AB02S Board With GPS Capable Sketch <a id="HTCC-AB02S-with-GPS"></a>
-If you are using the HTCC-AB02S board with a sketch that is GPS enabled but find the device is unable to obtain a GPS lock you can try changing the GPS data satellite source via the GPS class Air530.setMode() API. Add the Air530.setmode() to the setup() method of your sketch.
+
+If you are using the HTCC-AB02S board with a sketch that is GPS enabled but find the device is unable to obtain a GPS lock you can try changing the GPS data satellite source via the GPS class Air530.setMode\(\) API. Add the Air530.setmode\(\) to the setup\(\) method of your sketch.
+
 ```text
 // MODE_GPS - US,
 // MODE_GPS_BEIDOU - Chinese - This is the default
@@ -176,8 +173,7 @@ When your firmware update completes, the board will reset, and begin by joining 
 
 ![](../../.gitbook/assets/cubecell-arduino-serial.png)
 
-Now let's head back to [Helium Console](https://console.helium.com/) and look at our device page, you should see something similar to the screenshot below.  
-
+Now let's head back to [Helium Console](https://console.helium.com/) and look at our device page, you should see something similar to the screenshot below.
 
 ![](../../.gitbook/assets/heltec-wifi-lora-console-events.png)
 
