@@ -396,7 +396,7 @@ Fetches consensus groups that the hotspot with address `11ztQpmCJbfPxv3RjsnvFToz
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/elected" %}
 
-{% api-method method="get" host="https://api.helium.io" path="/v1/hotspost/:address/challenges" %}
+{% api-method method="get" host="https://api.helium.io" path="/v1/hotspots/:address/challenges" %}
 {% api-method-summary %}
 
 {% endapi-method-summary %}
