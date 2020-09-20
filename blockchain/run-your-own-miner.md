@@ -131,7 +131,7 @@ And [Start the Container ](run-your-own-miner.md#start-container)again as descri
 
 ## Using the Miner
 
-These commands will assume you are running in Docker and they have the same prefix to get you exceuting a command within the docker: `docker exec miner` . If you want to make it easier, you can always created an an alias such as: `alias miner="docker exec miner miner"`.
+These commands will assume you are running in Docker and they have the same prefix to get you executing a command within the docker: `docker exec miner` . If you want to make it easier, you can always created an an alias such as: `alias miner="docker exec miner miner"`.
 
 ### Checking the logs
 
