@@ -5,14 +5,49 @@ description: An API endpoint that returns current and historical HNT Oracle Pric
 # Oracle Prices
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices/current" %}
-
-{% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices" %}
 {% api-method-summary %}
-
+Current Oracle Price
 {% endapi-method-summary %}
 
 {% api-method-description %}
+The current Oracle Price and at which block it took effect.
+{% endapi-method-description %}
 
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="cursor" type="string" required=false %}
+Returned from an initial query, allowing client to fetch more results
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+The current Oracle Price and at which block it took effect.
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "data": {
+        "price": 167000000,
+        "block": 471570
+    }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices" %}
+{% api-method-summary %}
+Current and Historical Oracle Prices
+{% endapi-method-summary %}
+
+{% api-method-description %}
+The current and historical Oracle Prices and at which block they took effect. This route is paged using a cursor.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -52,17 +87,17 @@ Returns a list of recent Oracle Prices and at which block they took effect.
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/prices/:block" %}
 {% api-method-summary %}
-
+Oracle Price at a Specific Block
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+Provides the oracle price at a specific block and at which block it initially took effect.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="block" type="string" required=false %}
+{% api-method-parameter name="block" type="string" required=true %}
 The block to get the HNT Oracle Price at
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -89,7 +124,7 @@ Returns a list of recent Oracle Prices and at which block they took effect.
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/activity" %}
 {% api-method-summary %}
-List Oracle activity
+List Oracle Activity
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -135,7 +170,7 @@ Cursor for the next page to fetch
 
 {% api-method method="get" host="https://api.helium.io" path="/v1/oracle/:address/activity" %}
 {% api-method-summary %}
-List activity for one Oracle
+List Activity for a Specific Oracle
 {% endapi-method-summary %}
 
 {% api-method-description %}

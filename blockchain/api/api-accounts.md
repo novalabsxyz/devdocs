@@ -6,7 +6,9 @@ List Accounts
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Retrieve the current set of known accounts.The result is paged. A `cursor` field is present if more results are available._Note:_ The cursor for accounts is valid for a limited time. If you receive a `400` http response code for a cursor based request, you will need to start fetching accounts from the beginning of the list.
+Retrieve the current set of known accounts.The result is paged. A `cursor` field is present if more results are available.   
+  
+_Note:_ The cursor for accounts is valid for a limited time. If you receive a `400` http response code for a cursor based request, you will need to start fetching accounts from the beginning of the list.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -147,7 +149,9 @@ Account for Address
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Retrieve a specific account record.The account details for a record include additional speculative nonces that indicate what the expected _nonce_ for the account is for a specific _balance_. Any transactions affecting the given balance type should use an adjusted speculative nonce for that balance type.For example, when constructing a payment transaction, get the `speculative_nonce` field for the source account and use `speculative_nonce + 1` for the new transaction nonce.Currently only the `speculative_nonce` is supported. It indicates the expected nonce for the account
+Retrieve a specific account record.The account details for a record include additional speculative nonces that indicate what the expected _nonce_ for the account is for a specific _balance_. Any transactions affecting the given balance type should use an adjusted speculative nonce for that balance type.   
+  
+For example, when constructing a payment transaction, get the `speculative_nonce` field for the source account and use `speculative_nonce + 1` for the new transaction nonce.Currently only the `speculative_nonce` is supported. It indicates the expected nonce for the account
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -191,7 +195,9 @@ Hotspots for Account
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Fetches hotspots owned by a given account address.The list of returned hotspots is paged. If a `cursor` field is present more results are available._Note:_ The cursor for accounts is valid for a limited time. If you receive a `400` http response code for a cursor based request, you will need to start fetching accounts from the beginning of the list.
+Fetches hotspots owned by a given account address.The list of returned hotspots is paged. If a `cursor` field is present more results are available.  
+  
+_Note:_ The cursor for accounts is valid for a limited time. If you receive a `400` http response code for a cursor based request, you will need to start fetching accounts from the beginning of the list.
 {% endapi-method-description %}
 
 {% api-method-spec %}
