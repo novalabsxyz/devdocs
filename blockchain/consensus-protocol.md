@@ -34,7 +34,7 @@ A new Consensus Group \(CG\) is elected once per epoch based a combination of fa
 
 All Hotspots active on the Helium Network are eligible to be elected to a consensus group. The two primary factors used as inputs to any given election are:
 
-* **Score** - Every Hotspot on the Network has a [score](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/blockchain/proof-of-coverage/README.md#hotspot-scoring), ranging from `0.0` - `1.0`, that is constantly changing to reflect the network’s confidence in its asserted location. _Hotspots with higher scores `.25` and higher are eligible for CG election._ 
+* **Score** - Every Hotspot on the Network has a [score](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/blockchain/proof-of-coverage/README.md#hotspot-scoring), ranging from `0.0` - `1.0`, that is constantly changing to reflect the network’s confidence in its asserted location. _Hotspots with higher scores `.15` and higher are eligible for CG election._ 
 * **Geography** - The Helium blockchain uses a system called [H3 for all aspects of geospatial representation within the network](https://blog.helium.com/mapping-the-world-with-hexagons-49f57d8b3df5). **H3** lets you index a space into hexagons of varying resolutions, ranging from `H0` to `H15`,with each level representing a different hexagon size. \([The full breakdown is here](https://github.com/uber/h3/blob/master/docs/core-library/restable.md).\) Currently, we use the `H4` resolution as the filter for eligible Hotspots for a CG. Put another way, in an ideal election, no two Hotspots within the same `H4` resolution - _roughly 658.5 square miles_ - should end up in the same CG. 
 
 #### Consensus Group Member Deselection
