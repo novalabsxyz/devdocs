@@ -4,6 +4,12 @@
 
 ![](../.gitbook/assets/artboard%20%281%29.png)
 
+
+
+{% hint style="danger" %}
+The ability to mine HNT with a 3rd party gateway is currently in alpha release. If you would like to add your gateway to the alpha, please join the [Helium Discord Server](https://discord.gg/helium) and message `@tteague` in the \#hotspot-diy-hardware channel.
+{% endhint %}
+
 To be a Helium Miner, there are three principle components to know about
 
 * Packet Forwarder: this is a utility that interacts with the radio front-end and sends and receives raw radio packets with the Helium Miner

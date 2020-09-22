@@ -1,6 +1,6 @@
 # Introduction
 
-![](../.gitbook/assets/desk3.jpg)
+![A very artsy photo of the Helium Hotspot](../.gitbook/assets/desk3.jpg)
 
 ## Helium Hotspot
 
@@ -10,5 +10,7 @@ The Helium Hotspot is a combination [LongFi](../longfi/introduction.md) wireless
 
 The [Helium Developer Hotspot](developer-setup.md) is a Hotspot that can be built using off-the-shelf components that is capable of sending and receiving packets over the LongFi wireless network.
 
-Currently these Developer Hotspots cannot perform any blockchain mining functions, but this functionality is intended to be available by Q3 2020.
+{% hint style="danger" %}
+The ability to mine HNT with a 3rd party gateway is currently in alpha release. If you would like to add your gateway to the alpha, please join the [Helium Discord Server](https://discord.gg/helium) and message `@tteague` in the \#hotspot-diy-hardware channel.
+{% endhint %}
 

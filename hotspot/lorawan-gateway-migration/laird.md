@@ -8,6 +8,10 @@ description: Migrating to the Helium Network
 
 This guide will help you connect a[ Laird Sentrius RG191](https://www.lairdconnect.com/wireless-modules/lorawan-solutions/sentrius-rg1xx-lorawan-gateway-wi-fi-ethernet-optional-lte-us-only) to the Helium Network using the Helium Miner. This will allow your gateway to participate in the Helium Network and to provide coverage!
 
+{% hint style="danger" %}
+The ability to mine HNT with a 3rd party gateway like the Laird Sentrius is currently in alpha release. If you would like to add your gateway to the alpha, please join the [Helium Discord Server](https://discord.gg/helium) and message `@tteague` in the \#hotspot-diy-hardware channel.
+{% endhint %}
+
 ![](../../.gitbook/assets/image%20%2882%29.png)
 
 [Laird Sentrius™ RG1xx LoRaWAN-Enabled Gateway](https://www.lairdconnect.com/wireless-modules/lorawan-solutions/sentrius-rg1xx-lora-enabled-gateway-wi-fi-ethernet)

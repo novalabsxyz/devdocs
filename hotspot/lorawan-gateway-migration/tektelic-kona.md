@@ -8,8 +8,8 @@ description: >-
 
 ![Tektelic KONA Macro IoT Gateway](../../.gitbook/assets/kona_macro_tilt-e1574283468530.png)
 
-{% hint style="info" %}
-Non-Helium manufactured LoRaWAN gateways are not yet able to mine Helium tokens.  This will be supported soon.
+{% hint style="danger" %}
+The ability to mine HNT with a 3rd party gateway like the Tektelik KONA is currently in alpha release. If you would like to add your gateway to the alpha, please join the [Helium Discord Server](https://discord.gg/helium) and message `@tteague` in the \#hotspot-diy-hardware channel.
 {% endhint %}
 
 Tektelic features [a robust catalogue of LoRaWAN gateways](https://tektelic.com/iot/lorawan-gateways/) suitable for various deployments requirements. Their ruggedized gateways with Cellular backhaul are becoming particularly popular for Helium Network deployments where coverage needs to be deployed outdoors, where Ethernet or WiFi infrastructure cannot be relied on for communicating with the Internet.

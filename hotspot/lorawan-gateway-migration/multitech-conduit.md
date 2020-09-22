@@ -12,8 +12,8 @@ description: >-
 
 ![MultiTech Conduit&#xAE;](../../.gitbook/assets/image%20%2891%29.png)
 
-{% hint style="info" %}
-Non-Helium manufactured LoRaWAN gateways are not yet able to mine Helium tokens.  This will be supported soon.
+{% hint style="warning" %}
+The ability to mine HNT with a 3rd party gateway like the Mulitech Conduit is currently in alpha release. If you would like to add your gateway to the alpha, please join the [Helium Discord Server](https://discord.gg/helium) and message `@tteague` in the \#hotspot-diy-hardware channel.
 {% endhint %}
 
 The MultiTech Conduit features cellular backhaul and a robust aluminum casing. In addition to an Ethernet port and the remote DeviceHQ management tool, it's a popular solution for indoor industrial deployments.
