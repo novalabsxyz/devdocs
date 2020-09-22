@@ -92,7 +92,6 @@ Once deployed, Hotspots are eligible for being challenged based on their score. 
 Additionally, to keep scores fair, there is a constant "gravity" effect which continuously pulls the Hotspots towards the neutral score of `0.25`. Doing so, we avoid Hotspots forever remaining on the top or on the bottom of the `0 - 1.0` score scale.
 
 * If a Hotspot has a stable internet connection but is never challenged - which is possible if it has no geographic peers - its score will remain at the neutral `0.25` level 
-* Hotspots with a score of below `0.15` will not be eligible for being challenged. If they drop below this level, the gravity effect will pull them back towards `0.15`. Once their score returns to this level, they will be eligible to be challenged again.  
 
 Hotspots with higher scores are more likely to be chosen for a Consensus Group, thus making them eligible to earn mining rewards for that epoch. Members of the Consensus Group split `6%` of all the tokens created each epoch for tasks such as validating transactions and publishing new blocks to the blockchain. So it pays to be at the top, but the network does what it can to make it, well, challenging.
 
