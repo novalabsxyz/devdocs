@@ -7,7 +7,7 @@
 
 
 {% hint style="danger" %}
-The ability to mine HNT with a 3rd party gateway is currently in alpha release. If you would like to add your gateway to the alpha, please join the [Helium Discord Server](https://discord.gg/helium) and message `@tteague` in the \#hotspot-diy-hardware channel.
+The ability to mine HNT with a 3rd party gateway is currently under development following the conclusion of the DIY Alpha program. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap here.
 {% endhint %}
 
 To be a Helium Miner, there are three principle components to know about
