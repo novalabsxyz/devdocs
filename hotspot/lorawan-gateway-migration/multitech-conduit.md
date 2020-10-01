@@ -13,7 +13,7 @@ description: >-
 ![MultiTech Conduit&#xAE;](../../.gitbook/assets/image%20%2891%29.png)
 
 {% hint style="warning" %}
-The ability to mine HNT with a 3rd party gateway like the Mulitech Conduit is currently in alpha release. If you would like to add your gateway to the alpha, please join the [Helium Discord Server](https://discord.gg/helium) and message `@tteague` in the \#hotspot-diy-hardware channel.
+The ability to mine HNT with a 3rd party gateway is currently under development following the conclusion of the DIY Alpha program. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap and expected timelines.
 {% endhint %}
 
 The MultiTech Conduit features cellular backhaul and a robust aluminum casing. In addition to an Ethernet port and the remote DeviceHQ management tool, it's a popular solution for indoor industrial deployments.
