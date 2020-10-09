@@ -24,9 +24,9 @@ The ultimate power of Proof-of-Coverage lies in the fact that the data generated
 
 ### The Anatomy of a PoC Challenge
 
-This is a Proof-of-Coverage Challenge, as seen in the [Helium Network Visualizer](https://network.helium.com/challenges):
+Individual Proof-of-Coverage challenges can be viewed in [Helium Explorer](https://explorer.helium.com/).
 
-![](../.gitbook/assets/screen-shot-2020-03-11-at-2.40.47-pm.png)
+![A Helium Proof-of-Coverage shown over a map of San Francisco](../.gitbook/assets/screen-shot-2020-03-11-at-2.40.47-pm.png)
 
 Each Challenge has the following set of participants:
 
@@ -66,7 +66,7 @@ As mentioned above, during the course of a given challenge, a Hotspot may hear a
 
 Witnesses bolster the strength of the Helium Network by attesting to the existence of challenge packets. It’s analogous to witnessing a car crash from the sidewalk. Though you weren’t involved directly, you can report what happened to the authorities when they need details. This is what a Witness does for challenges. When an active challenge packet arrives that they can’t decrypt, they record the SHA256 of the packet they saw, along with the time of arrival and signal strength, and report this back to the Challenger. The Challenger then includes this receipt, if valid, in the completed challenge proof. Witnesses don't know if the packet they're witnessing is valid or corrupt. Only the Challenger is able to make this determination.
 
-Though witnesses are not required for a successful proof, they are likely to be present. Currently there is a limit of five witnesses per challenge packet layer. A target in a proof can also serve as a witness for challenge packets transmitted by targets other than itself. You can see Witnesses in action using the [Network Visualizer](https://network.helium.com/challenges) or in the Challenges section of the Helium Mobile Wallet.
+Though witnesses are not required for a successful proof, they are likely to be present. Currently there is a limit of five witnesses per challenge packet layer. A target in a proof can also serve as a witness for challenge packets transmitted by targets other than itself. You can see Witnesses in action using the [Helium Explorer](https://explorer.helium.com) or in the Challenges section of the Helium Mobile Wallet.
 
 ### Verifying the Proof
 
@@ -98,12 +98,12 @@ Hotspots with higher scores are more likely to be chosen for a Consensus Group, 
 {% hint style="info" %}
 **What is my Hotspot's score?**
 
-Currently we do not display scores in the Helium Mobile Wallet App. However, you can view your Hotspot's score in the [Helium Blockchain Dashboard](http://dashboard.helium.com/d/SV1719FWz/hotspots?orgId=1). Scores are also returned by the [Helium Blockchain API](https://docs.api.helium.io).
+Currently we do not display scores in the Helium Mobile Wallet App. However, you can view your Hotspot's score in the [Helium Explorer](http://explorer.helium.com). Scores are also returned by the [Helium Blockchain API](https://developer.helium.com/blockchain/api/api-hotspots).
 {% endhint %}
 
 ### Challenge Failure Modes and Score Implications
 
-Challenges fail frequently. Take a few minutes to scroll through the [list of ongoing challenges](https://network.helium.com/challenges) in the Helium Network Visualizer and you’ll see a few examples of this. Here is a list of common PoC Challenge Failure Modes, their typical causes, and how this affects a participating Hotspot’s score. In any given challenge that does not complete, it’s likely you’ll see more than one of these failure modes appear.
+Challenges fail frequently. Here is a list of common PoC Challenge Failure Modes, their typical causes, and how this affects a participating Hotspot’s score. In any given challenge that does not complete, it’s likely you’ll see more than one of these failure modes appear.
 
 #### Initial Target Not Challenged
 
