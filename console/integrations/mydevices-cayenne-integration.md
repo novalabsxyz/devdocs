@@ -54,6 +54,14 @@ The only information you'll need once you've selected your device is to enter th
 
 ![](../../.gitbook/assets/consoleunderlinedeveui.png)
 
+### Downlinks
+
+Your device first needs to report an Actuator, either Digital or Analog one. You can check LPP doc here [https://developers.mydevices.com/cayenne/docs/lora/\#lora-cayenne-low-power-payload-overview](https://developers.mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload-overview)
+
+Once the device starts reporting DigitalActuator or AnalogActuator, you will automatically get a button or a slider on Cayenne UI. Using that new control will then trigger downlink commands.
+
+Please note that both Actuators types inherit from AnalogSensor DataType, eg. using 2 bytes integers with 0.01 precision. This means a Digital Actuator set to HIGH from the UI will trigger a Downlink with the value = 0x0064 = 100.
+
 ### Device Data Payload Format 
 
 When adding your device on Cayenne, you'll need to pay close attention to whether or not the device requires the Cayenne Low Power Payload \(CayenneLPP\). If your device is in the list of supported devices, it will specify whether or not it requires CayenneLPP directly above the name field when you've selected the device, and shown in the Cayenne dashboard image above.  If you do not see the line 'This device uses Cayenne LPP', then it is automatically supported by Cayenne. You can find the official documentation on CayenneLPP [here](https://developers.mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload), as well as a popular Arduino library [here](https://github.com/ElectronicCats/CayenneLPP). If you have a custom device or it is not in the list of supported devices, then select the  [STM32 B-L072Z-LRWAN1](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html) board as a placeholder, and be sure to use CayenneLPP formatting in your firmware. 
