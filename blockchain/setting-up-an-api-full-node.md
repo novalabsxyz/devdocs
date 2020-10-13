@@ -21,7 +21,7 @@ Both ETL and HTTP require Erlang 22.1 and a variety of dependencies. Let's insta
 $ wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
 $ sudo dpkg -i erlang-solutions_2.0_all.deb
 $ sudo apt-get update
-$ sudo apt-get install esl-erlang build-essential cmake libsodium-dev libssl-dev
+$ sudo apt-get install esl-erlang=1:22.3.4.1-1 build-essential cmake libsodium-dev libssl-dev
 ```
 
 ## Installing PostgreSQL
