@@ -173,7 +173,7 @@ The CubeCell may have issues joining the network with ADR OFF. If you're using A
 
 To patch the CubeCell firmware, find and open the `RegionUS915.c` file in the firmware directory. On macOS, an example path would be `~/Library/Arduino15/packages/CubeCell/hardware/CubeCell/1.0.0/cores/asr650x/loramac/mac/region/RegionUS915.c`.
 
-Find the following lines in the fila and comment them out:
+Find the following lines in the file and comment them out:
 
 ```text
 // Decrease the datarate
