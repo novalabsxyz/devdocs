@@ -82,17 +82,21 @@ Next, to install this board support package:
 ![](../../.gitbook/assets/cubecell-board-support-search.png)
 
 ### Manual updates to the Heltec runtime libraries
-
+#### Verify Data Rate
 Some versions of Heltec's runtime libraries have set a default configuration variable to a value that is incompatible with the Helium network, especially when the Heltec device is configured for the North American market. Before attempting to use the libraries it is best to verify the value of the variable.
 
 The location of the file of interest depends on the library installation directory of the IDE you are using, Arduino IDE vs Platformio IDE, as well as the host platform, Windows vs Linux vs Mac. With the Arduino IDE location, the library version number may also be different depending on when you download the package.
 
 For example on a Linux platform the files should be located at:
 
-Arduino IDE library version 1.0.0: `~/.arduino15/packages/CubeCell/hardware/CubeCell/1.0.0/libraries/LoRa/src/LoRaWan_APP.cpp`
-
-Platformio IDE:`~/.platformio/packages/framework-arduinoasrmicro650x/libraries/LoRa/src/LoRaWan_APP.cpp`
-
+Arduino IDE library version 1.0.0:
+```text
+~/.arduino15/packages/CubeCell/hardware/CubeCell/1.0.0/libraries/LoRa/src/LoRaWan_APP.cpp
+```
+Platformio IDE:
+```text
+~/.platformio/packages/framework-arduinoasrmicro650x/libraries/LoRa/src/LoRaWan_APP.cpp
+```
 In LoRaWan\_APP.cpp look for \#define LORAWAN\_DEFAULT\_DATARATE  
 Depending on the version of the Heltec runtime that is installed this default may be set to DR\_0, DR\_3, DR\_5 or some other value. Note: DR\_5 is not valid for US915, the North American market.
 
@@ -113,6 +117,32 @@ Update the LORAWAN\_DEFAULT\_DATARATE as appropriate for your application needs.
 
 The above values are valid for the US902-928MHz region\(North America\), the values may differ for other LoRa regions, which you can find [here](https://lora-alliance.org/resource-hub/rp2-101-lorawanr-regional-parameters).
 
+#### LoRaWAN preamble size
+There are some versions of the Heltec runtime libraries that may set a LoRaWAN preamble size that is incompatible with the current LoRaWan specification. If the preamble size is not set correctly your device cannot join the network.
+
+This should be verified in the following file corresponding to your target LoRaWan region. For region US915 this file is RegionUS915.c:
+
+For Arduino IDE library version 1.0.0 the file is located: 
+```text
+~/.arduino15/packages/CubeCell/hardware/CubeCell/1.0.0/cores/asr650x/loramac/mac/region/RegionUS915.c
+```
+Platformio IDE:  
+```text
+~/.platformio/packages/framework-arduinoasrmicro650x/cores/asr650x/loramac/mac/region/RegionUS915.c
+```
+In this file the line: ( your version could have 14 or 16 for the 7th parameter, it needs to be 8)
+
+Change:
+```
+Radio.SetTxConfig( MODsEM_LORA, phyTxPower, 0, bandwidth, phyDr, 1, 14, false, true, 0, 0, false, 3e3 );
+```
+To:
+```
+Radio.SetTxConfig( MODEM_LORA, phyTxPower, 0, bandwidth, phyDr, 1, 8, false, true, 0, 0, false, 3e3 );
+```
+
+Heltec support has been notified of these issues, hopefully a future release of those libs will resolve the issues.
+
 ### Install Serial Driver
 
 Find Directions on Heltec's website [here](https://heltec-automation-docs.readthedocs.io/en/latest/general/establish_serial_connection.html).
@@ -128,8 +158,17 @@ If you are using the HTCC-AB02S GPS enabled flavor of Heltec board 1. Select Too
 ### Select Region
 
 Arduino IDE:
+Until you are familiar with their configuration behavior it is recommended you set the board options as follows:
+1. Select Tools -&gt; LORAWAN_REGION: -&gt; REGION\_US915
+2. Select Tools -&gt; LORAWAN_CLASS:  -&gt; CLASS\_A
+3. Select Tools -&gt; LORAWAN_NETMODE:  -&gt; OTTA
+4. Select Tools -&gt; LORAWAN_ADR:   -&gt; OFF
+5. Select Tools -&gt; LORAWAN_UPLINKMODE:  -&gt; UNCONFIRMED
+6. Select Tools -&gt; LORAWAN_Net_Reservation: -&gt; OFF
+7. Select Tools -&gt; LORAWAN_AT_SUPPORT:  -&gt; OFF
+8. Select Tools -&gt; LORAWAN_AT_RGB :   -&gt; ACTIVE
+9. Select Tools -&gt; LoRaWan_ Debug Level :  -&gt; FREQ&&DIO      (for most verbose messages)
 
-1. Select Tools -&gt; LoRaWAN Region: -&gt; REGION\_US915
 
 ### Select **Uplink Mode**
 
