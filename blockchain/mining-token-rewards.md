@@ -152,7 +152,7 @@ Looking to get advice from 1000s of community members on how to optimize your HN
 
 In order to optimize your HNT earnings, there are a few things we recommend:
 
-* **Deploy Sensors** as 30% of all HNT goes to Hotspots that route actual sensor data. 
+* **Deploy Sensors** as over 30% of all HNT goes to Hotspots that route actual sensor data. 
 * **Ensuring you aren't the only Hotspot in your area** is the method most likely to increase your earnings. If you are in an area with three or more Hotspots you are likely to participate as a `PoC Challengee` and `Witness` more PoC challenges that are happening around you. These are the two highest `HNT` distributions for Proof of Coverage per epoch, so optimizing around them has a high impact.
 * **Opening internet network ports** helps in delivering `PoC Challengee` and `Witness` receipts to the `PoC Challenger`. These receipts are delivered via the internet through a peer-to-peer network, and can be affected by NAT, firewalls, and other networking issues. The most optimal configuration is adding the Hotspot to your network [DMZ ](https://en.wikipedia.org/wiki/DMZ_%28computing%29)which allows unfettered access to and from the internet, but not to your local network. Alternatively, manually opening port `44158` to the Hotspot will help, and enabling `uPNP` on your network router is a good fallback.
 
