@@ -167,6 +167,25 @@ If you are using the HTCC-AB02S board with a sketch that is GPS enabled but find
 Air530.setmode(MODE_GPS);
 ```
 
+### Patching ADR Functionality
+
+The CubeCell may have issues joining the network with ADR OFF. If you're using ADR ON, you may also encounter an issue where your CubeCell stops successfully sending packets after a few minutes. This is caused by the CubeCell firmware's ADR behavior, and may happen if your payload is above the DR0 maximum size (11 bytes).
+
+To patch the CubeCell firmware, find and open the `RegionUS915.c` file in the firmware directory. On macOS, an example path would be `~/Library/Arduino15/packages/CubeCell/hardware/CubeCell/1.0.0/cores/asr650x/loramac/mac/region/RegionUS915.c`.
+
+Find the following lines in the file and comment them out:
+
+```text
+// Decrease the datarate
+getPhy.Attribute = PHY_NEXT_LOWER_TX_DR;
+getPhy.Datarate = datarate;
+getPhy.UplinkDwellTime = adrNext->UplinkDwellTime;
+phyParam = RegionUS915GetPhyParam(&getPhy);
+datarate = phyParam.Value;
+```
+
+This will prevent the CubeCell from reducing the Data Rate over time and allow you to send larger packets on a repeated, prolonged basis.
+
 ### Viewing Serial Output <a id="viewing-serial-output"></a>
 
 When your firmware update completes, the board will reset, and begin by joining the network. Let's use the Serial Monitor in the Arduino IDE to view the output from the board. We first need to select the serial port again, but this time it will be a **different port** than the one we selected to communicate with the bootloader. Once again, navigate to \(**Tools &gt; Port: COM\#/ttyACM\#**\), but make sure the serial device, either COM\# or ttyACM\#, is different! Next navigate to \(**Tools &gt; Serial Monitor**\), you should begin to see output similar to below.
