@@ -10,7 +10,7 @@ This Console quickstart guide will cover how to:
 * Add a device to Helium Console and record device details 
 
 {% hint style="info" %}
-The cost per packet is $0.00001 USD \(24 byte packets\) which is equivalent to 1 Data Credit \(DC\). For more information please go [here](../longfi/data-credits).
+The cost per packet is $0.00001 USD \(24 byte packets\) which is equivalent to 1 Data Credit \(DC\). For more information please go [here](https://github.com/helium/devdocs/tree/861823eb00b0643fe6ca03067de7fe9409dce149/longfi/data-credits/README.md).
 {% endhint %}
 
 ## Create an account

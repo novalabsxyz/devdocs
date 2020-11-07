@@ -43,7 +43,10 @@
   * [Browan LoRaWAN Object Locator](devices/lorawan-devices/browan-lorawan-object-locator.md)
   * [Adeunis Field Test Device](devices/lorawan-devices/adeunis-field-test-device.md)
   * [Dragino LHT65](devices/lorawan-devices/dragino-lht65.md)
-* [Coverage Mapping](devices/coverage-mapping.md)
+* [Coverage Mapping](devices/coverage-mapping-1/README.md)
+  * [Mappers API](devices/coverage-mapping-1/mappers.md)
+  * [Mappers Data](devices/coverage-mapping-1/mappers-data.md)
+  * [Adeunis Mapper](devices/coverage-mapping-1/coverage-mapping.md)
 
 ## Developer Resources <a id="resources"></a>
 
