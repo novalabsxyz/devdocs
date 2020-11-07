@@ -44,9 +44,9 @@
   * [Adeunis Field Test Device](devices/lorawan-devices/adeunis-field-test-device.md)
   * [Dragino LHT65](devices/lorawan-devices/dragino-lht65.md)
 * [Coverage Mapping](devices/coverage-mapping/README.md)
-  * [Mappers API](devices/coverage-mapping/mappers.md)
+  * [Mappers API](devices/coverage-mapping/mappers-api.md)
   * [Mappers Data](devices/coverage-mapping/mappers-data.md)
-  * [Adeunis Mapper](devices/coverage-mapping/coverage-mapping.md)
+  * [Adeunis Mapper](devices/coverage-mapping/adeunis-mapper.md)
 
 ## Developer Resources <a id="resources"></a>
 
