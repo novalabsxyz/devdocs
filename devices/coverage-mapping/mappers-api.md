@@ -66,7 +66,7 @@ Required request parameters not found.
 {% endapi-method-response-example-description %}
 
 ```
-Invalid Field
+Invalid Fields
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
