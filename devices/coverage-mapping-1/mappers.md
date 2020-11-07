@@ -15,34 +15,36 @@ Ingest Uplink
 
 {% api-method-description %}
 Submit geo tagged device uplink.    
-Content-Type: application/json
+Content-Type: application/json  
+  
+One of the following fields is required `hdop`, `sats`, `accuracy`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
 {% api-method-parameter name="latitude" type="number" required=true %}
-
+Device Latitude Value
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="longitude" type="number" required=true %}
-
+Device Longitude Value
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="altitude" type="number" required=true %}
-
+Device Altitude Value
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="hdop" type="number" required=false %}
-
+Device HDOP Value
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="sats" type="number" required=false %}
-
+Device Visible Satellites Value
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="accuracy" type="number" required=false %}
-
+Device GPS Accuracy Value
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
