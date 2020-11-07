@@ -17,7 +17,7 @@ Ingest Uplink
 Submit geo tagged device uplink.    
 Content-Type: application/json  
   
-All required fields can be located at any level within the `decoded` JSON field.  
+All required fields can be located at any level within the `decoded`JSON field.  
   
 All of the following fields are required `latitude`, `longitude`, `altitude`.  
 One of the following fields is required `hdop`, `sats`, `accuracy`.
