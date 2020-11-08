@@ -19,8 +19,7 @@ Content-Type: application/json
   
 All required fields can be located at any level within the `decoded`JSON field.  
   
-All of the following fields are required `latitude`, `longitude`, `altitude`.  
-One of the following fields is required `hdop`, `sats`, `accuracy`.
+All of the following fields are required `latitude`, `longitude`, `altitude`, `accuracy`. The following fields are optional required `hdop`, `sats`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -38,8 +37,8 @@ Device Longitude Value
 Device Altitude Value
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="hdop" type="number" required=false %}
-Device HDOP Value
+{% api-method-parameter name="accuracy" type="number" required=true %}
+Device GPS Accuracy Value \(in meters\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="sats" type="number" required=false %}
@@ -47,7 +46,7 @@ Device Visible Satellites Value
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="accuracy" type="number" required=false %}
-Device GPS Accuracy Value
+Device HDOP Value
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
