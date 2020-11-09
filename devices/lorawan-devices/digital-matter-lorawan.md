@@ -12,7 +12,9 @@ The Digital Matter Oyster/Yabby are rugged IP67 rated battery powered GPS tracki
 
 Functionally, the Oyster and Yabby are both battery powered GPS tracking devices. Their main differences lie in form factor and battery life.  
 
-![Digital Matter LoRaWAN Oyster](https://lh6.googleusercontent.com/9Ohb0iT7Zh8DCkCPemB4nku25qFr-NZHefoxV9SozW0NOZdM6Uw8MJEq0TCJA_ykOfoh_sNXaN_rbHsFnYHgx22hGFrKB7m-Er257EX_G5JTGdryLWTSyUM-sd6na6KqxIrlklnf)
+![Digital Matter Oyster](../../.gitbook/assets/digital-matter-lorawan001.png)
+
+![Digital Matter Yabby](../../.gitbook/assets/digital-matter-lorawan002.png)
 
 ### **Hardware:** 
 
@@ -34,17 +36,13 @@ The _Oyster and Yabby take 3 cells of their respective battery types. \(AA and A
 
 The Oyster uses a FTDI TTL to USB Serial Converter cable. 
 
-![FTDI TTL to USB Serial Converter Cable](https://lh6.googleusercontent.com/pFcTpmPfFtDfK3MpFgc-WGnnY_Ic8SiinTJ48tUKlklA4t8x9KrNRdnldDKm4YZzftoJmGCieOE50_dLnSdX4vTG2YBxXp9vUd-aBkS7bwadVgSEX0IELYoHo7hd3ukRY_5WRo1l)
+![FTDI TTL to USB Cable](../../.gitbook/assets/digital-matter-lorawan003.png)
 
 This cable plugs into the four-pin connector below the battery compartment. 
 
-![Oyster Programming Connector](https://lh5.googleusercontent.com/PabZRcVKIVOr0vCauupXMWktTJFlaSEp-q7jwTDUxxO0_IgZFT-WQks9QP2VuEckYF2YmB-hURER93TIXRmom7X80p6_mxIfQK3Qxk2lSOITXQWgWYytDYY0YuwaBqgre6qu2lWk)
-
 The Yabby uses the same cable, but will need an additional adapter for the Pogo pins. 
 
-
-
-![Yabby Pogo Adapter Cable](https://lh3.googleusercontent.com/MgQsnIOIgjBAENjAGx2qfpBUT1-Zng4vyc8Wc1A2kCjQwIgaWMCSukIt9HdE646oQTzrF9kdhiJXFPhXH_evzJckBjsikCV5mQbOMEkCxxNd6wra_4WXrUUp-m_rlUyq45wQ-Xw2)
+![Yabby Programming Cable](../../.gitbook/assets/digital-matter-lorawan004.png)
 
 Once the devices have been provisioned and the batteries are populated, the enclosure can be sealed by using the included screws.   
 ****
@@ -77,18 +75,15 @@ When you plug in your cable, your PC will assign it a COM port, which you can re
 
 To access the device manager, press the Windows key on your keyboard and search for "Device Manager". 
 
-![Windows Device Manager](https://lh3.googleusercontent.com/GIWTBHyG9aEzXrJvUIlELvQ6cXakE9nHGE5NcwOhaUwVkzopT08WkQNuus8Zq18CYbyuSF5KlS8wKIq9Q9zhUbalK_7RPqLlZFqIRy7-R1vgFAipdmLr5TAMCQVZZ5xnUVKfBM7y)
-
 Select the corresponding port from the drop-down list in the top right of the utility and click _**Start**_.
 
 If the Program Firmware and Program Parameters boxes are left unchecked, the utility will  continuously read and display the current device settings without applying changes.
 
-![Current Device Settings and Transaction List ](https://lh4.googleusercontent.com/ZYQ_4wRVzFBzVi3WLSURmmYZ3eVq2o-gHALy_qK9-9ToswtdsdAp0ORmnBC4Otgx9Yca6e4HToFuYkMgb4YDNwXrtEtMyeAArw78yEY9xm_rIfzLlP6tb6uNI_Em-Y84HKljzKdT)
+![Oyster Configuration Utility](../../.gitbook/assets/digital-matter-lorawan006.png)
 
 You can check logs by clicking the DevEUI List button on the top left, which will show a list of scanned DevEUIs and transactions. Each time a device is programmed, the parameter list will flash, and the DevEUI list will update. This list is available in CSV format, so it can be conveniently imported into a spreadsheet.  
 
-To program the new parameters and firmware, enter the desired parameters in the right-hand column, and check the corresponding boxes to update _**firmware**_ and/or _**parameters**._  When you are finished, you may hit _**Stop**_, and disconnect your device.   
-
+To program the new parameters and firmware, enter the desired parameters in the right-hand column, and check the corresponding boxes to update _**firmware**_ and/or _**parameters**._  When you are finished, you may hit _**Stop**_, and disconnect your device. 
 
 Once the device has been configured, it will attempt to join the Helium Network by transmitting join requests. If the device has been configured properly in Console and has knowledge of the device’s AppEUI and AppKey, the Hotspot that hears the join request will send a join-accept message and allow the device to join the network and transmit data. 
 
@@ -120,7 +115,7 @@ When decoded becomes:
 }
 ```
 
-To learn more about decoding this payload, you may use this [utility](https://www.oemserver.com/tools/OysterLoRaWAN/UplinkDecoder.html). To view the Javascript sample code, you can view source. 
+To learn more about decoding this payload, you may use this [utility](https://www.oemserver.com/tools/OysterLoRaWAN/UplinkDecoder.html). To view the JavaScript sample code, you can view source. 
 
 To learn more about routing this payload to our demo visualization tool, visit [Cargo](../../console/integrations/cargo.md). 
 
