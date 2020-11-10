@@ -14,7 +14,7 @@ This guide will show you step by step how to contribute data to the Mappers proj
 
 ### 1. Create HTTP Integration
 
-To start, we'll create a new HTTP integration in Console. Navigate to the Integrations page using the left navigation and then select the HTTP integration.
+To start, we'll create a new HTTP integration in Console. Navigate to the Integrations page using the left navigation and then select the HTTP integration. 
 
 ![](../../.gitbook/assets/mappers-quickstart-create-http-integration.png)
 
