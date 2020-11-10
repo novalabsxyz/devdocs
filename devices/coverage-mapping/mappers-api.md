@@ -15,10 +15,11 @@ Ingest Uplink
 
 {% api-method-description %}
 Submit geo tagged device uplink.    
+  
 Content-Type: application/json  
+Requests are intended to be sent from an HTTP integration within Console. Metadata from the standard JSON message is used in addition to the required fields detailed below.   
   
-All required fields can be located at any level within the `decoded`JSON field.  
-  
+All required fields can be located at any level within the `decoded`JSON field.   
 All of the following fields are required `latitude`, `longitude`, `altitude`, `accuracy`.   
 The following fields are optional`hdop`, `sats`.
 {% endapi-method-description %}
