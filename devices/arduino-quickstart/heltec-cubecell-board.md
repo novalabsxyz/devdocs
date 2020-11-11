@@ -141,7 +141,7 @@ Platformio IDE:
 ~/.platformio/packages/framework-arduinoasrmicro650x/cores/asr650x/loramac/mac/region/RegionUS915.c
 ```
 
-In this file locate the line below, the 7th parameter which might be 14 should be changed to either 8 or 16. Either value will work. Later versions of the runtime may have this value set to 14 which should work just fine. 
+In this file locate the line below, the 7th parameter which might be 14 should be changed to either 8 or 16. Either value will work. Later versions of the runtime may have this value set to 14 which should work just fine.
 
 Change:
 

@@ -44,11 +44,11 @@ Device GPS Accuracy Value \(in meters\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="sats" type="number" required=false %}
-Device Visible Satellites Value
+Device Visible Satellites Value \(1-16\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="hdop" type="number" required=false %}
-Device HDOP Value
+Device HDOP Value \(1-10\)
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
