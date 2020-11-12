@@ -4,7 +4,7 @@
 
 Data Credits \(DCs\) are central to the Helium Blockchain and LongFi. Read about how they fit into [our Tokenomics here](../blockchain/tokens.md).
 
-Not only are DCs critical for asserting new Hotspots and their location on the blockchain, registering OUIs and devices, but they are also used to pay for every single LongFi packet that is sent on the Helium network.
+Not only are DCs critical for asserting new Hotspots and their location on the blockchain, registering OUIs and devices, but they are also used to pay for every single uplink LongFi packet that is sent on the Helium network including inital Joins. Downlinks, and ACKS do not require Data Credits.
 
 Every 24 bytes sent in an uplink or downlink packet cost `1 DC = $.00001`.
 
