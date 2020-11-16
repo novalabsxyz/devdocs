@@ -41,8 +41,6 @@ The Cargo payload defines the content and structure of the data payload that mus
 
 The `decoded` field is the preferred method for sending data to Cargo. This method requires the use of a [Function Decoder](../functions.md) on Console in order to decode the device payload before sending it to Cargo.  The accepted fields are listed below and can be located at any depth within the `decoded` field.
 
-#### Required Fields:
-
 | Required JSON Fields | Description |
 | :--- | :--- |
 | latitude | Latitude in Degrees |
