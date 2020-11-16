@@ -9,3 +9,4 @@ The Helium Hotspot is a combination [LongFi](../longfi/introduction.md) wireless
 ## Developer Hotspot
 
 The [Helium Developer Hotspot](developer-setup.md) is a Hotspot that can be built using off-the-shelf components that is capable of sending and receiving packets over the LongFi wireless network.
+

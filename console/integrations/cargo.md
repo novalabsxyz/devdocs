@@ -35,7 +35,37 @@ Headers: `{"Content-Type":"application/json"}`
 
 ## Cargo Payload
 
-The Cargo payload defines the content and structure of the data payload that must be sent to the cargo endpoint from a device or separate application.
+The Cargo payload defines the content and structure of the data payload that must be sent to the cargo endpoint from a device or separate application. Cargo currently accepts data from either the `decoded` or the`payload` field. Each field has different requirements described below.
+
+### Decoded Field
+
+The `decoded` field is the preferred method for sending data to Cargo. This method requires the use of a [Function Decoder](../functions.md) on Console in order to decode the device payload before sending it to Cargo.  The accepted fields are listed below and can be located at any depth within the `decoded` field.
+
+#### Required Fields:
+
+| Required JSON Fields | Description |
+| :--- | :--- |
+| latitude | Latitude in Degrees |
+| longitude | Longitude in Degrees |
+| altitude | Altitude in Meters |
+
+| Optional JSON Fields | Description |
+| :--- | :--- |
+| speed | Speed in mph |
+| battery | Battery Voltage |
+
+### Payload Field
+
+Cargo is also capable of decoding the `payload` field, but is only compatible with a few common tracking devices.
+
+#### Compatible Devices:
+
+* RAK 7200
+* Dragino LGT-92
+* Browan Object Locator
+* Digital Matter Oyster & Yabby
+
+You also have the option of encoding the required data on a development device before transmitting it as described below. 
 
 **Total Payload:**
 
