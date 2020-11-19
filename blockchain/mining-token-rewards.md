@@ -10,6 +10,12 @@ Hotspot Hosts and other Helium Network participants have many questions about ex
 
 While there's no exact formula for for calculating how much `HNT` you'll earn over a given period, there are some higher level concepts, design elements, and rules to keep in mind that will help better explain what you might earn and why. This section covers these, as well as some mining and token reward basics.
 
+{% hint style="info" %}
+**HIP 20 and Max Supply**
+
+The Helium Community [has approved HIP 20](https://github.com/helium/HIP/blob/master/0020-hnt-max-supply.md). This introduces Halvenings, Net Emissions, and a Max Supply of 223MM HNT. Read more [here](https://www.helium.com/hnt) and [here](https://dewialliance.medium.com/helium-community-approves-hip-20-127cf75303bf). 
+{% endhint %}
+
 ## How Do Hotspots Earn Helium Tokens?
 
 The Helium blockchain rewards Hotspots for providing wireless coverage and verifying the Helium Network. Hotspots are rewarded in Helium Token \(`HNT`\).
@@ -33,7 +39,7 @@ No. Once your Hotspot is completely deployed and fully synced with the Helium bl
 
 ## Target HNT Production Per Epoch
 
-The target production rate for new `HNT` minted per month is `5,000,000`. This means that, if the blockchain performs as designed, it will produce `5,000,000` HNT per month. This target rate is based on the following two targets, as defined in their specific chain variables:
+The current target production rate for new `HNT` minted per month is `5,000,000`. \(**This will drop to 2,500,000 month with the first scheduled halving on August 1, 2021**.\) This means that, if the blockchain performs as designed, it will produce `5,000,000` HNT per month. This target rate is based on the following two targets, as defined in their specific chain variables:
 
 * Target **block time** is `60` seconds.
 * Target **epoch size** is `30` blocks.
