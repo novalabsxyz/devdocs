@@ -11,11 +11,17 @@ The Helium blockchain makes use of two tokens in parallel as part of a design kn
 * [**The Helium Token**](tokens.md#the-helium-token) – used to reward Hotspot Operators and Helium Network Investors 
 * [**Data Credits**](tokens.md#data-credits) – derived from HNT in an on-chain burn transaction and used to pay transaction fees on the Helium Network
 
+{% hint style="info" %}
+**HIP 20 and Max HNT Supply**
+
+The Helium Community [has approved HIP 20](https://github.com/helium/HIP/blob/master/0020-hnt-max-supply.md). This introduces Halvenings, Net Emissions, and a Max Supply of 223MM HNT. Read more [here](https://www.helium.com/hnt) and [here](https://dewialliance.medium.com/helium-community-approves-hip-20-127cf75303bf).
+{% endhint %}
+
 ## The Helium Token
 
 The Helium Token is the native cryptocurrency and protocol token of the Helium blockchain. Its symbol is `HNT`.
 
-The first `HNT` was produced on July 29th, 2019 at 09:43PM UTC as part of the genesis block that was mined with the Helium Network launch. Prior to this date, there was no premine of `HNT`. The target mining rate is 5,000,000 HNT per month \(as defined in the `monthly_reward` chain variable. `5,000,000 HNT` are produced when the target blocktime and epoch times \(as defined in their respective chain variables\) are achieved over a one month period.
+The first `HNT` was produced on July 29th, 2019 at 09:43PM UTC as part of the genesis block that was mined with the Helium Network launch. Prior to this date, there was no premine of `HNT`.  Today, the target mining rate is `5,000,000 HNT` per month \(as defined in the `monthly_reward` chain variable. `5,000,000 HNT` are produced when the target blocktime and epoch times \(as defined in their respective chain variables\) are achieved over a one month period. This rate will drop to `2,500,000 HNT` per month at the first halvening, scheduled for August 1, 2021.
 
 {% hint style="info" %}
 **What's Smaller Than One HNT?**
