@@ -11,7 +11,7 @@ Hotspot Hosts and other Helium Network participants have many questions about ex
 While there's no exact formula for for calculating how much `HNT` you'll earn over a given period, there are some higher level concepts, design elements, and rules to keep in mind that will help better explain what you might earn and why. This section covers these, as well as some mining and token reward basics.
 
 {% hint style="info" %}
-**HIP 20 and Max Supply**
+**HIP 20 and Max HNT Supply**
 
 The Helium Community [has approved HIP 20](https://github.com/helium/HIP/blob/master/0020-hnt-max-supply.md). This introduces Halvenings, Net Emissions, and a Max Supply of 223MM HNT. Read more [here](https://www.helium.com/hnt) and [here](https://dewialliance.medium.com/helium-community-approves-hip-20-127cf75303bf). 
 {% endhint %}
