@@ -101,7 +101,7 @@ Get Token Supply
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returnst the cicrulating token supply in either json or raw form. 
+Returns the circulating token supply in either JSON or raw form. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
