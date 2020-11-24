@@ -39,13 +39,10 @@ All Hotspots on the Helium Network are eligible to be elected to a consensus gro
 
 #### Consensus Group Member Deselection
 
-In addition to the **Active** and **Location** filters, each election uses a phased approach to migrating out only a subset of the existing Consensus Group Members over a series of epochs. Specifically, each new Consensus Groups retains `12` of previous `16` members. This is done to make additional use of the CG members that have already been elected and have proven their ability to mine blocks and distribute `HNT`. Put another way:
+In addition to the **Active** and **Unique Location** filters, each election uses a phased approach to migrating out only a subset of the existing Consensus Group Members over a series of epochs. Specifically, each new Consensus Groups retains `12` of previous `16` members. This is done to make additional use of the CG members that have already been elected and have proven their ability to mine blocks and distribute `HNT`. Put another way:
 
 * Each election, typically four new Consensus Group members are elected. The other 12 are from the previous CG election. 
-* Once elected, a Hotspot can typically be part of up to four consecutive Consensus Groups.  
-* Poorly performing CG members are likely to be deselected before their four epoch limit is reached. 
-* Once a Hotspot is deselected from a Consensus Group, it's not eligible to be elected to another group until the other 15 members that were in its group are completely cycled out. This would be four elections into the future.
-
+* Poorly performing CG members are more likely to be part of the replaced than other CG members. 
 
 
 ## The Mining Process
