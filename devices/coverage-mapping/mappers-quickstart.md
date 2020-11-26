@@ -54,5 +54,5 @@ You are now ready to power on your device and verify that data is being sent cor
 
 ![](../../.gitbook/assets/mappers-quickstart-device-event.png)
 
-That's all! You can now expect to see your data show up on [mappers.helium.com](https://mappers.helium.com) in eight hours or less. The map data is updated every eight hours starting at 01:30 UTC.
+That's all! You can now expect to see your data show up on [mappers.helium.com](https://mappers.helium.com) in eight hours or less. The map data is updated every six hours starting at 04:20 UTC.
 

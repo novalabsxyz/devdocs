@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Mappers API is a set of HTTP requests used for submitting data to the Mappers project. Data submitted is viewable on [mappers.helium.com](https://mappers.helium.com) and updated every eight hours starting at 01:30 UTC.
+The Mappers API is a set of HTTP requests used for submitting data to the Mappers project. Data submitted is viewable on [mappers.helium.com](https://mappers.helium.com) and updated every six hours starting at 04:20 UTC.
 
 ## Authentication
 
