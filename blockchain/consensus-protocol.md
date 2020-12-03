@@ -30,23 +30,18 @@ HBBFT relies on a scheme known as threshold encryption. Using this scheme, trans
 
 ## The Consensus Group Election
 
-A new Consensus Group \(CG\) is elected once per epoch based a combination of factors. Currently there are `16` members elected to each consensus group, as defined in the `num_consensus_members` chain variable. \(The intention is to increase this number as the number of Hotspots on the network increases.\)
+A new Consensus Group \(CG\) is elected once per epoch. Currently there are `16` members elected to each consensus group, as defined in the `num_consensus_members` chain variable. As of [HIP 16](https://github.com/helium/HIP/blob/master/0016-random-consensus-group-election.md), all Hotspots active on the Helium Network are eligible to be elected to a consensus group and are selected at random. 
 
-All Hotspots active on the Helium Network are eligible to be elected to a consensus group. The two primary factors used as inputs to any given election are:
-
-* **Score** - Every Hotspot on the Network has a [score](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/blockchain/proof-of-coverage/README.md#hotspot-scoring), ranging from `0.0` - `1.0`, that is constantly changing to reflect the network’s confidence in its asserted location. _Hotspots with higher scores `.15` and higher are eligible for CG election._ 
-* **Geography** - The Helium blockchain uses a system called [H3 for all aspects of geospatial representation within the network](https://blog.helium.com/mapping-the-world-with-hexagons-49f57d8b3df5). **H3** lets you index a space into hexagons of varying resolutions, ranging from `H0` to `H15`,with each level representing a different hexagon size. \([The full breakdown is here](https://github.com/uber/h3/blob/master/docs/core-library/restable.md).\) Currently, we use the `H4` resolution as the filter for eligible Hotspots for a CG. Put another way, in an ideal election, no two Hotspots within the same `H4` resolution - _roughly 658.5 square miles_ - should end up in the same CG. 
+In addition to random selection, a geographic filter is applied to ensure there is adequate location diversity.  The Helium blockchain uses a system called [H3 for all aspects of geospatial representation within the network](https://blog.helium.com/mapping-the-world-with-hexagons-49f57d8b3df5). **H3** lets you index a space into hexagons of varying resolutions, ranging from `H0` to `H15`,with each level representing a different hexagon size. \([The full breakdown is here](https://github.com/uber/h3/blob/master/docs/core-library/restable.md).\) Currently, we use the `H4` resolution as the filter for eligible Hotspots for a CG. Put another way, in an ideal election, no two Hotspots within the same `H4` resolution - _roughly 658.5 square miles_ - should end up in the same CG. 
 
 #### Consensus Group Member Deselection
 
-In addition to the **Score** and **Geographic** filters, each election uses a phased approach to migrating out only a subset of the existing  Consensus Group Members out over a series of epochs. Specifically, each new Consensus Groups retains `12` of previous `16` members. This is done to make additional use of the CG members that have already been elected and have proven their ability to mine blocks and distribute `HNT`. Put another way:
+Each election uses a phased approach to migrating out only a subset of the existing  Consensus Group Members out over a series of epochs. Specifically, each new Consensus Groups retains `12` of previous `16` members. This is done to make additional use of the CG members that have already been elected and have proven their ability to mine blocks and distribute `HNT`. Put another way:
 
 * Each election, typically four new Consensus Group members are elected. The other 12 are from the previous CG election. 
 * Once elected, a Hotspot can typically be part of up to four consecutive Consensus Groups.  
 * Poorly performing CG members are likely to be deselected before their four epoch limit is reached. 
 * Once a Hotspot is deselected from a Consensus Group, it's not eligible to be elected to another group until the other 15 members that were in its group are completely cycled out. This would be four elections into the future.
-
-
 
 ## The Mining Process
 
@@ -63,7 +58,7 @@ During the course of any epoch, Hotspots are rewarded for the following list of 
 * Submitting valid proof of coverage challenges \(as a “challenger”\)
 * Successful participation in proof of coverage as a target \(as a “challengee”\) 
 * Witnessing a proof of coverage challenge
-* Transfering device data over the network 
+* Transferring device data over the network 
 * Serving as consensus group member
 
 The Consensus Group members also split `6%` of all HNT mined, as well as any transaction fees collected during the epoch.
