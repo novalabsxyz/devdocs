@@ -75,55 +75,6 @@ Once the Challenger has the complete set of receipts from the proof targets, or 
 {% hint style="info" %}
 **Challenge Rewards Require Receipts**
 
-In order for a Challenger to be rewarded for their proof, the receipt of that proof must be successully received by the blockchain.
+In order for a Challenger to be rewarded for their proof, the receipt of that proof must be successfully received by the blockchain.
 {% endhint %}
-
-### Hotspot Scoring
-
-A Hotspot’s score is a measure of the Network’s confidence in the asserted location of that Hotspot. The Helium Network is continually questioning the true position of Hotspots using PoC Challenges. Most importantly, activities that produce higher scores correlate with more token rewards for a given Hotspot.
-
-Hotspots are scored from `0.0` to `1.0` \(displayed as `0` to `100` in various places like the Dashboard\), with `0.0` being the lowest and `1.0` being the highest possible score. Each new hotspot starts with a neutral score of `0.25` when it is added to the blockchain.
-
-Once deployed, Hotspots are eligible for being challenged based on their score. How they perform in these challenges will affect their score dramatically.
-
-* Successfully verifying location via passing a challenge causes a score to increase. 
-* Conversely, failing to verify location results in a lower score.
-
-Additionally, to keep scores fair, there is a constant "gravity" effect which continuously pulls the Hotspots towards the neutral score of `0.25`. Doing so, we avoid Hotspots forever remaining on the top or on the bottom of the `0 - 1.0` score scale.
-
-* If a Hotspot has a stable internet connection but is never challenged - which is possible if it has no geographic peers - its score will remain at the neutral `0.25` level 
-
-Hotspots with higher scores are more likely to be chosen for a Consensus Group, thus making them eligible to earn mining rewards for that epoch. Members of the Consensus Group split `6%` of all the tokens created each epoch for tasks such as validating transactions and publishing new blocks to the blockchain. So it pays to be at the top, but the network does what it can to make it, well, challenging.
-
-{% hint style="info" %}
-**What is my Hotspot's score?**
-
-Currently we do not display scores in the Helium Mobile Wallet App. However, you can view your Hotspot's score in the [Helium Explorer](http://explorer.helium.com). Scores are also returned by the [Helium Blockchain API](https://developer.helium.com/blockchain/api/api-hotspots).
-{% endhint %}
-
-### Challenge Failure Modes and Score Implications
-
-Challenges fail frequently. Here is a list of common PoC Challenge Failure Modes, their typical causes, and how this affects a participating Hotspot’s score. In any given challenge that does not complete, it’s likely you’ll see more than one of these failure modes appear.
-
-#### Initial Target Not Challenged
-
-![](../.gitbook/assets/1.png)
-
-In this scenario, the Challenger submitted a valid PoC challenge to the blockchain which was then sent to the initial target and subsequently received by this targt via its Internet connection \(often referred to "P2P"\). From there, the target is responsible for decrypting the challenge packet, sending a receipt back to the Challenger, and broadcasting the challenge packet with one less layer of encryption to other Hotspots in range via its RF link.
-
-Proof-of-Coverage is all about proving the location of Hotspot using its wireless capabilities. And since the initial target receives the challenge packet via its Internet connection, simply decrypting it and responding over this link doesn't provide any meaningful data about the Helium coverage that Hotspot might be providing. So, in order for the initial challenge target to successfully pass a challenge, the blockchain must have verifiable proof that it was successful in broadcasting the challenge packet over RF. This proof comes in the form of witnesses and/or the next Hotspot in the challenge path successfully responding with a receipt.
-
-However, when the Helium blockchain does not have definitive proof the challenge packet was transmitted, we categorize it as "Initial Target Not Challenged." **In this failure mode, no Hotspots are penalized**.
-
-#### Failed Challenge
-
-![](../.gitbook/assets/2.png)
-
-Here, a Hotspot is believed to have received the multilayer challenge packet over RF from the previous Hotspot in the challenge path, but has failed to complete the packet decryption and response. **In this failure mode, only the Hotspot that fails the challenge will see their score decrease**.
-
-#### Not Challenged
-
-![](../.gitbook/assets/3.png)
-
-When this happens, a Hotspot that’s a predetermined participant in a PoC challenge was never given the opportunity to complete it because either a\) the Initial Target was never challenged or b\) a Hotspot earlier in the path formally failed its portion of the challenge. **In this scenario, any Hotspot that was “Not Challenged” will not see their score decreased.**
 
