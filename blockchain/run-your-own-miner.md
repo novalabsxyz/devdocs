@@ -63,6 +63,18 @@ For AWS, for example, you will want to configure the "Security Group" of your EC
 
 Miner releases are available as amd64 and arm64 images on at [quay.io](https://quay.io/repository/team-helium/miner?tab=tags). We do not currently provide 32-bit support.
 
+**Note**: on amd64 systems, AVX support is required. Verify that it exists on your host system:
+
+```text
+grep avx /proc/cpuinfo
+```
+
+```text
+grep avx2 /proc/cpuinfo
+```
+
+If nothing is returned from these commands, you're host system does not have AVX support and your Miner may not be stable.
+
 ### Start Container
 
 Before running the container for the first time, it is advisable to pick a 'system mount point\`, ie: a directory in your host system; some long-term miner data is stored there. This allows you to easily maintain your miner's blockchain identity \(ie: swarm keys\) and blockchain state through miner image updates.
