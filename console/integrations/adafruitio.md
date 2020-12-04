@@ -4,6 +4,8 @@ description: 'The easiest way to stream, log, and interact with your data.'
 
 # AdafruitIO
 
+![](../../.gitbook/assets/adafruitio-logo.png)
+
 [AdafruitIO ](https://io.adafruit.com/)is a powerful but simple to use Internet of Things platform from Adafruit.  It makes data from devices useful by allowing you to display, respond, and interact with it. You can sign up for a free account at [https://io.adafruit.com](https://io.adafruit.com/).
 
 To add the integration in Console, go to **Integrations** on the left-hand menu. Select the integration to add - in this case, the **Adafruit IO** integration as shown below.
