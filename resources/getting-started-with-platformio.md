@@ -14,7 +14,7 @@ description: Helium development using PlatformIO within Visual Studio Code
 
 If you are used to developing using the Arduino IDE but constantly feel constrained by the environment, you are going to love what [PlatformIO ](https://platformio.org/)opens up for you.
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/image%20%285%29%20%281%29.png)
 
 
 
@@ -116,7 +116,7 @@ What happened here? Well, we have this board set up to use a `SEGGER JTAG` inter
 
 Luckily, `SEGGER` has provided a method to \(non-destructively\) replace the ST-Link on our board with a JTAG interface.
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%288%29%20%281%29.png)
 
 [Head here](https://www.segger.com/products/debug-probes/j-link/models/other-j-links/st-link-on-board/) to walk through the simple process. 
 

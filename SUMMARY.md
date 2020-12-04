@@ -18,6 +18,7 @@
   * [Cargo](console/integrations/cargo.md)
   * [AWS IoT Core](console/integrations/awsiotcore.md)
   * [myDevices Cayenne](console/integrations/mydevices-cayenne-integration.md)
+  * [AdafruitIO](console/integrations/adafruitio.md)
 * [Labels](console/labels.md)
 * [Functions](console/functions.md)
 * [Debug](console/debug.md)

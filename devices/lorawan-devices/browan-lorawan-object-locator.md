@@ -26,7 +26,7 @@ The Browan Object Locator is shipped with device credentials \(DevEUI, AppEUI an
 
 If you look at the back of the Object Locator, you will notice a QR Code, along with a serial number. Match that serial number with the value that the manufacturer has provided to determine the appropriate credentials.
 
-![Browan Object Locator Serial Number](../../.gitbook/assets/image%20%2865%29.png)
+![Browan Object Locator Serial Number](../../.gitbook/assets/image%20%2839%29%20%282%29.png)
 
 Once you have the device credentials, you can simply [add a device](../../console/adding-devices.md) in [Console](../../console/introduction.md) with these device credentials.
 

@@ -24,7 +24,7 @@ Under the Services menu in the upper-left, go to **Security, Identity, & Complia
 
 We are now going to create a new **User:**
 
-![](../../.gitbook/assets/image%20%2863%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%2863%29%20%281%29%20%281%29.png)
 
 Set the user name to "**HeliumIntegrationAccess**" and select only "**Programmatic access**"
 
@@ -143,11 +143,11 @@ Here you are able to monitor the connections to AWS:
 
 When data comes in from the Helium Network Integration, Things will be automatically created within AWS IoT Core:
 
-![](../../.gitbook/assets/image%20%2833%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%2824%29%20%282%29.png)
 
 Going to **Interact** on the left while on a **Thing** takes us to a list of topics for interacting with the **Thing Shadows**:
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](../../.gitbook/assets/image%20%2818%29%20%282%29.png)
 
 ![](../../.gitbook/assets/image%20%2820%29.png)
 
