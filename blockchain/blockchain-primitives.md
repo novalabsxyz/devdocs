@@ -27,7 +27,7 @@ The Helium blockchain currently has 20 native transaction types. Some appear in 
 All transactions occur on-chain, and all transactions require Data Credits to be submitted and confirmed. Here’s the current list of supported transaction \(in no particular order\):
 
 * **add gateway** - Add a new gateway to the Helium Network. For the purposes of transactions, a “gateway” is the term for a Helium-compliant Hotspot that is mining and providing coverage. 
-* **assert location** - Assert a gateway’s location on the Helium Network. This happens after a gateway has been added via the add gateway transaction. Once asserted, this location is then used as part of Proof of Coverage challenges. A Hotspot’s location can be asserted more than once but each subsequent assertion will a\) cost a fee and b\) reset that Hotspot’s score to neutral \(.25\)  
+* **assert location** - Assert a gateway’s location on the Helium Network. This happens after a gateway has been added via the add gateway transaction. Once asserted, this location is then used as part of Proof of Coverage challenges. A Hotspot’s location can be asserted more than once but each subsequent assertion will cost a fee .
 * **coinbase** - Similar to the bitcoin blockchain’s coinbase transaction but used only during testnet phases of the Helium blockchain. The rewards transaction has taken its place.
 * **consensus group** - Marks the election of a new consensus group, responsible for mining during the next epoch.
 * **create hashed timelock** - Creates a transaction that can only be redeemed by providing the correct pre-image to the hashlock within the specified timelock. 
