@@ -188,7 +188,7 @@ Hotspot Activity
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Lists all blockchain transactions that the given hotspot was involved in.This route is paged using a `cursor`.
+Lists all blockchain transactions that the given hotspot was involved in. This route is paged using a `cursor`.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -202,6 +202,13 @@ B58 address of the hotspot
 {% api-method-query-parameters %}
 {% api-method-parameter name="cursor" type="string" required=false %}
 Cursor for page of results to fetch
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="filter_types" type="string" required=false %}
+Show only specified transction types. Multiple types can be included in a comma-delimited list, e.g. `poc_receipts_v1,poc_requests_v1`
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
