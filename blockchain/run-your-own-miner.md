@@ -57,7 +57,7 @@ Before launching the Miner, you will want to configure ports on your network to 
 
 For AWS, for example, you will want to configure the "Security Group" of your EC2 as so:
 
-![](../.gitbook/assets/security-group%20%281%29.png)
+![](../.gitbook/assets/security-group.png)
 
 ## Run a Docker Container
 

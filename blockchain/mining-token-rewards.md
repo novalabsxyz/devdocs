@@ -13,7 +13,7 @@ While there's no exact formula for calculating how much `HNT` you'll earn over a
 {% hint style="info" %}
 **HIP 20 and Max HNT Supply**
 
-The Helium Community [has approved HIP 20](https://github.com/helium/HIP/blob/master/0020-hnt-max-supply.md). This introduces Halvenings, Net Emissions, and a Max Supply of 223MM HNT. Read more [here](https://www.helium.com/hnt) and [here](https://dewialliance.medium.com/helium-community-approves-hip-20-127cf75303bf). 
+The Helium Community [has approved HIP 20](https://github.com/helium/HIP/blob/master/0020-hnt-max-supply.md). This introduces Halvenings, Net Emissions, and a Max Supply of 223MM HNT. Read more [here](https://www.helium.com/hnt) and [here](https://dewialliance.medium.com/helium-community-approves-hip-20-127cf75303bf).
 {% endhint %}
 
 ## How Do Hotspots Earn Helium Tokens?
@@ -78,9 +78,9 @@ Below are the mining rewards per epoch. For every complete epoch \(marked by the
 
 In the above table you can see the maximum allotted rewards per reward type in accordance with HIP 10 \(described below\).
 
-If you want to see the current reward type percentage, you can always query the [Chain Variables API](https://developer.helium.com/blockchain/api/chain-variables). 
+If you want to see the current reward type percentage, you can always query the [Chain Variables API](https://developer.helium.com/blockchain/api/chain-variables).
 
-The next maximum allotted rewards change is currently scheduled for **August 1, 2021.** 
+The next maximum allotted rewards change is currently scheduled for **August 1, 2021.**
 {% endhint %}
 
 ### HIP10 and Variable HNT Rewards for Network Data Transfer
@@ -107,7 +107,7 @@ Here are a few examples to illustrate how this works in practice:"
 
   In this scenario, total HNT value of DC transferred in this epoch is `2500HNT`. This calculation is:`(500,000,000 DC * $0.00001 / $2 HNT Oracle Price)`
 
-* Because the Network DC burn exceeded the `1113.0145HNT`   available to the Network Data Transfer reward,  all Hotspots who did the work over this epoch with split the full `1113.0145HNT` proportionally. 
+* Because the Network DC burn exceeded the `1113.0145HNT` available to the Network Data Transfer reward, all Hotspots who did the work over this epoch with split the full `1113.0145HNT` proportionally.
 
 ### **Additional Notes on Reward Types and Payouts**
 

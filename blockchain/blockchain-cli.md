@@ -9,7 +9,7 @@ description: Full usage details on the Helium Wallet CLI
 The Helium blockchain CLI is an open-source Rust application that allows the user to create secure address key pairs and interact with the blockchain via the command line. This guide will walk you through how to create various types of wallets, and perform some of the different blockchain specific functions.
 
 {% hint style="info" %}
-The Wallet CLI source code [is available on GitHub](https://github.com/helium/helium-wallet-rs). This documentation is current as of **v1.3.4.**
+The Wallet CLI source code [is available on GitHub](https://github.com/helium/helium-wallet-rs). This documentation is current as of **v1.3.9.**
 {% endhint %}
 
 {% hint style="info" %}
@@ -56,7 +56,8 @@ As of version 1.3.4, the following subcommands are available in the CLI.
 * [burn](blockchain-cli.md#burn) - burn HNT to data credits to a target wallet address
 * [create](blockchain-cli.md#create) - create a new wallet
 * [help](blockchain-cli.md#help) - prints the help contents for a given subcommands
-* [hotspots](blockchain-cli.md#hotspots) - get the Hotspots for a wallet
+* [hotspots list](blockchain-cli.md#hotspots) - get the Hotspots for a wallet
+* [hotspots transfer](blockchain-cli.md#hotspots-transfer) - buy or sell a hotspot for HNT, transferring ownership to another address
 * [htlc](blockchain-cli.md#htlc) - create or redeem from an HTLC address
 * [info](blockchain-cli.md#info) - get wallet information
 * [onboard](blockchain-cli.md#onboard) - onboard a hotspot using a location assertion transaction
@@ -200,13 +201,43 @@ Prints relevant help info for target subcommand**.**
 
 `helium-wallet [OPTIONS] <SUBCOMMAND>`
 
-### hotspots
+### hotspots list
 
 Returns all the Hotspots owned by the local wallet or another specified wallet address.
 
 **USAGE**
 
 `helium-wallet hotspots [OPTIONS]`
+
+**OPTIONS**
+
+`-a, --address <addresses>`  - blockchain wallet address to get Hotspots or gateways for
+
+```bash
+./target/release/helium-wallet hotspots
++-----------------------------------------------------+-------------------+
+| Address                                             | Name              |
++-----------------------------------------------------+-------------------+
+| 13QvnWtjpi3HYoBPpcEmqansMyCbJSkRpSthXAJFTaxwUraKKaP | No hotspots found |
++-----------------------------------------------------+-------------------+
+```
+
+### hotspots transfer
+
+Buy or sell a hotspot for HNT, transferring ownership to another address
+
+{% hint style="info" %}
+At this point, transferring hotspot from a mobile wallet to a CLI-managed wallet cannot happen directly. You must import the mobile wallet into the CLI to be either the buyer or the seller.
+{% endhint %}
+
+**USAGE**
+
+`helium-wallet hotspots transfer [SUBCOMMAND]`
+
+**SUBCOMMANDS**
+
+* `sell <gateway> <buyer> [price]` - creates the transfer transaction and signs it, outputting the transaction in base64 encoding. Transfer hotspot on the CLI always starts here. 
+* `buy <base64_encoded_transaction>`  - imports the base64 encoded output buy the Seller. It is advised to do this without the `--commit` flag initially so t hat the Buyer may review the transaction. Run the command again with the `--commit` flag to sign and submit the transction.
 
 **OPTIONS**
 
