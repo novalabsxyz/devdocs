@@ -239,19 +239,6 @@ At this point, transferring hotspots from a mobile wallet to a CLI-managed walle
 * `sell <gateway> <buyer> [price]` - creates the transfer transaction and signs it, outputting the signed transaction in base64 encoding. Transfer hotspot on the CLI always starts here.  The gateway address and buyer address are required first and second parameters. Optionally, an amount of HNT as a price \(amount to be paid to seller by buyer\) may be provided; otherwise, it will default to 0. 
 * `buy <base64_encoded_transaction>`  - imports the base64 encoded output buy the Seller. It is advised to do this without the `--commit` flag initially so t hat the Buyer may review the transaction. Run the command again with the `--commit` flag to sign and submit the transction.
 
-**OPTIONS**
-
-`-a, --address <addresses>`  - blockchain wallet address to get Hotspots or gateways for
-
-```bash
-./target/release/helium-wallet hotspots
-+-----------------------------------------------------+-------------------+
-| Address                                             | Name              |
-+-----------------------------------------------------+-------------------+
-| 13QvnWtjpi3HYoBPpcEmqansMyCbJSkRpSthXAJFTaxwUraKKaP | No hotspots found |
-+-----------------------------------------------------+-------------------+
-```
-
 ### htlc
 
 Create or Redeem from an HTLC address.
