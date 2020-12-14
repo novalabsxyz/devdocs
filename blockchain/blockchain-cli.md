@@ -224,10 +224,10 @@ Returns all the Hotspots owned by the local wallet or another specified wallet a
 
 ### hotspots transfer
 
-Buy or sell a hotspot for HNT, transferring ownership to another address
+Buy or sell a Hotspot for HNT, transferring ownership to another address
 
 {% hint style="info" %}
-At this point, transferring hotspot from a mobile wallet to a CLI-managed wallet cannot happen directly. You must import the mobile wallet into the CLI to be either the buyer or the seller.
+At this point, transferring hotspots from a mobile wallet to a CLI-managed wallet cannot happen directly. You must import the mobile wallet into the CLI to be either the buyer or the seller.
 {% endhint %}
 
 **USAGE**
@@ -236,7 +236,7 @@ At this point, transferring hotspot from a mobile wallet to a CLI-managed wallet
 
 **SUBCOMMANDS**
 
-* `sell <gateway> <buyer> [price]` - creates the transfer transaction and signs it, outputting the transaction in base64 encoding. Transfer hotspot on the CLI always starts here. 
+* `sell <gateway> <buyer> [price]` - creates the transfer transaction and signs it, outputting the signed transaction in base64 encoding. Transfer hotspot on the CLI always starts here.  The gateway address and buyer address are required first and second parameters. Optionally, an amount of HNT as a price \(amount to be paid to seller by buyer\) may be provided; otherwise, it will default to 0. 
 * `buy <base64_encoded_transaction>`  - imports the base64 encoded output buy the Seller. It is advised to do this without the `--commit` flag initially so t hat the Buyer may review the transaction. Run the command again with the `--commit` flag to sign and submit the transction.
 
 **OPTIONS**
