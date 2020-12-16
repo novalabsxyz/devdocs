@@ -62,7 +62,7 @@ Witnesses are  required for a successful proof. Currently there is a limit of fi
 
 ### Reward Scaling
 
-For every epoch, each [reward type](mining-token-rewards.md) is split amongst Hotspots who had a role in that reward pool. In other words, if your Hotspot was challenged during an epoch, it will be eligible to a portion of the `5.31%` of rewards that go to `PoC Challengees`. A practical way of thinking about this is that a Hotspot might earn a "reward unit" for succeeding at a challenge. If five other Hotspots succeeded at a challenge during the epoch and each of them also earned a "reward unit", then each Hotspot gets 1/5th of the 5.31% of rewards, ie: `181.849446/5.0 = 36.3698892 HNT`.
+For every epoch, each [reward type](mining-token-rewards.md) is split amongst Hotspots who had a role in that reward pool. For example, if your Hotspot was challenged during an epoch, it will be eligible to a portion of the `5.31%` of rewards that go to `PoC Challengees`. A practical way of thinking about this is that a Hotspot might earn a "reward unit" for succeeding at a challenge. If five other Hotspots succeeded at a challenge during the epoch and each of them also earned a "reward unit", then each Hotspot gets 1/5th of the 5.31% of rewards, ie: `181.849446/5.0 = 36.3698892 HNT`.
 
 However, [HIP15](https://github.com/helium/HIP/blob/master/0015-beaconing-rewards.md) and [HIP17](https://github.com/helium/HIP/blob/master/0017-hex-density-based-transmit-reward-scaling.md) each introduced a notion of scaling these "reward units", so the units earned when being witnessed or witnessing a packet scale depending on two things:
 
