@@ -17,6 +17,12 @@ The Helium blockchain makes use of two tokens in parallel as part of a design kn
 The Helium Community [has approved HIP 20](https://github.com/helium/HIP/blob/master/0020-hnt-max-supply.md). This introduces Halvenings, Net Emissions, and a Max Supply of 223MM HNT. Read more [here](https://www.helium.com/hnt) and [here](https://dewialliance.medium.com/helium-community-approves-hip-20-127cf75303bf).
 {% endhint %}
 
+{% hint style="info" %}
+**HIP 15/17 and change to Beacon-only PoC, hex density-based reward scaling**
+
+The Helium Community [has approved HIP 15](https://github.com/helium/HIP/blob/master/0015-beaconing-rewards.md) and [HIP 17](https://github.com/helium/HIP/blob/master/0017-hex-density-based-transmit-reward-scaling.md). This changes proof-of-coverage \(PoC\) from multihop to beaconing, and rewards based on hex-density.
+{% endhint %}
+
 ## The Helium Token
 
 The Helium Token is the native cryptocurrency and protocol token of the Helium blockchain. Its symbol is `HNT`.
