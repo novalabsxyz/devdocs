@@ -18,7 +18,7 @@ The Helium Community [has approved HIP 20](https://github.com/helium/HIP/blob/ma
 
 **HIP 15/17 and change to Beacon-only PoC, hex density-based reward scaling**
 
-The Helium Community [has approved HIP 15](https://github.com/helium/HIP/blob/master/0015-beaconing-rewards.md) and [HIP 17](https://github.com/helium/HIP/blob/master/0017-hex-density-based-transmit-reward-scaling.md). This changes proof-of-coverage (PoC) from multihop to beaconing, and rewards based on hex-denstiy.
+The Helium Community [has approved HIP 15](https://github.com/helium/HIP/blob/master/0015-beaconing-rewards.md) and [HIP 17](https://github.com/helium/HIP/blob/master/0017-hex-density-based-transmit-reward-scaling.md). This changes proof-of-coverage (PoC) from multihop to beaconing, and rewards based on hex-density.
 {% endhint %}
 
 ## The Helium Token
