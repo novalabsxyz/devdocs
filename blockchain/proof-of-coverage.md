@@ -78,7 +78,7 @@ From **HIP15**:
 
 From **HIP17**:
 
-* the Witness earns less the more other Hotspots are asserted to the same area \(or hex\) as the Challengee
+* the Witness earns less if the number of Hotspots in the area of the Challengee exceeds the target density \("target density" varies by resolution, as detailed in the HIP\)
 
 ### Verifying the Proof
 
