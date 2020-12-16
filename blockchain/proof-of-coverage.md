@@ -54,7 +54,7 @@ With the challenge packet created it is then delivered to the target via the Hel
 
 ### The Role of Witnesses
 
-As mentioned above, during the challenge, other Hotspots may hear the RF packet. These Hotspots are known as “witnesses” in the Proof-of-Coverage system. Collectively witnesses earn `8.55%` of all the Helium token rewards produced each epoch.
+As mentioned above, during the challenge, other Hotspots may hear the RF packet. These Hotspots are known as “witnesses” in the Proof-of-Coverage system. Collectively witnesses earn `21.24%` of all the Helium token rewards produced each epoch.
 
 Witnesses attest to the existence of challenge packets. When an active challenge packet arrives, the witness records the time of arrival, signal strength, and quality, and report this back to the Challenger. The Challenger then includes this receipt, if valid, in the completed challenge proof. Witnesses don't know if the packet they're witnessing is valid or corrupt. Only the Challenger is able to make this determination.
 
