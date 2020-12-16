@@ -65,6 +65,12 @@ At any point you can go to the [Helium blockchain Explorer](http://explorer.heli
 
 As calculated above, the target `HNT` per epoch is approximately `3424.66`. The next logical question is "Where does all this HNT go?" Let's take a look.
 
+{% hint style="info" %}
+#### Changes to Reward Distribution from HIP 15
+
+Prior to HIP 15, the reward distribution gave Challengers a larger proportion of mining rewards, with 18% of tokens and only 8.55% of rewards to Witnesses. With the implementation of HIP 15 (active as of December 16, 2020), as written by the author, the distribution was adjusted with more weight going to witnesses and less to challenger, with the total pool between the two staying the same (26.55%).
+{% endhint %}
+
 Below are the mining rewards per epoch. For every complete epoch \(marked by the election of a new Consensus Group\), all the `HNT` produced get distributed over the following reward types:
 
 | Reward Type | Percentage | HNT Earned by Reward Type |
