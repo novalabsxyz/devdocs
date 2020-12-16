@@ -8,6 +8,12 @@ Helium uses a novel work algorithm called “Proof-of-Coverage” \(PoC\) to ver
 
 This section will cover the relationship between PoC and Challenges, as well as how these contribute to a Hotspot’s ability to earn Helium Tokens.
 
+{% hint style="info" %}
+**HIP 15/17 and change to Beacon-only PoC, hex density-based reward scaling**
+
+The Helium Community [has approved HIP 15](https://github.com/helium/HIP/blob/master/0015-beaconing-rewards.md) and [HIP 17](https://github.com/helium/HIP/blob/master/0017-hex-density-based-transmit-reward-scaling.md). This changes proof-of-coverage \(PoC\) from multihop to beaconing, and rewards based on hex-density.
+{% endhint %}
+
 ### Why Proof-of-Coverage?
 
 The Helium Network is a physical wireless network that succeeds based on the amount of reliable coverage it can create for users. As such, we needed a proof of work algorithm that was built for this use case. Proof-of-Coverage takes advantage of the unique, undeniable properties of radio frequency \(RF\) to produce proofs that are meaningful to the Helium Network and its participants.
@@ -26,43 +32,53 @@ The ultimate power of Proof-of-Coverage lies in the fact that the data generated
 
 Individual Proof-of-Coverage challenges can be viewed in [Helium Explorer](https://explorer.helium.com/).
 
-![A Helium Proof-of-Coverage shown over a map of San Francisco](../.gitbook/assets/screen-shot-2020-03-11-at-2.40.47-pm.png)
+![Proof of Coverage Example](../.gitbook/assets/challenge.png)
 
 Each Challenge has the following set of participants:
 
-* **Challenger** - The Hotspot that creates a proof and submits it to the blockchain. Hotspots are rewarded for submitting valid Challenges and, as such, submit as many proofs as the Network will allow. Currently each Hotspot can submit one challenge per 60 blocks \(or roughly one per two epochs\).
-* **Target** -  Any Hotspot chosen to complete the Challenge \(also referred to as a “challengee”\). The minimum number of targets per challenge is two; and the maximum number is seven. All targets in any given Challenge are located in the same geography such that they are able to communicate over RF with at least one target. The Targets do not need to be in geographic proximity to the Challenger.
-* **Witness** - A Hotspot that can verify the existence of the Challenge packet over RF at any stage in the Challenge path. A Witness can also be a Target in any given Challenge.
+* **Challenger** - The Hotspot that creates a proof and submits it to the blockchain. Hotspots are rewarded for submitting valid Challenges and, as such, submit as many proofs as the Network will allow. Currently each Hotspot can submit one challenge per 240 blocks \(or roughly one per eight epochs\); this challenge interval is subject to change via the chain variable: `poc_challenge_interval`
+* **Target** -  Any Hotspot chosen to complete the Challenge \(also referred to as a “challengee”\). 
+* **Witness** - A Hotspot that can verify the existence of the Challenge packet over RF. A Witness can also be a Target in any given Challenge.
 
 With this in mind, let’s walk through how a PoC Challenge actually happens on the Helium Network.
 
 ### Challenge Proof Construction and Initial Target Selection
 
-Since Hotspots are rewarded for submitting challenge proofs and their receipts to the Network, they construct and submit as many as possible. Collectively, Hotspots submitting valid proofs and the associated proof receipts split `1%` of all HNT mined each epoch. \(See the full HNT reward breakdown [here](https://www.helium.com/tokens).\) As noted above, they are currently allowed to submit a challenge proof roughly once per 60 blocks.
+Since Hotspots are rewarded for submitting challenge proofs and their receipts to the Network, they construct and submit as many as possible. Collectively, Hotspots submitting valid proofs and the associated proof receipts split `0.95%` of all HNT mined each epoch. \(See the full HNT reward breakdown [here](mining-token-rewards.md#hnt-distributions-per-epoch).\) As noted above, they are currently allowed to submit a challenge proof roughly once per 240 blocks.
 
-The Challenger first generates an ephemeral public/private key pair to be used in the challenge. A SHA256 digest of the public key and the SHA256 digest of the private key are both submitted, along with the current block hash, as a PoC request. If the request is valid and accepted by the blockchain, the hash of the block that the receipt appears in is combined with the hash of the ephemeral public key and the challenger's identity to generate verifiable entropy. A uniform random number generated via this entropy is then used to select an initial target from the discrete probability distribution of Hotspots.
-
-### Constructing The Multi-layer Challenge
-
-This phase of the challenge begins with the Challenger selecting a target, followed by set of Hotspots known by the blockchain to be within a continuous radio network of said target. Challenge packets are transmitted over RF using the Hotspot’s on-board sub GHz radio, so the distance between any two targets must be achievable using this RF link. A Hotspot’s location is established in the `assert location` transaction used when deployed.
-
-Once complete, the Challenger constructs a multi-layer challenge packet that is to be completed by the challenge targets. This multi-layer packet is essentially an “envelope of envelopes”, with each layer of the packet only decryptable by its intended target. The innermost packet layer is then created and added to the challenge packet, encrypted using the Diffie-Hellman exchange of the public key of the final target \(accessible via the blockchain\) and the ephemeral private key. This layer creation and encryption process repeats for each target in the challenge list until the complete challenge packet has been completed.
-
-As an additional measure the PoC packet is encrypted and decrypted in such a way that the length of the packet remains constant at each layer. This means that no target along the path \(other than the first hop\) knows its position in the path, or if it is the final hop.
+The Challenger first generates an ephemeral public/private key pair to be used in the challenge. A SHA256 digest of the public key and the SHA256 digest of the private key are both submitted, along with the current block hash, as a PoC request. If the request is valid and accepted by the blockchain, the hash of the block that the receipt appears in is combined with the hash of the ephemeral public key and the challenger's identity to generate verifiable entropy. A uniform random number generated via this entropy is then used to select the target from the discrete probability distribution of Hotspots.
 
 ### Creating the Proof
 
-With the multi-layer challenge packet created it is then delivered to the initial target via the Helium Peer-to-Peer Network. The initial target receives the challenge packet, decrypts the outermost layer using its private key and the ephemeral public key for this challenge \(this ephemeral public key appears in the PoC packet and the receiving Hotspot can inspect the blockchain for an active PoC receipt with the corresponding SHA256 of the ephemeral key\), and immediately broadcasts the resultant packet to the Helium Network. Although this packet only has one intended target \(which is unknown to the sender\), it’s likely that any number proximate geographic Hotspots will hear it. \(Hotspots that hear challenges packets but that cannot decrypt them are called “Witnesses.” More on these below.\)
-
-When the intended target receives the packet, it records both the time of arrival and the signal strength of the packet. If it’s able to decrypt the packet, it creates a signed receipt that includes both the time of arrival and the signal strength data, and signs it with its private key. Finally, it sends this signed receipt back to the original Challenger \(which is looked up via the SHA256 of the ephemeral key to find the challenger\) via the Helium Network, and broadcasts the remainder of the challenge packet over the Helium wireless link to its geographic peers. This process continues until all targets in the challenge path have sent signed receipts back to the challenger, or the challenge fails. The final layer of the onion is intentionally padded so that no challengee knows if they are the last hop in the path. And because the final challengee transmits the challenge packet to other Hotspots, this packet can be witnessed.
+With the challenge packet created it is then delivered to the target via the Helium Peer-to-Peer Network. The target receives the challenge packet, decrypts the outermost layer using its private key and the ephemeral public key for this challenge \(this ephemeral public key appears in the PoC packet and the receiving Hotspot can inspect the blockchain for an active PoC receipt with the corresponding SHA256 of the ephemeral key\), and immediately broadcasts the resultant packet to the Helium Network. Any number proximate geographic Hotspots will hear it and will Witness the packet.
 
 ### The Role of Witnesses
 
-As mentioned above, during the course of a given challenge, a Hotspot may hear a PoC challenge packet but not be able to decrypt it if it’s not the intended recipient. These Hotspots are known as “witnesses” and still have immense value in the Helium Network and the Proof-of-Coverage system. Collectively witnesses earn `9%` of all the Helium token rewards produced each epoch.
+As mentioned above, during the challenge, other Hotspots may hear the RF packet. These Hotspots are known as “witnesses” in the Proof-of-Coverage system. Collectively witnesses earn `8.55%` of all the Helium token rewards produced each epoch.
 
-Witnesses bolster the strength of the Helium Network by attesting to the existence of challenge packets. It’s analogous to witnessing a car crash from the sidewalk. Though you weren’t involved directly, you can report what happened to the authorities when they need details. This is what a Witness does for challenges. When an active challenge packet arrives that they can’t decrypt, they record the SHA256 of the packet they saw, along with the time of arrival and signal strength, and report this back to the Challenger. The Challenger then includes this receipt, if valid, in the completed challenge proof. Witnesses don't know if the packet they're witnessing is valid or corrupt. Only the Challenger is able to make this determination.
+Witnesses attest to the existence of challenge packets. When an active challenge packet arrives, the witness records the time of arrival, signal strength, and quality, and report this back to the Challenger. The Challenger then includes this receipt, if valid, in the completed challenge proof. Witnesses don't know if the packet they're witnessing is valid or corrupt. Only the Challenger is able to make this determination.
 
-Though witnesses are not required for a successful proof, they are likely to be present. Currently there is a limit of five witnesses per challenge packet layer. A target in a proof can also serve as a witness for challenge packets transmitted by targets other than itself. You can see Witnesses in action using the [Helium Explorer](https://explorer.helium.com) or in the Challenges section of the Helium Mobile Wallet.
+Witnesses are  required for a successful proof. Currently there is a limit of five witnesses per challenge packet layer. A target in a proof can also serve as a witness for challenge packets transmitted by targets other than itself. You can see Witnesses in action using the [Helium Explorer](https://explorer.helium.com) or in the Challenges section of the Helium Mobile Wallet.
+
+### Reward Scaling
+
+For every epoch, each [reward type](mining-token-rewards.md) is split amongst Hotspots who had a role in that reward pool. In other words, if your Hotspot was challenged during an epoch, it will be eligible to a portion of the `5.31%` of rewards that go to `PoC Challengees`. A practical way of thinking about this is that a Hotspot might earn a "reward unit" for succeeding at a challenge. If five other Hotspots succeeded at a challenge during the epoch and each of them also earned a "reward unit", then each Hotspot gets 1/5th of the 5.31% of rewards, ie: `181.849446/5.0 = 36.3698892 HNT`.
+
+However, [HIP15](https://github.com/helium/HIP/blob/master/0015-beaconing-rewards.md) and [HIP17](https://github.com/helium/HIP/blob/master/0017-hex-density-based-transmit-reward-scaling.md) each introduced a notion of scaling these "reward units", so the units earned when being witnessed or witnessing a packet scale depending on two things:
+
+* number of witnesses \(aka: packet receiver\), detailed in [HIP15](https://github.com/helium/HIP/blob/master/0015-beaconing-rewards.md)
+* number of hotspots in the "hex" tile of the challengee \(aka: packet transmitter\), detailed in [HIP17](https://github.com/helium/HIP/blob/master/0017-hex-density-based-transmit-reward-scaling.md)
+
+The HIPs themselves provide a rich explanation of these mechanisms, but they can be summarized as follows. 
+
+From **HIP15**:
+
+* for the Challengee, the more witnesses, the more the Challengee earns
+* for the Witness, each additional witness past 4 reduces what is earned by Witnesses \(the number 4 is a chain var called "witness\_redundancy"\)
+
+From **HIP17**:
+
+* the Witness earns less the more other Hotspots are asserted to the same area \(or hex\) as the Challengee
 
 ### Verifying the Proof
 
