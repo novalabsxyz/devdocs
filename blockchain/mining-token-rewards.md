@@ -14,6 +14,10 @@ While there's no exact formula for calculating how much `HNT` you'll earn over a
 **HIP 20 and Max HNT Supply**
 
 The Helium Community [has approved HIP 20](https://github.com/helium/HIP/blob/master/0020-hnt-max-supply.md). This introduces Halvenings, Net Emissions, and a Max Supply of 223MM HNT. Read more [here](https://www.helium.com/hnt) and [here](https://dewialliance.medium.com/helium-community-approves-hip-20-127cf75303bf).
+
+**HIP 15/17 and change to Beacon-only PoC, hex density-based reward scaling**
+
+The Helium Community [has approved HIP 15](https://github.com/helium/HIP/blob/master/0015-beaconing-rewards.md) and [HIP 17](https://github.com/helium/HIP/blob/master/0017-hex-density-based-transmit-reward-scaling.md). This changes proof-of-coverage (PoC) from multihop to beaconing, and rewards based on hex-denstiy.
 {% endhint %}
 
 ## How Do Hotspots Earn Helium Tokens?
@@ -25,7 +29,7 @@ Every [epoch](mining-token-rewards.md), the current consensus group mines 30 blo
 | Reward Type | Description |
 | :--- | :--- |
 | PoC Challenger | Rewarded to any Hotspot that creates a valid PoC challenge and submits the corresponding receipt to the blockchain. |
-| PoC Challengees | Awarded to any Hotspot that completes a stage of a PoC challenge. |
+| PoC Challengees (Beacon) | Awarded to any Hotspot that completes a PoC challenge, known as a Beacon or a single-hop PoC challenge. |
 | Witnesses | Distributed to all Hotspots that witness a packet as part of a PoC Challenge. |
 | Consensus Group | Divided equally among the Hotspots that are part of outgoing Concesus Group, responsible for mining blocks. |
 | Security | Awarded to Helium, Inc and other Network investors who hold Security Tokens. |
@@ -66,8 +70,8 @@ Below are the mining rewards per epoch. For every complete epoch \(marked by the
 | Reward Type | Percentage | HNT Earned by Reward Type |
 | :--- | :--- | :--- |
 | PoC Challenger | .95% | 32.53427 |
-| PoC Challengees | 18% | 616.43880 |
-| Witnesses | 8.55% | 292.80843 |
+| PoC Challengees | 5.31% | 181.849446 |
+| Witnesses | 21.24% | 727.397784 |
 | Consensus Group | 6% | 205.4796 |
 | Security Tokens | 34% | 1164.3844 |
 | Network Data Transfer | _Up to 32.5%_ | _Up to 1113.0145_ |
