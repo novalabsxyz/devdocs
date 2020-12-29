@@ -123,6 +123,8 @@ Make sure that the file was downloaded to the `packet_forwarder/lora_pkt_fwd/` d
 
 This new file sets the correct radio frequencies for the US region. Note that this backs up the existing configuration file \(with European frequencies\) to `global_conf.json.1`.
 
+If you are using the SX1302, configuration files for many regions may be found [here](https://github.com/helium/sx1302_hal/tree/helium/hotspot/packet_forwarder).
+
 ### One Quick Change
 
 We need to modify the SPI speed for this particular RAK concentrator. You may not have to do this with different concentrators. To do that:
