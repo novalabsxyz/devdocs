@@ -13,9 +13,9 @@ ___________________________________________________________
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ```
 
-The Miner reads _\(AppEUI, DevEUI\)_ and queries Join routing table for each OUI; each OUI manages its own routing table which is written to the blockchain. If the credentials are in the OUI's table, the Miner will offer the packet to the address assigned by the OUI where the [LongFi Network Server](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/longfi/longfi-network-server/README.md) runs. Thus the Join packet is delivered to all registered LongFi Network Servers.
+The Miner reads _\(AppEUI, DevEUI\)_ and queries Join routing table for each OUI; each OUI manages its own routing table which is written to the blockchain. If the credentials are in the OUI's table, the Miner will offer the packet to the address assigned by the OUI where the [LongFi Network Server](https://github.com/helium/devdocs/blob/master/longfi/longfi-network-server.md) runs. Thus the Join packet is delivered to all registered LongFi Network Servers.
 
-In typical LoRaWAN fashion, the [LongFi Network Server](https://github.com/helium/devdocs/tree/67b988ec351854ec4b7608e12b5b8f47f2456abf/longfi/longfi-network-server/README.md) then responds with a DevAddr \(and lots of other information which is used to derive session keys\). This DevAddr is important because it is now part of the FHDR of **Data** packets:
+In typical LoRaWAN fashion, the [LongFi Network Server](https://github.com/helium/devdocs/blob/master/longfi/longfi-network-server.md) then responds with a DevAddr \(and lots of other information which is used to derive session keys\). This DevAddr is important because it is now part of the FHDR of **Data** packets:
 
 ```bash
 ________________________________________________________________________
