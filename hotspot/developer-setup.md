@@ -1,13 +1,23 @@
 # Build a Hotspot
 
+{% hint style="danger" %}
+**You are about to build a Hotspot that will not mine HNT.**
+
+The ability to mine HNT with a 3rd party gateway is not yet supported. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap. 
+
+Once again, if you build a DIY Hotspot, it will only route Helium LoRaWAN Packets. It would not earn HNT.
+{% endhint %}
+
 ![](../.gitbook/assets/artboard-copy-66.jpg)
 
-![](../.gitbook/assets/artboard%20%281%29.png)
-
-
+![Helium&apos;s Miner Architecture](../.gitbook/assets/artboard%20%281%29.png)
 
 {% hint style="danger" %}
-The ability to mine HNT with a 3rd party gateway is currently under development following the conclusion of the DIY Alpha program. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap here.
+**You are about to build a Hotspot that will not mine HNT.**
+
+The ability to mine HNT with a 3rd party gateway is not yet supported. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap. 
+
+Once again, if you build a DIY Hotspot, it will only route Helium LoRaWAN Packets. It would not earn HNT.
 {% endhint %}
 
 To be a Helium Miner, there are three principle components to know about
