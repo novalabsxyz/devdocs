@@ -150,13 +150,13 @@ These commands will assume you are running in Docker and they have the same pref
 This is always helpful to get some idea of what's going on:
 
 ```text
-docker exec miner tail -F /var/log/miner/console.log
+docker exec miner tail -f /var/data/log/console.log
 ```
 
 Also, if you are particularly interested in radio traffic, it can be helpful to filter for `lora` as so:
 
 ```text
-docker exec miner tail -f /var/log/miner/console.log | grep lora
+docker exec miner tail -f /var/data/log/console.log | grep lora
 ```
 
 ### Checking the peer-to-peer network
