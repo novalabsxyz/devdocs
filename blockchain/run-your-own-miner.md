@@ -235,6 +235,32 @@ Assuming you've mounted the Docker image as detailed above, it is located at:
 
 Another fun tidbit: for production hotspots sold by Helium, the swarm key is stored inside of a secure element and is thus unable to be migrated \(or compromised/accidentally lost unless physically damaged\).
 
+### Customizing the Miner Configuration
+
+Miner has [a configuration file](https://github.com/helium/miner/blob/master/config/sys.config) which exposes many useful configuration variables. For example, Helium uses this to configure the "blessed snapshot" in our firmware which enables Miners to quickly sync their safely to snapshots. You benefit from this automatically when you use our Docker files.
+
+However, our Docker images also provide an easy way to override values in `sys.config`. Our default override are seen [here](https://github.com/helium/miner/blob/master/config/docker.config). Most of the overrides we do here are so that the image is more portable. For example, we disable dependency on the ECC608 security module.
+
+In some cases, you may want to customize this override. You can do this in a way that persists over Docker updates by maintaining your own configuration file outside of the Docker \(similar to what we do with `/var/data/`\).
+
+For example, you can create a directory call "overlay" in and copy [the default override](https://github.com/helium/miner/blob/master/config/docker.config). So now you will have `~/overlay/docker.config`.
+
+Instead of the regular Docker run command, you can run the following:
+
+```text
+docker run -d \
+--env REGION_OVERRIDE=US915 \
+--restart always \
+--publish 1680:1680/udp \
+--publish 44158:44158/tcp \
+--name miner \
+--mount type=bind,source=/home/ubuntu/miner_data,target=/var/data \
+--mount type=bind,source=/home/ubuntu/overlay/docker.config,target=/opt/miner/releases/0.1.0/sys.config \
+quay.io/team-helium/miner:miner-xxxNN_YYYY.MM.DD
+```
+
+In effect, we've created a custom override that _overrides_ the one that's built into the container. Override-ception! You can now override any of the variables in the [original configuration file](https://github.com/helium/miner/blob/master/config/sys.config).
+
 ### Providing Coverage
 
 While participating in libp2p is helpful for the network, the Helium Blockchain does not exist for its own sake. It is there to incentivize coverage and one of the ways to earn tokens as a coverage provider for Helium is by routing IoT traffic.
