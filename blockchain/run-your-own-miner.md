@@ -237,7 +237,7 @@ Another fun tidbit: for production hotspots sold by Helium, the swarm key is sto
 
 ### Customizing the Miner Configuration
 
-Miner has [a configuration file](https://github.com/helium/miner/blob/master/config/sys.config) which exposes many useful configuration variables. For example, Helium uses this to configure the "blessed snapshot" in our firmware which enables Miners to quickly sync their safely to snapshots. You benefit from this automatically when you use our Docker files.
+Miner has [a configuration file](https://github.com/helium/miner/blob/master/config/sys.config) which exposes many useful variables. For example, Helium uses this to configure the "blessed snapshot" in our firmware which enables Miners to quickly sync their safely to snapshots. You benefit from this automatically when you use our Docker files.
 
 However, our Docker images also provide an easy way to override values in `sys.config`. Our default override are seen [here](https://github.com/helium/miner/blob/master/config/docker.config). Most of the overrides we do here are so that the image is more portable. For example, we disable dependency on the ECC608 security module.
 
