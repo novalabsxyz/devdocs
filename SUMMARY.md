@@ -22,6 +22,7 @@
 * [Labels](console/labels.md)
 * [Functions](console/functions.md)
 * [Debug](console/debug.md)
+* [ADR](console/adr.md)
 
 ## Devices
 
