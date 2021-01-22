@@ -25,8 +25,9 @@ The current Oracle Price and at which block it took effect.
 ```javascript
 {
     "data": {
-        "price": 167000000,
-        "block": 471570
+        "timestamp": "2021-01-22T18:25:08.000000Z",
+        "price": 165970000,
+        "block": 687780
     }
 }
 ```
