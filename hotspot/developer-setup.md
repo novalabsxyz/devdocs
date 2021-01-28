@@ -3,7 +3,7 @@
 {% hint style="danger" %}
 **You are about to build a Hotspot that will not mine HNT.**
 
-The ability to mine HNT with a 3rd party gateway is not yet supported. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap. 
+The ability to mine HNT with a DIY gateway is not yet supported. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap. 
 
 Once again, if you build a DIY Hotspot, it will only route Helium LoRaWAN Packets. It would not earn HNT.
 {% endhint %}
@@ -15,7 +15,7 @@ Once again, if you build a DIY Hotspot, it will only route Helium LoRaWAN Packet
 {% hint style="danger" %}
 **You are about to build a Hotspot that will not mine HNT.**
 
-The ability to mine HNT with a 3rd party gateway is not yet supported. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap. 
+The ability to mine HNT with a DIY gateway is not yet supported. Please join the [Helium Discord Server](https://discord.gg/helium) and the \#hotspot-diy-hardware channel for the latest updates on the roadmap. 
 
 Once again, if you build a DIY Hotspot, it will only route Helium LoRaWAN Packets. It would not earn HNT.
 {% endhint %}
